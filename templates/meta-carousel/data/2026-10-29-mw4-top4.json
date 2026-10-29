@@ -1,0 +1,40 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "DMZ",
+  "cover": {"kicker": "UPDATED · SEASON 1", "big": "TOP 4", "small": "META BUILDS", "swipe": "SWIPE FOR THE LOADOUTS ›"},
+  "cta": {"white": "WHICH ONE IS", "gold": "YOUR MAIN?", "sub": "DROP THE NUMBER IN THE COMMENTS", "follow_sub": "FOR DAILY MW4 META"},
+  "weapons": [
+    {"rank": 1, "image": "hyeon.png", "short": "HYEON BURST", "title_white": "HYEON", "title_gold": "BURST",
+     "class": "Assault Rifle", "tagline": "BURST META", "brightness": 1.1,
+     "attachments": [
+       {"type": "barrel", "label": "BARREL", "name": "MUGI SEUNGRI-0"},
+       {"type": "muzzle", "label": "MUZZLE", "name": "TZL-110 V1"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS FIRELINE G"},
+       {"type": "apex", "label": "APEX", "name": "APEX UNDERBARREL"},
+       {"type": "ammo", "label": "AMMO", "name": "6.8X43MM HIGH"}]},
+    {"rank": 2, "image": "han86.png", "short": "HAN 86", "title_white": "HAN", "title_gold": "86",
+     "class": "Assault Rifle", "tagline": "EXTRACTION READY", "brightness": 1.18,
+     "attachments": [
+       {"type": "barrel", "label": "BARREL", "name": "SA H86 465MM"},
+       {"type": "muzzle", "label": "MUZZLE", "name": "ZLR REVERB90"},
+       {"type": "optic", "label": "OPTIC", "name": "ZLR TYPE C"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS TAC90 GRIP"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "XRK JUSTICE II"}]},
+    {"rank": 3, "image": "kastov.png", "short": "KASTOV 762", "title_white": "KASTOV", "title_gold": "762",
+     "class": "Assault Rifle", "tagline": "HEAVY HITTER", "brightness": 1.7,
+     "attachments": [
+       {"type": "barrel", "label": "BARREL", "name": "HAEBANG MT-414MM"},
+       {"type": "muzzle", "label": "MUZZLE", "name": "EXP R3000-V"},
+       {"type": "optic", "label": "OPTIC", "name": "FJX 708 PRO"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS TAC90 GRIP"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "FJX KASTOV GRIP"}]},
+    {"rank": 4, "image": "iso.png", "short": "ISO NIGHTSHADE", "title_white": "ISO", "title_gold": "NIGHTSHADE",
+     "class": "SMG", "tagline": "CLOSE RANGE MONSTER", "brightness": 1.15,
+     "attachments": [
+       {"type": "barrel", "label": "BARREL", "name": "ZLR MAG-Z 9"},
+       {"type": "muzzle", "label": "MUZZLE", "name": "XRK HERDER 40"},
+       {"type": "stock", "label": "STOCK", "name": "EXP G2-44 STOCK"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS FIRELINE GRIP"},
+       {"type": "magazine", "label": "MAGAZINE", "name": "40 ROUND MAG"}]}
+  ]
+}
