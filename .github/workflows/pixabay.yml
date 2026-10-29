@@ -1,0 +1,36 @@
+name: pixabay
+# Downloads Pixabay Music tracks (Pixabay Content License, free incl. commercial use).
+# music/pixabay.txt: one track page URL per line -> music/pixabay/<slug>.mp3 + page meta
+on:
+  push:
+    branches: [brand-assets]
+    paths: [music/pixabay.txt]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  dl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        run: |
+          mkdir -p music/pixabay
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          while read -r url; do
+            [ -z "$url" ] && continue
+            slug=$(basename "${url%/}")
+            curl -fsSL -A "$UA" "$url" -o "music/pixabay/$slug.html" || { echo "page failed $url"; continue; }
+            mp3=$(grep -oE 'https://cdn\.pixabay\.com/(download/)?audio/[^"\\ ]+\.mp3[^"\\ ]*' "music/pixabay/$slug.html" | head -1)
+            echo "$slug -> $mp3"
+            grep -oiE 'content id[^<]{0,120}' "music/pixabay/$slug.html" | head -3 > "music/pixabay/$slug.contentid.txt" || true
+            [ -n "$mp3" ] && curl -fsSL -A "$UA" -e "$url" "$mp3" -o "music/pixabay/$slug.mp3" || echo "no mp3 for $slug"
+            rm -f "music/pixabay/$slug.html"
+          done < music/pixabay.txt
+          ls -la music/pixabay
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A music/pixabay
+          git diff --cached --quiet || (git commit -m "pixabay: downloaded tracks" && git push)

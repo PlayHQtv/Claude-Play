@@ -1,0 +1,58 @@
+name: music-ai
+# Free AI music with ACE-Step 1.5 (MIT) on the CPU runner. music/jobs/<job>.json:
+# {"caption": "...", "duration": 70, "bpm": 140, "seed": 1, "count": 1}  ->  music/out/<job>/*.flac
+on:
+  push:
+    branches: [brand-assets]
+    paths: [music/jobs/**]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - name: Free disk
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL; df -h /
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install ACE-Step (CPU torch)
+        run: |
+          git clone --depth 1 https://github.com/ACE-Step/ACE-Step-1.5.git ace
+          cd ace
+          pip install --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          pip install -e . || pip install -r requirements.txt
+      - name: Generate
+        run: |
+          cd ace
+          python - <<'PY'
+          import json, glob, os, sys, time, shutil
+          sys.path.insert(0, os.getcwd())
+          from acestep.handler import AceStepHandler
+          from acestep.llm_inference import LLMHandler
+          from acestep.inference import GenerationParams, GenerationConfig, generate_music
+          dit = AceStepHandler()
+          msg, ok = dit.initialize_service(project_root=os.getcwd(), config_path="acestep-v15-turbo", device="cpu", offload_to_cpu=False)
+          print("init:", ok, msg)
+          if not ok: sys.exit(1)
+          llm = LLMHandler()
+          for job in glob.glob("../music/jobs/*.json"):
+              name = os.path.splitext(os.path.basename(job))[0]
+              out = f"../music/out/{name}"
+              if os.path.isdir(out) and os.listdir(out): continue
+              os.makedirs(out, exist_ok=True)
+              j = json.load(open(job)); t0 = time.time()
+              p = GenerationParams(caption=j["caption"], instrumental=True, duration=j.get("duration", 60), bpm=j.get("bpm"), thinking=False)
+              c = GenerationConfig(batch_size=j.get("count", 1), audio_format="flac")
+              r = generate_music(dit, llm, p, c, save_dir=out)
+              print(name, "success", r.success, getattr(r, "error", None), round(time.time() - t0), "s")
+          PY
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A music/out || true
+          git diff --cached --quiet || (git commit -m "music-ai: generated tracks" && git push)
