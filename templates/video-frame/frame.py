@@ -9,7 +9,7 @@ Job JSON: {"hook_white": "4 KILLS =", "hook_gold": "YOU'RE HUNTED",
            "kicker": "MW4 DMZ · BOUNTY SYSTEM", "question": "HUNTER OR HUNTED?",
            "sub": "COMMENT BELOW", "video_top": 640}
 Cloudinary composite: video c_scale,w_1080 -> c_pad,w_1080,h_1920,b_rgb:070707,g_north,y_<video_top>
-then l_<frame png>,fl_layer_apply,g_north.
+then l_<frame png>,fl_layer_apply,g_north. Simplest: c_pad,w_1080,h_1920,g_center (video_top 656 for 16:9).
 """
 import json, os, sys, html, threading, functools, http.server, socketserver
 from playwright.sync_api import sync_playwright
