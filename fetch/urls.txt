@@ -1,0 +1,1 @@
+fetch/files/c1.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/so_1/v1793293928/playhq/work/fri1800_prev.jpg
