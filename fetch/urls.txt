@@ -1,2 +1,3 @@
-fetch/files/1800_cover.jpg METRICOOL_MEDIA_URL
-fetch/files/1800_video.mp4 METRICOOL_MEDIA_URL
+fetch/files/f1.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/so_2/playhq/work/1830_preview.jpg
+fetch/files/f2.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/so_9/playhq/work/1830_preview.jpg
+fetch/files/f3.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/so_19/playhq/work/1830_preview.jpg
