@@ -3,13 +3,13 @@
   "badge": "DMZ",
   "cover": {
     "kicker": "UPDATED OCT 2026",
-    "big": "4 DMZ",
-    "small": "META BUILDS",
-    "swipe": "SWIPE FOR THE LOADOUTS ›"
+    "big": "DMZ META",
+    "small": "LOADOUTS",
+    "swipe": "SWIPE FOR ALL 4 BUILDS ›"
   },
   "cta": {
-    "white": "WHICH ONE IS",
-    "gold": "YOUR MAIN?",
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
     "sub": "DROP THE NUMBER IN THE COMMENTS",
     "follow_sub": "FOR DAILY MW4 DMZ META"
   },
