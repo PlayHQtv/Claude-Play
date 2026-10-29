@@ -1,0 +1,47 @@
+name: tts
+# Free text-to-speech with Kokoro (Apache-2.0, runs on CPU). Every tts/jobs/<job>.json
+# ({"voice": "...", "speed": 1.0, "lang": "en-us", "segments": [{"id": "...", "text": "..."}]})
+# becomes tts/out/<job>/<id>.wav, committed back to the branch.
+on:
+  push:
+    branches: [brand-assets]
+    paths: [tts/jobs/**]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install
+        run: pip install kokoro-onnx soundfile
+      - name: Models
+        run: |
+          curl -fsSL -o kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+          curl -fsSL -o voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+      - name: Synthesize
+        run: |
+          python - <<'PY'
+          import json, glob, os, soundfile as sf
+          from kokoro_onnx import Kokoro
+          k = Kokoro("kokoro-v1.0.onnx", "voices-v1.0.bin")
+          for job in glob.glob("tts/jobs/*.json"):
+              name = os.path.splitext(os.path.basename(job))[0]
+              out = f"tts/out/{name}"; os.makedirs(out, exist_ok=True)
+              j = json.load(open(job))
+              for s in j["segments"]:
+                  path = f"{out}/{s['id']}.wav"
+                  if os.path.exists(path): continue
+                  a, sr = k.create(s["text"], voice=j.get("voice", "am_michael"), speed=j.get("speed", 1.0), lang=j.get("lang", "en-us"))
+                  sf.write(path, a, sr); print(path, round(len(a) / sr, 2), "s")
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A tts/out
+          git diff --cached --quiet || git commit -m "tts: synthesized audio"
+          git push
