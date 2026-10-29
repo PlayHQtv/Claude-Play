@@ -1,6 +1,0 @@
-fetch/files/a1.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/c_scale,w_1080/c_pad,w_1080,h_1920,b_rgb:070707/l_playhq:frames:paytowin_20261030/fl_layer_apply,g_north/q_90/so_1/v1793293532/playhq/work/fri1000_hd.jpg
-fetch/files/a2.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/c_scale,w_1080/c_pad,w_1080,h_1920,b_rgb:070707/l_playhq:frames:paytowin_20261030/fl_layer_apply,g_north/q_90/so_14/v1793293532/playhq/work/fri1000_hd.jpg
-fetch/files/a3.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/c_scale,w_1080/c_pad,w_1080,h_1920,b_rgb:070707/l_playhq:frames:paytowin_20261030/fl_layer_apply,g_north/q_90/so_28/v1793293532/playhq/work/fri1000_hd.jpg
-fetch/files/b1.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/c_scale,w_1080/c_pad,w_1080,h_1920,b_rgb:070707/l_playhq:frames:fight_20261030/fl_layer_apply,g_north/q_90/so_1/v1793293543/playhq/work/fri1800_hd.jpg
-fetch/files/b2.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/c_scale,w_1080/c_pad,w_1080,h_1920,b_rgb:070707/l_playhq:frames:fight_20261030/fl_layer_apply,g_north/q_90/so_12/v1793293543/playhq/work/fri1800_hd.jpg
-fetch/files/b3.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/c_scale,w_1080/c_pad,w_1080,h_1920,b_rgb:070707/l_playhq:frames:fight_20261030/fl_layer_apply,g_north/q_90/so_25/v1793293543/playhq/work/fri1800_hd.jpg
