@@ -10,7 +10,7 @@ Rule: only permanently free tools. That means open source, or a free tier that a
 | Kokoro | AI voice (English, natural) | Apache-2.0 | GitHub Action `tts` | in use (parked route) |
 | ACE-Step 1.5 | AI music like Suno (text → instrumental) | MIT | GitHub Action `music-ai` (CPU, ~7 min per 70 s track) | tested 29.10. |
 | fetch-media | Downloads blocked URLs into the repo | – | GitHub Action `fetch-media` | in use |
-| **PySceneDetect** | Finds scene changes and action moments in long gameplay videos, so the best clips can be picked faster without OpusClip credits | BSD-3 | GitHub Action or sandbox (if installable) | to set up |
+| **PySceneDetect** | Finds scene changes and action moments in long gameplay videos, so the best clips can be picked faster without OpusClip credits | BSD-3 | – | noted only (user 29.10.: OpusClip already does this) |
 | **Demucs** (Meta) | Separates voice / game sound / music. Removes copyrighted music from clips; makes voices clearer | MIT | GitHub Action (PyTorch) | to set up |
 | **faster-whisper / WhisperX** | Word-accurate captions from real speech in PlayHQ style | MIT / BSD | GitHub Action | to set up |
 | **Real-ESRGAN** | AI upscaling for blurry images and video stills (e.g. weapon renders) | BSD-3 | GitHub Action (ncnn-vulkan CPU build or PyTorch) | to set up |
