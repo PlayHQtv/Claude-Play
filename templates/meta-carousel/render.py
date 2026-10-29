@@ -178,12 +178,18 @@ def main(data_path, out_dir=None):
     srv = serve(HERE)
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
-        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1920})
+        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1920}, device_scale_factor=2)
         for name, h in pages:
             open(os.path.join(tmp, name + '.html'), 'w').write(h)
             pg.goto(f'http://127.0.0.1:{srv.server_address[1]}/_build/{name}.html')
             pg.wait_for_selector('body[data-ready]'); pg.wait_for_timeout(300)
-            pg.screenshot(path=os.path.join(out_dir, name + '.jpg'), type='jpeg', quality=92)
+            raw = os.path.join(tmp, name + '@2x.png')
+            pg.screenshot(path=raw, type='png')
+            # 2x supersampling -> 1080x1920, light sharpen, JPEG q95 without chroma subsampling (crisp coloured text)
+            from PIL import Image, ImageFilter
+            im = Image.open(raw).convert('RGB').resize((1080, 1920), Image.LANCZOS)
+            im = im.filter(ImageFilter.UnsharpMask(radius=0.8, percent=45, threshold=2))
+            im.save(os.path.join(out_dir, name + '.jpg'), 'JPEG', quality=95, subsampling=0, optimize=True)
             print(os.path.join(out_dir, name + '.jpg'))
         b.close()
     srv.shutdown()
