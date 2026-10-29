@@ -32,6 +32,8 @@ ICONS = {
           f'<path {T} d="M16 37 h28 M80 40 l40 -6 M122 34 l3 30 M56 30 v14"/>',
  'magazine': f'<path {S} d="M58 8 h40 l-2 10 h-36 z"/><path {S} d="M60 18 h36 l-4 58 a6 6 0 0 1 -6 6 h-16 a6 6 0 0 1 -6 -6 z"/>'
              f'<path {T} d="M68 28 l-1 44 M78 28 v48 M88 28 l-1 44 M62 82 h32"/>',
+ 'drum': f'<path {S} d="M64 8 h28 v14 h-28 z"/><circle cx="78" cy="52" r="30" {S}/><circle cx="78" cy="52" r="18" {T}/>'
+         f'<circle cx="78" cy="52" r="5" {DOT}/><path {T} d="M78 22 v6 M78 76 v6 M48 52 h6 M102 52 h6"/>',
  'ammo': ''.join(f'<path {S} d="M{x} 78 v-38 l8 -24 l8 24 v38 z"/><path {T} d="M{x} 46 h16 M{x} 70 h16"/>'
                  for x in (46, 72, 98)),
  'apex': f'<path {S} d="M80 8 l34 20 v34 l-34 20 l-34 -20 v-34 z"/><path {T} d="M80 22 l22 13 v20 l-22 13 l-22 -13 v-20 z"/>'

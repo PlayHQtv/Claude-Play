@@ -12,3 +12,11 @@ own gold HUD line icons (icons.py), ISNet background removal (rembg project, Apa
 3. `python3 render.py data/<file>.json` -> out/<file>/01_cover.jpg ... NN_cta.jpg
 
 Titles auto-fit (one line up to 10 chars, otherwise two lines white/gold). Needs python playwright + chromium.
+
+## Accuracy rule (mandatory, 29.10.2026)
+Never take attachment names from old slides or memory. Before every preview:
+1. Pull builds from codmunity.gg (DMZ: /best-loadouts/mw4-dmz/long-range and /close-range; MP: /weapon/mw4/<weapon>),
+   note "Last Updated" date; cross-check names with a second site (warzoneloadout.games, wzstats.gg) where possible.
+2. Copy names, slot labels and build codes exactly; record the source in the data JSON ("source").
+3. No "top/rank" claims the data doesn't support (use rank_label "BUILD" when it's just list order).
+4. Run an independent verifier agent that re-fetches the sources and checks every slide character by character.

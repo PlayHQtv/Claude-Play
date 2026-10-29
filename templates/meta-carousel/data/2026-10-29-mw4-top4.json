@@ -2,8 +2,8 @@
   "game": "CALL OF DUTY · MW4",
   "badge": "DMZ",
   "cover": {
-    "kicker": "UPDATED · SEASON 1",
-    "big": "TOP 4",
+    "kicker": "UPDATED OCT 2026",
+    "big": "4 DMZ",
     "small": "META BUILDS",
     "swipe": "SWIPE FOR THE LOADOUTS ›"
   },
@@ -11,82 +11,86 @@
     "white": "WHICH ONE IS",
     "gold": "YOUR MAIN?",
     "sub": "DROP THE NUMBER IN THE COMMENTS",
-    "follow_sub": "FOR DAILY MW4 META"
+    "follow_sub": "FOR DAILY MW4 DMZ META"
   },
   "weapons": [
     {
       "rank": 1,
-      "image": "hyeon.png",
-      "short": "HYEON BURST",
-      "title_white": "HYEON",
-      "title_gold": "BURST",
-      "class": "Assault Rifle",
-      "tagline": "BURST META",
-      "brightness": 1.1,
-      "attachments": [
-        {
-          "type": "barrel",
-          "label": "BARREL",
-          "name": "MUGI SEUNGRI-0"
-        },
-        {
-          "type": "muzzle",
-          "label": "MUZZLE",
-          "name": "TZL-110 V1"
-        },
-        {
-          "type": "underbarrel",
-          "label": "UNDERBARREL",
-          "name": "FSS FIRELINE G"
-        },
-        {
-          "type": "apex",
-          "label": "APEX",
-          "name": "APEX UNDERBARREL"
-        },
-        {
-          "type": "ammo",
-          "label": "AMMO",
-          "name": "6.8X43MM HIGH"
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "image": "han86.png",
       "short": "HAN 86",
       "title_white": "HAN",
       "title_gold": "86",
       "class": "Assault Rifle",
-      "tagline": "EXTRACTION READY",
+      "tagline": "#1 LONG RANGE PICK",
       "brightness": 1.18,
       "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "FSS IS300"
+        },
         {
           "type": "barrel",
           "label": "BARREL",
           "name": "SA H86 465MM"
         },
         {
+          "type": "optic",
+          "label": "OPTIC",
+          "name": "KV CORSAC HOLO"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "FR4 RETRACTABLE STOCK"
+        },
+        {
+          "type": "drum",
+          "label": "MAGAZINE",
+          "name": "60 ROUND DRUM"
+        }
+      ],
+      "build_code": "A03-Y1JWU-UKN91-1",
+      "class_note": "DMZ Loadout"
+    },
+    {
+      "rank": 2,
+      "image": "hyeon.png",
+      "short": "HYEON BURST",
+      "title_white": "HYEON",
+      "title_gold": "BURST",
+      "class": "Assault Rifle",
+      "tagline": "#2 LONG RANGE PICK",
+      "brightness": 1.1,
+      "attachments": [
+        {
           "type": "muzzle",
           "label": "MUZZLE",
-          "name": "ZLR REVERB90"
+          "name": "FSS IS300"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "MUGI INGOEM 559MM"
         },
         {
           "type": "optic",
           "label": "OPTIC",
-          "name": "ZLR TYPE C"
+          "name": "KV CORSAC HOLO"
         },
         {
-          "type": "underbarrel",
-          "label": "UNDERBARREL",
-          "name": "FSS TAC90 GRIP"
+          "type": "drum",
+          "label": "MAGAZINE",
+          "name": "60 ROUND DRUM MAG"
         },
         {
           "type": "reargrip",
           "label": "REAR GRIP",
-          "name": "XRK JUSTICE II"
+          "name": "HYN-MEIPEUL"
         }
-      ]
+      ],
+      "build_code": "A09-Y1K9N-L1IW1-1",
+      "class_note": "DMZ Loadout"
     },
     {
       "rank": 3,
@@ -95,35 +99,37 @@
       "title_white": "KASTOV",
       "title_gold": "762",
       "class": "Assault Rifle",
-      "tagline": "HEAVY HITTER",
+      "tagline": "75 ROUND DRUM BUILD",
       "brightness": 1.45,
       "attachments": [
         {
-          "type": "barrel",
-          "label": "BARREL",
-          "name": "HAEBANG MT-414MM"
-        },
-        {
           "type": "muzzle",
           "label": "MUZZLE",
-          "name": "EXP R3000-V"
+          "name": "GAUGE-12 MONO"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "BCS-K 589MM BARREL"
         },
         {
           "type": "optic",
           "label": "OPTIC",
-          "name": "FJX 708 PRO"
+          "name": "KV CORSAC HOLO"
+        },
+        {
+          "type": "drum",
+          "label": "MAGAZINE",
+          "name": "75 ROUND DRUM MAG 7.62"
         },
         {
           "type": "underbarrel",
           "label": "UNDERBARREL",
-          "name": "FSS TAC90 GRIP"
-        },
-        {
-          "type": "reargrip",
-          "label": "REAR GRIP",
-          "name": "FJX KASTOV GRIP"
+          "name": "FSS FIRELINE GRIP"
         }
-      ]
+      ],
+      "build_code": "A01-VJVBD-K2R31-1",
+      "class_note": "DMZ Loadout"
     },
     {
       "rank": 4,
@@ -132,35 +138,41 @@
       "title_white": "ISO",
       "title_gold": "NIGHTSHADE",
       "class": "SMG",
-      "tagline": "CLOSE RANGE MONSTER",
+      "tagline": "CLOSE RANGE SMG BUILD",
       "brightness": 1.15,
       "attachments": [
         {
-          "type": "barrel",
-          "label": "BARREL",
-          "name": "ZLR MAG-Z 9"
-        },
-        {
           "type": "muzzle",
           "label": "MUZZLE",
-          "name": "XRK HERDER 40"
+          "name": "FSS CRACKDOWN"
         },
         {
-          "type": "stock",
-          "label": "STOCK",
-          "name": "EXP G2-44 STOCK"
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "ZLR CARBON-900"
         },
         {
-          "type": "underbarrel",
-          "label": "UNDERBARREL",
-          "name": "FSS FIRELINE GRIP"
-        },
-        {
-          "type": "magazine",
+          "type": "drum",
           "label": "MAGAZINE",
-          "name": "40 ROUND MAG"
+          "name": "50 ROUND DRUM MAG"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "DEMO STP-1"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "SCHLAGER VISIV-5"
         }
-      ]
+      ],
+      "build_code": "S06-3M8Z7-N4511",
+      "apex": "ISO TRACE",
+      "class_note": "DMZ Loadout"
     }
-  ]
+  ],
+  "source": "codmunity.gg MW4 DMZ best loadouts (long-range + close-range), Last Updated 28/10/2026",
+  "rank_label": "BUILD",
+  "notes": "Ranks are list order, not an official ranking. Han 86 #1 / Hyeon #2 by DMZ long-range pick rate (34.7% / 8.2%). Kastov and ISO are not top picks -> no 'top/rank' claims."
 }

@@ -44,7 +44,7 @@ body{width:1080px;height:1920px;overflow:hidden;background:#070707;font-family:R
 .floor{position:absolute;left:190px;width:700px;height:40px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,212,0,.35),transparent 70%);filter:blur(6px)}
 .line{position:absolute;left:150px;width:780px;height:2px;background:linear-gradient(90deg,transparent,rgba(255,212,0,.7),transparent)}
 .hdr{position:absolute;left:60px;right:60px;top:1288px;height:84px;display:flex;align-items:center;padding:0 30px}
-.hdr span{font-weight:700;font-size:38px;letter-spacing:16px}
+.hdr span{font-weight:700;font-size:36px;letter-spacing:12px}
 .ticks{margin-left:auto;display:flex;align-items:center;gap:18px}
 .ticks i{display:block;width:120px;height:10px;background:repeating-linear-gradient(90deg,rgba(255,212,0,.6) 0 2px,transparent 2px 10px)}
 .ticks em{font-style:normal;font-size:23px;letter-spacing:6px;color:var(--y);font-weight:700}
@@ -63,10 +63,10 @@ body{width:1080px;height:1920px;overflow:hidden;background:#070707;font-family:R
 .save .tx b{color:#140f00;font-family:Anton;font-size:46px;font-weight:400;letter-spacing:1px}
 .save .tx small{color:#3a2a00;letter-spacing:5px;font-size:21px;margin:0 0 2px}
 .kicker{position:absolute;left:70px;font-weight:700;font-size:34px;letter-spacing:14px;color:var(--y)}
-.card{position:absolute;width:465px;height:280px}
+.card{position:absolute;width:465px;height:258px}
 .card .badge{position:absolute;left:18px;top:18px;font-family:Anton;font-size:44px;line-height:60px;width:60px;text-align:center;color:#140f00;background:linear-gradient(135deg,#ffe88f,#e9c062 50%,#b8862a);clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)}
-.card .cimg{position:absolute;left:20px;right:20px;top:60px;height:140px;display:grid;place-items:center}
-.card .cimg img{max-width:380px;max-height:130px;filter:drop-shadow(0 16px 12px rgba(0,0,0,.8))}
+.card .cimg{position:absolute;left:20px;right:20px;top:56px;height:128px;display:grid;place-items:center}
+.card .cimg img{max-width:370px;max-height:120px;filter:drop-shadow(0 16px 12px rgba(0,0,0,.8))}
 .card .nm{position:absolute;left:24px;bottom:22px;font-weight:700;font-size:34px;letter-spacing:3px}
 .card .cl{position:absolute;right:24px;bottom:28px;font-weight:700;font-size:20px;letter-spacing:4px;color:var(--y)}
 .swipe{position:absolute;left:0;right:0;text-align:center;font-weight:700;font-size:34px;letter-spacing:12px;color:var(--y)}
@@ -86,7 +86,7 @@ FRAME = """<div class="bg"></div><div class="topo"></div>
 <img class="logo" src="/assets/logo.png">"""
 
 # Auto-fit: shrink every .fit element until it is <= data-max px wide.
-FITJS = """<script>document.fonts.ready.then(()=>{for(const e of document.querySelectorAll('.fit')){let s=+e.dataset.size;e.style.fontSize=s+'px';while(e.scrollWidth>+e.dataset.max&&s>16){s-=2;e.style.fontSize=s+'px'}if(e.dataset.zone){const[t,h]=e.dataset.zone.split(',').map(Number);e.style.top=(t+(h-s)/2)+'px'}}document.body.dataset.ready=1})</script>"""
+FITJS = """<script>document.fonts.ready.then(()=>{for(const e of document.querySelectorAll('.fit,.shrink')){let s=+e.dataset.size;e.style.fontSize=s+'px';while(e.scrollWidth>+e.dataset.max&&s>16){s-=2;e.style.fontSize=s+'px'}if(e.dataset.zone){const[t,h]=e.dataset.zone.split(',').map(Number);e.style.top=(t+(h-s)/2)+'px'}}document.body.dataset.ready=1})</script>"""
 
 
 def page(body, d):
@@ -108,24 +108,29 @@ def title_html(white, gold, top, size=250, max_w=950):
 def weapon_slide(w, d):
     tiles = ''.join(
         f'<div class="t hud"><span class="num">{i + 1:02d}</span><div class="ic"><img src="/assets/icons/{a["type"]}.svg"></div>'
-        f'<div class="tx"><b style="font-size:{32 if len(a["name"]) <= 14 else 27}px">{E(a["name"])}</b><small>{E(a["label"])}</small></div></div>'
+        + (f'<div class="tx"><b class="shrink" data-size="32" data-max="262">{E(a["name"])}</b>' if len(a["name"]) <= 16 else f'<div class="tx"><b style="font-size:27px;white-space:normal;max-width:236px;line-height:1.08">{E(a["name"])}</b>')
+        + f'<small>{E(a["label"])}</small></div></div>'
         for i, a in enumerate(w['attachments'][:5]))
-    tiles += '<div class="t hud save"><div class="tx"><small>DON\'T LOSE IT</small><b>SAVE THIS BUILD</b></div></div>'
+    if w.get('apex'):
+        tiles += (f'<div class="t hud save"><div class="ic" style="background:rgba(0,0,0,.18);border-color:rgba(0,0,0,.35)"><img src="/assets/icons/apex.svg" style="filter:brightness(.25)"></div>'
+                  f'<div class="tx" style="padding-left:0"><small>APEX</small><b class="shrink" data-size="44" data-max="250">{E(w["apex"])}</b></div></div>')
+    else:
+        tiles += '<div class="t hud save"><div class="tx"><small>DON\'T LOSE IT</small><b>SAVE THIS BUILD</b></div></div>'
     br = w.get('brightness', 1.18)
     body = (title_html(w['title_white'], w['title_gold'], 300)
             + f'<div class="fit sub" style="top:635px;left:70px;font-family:Raj;letter-spacing:15px" data-size="54" data-max="700">{E(w.get("tagline", "EXTRACTION READY"))}</div>'
             + f'<div class="cls" style="top:712px"><i></i>{E(w["class"])} — <b>{E(w.get("class_note", "Meta Loadout"))}</b></div>'
-            + f'<div class="rank"><small>META RANK</small><strong>#{w["rank"]}</strong></div>'
+            + f'<div class="rank"><small>{E(d.get("rank_label", "META RANK"))}</small><strong>#{w["rank"]}</strong></div>'
             + '<div class="floor" style="top:1205px"></div><div class="line" style="top:1222px"></div>'
             + f'<div class="gunbox" style="top:800px;height:420px"><img class="gun" style="max-height:400px;filter:drop-shadow(0 40px 30px rgba(0,0,0,.85)) drop-shadow(0 0 2px rgba(255,220,140,.35)) brightness({br}) contrast(1.08)" src="/weapons/{w["image"]}"></div>'
-            + f'<div class="hdr hud"><span>ATTACHMENTS</span><div class="ticks"><i></i><em>{len(w["attachments"][:5])} / 5 · MW4</em></div></div>'
+            + f'<div class="hdr hud"><span>ATTACHMENTS</span><div class="ticks"><i style="width:60px"></i><div style="text-align:right;line-height:1.1"><small style="display:block;font-size:17px;letter-spacing:5px;color:#bdbdbd;font-weight:700">BUILD CODE</small><em>{E(w.get("build_code", ""))}</em></div></div></div>'
             + f'<div class="grid">{tiles}</div>')
     return page(body, d)
 
 
 def cover_slide(d):
     c = d['cover']
-    pos = [(60, 730), (555, 730), (60, 1030), (555, 1030)]
+    pos = [(60, 725), (555, 725), (60, 997), (555, 997)]
     cards = ''.join(
         f'<div class="card hud" style="left:{x}px;top:{y}px"><div class="badge">{w["rank"]}</div>'
         f'<div class="cimg"><img src="/weapons/{w["image"]}" style="filter:drop-shadow(0 16px 12px rgba(0,0,0,.8)) brightness({w.get("brightness", 1.18)})"></div>'
@@ -134,7 +139,7 @@ def cover_slide(d):
     body = (f'<div class="kicker" style="top:300px">{E(c.get("kicker", "UPDATED"))}</div>'
             + f'<div class="fit" style="top:345px" data-size="250" data-max="950"><span class="gr gold">{E(c["big"])}</span></div>'
             + f'<div class="fit" style="top:590px" data-size="120" data-max="950"><span class="gr w">{E(c["small"])}</span></div>'
-            + cards + f'<div class="swipe" style="top:1325px">{E(c.get("swipe", "SWIPE FOR THE LOADOUTS ›"))}</div>')
+            + cards + f'<div class="swipe" style="top:1292px">{E(c.get("swipe", "SWIPE FOR THE LOADOUTS ›"))}</div>')
     return page(body, d)
 
 
