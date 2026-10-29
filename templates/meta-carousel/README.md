@@ -20,3 +20,8 @@ Never take attachment names from old slides or memory. Before every preview:
 2. Copy names, slot labels and build codes exactly; record the source in the data JSON ("source").
 3. No "top/rank" claims the data doesn't support (use rank_label "BUILD" when it's just list order).
 4. Run an independent verifier agent that re-fetches the sources and checks every slide character by character.
+
+## Hashtags for build carousels (user 29.10.2026)
+Use `#mw4 #mw4dmz #dmz #dmztips #dmzloadout` (same pattern as the "5 MW4 DMZ mistakes" carousel: game, game+mode, mode, mode-tips, topic).
+NOT `#mw4builds #codmeta #mw4meta`: too narrow, and they leave the DMZ audience out. The 29.10. carousel was deleted and reposted because of this.
+Caption must start with the search phrase, e.g. "MW4 DMZ meta builds: …".
