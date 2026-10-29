@@ -1,3 +1,0 @@
-fetch/files/f1.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/so_2/playhq/work/1830_preview.jpg
-fetch/files/f2.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/so_9/playhq/work/1830_preview.jpg
-fetch/files/f3.jpg https://res.cloudinary.com/CLOUD_NAME/video/upload/so_19/playhq/work/1830_preview.jpg
