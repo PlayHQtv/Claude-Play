@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VEL-46 Build</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Oswald:wght@500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#e8c25a}a:hover{color:#ffffff}
+</style>
+</helmet>
+<div style="position: relative; overflow: hidden; width: 1080px; height: 1920px; box-sizing: border-box; background: radial-gradient(ellipse at 50% 45%, #1d1a12 0%, #0a0a0a 65%); font-family: Oswald, Arial, sans-serif; color: #ffffff; padding: 100px 56px 110px; display: flex; flex-direction: column; gap: 36px">
+<div style="position: absolute; right: -170px; top: 380px; width: 560px; height: 3px; background: {{accent}}; opacity: 0.45; transform: rotate(-38deg)"></div>
+<div style="position: relative; display: flex; justify-content: space-between; align-items: center">
+<div style="width: 130px; height: 130px; background: linear-gradient(160deg, #fff1b8 0%, #e8c25a 45%, #a67818 100%); display: flex; align-items: center; justify-content: center; font-family: Anton, Impact, sans-serif; font-size: 100px; color: #0a0a0a">2</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<svg width="30" height="34" viewBox="0 0 34 38" aria-hidden="true"><path d="M3 3 L31 19 L3 35 Z" fill="none" stroke="{{accent}}" stroke-width="5" stroke-linejoin="round"></path></svg>
+<span style="font-family: Anton, Impact, sans-serif; font-size: 36px; letter-spacing: 2px">PLAY<span style="color: {{accent}}">HQ</span></span>
+</div>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: Anton, Impact, sans-serif; font-size: 170px; line-height: 0.95">VEL-<span style="background: linear-gradient(180deg, #fff1b8 0%, #e8c25a 45%, #a67818 100%); -webkit-background-clip: text; background-clip: text; color: transparent">46</span></div>
+<div style="font-size: 36px; font-weight: 700; letter-spacing: 10px; color: {{accent}}">SMG · MW4 META</div>
+</div>
+<div style="position: relative; flex: 1; border: 2px dashed rgba(232,194,90,0.35); display: flex; align-items: center; justify-content: center; color: #8f8f8f; font-size: 36px; letter-spacing: 4px; text-align: center; white-space: pre-line">[GUNSMITH SCREENSHOT
+VEL-46 · TRANSPARENT BG]</div>
+<div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{parts}}" as="p" hint-placeholder-count="5">
+<div style="background: #121212; border: 1px solid rgba(232,194,90,0.45); padding: 24px 26px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 24px; font-weight: 700; letter-spacing: 6px; color: {{accent}}">{{p.slot}}</span>
+<span style="font-size: 40px; font-weight: 700; line-height: 1.1">{{p.name}}</span>
+</div>
+</sc-for>
+<div style="padding: 24px 26px; display: flex; flex-direction: column; justify-content: center; gap: 8px">
+<span style="font-size: 24px; font-weight: 700; letter-spacing: 6px; color: #9a9a9a">BUILD VIA</span>
+<span style="font-size: 40px; font-weight: 700; color: #cfcfcf">@WIILDEY</span>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#e8c25a"},"$preview":{"width":1080,"height":1920}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+accent: this.props.accent ?? '#e8c25a',
+parts: [
+{ slot: 'BARREL', name: 'VB-46 SERIES 11' },
+{ slot: 'MUZZLE', name: 'HAEBANG ORC70' },
+{ slot: 'MAGAZINE', name: '30 ROUND MAG' },
+{ slot: 'REAR GRIP', name: 'LM COMBAT GRIP' },
+{ slot: 'STOCK', name: 'EXP U-TURN STOCK' }
+]
+};
+}
+}
+</script>
+</body>
+</html>
