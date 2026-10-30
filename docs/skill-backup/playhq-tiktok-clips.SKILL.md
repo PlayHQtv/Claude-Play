@@ -143,6 +143,12 @@ Always answer the user in German. The user wants to do as little as possible him
 - 29.10.: [PLAYHQ META] DMZ build carousel (template v3). 10:00 version (9:16, hashtags too narrow) deleted by the user; 11:38 repost (still 9:16 → cut off top/bottom in TikTok) set private by the user; **final 11:52 version: 3:4, uuid <LONG_ID>** (544 views in <1 day), title "[PLAYHQ META] MW4 DMZ loadouts + build codes", cover "UPDATED OCT 2026 / DMZ META / LOADOUTS", tags `#mw4 #mw4dmz #dmz #dmztips #dmzloadout`. User: "Das passt so".
 - **Every carousel: `autoAddMusic: true` (user 30.10.: "Bei Karussell immer Metricool anweisen eine gute Musik darunter zu legen").** Music on photo carousels: Metricool only offers autoAddMusic on/off – TikTok picks the sound; no genre/energy control via API (user wish 29.10. "energetische Musik" → not possible).
 
+## TIP / MISTAKES CAROUSEL (user 30.10.: HUD-icon version "sieht Scheisse aus" -> Part-1 look approved "Das passt soweit")
+- Tip/mistake carousels ALWAYS use the Part 1 look (our best carousel): template `templates/tip-carousel/tip_render.py` + `data/<date>-<topic>.json`. Blurred dark gameplay background, red label "PLAYHQ TIP - MW4 DMZ", yellow "MISTAKE #n", white headline, real HD gameplay still in a yellow frame, two short fix lines in black boxes (white + yellow), CTA "WHICH ONE DID YOU DO?" + "Comment below". 1080x1440. Never gold-HUD line icons for tips (rejected).
+- Frames: OpusClip HD export of the matching creator clip, pick a moment where the burned-in caption matches the tip. Frames and finished slides contain third-party footage -> never in the repo; render in the scratchpad.
+- Getting private files in: workflow grab-private (encrypted URLs in grab/request.txt, clear it after). Getting them out to Cloudinary: workflow upload-bundle = encrypted tar (slides + sign-upload results) on a temporary branch tmp-upload-*; the proxy blocks deleting branches, so reset the temp branch to brand-assets afterwards (force-push) and tell the user to delete it on GitHub.
+- First use: "5 more MW4 DMZ mistakes (Part 2)" #06-#10, Sun 01.11. 18:00 (uuid <LONG_ID>).
+
 ## META BUILD CAROUSEL – complete procedure (template v3 "digital HUD", approved 29.10.2026)
 Use this for every build/loadout/"top X" carousel. Own content → no credit.
 
@@ -233,7 +239,7 @@ All open source or free without account/trial. Set up a tool only when a task ne
 - Plan as of 30.10.:
   - Fri 30.10.: 10:00 "Pay to win?" (posted); 18:00 SiNister "Fight or skip?" (uuid <LONG_ID>).
   - Sat 31.10.: 12:00 Every Apex carousel (uuid <LONG_ID>); 18:00 Waffles bank upgrade (<CLIP_ID>, uuid <LONG_ID>).
-  - Sun 01.11.: 12:00 Waffles survival kits (copy <CLIP_ID>, uuid <LONG_ID>); 18:00 open.
+  - Sun 01.11.: 12:00 Waffles survival kits (copy <CLIP_ID>, uuid <LONG_ID>); 18:00 mistakes carousel Part 2 (uuid <LONG_ID>).
 
 ## Compilations – CANCELLED (user 28.10.: "das Video ist scheisse, streiche die Idee")
 - Tested a Cloudinary fl_splice compilation "3 MW4 DMZ survival tips" from 3 creators → rejected. Don't build multi-clip compilations again unless the user asks. The 3 edited segment clips (<CLIP_ID>, <CLIP_ID>, <CLIP_ID>) are too short to post alone.
