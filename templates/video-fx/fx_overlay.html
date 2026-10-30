@@ -1,0 +1,109 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- PlayHQ animated 9:16 overlay for 16:9 clips. Rendered frame by frame with draw(t) (transparent background).
+     The video window (y 656..1264) stays transparent; ffmpeg puts the graded clip underneath. -->
+<style>
+@font-face{font-family:Anton;src:url(/assets/fonts/Anton-Regular.ttf)}
+@font-face{font-family:Raj;src:url(/assets/fonts/Rajdhani-Bold.ttf);font-weight:700}
+@font-face{font-family:Raj;src:url(/assets/fonts/Rajdhani-SemiBold.ttf);font-weight:600}
+:root{--y:#ffd400;--g1:#fff3c4;--g2:#e9c062;--g3:#a8761c;--red:#ff3b30}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:transparent}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:Raj;color:#fff}
+.band{position:absolute;left:0;right:0;overflow:hidden}
+.band.top{top:0;height:656px;background:radial-gradient(ellipse 760px 300px at 540px 100%,rgba(255,200,60,.18),transparent 70%),linear-gradient(180deg,#0d0d0c,#070707)}
+.band.bot{top:1264px;bottom:0;background:radial-gradient(ellipse 760px 300px at 540px 0%,rgba(255,200,60,.18),transparent 70%),linear-gradient(180deg,#070707,#040404)}
+.topo{position:absolute;inset:-200px;background:url(/assets/topo.png) center/1400px;opacity:.10}
+.edge{position:absolute;left:540px;width:0;height:4px;background:linear-gradient(90deg,transparent,var(--g2) 15%,var(--g1) 50%,var(--g2) 85%,transparent);box-shadow:0 0 18px rgba(255,212,0,.55)}
+.tick{position:absolute;width:52px;height:52px;border:5px solid var(--y);filter:drop-shadow(0 0 8px rgba(255,212,0,.7))}
+.hdr{position:absolute;left:60px;top:196px;display:flex;align-items:center;gap:16px}
+.cod{font-family:Anton;font-size:32px;letter-spacing:1px;color:#f3f3f3}
+.dmz{font-family:Anton;font-size:28px;color:var(--y);padding:0 12px;line-height:40px;border:1px solid rgba(255,212,0,.6);background:rgba(255,212,0,.12)}
+.logo{position:absolute;right:60px;top:172px;width:108px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+.kick{position:absolute;left:60px;top:326px;font-weight:700;font-size:34px;letter-spacing:10px;color:var(--y)}
+.h1,.h2{position:absolute;left:56px;font-family:Anton;line-height:1;letter-spacing:2px;white-space:nowrap;transform-origin:0 60%}
+.h1{top:378px;font-size:120px;color:#f2f2f2}
+.h2{top:500px;font-size:120px}
+.gold{background:linear-gradient(170deg,var(--g1) 0%,var(--g2) 38%,var(--g3) 62%,#f5d27a 84%,var(--g2) 100%);-webkit-background-clip:text;color:transparent}
+.sweep{position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.85) 50%,transparent 60%);-webkit-background-clip:text;color:transparent;background-size:300% 100%}
+.flash{position:absolute;inset:0;background:radial-gradient(ellipse 900px 700px at 540px 960px,rgba(255,236,170,.9),rgba(255,212,0,.25) 45%,transparent 75%);opacity:0;mix-blend-mode:screen}
+.prog{position:absolute;left:0;top:1264px;height:6px;width:0;background:linear-gradient(90deg,var(--g3),var(--y));box-shadow:0 0 12px rgba(255,212,0,.8)}
+.q{position:absolute;left:60px;top:1316px;font-family:Anton;font-size:88px;line-height:1;white-space:nowrap}
+.sub{position:absolute;left:64px;top:1424px;font-weight:700;font-size:32px;letter-spacing:8px;color:#bdbdbd}
+.sub b{color:var(--y);display:inline-block}
+.panel{position:absolute;left:60px;top:1300px;opacity:0}
+.panel .lbl{font-weight:700;font-size:28px;letter-spacing:8px;color:#cfcfcf}
+.pips{display:flex;gap:16px;margin-top:14px}
+.pip{width:120px;height:46px;border:3px solid rgba(255,212,0,.4);clip-path:polygon(0 0,100% 0,100% 70%,85% 100%,0 100%);background:rgba(255,212,0,.06);position:relative}
+.pip i{position:absolute;inset:0;background:linear-gradient(135deg,#ffe88f,#e9c062 50%,#b8862a);opacity:0}
+.cnt{font-family:Anton;font-size:96px;line-height:1;margin-left:28px;color:var(--y);text-shadow:0 0 24px rgba(255,212,0,.6)}
+.wanted{position:absolute;left:60px;top:1296px;opacity:0;display:flex;align-items:center;gap:26px}
+.stamp{font-family:Anton;font-size:104px;line-height:1;color:var(--red);padding:4px 26px;border:7px solid var(--red);letter-spacing:6px;transform:rotate(-4deg);text-shadow:0 0 30px rgba(255,59,48,.6);box-shadow:0 0 34px rgba(255,59,48,.35) inset}
+.stars{font-size:52px;color:var(--y);letter-spacing:6px;text-shadow:0 0 18px rgba(255,212,0,.7)}
+.wsub{position:absolute;left:64px;top:1446px;font-weight:700;font-size:30px;letter-spacing:7px;color:#e6e6e6;opacity:0}
+.ember{position:absolute;width:5px;height:5px;border-radius:50%;background:#ffd76a;box-shadow:0 0 10px 3px rgba(255,190,60,.7)}
+</style></head><body>
+<div class="band top"><div class="topo"></div></div>
+<div class="band bot"><div class="topo"></div></div>
+<div id="embers"></div>
+<div class="edge" id="e1" style="top:652px"></div><div class="edge" id="e2" style="top:1264px"></div>
+<div class="tick" id="t1" style="left:22px;top:624px;border-right:0;border-bottom:0"></div>
+<div class="tick" id="t2" style="right:22px;top:624px;border-left:0;border-bottom:0"></div>
+<div class="tick" id="t3" style="left:22px;top:1244px;border-right:0;border-top:0"></div>
+<div class="tick" id="t4" style="right:22px;top:1244px;border-left:0;border-top:0"></div>
+<div class="hdr" id="hdr"><span class="cod">CALL OF DUTY · MW4</span><span class="dmz">DMZ</span></div>
+<img class="logo" id="logo" src="/assets/logo.png">
+<div class="kick" id="kick">BOUNTY SYSTEM</div>
+<div class="h1" id="h1">4 KILLS =</div>
+<div class="h2" id="h2"><span class="gold">YOU'RE HUNTED</span><span class="sweep" id="sw">YOU'RE HUNTED</span></div>
+<div class="prog" id="prog"></div>
+<div class="q" id="q">HUNTER OR HUNTED?</div>
+<div class="sub" id="sub">COMMENT BELOW <b id="arr">↓</b></div>
+<div class="panel" id="kills"><div class="lbl">ELIMINATIONS</div><div style="display:flex;align-items:center"><div class="pips"><div class="pip"><i></i></div><div class="pip"><i></i></div><div class="pip"><i></i></div><div class="pip"><i></i></div></div><div class="cnt" id="cnt">0</div></div></div>
+<div class="wanted" id="wanted"><div class="stamp">WANTED</div><div class="stars" id="stars">★★★</div></div>
+<div class="wsub" id="wsub">BOUNTY HUNTERS ARE COMING</div>
+<div class="flash" id="fl"></div>
+<script>
+const P = window.FX || {dur:21.8, punches:[0,2.85,5.27,6.71,9.96,17.47,19.10,20.69], kills:[3.9,4.25,4.6,4.95], wanted:[6.6,10.2]};
+const $=id=>document.getElementById(id), cl=x=>Math.max(0,Math.min(1,x));
+const eo=x=>1-Math.pow(1-cl(x),3), eb=x=>{x=cl(x);const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+// embers (deterministic)
+const EM=[];let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+for(let i=0;i<34;i++){const d=document.createElement('div');d.className='ember';$('embers').appendChild(d);
+ EM.push({d,x:rnd()*1080,band:rnd()<.55?0:1,sp:30+rnd()*60,ph:rnd()*20,sz:.5+rnd()*1.1,dr:rnd()*40-20});}
+function slam(el,t0,t){const u=(t-t0)/0.32; if(t<t0){el.style.opacity=0;return}
+ el.style.opacity=cl(u*3); const s=1+1.4*(1-eb(u)); el.style.transform=`scale(${Math.max(1,s)}) translateX(${(1-eo(u))*-40}px)`;
+ el.style.filter=`blur(${(1-cl(u))*10}px)`;}
+function draw(t){
+ // edges draw from the centre, ticks pop
+ const ed=eo(t/0.6); for(const e of ['e1','e2']){$(e).style.width=(1080*ed)+'px';$(e).style.left=(540-540*ed)+'px'}
+ let pk=0; for(const p of P.punches){const u=(t-p)/0.35; if(u>=0&&u<1) pk=Math.max(pk,1-u)}
+ for(const k of ['t1','t2','t3','t4']){const b=$(k); b.style.opacity=cl((t-0.25)/0.3); b.style.transform=`scale(${1+0.35*pk})`}
+ $('hdr').style.opacity=cl((t-0.1)/0.4); $('logo').style.opacity=cl((t-0.1)/0.4);
+ $('logo').style.transform=`rotate(${(1-eo(t/0.8))*-90}deg) scale(${0.6+0.4*eo(t/0.8)})`;
+ $('kick').style.opacity=cl((t-0.55)/0.3); $('kick').style.letterSpacing=(10+14*(1-eo((t-0.55)/0.5)))+'px';
+ slam($('h1'),0.05,t); slam($('h2'),0.3,t);
+ // light sweep across the gold hook every 3 s
+ const sp=((t-0.9)%3)/0.9; $('sw').style.backgroundPosition=(t>0.9&&sp<=1? (150-sp*200):200)+'% 0';
+ // flash on every punch
+ let fl=0; for(const p of P.punches){const u=(t-p)/0.22; if(u>=0&&u<1) fl=Math.max(fl,(p==0?1:.55)*(1-u))} $('fl').style.opacity=fl;
+ $('prog').style.width=(1080*cl(t/P.dur))+'px';
+ // bottom band states: question -> kill counter -> WANTED -> question (pulse at the end)
+ const k0=P.kills[0]-0.35, k1=P.wanted[0], w1=P.wanted[1];
+ const showQ = t<k0 || t>w1;
+ const qIn = t<k0 ? eo((t-0.9)/0.4) : eo((t-w1)/0.4);
+ const qOut = t<k0 ? 1-cl((t-(k0-0.2))/0.2) : 1;
+ const pulse = t>P.dur-2.6 ? 1+0.06*Math.sin((t-(P.dur-2.6))*9) : 1;
+ for(const id of ['q','sub']){const e=$(id); e.style.opacity=showQ?qIn*qOut:0; e.style.transform=`translateY(${(1-qIn)*40}px) scale(${id=='q'?pulse:1})`; e.style.transformOrigin='0 50%'}
+ $('arr').style.transform=`translateY(${Math.abs(Math.sin(t*5))*10}px)`;
+ const kp=$('kills'); const kIn=eo((t-k0)/0.3), kOut=1-cl((t-(k1-0.15))/0.2); kp.style.opacity=(t>=k0&&t<k1)?kIn*kOut:0; kp.style.transform=`translateX(${(1-kIn)*-60}px)`;
+ const pips=kp.querySelectorAll('.pip i'); let n=0; P.kills.forEach((kt,i)=>{const u=(t-kt)/0.18; pips[i].style.opacity=cl(u); if(t>=kt)n=i+1});
+ $('cnt').textContent=n; $('cnt').style.transform=`scale(${1+0.4*Math.max(0,...P.kills.map(kt=>{const u=(t-kt)/0.25;return u>=0&&u<1?1-u:0}))})`;
+ const w=$('wanted'), wIn=(t-k1)/0.3, wOut=1-cl((t-(w1-0.25))/0.25);
+ w.style.opacity=(t>=k1&&t<w1)?cl(wIn*2)*wOut:0; w.style.transform=`scale(${t>=k1?1+1.2*(1-eb(wIn)):1})`; w.style.transformOrigin='20% 50%';
+ $('stars').style.opacity=0.55+0.45*Math.abs(Math.sin(t*6));
+ $('wsub').style.opacity=(t>=k1+0.35&&t<w1)?cl((t-k1-0.35)/0.3)*wOut:0;
+ for(const e of EM){const y0=e.band==0?600:1900, h=e.band==0?560:620; const y=y0-((t*e.sp+e.ph*40)%h);
+  e.d.style.transform=`translate(${e.x+Math.sin(t*0.8+e.ph)*e.dr}px,${y}px) scale(${e.sz})`; e.d.style.opacity=0.25+0.5*Math.abs(Math.sin(t*1.3+e.ph))*cl(t/0.8)}
+}
+document.fonts.ready.then(()=>{draw(0);document.body.dataset.ready=1});
+</script></body></html>
