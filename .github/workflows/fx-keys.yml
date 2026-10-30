@@ -1,0 +1,23 @@
+name: fx-keys
+# One-time: creates an RSA key pair. Public key -> fx/pubkey.pem (committed). Private key -> asset of the
+# DRAFT release "grab-private" (visible to repo collaborators only). Used to encrypt signed upload params
+# (they contain account metadata) before they go into the public repo.
+on:
+  push:
+    branches: [brand-assets]
+    paths: [fx/keys.request]
+permissions:
+  contents: write
+jobs:
+  keys:
+    runs-on: ubuntu-latest
+    env: {GH_TOKEN: "${{ github.token }}"}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out /tmp/fx_private.pem
+          openssl pkey -in /tmp/fx_private.pem -pubout -out fx/pubkey.pem
+          gh release view grab-private >/dev/null 2>&1 || gh release create grab-private --draft --title grab-private --notes "temporary, private draft" --target brand-assets
+          gh release upload grab-private /tmp/fx_private.pem --clobber
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fx/pubkey.pem && git commit -m "fx public key" && git push

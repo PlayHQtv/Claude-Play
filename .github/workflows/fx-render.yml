@@ -1,6 +1,6 @@
 name: fx-render
 # Renders a PlayHQ FX video on the runner and uploads it straight to Cloudinary with signed params.
-# Job file fx/jobs/<name>.json: {"src_url":..., "fx":{punches,kills,wanted}, "upload":{"host","cloud_name","api_key","signature","upload_params":{...}}}
+# Job file fx/jobs/<name>.json: {"src_url":..., "fx":{punches,kills,wanted}, "key_enc": b64(RSA-OAEP(aes key)), "upload_enc": b64(aes-256-cbc pbkdf2 of the sign-upload result)}
 # The source clip and the result are never committed (third-party footage). Logs go to fx/logs/<name>.txt.
 on:
   push:
@@ -12,6 +12,7 @@ jobs:
   render:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    env: {GH_TOKEN: "${{ github.token }}"}
     steps:
       - uses: actions/checkout@v4
         with: {fetch-depth: 2}
@@ -22,6 +23,7 @@ jobs:
       - name: Render + upload
         run: |
           mkdir -p fx/logs
+          gh release download grab-private -p fx_private.pem -D /tmp --clobber
           for job in $(git diff --name-only HEAD~1 HEAD -- 'fx/jobs/*.json'); do
             name=$(basename "$job" .json); log="fx/logs/$name.txt"
             {
@@ -32,9 +34,12 @@ jobs:
               python templates/video-fx/render_fx.py /tmp/src.mp4 /tmp/out.mp4 /tmp/fx.json
               ffprobe -v error -show_entries format=duration,size:stream=width,height -of compact /tmp/out.mp4
               ffmpeg -i /tmp/out.mp4 -af ebur128=framelog=quiet -f null - 2>&1 | grep -E " I:" | tail -1
-              host=$(jq -r .upload.host "$job"); cloud=$(jq -r .upload.cloud_name "$job")
-              args=(-F "file=@/tmp/out.mp4" -F "api_key=$(jq -r .upload.api_key "$job")" -F "signature=$(jq -r .upload.signature "$job")")
-              for k in $(jq -r '.upload.upload_params | keys[]' "$job"); do args+=(-F "$k=$(jq -r --arg k "$k" '.upload.upload_params[$k]|tostring' "$job")"); done
+              jq -r .key_enc "$job" | base64 -d > /tmp/k.enc
+              openssl pkeyutl -decrypt -inkey /tmp/fx_private.pem -pkeyopt rsa_padding_mode:oaep -in /tmp/k.enc -out /tmp/k.bin
+              jq -r .upload_enc "$job" | base64 -d | openssl enc -d -aes-256-cbc -pbkdf2 -pass file:/tmp/k.bin > /tmp/up.json
+              host=$(jq -r .host /tmp/up.json); cloud=$(jq -r .cloud_name /tmp/up.json)
+              args=(-F "file=@/tmp/out.mp4" -F "api_key=$(jq -r .api_key /tmp/up.json)" -F "signature=$(jq -r .signature /tmp/up.json)")
+              for k in $(jq -r '.upload_params | keys[]' /tmp/up.json); do args+=(-F "$k=$(jq -r --arg k "$k" '.upload_params[$k]|tostring' /tmp/up.json)"); done
               curl -sS "https://$host/v1_1/$cloud/video/upload" "${args[@]}" | jq -c '{public_id,version,bytes,width,height,secure_url,error}'
             } > "$log" 2>&1 || echo "FAILED" >> "$log"
           done
