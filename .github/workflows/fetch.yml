@@ -19,8 +19,11 @@ jobs:
             [ -z "$target" ] && continue
             case "$target" in \#*) continue;; esac
             mkdir -p "$(dirname "$target")"
-            curl -fsSL -A "Mozilla/5.0" -o "$target" "$url"
-            echo "fetched $target ($(stat -c%s "$target") bytes)"
+            if curl -fsSL -A "Mozilla/5.0" -o "$target" "$url"; then
+              echo "fetched $target ($(stat -c%s "$target") bytes)"
+            else
+              echo "FAILED $target"; rm -f "$target"
+            fi
           done < fetch/urls.txt
       - name: Commit
         run: |
