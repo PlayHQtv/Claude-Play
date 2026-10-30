@@ -1,0 +1,17 @@
+name: grab-private
+# Downloads a URL on the runner and returns it as a short-lived workflow ARTIFACT (never committed to the public repo).
+on:
+  workflow_dispatch:
+    inputs:
+      url: {description: "source URL", required: true}
+      name: {description: "file name", required: true}
+jobs:
+  grab:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsSL -A "Mozilla/5.0" -o "${{ inputs.name }}" "${{ inputs.url }}" && ls -la
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.name }}
+          path: ${{ inputs.name }}
+          retention-days: 1
