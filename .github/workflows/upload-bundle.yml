@@ -1,0 +1,35 @@
+name: upload-bundle
+# Uploads finished media (e.g. carousel slides with third-party frames) to Cloudinary without ever storing them readable on GitHub.
+# Push to a TEMPORARY branch "tmp-upload-*": bundle/key.enc (RSA-OAEP, fx/pubkey.pem) + bundle/data.enc (AES-256-CBC pbkdf2 of a tar
+# with the files + signed.json = list of Cloudinary sign-upload results, file name = basename(public_id) + ".jpg").
+# Writes bundle/log.txt (public_id, version, bytes, size - no URLs, no account data). Delete the branch afterwards.
+on:
+  push:
+    branches: ['tmp-upload-*']
+    paths: ['bundle/data.enc']
+permissions:
+  contents: write
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.forced }}
+    env: {GH_TOKEN: "${{ github.token }}"}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decrypt + upload
+        run: |
+          gh release download grab-private -p fx_key_v2.pem -D /tmp --clobber
+          openssl pkeyutl -decrypt -inkey /tmp/fx_key_v2.pem -pkeyopt rsa_padding_mode:oaep -in bundle/key.enc -out /tmp/k.bin
+          mkdir /tmp/b && openssl enc -d -aes-256-cbc -pbkdf2 -pass file:/tmp/k.bin -in bundle/data.enc | tar -x -C /tmp/b
+          n=$(jq length /tmp/b/signed.json); : > bundle/log.txt
+          for i in $(seq 0 $((n-1))); do
+            jq ".[$i]" /tmp/b/signed.json > /tmp/up.json
+            pid=$(jq -r .upload_params.public_id /tmp/up.json); f="/tmp/b/$(basename "$pid").jpg"
+            host=$(jq -r .host /tmp/up.json); cloud=$(jq -r .cloud_name /tmp/up.json)
+            args=(-F "file=@$f" -F "api_key=$(jq -r .api_key /tmp/up.json)" -F "signature=$(jq -r .signature /tmp/up.json)")
+            for k in $(jq -r '.upload_params | keys[]' /tmp/up.json); do args+=(-F "$k=$(jq -r --arg k "$k" '.upload_params[$k]|tostring' /tmp/up.json)"); done
+            curl -sS "https://$host/v1_1/$cloud/image/upload" "${args[@]}" | jq -c '{public_id,version,bytes,width,height,err:.error.message}' >> bundle/log.txt
+          done
+          cat bundle/log.txt
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bundle/log.txt && git commit -m "upload log" && git push
