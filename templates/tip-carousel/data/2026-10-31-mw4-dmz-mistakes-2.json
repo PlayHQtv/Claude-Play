@@ -1,0 +1,33 @@
+{
+  "label": "PLAYHQ TIP - MW4 DMZ",
+  "cover": {
+    "frame": "f_cover.jpg",
+    "line1": "5 MORE MW4 DMZ",
+    "line2": "MISTAKES",
+    "sub": "PART 2 - STILL COSTING YOU LOOT",
+    "swipe": "SWIPE >>"
+  },
+  "tips": [
+    {"n": 6, "frame": "f06.jpg", "title": "SELLING ALL VALUABLES",
+     "fix1": "Track your recipes first", "fix2": "upgrades need valuables!"},
+    {"n": 7, "frame": "f07.jpg", "title": "NEVER ZOOMING THE MAP",
+     "fix1": "Zoom in on the tac map", "fix2": "to spot smaller locations!"},
+    {"n": 8, "frame": "f08.jpg", "title": "FORCING A BAD OP",
+     "fix1": "Hate your Dynamic Op?", "fix2": "Vote to cancel it on the map!"},
+    {"n": 9, "frame": "f09.jpg", "title": "FIGHTING THE HELI IN THE OPEN",
+     "fix1": "Fight it near a SAM site", "fix2": "first kill pays up to $50K!"},
+    {"n": 10, "frame": "f10.jpg", "title": "SKIPPING FREE BLUEPRINTS",
+     "fix1": "Gunsmith > Buy New Weapon", "fix2": "your first copy is FREE!"}
+  ],
+  "cta": {
+    "frame": "f_cta.jpg",
+    "line1": "WHICH ONE",
+    "line2": "DID YOU DO?",
+    "comment": "Comment below",
+    "follow": "Follow for daily game tips",
+    "part1": "Part 1 is on our profile",
+    "credit": "Tips from MrRoflWaffles"
+  },
+  "frames_from": "MrRoflWaffles DMZ beginner guide (OpusClip project, HD exports) - frames are NOT stored in the repo",
+  "facts": "same verified claims as templates/meta-carousel/data/2026-10-31-mw4-dmz-mistakes-2.json (verifier 2026-10-30)"
+}
