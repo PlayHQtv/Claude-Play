@@ -2,6 +2,7 @@
 
 Rule: only permanently free tools. That means open source, or a free tier that allows commercial use. No trials, no subscriptions, no credit card.
 "Status" says whether a tool is already set up in this repo.
+**Priority rule (user 30.10.: "Nutze die Tools nur wenn Opus es nicht schafft"):** OpusClip comes first for clipping, captions, highlights and editing. Use the GitHub tools only when OpusClip cannot do the job (e.g. keyword colour not changeable, a source below 1080p, music/sound check).
 
 | Tool | What it does for us | License | Where it runs | Status |
 |---|---|---|---|---|
