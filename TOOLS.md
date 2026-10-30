@@ -20,6 +20,12 @@ Rule: only permanently free tools. That means open source, or a free tier that a
 | Remotion | Animated video templates in React | free for individuals / teams of ≤3 | GitHub Action (Node) | later |
 | Piper | Fast TTS, also German | MIT/GPL | GitHub Action | backup to Kokoro |
 | Stable Audio Open Small | Text → music / SFX | Stability Community (free < $1M revenue), needs a free HF account | GitHub Action | alternative |
+| **karaoke-subs** (github.com/DorXmoon/karaoke-subs) | TikTok-style word-by-word highlight captions (.ass) from Whisper timestamps. We pick the colours ourselves (PlayHQ yellow), which fixes the OpusClip highlight problem | MIT | GitHub Action (+ faster-whisper) | candidate (30.10.) |
+| **RIFE** (hzwer/ECCV2022-RIFE, rife-ncnn-vulkan) | Frame interpolation: smooth slow motion for kill and clutch moments ("8K edit" look) | MIT | GitHub Action (CPU slow) | candidate (30.10.) |
+| **Video2X 6** (k4yt3x/video2x) | Video upscaling (Real-ESRGAN / Real-CUGAN) + frame interpolation (RIFE) in one tool, for the 1080p quality rule on blurry sources | AGPL-3.0 (OK, used internally only) | GitHub Action, needs Vulkan (CPU fallback slow) | candidate (30.10.) |
+| **earshot** (github.com/Leonxlnx/earshot) | Lets me "hear" audio: describes and rates music/sound, LUFS, best moments in long recordings, sound check of finished videos, 201 self-generated SFX (whoosh/hit) | MIT (check model licenses first) | GitHub Action (CPU, ~1.1 GB models); do NOT use the optional Gemini critique (Google) | later (user 30.10.: "Ja") |
+| youtube-shorts-generator (kakha13) | Reference for -14 LUFS normalisation + word-level captions + quote-anchored highlight timestamps | MIT | – | idea source only |
+| Gaming highlight detection: video-highlight-detection (rfypych, MIT, very new), Highlights-Clip-Generator (agnibha-paul, audio + Whisper), VideoHighlighter (Aseiel, AGPL, mature) | Finds kills, clutches and hype moments in long gameplay (audio peaks, OCR, motion) | see repo | GitHub Action | noted only (OpusClip covers this; like PySceneDetect) |
 | Pixabay Music | Royalty-free tracks, commercial use OK | Pixabay Content License | the user downloads them (blocked for bots) | in use (parked route) |
 
 ## MCP connectors
