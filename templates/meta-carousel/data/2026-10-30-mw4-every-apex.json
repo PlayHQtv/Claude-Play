@@ -29,7 +29,7 @@
    "apex": "Han X20 Skybreaker",
    "cls": "ASSAULT RIFLE",
    "level": 72,
-   "effect": "Targeting optic + airburst launcher that hits behind cover",
+   "effect": "Targeting optic + 20mm airburst launcher that flushes cover",
    "official": "This advanced weapon system comes equipped with a specialized targeting optic and airburst launcher. The Han X20 Skybreaker dials into a precise area within range and fires a 20mm airburst shell, which detonates in the air on target with devastating results. Highly effective at flushing cover. Direct impacts will result in a dud. Blocks Optic, Stock, and Barrel Attachments.",
    "image": "mw4/a_Han_86.png"
   },
@@ -89,7 +89,7 @@
    "apex": "Axion Clearcut",
    "cls": "ASSAULT RIFLE",
    "level": 69,
-   "effect": "Chainsaw rear grip built for hipfire and canted aim",
+   "effect": "Chainsaw grip for hipfire + canted aim (aka Axion Reaver)",
    "official": "Built for fast-paced assaults, this conversion replaces the stock and pistol grip with a specialized chainsaw rear grip configuration. A handlebar foregrip, hip laser, and canted aiming system improve responsiveness for highly mobile, hipfire-focused gameplay. Blocks Optic, Laser, Underbarrel, Stock, and Rear Grip Attachments.",
    "image": "mw4/w_Axion.png"
   },

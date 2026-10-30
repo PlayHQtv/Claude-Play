@@ -87,7 +87,7 @@ def main(data_path, out_dir=None):
     for k in range(0, len(items), 4):
         grp = items[k:k + 4]
         classes = list(dict.fromkeys(TITLES[i['cls']] for i in grp))
-        title = ' + '.join(classes) if len(classes) <= 2 else ' · '.join(classes)
+        title = ' + '.join(classes)
         sub = f'EVERY APEX IN MW4 · {grp[0]["n"]:02d}–{grp[-1]["n"]:02d} OF 28'
         pages.append((f'{len(pages) + 1:02d}_apex_{grp[0]["n"]:02d}', list_slide(grp, title, sub, d)))
     pages.append((f'{len(pages) + 1:02d}_cta', cta_slide(d)))
