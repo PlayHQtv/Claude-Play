@@ -1,3 +1,4 @@
 templates/meta-carousel/models/
 templates/meta-carousel/_build/
 __pycache__/
+templates/meta-carousel/out/video/
