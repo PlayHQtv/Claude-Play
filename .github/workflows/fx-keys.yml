@@ -21,7 +21,7 @@ jobs:
           openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out /tmp/fx_private.pem
           openssl pkey -in /tmp/fx_private.pem -pubout -out fx/pubkey.pem
           gh release list --limit 20 || true
-          gh release upload grab-private /tmp/fx_private.pem --clobber || (gh release create grab-private --draft --title grab-private --notes "temporary, private draft" && gh release upload grab-private /tmp/fx_private.pem --clobber)
+          gh release upload grab-private /tmp/fx_private.pem /tmp/fx_key_v2.pem 2>/dev/null; cp /tmp/fx_private.pem /tmp/fx_key_v2.pem; gh release upload grab-private /tmp/fx_key_v2.pem
           echo "upload rc=$?"
           } > fx/keys.log 2>&1 || true
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

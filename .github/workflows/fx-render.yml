@@ -23,7 +23,7 @@ jobs:
       - name: Render + upload
         run: |
           mkdir -p fx/logs
-          gh release download grab-private -p fx_private.pem -D /tmp --clobber
+          gh release download grab-private -p fx_key_v2.pem -D /tmp --clobber && mv /tmp/fx_key_v2.pem /tmp/fx_private.pem
           for job in $(git diff --name-only HEAD~1 HEAD -- 'fx/jobs/*.json'); do
             name=$(basename "$job" .json); log="fx/logs/$name.txt"
             {
