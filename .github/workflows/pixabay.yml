@@ -11,6 +11,7 @@ permissions:
 jobs:
   dl:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'push' || !github.event.forced }}
     steps:
       - uses: actions/checkout@v4
       - name: Download

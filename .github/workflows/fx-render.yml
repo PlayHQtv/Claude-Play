@@ -11,6 +11,7 @@ permissions:
 jobs:
   render:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'push' || !github.event.forced }}
     timeout-minutes: 40
     env: {GH_TOKEN: "${{ github.token }}"}
     steps:

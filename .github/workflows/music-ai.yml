@@ -11,6 +11,7 @@ permissions:
 jobs:
   gen:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'push' || !github.event.forced }}
     timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4

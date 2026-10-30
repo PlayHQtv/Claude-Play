@@ -11,6 +11,7 @@ permissions:
 jobs:
   keys:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'push' || !github.event.forced }}
     env: {GH_TOKEN: "${{ github.token }}"}
     steps:
       - uses: actions/checkout@v4
