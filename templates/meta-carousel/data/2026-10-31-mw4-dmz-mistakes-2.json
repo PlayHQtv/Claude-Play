@@ -1,0 +1,73 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "DMZ",
+  "series": "PART 2",
+  "cover": {
+    "kicker": "PART 2 · BEGINNER GUIDE",
+    "big": "5 MORE",
+    "small": "MW4 DMZ MISTAKES",
+    "sub": "STILL COSTING YOU CASH + LOOT",
+    "swipe": "SWIPE TO FIX THEM ›"
+  },
+  "mistakes": [
+    {
+      "n": 6,
+      "icon": "gem",
+      "short": "SELLING VALUABLES",
+      "title_white": "SELLING EVERY",
+      "title_gold": "VALUABLE",
+      "dont": "Selling every gem-icon valuable the moment you extract.",
+      "do": "Some 3D Printer upgrades need valuables. Track the recipe first, then sell only what you don't need.",
+      "src": "dmzcodex 3D printer guide; modernwarfare.wiki crafting guide; metaradar money guide; Waffles 9:21"
+    },
+    {
+      "n": 7,
+      "icon": "map",
+      "short": "NEVER ZOOMING THE MAP",
+      "title_white": "NEVER ZOOMING",
+      "title_gold": "THE MAP",
+      "dont": "Opening the tac map and only checking the full view.",
+      "do": "Zoom in on your area. Smaller locations and icons are much easier to spot up close.",
+      "src": "callofduty.com Hajin deep dive (tac map zoom); codcentral map guide (minor locations show when zoomed); Waffles 18:13"
+    },
+    {
+      "n": 8,
+      "icon": "phone",
+      "short": "FORCING A BAD OP",
+      "title_white": "FORCING AN OP",
+      "title_gold": "YOU HATE",
+      "dont": "Wasting the whole match on a Dynamic Op you can't finish.",
+      "do": "Vote to cancel it on the tac map, then grab a better op.",
+      "src": "callofduty.com Hajin deep dive (cancel your current Op on the tac map); codcentral dynamic ops (vote to cancel); Waffles 17:52"
+    },
+    {
+      "n": 9,
+      "icon": "heli",
+      "short": "HELI IN THE OPEN",
+      "title_white": "FIGHTING THE",
+      "title_gold": "HELI IN THE OPEN",
+      "dont": "Tanking the Deathstalker's dual machine guns out in the open.",
+      "do": "Pull it over a SAM site and capture it. The launcher shoots it down. First kill pays up to $50K.",
+      "src": "callofduty.com FOB deep dive (Deathstalker, first-kill cash); callofduty.com Hajin deep dive (SAM vs Deathstalker); allthings.how Deathstalker guide ($50,000 bounty); Waffles 12:55"
+    },
+    {
+      "n": 10,
+      "icon": "blueprint",
+      "short": "IGNORING BLUEPRINTS",
+      "title_white": "IGNORING FREE",
+      "title_gold": "BLUEPRINTS",
+      "dont": "Paying for guns while your blueprints sit unused.",
+      "do": "Gunsmith (DMZ level 10) › Buy New Weapon › Blueprints. Your first copy of each blueprint you own is FREE.",
+      "src": "allthings.how blueprints guide (first copy free, level 10); metaradar money guide; Waffles 15:29"
+    }
+  ],
+  "cta": {
+    "white": "WHICH ONE",
+    "gold": "DID YOU DO?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "PART 1 IS ON OUR PROFILE"
+  },
+  "credit": "Tips: @MrRoflWaffles (DMZ beginner guide), cross-checked 30.10.2026",
+  "source": "callofduty.com DMZ deep dives (Oct 2026), allthings.how, codcentral.net, dmzcodex.com, metaradar.gg, modernwarfare.wiki; checked 2026-10-30",
+  "verified": "independent verifier 2026-10-30: fixes applied (zoom wording, no 'one op at a time', $50K as 'up to', owned blueprints)"
+}
