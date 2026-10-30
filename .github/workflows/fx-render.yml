@@ -1,0 +1,42 @@
+name: fx-render
+# Renders a PlayHQ FX video on the runner and uploads it straight to Cloudinary with signed params.
+# Job file fx/jobs/<name>.json: {"src_url":..., "fx":{punches,kills,wanted}, "upload":{"host","cloud_name","api_key","signature","upload_params":{...}}}
+# The source clip and the result are never committed (third-party footage). Logs go to fx/logs/<name>.txt.
+on:
+  push:
+    branches: [brand-assets]
+    paths: ['fx/jobs/*.json']
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - name: Setup
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg jq >/dev/null
+          pip install -q playwright pillow && python -m playwright install --with-deps chromium >/dev/null
+      - name: Render + upload
+        run: |
+          mkdir -p fx/logs
+          for job in $(git diff --name-only HEAD~1 HEAD -- 'fx/jobs/*.json'); do
+            name=$(basename "$job" .json); log="fx/logs/$name.txt"
+            {
+              echo "job $name $(date -u)"
+              jq '.fx' "$job" > /tmp/fx.json
+              curl -fsSL -A "Mozilla/5.0" -o /tmp/src.mp4 "$(jq -r .src_url "$job")"
+              ffprobe -v error -show_entries format=duration:stream=width,height -of compact /tmp/src.mp4
+              python templates/video-fx/render_fx.py /tmp/src.mp4 /tmp/out.mp4 /tmp/fx.json
+              ffprobe -v error -show_entries format=duration,size:stream=width,height -of compact /tmp/out.mp4
+              ffmpeg -i /tmp/out.mp4 -af ebur128=framelog=quiet -f null - 2>&1 | grep -E " I:" | tail -1
+              host=$(jq -r .upload.host "$job"); cloud=$(jq -r .upload.cloud_name "$job")
+              args=(-F "file=@/tmp/out.mp4" -F "api_key=$(jq -r .upload.api_key "$job")" -F "signature=$(jq -r .upload.signature "$job")")
+              for k in $(jq -r '.upload.upload_params | keys[]' "$job"); do args+=(-F "$k=$(jq -r --arg k "$k" '.upload.upload_params[$k]|tostring' "$job")"); done
+              curl -sS "https://$host/v1_1/$cloud/video/upload" "${args[@]}" | jq -c '{public_id,version,bytes,width,height,secure_url,error}'
+            } > "$log" 2>&1 || echo "FAILED" >> "$log"
+          done
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fx/logs && git commit -m "fx-render logs" && git push || true
