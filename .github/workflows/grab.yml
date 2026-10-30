@@ -1,21 +1,23 @@
 name: grab-private
-# Downloads every "<name> <url>" line in grab/request.txt on the runner and returns the files as a
-# short-lived workflow ARTIFACT (retention 1 day). Nothing is committed to the public repo.
+# Downloads every "<name> <url>" line in grab/request.txt on the runner and attaches the files to a
+# DRAFT release "grab-private" (drafts are only visible to repo collaborators). Nothing is committed.
+# Delete the assets after use (gh release delete-asset grab-private <name>).
 on:
   push:
     branches: [brand-assets]
     paths: [grab/request.txt]
+permissions:
+  contents: write
 jobs:
   grab:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - run: |
           mkdir out
           while read -r name url; do [ -z "$name" ] && continue; curl -fsSL -A "Mozilla/5.0" -o "out/$name" "$url" && echo "ok $name"; done < grab/request.txt
           ls -la out
-      - uses: actions/upload-artifact@v4
-        with:
-          name: grab
-          path: out
-          retention-days: 1
+          gh release view grab-private >/dev/null 2>&1 || gh release create grab-private --draft --title grab-private --notes "temporary, private draft" --target brand-assets
+          gh release upload grab-private out/* --clobber
