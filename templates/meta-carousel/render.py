@@ -123,7 +123,7 @@ def weapon_slide(w, d):
             + f'<div class="rank"><small>{E(d.get("rank_label", "META RANK"))}</small><strong>#{w["rank"]}</strong></div>'
             + '<div class="floor" style="top:826px"></div><div class="line" style="top:843px"></div>'
             + f'<div class="gunbox" style="top:520px;height:320px;width:900px"><img class="gun" style="max-height:290px;max-width:860px;filter:drop-shadow(0 40px 30px rgba(0,0,0,.85)) drop-shadow(0 0 2px rgba(255,220,140,.35)) brightness({br}) contrast(1.08)" src="/weapons/{w["image"]}"></div>'
-            + f'<div class="hdr hud"><span>ATTACHMENTS</span><div class="ticks"><i style="width:60px"></i><div style="text-align:right;line-height:1.1"><small style="display:block;font-size:14px;letter-spacing:4px;color:#bdbdbd;font-weight:700">BUILD CODE</small><em style="font-size:19px;letter-spacing:4px">{E(w.get("build_code", ""))}</em></div></div></div>'
+            + f'<div class="hdr hud"><span>ATTACHMENTS</span><div class="ticks"><i style="width:60px"></i><div style="text-align:right;line-height:1.1"><small style="display:block;font-size:14px;letter-spacing:4px;color:#bdbdbd;font-weight:700">{E(w.get("code_label", "BUILD CODE"))}</small><em style="font-size:19px;letter-spacing:4px">{E(w.get("build_code", ""))}</em></div></div></div>'
             + f'<div class="grid">{tiles}</div>')
     return page(body, {**d, 'footer': ''})
 

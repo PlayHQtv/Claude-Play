@@ -1,0 +1,63 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "UPDATED OCT 2026",
+    "big": "BEST PPSH-41",
+    "small": "BUILD MW4",
+    "sub": "4 MULTIPLAYER BUILDS",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "mw4/w_PPSh41.png"
+  },
+  "cta": {
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META"
+  },
+  "weapons": [
+    {"rank": 1, "image": "mw4/w_PPSh41.png", "short": "RECOIL CONTROL", "title_white": "PPSH-41", "title_gold": "",
+     "class": "SMG", "class_note": "Recoil control", "tagline": "LASER BEAM BUILD", "brightness": 1.2,
+     "code_label": "PLAYHQ BUILD", "build_code": "TOP PICKS OF 5 SITES",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "FTAC SILENT RECON"},
+       {"type": "barrel", "label": "BARREL", "name": "HANBIT RDR-TIGER 50"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS FIRELINE GRIP"},
+       {"type": "stock", "label": "STOCK", "name": "HANBIT RDW7-F"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"}],
+     "sources": "muzzle: codmunity DMZ, wzstats, esports.gg; barrel: game8, codmunity DMZ, gamerant; grip: codmunity, game8, gamerant; stock: game8, gamerant; laser: codmunity, game8, wzstats, esports.gg. Barrel+grip+stock+laser together in game8 Standard; muzzle+barrel+grip+laser together in codmunity DMZ Close Range"},
+    {"rank": 2, "image": "mw4/w_PPSh41.png", "short": "ALL-ROUND", "title_white": "PPSH-41", "title_gold": "",
+     "class": "SMG", "class_note": "Versatile build", "tagline": "#1 BUILD ON CODMUNITY", "brightness": 1.2,
+     "build_code": "S05-AXLC6-PI4N1-1",
+     "attachments": [
+       {"type": "barrel", "label": "BARREL", "name": "HANBIT CHIMMUK-INTR"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"},
+       {"type": "optic", "label": "OPTIC", "name": "ZLR TYPE C"},
+       {"type": "stock", "label": "STOCK", "name": "HANBIT JANGGUN-H9"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS FIRELINE GRIP"}],
+     "sources": "codmunity Multiplayer Versatile (#1), code S05-AXLC6-PI4N1-1"},
+    {"rank": 3, "image": "mw4/w_PPSh41.png", "short": "BIG MAG", "title_white": "PPSH-41", "title_gold": "",
+     "class": "SMG", "class_note": "Big mag build", "tagline": "53 ROUNDS, FEWER RELOADS", "brightness": 1.2,
+     "code_label": "SAME BUILD ON", "build_code": "WZSTATS + ESPORTS.GG",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "FTAC SILENT RECON"},
+       {"type": "barrel", "label": "BARREL", "name": "HANBIT RDR-TIGER 50-XL"},
+       {"type": "magazine", "label": "MAGAZINE", "name": "53 ROUND MAG"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"},
+       {"type": "ammo", "label": "AMMUNITION", "name": "7.62 TOKAREV FRANGIBLE"}],
+     "sources": "wzstats MW4 Multiplayer Versatile (updated 23.10.) and esports.gg (21.10.) list exactly these 5"},
+    {"rank": 4, "image": "mw4/w_PPSh41.png", "short": "APEX EMBER", "title_white": "PPSH-41", "title_gold": "",
+     "class": "SMG", "class_note": "Apex build", "tagline": "INCENDIARY UNDERBARREL", "brightness": 1.2,
+     "build_code": "S05-43QMD-FVW9D-9311", "apex": "PPSH-41 EMBER",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "FTAC SILENT RECON"},
+       {"type": "laser", "label": "LASER", "name": "XRK CLUTCH-LS"},
+       {"type": "optic", "label": "OPTIC", "name": "ZLR TYPE C"},
+       {"type": "stock", "label": "STOCK", "name": "HANBIT JANGGUN-H9"},
+       {"type": "ammo", "label": "AMMUNITION", "name": "7.62 TOKAREV OVERPRESSURED"}],
+     "sources": "codmunity Multiplayer Apex Attachment, code S05-43QMD-FVW9D-9311; game8: Ember = underbarrel incendiary launcher, fixed 53 round mag, blocks barrel/underbarrel/magazine (consistent: build has none of those)"}
+  ],
+  "source": "codmunity.gg/weapon/mw4/ppsh-41 (23.10.2026), game8 PPSh-41 (23.10.), wzstats ppsh-41-mw4 (23.10.), esports.gg (21.10.), gamerant (26.10.); fetched 30.10.2026",
+  "notes": "PPSh-41 MP pick rate 3.4% (codmunity, 30.10.) -> no '#1 meta' claims. Build 1 is our own mix of the most-cited parts, so it has no official code."
+}
