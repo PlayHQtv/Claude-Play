@@ -107,6 +107,33 @@ Always answer the user in German. The user wants to do as little as possible him
 - OpusClip API limitation (30.10.): `set_style highlightColor` did NOT change the rendered colour on the 30.10. clips <CLIP_ID> / <CLIP_ID>. The keyword colour stayed green, even after toggling highlight off and on and re-exporting. Some clips are yellow already (Waffles project, bounty). If yellow is needed, the user changes it in the OpusClip editor. User said "alles ok" with green for those two. Cloudinary `e_replace_color` does not work on video.
 - Overlays in general (also 9:16 clips): few, short (≤1.2 s), small (short text = small box), never over the action. This replaces the 2-stage hook overlay rule for 16:9 clips.
 
+## PLAYHQ FX VIDEO (user 30.10.: "Das sieht schonmal sehr gut aus"; "Alles andere immer vor den relevanten Postings durchführen sofern passend und überprüfen auf Fehler"; sound: "Punkt 1 lassen" = keep the impact + whoosh)
+- **When:** before every relevant post with a strong 16:9 clip (STOP/DON'T/mistake hooks, action; mostly Mon–Wed). Calm menu or tip clips keep the static VIDEO FRAME. OpusClip stays first for clipping and captions; FX are the part OpusClip can't do.
+- **Template** `templates/video-fx/`:
+  - `fx_overlay.html` – animated PlayHQ overlay:
+    - hook slams in with blur + gold flash; logo spins in; edges draw from the centre;
+    - corner ticks pulse on punches; gold light sweep over the hook every 3 s; embers; progress bar;
+    - bottom band runs through states: question → kill counter → red WANTED stamp → question pulsing at the end.
+  - `render_fx.py <src> <out> [fx.json]` does the video part:
+    - zoom punch 1.14 + shake 0.35 s on each punch;
+    - grade: contrast 1.10, saturation 1.16, mild warm balance (v1 made skies purple – avoid), unsharp, 12 % glow, vignette;
+    - 30 fps, crf 16; audio loudnorm −14 LUFS plus a self-made low impact + whoosh on the hook.
+- **Per clip:**
+  - Set `fx.json` = punches (s), kills (s), wanted [start, end] from scene cuts (`ffmpeg select='gt(scene,0.25)'`) + a 1 fps contact sheet of the captions/keywords.
+  - Adapt or remove the clip-specific panels (kill counter, WANTED) in the HTML texts for other topics.
+- **Production path** (nothing third-party or account-related in the public repo):
+  1. `python3 tools/secure.py "<HD export URL>"` → encrypted `src_url`. Sign the upload with Cloudinary sign-upload (public_id `playhq/work/<slot>_fx`).
+  2. `python3 templates/video-fx/make_job.py <name> <enc src_url> <signed.json kept OUTSIDE the repo> [fx.json]` → `fx/jobs/<name>.json` (the upload params are encrypted: they contain account metadata incl. the e-mail).
+  3. Push → workflow `fx-render` renders on the runner (~15 min incl. setup) and uploads straight to Cloudinary. Tested 30.10.: 1080×1920, 17 MB.
+  4. QA: frames via Cloudinary transformations + fetch-media (12-frame sheet with UI zones, grade, panel timing vs. spoken words, ~−14 LUFS). Delete the frames and the job file afterwards, then schedule the derived URL in Metricool.
+  - Local test renders (sandbox) need the source via workflow `grab-private` (draft release asset, download with `gh api -H "Accept: application/octet-stream" repos/<owner>/<repo>/releases/assets/<id>`). Deleting release assets is not permitted from here → tell the user to clean up the draft release "grab-private" occasionally.
+
+## REPO SECURITY (user 30.10.: "Es dürfen keine Rückschlüsse auf unsere IDs oder Accounts etc zu sehen sein. Sonst könnte jemand sensibles stehlen"; repo must stay PUBLIC)
+- Never commit account data: e-mail, Metricool blog/brand ID, Cloudinary cloud name/API key/signatures, OpusClip account/project IDs, trigger IDs, post UUIDs, signed CDN URLs (OpusClip/Metricool/Cloudinary).
+- URLs for the runner workflows (fetch-media, grab-private, fx-render) are encrypted with `tools/secure.py` (RSA-OAEP + AES with `fx/pubkey.pem`). The private key `fx_key_v2.pem` lives only in the draft release "grab-private"; the runners decrypt with `dec`. Clear `fetch/urls.txt`, `grab/request.txt` and `fx/jobs/*` after use. Workflow logs must not print delivery URLs.
+- On 30.10. the brand-assets history was scrubbed (filter-branch) and force-pushed. A force-push re-triggers EVERY path-triggered workflow (music-ai, tts, pixabay, fx-keys…). Avoid it; if unavoidable, check `fx/pubkey.pem` still matches (sha1 prefix 79344cd59461) and restore it if fx-keys regenerated it.
+- **Skill backup:** after every skill change run `python3 docs/skill-backup/anonymize.py <SKILL.md> docs/skill-backup/playhq-tiktok-clips.SKILL.md`. It uses generic patterns only, no real values in the script. Check with grep that no ID/e-mail remains, then commit. User: "Speichere regelmäßig deine Skills ab um Verluste zu verhindern" → propose the skill card after every new rule + update the backup.
+
 ## Carousel history
 - 28.10.: first carousel [PLAYHQ TIP] "5 MW4 DMZ mistakes every beginner makes" (old blurred-screenshot style via Cloudinary transforms) – **2,249 views by 30.10. (97 % FYP), our best recent post** → a "Part 2" carousel ("5 more MW4 DMZ mistakes", verified Waffles tips) was proposed to the user on 30.10.
 - 29.10.: [PLAYHQ META] DMZ build carousel (template v3). 10:00 version (9:16, hashtags too narrow) deleted by the user; 11:38 repost (still 9:16 → cut off top/bottom in TikTok) set private by the user; **final 11:52 version: 3:4, uuid <LONG_ID>** (544 views in <1 day), title "[PLAYHQ META] MW4 DMZ loadouts + build codes", cover "UPDATED OCT 2026 / DMZ META / LOADOUTS", tags `#mw4 #mw4dmz #dmz #dmztips #dmzloadout`. User: "Das passt so".
@@ -180,7 +207,8 @@ Turns carousel slides (or other stills) into a 9:16 video with a free AI voice, 
 
 ## FREE TOOLBOX (user 29.10.: "Füge die anderen zu deiner Datenbank hinzu") – details in `TOOLS.md` in the repo (branch brand-assets)
 All open source or free without account/trial. Set up a tool only when a task needs it or the user asks; heavy ones run as GitHub Actions (PyTorch is not available in the sandbox).
-- **In use:** ISNet cutout, Playwright + ffmpeg, Kokoro TTS, ACE-Step music, fetch-media, PlayHQ video frame (Playwright + Cloudinary overlay).
+- **In use:** ISNet cutout, Playwright + ffmpeg, Kokoro TTS, ACE-Step music, fetch-media, PlayHQ video frame (Playwright + Cloudinary overlay), PlayHQ FX video (fx-render workflow).
+- **Priority (user 30.10.: "Nutze die Tools nur wenn Opus es nicht schafft"):** OpusClip first; GitHub tools only when OpusClip can't (FX, captions colour, upscaling <1080p, sound check). Candidates in TOOLS.md: karaoke-subs, RIFE, Video2X, earshot (later).
 - **Ready to set up when useful:**
   - **Demucs** (MIT): split voice / game sound / music → remove copyrighted music from source clips (fewer mutes), cleaner creator voice.
   - **faster-whisper / WhisperX** (MIT/BSD): word-accurate captions from real speech in PlayHQ style, independent of OpusClip.
