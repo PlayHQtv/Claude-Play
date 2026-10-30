@@ -1,0 +1,307 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "APEX",
+ "cover": {
+  "kicker": "ALL 28 · LAUNCH SEASON",
+  "big": "EVERY APEX",
+  "small": "IN MW4",
+  "sub": "WHAT EACH ONE DOES + UNLOCK LEVEL",
+  "swipe": "SWIPE FOR ALL 28 ›",
+  "show": [
+   "Han X20 Skybreaker",
+   "Rezi 12 Enforcer",
+   "Kastov ARC",
+   "WZ.55 Striga Rampage"
+  ]
+ },
+ "cta": {
+  "white": "WHICH APEX",
+  "gold": "IS THE BEST?",
+  "sub": "DROP THE NAME IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META"
+ },
+ "note": "Apex unlocks when the weapon is fully leveled; LVL = weapon max level (official).",
+ "source": "callofduty.com blog \"Ready for Launch: All Modern Warfare 4 Operators, Weapons...\" 19.10.2026 (official names, levels, descriptions); cross-checked senseos.gg 27.10., games.gg, gamerant 23.10.; wiki navbox. Axion: official blog = Clearcut (Steam copy/3rd parties: Reaver).",
+ "items": [
+  {
+   "n": 1,
+   "weapon": "Han 86",
+   "apex": "Han X20 Skybreaker",
+   "cls": "ASSAULT RIFLE",
+   "level": 72,
+   "effect": "Targeting optic + airburst launcher that hits behind cover",
+   "official": "This advanced weapon system comes equipped with a specialized targeting optic and airburst launcher. The Han X20 Skybreaker dials into a precise area within range and fires a 20mm airburst shell, which detonates in the air on target with devastating results. Highly effective at flushing cover. Direct impacts will result in a dud. Blocks Optic, Stock, and Barrel Attachments.",
+   "image": "mw4/a_Han_86.png"
+  },
+  {
+   "n": 2,
+   "weapon": "M4",
+   "apex": "M4 Hurricane",
+   "cls": "ASSAULT RIFLE",
+   "level": 72,
+   "effect": "Top-loading, high-capacity 5.7x28mm conversion",
+   "official": "A top-loading, high-capacity M4 variant chambered in 5.7x28mm. Taking inspiration from other bullpup designs, this agile rifle is light, maneuverable, and boasts a higher rate of fire. Blocks Barrel and Magazine Attachments.",
+   "image": "mw4/w_M4.png"
+  },
+  {
+   "n": 3,
+   "weapon": "Hyeon Burst",
+   "apex": "Hyeon Hyperburst",
+   "cls": "ASSAULT RIFLE",
+   "level": 68,
+   "effect": "Blinding-fast 3-round burst, then slow full-auto",
+   "official": "The Hyeon Hyperburst features an overlocked receiver that delivers a blinding-fast, three-round burst followed by slow, controlled, fully automatic fire. Deliver a burst of precision followed by sustained fire to finish off anything still standing.",
+   "image": "mw4/w_Hyeon_Burst.png"
+  },
+  {
+   "n": 4,
+   "weapon": "Patriot XMR",
+   "apex": "Patriot XMR Volt",
+   "cls": "ASSAULT RIFLE",
+   "level": 72,
+   "effect": "Underbarrel launcher with non-lethal stun darts",
+   "official": "Stun targets and clear tight quarters with shocking efficiency with the Patriot XMR Volt. This underbarrel launcher fires a wide dispersal of several 50,000V darts. Non-lethal, but powerful enough to override fine motor control and prime targets for elimination. Blocks Barrel Attachments.",
+   "image": "mw4/w_Patriot_XMR.png"
+  },
+  {
+   "n": 5,
+   "weapon": "Kastov 762",
+   "apex": "Kastov ARC",
+   "cls": "ASSAULT RIFLE",
+   "level": 68,
+   "effect": "RF pulse barrel: stuns infantry, fries electronics",
+   "official": "An experimental disruption barrel with an integrated optic. Emits a concentrated high-intensity RF pulse capable of incapacitating infantry, crippling electronics, and destabilizing vehicles caught in its crosshairs.Blocks Barrel Attachments.",
+   "image": "mw4/w_Kastov_762.png"
+  },
+  {
+   "n": 6,
+   "weapon": "Oden",
+   "apex": "Oden Sentinel",
+   "cls": "ASSAULT RIFLE",
+   "level": 65,
+   "effect": "Semi-auto sniper conversion: scope, bipod, suppressor",
+   "official": "Turn devasting firepower into surgical precision. This conversion transforms the weapon into a semi-automatic sniper rifle, complete with a bipod, custom suppressor, and sniper scope to dominate distant targets with every shot. Blocks Barrel and Muzzle Attachments.",
+   "image": "mw4/w_Oden.png"
+  },
+  {
+   "n": 7,
+   "weapon": "Axion",
+   "apex": "Axion Clearcut",
+   "cls": "ASSAULT RIFLE",
+   "level": 69,
+   "effect": "Chainsaw rear grip built for hipfire and canted aim",
+   "official": "Built for fast-paced assaults, this conversion replaces the stock and pistol grip with a specialized chainsaw rear grip configuration. A handlebar foregrip, hip laser, and canted aiming system improve responsiveness for highly mobile, hipfire-focused gameplay. Blocks Optic, Laser, Underbarrel, Stock, and Rear Grip Attachments.",
+   "image": "mw4/w_Axion.png"
+  },
+  {
+   "n": 8,
+   "weapon": "Cronen Squall",
+   "apex": "Cronen Maelstrom",
+   "cls": "ASSAULT RIFLE",
+   "level": 67,
+   "effect": "Guided missile you steer while aiming down sights",
+   "official": "Fire a precision-guided missile and direct its flight path while aiming down sights using an infrared targeting laser. The projectile can be fired without guidance, though effectiveness drops sharply at extended ranges. Blocks Laser and Underbarrel Attachments.",
+   "image": "mw4/w_Cronen_Squall.png"
+  },
+  {
+   "n": 9,
+   "weapon": "ISO Nightshade",
+   "apex": "ISO Trace",
+   "cls": "SMG",
+   "level": 64,
+   "effect": "Tagging rounds track hit enemies on the optic",
+   "official": "Specialized RFD ammunition tags targets on impact, feeding real-time tracking data to the optic’s integrated display, which shows a red dot of the target’s movement and direction. Blocks Optic and Ammunition Attachments.",
+   "image": "mw4/w_ISO_Nightshade.png"
+  },
+  {
+   "n": 10,
+   "weapon": "VEL 46",
+   "apex": "VEL 46 Snap",
+   "cls": "SMG",
+   "level": 60,
+   "effect": "Tactical sling for lightning-fast weapon swaps",
+   "official": "Built for lightning-fast weapon transitions, this tactical sling sacrifices the ability to equip stocks for unmatched reaction speed in close-quarters fights. Allows Quick Draw when used with Overkill. Blocks Stock Attachment.",
+   "image": "mw4/w_VEL_46.png"
+  },
+  {
+   "n": 11,
+   "weapon": "Wz.55 Striga",
+   "apex": "WZ.55 Striga Rampage",
+   "cls": "SMG",
+   "level": 60,
+   "effect": "Akimbo conversion: double close-range output",
+   "official": "A paired-frame conversion that outfits the Wz.55 Striga for akimbo use, doubling its close-quarters output while keeping the platform’s natural agility. Control takes discipline, but its speed and volume are unmatched. Blocks Optic, Stock, and Underbarrel Attachments.",
+   "image": "mw4/w_Wz55_Striga.png"
+  },
+  {
+   "n": 12,
+   "weapon": "PPSh-41",
+   "apex": "PPSh-41 Ember",
+   "cls": "SMG",
+   "level": 62,
+   "effect": "Underbarrel burst of incendiary rounds",
+   "official": "A unique underbarrel that launches a rapid burst of advanced pyrotechnic projectiles, laying down intense incendiary coverage that remains burning for a short time, offering area control. Blocks Barrel, Underbarrel, and Magazine Attachments.",
+   "image": "mw4/w_PPSh41.png"
+  },
+  {
+   "n": 13,
+   "weapon": "X-58 Nyx",
+   "apex": "X-58 Void",
+   "cls": "SMG",
+   "level": 53,
+   "effect": "Subsonic: very quiet, no skulls on your kills",
+   "official": "The pinnacle of stealth warfare, this subsonic modification produces an exceptionally quiet report, hides skills on enemy deaths, and minimizes direction hit indicators to keep your attacks concealed. Blocks Barrel and Ammunition Attachments.",
+   "image": "mw4/w_X58_Nyx.png"
+  },
+  {
+   "n": 14,
+   "weapon": "Rezi 12",
+   "apex": "Rezi 12 Enforcer",
+   "cls": "SHOTGUN",
+   "level": 60,
+   "effect": "Pump action + explosive slugs for extra range",
+   "official": "Enables pump-action cycling and is outfitted with a side-saddle for hot-loaded explosive slugs. The added capability extends the platform’s engagement envelope well beyond tradition 12-gauge roles.",
+   "image": "mw4/a_Rezi_12.png"
+  },
+  {
+   "n": 15,
+   "weapon": "Warlord",
+   "apex": "Warlord Lumen",
+   "cls": "SHOTGUN",
+   "level": 60,
+   "effect": "Blinding strobe on aim, recharges between uses",
+   "official": "A blinding strobe pattern that triggers immediately upon aiming down sights and impairs hostile vision. The strobe must recharge between uses. Blocks Optic and Laser Attachments.",
+   "image": "mw4/w_Warlord.png"
+  },
+  {
+   "n": 16,
+   "weapon": "FiNN LMG",
+   "apex": "FiNN Adverse",
+   "cls": "LMG",
+   "level": 59,
+   "effect": "Unthrottled fire rate, sustained fire overheats",
+   "official": "A Tempest Armament weapon modification that unthrottles the rate of fire beyond the weapon's operational abilities. Sustained fire can overheat the weapon requiring the weapon to cool down before returning to full auto fire.",
+   "image": "mw4/w_FiNN_LMG.png"
+  },
+  {
+   "n": 17,
+   "weapon": "Type 73",
+   "apex": "Type 73 Assault",
+   "cls": "LMG",
+   "level": 65,
+   "effect": "Top-mounted mag loaded with explosive rounds",
+   "official": "A specialized weapon kit that adapts the Type 73 receiver to accept a top-mounted magazine loaded with Explosive Rounds. Limited ammo capacity is offset by the sheer, overwhelming stopping power. Blocks Magazine and Ammunition Attachments.",
+   "image": "mw4/w_Type_73.png"
+  },
+  {
+   "n": 18,
+   "weapon": "APOC-338",
+   "apex": "APOC-338 Praetor",
+   "cls": "LMG",
+   "level": 56,
+   "effect": "10-round heavy belt, locked to semi-auto",
+   "official": "A high-grain ten-round belt replaces the box feed and locks the APOC-338 to semi-auto, trading sustained volume for a lighter profile and heavier impact on every round. Blocks Magazine Attachment.",
+   "image": "mw4/w_APOC338.png"
+  },
+  {
+   "n": 19,
+   "weapon": "MAR-9",
+   "apex": "MAR-9 Auto",
+   "cls": "MARKSMAN RIFLE",
+   "level": 73,
+   "effect": "Fully automatic MAR-9 with a high fire rate",
+   "official": "Introducing the fully automatic MAR-9 Auto from Bruen. Boasting a high fire rate, this powerhouse provides a significant increase in stopping power over its semi-automatic counterpart. Blocks Trigger Action Attachment.",
+   "image": "mw4/w_MAR9.png"
+  },
+  {
+   "n": 20,
+   "weapon": "Oris 8.6",
+   "apex": "Oris 8.6 Razor",
+   "cls": "MARKSMAN RIFLE",
+   "level": 70,
+   "effect": "Blade module with up to 3 throwing knives",
+   "official": "A compact blade module mounted to the receiver, housing up to three quick access throwing knives for close-range, low-signature engagements. Designed as a reliable fall back when stealth or conservation of fire matters most. Blocks Underbarrel Attachments.",
+   "image": "mw4/w_Oris_86.png"
+  },
+  {
+   "n": 21,
+   "weapon": "Mosin-Nagant",
+   "apex": "Mosin Harpoon",
+   "cls": "MARKSMAN RIFLE",
+   "level": 69,
+   "effect": "Spring-loaded bayonet you can launch",
+   "official": "For a bladed advantage, outfit the Mosin-Nagant with an advanced ballistic bayonet. In addition to improving melee lunge range, the spring-loaded bayonet can be launched at enemies and retrieved for repeat use. Blocks Barrel and Muzzle Attachments.",
+   "image": "mw4/w_MosinNagant.png"
+  },
+  {
+   "n": 22,
+   "weapon": "KG-7 Vulcan",
+   "apex": "KG-7 Drillcharge",
+   "cls": "SNIPER RIFLE",
+   "level": 75,
+   "effect": "Drill rounds that bore into cover, then explode",
+   "official": "Allows for KG-9 Drillcharge rounds to be side-mounted to the rifle. Each projectile drills into a surface before quickly detonating. Ideal for flushing out entrenched combatants.",
+   "image": "mw4/w_KG7_Vulcan.png"
+  },
+  {
+   "n": 23,
+   "weapon": "Astaroth .57",
+   "apex": "Astaroth .57 Infiltrator",
+   "cls": "SNIPER RIFLE",
+   "level": 54,
+   "effect": "Detects enemies through walls, 1-round mag",
+   "official": "The Infiltrator combines sonar and radio wave pulses to detect enemies through cover and behind walls. The RF signal’s penetration is limited but offsets valuable recon in the right situation. Magazine capacity reduced to 1. Blocks Optic Attachments.",
+   "image": "mw4/w_Astaroth_57.png"
+  },
+  {
+   "n": 24,
+   "weapon": "Signal 50",
+   "apex": "Signal Inferno",
+   "cls": "SNIPER RIFLE",
+   "level": 74,
+   "effect": "Incendiary .50 cal, extra damage vs vehicles",
+   "official": "Give “weapons hot” a new meaning. This aftermarket modification from XRK loads the Signal 50 with .50 Cal Incendiary Rounds, providing a significant increase to vehicle and Killstreak damage. Blocks Ammunition Attachments.",
+   "image": "mw4/w_Signal_50.png"
+  },
+  {
+   "n": 25,
+   "weapon": "SANG 9mm",
+   "apex": "SANG Breach",
+   "cls": "PISTOL",
+   "level": 38,
+   "effect": "Underbarrel shotgun with one 12-gauge shell",
+   "official": "An underbarrel shotgun attachment that loads one 12-gauge shell. Canted weapon stance braces against the 12-gauge recoil. Keep this handy for close encounters. Blocks Laser Attachments.",
+   "image": "mw4/w_SANG_9mm.png"
+  },
+  {
+   "n": 26,
+   "weapon": "Krait P68",
+   "apex": "Krait P68 Commando",
+   "cls": "PISTOL",
+   "level": 38,
+   "effect": "Off-hand tactical knife: better melee, steadier recoil",
+   "official": "Held in an icepick grip, this CQB tactical knife is ready for action at a moment's notice. Improves melee damage and melee lunge range. Off-hand stabilizes the weapon for better recoil control.",
+   "image": "mw4/w_Krait_P68.png"
+  },
+  {
+   "n": 27,
+   "weapon": ".50 GS",
+   "apex": "GS Magna",
+   "cls": "PISTOL",
+   "level": 37,
+   "effect": "Fully automatic .50 GS conversion",
+   "official": "Packaging devastating firepower and a thunderous rate of fire, this fully automatic .50 GS turns every trigger pull into a show of force. Warning: Not intended for accuracy. Blocks Trigger Action Attachments.",
+   "image": "mw4/w_50_GS.png"
+  },
+  {
+   "n": 28,
+   "weapon": "Mojave .357",
+   "apex": "Mojave Lawless",
+   "cls": "PISTOL",
+   "level": 44,
+   "effect": "Fan the hammer for rapid hipfire shots",
+   "official": "Fan the hammer to fire in quick succession from the hip, laying down rapid shots that favor speed over precision. Blocks Trigger Action Attachments.",
+   "image": "mw4/w_Mojave_357.png"
+  }
+ ]
+}
