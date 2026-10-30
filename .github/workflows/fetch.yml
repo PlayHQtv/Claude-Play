@@ -1,5 +1,6 @@
 name: fetch-media
-# Downloads every URL listed in fetch/urls.txt ("<target path> <url>" per line) and commits the files.
+# Downloads every URL listed in fetch/urls.txt ("<target path> <url>" per line, url may be enc:... from tools/secure.py) and commits the files.
+# Clear fetch/urls.txt again after use; never put plain account URLs into the public repo.
 on:
   push:
     branches: [brand-assets]
@@ -13,12 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download
+        env: {GH_TOKEN: "${{ github.token }}"}
         run: |
           set -e
+          gh release download grab-private -p fx_key_v2.pem -D /tmp --clobber && mv /tmp/fx_key_v2.pem /tmp/fx_private.pem
+          dec(){ case "$1" in enc:*) IFS=: read -r _ k d <<< "$1"; echo "$k" | base64 -d > /tmp/k.enc; openssl pkeyutl -decrypt -inkey /tmp/fx_private.pem -pkeyopt rsa_padding_mode:oaep -in /tmp/k.enc -out /tmp/k.bin; echo "$d" | base64 -d | openssl enc -d -aes-256-cbc -pbkdf2 -pass file:/tmp/k.bin;; *) printf %s "$1";; esac; }
           while read -r target url; do
             [ -z "$target" ] && continue
             case "$target" in \#*) continue;; esac
             mkdir -p "$(dirname "$target")"
+            url=$(dec "$url")
             if curl -fsSL -A "Mozilla/5.0" -o "$target" "$url"; then
               echo "fetched $target ($(stat -c%s "$target") bytes)"
             else

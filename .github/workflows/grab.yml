@@ -17,7 +17,9 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           mkdir out
-          while read -r name url; do [ -z "$name" ] && continue; curl -fsSL -A "Mozilla/5.0" -o "out/$name" "$url" && echo "ok $name"; done < grab/request.txt
+          gh release download grab-private -p fx_key_v2.pem -D /tmp --clobber && mv /tmp/fx_key_v2.pem /tmp/fx_private.pem
+          dec(){ case "$1" in enc:*) IFS=: read -r _ k d <<< "$1"; echo "$k" | base64 -d > /tmp/k.enc; openssl pkeyutl -decrypt -inkey /tmp/fx_private.pem -pkeyopt rsa_padding_mode:oaep -in /tmp/k.enc -out /tmp/k.bin; echo "$d" | base64 -d | openssl enc -d -aes-256-cbc -pbkdf2 -pass file:/tmp/k.bin;; *) printf %s "$1";; esac; }
+          while read -r name url; do [ -z "$name" ] && continue; url=$(dec "$url"); curl -fsSL -A "Mozilla/5.0" -o "out/$name" "$url" && echo "ok $name"; done < grab/request.txt
           ls -la out
           gh release view grab-private >/dev/null 2>&1 || gh release create grab-private --draft --title grab-private --notes "temporary, private draft" --target brand-assets
           gh release upload grab-private out/* --clobber

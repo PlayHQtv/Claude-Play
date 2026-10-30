@@ -34,7 +34,7 @@ Always answer the user in German. The user wants to do as little as possible him
 ## Accounts & IDs
 - TikTok: <OUR_TIKTOK_HANDLE> – **PERSONAL account** (confirmed by user screenshot 28.10.; the old "Business account" note was wrong). Started ~03.10.2026. Custom covers via Metricool videoThumbnailUrl DO show on the profile (checked 28.10.). Creator Rewards Program needs 10K followers, 100K views/30 days, 18+, personal account, original videos >1 min.
 - Metricool: brandId/blogId `<METRICOOL_BLOG_ID>`, timezone `Europe/Berlin`. **Starter plan since 19.10.2026 (unlimited posts).** User has the Metricool app since ~23.10. but wants no push publishing ("mach gar nix") → always `autoPublish:true`. YouTube not connected in Metricool. User 30.10.: no YouTube Shorts / Instagram cross-posting ("Nein") – TikTok only.
-- OpusClip: TikTok post account `<OPUSCLIP_ACCOUNT_ID>`, YouTube `<OPUSCLIP_ACCOUNT_ID>` (PlayHQ; posting only, no search). PRO plan – save credits (no needless submits; user uploads sources himself).
+- OpusClip: TikTok post account `<ACCOUNT_ID>`, YouTube `<ACCOUNT_ID>` (PlayHQ; posting only, no search). PRO plan – save credits (no needless submits; user uploads sources himself).
 - Cloudinary: cloud `<CLOUDINARY_CLOUD>`, free plan (max upload 100 MB). Only for covers; delete files after use.
 - Old scheduled task "TikTok-Autopilot" `<TRIGGER_ID>` (08:58 Berlin) still runs with OLD rules (may add CS posts); update_trigger is rejected. Workaround: daily send_later morning check 09:30 Berlin (07:30Z summer / 08:30Z winter from 25.10.) that replaces its posts (updateScheduledPost) and creates the next send_later. Don't delete triggers without asking (user rejected that once).
 - Never connect Google; vidIQ excluded. Whop only free content. Never send the user's email anywhere.
@@ -95,7 +95,7 @@ Always answer the user in German. The user wants to do as little as possible him
   - Push to `brand-assets` → Cloudinary upload from the raw URL with the full SHA as `playhq/frames/<name>`.
 - Composite in Cloudinary:
   - Export OpusClip HD (1920×1080) → upload as `playhq/work/<slot>_hd`.
-  - Transform (video): `c_scale,w_1080/c_pad,w_1080,h_1920,b_rgb:070707/l_playhq:frames:<name>/fl_layer_apply,g_north/q_90/f_mp4` (~10 MB for 22 s).
+  - Transform (video): `c_scale,w_1080/c_pad,w_1080,h_1920,b_rgb:<ID>/l_playhq:frames:<name>/fl_layer_apply,g_north/q_90/f_mp4` (~10 MB for 22 s).
   - Cover: the same chain plus `so_1` and a `.jpg` extension.
   - Use the derived secure_urls as Metricool media / videoThumbnailUrl.
 - QA before the preview:
@@ -103,13 +103,13 @@ Always answer the user in German. The user wants to do as little as possible him
   - Frame text only in y 190–600 and 1320–1500.
   - Send the QA sheet as the preview, then delete the frames from the public repo.
   - Metricool copy must match the derived file (bytes, 1080×1920).
-- First use: 29.10. bounty <CLIP_ID> ("4 KILLS = / YOU'RE HUNTED", "HUNTER OR HUNTED?"), moved to 19:15 for the rework (uuid <POST_UUID>).
+- First use: 29.10. bounty <CLIP_ID> ("4 KILLS = / YOU'RE HUNTED", "HUNTER OR HUNTED?"), moved to 19:15 for the rework (uuid <LONG_ID>).
 - OpusClip API limitation (30.10.): `set_style highlightColor` did NOT change the rendered colour on the 30.10. clips <CLIP_ID> / <CLIP_ID>. The keyword colour stayed green, even after toggling highlight off and on and re-exporting. Some clips are yellow already (Waffles project, bounty). If yellow is needed, the user changes it in the OpusClip editor. User said "alles ok" with green for those two. Cloudinary `e_replace_color` does not work on video.
 - Overlays in general (also 9:16 clips): few, short (≤1.2 s), small (short text = small box), never over the action. This replaces the 2-stage hook overlay rule for 16:9 clips.
 
 ## Carousel history
 - 28.10.: first carousel [PLAYHQ TIP] "5 MW4 DMZ mistakes every beginner makes" (old blurred-screenshot style via Cloudinary transforms) – **2,249 views by 30.10. (97 % FYP), our best recent post** → a "Part 2" carousel ("5 more MW4 DMZ mistakes", verified Waffles tips) was proposed to the user on 30.10.
-- 29.10.: [PLAYHQ META] DMZ build carousel (template v3). 10:00 version (9:16, hashtags too narrow) deleted by the user; 11:38 repost (still 9:16 → cut off top/bottom in TikTok) set private by the user; **final 11:52 version: 3:4, uuid <POST_UUID>** (544 views in <1 day), title "[PLAYHQ META] MW4 DMZ loadouts + build codes", cover "UPDATED OCT 2026 / DMZ META / LOADOUTS", tags `#mw4 #mw4dmz #dmz #dmztips #dmzloadout`. User: "Das passt so".
+- 29.10.: [PLAYHQ META] DMZ build carousel (template v3). 10:00 version (9:16, hashtags too narrow) deleted by the user; 11:38 repost (still 9:16 → cut off top/bottom in TikTok) set private by the user; **final 11:52 version: 3:4, uuid <LONG_ID>** (544 views in <1 day), title "[PLAYHQ META] MW4 DMZ loadouts + build codes", cover "UPDATED OCT 2026 / DMZ META / LOADOUTS", tags `#mw4 #mw4dmz #dmz #dmztips #dmzloadout`. User: "Das passt so".
 - **Every carousel: `autoAddMusic: true` (user 30.10.: "Bei Karussell immer Metricool anweisen eine gute Musik darunter zu legen").** Music on photo carousels: Metricool only offers autoAddMusic on/off – TikTok picks the sound; no genre/energy control via API (user wish 29.10. "energetische Musik" → not possible).
 
 ## META BUILD CAROUSEL – complete procedure (template v3 "digital HUD", approved 29.10.2026)
@@ -157,7 +157,7 @@ Use this for every build/loadout/"top X" carousel. Own content → no credit.
 - Caption: "[PLAYHQ META] MW4 DMZ loadouts …" (search phrase first), weapons in slide order, build code + save CTA, question. **Hashtags: `#mw4 #mw4dmz #dmz #dmztips #dmzloadout`** (NOT #mw4builds/#codmeta/#mw4meta – too narrow). First comment: question with keywords ("Which MW4 DMZ build is your main: 1, 2, 3 or 4?").
 - Check: upload 2 of the returned static.metricool.com URLs back to Cloudinary `playhq/tmp/…` → the etag must equal the originals (Metricool stores byte-identical copies), then delete the tmp assets.
 
-### LIST CAROUSEL variant: "EVERY APEX IN MW4" (30.10., uuid <POST_UUID>, Sat 31.10. 12:00)
+### LIST CAROUSEL variant: "EVERY APEX IN MW4" (30.10., uuid <LONG_ID>, Sat 31.10. 12:00)
 - Template: `apex_render.py` + `data/2026-10-30-mw4-every-apex.json` (items: n, weapon, apex, cls, level, effect, image). Slides: cover, 7 list slides × 4 HUD cards (image, `NN/28 WEAPON · CLASS`, gold apex name, `MAX LVL`, 1-line effect), CTA ("WHICH APEX IS THE BEST?" + SAVE THIS + follow). Reusable for any "every X" list. Hashtags `#mw4 #mw4dmz #dmz #dmztips #mw4apex`.
 - **Data source for MW4 weapons and Apex (official):** callofduty.com blog "Ready for Launch: All MW4 Operators, Weapons, Equipment…" (19.10.2026). It gives exactly 28 Apex at launch (one per weapon; launchers and the knife have none) and Levels = weapon levels to max = Apex unlock. Extracted copy: `data/2026-10-30-apex-official-source.json`. Check the patch notes for renames (29.10.: none; beta-only event Apex "will return soon").
   - Official spellings: Signal Inferno, SANG Breach, GS Magna, Mojave Lawless, Mosin Harpoon, WZ.55 Striga Rampage, KG-7 Drillcharge.
@@ -174,7 +174,7 @@ Use this for every build/loadout/"top X" carousel. Own content → no credit.
 Turns carousel slides (or other stills) into a 9:16 video with a free AI voice, uppercase captions and quiet background music. Videos >60 s count for Creator Rewards. Never post without the user's OK. (Slides are now 3:4 → pad/extend to 9:16 for video and keep captions out of the right button column.)
 1. **Voice (Kokoro, Apache-2.0, free):** GitHub Action `tts` (`.github/workflows/tts.yml`). Write `tts/jobs/<job>.json` = `{"voice":"am_michael","speed":1.08,"lang":"en-us","segments":[{"id":"<slide file name>","text":"..."}]}` → commit + push to brand-assets → ~1 min later `tts/out/<job>/<id>.wav` → `git pull`. (PyPI is blocked in the sandbox, so TTS runs on GitHub.) Script = only verified facts; write numbers/names the way they should be spoken ("sixty round drum", "Gauge 12 Mono"). Example job: `tts/jobs/2026-10-29-dmz4.json` (64 s for 6 slides).
 2. **Video:** per slide duration = wav length + 0.45 s; ffmpeg zoompan slow zoom (1 → 1.035, 30 fps, from a 2× upscaled still), concat. Captions as ASS: Rajdhani Bold 78, yellow `&H0000D4FF`, black outline 5, 3-word chunks timed proportionally to characters, **UPPERCASE** (user 29.10.), `\pos(540,y)`; libass `fontsdir` = template assets/fonts; x264 crf 17, faststart.
-3. **Music:** my procedural synth beat was rejected ("klingt Scheisse") – don't use it. Use **Pixabay Music** (free, commercial use OK, no attribution). Pixabay blocks automated downloads (also from GitHub Actions) → the user downloads the MP3 and attaches it. Approved test track: Paul Yudin "Action" (pixabay 453990, 2:34, -11 LUFS), start at 6 s to skip the quiet intro. Mix: music volume 0.13, `sidechaincompress` ducking under the voice (threshold 0.03, ratio 5, attack 20, release 400), fade in 0.8 s / out 2.5 s, final `loudnorm I=-14:TP=-1.5:LRA=11`. Some Pixabay tracks are Content-ID registered → user checks the track page. I can't listen to audio myself – the user judges music.
+3. **Music:** my procedural synth beat was rejected ("klingt Scheisse") – don't use it. Use **Pixabay Music** (free, commercial use OK, no attribution). Pixabay blocks automated downloads (also from GitHub Actions) → the user downloads the MP3 and attaches it. Approved test track: Paul Yudin "Action" (pixabay <ID>, 2:34, -11 LUFS), start at 6 s to skip the quiet intro. Mix: music volume 0.13, `sidechaincompress` ducking under the voice (threshold 0.03, ratio 5, attack 20, release 400), fade in 0.8 s / out 2.5 s, final `loudnorm I=-14:TP=-1.5:LRA=11`. Some Pixabay tracks are Content-ID registered → user checks the track page. I can't listen to audio myself – the user judges music.
 4. **AI music (Suno-like, free):** ACE-Step 1.5 (MIT) via GitHub Action `music-ai` (`music/jobs/<job>.json` = `{"caption","duration","bpm","count"}` → `music/out/<job>/*.flac`, logs in `music/logs/`), CPU runner, installed with the official `uv sync`, `thinking=False`, turbo model. **Works (29.10.):** 2 × 70 s "dark energetic phonk trap" tracks in ~14 min, -14/-16 LUFS. User hasn't judged them yet. Stable Audio Open Small is an alternative (free under $1M revenue, needs a free Hugging Face account).
 5. **Own voice later (free, commercial OK):** Chatterbox (Resemble AI, MIT) or OpenVoice v2 (MIT) – need PyTorch → run via GitHub Actions. Only the user's own voice or with explicit consent. Captions from real speech: faster-whisper.
 
@@ -197,11 +197,11 @@ All open source or free without account/trial. Set up a tool only when a task ne
 ## OWN CONTENT rule (user 29.10.): content PlayHQ made itself (e.g. the "[PLAYHQ META]" build carousels) needs NO credit. The credit rule applies only to clips/material from other creators.
 
 ## User-made posts (29.10.)
-- The user (or another session of his) also creates posts himself in Metricool (e.g. the first META carousel uuid <POST_UUID>). Never overwrite posts I didn't create; ask first. Before planning a day, check getScheduledPosts for user-made posts and plan around them. The user also deletes/privates posts on TikTok himself when something is wrong.
+- The user (or another session of his) also creates posts himself in Metricool (e.g. the first META carousel uuid <LONG_ID>). Never overwrite posts I didn't create; ask first. Before planning a day, check getScheduledPosts for user-made posts and plan around them. The user also deletes/privates posts on TikTok himself when something is wrong.
 - Plan as of 30.10.:
-  - Fri 30.10.: 10:00 "Pay to win?" (posted); 18:00 SiNister "Fight or skip?" (uuid <POST_UUID>).
-  - Sat 31.10.: 12:00 Every Apex carousel (uuid <POST_UUID>); 18:00 Waffles bank upgrade (<CLIP_ID>, uuid <POST_UUID>).
-  - Sun 01.11.: 12:00 Waffles survival kits (copy <CLIP_ID>, uuid <POST_UUID>); 18:00 open.
+  - Fri 30.10.: 10:00 "Pay to win?" (posted); 18:00 SiNister "Fight or skip?" (uuid <LONG_ID>).
+  - Sat 31.10.: 12:00 Every Apex carousel (uuid <LONG_ID>); 18:00 Waffles bank upgrade (<CLIP_ID>, uuid <LONG_ID>).
+  - Sun 01.11.: 12:00 Waffles survival kits (copy <CLIP_ID>, uuid <LONG_ID>); 18:00 open.
 
 ## Compilations – CANCELLED (user 28.10.: "das Video ist scheisse, streiche die Idee")
 - Tested a Cloudinary fl_splice compilation "3 MW4 DMZ survival tips" from 3 creators → rejected. Don't build multi-clip compilations again unless the user asks. The 3 edited segment clips (<CLIP_ID>, <CLIP_ID>, <CLIP_ID>) are too short to post alone.
