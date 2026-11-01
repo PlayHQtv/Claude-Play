@@ -1,0 +1,63 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "UPDATED OCT 2026",
+    "big": "BEST HAN 86",
+    "small": "BUILD MW4",
+    "sub": "4 MULTIPLAYER BUILDS",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "mw4/w_Han_86.png"
+  },
+  "cta": {
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META"
+  },
+  "weapons": [
+    {"rank": 1, "image": "mw4/w_Han_86.png", "short": "PRO BUILD", "title_white": "HAN 86", "title_gold": "",
+     "class": "Assault Rifle", "class_note": "Versatile build", "tagline": "THE BUILD THE PROS USE", "brightness": 1.2,
+     "build_code": "A03-B176X-GJUQ1-1",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "XRK MIL-TAC SUPPRESSOR"},
+       {"type": "barrel", "label": "BARREL", "name": "SA H86 465MM"},
+       {"type": "laser", "label": "LASER", "name": "XRK CLUTCH-LS"},
+       {"type": "optic", "label": "OPTIC", "name": "ZLR TYPE C"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "XRK JUSTICE II GRIP"}],
+     "sources": "codmunity MP Versatile #1 'Pro Favorite' (based on 13 pro/creator loadouts), code A03-B176X-GJUQ1-1; same on warzoneloadout.games"},
+    {"rank": 2, "image": "mw4/w_Han_86.png", "short": "LOW RECOIL", "title_white": "HAN 86", "title_gold": "",
+     "class": "Assault Rifle", "class_note": "Versatile build", "tagline": "SILENCED + LOW RECOIL", "brightness": 1.2,
+     "code_label": "BUILD FROM", "build_code": "WZSTATS.GG",
+     "attachments": [
+       {"type": "optic", "label": "OPTIC", "name": "SZ PRIMA-4 DOT"},
+       {"type": "barrel", "label": "BARREL", "name": "HAN 86 SILENCED 413MM"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS TAC90 GRIP"},
+       {"type": "stock", "label": "STOCK", "name": "MEIKO L9P-FOLD"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"}],
+     "sources": "wzstats MW4 Multiplayer Versatile, updated 22.10.2026"},
+    {"rank": 3, "image": "mw4/w_Han_86.png", "short": "MOBILITY", "title_white": "HAN 86", "title_gold": "",
+     "class": "Assault Rifle", "class_note": "Mobility build", "tagline": "FAST MOVEMENT + 45 RND MAG", "brightness": 1.2,
+     "build_code": "A03-AXJY7-4YK31-1",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "FSS IS40"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"},
+       {"type": "optic", "label": "OPTIC", "name": "ZLR TYPE C"},
+       {"type": "stock", "label": "STOCK", "name": "MEIKO L9P-FOLD"},
+       {"type": "magazine", "label": "MAGAZINE", "name": "45 ROUND MAG"}],
+     "sources": "codmunity MP Mobility, code A03-AXJY7-4YK31-1"},
+    {"rank": 4, "image": "mw4/a_Han_86.png", "short": "APEX SKYBREAKER", "title_white": "HAN 86", "title_gold": "",
+     "class": "Assault Rifle", "class_note": "Apex build", "tagline": "WITH THE X20 SKYBREAKER", "brightness": 1.2,
+     "build_code": "A03-43QCI-I3U1Y-E911", "apex": "HAN X20 SKYBREAKER",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "FSS IS300"},
+       {"type": "laser", "label": "LASER", "name": "XRK CLUTCH-LS"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "FTAC GRIPLORD 80"},
+       {"type": "ammo", "label": "AMMUNITION", "name": "5.56 NATO OVERPRESSURED"},
+       {"type": "magazine", "label": "MAGAZINE", "name": "45 ROUND MAG"}],
+     "sources": "codmunity MP Apex Attachment, code A03-43QCI-I3U1Y-E911 (warzoneloadout.games lists it without the ammo, so only codmunity is cited)"}
+  ],
+  "source": "codmunity.gg/weapon/mw4/han-86 (Last Updated 23/10/2026, MP pick rate 24%, 'Absolute Meta'), wzstats.gg han-86-mw4 (22.10.), warzoneloadout.games; fetched 01.11.2026",
+  "notes": "Han 86 = #1 MP pick on codmunity (24%). Other references: Polygon 28.10. (Hanbit RK8 406mm, XRK Clutch-LS, FSS Fireline Grip, VLK Trimmer), IGN code A03-6AL6S-S2N11 (attachments not extracted) - not used."
+}
