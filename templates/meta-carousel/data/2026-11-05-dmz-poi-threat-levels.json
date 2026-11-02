@@ -1,0 +1,24 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "DMZ",
+  "cover": {"kicker": "OFFICIAL INTEL · HAJIN", "big": "EVERY POI", "small": "THREAT LEVEL", "sub": "ALL 13 MW4 DMZ LOCATIONS RANKED", "swipe": "SWIPE BEFORE YOU DROP ›"},
+  "cta": {"white": "WHERE DO", "gold": "YOU DROP?", "sub": "TELL US YOUR HOT DROP IN THE COMMENTS", "follow_sub": "FOR DAILY MW4 DMZ TIPS"},
+  "tip": "Threat rises when you fight AI. Other players don't count.",
+  "pois": [
+    {"name": "Songdo Wharf", "region": "East Hajin City", "areas": [["Songdo Wharf", "Low"], ["Oamsik Turtle Island", "Low"], ["Shoreline Station", "Low"]]},
+    {"name": "Mirae General Hospital", "region": "North Central", "areas": [["Hospital", "Low"]]},
+    {"name": "Imjin Farmland", "region": "South-Southwest", "areas": [["Farmland Exterior", "Low"], ["Jeong Loading Dock", "Low"], ["Rice Mill", "Medium"]]},
+    {"name": "Cheongun Village", "region": "Northern Hajin", "areas": [["Village + Outskirts", "Low"], ["Russian Border", "Low"], ["Heavenly Luck Casino", "High"]]},
+    {"name": "Deadtown", "region": "Southwest", "areas": [["Deadtown Exterior", "Low"], ["Re-Education Center", "Medium"]]},
+    {"name": "Cheonwang Peak Array", "region": "Central Hajin", "areas": [["Array", "Medium"]]},
+    {"name": "Wolves Stadium", "region": "South Central City", "areas": [["Wolves Stadium", "Medium"], ["Theatre", "Medium"]]},
+    {"name": "Hajin River Heights", "region": "Southeast", "areas": [["River Heights", "Medium"], ["South Island", "Medium"], ["Jinseo Park Towers", "Medium"]]},
+    {"name": "NuriGO Mall", "region": "Northeast City", "areas": [["NuriGO East", "Medium"], ["NuriGO West", "High"]]},
+    {"name": "Haneul Nuclear Reactor", "region": "Northeast", "areas": [["SK Border Zone", "Medium"], ["Reactor (radiation)", "High"]]},
+    {"name": "14th Political Prison", "region": "Northwest", "areas": [["Prison", "High"], ["Fortress Prison Yard", "High"], ["The Citadel", "Critical"]]},
+    {"name": "Chang-san Air Base", "region": "Western Hajin", "areas": [["Air Base Exterior", "Critical"], ["Air Base Bunker", "Extreme"]]},
+    {"name": "The Grid", "region": "Central Hajin City", "areas": [["The Grid", "Critical"], ["DBN HQ / Hanex Bank", "Critical"], ["Art School / Construction", "Critical"], ["Nenshin Tech Complex", "Extreme"]]}
+  ],
+  "source": "callofduty.com DMZ Deep Dive Part 1 (Hajin, 05.10.2026) - 'Expected Threat Level' per POI; fetched 02.11.2026",
+  "notes": "Ordered from safest to most dangerous by highest listed level, then lowest. Spelling as in the official blog except 'Nenshin' (blog uses both Nenshin and Netshin; Nenshin appears in the threat list). DBN Headquarters + Hanex Bank and Minsok Art School + Construction Zone merged into one row each (all Critical)."
+}

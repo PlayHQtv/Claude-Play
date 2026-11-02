@@ -1,0 +1,53 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "UPDATED OCT 2026",
+    "big": "BEST ORIS 8.6",
+    "small": "BUILD MW4",
+    "sub": "3 MULTIPLAYER BUILDS",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "mw4/w_Oris_86.png"
+  },
+  "cta": {
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META"
+  },
+  "weapons": [
+    {"rank": 1, "image": "mw4/w_Oris_86.png", "short": "VERSATILE", "title_white": "ORIS 8.6", "title_gold": "",
+     "class": "Marksman Rifle", "class_note": "Versatile build", "tagline": "#1 BUILD ON CODMUNITY", "brightness": 1.2,
+     "build_code": "M01-26JZZ-Q1XXY-11", "apex": "ORIS 8.6 RAZOR",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "EXP UNDERTOW GEN. 2"},
+       {"type": "barrel", "label": "BARREL", "name": "EXP CROSSTAC 22"},
+       {"type": "laser", "label": "LASER", "name": "XRK CLUTCH-LS"},
+       {"type": "optic", "label": "OPTIC", "name": "CRONEN R808"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "BRUEN R7-TC GRIP"}],
+     "sources": "codmunity MP Versatile #1 (Last Updated 25/10/2026), code M01-26JZZ-Q1XXY-11, includes Apex Oris 8.6 Razor"},
+    {"rank": 2, "image": "mw4/w_Oris_86.png", "short": "SNIPER", "title_white": "ORIS 8.6", "title_gold": "",
+     "class": "Marksman Rifle", "class_note": "Standard build", "tagline": "8.8X SCOPE, NO APEX", "brightness": 1.2,
+     "code_label": "BUILD FROM", "build_code": "GAME8",
+     "attachments": [
+       {"type": "optic", "label": "OPTIC", "name": "CORVUS AVIS-0"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS TAC90 GRIP"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "OPS-45 XP GRIP"},
+       {"type": "stock", "label": "STOCK", "name": "BR7 INVADER"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"}],
+     "sources": "game8 Oris 8.6 Standard build (updated 26.10.2026); Corvus Avis-0 = 8.8x marksman scope"},
+    {"rank": 3, "image": "mw4/w_Oris_86.png", "short": "QUICKSCOPE", "title_white": "ORIS 8.6", "title_gold": "",
+     "class": "Marksman Rifle", "class_note": "Super fast ADS build", "tagline": "SUPER FAST ADS FOR QUICKSCOPES", "brightness": 1.2,
+     "code_label": "BUILD FROM", "build_code": "GAME8", "apex": "ORIS 8.6 RAZOR",
+     "attachments": [
+       {"type": "optic", "label": "OPTIC", "name": "CORVUS AVIS-0"},
+       {"type": "barrel", "label": "BARREL", "name": "EXP RIPPER 7.75\""},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "OPS-45 XP GRIP"},
+       {"type": "stock", "label": "STOCK", "name": "NO STOCK"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"}],
+     "sources": "game8 Oris 8.6 'Super Fast ADS' build (updated 26.10.2026): 'usable for a quickscoping playstyle'; Razor blocks underbarrel (build has none)"}
+  ],
+  "source": "codmunity.gg/weapon/mw4/oris-8-6 (25/10/2026), game8 Oris 8.6 (26.10.2026); fetched 02.11.2026",
+  "notes": "esports.gg lists FSS Fireline Grip together with the Razor, but game8 says Razor blocks the underbarrel -> not used. Oris 8.6 MP pick rate 3.4% (codmunity)."
+}
