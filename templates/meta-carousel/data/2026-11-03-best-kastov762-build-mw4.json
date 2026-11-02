@@ -1,0 +1,63 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "UPDATED OCT 2026",
+    "big": "BEST KASTOV",
+    "small": "762 BUILD MW4",
+    "sub": "4 MULTIPLAYER BUILDS",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "mw4/w_Kastov_762.png"
+  },
+  "cta": {
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META"
+  },
+  "weapons": [
+    {"rank": 1, "image": "mw4/w_Kastov_762.png", "short": "RECOIL CONTROL", "title_white": "KASTOV 762", "title_gold": "",
+     "class": "Assault Rifle", "class_note": "Standard build", "tagline": "TAMES THE KASTOV RECOIL", "brightness": 1.2,
+     "code_label": "BUILD FROM", "build_code": "GAME8",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "EXP R3000-V"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS FIRELINE GRIP"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "MUGI 00-YK1 GRIP"},
+       {"type": "stock", "label": "STOCK", "name": "SPETSNAZ S10 STOCK"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"}],
+     "sources": "game8 Kastov 762 Standard build, updated 26.10.2026"},
+    {"rank": 2, "image": "mw4/w_Kastov_762.png", "short": "LONG RANGE", "title_white": "KASTOV 762", "title_gold": "",
+     "class": "Assault Rifle", "class_note": "Range build", "tagline": "MORE DAMAGE RANGE", "brightness": 1.2,
+     "code_label": "BUILD FROM", "build_code": "ESPORTS.GG",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "GAUGE-12 MONO"},
+       {"type": "barrel", "label": "BARREL", "name": "FJX GHOSTFIRE 16.3\""},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS FIRELINE GRIP"},
+       {"type": "stock", "label": "STOCK", "name": "SPETSNAZ S10 STOCK"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"}],
+     "sources": "esports.gg Kastov 762 loadout, 22.10.2026 (barrel 'to improve damage range')"},
+    {"rank": 3, "image": "mw4/w_Kastov_762.png", "short": "VERSATILE", "title_white": "KASTOV 762", "title_gold": "",
+     "class": "Assault Rifle", "class_note": "Versatile build", "tagline": "ALL-ROUND WITH AN OPTIC", "brightness": 1.2,
+     "code_label": "BUILD FROM", "build_code": "WZSTATS.GG",
+     "attachments": [
+       {"type": "optic", "label": "OPTIC", "name": "CRONEN ZERO-K"},
+       {"type": "barrel", "label": "BARREL", "name": "FJX GHOSTFIRE 16.3\""},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS TAC90 GRIP"},
+       {"type": "stock", "label": "STOCK", "name": "KASTOV DOGFIGHTER 27"},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"}],
+     "sources": "wzstats MW4 Multiplayer Versatile ('Up to date')"},
+    {"rank": 4, "image": "mw4/w_Kastov_762.png", "short": "APEX KASTOV ARC", "title_white": "KASTOV 762", "title_gold": "",
+     "class": "Assault Rifle", "class_note": "Apex build", "tagline": "WITH THE KASTOV ARC APEX", "brightness": 1.2,
+     "code_label": "BUILD FROM", "build_code": "CODMUNITY", "apex": "KASTOV ARC",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "IVANOV QR600"},
+       {"type": "laser", "label": "LASER", "name": "XRK CLUTCH-LS"},
+       {"type": "stock", "label": "STOCK", "name": "HANBIT 655L-M STOCK"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "HANBIT TECHGRIP"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS FIRELINE GRIP"}],
+     "sources": "codmunity MP Versatile (Apex) build, Last Updated 23/10/2026 (no code shown); Apex name Kastov ARC also on callofduty.com launch blog. game8 calls its apex 'Hurricane' - conflicting, not used"}
+  ],
+  "source": "game8 (26.10.), esports.gg (22.10.), wzstats.gg, codmunity.gg (23.10.); fetched 02.11.2026",
+  "notes": "FSS Fireline Grip in 3 of 4 sources, Schlager Visiv-5 in 3 of 4. Kastov 762 MP pick rate 3.9% on codmunity -> no '#1 meta' claims. Some codmunity builds are premium-only, so codes are not shown."
+}
