@@ -75,7 +75,7 @@ def main(data_path, out_dir=None):
     os.makedirs(out_dir, exist_ok=True)
     tmp = os.path.join(R.HERE, '_build'); os.makedirs(tmp, exist_ok=True)
     P = d['pois']
-    groups = [(P[0:5], 'LOW THREAT · SAFER DROPS'), (P[5:9], 'MEDIUM THREAT · SOME RISK'), (P[9:13], 'HIGH TO EXTREME · LOOT + DANGER')]
+    groups = [(P[0:5], 'STARTS LOW · WATCH THE HOTSPOTS'), (P[5:10], 'STARTS MEDIUM · SOME RISK'), (P[10:13], 'HIGH TO EXTREME · LOOT + DANGER')]
     pages = [('01_cover', cover_slide(d))]
     n = 0
     for g, title in groups:
