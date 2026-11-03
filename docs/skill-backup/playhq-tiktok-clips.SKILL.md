@@ -329,6 +329,12 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Always take stills from the OpusClip HD export (quality rule). 20–35 s HD exports are 17–48 MB, fine for Cloudinary (100 MB limit). If an export is >100 MB, upload with `async: true` or trim it. Cloudinary sometimes reports "partial download" for a fresh OpusClip export → retry with `async: true` (works). Only fall back to the 720p preview if nothing else works, and then upscale the still to 1080 wide (rule 7).
 - Fallback if Cloudinary fails for any reason: `videoCoverMilliseconds: 1000` and mention it in the report.
 
+## FREEZE + MARKUP (user rule 03.11.2026: EVERY framed 16:9 video)
+1. Clip plays normally, hook in the frame's top band. 2. At the key moment (ideally before ~15 s) the picture freezes ~2.5–3 s, "PAUSED" tag top right, audio pauses. 3. Markups pop in one after another (yellow circle/box or red box + label + arrow), last step = black verdict banner that covers the clip's burned-in caption line. 4. Clip continues.
+- Tool: `templates/video-frame/freeze.py freeze_jobs/<date>-<name>.json in.mp4 out.mp4` (coordinates in video-window pixels 1080x608; `t`, `steps`, `banner`, `banner_y` ~492, optional `banner_x`). Run renders one at a time (parallel runs get OOM-killed).
+- Labels and banner must be TRUE and verified (use what the HUD/UI shows, e.g. "FINAL EXFIL" marker, official menu text; for cinematic/trailer footage only generic labels like "WHO'S BEHIND YOU?").
+- Input = the framed HD export (or the Metricool copy fetched via grab-private). Output goes via upload-bundle (mp4 supported, max ~2 videos per bundle < 100 MB) to playhq/tmp, then Metricool media, byte check, delete the Cloudinary copies and the grab-private assets. Videos/stills never in the repo.
+
 ## Posting pipeline
 0. **ALWAYS first: full data check (user rule 24.10.: "Beachte immer sämtliche Daten bevor du etwas postest. Du sollst von selbst immer besser werden").** Pull TKPO02/05/06/07/08/09/10/11/13/15/16/21 for all posts + TKEV02/07 + getBestTimeToPostByNetwork. Compare: which topic, hook type, length, weekday and slot got the best avg watch time, full-watch rate, shares and FYP/search share. Derive what to change for THIS post (topic choice, hook wording, length, slot) and note learnings in "What the data taught us". Report the key takeaway briefly to the user.
 1. OpusClip: list_clips → describe_clip (transcript: clean? creator clear? strongest line? `aspect` landscape → PLAYHQ VIDEO FRAME) → duplicate_clip ("(Copy)" = used).
