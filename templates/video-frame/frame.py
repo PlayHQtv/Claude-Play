@@ -56,7 +56,7 @@ body{{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:R
 <div class="tick" style="left:24px;top:{vb-18}px;border-right:0;border-top:0"></div>
 <div class="tick" style="right:24px;top:{vb-18}px;border-left:0;border-top:0"></div>
 <div class="hdr"><span class="cod">CALL OF DUTY · MW4</span><span class="dmz">{E(j.get('badge','DMZ'))}</span></div>
-<img class="logo" src="/assets/logo.png">
+{'' if j.get('no_logo') else '<img class="logo" src="/assets/logo.png">'}
 <div class="kick" style="top:{vt-330}px">{E(j.get('kicker',''))}</div>
 <div class="hook fit" style="top:{vt-275}px" data-max="960"><span class="w" style="font-size:118px">{E(j['hook_white'])}</span><br><span class="gold" style="font-size:118px">{E(j['hook_gold'])}</span></div>
 <div class="q fit" style="top:{vb+60}px" data-max="840"><span class="w">{E(j.get('question',''))}</span></div>

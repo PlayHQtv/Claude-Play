@@ -5,6 +5,7 @@ Flow in the finished video:
   2. at the key moment the picture freezes ~3 s, "PAUSED" tag top right, sound bed plays (sfx.py: whoosh, tick, pop per markup, hit on the banner)
   3. markups pop in one after another (circle/box with label + arrow), last step = verdict banner
   4. clip continues
+The whole video also gets the animated PlayHQ logo (logo_anim.py, rotating ring + beat + sheen) over the frame's static logo.
 
 Usage: python3 freeze.py freeze_jobs/<name>.json <in.mp4> <out.mp4>
 Job JSON (coordinates in VIDEO-WINDOW pixels, window = 1080x608 at y=video_top of the 1080x1920 frame):
@@ -19,7 +20,7 @@ The input/output videos are third-party footage -> keep them OUTSIDE the repo (s
 """
 import json, os, subprocess, sys, tempfile, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import sfx
+import sfx, logo_anim
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -113,8 +114,9 @@ def main(job_path, src, dst):
         fc = (f'[0:v]trim=0:{t},setpts=PTS-STARTPTS,fps={fr},format=yuv420p[v0];[0:a]atrim=0:{t},asetpts=PTS-STARTPTS,aresample=48000[a0];'
               f'[1:v]setpts=PTS-STARTPTS,fps={fr},format=yuv420p[v1];[1:a]asetpts=PTS-STARTPTS,aresample=48000[a1];'
               f'[0:v]trim=start={t},setpts=PTS-STARTPTS,fps={fr},format=yuv420p[v2];[0:a]atrim=start={t},asetpts=PTS-STARTPTS,aresample=48000[a2];'
-              '[v0][a0][v1][a1][v2][a2]concat=n=3:v=1:a=1[v][a]')
-        run(['ffmpeg', '-v', 'error', '-y', '-i', src, '-i', f'{tmp}/hold.mp4', '-filter_complex', fc, '-map', '[v]', '-map', '[a]',
+              '[v0][a0][v1][a1][v2][a2]concat=n=3:v=1:a=1[vc][a];'
+              f'[2:v]fps={fr},format=yuv420p[lg];[vc][lg]overlay=880:140:shortest=1[v]')  # animated logo over the static one
+        run(['ffmpeg', '-v', 'error', '-y', '-i', src, '-i', f'{tmp}/hold.mp4', '-stream_loop', '-1', '-i', logo_anim.get(), '-filter_complex', fc, '-map', '[v]', '-map', '[a]',
              '-c:v', 'libx264', '-crf', '16', '-preset', 'slow', '-profile:v', 'high', '-pix_fmt', 'yuv420p',
              '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', dst])
         imgs[-1].save(os.path.splitext(dst)[0] + '_freeze.jpg', quality=92)
