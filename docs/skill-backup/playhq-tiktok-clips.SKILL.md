@@ -354,7 +354,7 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Hook: keyword on screen in the first 3 s, payoff/value by ~15 s, no intro. Something changes on screen every 3–5 s (cut, zoom, text pop). Accurate captions (many watch muted).
 - Length: 21–34 s clips have the best completion; go 60 s+ only with strong retention (needed for Creator Rewards later). Target 60 %+ avg watch ratio; under 45 % = fix the hook/edit.
 - Originality: TikTok limits FYP reach of reposted/lightly edited content and visible foreign watermarks. Every creator clip gets our own value: PlayHQ frame, our hook/verdict, cut to the core tip, credit in caption. No raw reposts.
-- Caption SEO: main keyword ("MW4 DMZ ...") in the first caption line, 1–2 specific hashtags (max 5), end with a question (more comments). No "like this" CTAs.
+- Caption SEO: main keyword ("MW4 DMZ ...") in the first caption line, always EXACTLY 5 hashtags (user rule 03.11.: 2 broad like #mw4 #mw4dmz + 3 specific to the topic), end with a question (more comments). No "like this" CTAs.
 - Formats: videos win shares/reach, carousels win likes/saves/search. Keep both; mix ~70 % proven formats (mistakes, build carousels, "don't" hooks) / ~30 % experiments.
 - Frequency: Buffer study (11.4M posts): 2–5/week gives the biggest per-post lift, more posts raise the chance of outliers with diminishing returns → our 1–2/day is fine, never spam.
 - 96 % of reach comes within ~10 days; search posts keep growing → judge a post after 7–10 days, not day 1.
