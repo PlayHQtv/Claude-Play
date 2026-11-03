@@ -2,7 +2,7 @@
 
 Flow in the finished video:
   1. clip plays normally (hook in the frame's top band)
-  2. at the key moment the picture freezes ~3 s, "PAUSED" tag top right, audio pauses
+  2. at the key moment the picture freezes ~3 s, "PAUSED" tag top right, sound bed plays (sfx.py: whoosh, tick, pop per markup, hit on the banner)
   3. markups pop in one after another (circle/box with label + arrow), last step = verdict banner
   4. clip continues
 
@@ -18,6 +18,8 @@ Job JSON (coordinates in VIDEO-WINDOW pixels, window = 1080x608 at y=video_top o
 The input/output videos are third-party footage -> keep them OUTSIDE the repo (scratchpad).
 """
 import json, os, subprocess, sys, tempfile, math
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sfx
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -100,8 +102,12 @@ def main(job_path, src, dst):
         lst.write(f"file 's{len(imgs) - 1}.png'\n"); lst.close()
         fr = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v', '-show_entries', 'stream=r_frame_rate', '-of', 'csv=p=0', src], capture_output=True, text=True).stdout.strip() or '30/1'
         hold = sum(dur)
+        # sound bed instead of silence, level matched to the clip (peak of the clip's audio * 0.6)
+        pk = subprocess.run(['ffmpeg', '-v', 'info', '-i', src, '-af', 'volumedetect', '-f', 'null', '-'], capture_output=True, text=True).stderr
+        mx = next((float(l.split(':')[1].split()[0]) for l in pk.splitlines() if 'max_volume' in l), -3.0)
+        sfx.make(dur, f'{tmp}/bed.wav', level=min(0.9, 10 ** (mx / 20) * job.get('sfx_gain', 0.6)))
         run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', f'{tmp}/l.txt',
-             '-f', 'lavfi', '-t', str(hold), '-i', 'anullsrc=r=48000:cl=stereo',
+             '-i', f'{tmp}/bed.wav',
              '-vf', f'fps={fr},format=yuv420p,trim=duration={hold}', '-c:v', 'libx264', '-crf', '16', '-preset', 'slow',
              '-c:a', 'aac', '-b:a', '192k', '-shortest', f'{tmp}/hold.mp4'])
         fc = (f'[0:v]trim=0:{t},setpts=PTS-STARTPTS,fps={fr},format=yuv420p[v0];[0:a]atrim=0:{t},asetpts=PTS-STARTPTS,aresample=48000[a0];'
