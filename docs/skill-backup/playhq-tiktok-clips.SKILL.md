@@ -349,6 +349,19 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Learnings 13.10. (early CS phase): "Cursed Weapon of the Day" series and crazy-weapon CS clips worked best then; GTA 6 news and streamer humor were weak; 4 posts/day cannibalized.
 - Account: TKEV02 views, TKEV07 followers, TKEV08 new followers, TKEV09 profile views.
 
+## Research rules (TikTok best practice, checked 03.11.2026)
+- Ranking: watch time, completion, replays and shares weigh most; then comments, follows, saves; likes moderate. Language/country are weak signals. TikTok reads caption, on-screen text and speech (SEO).
+- Hook: keyword on screen in the first 3 s, payoff/value by ~15 s, no intro. Something changes on screen every 3–5 s (cut, zoom, text pop). Accurate captions (many watch muted).
+- Length: 21–34 s clips have the best completion; go 60 s+ only with strong retention (needed for Creator Rewards later). Target 60 %+ avg watch ratio; under 45 % = fix the hook/edit.
+- Originality: TikTok limits FYP reach of reposted/lightly edited content and visible foreign watermarks. Every creator clip gets our own value: PlayHQ frame, our hook/verdict, cut to the core tip, credit in caption. No raw reposts.
+- Caption SEO: main keyword ("MW4 DMZ ...") in the first caption line, 1–2 specific hashtags (max 5), end with a question (more comments). No "like this" CTAs.
+- Formats: videos win shares/reach, carousels win likes/saves/search. Keep both; mix ~70 % proven formats (mistakes, build carousels, "don't" hooks) / ~30 % experiments.
+- Frequency: Buffer study (11.4M posts): 2–5/week gives the biggest per-post lift, more posts raise the chance of outliers with diminishing returns → our 1–2/day is fine, never spam.
+- 96 % of reach comes within ~10 days; search posts keep growing → judge a post after 7–10 days, not day 1.
+- Comments: early replies (user in app, ideally within the first hour) boost the thread; reply-with-video to good questions = free next topic.
+- Creator Rewards (for later): 18+, personal account, 10K followers, 100K views/30 days, videos >1 min, original, no Photo Mode. Germany/UK eligible.
+- Audience 03.11.: UK 34.5 %, US 9.3 %, DE 6.2 %, NL 5 %, IE 2.9 % → keep posts in English; German content only as a separate test.
+
 ## Known limits
 - No connector for TikTok organic stats/Studio or YouTube search (except vidIQ, excluded); Claude in Chrome (user's Chrome open with extension) is the way. TikTok/YouTube pages can't be fetched directly.
 - OpusClip: no music, no custom cover, no background/frame design, aspect ratio fixed after submit; TikTok links not supported. Text overlays are always a white box with black text (only text/position/timing editable). Highlight colour via API unreliable (see VIDEO FRAME). OpusClip schedule_publish / create_post_task need manual approval in the OpusClip app → use Metricool.
