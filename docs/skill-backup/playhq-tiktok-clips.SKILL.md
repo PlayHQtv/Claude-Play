@@ -356,6 +356,12 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Learnings 13.10. (early CS phase): "Cursed Weapon of the Day" series and crazy-weapon CS clips worked best then; GTA 6 news and streamer humor were weak; 4 posts/day cannibalized.
 - Account: TKEV02 views, TKEV07 followers, TKEV08 new followers, TKEV09 profile views.
 
+## Content rules (user 05.11.2026)
+- Every post must be VERY informative and genuinely helpful (TikTok boosted these posts several times). Reference/cheat-sheet carousels: every item with numbers (cost, level, effect) + the rules most players miss.
+- Never text-only slides: every item gets a fitting picture (official game art/icons fetched privately via grab-private, rendered from `_build/`, never committed). Example: `templates/meta-carousel/streak_render.py` (killstreak cards with image + kill badge).
+- Trend data 05.11.: MW4 multiplayer/loadouts/killstreaks are searched far more than DMZ -> lean multiplayer, use the exact search phrases in caption line 1 and on the slides.
+- CS2 content is out for now; the old daily "TikTok-Autopilot" task is paused (not deleted).
+
 ## Research rules (TikTok best practice, checked 03.11.2026)
 - Ranking: watch time, completion, replays and shares weigh most; then comments, follows, saves; likes moderate. Language/country are weak signals. TikTok reads caption, on-screen text and speech (SEO).
 - Hook: keyword on screen in the first 3 s, payoff/value by ~15 s, no intro. Something changes on screen every 3–5 s (cut, zoom, text pop). Accurate captions (many watch muted).
