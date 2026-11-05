@@ -1,0 +1,210 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MP",
+  "cover": {
+    "kicker": "MW4 MULTIPLAYER · FULL GUIDE",
+    "big": "EVERY",
+    "small": "MW4 KILLSTREAK",
+    "sub": "ALL 17 STREAKS + THE NUKE · KILLS · UNLOCK LEVEL",
+    "start": [
+      "UAV",
+      "Artillery Beacon",
+      "Attack Helicopter"
+    ],
+    "swipe": "SWIPE FOR ALL 17 ›"
+  },
+  "tiers": [
+    {
+      "title": "4–5 KILL STREAKS",
+      "sub": "CHEAP · EARN THEM EVERY LIFE",
+      "streaks": [
+        {
+          "name": "UAV",
+          "kills": "5",
+          "lv": 4,
+          "desc": "Reveals enemies on the minimap. Launch buff: health 100 → 150.",
+          "note": "4 WITH HARDLINE",
+          "img": "uav"
+        },
+        {
+          "name": "Bomb Glider",
+          "kills": "4",
+          "lv": 6,
+          "desc": "Hand-flown glider with an explosive payload.",
+          "img": "bomb-glider"
+        },
+        {
+          "name": "Care Package",
+          "kills": "4",
+          "lv": 9,
+          "desc": "Drops a crate with a random killstreak.",
+          "img": "care-package"
+        },
+        {
+          "name": "Impact Warhead",
+          "kills": "4",
+          "lv": 12,
+          "desc": "Explosive payload that drills through multiple floors.",
+          "img": "impact-warhead"
+        }
+      ]
+    },
+    {
+      "title": "6 KILL STREAKS",
+      "sub": "MID TIER · AIRSTRIKES + INTEL",
+      "streaks": [
+        {
+          "name": "Artillery Beacon",
+          "kills": "6",
+          "lv": 4,
+          "desc": "Heat-seeking missiles track the beacon you throw.",
+          "img": "artillery-beacon"
+        },
+        {
+          "name": "Crossfire",
+          "kills": "6",
+          "lv": 20,
+          "desc": "Two airstrikes hit from opposite directions.",
+          "img": "crossfire"
+        },
+        {
+          "name": "Combat Drone",
+          "kills": "6",
+          "lv": 26,
+          "desc": "Remote-controlled anti-personnel drone.",
+          "img": "combat-drone"
+        },
+        {
+          "name": "Counter UAV",
+          "kills": "6",
+          "lv": 31,
+          "desc": "Scrambles every enemy minimap.",
+          "img": "counter-uav"
+        }
+      ]
+    },
+    {
+      "title": "8 KILL STREAKS",
+      "sub": "GROUND + MISSILE POWER",
+      "streaks": [
+        {
+          "name": "Wheelson",
+          "kills": "8",
+          "lv": 16,
+          "desc": "AI vehicle that hunts nearby enemies or guards you. Reworked at launch to be more aggressive.",
+          "img": "wheelson"
+        },
+        {
+          "name": "Missile Salvo",
+          "kills": "8",
+          "lv": 24,
+          "desc": "Aerial platform that fires lock-on missiles.",
+          "img": "missile-salvo"
+        },
+        {
+          "name": "Railgun Sentry",
+          "kills": "8",
+          "lv": 38,
+          "desc": "Autonomous railgun sentry that fires flechette rounds.",
+          "img": "railgun-sentry"
+        }
+      ]
+    },
+    {
+      "title": "10 KILL STREAKS",
+      "sub": "HEAVY HITTERS",
+      "streaks": [
+        {
+          "name": "Attack Helicopter",
+          "kills": "10",
+          "lv": 4,
+          "desc": "Circles overhead and tracks targets for your team.",
+          "img": "attack-helicopter"
+        },
+        {
+          "name": "Deathstalker",
+          "kills": "10",
+          "lv": 35,
+          "desc": "Remote-controlled heli with twin turrets. Watch the overheat.",
+          "img": "deathstalker"
+        },
+        {
+          "name": "Advanced UAV",
+          "kills": "10",
+          "lv": 40,
+          "desc": "Shows enemy facing direction live. Can't be locked on.",
+          "img": "advanced-uav"
+        },
+        {
+          "name": "Argonaut",
+          "kills": "10",
+          "lv": 45,
+          "desc": "Heavy armor suit with a cluster grenade launcher and burst-fire sidearm.",
+          "img": "argonaut"
+        }
+      ]
+    },
+    {
+      "title": "12 KILLS + THE NUKE",
+      "sub": "TOP OF THE CHAIN",
+      "streaks": [
+        {
+          "name": "Gunship",
+          "kills": "12",
+          "lv": 51,
+          "desc": "Heavy gunship with 105mm, 40mm and 25mm cannons.",
+          "img": "gunship"
+        },
+        {
+          "name": "Air Lockdown",
+          "kills": "12",
+          "lv": 55,
+          "desc": "Series of bombing runs plus extra anti-air cover. Last streak you unlock.",
+          "img": "air-lockdown"
+        },
+        {
+          "name": "Tactical Nuke",
+          "kills": "30",
+          "lv": null,
+          "desc": "30 kills in ONE life. Only gun, equipment and field upgrade kills count. Ends the match: your team wins.",
+          "note": "NO SLOT NEEDED",
+          "nuke": true,
+          "img": null
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "title": "HOW STREAKS WORK",
+    "sub": "MW4 RULES MOST PLAYERS MISS",
+    "items": [
+      [
+        "PICK 3",
+        "One streak per kill tier. Saved per class: every loadout can run its own streaks."
+      ],
+      [
+        "SMART STREAKS",
+        "Capturing a flag, holding the Hardpoint or planting the Data Spike also fills your streak meter."
+      ],
+      [
+        "HARDLINE",
+        "Perk 2, level 4: every streak costs 1 kill less."
+      ],
+      [
+        "KILL CHAIN",
+        "Perk 1, level 48: kills from your streaks give half streak points."
+      ],
+      [
+        "DEATH = RESET",
+        "Your streak counter goes back to zero when you die."
+      ]
+    ]
+  },
+  "cta": {
+    "white": "YOUR 3",
+    "gold": "STREAKS?",
+    "sub": "DROP YOUR SETUP IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 TIPS + LOADOUTS"
+  },
+  "source": "Infinity Ward MW4 Beta + Launch patch notes (callofduty.com, 21.10.2026: UAV 5 kills / 4 with Hardline, health 100->150, Wheelson rework, Smart Streaks); allthings.how, gamerant, gamerfuzion, xboxplay.games, gameboost, lfcarry (costs 4/6/8/10/12, unlock levels, descriptions, Kill Chain); esports.gg, finalboss.io, playnews.gg (Nuke 30 kills, gun/equipment/field upgrade only, no S&D). Checked 05.11.2026."
+}
