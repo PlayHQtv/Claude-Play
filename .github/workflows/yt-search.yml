@@ -24,9 +24,10 @@ jobs:
           while read -r name q; do
             [ -z "$name" ] && continue
             q=$(dec "$q")
-            yt-dlp "ytsearchdate20:$q" --skip-download --dump-json --no-warnings --ignore-errors 2>out/$name.err \
+            u="https://www.youtube.com/results?search_query=$(jq -rn --arg q "$q" '$q|@uri')&sp=CAI%253D"
+            yt-dlp "$u" --playlist-end 15 --skip-download --dump-json --no-warnings --ignore-errors 2>out/$name.err \
               | jq -c '{id, title, channel, uploader_id, upload_date, duration, view_count, like_count, url: .webpage_url, desc: (.description // "" | .[0:300])}' > out/$name.json || true
             echo "$name: $(wc -l < out/$name.json) results"; tail -3 out/$name.err || true
           done < grab/yt.txt
           gh release view grab-private >/dev/null 2>&1 || gh release create grab-private --draft --title grab-private --notes "temporary, private draft" --target brand-assets
-          gh release upload grab-private out/* --clobber
+          yt-dlp --version; gh release upload grab-private out/*.json --clobber
