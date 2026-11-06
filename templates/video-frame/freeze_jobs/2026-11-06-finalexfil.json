@@ -1,6 +1,6 @@
 {"t": 13.5, "video_top": 656,
  "steps": [
-  {"kind": "circle", "x": 535, "y": 290, "r": 100, "label": "FINAL EXFIL CHOPPER", "lx": 640, "ly": 80},
+  {"kind": "circle", "x": 535, "y": 290, "r": 100, "label": "FINAL EXFIL", "lx": 640, "ly": 80},
   {"kind": "box", "box": [36, 164, 142, 198], "label": "RADIATION CLOSING IN", "color": "red", "lx": 36, "ly": 104}
  ],
  "banner": "ALL OTHER EXFILS = GONE",
