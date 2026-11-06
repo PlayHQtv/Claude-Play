@@ -1,0 +1,239 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "S1",
+  "cover": {
+    "kicker": "MW4 SEASON 1 · LIVE NOW",
+    "big": "SEASON 1",
+    "small": "EVERYTHING NEW",
+    "sub": "MAPS · GUNS · MODES · BUFFS · DMZ X01",
+    "img": "keyart.jpg",
+    "chips": [
+      "3 NEW MAPS",
+      "2 FREE GUNS",
+      "17 GUNS RETUNED",
+      "DMZ X01"
+    ],
+    "swipe": "SWIPE FOR ALL OF IT ›"
+  },
+  "slides": [
+    {
+      "sec": "MULTIPLAYER · 6V6 · MEDIUM",
+      "title": "3 NEW MAPS",
+      "cards": [
+        {
+          "img": "backstab.jpg",
+          "name": "Backstab",
+          "chip": "NEW",
+          "desc": "Snowy, war-torn town with abandoned tanks. Snipers: Stronghold House roof + Sniper House."
+        },
+        {
+          "img": "canyon.jpg",
+          "name": "Canyon",
+          "chip": "NEW",
+          "desc": "Sun-scorched canyon with tall rock walls: River, Cliff Path, Cave and a central Mesa."
+        },
+        {
+          "img": "shoothouse.jpg",
+          "name": "Shoot House",
+          "chip": "REIMAGINED",
+          "desc": "The classic 3-lane map, now in snowy North Korea."
+        }
+      ],
+      "foot": "MID-SEASON: MINISTRY + OVERFLOW · SHIPMENT IS ALREADY LIVE"
+    },
+    {
+      "sec": "BOTH FREE IN THE BATTLE PASS",
+      "title": "2 NEW GUNS",
+      "cards": [
+        {
+          "img": "osprey.png",
+          "fit": "contain",
+          "name": "Cronen Osprey",
+          "chip": "AR · TIER 16",
+          "desc": "882 RPM, 30 rounds: best-in-class fire rate. Apex: Helix Mk. II (dual-fire)."
+        },
+        {
+          "img": "csg35.png",
+          "fit": "contain",
+          "name": "CSG-35",
+          "chip": "SMG · TIER 36",
+          "desc": "1200 RPM, 28 rounds, dual-wield akimbo. Apex: CSG Crossfire."
+        },
+        {
+          "img": "jak12.png",
+          "fit": "contain",
+          "name": "JAK 12",
+          "chip": "LATER · EVENT",
+          "desc": "Full-auto shotgun. Apex: JAK Barrage (sticky explosives)."
+        },
+        {
+          "img": "talonhawk.png",
+          "fit": "contain",
+          "name": "ZLR Talonhawk",
+          "chip": "LATER · EVENT",
+          "desc": "New melee combat axe."
+        }
+      ]
+    },
+    {
+      "sec": "MULTIPLAYER MODES",
+      "title": "NEW + RETURNING MODES",
+      "cards": [
+        {
+          "img": "grind.png",
+          "fit": "contain",
+          "dark": true,
+          "name": "Grind",
+          "chip": "RETURNS",
+          "desc": "Collect enemy dog tags and bank them at one of 2 Banks. Die = you drop every tag you carry."
+        },
+        {
+          "img": "dropzone.png",
+          "fit": "contain",
+          "dark": true,
+          "name": "Drop Zone",
+          "chip": "RETURNS",
+          "desc": "Hold one rotating objective. Airdrops give your team random killstreaks."
+        },
+        {
+          "img": "gauntlet.png",
+          "fit": "contain",
+          "dark": true,
+          "name": "Gauntlet 1v1",
+          "chip": "COMING SOON",
+          "desc": "1v1 Gunfight: wager trophies, the winner stays for the next opponent."
+        }
+      ],
+      "foot": "ALSO: KILL BLOCK \"CRASH\" COMBO · COUNTER ATTACK AT MID-SEASON"
+    },
+    {
+      "sec": "SEASON 1 WEAPON TUNING",
+      "title": "BIGGEST BUFFS + NERFS",
+      "cards": [
+        {
+          "img": "oris.png",
+          "fit": "contain",
+          "name": "Oris 8.6",
+          "chip": "BUFF",
+          "desc": "Min damage 58 → 63. Max damage range 19m → 22.6m."
+        },
+        {
+          "img": "striga.png",
+          "fit": "contain",
+          "name": "Wz.55 Striga",
+          "chip": "BUFF",
+          "desc": "Max dmg 26 → 27, min dmg 17 → 19, headshot 1.3 → 1.4x."
+        },
+        {
+          "img": "rezi.png",
+          "fit": "contain",
+          "name": "Rezi 12",
+          "chip": "BUFF",
+          "desc": "Longer damage ranges, min damage 14 → 16."
+        },
+        {
+          "img": "kastov.png",
+          "fit": "contain",
+          "name": "Kastov 762",
+          "chip": "BUFF",
+          "desc": "Mid damage 24 → 25 out to 42m, headshot 1.35x."
+        },
+        {
+          "img": "hyeon.png",
+          "fit": "contain",
+          "name": "Hyperburst Apex",
+          "chip": "NERF",
+          "neg": true,
+          "desc": "Hyeon Burst Apex: max damage 30 → 23."
+        }
+      ]
+    },
+    {
+      "sec": "KILLSTREAKS · EQUIPMENT · HARDCORE",
+      "title": "STREAK + GEAR CHANGES",
+      "cards": [
+        {
+          "img": "argonaut.jpg",
+          "name": "Argonaut",
+          "chip": "BUFF",
+          "desc": "Armor health 800 → 1,200."
+        },
+        {
+          "img": "crossfire.jpg",
+          "name": "Crossfire",
+          "chip": "NERF",
+          "neg": true,
+          "desc": "Bullet damage -50%, radius -25%, adds spawn protection."
+        }
+      ],
+      "rules": [
+        [
+          "CLAYMORE",
+          "Arms in 0.75s (was 1s). Wider trigger cone 60° → 80°."
+        ],
+        [
+          "PROX MINE",
+          "Arms in 0.75s (was 1.5s)."
+        ],
+        [
+          "HARDCORE",
+          "Max health 30 → 22: everything kills faster."
+        ]
+      ]
+    },
+    {
+      "sec": "DMZ · NEW EXCLUSION ZONE",
+      "title": "X01 BLACK SITE",
+      "hero": "x01.jpg",
+      "rules": [
+        [
+          "WHAT",
+          "GRANIT Arms facility under Hajin: tunnels, labs, a sealed Deep Vault."
+        ],
+        [
+          "BOSSES",
+          "Knuckle + The Wrench (Lieutenants), The Captain (Juggernaut Commander)."
+        ],
+        [
+          "EXFIL",
+          "Exfils close one by one. Always know your nearest exfil."
+        ],
+        [
+          "LOOT",
+          "Supplied Drops on Dynamic Op crates: extra container 25% → 50%."
+        ]
+      ]
+    },
+    {
+      "sec": "100 TIERS · 1,100 COD POINTS",
+      "title": "BATTLE PASS",
+      "hero": "tout.jpg",
+      "rules": [
+        [
+          "LINEAR",
+          "100 tiers in a straight line, 100+ rewards."
+        ],
+        [
+          "CATCH-UP",
+          "Premium owners who fall behind jump to the current day's reward, up to day 50."
+        ],
+        [
+          "FREE GUNS",
+          "Cronen Osprey (tier 16) + CSG-35 (tier 36)."
+        ],
+        [
+          "TIER 100",
+          "Ultra \"Bellum\" Mosin-Nagant Blueprint."
+        ]
+      ]
+    }
+  ],
+  "cta": {
+    "white": "WHAT ARE YOU",
+    "gold": "PLAYING FIRST?",
+    "sub": "BACKSTAB, CANYON, SHOOT HOUSE OR X01?",
+    "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS"
+  },
+  "source": "callofduty.com MW4 Season 1 Patch Notes (05.11.2026) + MW4/Warzone Season 1 announcement blog (Oct 2026); PlayStation Blog S1 post; images: Activision via dexerto, PlayStation Blog, mw4.gg (private, not committed). Checked 06.11.2026.",
+  "verified": "independent verifier 06.11.2026: all claims confirmed against callofduty.com S1 patch notes + S1 blog; wording fixes applied (sun-scorched, Gauntlet coming soon, Supplied Drops = Dynamic Op crates, catch-up = premium)"
+}
