@@ -1,0 +1,32 @@
+name: yt-search
+# YouTube search WITHOUT any account: every "<name> <encrypted query>" line in grab/yt.txt is searched with yt-dlp
+# (newest first, metadata only, nothing downloaded). Results (title, channel, date, views, length, url) go as
+# <name>.json into the private DRAFT release "grab-private". Queries stay encrypted in the public repo.
+on:
+  push:
+    branches: [brand-assets]
+    paths: [grab/yt.txt]
+permissions:
+  contents: write
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.forced }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q -U yt-dlp
+      - run: |
+          mkdir out
+          gh release download grab-private -p fx_key_v2.pem -D /tmp --clobber && mv /tmp/fx_key_v2.pem /tmp/fx_private.pem
+          dec(){ case "$1" in enc:*) IFS=: read -r _ k d <<< "$1"; echo "$k" | base64 -d > /tmp/k.enc; openssl pkeyutl -decrypt -inkey /tmp/fx_private.pem -pkeyopt rsa_padding_mode:oaep -in /tmp/k.enc -out /tmp/k.bin; echo "$d" | base64 -d | openssl enc -d -aes-256-cbc -pbkdf2 -pass file:/tmp/k.bin;; *) printf %s "$1";; esac; }
+          while read -r name q; do
+            [ -z "$name" ] && continue
+            q=$(dec "$q")
+            yt-dlp "ytsearchdate20:$q" --skip-download --dump-json --no-warnings --ignore-errors 2>out/$name.err \
+              | jq -c '{id, title, channel, uploader_id, upload_date, duration, view_count, like_count, url: .webpage_url, desc: (.description // "" | .[0:300])}' > out/$name.json || true
+            echo "$name: $(wc -l < out/$name.json) results"; tail -3 out/$name.err || true
+          done < grab/yt.txt
+          gh release view grab-private >/dev/null 2>&1 || gh release create grab-private --draft --title grab-private --notes "temporary, private draft" --target brand-assets
+          gh release upload grab-private out/* --clobber
