@@ -362,6 +362,12 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Trend data 05.11.: MW4 multiplayer/loadouts/killstreaks are searched far more than DMZ -> lean multiplayer, use the exact search phrases in caption line 1 and on the slides.
 - CS2 content is out for now; the old daily "TikTok-Autopilot" task is paused (not deleted).
 
+## Finding + clipping YouTube sources cheaply (user 06.11.2026: OpusClip costs 1 credit per source minute)
+1. Find: `yt-search` workflow (grab/yt.txt, encrypted queries, yt-dlp flat search sorted by upload date, no account) -> results JSON in the private draft release. Use the Search-Insights phrases as queries.
+2. Pre-check for FREE before any credit: fetch the YouTube page with the web-fetch/search tool -> upload date, chapters and the timestamped transcript. Check the topic is really in the video (e.g. the Osprey is actually shown, the video is post-patch).
+3. Pick ONE tight slice (usually 1–4 min) from chapters/transcript and submit to OpusClip with rangeStart/rangeEnd (only that range is processed/billed), clipDurationsSec [[15,30]], customPrompt naming the exact moment, captions on. Budget: max ~5 credits per source unless the user agrees.
+4. Never submit whole long videos "to see what's in them".
+
 ## Research rules (TikTok best practice, checked 03.11.2026)
 - Ranking: watch time, completion, replays and shares weigh most; then comments, follows, saves; likes moderate. Language/country are weak signals. TikTok reads caption, on-screen text and speech (SEO).
 - Hook: keyword on screen in the first 3 s, payoff/value by ~15 s, no intro. Something changes on screen every 3–5 s (cut, zoom, text pop). Accurate captions (many watch muted).
