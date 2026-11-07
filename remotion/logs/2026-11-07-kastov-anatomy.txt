@@ -1,4 +1,4 @@
-job 2026-11-07-kastov-anatomy Sat Nov  7 17:19:29 UTC 2026
+job 2026-11-07-kastov-anatomy Sat Nov  7 17:23:21 UTC 2026
 prep ok (1808, 703) 34 sfx
 [90mRemotion root directory:[39m [90m/home/runner/work/Claude-Play/Claude-Play/templates/remotion-anatomy[39m
 [90mNo config file loaded.[39m
@@ -18,12 +18,12 @@ Got Headless Shell
 [90mEnsuring browser executable[39m
 [90mEnsured browser is available.[39m
 [40m openBrowser() [49m [90mOpening browser: gl = null, executable = /home/runner/work/Claude-Play/Claude-Play/templates/remotion-anatomy/node_modules/.remotion/chrome-headless-shell/linux64/chrome-headless-shell-linux64/chrome-headless-shell, enableMultiProcessOnLinux = true[39m
-[90mAvailable memory: 14635.21 MiB (/proc/meminfo MemAvailable)[39m
+[90mAvailable memory: 14677.44 MiB (/proc/meminfo MemAvailable)[39m
 [90mUsing setpriv --pdeathsig SIGKILL so the browser is killed if the Node parent process dies (Linux).[39m
 Getting composition
-[90mCreated directory for temporary files[39m [90m/tmp/remotion-v4.0.541-assets67qg8e5rbq[39m
-[90mAvailable memory: 13756.58 MiB (/proc/meminfo MemAvailable)[39m
-[40m Tab 0, delayRender() [49m [90m[90m"Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 0ms[39m[90m[39m
+[90mCreated directory for temporary files[39m [90m/tmp/remotion-v4.0.541-assets7hfxsu2jrx[39m
+[90mAvailable memory: 13689.52 MiB (/proc/meminfo MemAvailable)[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 1ms[39m[90m[39m
 [40m Tab 0, delayRender() [49m [90m[90m"Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 14ms[39m[90m[39m
 [40m selectComposition() [49m [90mRunning calculateMetadata()...[39m
 [40m Tab 0, delayRender() [49m [90m[90m"Running the calculateMetadata() function for composition Anatomy" handle was cleared after 1ms[39m[90m[39m
@@ -31,12 +31,12 @@ Getting composition
 [90mComposition = Anatomy (Passed as argument)[39m
 [90mFormat = png (Out name extension)[39m
 [90mOutput = /tmp/still.png[39m
-[90mAvailable memory: 13726.16 MiB (/proc/meminfo MemAvailable)[39m
+[90mAvailable memory: 13675.96 MiB (/proc/meminfo MemAvailable)[39m
 [34m+                    /tmp/still.png[39m
 [90mCleaning up...[39m
 [90mCleanup job "Close server" done[39m
 [90mCleanup job "Close browser" done[39m
-[90mCleanup done in 9ms[39m
-[90mTrying to kill browser process group -3857[39m
+[90mCleanup done in 8ms[39m
+[90mTrying to kill browser process group -3886[39m
 UPLOADED still
 STILL ONLY
