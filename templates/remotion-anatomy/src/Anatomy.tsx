@@ -69,6 +69,8 @@ export const Anatomy: React.FC<Job> = (job) => {
         gsap.set(q('#lock, #lockb'), {svgOrigin: `${CX} ${CY}`});
         gsap.set(q('#ret, #retr, #retp'), {svgOrigin: `${ZC[0]} ${ZC[1]}`});
         gsap.set(q('.card'), {transformPerspective: 900});
+        gsap.set(q('.tagline'), {drawSVG: '0%'}); gsap.set(q('.tagdot'), {scale: 0, transformOrigin: '50% 50%'});
+        gsap.set(q('.card .bar'), {scaleX: 0, transformOrigin: '0% 50%'}); gsap.set(q('.card .ix, .tag'), {autoAlpha: 0});
 
         // HOOK 0–2.2: laser scan draws a gold wireframe, flash, real rifle, kinetic title
         m.fromTo(q('#scan'), {x: X0 - 3}, {x: X0 + RW - 3, duration: 0.9, ease: 'power2.inOut'}, 0.15)
@@ -126,14 +128,14 @@ export const Anatomy: React.FC<Job> = (job) => {
           const s0 = PS + i * PD, mv = i === 0 ? 5.15 : s0 - 0.45, dur = i === 0 ? 0.6 : 0.6;
           m.to(q('#cam'), {...camTo(p.w[0], p.w[1], ZS, ZC), duration: dur, ease: 'expo.inOut'}, mv)
             .to(q('#cam'), {keyframes: [{filter: 'blur(9px)', duration: dur * 0.5, ease: 'power2.in'}, {filter: 'blur(0px)', duration: dur * 0.5, ease: 'power2.out'}]}, mv)
-            .fromTo(q('#ret'), {autoAlpha: 0, scale: 3}, {autoAlpha: 1, scale: 1, duration: 0.38, ease: 'expo.out'}, s0 + 0.12)
-            .fromTo(q('#retp'), {autoAlpha: 0.9, scale: 1}, {autoAlpha: 0, scale: 2.8, duration: 0.5, ease: 'power2.out'}, s0 + 0.45)
-            .fromTo(q('#retr'), {rotation: 0}, {rotation: 180, duration: 2.2, ease: 'none'}, s0 + 0.12)
-            .fromTo(q('#call'), {drawSVG: '0%', autoAlpha: 1}, {drawSVG: '100%', duration: 0.45, ease: 'power3.out'}, s0 + 0.3)
-            .fromTo(q(`#card${i}`), {autoAlpha: 0, y: 70, rotationX: -25, scale: 1.12, filter: 'blur(12px)'}, {autoAlpha: 1, y: 0, rotationX: 0, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out'}, s0 + 0.5)
-            .fromTo(q(`#card${i} .bar`), {scaleX: 0}, {scaleX: 1, duration: 1.4, ease: 'none', transformOrigin: '0% 50%'}, s0 + 0.7)
-            .fromTo(q(`#card${i} .ix`), {autoAlpha: 0, x: -30}, {autoAlpha: 0.95, x: 0, duration: 0.4, ease: 'expo.out'}, s0 + 0.55)
-            .fromTo(q('#sweep'), {backgroundPosition: '100% 0', autoAlpha: 0.85}, {backgroundPosition: '0% 0', duration: 0.8, ease: 'power2.inOut'}, s0 + 0.15)
+            .fromTo(q('#ret'), {autoAlpha: 0, scale: 3}, {immediateRender: false, autoAlpha: 1, scale: 1, duration: 0.38, ease: 'expo.out'}, s0 + 0.12)
+            .fromTo(q('#retp'), {autoAlpha: 0.9, scale: 1}, {immediateRender: false, autoAlpha: 0, scale: 2.8, duration: 0.5, ease: 'power2.out'}, s0 + 0.45)
+            .fromTo(q('#retr'), {rotation: 0}, {immediateRender: false, rotation: 180, duration: 2.2, ease: 'none'}, s0 + 0.12)
+            .fromTo(q('#call'), {drawSVG: '0%', autoAlpha: 1}, {immediateRender: false, drawSVG: '100%', duration: 0.45, ease: 'power3.out'}, s0 + 0.3)
+            .fromTo(q(`#card${i}`), {autoAlpha: 0, y: 70, rotationX: -25, scale: 1.12, filter: 'blur(12px)'}, {immediateRender: false, autoAlpha: 1, y: 0, rotationX: 0, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out'}, s0 + 0.5)
+            .fromTo(q(`#card${i} .bar`), {scaleX: 0}, {immediateRender: false, scaleX: 1, duration: 1.4, ease: 'none', transformOrigin: '0% 50%'}, s0 + 0.7)
+            .fromTo(q(`#card${i} .ix`), {autoAlpha: 0, x: -30}, {immediateRender: false, autoAlpha: 0.95, x: 0, duration: 0.4, ease: 'expo.out'}, s0 + 0.55)
+            .fromTo(q('#sweep'), {backgroundPosition: '100% 0', autoAlpha: 0.85}, {immediateRender: false, backgroundPosition: '0% 0', duration: 0.8, ease: 'power2.inOut'}, s0 + 0.15)
             .to(q('#sweep'), {autoAlpha: 0, duration: 0.1}, s0 + 0.95);
           const nm = new SplitText(q(`#card${i} .nm`), {type: 'chars'});
           m.from(nm.chars, {autoAlpha: 0, duration: 0.01, stagger: 0.028, ease: 'none'}, s0 + 0.62)
@@ -147,7 +149,7 @@ export const Anatomy: React.FC<Job> = (job) => {
         m.to(q('#cam'), {x: 0, y: 0, scale: 1, duration: 0.7, ease: 'expo.inOut'}, tA)
           .to(q('#cam'), {keyframes: [{filter: 'blur(8px)', duration: 0.35}, {filter: 'blur(0px)', duration: 0.35}]}, tA)
           .to(q('#hdr'), {autoAlpha: 0, duration: 0.3}, tA)
-          .fromTo(q('#xscan'), {x: X0 - 4, autoAlpha: 1}, {x: X0 + RW, duration: 0.7, ease: 'power2.inOut'}, tA)
+          .fromTo(q('#xscan'), {x: X0 - 4, autoAlpha: 1}, {immediateRender: false, x: X0 + RW, duration: 0.7, ease: 'power2.inOut'}, tA)
           .to(q('#xscan'), {autoAlpha: 0, duration: 0.1}, tA + 0.7)
           .to(q('#xray'), {clipPath: 'inset(0% 0% 0% 100%)', duration: 0.7, ease: 'power2.inOut'}, tA)
           .to(q('#real'), {autoAlpha: 1, duration: 0.6}, tA + 0.1)
@@ -155,14 +157,14 @@ export const Anatomy: React.FC<Job> = (job) => {
           .to(q('#gridbg'), {autoAlpha: 0.15, duration: 0.6}, tA + 0.1)
           .to(q('#floor, #floorglow, #refl'), {autoAlpha: 1, duration: 0.6}, tA + 0.3)
           .to(q('.beam'), {autoAlpha: 0.75, duration: 0.8}, tA + 0.2)
-          .fromTo(q('#badge'), {autoAlpha: 0, scale: 1.4}, {autoAlpha: 1, scale: 1, duration: 0.5, ease: 'expo.out'}, tA + 0.75)
+          .fromTo(q('#badge'), {autoAlpha: 0, scale: 1.4}, {immediateRender: false, autoAlpha: 1, scale: 1, duration: 0.5, ease: 'expo.out'}, tA + 0.75)
           .to(q('#rig'), {keyframes: [{rotationY: -7, rotationX: 4, duration: 1.0, ease: 'sine.inOut'}, {rotationY: 6, rotationX: 2, duration: 1.8, ease: 'sine.inOut'}]}, tA + 0.7)
-          .fromTo(q('#sweep'), {backgroundPosition: '100% 0', autoAlpha: 0.85}, {backgroundPosition: '0% 0', duration: 1.2, ease: 'power2.inOut'}, tA + 1.7)
+          .fromTo(q('#sweep'), {backgroundPosition: '100% 0', autoAlpha: 0.85}, {immediateRender: false, backgroundPosition: '0% 0', duration: 1.2, ease: 'power2.inOut'}, tA + 1.7)
           .to(q('#sweep'), {autoAlpha: 0, duration: 0.1}, tA + 2.9)
-          .fromTo(q('.tagline'), {drawSVG: '0%'}, {drawSVG: '100%', duration: 0.5, stagger: 0.12, ease: 'power2.out'}, tA + 0.9)
-          .fromTo(q('.tagdot'), {scale: 0, transformOrigin: '50% 50%'}, {scale: 1, duration: 0.4, stagger: 0.12, ease: 'back.out(3)'}, tA + 0.85)
-          .fromTo(q('.tag'), {autoAlpha: 0, y: 20}, {autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.12, ease: 'expo.out'}, tA + 1.0)
-          .fromTo(q('#hud'), {autoAlpha: 0}, {autoAlpha: 1, duration: 0.4}, tA + 0.9);
+          .fromTo(q('.tagline'), {drawSVG: '0%'}, {immediateRender: false, drawSVG: '100%', duration: 0.5, stagger: 0.12, ease: 'power2.out'}, tA + 0.9)
+          .fromTo(q('.tagdot'), {scale: 0, transformOrigin: '50% 50%'}, {immediateRender: false, scale: 1, duration: 0.4, stagger: 0.12, ease: 'back.out(3)'}, tA + 0.85)
+          .fromTo(q('.tag'), {autoAlpha: 0, y: 20}, {immediateRender: false, autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.12, ease: 'expo.out'}, tA + 1.0)
+          .fromTo(q('#hud'), {autoAlpha: 0}, {immediateRender: false, autoAlpha: 1, duration: 0.4}, tA + 0.9);
 
         // OUTRO 21–24: rifle flies off, burst, SAVE THIS BUILD, logo
         const tO = tA + 3.5;
