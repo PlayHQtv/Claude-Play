@@ -1,3 +1,74 @@
-job 2026-11-07-kastov-anatomy Sat Nov  7 17:13:38 UTC 2026
+job 2026-11-07-kastov-anatomy Sat Nov  7 17:15:30 UTC 2026
 prep ok (1808, 703) 34 sfx
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 0/1
+Rendered 1/1
+[34m+                    /tmp/still.png[39m
+[90mCleaning up...[39m
+[90mCleanup job "Close server" done[39m
+[90mCleanup job "Close browser" done[39m
+[90mCleanup done in 8ms[39m
+[90mTrying to kill browser process group -3867[39m
+UPLOADED still
 STILL ONLY
