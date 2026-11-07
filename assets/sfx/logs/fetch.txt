@@ -1,0 +1,10 @@
+== scifi https://opengameart.org/content/sci-fi-sounds
+zip: https://opengameart.org/sites/default/files/sci-fi_sounds.zip
+== interface https://opengameart.org/content/interface-sounds
+zip: https://opengameart.org/sites/default/files/kenney_interfaceSounds.zip
+== impact https://opengameart.org/content/impact-sounds
+zip: 
+NO ZIP
+== digital https://opengameart.org/content/63-digital-sound-effects-lasers-phasers-space-etc
+zip: https://opengameart.org/sites/default/files/Digital_SFX_Set.zip
+111 assets/sfx/kenney/INDEX.txt
