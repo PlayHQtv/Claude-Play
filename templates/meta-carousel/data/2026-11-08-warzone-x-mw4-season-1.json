@@ -1,0 +1,209 @@
+{
+  "game": "CALL OF DUTY · WARZONE",
+  "badge": "S1",
+  "cover": {
+    "kicker": "WARZONE SEASON 1 · LIVE NOW",
+    "big": "WARZONE X MW4",
+    "small": "EVERYTHING NEW",
+    "sub": "MAPS · GEAR · ELITE PERKS · MODES · SWITCH 2",
+    "img": "wz_tout.jpg",
+    "chips": [
+      "2 NEW MAPS",
+      "33 MW4 GUNS",
+      "NEW GEAR",
+      "SWITCH 2"
+    ],
+    "swipe": "SWIPE FOR ALL OF IT ›"
+  },
+  "slides": [
+    {
+      "sec": "BATTLE ROYALE + RESURGENCE",
+      "title": "2 NEW MAPS",
+      "cards": [
+        {
+          "img": "wz_hajin.jpg",
+          "name": "Hajin",
+          "chip": "BR · NEW",
+          "desc": "First Warzone map in Korea: 13 major POIs across North + South Korea, with changing weather."
+        },
+        {
+          "img": "wz_zodiac.jpg",
+          "name": "Zodiac",
+          "chip": "RESURGENCE · NEW",
+          "desc": "Drone factory with 10 POIs, moving trains on a double railway + underground tunnels."
+        },
+        {
+          "img": "wz_hajin2.jpg",
+          "name": "Hajin Gulag",
+          "chip": "NEW",
+          "desc": "2 symmetrical arenas exposed to weather. Spectate from ground level."
+        }
+      ],
+      "foot": "VERDANSK + REBIRTH ISLAND RETURN LATER IN SEASON 1"
+    },
+    {
+      "sec": "FULL MW4 INTEGRATION",
+      "title": "WHAT CHANGES",
+      "hero": "keyart.jpg",
+      "rules": [
+        [
+          "LEVEL RESET",
+          "Player level resets: level up + optional Prestige across MP, DMZ and Warzone."
+        ],
+        [
+          "ALL MW4 GUNS",
+          "All 33 launch guns + S1 weapons, Apex attachments + Warzone mastery camos."
+        ],
+        [
+          "TAC SPRINT",
+          "Free for everyone, no perk needed (slightly shorter)."
+        ],
+        [
+          "REVIVE",
+          "You can now drag teammates while reviving them."
+        ]
+      ]
+    },
+    {
+      "sec": "NEW FIELD UPGRADES + SYSTEMS",
+      "title": "NEW GEAR",
+      "cards": [
+        {
+          "img": "wz_zipline.jpg",
+          "name": "Zipline Launcher",
+          "chip": "NEW",
+          "desc": "Fire anchors + zip roof to roof. Enemies can use your line too. Pistols work on it."
+        },
+        {
+          "img": "wz_grabber.jpg",
+          "name": "Grabber Drone",
+          "chip": "NEW",
+          "desc": "Claw drone: grabs loot, fuel barrels or a downed teammate for the revive. Limited battery."
+        },
+        {
+          "img": "wz_augment.jpg",
+          "name": "Weapon Augments",
+          "chip": "NEW",
+          "desc": "From 'Fly Buy' Buy Stations, limited: CQC, Marksman or Handling boost for that match."
+        }
+      ],
+      "foot": "ALSO NEW: PERK SUPPLY BOX · RAZOR WIRE · SAM TURRET · SMOKE WALL"
+    },
+    {
+      "sec": "4TH PERK SLOT · ONLY IN MATCH",
+      "title": "ELITE PERKS",
+      "hero": "wz_hajin2.jpg",
+      "rules": [
+        [
+          "ATHLETICISM",
+          "More agile when strafing, crouching + in ADS. Smaller jump/slide ADS penalty."
+        ],
+        [
+          "PHANTOM",
+          "Undetectable by enemy recon killstreaks, equipment and perks."
+        ],
+        [
+          "FIELDCRAFT",
+          "Rapidly regenerates armor and equipment."
+        ],
+        [
+          "HOW TO GET",
+          "Buy Stations or Supply Run contracts. Only one Elite Perk at a time."
+        ]
+      ]
+    },
+    {
+      "sec": "FIND OR BUY THEM IN MATCH",
+      "title": "NEW KILLSTREAKS",
+      "cards": [
+        {
+          "img": "bomb-glider.jpg",
+          "fit": "contain",
+          "dark": true,
+          "name": "Bomb Glider",
+          "chip": "NEW",
+          "desc": "Hand-held glider with an explosive payload."
+        },
+        {
+          "img": "combat-drone.jpg",
+          "fit": "contain",
+          "dark": true,
+          "name": "Combat Drone",
+          "chip": "NEW",
+          "desc": "Remote-controlled anti-personnel drone."
+        },
+        {
+          "img": "impact-warhead.jpg",
+          "fit": "contain",
+          "dark": true,
+          "name": "Impact Warhead",
+          "chip": "NEW",
+          "desc": "Explosive payload that drills through multiple floors."
+        },
+        {
+          "img": "artillery-beacon.jpg",
+          "fit": "contain",
+          "dark": true,
+          "name": "Artillery Beacon",
+          "chip": "NEW",
+          "desc": "Heat-seeking missiles track the beacon you deploy."
+        }
+      ],
+      "foot": "ALSO NEW: BOMBING RUN · UAV, CUAV + ADVANCED UAV RETURN"
+    },
+    {
+      "sec": "LIMITED-TIME MODES AT LAUNCH",
+      "title": "3 NEW MODES",
+      "hero": "wz_zodiac2.jpg",
+      "rules": [
+        [
+          "RALLY POINT",
+          "Zodiac, 20 players, no circle, drop in/out anytime. Rumor: a buyable Nuke."
+        ],
+        [
+          "MASSIVE RES.",
+          "Hajin, 120 players, Resurgence on the big map."
+        ],
+        [
+          "LOADED RES.",
+          "Zodiac + Rebirth, 44 players: your own loadout, keep your guns after death."
+        ],
+        [
+          "MID-SEASON",
+          "Extreme Resurgence + Rockets and Snipers."
+        ]
+      ]
+    },
+    {
+      "sec": "PLATFORMS + FREE CAMOS",
+      "title": "SWITCH 2 + MORE",
+      "hero": "wz_switch2.jpg",
+      "rules": [
+        [
+          "SWITCH 2",
+          "Warzone launches on Nintendo Switch 2, its first time on a Nintendo console."
+        ],
+        [
+          "PS4 + XBOX ONE",
+          "No longer playable. Progress carries over with your linked Activision account."
+        ],
+        [
+          "FREE CAMOS",
+          "Return to Warzone event: Renaissance (animated), Violet Striker, Neutral Ground."
+        ],
+        [
+          "MASTERY",
+          "Warzone mastery camos: Parallax › Damascus Reforged › Empyros."
+        ]
+      ]
+    }
+  ],
+  "cta": {
+    "white": "ARE YOU BACK",
+    "gold": "IN WARZONE?",
+    "sub": "HAJIN OR ZODIAC: WHERE DO YOU DROP?",
+    "follow_sub": "FOR DAILY MW4 + WARZONE TIPS"
+  },
+  "source": "callofduty.com blog 'Call of Duty: Warzone Season 1: Everything You Need to Know' (02.11.2026, full text fetched 07.11.); mw4.gg news warzone-season-1-hajin-zodiac; playnews.gg + dotesports roadmap (Verdansk/Rebirth later in season). Images: official Activision art rehosted by gamerfuzion (wz-s1-001/005/011/017/018/022), dexerto.fr (Hajin, Zodiac), callofduty.com tout; killstreak icons mw4.gg catalog.",
+  "verified": "independent verifier 07.11.2026 vs callofduty.com blog: all OK after 5 wording fixes"
+}

@@ -1,0 +1,188 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "SMG RANK",
+  "cover": {
+    "kicker": "SEASON 1 SMG RANKING",
+    "big": "BEST SMG",
+    "small": "IN MW4",
+    "sub": "TOP 4 + THE BUILD FOR EACH",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "mw4/w_VEL_46.png"
+  },
+  "cta": {
+    "white": "WHICH SMG",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META"
+  },
+  "weapons": [
+    {
+      "rank": 1,
+      "image": "mw4/w_VEL_46.png",
+      "short": "VEL 46",
+      "title_white": "VEL",
+      "title_gold": "46",
+      "class": "SMG",
+      "class_note": "952 RPM · 40 rounds",
+      "tagline": "#1 SMG · S TIER",
+      "brightness": 1.1,
+      "code_label": "BUILD FROM",
+      "build_code": "MW4INTEL + DOTESPORTS",
+      "apex": "VEL 46 SNAP",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "XRK HERDER 40"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "VB-46 SERIES 11"
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS FIRELINE GRIP"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "V46 R-SKEL GRIP"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "XRK CLUTCH-LS"
+        }
+      ],
+      "sources": "warzoneloadout.games/mw4/vel-46 (S Absolute Meta, 6 incl. Apex VEL 46 Snap), mw4intel SMGs 07.11. (#1 S tier, same 5 + Snap), dotesports + gladiatorboost (same 5 + Apex). 952 RPM/40 rds: gladiatorboost, games.gg, lfcarry. | verifier 07.11.: warzoneloadout changed its VEL build today (Crackdown/Tac90/Sakin) -> credit mw4intel + dotesports + gladiatorboost."
+    },
+    {
+      "rank": 2,
+      "image": "mw4/w_ISO_Nightshade.png",
+      "short": "ISO NIGHTSHADE",
+      "title_white": "ISO",
+      "title_gold": "NIGHTSHADE",
+      "class": "SMG",
+      "class_note": "923 RPM fire rate",
+      "tagline": "#2 SMG · S TIER",
+      "brightness": 1.1,
+      "build_code": "S06-3YNQ7-YB11",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "XRK HERDER 40"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "DEMO KILO90 STOCK"
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS TAC90 GRIP"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "40 ROUND MAG"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "ZLR VELOCI GEN.2"
+        }
+      ],
+      "sources": "codmunity Versatile build code S06-3YNQ7-YB11 (verifier) = warzoneloadout Versatile (07.11. evening): XRK Herder 40, Demo Kilo90 Stock, FSS Tac90 Grip, 40 Round Mag, ZLR Veloci Gen.2 + Apex ISO Trace. Earlier Crackdown build replaced.",
+      "apex": "ISO TRACE"
+    },
+    {
+      "rank": 3,
+      "image": "mw4/w_PPSh41.png",
+      "short": "PPSH-41",
+      "title_white": "PPSH",
+      "title_gold": "41",
+      "class": "SMG",
+      "class_note": "1,110 RPM fire rate",
+      "tagline": "#3 SMG · A TIER",
+      "brightness": 1.1,
+      "build_code": "S05-AXLC6-PI4N1-1",
+      "attachments": [
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "HANBIT CHIMMUK-INTR"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "SCHLAGER VISIV-5"
+        },
+        {
+          "type": "optic",
+          "label": "OPTIC",
+          "name": "ZLR TYPE C"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "HANBIT JANGGUN-H9"
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS FIRELINE GRIP"
+        }
+      ],
+      "sources": "our verified PPSh carousel 02.11. (ALL-ROUND build with code S05-AXLC6-PI4N1-1, 5 sites); rank: mw4intel #3 A tier, warzoneloadout #3 A (Meta). 1,110 RPM: lfcarry."
+    },
+    {
+      "rank": 4,
+      "image": "mw4/w_Wz55_Striga.png",
+      "short": "WZ.55 STRIGA",
+      "title_white": "WZ.55",
+      "title_gold": "STRIGA",
+      "class": "SMG",
+      "class_note": "S1 buff: 27 max dmg",
+      "tagline": "#4 SMG · B TIER",
+      "brightness": 1.1,
+      "build_code": "S04-697YD-FQH11",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "330TC2 GRIDLOCK"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "GW SENDER 500"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "XRK CLUTCH-LS"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "MATUZEK 532-L GRIP"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "35 ROUND MAG"
+        }
+      ],
+      "sources": "verified Striga carousel 07.11. (dexerto code, astroboost, mw4intel); rank mw4intel #4 B tier, warzoneloadout B. | S1 buff re-checked on codmunity patch history 07.11. evening: max 26->27, min 17->19, head 1.3->1.4 (verifier had quoted pre-season note)."
+    }
+  ],
+  "facts": "Ranking consensus 07.11.2026: mw4intel SMGs (1 VEL 46, 2 ISO, 3 PPSh, 4 Striga, updated 07.11.), warzoneloadout SMG page (VEL #1 S, ISO #2 S, PPSh #3 A, Striga B; updated 06.11.), metaradar + codmunity (VEL + ISO top 2). CSG-35 split: dexerto S tier vs mw4intel/warzoneloadout C -> left out.",
+  "source": "see per weapon",
+  "notes": "CSG-35 + X-58 Nyx not in top 4.",
+  "verified": "independent verifier 07.11.2026 + re-check of disputed points"
+}
