@@ -52,11 +52,14 @@ export const Anatomy: React.FC<Job> = (job) => {
   const camState = useRef({x: 0, y: 0, s: 1});
   const [handle] = useState(() => delayRender('gsap-timeline'));
   const frameRef = useRef(frame); frameRef.current = frame;
+  const [dbg, setDbg] = useState('init');
 
   // ---------- build the master timeline once ----------
   useLayoutEffect(() => {
     let ctx: gsap.Context;
+    setDbg('effect');
     loadFonts().then(() => {
+      setDbg('fonts');
       try {
       ctx = gsap.context(() => {
         const q = gsap.utils.selector(root);
@@ -188,10 +191,11 @@ export const Anatomy: React.FC<Job> = (job) => {
         m.to({}, {duration: 0.01}, job.duration);
         tl.current = m;
         m.seek(frameRef.current / fps, false);
+        setDbg('built ' + m.duration().toFixed(2));
       }, root);
-      } catch (e) { console.error('TIMELINE ERROR', e); }
+      } catch (e: any) { console.error('TIMELINE ERROR', e); setDbg('ERR ' + (e && (e.stack || e.message) || String(e)).slice(0, 300)); }
       continueRender(handle);
-    }).catch((e) => { console.error('FONT ERROR', e); continueRender(handle); });
+    }).catch((e: any) => { console.error('FONT ERROR', e); setDbg('FONTERR ' + String(e)); continueRender(handle); });
     return () => ctx && ctx.revert();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -343,6 +347,7 @@ export const Anatomy: React.FC<Job> = (job) => {
       <div id="flash" className="abs" style={{inset: 0, opacity: 0, background: 'radial-gradient(60% 40% at 50% 47%,#fff8dc,rgba(255,220,120,.4) 50%,transparent 80%)', mixBlendMode: 'screen'}} />
       <div className="abs" style={{inset: 0, opacity: 0.07, mixBlendMode: 'overlay', backgroundImage: `url(${staticFile(`grain${frame % 4}.png`)})`, backgroundSize: '1080px 1920px'}} />
       <div className="abs" style={{inset: 0, background: 'radial-gradient(130% 85% at 50% 48%,transparent 50%,rgba(0,0,0,.85) 100%)'}} />
+      {(job as any).debug ? <div className="abs" style={{left: 20, top: 1600, width: 1040, color: '#f0f', fontSize: 26, fontFamily: 'DejaVu Sans Mono', whiteSpace: 'pre-wrap', zIndex: 99}}>{dbg + ' tl=' + (tl.current ? tl.current.time().toFixed(2) : 'none')}</div> : null}
       {job.bed ? <Audio src={staticFile(job.bed)} volume={0.9} /> : null}
       {job.sfx.map((s, i) => (
         <Sequence key={i} from={Math.round(s.at * fps)} layout="none"><Audio src={staticFile('sfx/' + s.file)} volume={s.vol ?? 0.7} /></Sequence>
