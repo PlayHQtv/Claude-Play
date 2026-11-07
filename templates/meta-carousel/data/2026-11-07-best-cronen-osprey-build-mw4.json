@@ -1,0 +1,147 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "NEW SEASON 1 AR · 882 RPM",
+    "big": "BEST OSPREY",
+    "small": "BUILD MW4",
+    "sub": "3 MW4 MULTIPLAYER LOADOUTS",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "../_build/w/osprey.png"
+  },
+  "cta": {
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META"
+  },
+  "weapons": [
+    {
+      "rank": 1,
+      "image": "../_build/w/osprey.png",
+      "short": "VERSATILE",
+      "title_white": "CRONEN",
+      "title_gold": "OSPREY",
+      "class": "Assault Rifle",
+      "class_note": "Versatile build",
+      "tagline": "S-TIER SUPPRESSED BUILD",
+      "brightness": 1.0,
+      "code_label": "BUILD FROM",
+      "build_code": "CODMUNITY + MW4INTEL",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "XRK MIL-TAC SUPPRESSOR"
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS TAC90 GRIP"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "60 ROUND MAG"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "CRONEN 56"
+        },
+        {
+          "type": "ammo",
+          "label": "AMMUNITION",
+          "name": "5.56 NATO OVERPRESSURED"
+        }
+      ],
+      "sources": "codmunity compare cronen-osprey-vs-m4 (top-rated meta build: XRK Mil-Tac Suppressor / Cronen 56 / 5.56 NATO Overpressured / 60 Round Mag / F[SS Tac90]); mw4intel.app best-loadouts (updated 07.11.2026, same 5 + Apex); warzoneloadout.games: '#1 for Versatile in MW4 Multiplayer, Absolute Meta' (Suppressor, Tac90, 60 Mag, Cronen 56) | verifier 07.11.: warzoneloadout ranks it #3 Versatile (not #1) -> slide says S-tier (mw4intel S tier, warzoneloadout Absolute Meta)"
+    },
+    {
+      "rank": 2,
+      "image": "../_build/w/osprey.png",
+      "short": "MOBILITY",
+      "title_white": "CRONEN",
+      "title_gold": "OSPREY",
+      "class": "Assault Rifle",
+      "class_note": "Mobility build",
+      "tagline": "SHORT BARREL FOR FAST MOVEMENT",
+      "brightness": 1.0,
+      "code_label": "BUILD FROM",
+      "build_code": "CODMUNITY",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "XRK MIL-TAC SUPPRESSOR"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "RG5 HARK 10\""
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS TAC90 GRIP"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "60 ROUND MAG"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "CRONEN 56"
+        }
+      ],
+      "sources": "codmunity.gg/loadout/codmunity-cronen-osprey-mw4-mobility (CODMunity, Mobility, last updated 11/06/2026); warzoneloadout.games Mobility = same 5"
+    },
+    {
+      "rank": 3,
+      "image": "../_build/w/osprey.png",
+      "short": "CREATOR PICK",
+      "title_white": "CRONEN",
+      "title_gold": "OSPREY",
+      "class": "Assault Rifle",
+      "class_note": "Creator build",
+      "tagline": "LONG BARREL + CANTED OPTIC",
+      "brightness": 1.0,
+      "code_label": "BUILD FROM",
+      "build_code": "JUSTHAZZARDOUS",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "FSS IS300"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "IO-556 TAC 18\""
+        },
+        {
+          "type": "optic",
+          "label": "OPTIC",
+          "name": "LOCUS PX3 CANTED"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "60 ROUND MAG"
+        },
+        {
+          "type": "ammo",
+          "label": "AMMUNITION",
+          "name": "5.56 NATO HIGH VELOCITY"
+        }
+      ],
+      "sources": "codmunity 'Most Liked Cronen Osprey Loadouts': Versatile by JustHazzardous (FSS IS300, IO-556 Tac 18\", Locus PX3 Canted, 60 Round Mag, 5.56 NATO High Velocity; updated 11/06/2026); wzhub Warzone long range uses the same muzzle/barrel/optic/mag (+Fireline) -> long-range setup | creator tagged it Versatile -> not called Long Range; only 1 like -> no \"most liked\" claim"
+    }
+  ],
+  "facts": "New S1 assault rifle, free Battle Pass tier 16, 882 RPM, 30-round mag, 70 weapon levels, Apex Cronen Helix Mk. II (Lv 70) fires on trigger pull and release (u4gm 06.11., ezg, ggwtb, callofduty S1 notes). Perks (mw4intel 07.11.): Ghost, Blood Rush, Battle Hardened; secondary Krait P68.",
+  "source": "codmunity.gg (compare page + CODMunity Mobility loadout 06.11. + creator loadouts), mw4intel.app/best-loadouts (07.11.2026), warzoneloadout.games/mw4/cronen-osprey; fetched 07.11.2026",
+  "notes": "Builds still change fast after S1 launch (06.11.). Osprey is new -> no S1 BUFF note; slide says NEW SEASON 1 AR instead. Creator build #3 has no official code."
+}

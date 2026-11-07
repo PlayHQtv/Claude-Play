@@ -1,0 +1,146 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "S1 BUFF · MAX DAMAGE 26 › 27",
+    "big": "BEST STRIGA",
+    "small": "BUILD MW4",
+    "sub": "3 MW4 MULTIPLAYER LOADOUTS",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "mw4/w_Wz55_Striga.png"
+  },
+  "cta": {
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META"
+  },
+  "weapons": [
+    {
+      "rank": 1,
+      "image": "mw4/w_Wz55_Striga.png",
+      "short": "ALL-ROUND",
+      "title_white": "WZ.55",
+      "title_gold": "STRIGA",
+      "class": "SMG",
+      "class_note": "All-round build",
+      "tagline": "S1 BUFF: 27 MAX / 19 MIN DAMAGE",
+      "brightness": 1.1,
+      "build_code": "S04-697YD-FQH11",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "330TC2 GRIDLOCK"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "GW SENDER 500"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "XRK CLUTCH-LS"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "MATUZEK 532-L GRIP"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "35 ROUND MAG"
+        }
+      ],
+      "sources": "dexerto MW4 wiki Wz.55 Striga loadout (code S04-697YD-FQH11, same 5); astroboost.gg All-round (updated 2026-11-01, same 5); warzoneloadout.games/mw4 Striga loadout 1 (same 5); dotesports uses Gridlock + Sender 500 + Clutch-LS too"
+    },
+    {
+      "rank": 2,
+      "image": "mw4/w_Wz55_Striga.png",
+      "short": "RUN & GUN",
+      "title_white": "WZ.55",
+      "title_gold": "STRIGA",
+      "class": "SMG",
+      "class_note": "Run & gun build",
+      "tagline": "FAST ADS + SPRINT TO FIRE",
+      "brightness": 1.1,
+      "code_label": "BUILD FROM",
+      "build_code": "GAMERANT",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "RX-5 OVERSTRIKE"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "GW SENDER 500"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "SCHLAGER VISIV-5"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "35 ROUND MAG"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "WIRE STOCK"
+        }
+      ],
+      "sources": "gamerant Best Meta WZ.55 Striga Loadout (Multiplayer row, boosts ADS + sprint-to-fire); gamer.org Multiplayer build identical"
+    },
+    {
+      "rank": 3,
+      "image": "mw4/w_Wz55_Striga.png",
+      "short": "AKIMBO APEX",
+      "title_white": "WZ.55",
+      "title_gold": "STRIGA",
+      "class": "SMG",
+      "class_note": "Akimbo close range",
+      "tagline": "DUAL-WIELD APEX AT LEVEL 60",
+      "brightness": 1.1,
+      "build_code": "S04-8V3VY-RBB11",
+      "apex": "STRIGA RAMPAGE",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "FTAC SILENT RECON"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "DS 9X18 PRO"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "50 ROUND DRUM MAG"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "FTAC GUARD5"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "QFL-S4.5"
+        }
+      ],
+      "sources": "CODMunity 'Mobility (Apex)' MP build, code S04-8V3VY-RBB11 (5 + Apex); astroboost.gg 'Akimbo Rampage (close range)' 2026-11-01 (same 5 + Apex, Apex doesn't use a slot); skycoach/gladiatorboost: Rampage = dual-wield, Lv 60, blocks optic/stock/underbarrel (build has none). Verifier 07.11.: warzoneloadout does NOT list this build."
+    }
+  ],
+  "facts": "S1 buff per CODMunity patch history (06.11.2026), backed by wzstats: max damage 26 -> 27, min 17 -> 19, headshot 1.3 -> 1.4x. Official notes not opened by verifier. MP ranking: warzoneloadout B tier, astroboost B tier.",
+  "source": "dexerto MW4 wiki, astroboost.gg (01.11.2026), warzoneloadout.games/mw4 + /mw4/wz-55-striga, gamerant, gamer.org, gladiatorboost, callofduty.com S1 patch notes; fetched 07.11.2026",
+  "notes": "CSG-35 skipped: only the codmunity/warzoneloadout data family had MP builds (partly incomplete, C tier #27 Mobility) -> not 2 independent sources. Striga is B tier, so no '#1 meta' claims."
+}

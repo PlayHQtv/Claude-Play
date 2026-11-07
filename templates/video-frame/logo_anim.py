@@ -37,7 +37,7 @@ def layers():
     return disc, Image.fromarray(base.astype('uint8')), sub(ring_m), sub(tri_m), tc
 
 
-def frame(i, L):
+def frame(i, L, rgba=False):
     disc, base, ring, tri, tc = L
     t = i / FPS
     im = disc.copy()
@@ -63,9 +63,10 @@ def frame(i, L):
         white = Image.new('RGBA', (1024, 1024), (255, 255, 255, 0)); white.putalpha(sh)
         im.alpha_composite(white)
     lg = im.resize((LOGO_W * SS, LOGO_W * SS), Image.LANCZOS)
-    p = Image.new('RGBA', (PATCH_WH[0] * SS, PATCH_WH[1] * SS), BG + (255,))
+    p = Image.new('RGBA', (PATCH_WH[0] * SS, PATCH_WH[1] * SS), (0, 0, 0, 0) if rgba else BG + (255,))
     p.alpha_composite(lg, (LOGO_XY[0] * SS, LOGO_XY[1] * SS))
-    return p.resize(PATCH_WH, Image.LANCZOS).convert('RGB')
+    p = p.resize(PATCH_WH, Image.LANCZOS)
+    return p if rgba else p.convert('RGB')
 
 
 def build(out):
