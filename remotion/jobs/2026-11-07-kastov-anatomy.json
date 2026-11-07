@@ -1,0 +1,235 @@
+{
+ "name": "2026-11-07-kastov-anatomy",
+ "weapon": "templates/meta-carousel/weapons/mw4/w_Kastov_762.png",
+ "duration": 24,
+ "kicker": "MW4 MULTIPLAYER · BUILD BREAKDOWN",
+ "title": "KASTOV 762",
+ "title2": "ANATOMY",
+ "badge": "BUILD 01 · STANDARD",
+ "source": "BUILD: GAME8 · NOV 2026",
+ "parts": [
+  {
+   "ty": "MUZZLE",
+   "nm": "EXP R3000-V",
+   "px": 25,
+   "py": 150,
+   "tag": [
+    70,
+    560
+   ]
+  },
+  {
+   "ty": "UNDERBARREL",
+   "nm": "FSS FIRELINE GRIP",
+   "px": 860,
+   "py": 282,
+   "tag": [
+    70,
+    1170
+   ]
+  },
+  {
+   "ty": "LASER",
+   "nm": "SCHLAGER VISIV-5",
+   "px": 720,
+   "py": 212,
+   "tag": [
+    380,
+    560
+   ]
+  },
+  {
+   "ty": "REAR GRIP",
+   "nm": "MUGI 00-YK1 GRIP",
+   "px": 1395,
+   "py": 445,
+   "tag": [
+    560,
+    1170
+   ]
+  },
+  {
+   "ty": "STOCK",
+   "nm": "SPETSNAZ S10 STOCK",
+   "px": 1650,
+   "py": 352,
+   "tag": [
+    660,
+    560
+   ]
+  }
+ ],
+ "sfx": [
+  {
+   "file": "scifi/forceField_000.ogg",
+   "at": 0.15,
+   "vol": 0.45
+  },
+  {
+   "file": "scifi/lowFrequency_explosion_000.ogg",
+   "at": 1.0,
+   "vol": 0.9
+  },
+  {
+   "file": "scifi/impactMetal_003.ogg",
+   "at": 1.0,
+   "vol": 0.6
+  },
+  {
+   "file": "scifi/laserRetro_000.ogg",
+   "at": 1.1,
+   "vol": 0.18
+  },
+  {
+   "file": "scifi/laserRetro_001.ogg",
+   "at": 1.19,
+   "vol": 0.18
+  },
+  {
+   "file": "scifi/laserRetro_002.ogg",
+   "at": 1.28,
+   "vol": 0.18
+  },
+  {
+   "file": "scifi/laserRetro_003.ogg",
+   "at": 1.37,
+   "vol": 0.18
+  },
+  {
+   "file": "scifi/forceField_001.ogg",
+   "at": 2.3,
+   "vol": 0.35
+  },
+  {
+   "file": "scifi/impactMetal_000.ogg",
+   "at": 2.95,
+   "vol": 0.55
+  },
+  {
+   "file": "scifi/forceField_002.ogg",
+   "at": 4.45,
+   "vol": 0.55
+  },
+  {
+   "file": "scifi/impactMetal_001.ogg",
+   "at": 5.78,
+   "vol": 0.5
+  },
+  {
+   "file": "scifi/doorOpen_000.ogg",
+   "at": 6.1,
+   "vol": 0.3
+  },
+  {
+   "file": "scifi/laserSmall_000.ogg",
+   "at": 6.22,
+   "vol": 0.18
+  },
+  {
+   "file": "scifi/impactMetal_002.ogg",
+   "at": 8.18,
+   "vol": 0.5
+  },
+  {
+   "file": "scifi/doorOpen_001.ogg",
+   "at": 8.5,
+   "vol": 0.3
+  },
+  {
+   "file": "scifi/laserSmall_001.ogg",
+   "at": 8.62,
+   "vol": 0.18
+  },
+  {
+   "file": "scifi/impactMetal_004.ogg",
+   "at": 10.58,
+   "vol": 0.5
+  },
+  {
+   "file": "scifi/doorOpen_002.ogg",
+   "at": 10.9,
+   "vol": 0.3
+  },
+  {
+   "file": "scifi/laserSmall_002.ogg",
+   "at": 11.02,
+   "vol": 0.18
+  },
+  {
+   "file": "scifi/impactMetal_001.ogg",
+   "at": 12.98,
+   "vol": 0.5
+  },
+  {
+   "file": "scifi/doorOpen_000.ogg",
+   "at": 13.3,
+   "vol": 0.3
+  },
+  {
+   "file": "scifi/laserSmall_003.ogg",
+   "at": 13.42,
+   "vol": 0.18
+  },
+  {
+   "file": "scifi/impactMetal_002.ogg",
+   "at": 15.38,
+   "vol": 0.5
+  },
+  {
+   "file": "scifi/doorOpen_001.ogg",
+   "at": 15.7,
+   "vol": 0.3
+  },
+  {
+   "file": "scifi/laserSmall_004.ogg",
+   "at": 15.82,
+   "vol": 0.18
+  },
+  {
+   "file": "scifi/forceField_003.ogg",
+   "at": 17.55,
+   "vol": 0.5
+  },
+  {
+   "file": "scifi/laserRetro_000.ogg",
+   "at": 18.4,
+   "vol": 0.2
+  },
+  {
+   "file": "scifi/laserRetro_001.ogg",
+   "at": 18.52,
+   "vol": 0.2
+  },
+  {
+   "file": "scifi/laserRetro_002.ogg",
+   "at": 18.64,
+   "vol": 0.2
+  },
+  {
+   "file": "scifi/laserRetro_003.ogg",
+   "at": 18.76,
+   "vol": 0.2
+  },
+  {
+   "file": "scifi/laserRetro_004.ogg",
+   "at": 18.88,
+   "vol": 0.2
+  },
+  {
+   "file": "scifi/lowFrequency_explosion_001.ogg",
+   "at": 21.05,
+   "vol": 0.9
+  },
+  {
+   "file": "scifi/explosionCrunch_000.ogg",
+   "at": 21.05,
+   "vol": 0.45
+  },
+  {
+   "file": "scifi/impactMetal_002.ogg",
+   "at": 21.95,
+   "vol": 0.5
+  }
+ ],
+ "bed": "bed_anatomy.ogg"
+}

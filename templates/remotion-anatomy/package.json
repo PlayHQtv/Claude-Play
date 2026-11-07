@@ -1,0 +1,6 @@
+{
+  "name": "playhq-remotion-anatomy",
+  "private": true,
+  "scripts": {"render": "remotion render src/index.ts Anatomy"},
+  "dependencies": {}
+}

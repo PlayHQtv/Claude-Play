@@ -1,0 +1,47 @@
+name: remotion-render
+# Renders a Remotion+GSAP anatomy video for remotion/jobs/<name>.json and uploads the MP4 to the draft release "renders".
+# Only own/CC0 assets are used. Log: remotion/logs/<name>.txt
+on:
+  push:
+    branches: [brand-assets]
+    paths: ['remotion/jobs/*.json']
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'push' || !github.event.forced }}
+    timeout-minutes: 60
+    env: {GH_TOKEN: "${{ github.token }}"}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - name: Setup
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-dejavu-core ffmpeg libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2 >/dev/null || true
+          sudo apt-get install -y -qq libasound2t64 >/dev/null 2>&1 || sudo apt-get install -y -qq libasound2 >/dev/null 2>&1 || true
+          pip install -q pillow numpy
+          cd templates/remotion-anatomy && npm i --no-audit --no-fund remotion@4 @remotion/cli@4 react@18 react-dom@18 gsap@3 >/dev/null && npx remotion versions | tail -5
+      - name: Render
+        run: |
+          mkdir -p remotion/logs
+          for job in $(git diff --name-only HEAD~1 HEAD -- 'remotion/jobs/*.json'); do
+            [ -f "$job" ] || continue
+            name=$(basename "$job" .json); log="$PWD/remotion/logs/$name.txt"
+            {
+              echo "job $name $(date -u)"
+              cd templates/remotion-anatomy
+              python3 prep.py "../../$job"
+              npx remotion render src/index.ts Anatomy /tmp/$name.mp4 --props=/tmp/props.json --crf=16 --jpeg-quality=92 --concurrency=2 --timeout=120000 --log=info 2>&1 | grep -vE "^\s*(Rendered|Encoded|Stitched) [0-9]+/" | tail -60
+              ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height,r_frame_rate -of compact /tmp/$name.mp4
+              ffmpeg -nostdin -i /tmp/$name.mp4 -af ebur128=framelog=quiet -f null - 2>&1 | grep -E " I:" | tail -1
+              gh release view renders >/dev/null 2>&1 || gh release create renders --draft --title renders --notes "Render outputs (temporary)"
+              gh release upload renders /tmp/$name.mp4 --clobber && echo "UPLOADED $name.mp4"
+              cd ../..
+            } > "$log" 2>&1 || echo "FAILED" >> "$log"
+          done
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add remotion/logs && git commit -m "remotion-render logs" && git pull --rebase -q && git push || true
