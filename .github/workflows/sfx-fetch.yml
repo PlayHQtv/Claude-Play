@@ -15,22 +15,22 @@ jobs:
       - name: Fetch packs
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg unzip >/dev/null
-          mkdir -p assets/sfx/kenney assets/sfx/logs; log=assets/sfx/logs/fetch.txt; : > $log
+          rm -rf assets/sfx/kenney; mkdir -p assets/sfx/kenney assets/sfx/logs; log=assets/sfx/logs/fetch.txt; : > $log
           while read -r pack page; do
             [ -z "$pack" ] && continue; case "$pack" in \#*) continue;; esac
             echo "== $pack $page" >> $log
-            html=$(curl -fsSL -A "Mozilla/5.0" "$page" || true)
-            zip=$(echo "$html" | grep -oE 'https?://[^"]+\.zip' | head -1)
+            html=$(curl -fsSL -A "Mozilla/5.0" "$page" < /dev/null || true)
+            zip=$(echo "$html" | grep -oE 'https?://[^"]+\.zip' | head -1); echo "$html" | grep -oiE 'href="[^"]*(download|\.zip)[^"]*"' | head -5 >> $log
             [ -z "$zip" ] && zip=$(echo "$html" | grep -oE '/sites/default/files/[^"]+\.zip' | head -1 | sed 's#^#https://opengameart.org#')
             echo "zip: $zip" >> $log
             [ -z "$zip" ] && { echo "NO ZIP" >> $log; continue; }
-            curl -fsSL -A "Mozilla/5.0" -o /tmp/p.zip "$zip" || { echo "DL FAILED" >> $log; continue; }
+            curl -fsSL -A "Mozilla/5.0" -o /tmp/p.zip "$zip" < /dev/null || { echo "DL FAILED" >> $log; continue; }
             rm -rf /tmp/p && mkdir /tmp/p && unzip -q /tmp/p.zip -d /tmp/p
             mkdir -p "assets/sfx/kenney/$pack"
             find /tmp/p -iname 'license*' -exec cp {} "assets/sfx/kenney/$pack/" \; -quit
             find /tmp/p -type f \( -iname '*.ogg' -o -iname '*.wav' -o -iname '*.mp3' \) | while read -r f; do
               b=$(basename "$f"); b="${b%.*}"; b=$(echo "$b" | tr ' ' '_')
-              ffmpeg -loglevel error -y -i "$f" -ac 2 -ar 48000 -c:a libvorbis -q:a 6 "assets/sfx/kenney/$pack/$b.ogg" || true
+              ffmpeg -nostdin -loglevel error -y -i "$f" -ac 2 -ar 48000 -c:a libvorbis -q:a 6 "assets/sfx/kenney/$pack/$b.ogg" || true
             done
           done < assets/sfx/packs.txt
           : > assets/sfx/kenney/INDEX.txt

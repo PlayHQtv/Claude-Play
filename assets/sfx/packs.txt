@@ -1,5 +1,6 @@
-# pack-name page-url (CC0, Kenney via OpenGameArt)
+# pack-name page-url (CC0, Kenney)
 scifi https://opengameart.org/content/sci-fi-sounds
 interface https://opengameart.org/content/interface-sounds
-impact https://opengameart.org/content/impact-sounds
 digital https://opengameart.org/content/63-digital-sound-effects-lasers-phasers-space-etc
+impact https://kenney.nl/assets/impact-sounds
+uiaudio https://opengameart.org/content/ui-audio
