@@ -35,7 +35,7 @@ jobs:
               echo "job $name $(date -u)"
               cd templates/remotion-anatomy
               python3 prep.py "../../$job"
-              npx remotion still src/index.ts Anatomy /tmp/still.png --props=/tmp/props.json --frame=100 --log=verbose > /tmp/still.log 2>&1; grep -vE "^\s*$" /tmp/still.log | grep -viE "download|bundl|copying|webpack|compil" | tail -70; gh release view renders >/dev/null 2>&1 || gh release create renders --draft --title renders --notes tmp; gh release upload renders /tmp/still.png --clobber && echo UPLOADED still
+              npx remotion still src/index.ts Anatomy /tmp/still.png --props=/tmp/props.json --frame=100 --log=verbose > /tmp/still.log 2>&1; grep -vE "^\s*$" /tmp/still.log | grep -viE "download|bundl|copying|webpack|compil|Rendered [0-9]" | head -80; gh release view renders >/dev/null 2>&1 || gh release create renders --draft --title renders --notes tmp; gh release upload renders /tmp/still.png --clobber && echo UPLOADED still
               [ -f ../../remotion/still_only ] && { echo STILL ONLY; cd ../..; continue; }
               npx remotion render src/index.ts Anatomy /tmp/$name.mp4 --props=/tmp/props.json --crf=16 --jpeg-quality=92 --concurrency=2 --timeout=120000 --log=info 2>&1 | grep -vE "^\s*(Rendered|Encoded|Stitched) [0-9]+/" | tail -60
               ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height,r_frame_rate -of compact /tmp/$name.mp4
