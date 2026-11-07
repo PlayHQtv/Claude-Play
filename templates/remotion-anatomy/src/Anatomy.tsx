@@ -191,7 +191,8 @@ export const Anatomy: React.FC<Job> = (job) => {
         m.to({}, {duration: 0.01}, job.duration);
         tl.current = m;
         m.seek(frameRef.current / fps, false);
-        setDbg('built ' + m.duration().toFixed(2));
+        const el = document.querySelector('#save1') as HTMLElement; const sc = document.querySelector('#scan') as HTMLElement;
+        setDbg('built ' + m.duration().toFixed(2) + ' q=' + q('#save1').length + '/' + q('#scan').length + ' rootcur=' + (root.current ? root.current.tagName : 'null') + ' docN=' + document.querySelectorAll('#save1').length + ' saveOp=' + (el && el.style.opacity) + ' scanTf=' + (sc && sc.style.transform) + ' kids=' + m.getChildren(false).length);
       }, root);
       } catch (e: any) { console.error('TIMELINE ERROR', e); setDbg('ERR ' + (e && (e.stack || e.message) || String(e)).slice(0, 300)); }
       continueRender(handle);
