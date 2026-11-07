@@ -35,6 +35,8 @@ jobs:
               echo "job $name $(date -u)"
               cd templates/remotion-anatomy
               python3 prep.py "../../$job"
+              npx remotion still src/index.ts Anatomy /tmp/still.png --props=/tmp/props.json --frame=100 --log=verbose 2>&1 | grep -iE "error|warn|console|TIMELINE|FONT|exception" | head -40
+              [ -f ../../remotion/still_only ] && { echo STILL ONLY; cd ../..; continue; }
               npx remotion render src/index.ts Anatomy /tmp/$name.mp4 --props=/tmp/props.json --crf=16 --jpeg-quality=92 --concurrency=2 --timeout=120000 --log=info 2>&1 | grep -vE "^\s*(Rendered|Encoded|Stitched) [0-9]+/" | tail -60
               ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height,r_frame_rate -of compact /tmp/$name.mp4
               ffmpeg -nostdin -i /tmp/$name.mp4 -af ebur128=framelog=quiet -f null - 2>&1 | grep -E " I:" | tail -1
@@ -44,4 +46,4 @@ jobs:
             } > "$log" 2>&1 || echo "FAILED" >> "$log"
           done
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add remotion/logs && git commit -m "remotion-render logs" && git pull --rebase -q && git push || true
+          git add remotion/logs && git commit -m "remotion-render logs" && git push || (git pull --rebase origin brand-assets && git push) || true
