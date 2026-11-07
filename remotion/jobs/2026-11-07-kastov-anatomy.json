@@ -232,6 +232,6 @@
   }
  ],
  "bed": "bed_anatomy.ogg",
- "rev": 6,
- "debug": true
+ "rev": 7,
+ "debug": false
 }

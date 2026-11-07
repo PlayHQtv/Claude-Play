@@ -2,7 +2,7 @@
 // All motion lives in one paused GSAP master timeline that is seeked to frame/fps on every frame
 // (deterministic, works with Remotion's parallel rendering). Particles/grain are drawn per frame.
 import React, {useLayoutEffect, useRef, useState} from 'react';
-import {AbsoluteFill, Audio, Sequence, continueRender, delayRender, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Audio, Sequence, continueRender, delayRender, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import gsap from 'gsap';
 import {SplitText} from 'gsap/SplitText';
 import {DrawSVGPlugin} from 'gsap/DrawSVGPlugin';
@@ -237,7 +237,7 @@ export const Anatomy: React.FC<Job> = (job) => {
   const hudL = t < 4.4 ? 'TARGET ACQUIRED ▸ ' + job.title.replace(/\s/g, '-') : t < 5.5 ? `X-RAY SCAN ▸ ${Math.round(clamp((t - 4.45) / 0.95) * 100)}%` : `ASSEMBLY ▸ ${parts.length}/${parts.length} PARTS`;
 
   return (
-    <AbsoluteFill ref={root as any} style={{background: 'radial-gradient(120% 70% at 50% 46%,#16120a 0%,#070604 45%,#000 80%)', overflow: 'hidden'}}>
+    <div ref={root} style={{position: 'absolute', inset: 0, width: 1080, height: 1920, background: 'radial-gradient(120% 70% at 50% 46%,#16120a 0%,#070604 45%,#000 80%)', overflow: 'hidden'}}>
       <style>{`
         .abs{position:absolute}
         .beam{top:-300px;width:300px;height:2400px;background:linear-gradient(to bottom,rgba(255,206,90,.55),rgba(255,190,60,.12) 45%,transparent 75%);filter:blur(40px);mix-blend-mode:screen;transform-origin:50% 0}
@@ -353,6 +353,6 @@ export const Anatomy: React.FC<Job> = (job) => {
       {job.sfx.map((s, i) => (
         <Sequence key={i} from={Math.round(s.at * fps)} layout="none"><Audio src={staticFile('sfx/' + s.file)} volume={s.vol ?? 0.7} /></Sequence>
       ))}
-    </AbsoluteFill>
+    </div>
   );
 };
