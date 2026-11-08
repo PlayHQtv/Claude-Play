@@ -138,6 +138,36 @@ def title_html(white, gold, top, size=250, max_w=950, mask=None):
             f'<div class="fit" style="top:{top + h + 6}px" data-size="{h}" data-max="{max_w}"><span class="gr gold"{f' style="-webkit-mask-position:{mask}"' if mask else ''}>{E(gold)}</span></div>')
 
 
+def gun_html(img, br, glow=None, top=520, height=320, maxh=290):
+    """Weapon render on the build slide. glow: None (classic) | 'aura' (soft gold halo) | 'sheen' (halo + light sweep over the metal)
+    | 'hero' (sheen + rim light + floor reflection)."""
+    src = f'/weapons/{img}'
+    base = 'drop-shadow(0 40px 30px rgba(0,0,0,.85)) drop-shadow(0 0 2px rgba(255,220,140,.35))'
+    if glow == 'edge':  # tight gold outline glow (small radius, no big blur halo)
+        base = 'drop-shadow(0 0 1px rgba(255,226,150,.95)) drop-shadow(0 0 3px rgba(255,196,64,.5))'
+    if glow == 'edge2':  # same, a bit stronger
+        base = 'drop-shadow(0 0 1.5px rgba(255,230,160,1)) drop-shadow(0 0 4px rgba(255,196,64,.55))'
+    if glow in ('aura', 'sheen', 'hero'):
+        base = ('drop-shadow(0 34px 26px rgba(0,0,0,.85)) drop-shadow(0 0 3px rgba(255,226,150,.55)) '
+                'drop-shadow(0 0 16px rgba(255,196,64,.38)) drop-shadow(0 0 46px rgba(255,170,30,.22))')
+    im = f'<img style="display:block;max-height:{maxh}px;max-width:860px;filter:{base} brightness({br}) contrast(1.08)" src="{src}">'
+    lay = ''
+    if glow in ('sheen', 'hero'):  # light sweep, clipped to the weapon's own silhouette
+        lay += (f'<div style="position:absolute;inset:0;-webkit-mask:url({src}) center/100% 100% no-repeat;mix-blend-mode:screen;'
+                'background:linear-gradient(118deg,transparent 22%,rgba(255,236,190,.10) 30%,rgba(255,240,205,.30) 36%,rgba(255,236,190,.10) 42%,transparent 52%)"></div>')
+    if glow == 'hero':  # warm rim light from top-left, clipped to the silhouette
+        lay += (f'<div style="position:absolute;inset:0;-webkit-mask:url({src}) center/100% 100% no-repeat;mix-blend-mode:screen;'
+                'background:radial-gradient(120% 90% at 0% 0%,rgba(255,206,110,.45),transparent 50%)"></div>')
+    wrap = 'filter:drop-shadow(0 34px 26px rgba(0,0,0,.85));' if glow in ('edge', 'edge2') else ''  # dark shadow separately, so the gold edge stays tight
+    gun = f'<div style="position:relative;display:inline-block;transform:rotate(-4deg);{wrap}">{im}{lay}</div>'
+    refl = ''
+    if False:  # floor reflection: hidden behind the ATTACHMENTS bar on build slides -> off
+        refl = (f'<div style="position:absolute;left:0;right:0;top:{height - 8}px;display:grid;place-items:center;opacity:.22;'
+                '-webkit-mask-image:linear-gradient(180deg,#000,transparent 45%)">'
+                f'<img style="display:block;max-height:{maxh}px;max-width:860px;transform:rotate(4deg) scaleY(-1);filter:blur(1.5px) brightness({br})" src="{src}"></div>')
+    return f'<div class="gunbox" style="top:{top}px;height:{height}px;width:900px">{gun}</div>' + refl.replace('position:absolute;left:0;right:0;', f'position:absolute;left:90px;width:900px;', 1)
+
+
 def weapon_slide(w, d):
     tiles = ''.join(
         f'<div class="t hud"><span class="num">{i + 1:02d}</span><div class="ic"><img src="/assets/icons/{a["type"]}.svg"></div>'
@@ -155,7 +185,7 @@ def weapon_slide(w, d):
             + f'<div class="cls" style="top:468px;left:60px;font-size:30px"><i></i>{E(w["class"])} — <b>{E(w.get("class_note", "Meta Loadout"))}</b></div>'
             + f'<div class="rank"><small>{E(d.get("rank_label", "META RANK"))}</small><strong>#{w["rank"]}</strong></div>'
             + '<div class="floor" style="top:826px"></div><div class="line" style="top:843px"></div>'
-            + f'<div class="gunbox" style="top:520px;height:320px;width:900px"><img class="gun" style="max-height:290px;max-width:860px;filter:drop-shadow(0 40px 30px rgba(0,0,0,.85)) drop-shadow(0 0 2px rgba(255,220,140,.35)) brightness({br}) contrast(1.08)" src="/weapons/{w["image"]}"></div>'
+            + gun_html(w["image"], br, d.get('glow', w.get('glow', 'edge')))
             + f'<div class="hdr hud"><span>ATTACHMENTS</span><div class="ticks"><i style="width:60px"></i><div style="text-align:right;line-height:1.1"><small style="display:block;font-size:14px;letter-spacing:4px;color:#bdbdbd;font-weight:700">{E(w.get("code_label", "BUILD CODE"))}</small><em style="font-size:19px;letter-spacing:4px">{E(w.get("build_code", ""))}</em></div></div></div>'
             + f'<div class="grid">{tiles}</div>')
     return page(body, {**d, 'footer': ''})

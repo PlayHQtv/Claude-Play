@@ -16,7 +16,7 @@ def cover_slide(d):
             + f'<div class="fit" style="top:420px" data-size="120" data-max="860"><span class="gr w">{E(c["small"])}</span></div>'
             + f'<div class="kicker" style="top:552px;left:62px;font-size:24px;letter-spacing:6px;color:#d9d9d9">{E(c["sub"])}</div>'
             + '<div class="floor" style="top:880px"></div><div class="line" style="top:897px"></div>'
-            + f'<div class="gunbox" style="top:600px;height:290px;width:900px"><img class="gun" style="max-height:270px;max-width:860px;filter:drop-shadow(0 40px 30px rgba(0,0,0,.85)) brightness(1.2) contrast(1.08)" src="/weapons/{c["image"]}"></div>'
+            + f'<div class="gunbox" style="top:600px;height:290px;width:900px"><div style="display:inline-block;transform:rotate(-4deg);filter:drop-shadow(0 40px 30px rgba(0,0,0,.85))"><img style="display:block;max-height:270px;max-width:860px;filter:drop-shadow(0 0 1px rgba(255,226,150,.95)) drop-shadow(0 0 3px rgba(255,196,64,.5)) brightness(1.2) contrast(1.08)" src="/weapons/{c["image"]}"></div></div>'
             + rows + f'<div class="swipe" style="top:1222px;font-size:26px;right:110px">{E(c["swipe"])}</div>')
     return R.page(body, {**d, 'footer': '', 'cover_logo': 1})
 

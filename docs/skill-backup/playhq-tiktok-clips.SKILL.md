@@ -14,6 +14,7 @@ Always answer the user in German. The user wants to do as little as possible him
 - **Upload:** sign-upload (playhq/tmp/<id>) → `signed.json` outside the repo → `bin/bundle.sh <dir>` (new self-deleting tmp-upload-* branch, log with versions/bytes) → Metricool with res.cloudinary URLs (unchanged slides keep their Metricool URLs) → byte check via chk* upload → delete all playhq/tmp/*.
 - **Private asset cache:** `bin/cache_pull.sh` at session start, `bin/cache_push.sh` after new private images (encrypted in the draft release). New third-party images via encrypted `grab/request.txt`. Reusable scripts always into the repo.
 - **GitHub security:** leak grep = 0 before every commit; Claude noreply commits; `cleanup` workflow removes temp branches, non-key release assets and old run logs; repo public, Wiki/Issues/Projects off, user 2FA + private e-mail.
+- **Weapon look (user 08.11.: "d zukünftig im Hauptbild"):** fine gold edge glow directly on the weapon outline (`gun_html` glow `edge`, default on build slides + cover weapon; dark shadow on a separate wrapper so the gold stays tight). Big halos/light sweeps/rim light rejected as "billig".
 - **Speed:** render ~12 s, QA ~25 s, upload ~45 s; parallelize; sketch new styles before polishing.
 
 ## PRE-PUBLISH GATE (user 29.10.: "So etwas darf nicht mehr passieren") – nothing goes to Metricool before ALL of these pass
