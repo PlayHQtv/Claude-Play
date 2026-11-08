@@ -104,6 +104,13 @@ def save_jpg(im, path, quality=95):
     open(path, 'wb').write(data)
 
 
+def cutout_html(k):
+    """Free-standing operator cut-out BEHIND the title (put it first in the body), bleeding off the right edge, fading out at the bottom."""
+    return (f'<img src="/_build/s1/{k["img"]}" style="position:absolute;right:{k.get("right", 0)}px;top:{k["top"]}px;width:{k["w"]}px;'
+            f'-webkit-mask-image:linear-gradient(180deg,#000 {k.get("fade", 62)}%,transparent 98%);'
+            'filter:drop-shadow(-22px 12px 30px rgba(0,0,0,.9)) brightness(1.04)">')
+
+
 GAME_LOGO = '/_build/s1/logo_mw4.png'  # official MW4 wordmark, private (_build is git-ignored)
 
 

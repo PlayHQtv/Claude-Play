@@ -8,7 +8,14 @@
     "small": "IN MW4",
     "sub": "TOP 4 + THE BUILD FOR EACH",
     "swipe": "SWIPE FOR THE BUILDS ›",
-    "image": "mw4/w_VEL_46.png"
+    "image": "mw4/w_VEL_46.png",
+    "cutout": {
+      "img": "cut_soldier.png",
+      "top": 232,
+      "w": 520,
+      "right": -60,
+      "fade": 55
+    }
   },
   "cta": {
     "white": "WHICH SMG",

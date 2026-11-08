@@ -11,7 +11,7 @@ def cover_slide(d):
     c = d['cover']
     rows = ''.join(f'<div class="row hud" style="top:{880 + i * 84}px;height:74px"><div class="n" style="font-size:48px">{w["rank"]}</div>'
                    f'<b style="font-size:32px">{E(w["short"])}</b><small>{E(w["build_code"])}</small></div>' for i, w in enumerate(d['weapons']))
-    body = (f'<div class="kicker" style="top:200px;left:60px;font-size:28px">{E(c["kicker"])}</div>'
+    body = ((R.cutout_html(c['cutout']) if c.get('cutout') else '') + f'<div class="kicker" style="top:200px;left:60px;font-size:28px">{E(c["kicker"])}</div>'
             + f'<div class="fit" style="top:240px" data-size="170" data-max="860"><span class="gr gold">{E(c["big"])}</span></div>'
             + f'<div class="fit" style="top:420px" data-size="120" data-max="860"><span class="gr w">{E(c["small"])}</span></div>'
             + f'<div class="kicker" style="top:552px;left:62px;font-size:24px;letter-spacing:6px;color:#d9d9d9">{E(c["sub"])}</div>'
