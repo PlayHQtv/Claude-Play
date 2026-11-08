@@ -1,0 +1,275 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "DMZ",
+  "cover": {
+    "kicker": "OFFICIAL INTEL · HAJIN · SEASON 1",
+    "big": "EVERY POI",
+    "small": "THREAT LEVEL",
+    "sub": "ALL 13 HAJIN POIS RANKED + NEW X01",
+    "swipe": "SWIPE BEFORE YOU DROP ›",
+    "img": "poi_map.jpg"
+  },
+  "cta": {
+    "white": "WHERE DO",
+    "gold": "YOU DROP?",
+    "sub": "TELL US YOUR HOT DROP IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 DMZ TIPS"
+  },
+  "tip": "Threat rises when you fight AI. Other players don't count.",
+  "pois": [
+    {
+      "name": "Songdo Wharf",
+      "region": "Eastern Hajin City",
+      "areas": [
+        [
+          "Songdo Wharf",
+          "Low"
+        ],
+        [
+          "Oamsik Turtle Island",
+          "Low"
+        ],
+        [
+          "Shoreline Station",
+          "Low"
+        ]
+      ],
+      "img": "poi_songdo.jpg"
+    },
+    {
+      "name": "Mirae General Hospital",
+      "region": "North Central",
+      "areas": [
+        [
+          "Hospital",
+          "Low"
+        ]
+      ],
+      "img": "poi_hospital.jpg"
+    },
+    {
+      "name": "Imjin Farmland",
+      "region": "South-Southwest",
+      "areas": [
+        [
+          "Farmland Exterior",
+          "Low"
+        ],
+        [
+          "Jeong Loading Dock",
+          "Low"
+        ],
+        [
+          "Rice Mill",
+          "Medium"
+        ]
+      ],
+      "img": "poi_imjin.jpg"
+    },
+    {
+      "name": "Deadtown",
+      "region": "Southwest",
+      "areas": [
+        [
+          "Deadtown Exterior",
+          "Low"
+        ],
+        [
+          "Re-Education Center",
+          "Medium"
+        ]
+      ],
+      "img": "poi_deadtown.jpg"
+    },
+    {
+      "name": "Cheongun Village",
+      "region": "Northern Hajin",
+      "areas": [
+        [
+          "Village + Outskirts",
+          "Low"
+        ],
+        [
+          "Russian Border",
+          "Low"
+        ],
+        [
+          "Heavenly Luck Casino",
+          "High"
+        ]
+      ],
+      "img": "poi_cheongun.jpg"
+    },
+    {
+      "name": "Cheonwang Peak Array",
+      "region": "Central Hajin",
+      "areas": [
+        [
+          "Array",
+          "Medium"
+        ]
+      ],
+      "img": "poi_array.jpg"
+    },
+    {
+      "name": "Wolves Stadium",
+      "region": "South Central Hajin City",
+      "areas": [
+        [
+          "Wolves Stadium",
+          "Medium"
+        ],
+        [
+          "Theatre",
+          "Medium"
+        ]
+      ],
+      "img": "poi_wolves.jpg"
+    },
+    {
+      "name": "Hajin River Heights",
+      "region": "Southeast",
+      "areas": [
+        [
+          "River Heights",
+          "Medium"
+        ],
+        [
+          "South Island",
+          "Medium"
+        ],
+        [
+          "Jinseo Park Towers",
+          "Medium"
+        ]
+      ],
+      "img": "poi_river.jpg"
+    },
+    {
+      "name": "NuriGO Mall",
+      "region": "Northeast Hajin City",
+      "areas": [
+        [
+          "NuriGO East",
+          "Medium"
+        ],
+        [
+          "NuriGO West",
+          "High"
+        ]
+      ],
+      "img": "poi_nurigo.jpg"
+    },
+    {
+      "name": "Haneul Nuclear Reactor",
+      "region": "Northeast",
+      "areas": [
+        [
+          "SK Border Zone",
+          "Medium"
+        ],
+        [
+          "Reactor (radiation)",
+          "High"
+        ]
+      ],
+      "img": "poi_reactor.jpg"
+    },
+    {
+      "name": "14th Political Prison",
+      "region": "Northwest",
+      "areas": [
+        [
+          "Prison",
+          "High"
+        ],
+        [
+          "Fortress Prison Yard",
+          "High"
+        ],
+        [
+          "The Citadel",
+          "Critical"
+        ]
+      ],
+      "img": "poi_prison.jpg"
+    },
+    {
+      "name": "Chang-san Air Base",
+      "region": "Western Hajin",
+      "areas": [
+        [
+          "Air Base Exterior",
+          "Critical"
+        ],
+        [
+          "Air Base Bunker",
+          "Extreme"
+        ]
+      ],
+      "img": "poi_airbase.jpg"
+    },
+    {
+      "name": "The Grid",
+      "region": "Central Hajin City",
+      "areas": [
+        [
+          "The Grid",
+          "Critical"
+        ],
+        [
+          "DBN HQ / Hanex Bank",
+          "Critical"
+        ],
+        [
+          "Art School / Construction",
+          "Critical"
+        ],
+        [
+          "Nenshin Tech Complex",
+          "Extreme"
+        ]
+      ],
+      "img": "poi_grid.jpg"
+    }
+  ],
+  "source": "callofduty.com DMZ Deep Dive Part 1 (Hajin, 05.10.2026) - 'Expected Threat Level' per POI; fetched 02.11.2026 | v2 08.11.2026: per-POI images = official Activision POI cards (via dexerto, private); POI-level threat on each official card matches; X01 slide reused from verified S1 carousel (06.11). | notes_box: dexerto MW4 wiki threat levels (higher base threat = better loot chance) + dotesports (threat shown top-middle of HUD beneath the compass).",
+  "notes": "Ordered from safest to most dangerous by highest listed level, then lowest. Spelling as in the official blog except 'Nenshin' (blog uses both Nenshin and Netshin; Nenshin appears in the threat list). DBN Headquarters + Hanex Bank and Minsok Art School + Construction Zone merged into one row each (all Critical). Grouping (verifier 02.11.): 5 that start Low / 5 that start Medium / 3 High-Extreme; within a slide sorted by highest level.",
+  "extra_slides": [
+    {
+      "sec": "SEASON 1 · NEW ENDGAME ZONE",
+      "title": "X01 BLACK SITE",
+      "hero": "x01.jpg",
+      "rules": [
+        [
+          "WHAT",
+          "GRANIT Arms facility under Hajin: tunnels, labs, a sealed Deep Vault."
+        ],
+        [
+          "BOSSES",
+          "Knuckle + The Wrench (Lieutenants), The Captain (Juggernaut Commander)."
+        ],
+        [
+          "EXFIL",
+          "Exfils start closing. Always know your nearest exfil."
+        ],
+        [
+          "LOOT",
+          "Supplied Drops trait: extra container 25% → 50%, now also on Dynamic Op crates."
+        ]
+      ],
+      "hero_max": 380
+    }
+  ],
+  "notes_box": [
+    [
+      "HIGHER THREAT = BETTER LOOT",
+      "POIs with a higher base threat level have a better chance of valuable loot."
+    ],
+    [
+      "READ YOUR HUD",
+      "The threat level shows under the compass when you enter an area."
+    ]
+  ],
+  "verified": "independent verifier 08.11.2026: all 13 POIs + sub-area levels match official Deep Dive Part 1; X01 LOOT/EXFIL wording fixed per S1 patch notes/blog."
+}

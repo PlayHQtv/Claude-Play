@@ -1,0 +1,130 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "S1",
+  "cover": {
+    "kicker": "MW4 + WARZONE · SEASON 1",
+    "big": "FREE REWARDS",
+    "small": "IN SEASON 1",
+    "sub": "GUNS · APEX · CAMOS · SKINS · NO MONEY NEEDED",
+    "img": "keyart.jpg",
+    "chips": [
+      "2 FREE GUNS",
+      "2 APEX",
+      "FREE CAMOS",
+      "EVENTS"
+    ],
+    "swipe": "SWIPE FOR ALL OF IT ›"
+  },
+  "slides": [
+    {
+      "sec": "BATTLE PASS · FREE TRACK",
+      "title": "2 FREE GUNS",
+      "cards": [
+        {
+          "img": "osprey.png",
+          "fit": "contain",
+          "name": "Cronen Osprey",
+          "chip": "TIER 16",
+          "desc": "New assault rifle, 882 RPM. Free for everyone, no premium pass needed."
+        },
+        {
+          "img": "csg35.png",
+          "fit": "contain",
+          "name": "CSG-35",
+          "chip": "TIER 36",
+          "desc": "New SMG, 1,200 RPM. Akimbo with its CSG Crossfire Apex. Also free on the Battle Pass."
+        }
+      ],
+      "foot": "THE 100-TIER PASS ALSO HAS CHARMS, CALLING CARDS, EMBLEMS + 2XP TOKENS"
+    },
+    {
+      "sec": "WAGER MATCH EVENT · MP + DMZ + WARZONE",
+      "title": "EARN TROPHIES",
+      "cards": [
+        {
+          "img": "gauntlet.png",
+          "fit": "contain",
+          "dark": true,
+          "name": "Gauntlet 1v1",
+          "chip": "HOW",
+          "desc": "Wager your Trophies in the Gauntlet 1v1 playlist. The winner stays on. DMZ + Warzone have their own challenges."
+        },
+        {
+          "img": "hyeon.png",
+          "fit": "contain",
+          "name": "Hyeon Auto",
+          "chip": "APEX",
+          "desc": "Turns the Hyeon Burst fully automatic. Wager Match mastery reward, may unlock later."
+        },
+        {
+          "img": "kastov.png",
+          "fit": "contain",
+          "name": "Kastov 545",
+          "chip": "APEX",
+          "desc": "Kastov 762 fires 5.45x39mm. Wager Match mastery reward, may unlock later."
+        }
+      ],
+      "foot": "ALSO: OPERATOR SKIN, BLUEPRINT + CAMO · TOP 3 GET EXTRA · NO REAL MONEY"
+    },
+    {
+      "sec": "NO PURCHASE NEEDED",
+      "title": "FREE CAMOS",
+      "hero": "wz_tout.jpg",
+      "rules": [
+        [
+          "LOCKED DOWN",
+          "Verify the email on your Call of Duty account: free universal weapon camo."
+        ],
+        [
+          "WARZONE EVENT",
+          "Return to Warzone event: Renaissance (animated), Violet Striker, Neutral Ground."
+        ],
+        [
+          "ROYALTY",
+          "Warzone Grind for Royalty challenges: Gold Excellence + Gold Mosaic."
+        ],
+        [
+          "RALLY POINT",
+          "Warzone mode on Zodiac: exclusive blueprint + 2 camos."
+        ]
+      ],
+      "hero_max": 340
+    },
+    {
+      "sec": "IN-SEASON EVENTS",
+      "title": "COMING LATER",
+      "cards": [
+        {
+          "img": "jak12.png",
+          "fit": "contain",
+          "name": "JAK 12",
+          "chip": "EVENT",
+          "desc": "Full-auto shotgun, earned through an in-season event."
+        },
+        {
+          "img": "talonhawk.png",
+          "fit": "contain",
+          "name": "ZLR Talonhawk",
+          "chip": "EVENT",
+          "desc": "New melee combat axe, also an event reward."
+        },
+        {
+          "img": "m4.png",
+          "fit": "contain",
+          "name": "M16 Burst",
+          "chip": "EVENT",
+          "desc": "Attachment that turns the M4 into a burst rifle."
+        }
+      ],
+      "foot": "JOINT FIRE: SQUAD UP FOR A BIGGER XP BOOST · BLUEPRINTS, CHARMS, 2XP TOKENS, DMZ KIT"
+    }
+  ],
+  "cta": {
+    "white": "WHAT ARE YOU",
+    "gold": "GRINDING FIRST?",
+    "sub": "SAVE THIS + SEND IT TO YOUR SQUAD",
+    "follow_sub": "FOR DAILY MW4 + WARZONE TIPS"
+  },
+  "source": "callofduty.com S1 announcement blog (Wager Match, Locked Down camo, Joint Fire, Osprey T16/CSG-35 T36 free base weapons, M16 Burst event reward), callofduty.com Warzone S1 blog (Return to Warzone camos, Grind for Royalty, Rally Point rewards), dexerto event roadmap + dotesports roadmap + timesaver (Wager Match Nov 6, Hyeon Auto/Kastov 545 rewards), everythingedinburgh/dotesports (free tiers), techbloat/timesaver (JAK 12, Talonhawk event weapons). Fetched 08.11.2026.",
+  "verified": "independent verifier 08.11.2026: OK after 6 wording fixes"
+}

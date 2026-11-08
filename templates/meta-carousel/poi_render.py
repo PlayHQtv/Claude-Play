@@ -10,6 +10,11 @@ CSS_EXTRA = """
 .pc{position:absolute;left:50px;width:885px;padding:14px 22px 14px 24px}
 .stack{position:absolute;left:50px;top:340px;width:885px;display:flex;flex-direction:column;gap:14px}
 .stack .pc{position:relative;left:0;top:auto}
+.pc.pi{display:flex;gap:20px;align-items:center;padding:12px 18px 12px 12px}
+.pc.pi .im{flex:none;width:272px;height:136px;background-size:100% 100%;border:2px solid rgba(255,212,0,.55);clip-path:polygon(0 0,100% 0,100% 82%,88% 100%,0 100%)}
+.pc.pi .tx{flex:1;min-width:0}
+.pc.pi .ch{font-size:22px}
+.pmap{position:absolute;left:50px;width:885px;border:2px solid rgba(255,212,0,.6);background-size:100% 100%;clip-path:polygon(0 0,100% 0,100% 90%,94% 100%,0 100%)}
 .pc .nm{font-family:Anton;font-size:40px;line-height:1.05;letter-spacing:1px;color:#f1f1f1}
 .pc .rg{font-weight:700;font-size:17px;letter-spacing:4px;color:#9a9a9a;margin:2px 0 8px}
 .pc .ar{display:flex;flex-wrap:wrap;gap:8px 10px}
@@ -29,8 +34,9 @@ def chip(a, lvl):
 
 
 def card(p, top):
-    return (f'<div class="pc hud" ><div class="nm">{E(p["name"].upper())}</div><div class="rg">{E(p["region"].upper())}</div>'
-            f'<div class="ar">{"".join(chip(a, l) for a, l in p["areas"])}</div></div>')
+    img = f'<div class="im" style="background-image:url(/_build/s1/{p["img"]})"></div>' if p.get('img') else ''
+    return (f'<div class="pc hud{" pi" if img else ""}">{img}<div class="tx"><div class="nm">{E(p["name"].upper())}</div><div class="rg">{E(p["region"].upper())}</div>'
+            f'<div class="ar">{"".join(chip(a, l) for a, l in p["areas"])}</div></div></div>')
 
 
 def legend(top):
@@ -39,21 +45,31 @@ def legend(top):
 
 def list_slide(ps, sub, title, d):
     body = (f'<div class="sec">{E(sub)}</div><div class="fit" style="top:240px" data-size="84" data-max="860"><span class="gr w">{E(title)}</span></div>'
-            + '<div class="stack">' + ''.join(card(p, 0) for p in ps) + '</div>')
+            + '<div class="stack">' + ''.join(card(p, 0) for p in ps)
+            + (''.join(f'<div class="pc hud"><div class="rg" style="color:var(--y)">{E(a)}</div><div class="nm" style="font-family:Raj;font-weight:700;font-size:32px;line-height:1.25">{E(b)}</div></div>' for a, b in d.get('notes_box', [])) if len(ps) < 5 else '')
+            + '</div>')
     return page(body, {**d, 'footer': ''}), 0
 
 
 def cover_slide(d):
     c = d['cover']
+    if c.get('img'):  # v2: official tactical map, shown complete
+        from PIL import Image
+        iw, ih = Image.open(os.path.join(R.HERE, '_build', 's1', c['img'])).size
+        h = round(885 * ih / iw)
+        mid = (f'<div class="pmap" style="top:665px;height:{h}px;background-image:url(/_build/s1/{c["img"]})"></div>' + legend(665 + h + 26))
+        sw = 665 + h + 26 + 70
+    else:
+        mid = (legend(700)
+               + '<div class="pc hud" style="top:790px"><div class="rg">SAFEST DROP</div><div class="ar">' + chip("Songdo Wharf", "Low") + chip("Mirae General Hospital", "Low") + '</div></div>'
+               + '<div class="pc hud" style="top:960px"><div class="rg">MOST DANGEROUS</div><div class="ar">' + chip("Air Base Bunker", "Extreme") + chip("Nenshin Tech Complex", "Extreme") + '</div></div>')
+        sw = 1170
     body = (f'<div class="kicker" style="top:200px;left:60px;font-size:28px">{E(c["kicker"])}</div>'
             + f'<div class="fit" style="top:245px" data-size="200" data-max="860"><span class="gr gold">{E(c["big"])}</span></div>'
             + f'<div class="fit" style="top:460px" data-size="130" data-max="860"><span class="gr w">{E(c["small"])}</span></div>'
             + f'<div class="kicker" style="top:610px;left:62px;font-size:24px;letter-spacing:6px;color:#d9d9d9">{E(c["sub"])}</div>'
-            + legend(700)
-            + '<div class="pc hud" style="top:790px"><div class="rg">SAFEST DROP</div><div class="ar">' + chip("Songdo Wharf", "Low") + chip("Mirae General Hospital", "Low") + '</div></div>'
-            + '<div class="pc hud" style="top:960px"><div class="rg">MOST DANGEROUS</div><div class="ar">' + chip("Air Base Bunker", "Extreme") + chip("Nenshin Tech Complex", "Extreme") + '</div></div>'
-            + f'<div class="swipe" style="top:1170px;font-size:28px;right:110px">{E(c["swipe"])}</div>')
-    return page(body, {**d, 'footer': ''})
+            + mid + f'<div class="swipe" style="top:{sw}px;font-size:28px;right:110px">{E(c["swipe"])}</div>')
+    return page(body, {**d, 'footer': '', 'cover_logo': 1})
 
 
 def cta_slide(d):
@@ -83,17 +99,20 @@ def main(data_path, out_dir=None):
         print('bottom', bottom)
         n += len(g)
         pages.append((f'{len(pages) + 1:02d}_pois', h))
+    for x in d.get('extra_slides', []):  # e.g. X01 (s1_render hero + rules layout)
+        import s1_render
+        pages.append((f'{len(pages) + 1:02d}_extra', s1_render.slide(x, d)))
     pages.append((f'{len(pages) + 1:02d}_cta', cta_slide(d)))
     srv = R.serve(R.HERE)
     from playwright.sync_api import sync_playwright
     from PIL import Image, ImageFilter
     with sync_playwright() as p:
-        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=2)
+        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=3)
         for nm, h in pages:
             open(os.path.join(tmp, nm + '.html'), 'w').write(h)
             pg.goto(f'http://127.0.0.1:{srv.server_address[1]}/_build/{nm}.html')
             pg.wait_for_selector('body[data-ready]'); pg.wait_for_timeout(300)
-            raw = os.path.join(tmp, nm + '@2x.png'); pg.screenshot(path=raw, type='png')
+            raw = os.path.join(tmp, nm + '@3x.png'); pg.screenshot(path=raw, type='png')
             im = Image.open(raw).convert('RGB').resize((1080, 1440), Image.LANCZOS)
             im = im.filter(ImageFilter.UnsharpMask(radius=0.8, percent=45, threshold=2))
             im.save(os.path.join(out_dir, nm + '.jpg'), 'JPEG', quality=95, subsampling=0, optimize=True)

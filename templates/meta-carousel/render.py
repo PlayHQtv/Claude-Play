@@ -23,6 +23,8 @@ body{width:1080px;height:1440px;overflow:hidden;background:#070707;font-family:R
 .cod{font-family:Anton;font-size:30px;letter-spacing:1px;color:#f3f3f3}
 .dmz{font-family:Anton;font-size:26px;color:var(--y);padding:0 12px;line-height:38px;border:1px solid rgba(255,212,0,.6);background:linear-gradient(135deg,rgba(255,212,0,.18),rgba(255,212,0,.04))}
 .logo{position:absolute;right:170px;top:118px;width:96px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+.top:has(.glogo){top:108px}
+.glogo{display:block;height:66px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.7))}
 .gr{display:inline-block;-webkit-mask-image:url(/assets/grunge.png);-webkit-mask-size:1400px 700px}
 .w{color:#ededed}
 .gold{background:linear-gradient(170deg,var(--g1) 0%,var(--g2) 35%,var(--g3) 60%,#f5d27a 80%,var(--g2) 100%);-webkit-background-clip:text;color:transparent;-webkit-mask-position:400px 120px}
@@ -89,20 +91,31 @@ FRAME = """<div class="bg"></div><div class="topo"></div>
 FITJS = """<script>document.fonts.ready.then(()=>{for(const e of document.querySelectorAll('.fit,.shrink')){let s=+e.dataset.size;e.style.fontSize=s+'px';while(e.scrollWidth>+e.dataset.max&&s>16){s-=2;e.style.fontSize=s+'px'}if(e.dataset.zone){const[t,h]=e.dataset.zone.split(',').map(Number);e.style.top=(t+(h-s)/2)+'px'}}document.body.dataset.ready=1})</script>"""
 
 
+GAME_LOGO = '/_build/s1/logo_mw4.png'  # official MW4 wordmark, private (_build is git-ignored)
+
+
+def frame(d):
+    """Cover slides (d['cover_logo']) show the official game logo instead of the 'CALL OF DUTY · MW4' text."""
+    f = FRAME.format(game=E(d.get('game', 'CALL OF DUTY · MW4')), badge=E(d.get('badge', 'DMZ')))
+    if d.get('cover_logo') and os.path.exists(os.path.join(HERE, GAME_LOGO.lstrip('/'))):
+        f = f.replace(f'<div class="cod">{E(d.get("game", "CALL OF DUTY · MW4"))}</div>', f'<img class="glogo" src="{d.get("logo", GAME_LOGO)}">', 1)
+    return f
+
+
 def page(body, d):
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>'
-            + FRAME.format(game=E(d.get('game', 'CALL OF DUTY · MW4')), badge=E(d.get('badge', 'DMZ'))) + body
+            + frame(d) + body
             + f'<div class="foot">{d.get("footer", "FOLLOW <b>@PLAYHQTV</b> FOR DAILY MW4 META")}</div>' + FITJS + '</body></html>')
 
 
-def title_html(white, gold, top, size=250, max_w=950):
+def title_html(white, gold, top, size=250, max_w=950, mask=None):
     """One line if it fits at >=200px, otherwise white on line 1 and gold on line 2."""
     if len(white) + len(gold) <= 10:
         return (f'<div class="fit" style="top:{top}px" data-size="{size}" data-max="{max_w}" data-zone="{top},{size + 10}">'
                 f'<span class="gr w">{E(white)}</span><span class="gr gold" style="margin-left:28px">{E(gold)}</span></div>')
     h = size // 2
     return (f'<div class="fit" style="top:{top}px" data-size="{h}" data-max="{max_w}"><span class="gr w">{E(white)}</span></div>'
-            f'<div class="fit" style="top:{top + h + 6}px" data-size="{h}" data-max="{max_w}"><span class="gr gold">{E(gold)}</span></div>')
+            f'<div class="fit" style="top:{top + h + 6}px" data-size="{h}" data-max="{max_w}"><span class="gr gold"{f' style="-webkit-mask-position:{mask}"' if mask else ''}>{E(gold)}</span></div>')
 
 
 def weapon_slide(w, d):
@@ -117,7 +130,7 @@ def weapon_slide(w, d):
     else:
         tiles += '<div class="t hud save"><div class="tx"><small>DON\'T LOSE IT</small><b>SAVE THIS BUILD</b></div></div>'
     br = w.get('brightness', 1.18)
-    body = (title_html(w['title_white'], w['title_gold'], 205, size=180, max_w=850)
+    body = (title_html(w['title_white'], w['title_gold'], 205, size=180, max_w=850, mask=w.get('mask_pos'))
             + f'<div class="fit sub" style="top:415px;left:60px;font-family:Raj;letter-spacing:11px" data-size="40" data-max="700">{E(w.get("tagline", "EXTRACTION READY"))}</div>'
             + f'<div class="cls" style="top:468px;left:60px;font-size:30px"><i></i>{E(w["class"])} — <b>{E(w.get("class_note", "Meta Loadout"))}</b></div>'
             + f'<div class="rank"><small>{E(d.get("rank_label", "META RANK"))}</small><strong>#{w["rank"]}</strong></div>'

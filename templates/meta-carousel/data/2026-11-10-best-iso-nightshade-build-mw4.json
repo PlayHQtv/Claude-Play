@@ -1,0 +1,147 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "S TIER SMG · SEASON 1",
+    "big": "BEST ISO",
+    "small": "BUILD MW4",
+    "sub": "3 MW4 MULTIPLAYER LOADOUTS",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "mw4/w_ISO_Nightshade.png"
+  },
+  "cta": {
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META"
+  },
+  "weapons": [
+    {
+      "rank": 1,
+      "image": "mw4/w_ISO_Nightshade.png",
+      "short": "VERSATILE",
+      "title_white": "ISO",
+      "title_gold": "NIGHTSHADE",
+      "class": "SMG",
+      "class_note": "Versatile build",
+      "tagline": "ABSOLUTE META BUILD",
+      "brightness": 1.1,
+      "build_code": "S06-3YNQ7-YB11",
+      "apex": "ISO TRACE",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "XRK HERDER 40"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "DEMO KILO90 STOCK"
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS TAC90 GRIP"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "40 ROUND MAG"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "ZLR VELOCI GEN.2"
+        }
+      ],
+      "sources": "codmunity Versatile code S06-3YNQ7-YB11 (codmunity.gg/mw4 + verifier 07.11.), warzoneloadout.games/mw4/iso-nightshade Versatile (Absolute Meta) same 5 + ISO Trace (fetched 07.11. evening)",
+      "mask_pos": "130px 40px"
+    },
+    {
+      "rank": 2,
+      "image": "mw4/w_ISO_Nightshade.png",
+      "short": "MOBILITY",
+      "title_white": "ISO",
+      "title_gold": "NIGHTSHADE",
+      "class": "SMG",
+      "class_note": "Mobility build",
+      "tagline": "NO STOCK + 50 ROUND DRUM",
+      "brightness": 1.1,
+      "build_code": "S06-3YNQ9-UB11",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "XRK HERDER 40"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "NO STOCK"
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS TAC90 GRIP"
+        },
+        {
+          "type": "drum",
+          "label": "MAGAZINE",
+          "name": "50 ROUND DRUM MAG"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "ZLR VELOCI GEN.2"
+        }
+      ],
+      "sources": "warzoneloadout.games/mw4/iso-nightshade Mobility (07.11.): Herder 40, No Stock, Tac90, 50 Round Drum Mag, Veloci Gen.2; codmunity lists a Mobility build (code S06-3YNQ9-UB11, not printed because mapping unverified) | verifier 08.11.: code S06-3YNQ9-UB11 belongs to this build; only B/Contender tier -> no meta claim",
+      "mask_pos": "130px 40px"
+    },
+    {
+      "rank": 3,
+      "image": "mw4/w_ISO_Nightshade.png",
+      "short": "DEXERTO PICK",
+      "title_white": "ISO",
+      "title_gold": "NIGHTSHADE",
+      "class": "SMG",
+      "class_note": "Long-range build",
+      "tagline": "LONG BARREL + LASER",
+      "brightness": 1.1,
+      "build_code": "S06-3Q1JR-FJU11",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "XRK HERDER 40"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "ZLR CARBON-900"
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS TAC90 GRIP"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "DEMO STP-1"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "SCHLAGER VISIV-5"
+        }
+      ],
+      "sources": "dexerto ISO Nightshade wiki code S06-3Q1JR-FJU11 + wzstats current Versatile (same 5) + GamesRadar (4 of 5); replaced old Crackdown/Frangible build per verifier 08.11.",
+      "mask_pos": "130px 40px"
+    }
+  ],
+  "facts": "ISO Nightshade: S tier SMG (codmunity Absolute Meta, mw4intel S, warzoneloadout S), 923 RPM.",
+  "source": "codmunity, warzoneloadout.games, wzstats.gg, gameshorizon, mw4intel (fetched 07./08.11.2026)"
+}

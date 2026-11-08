@@ -18,7 +18,7 @@ def cover_slide(d):
             + '<div class="floor" style="top:880px"></div><div class="line" style="top:897px"></div>'
             + f'<div class="gunbox" style="top:600px;height:290px;width:900px"><img class="gun" style="max-height:270px;max-width:860px;filter:drop-shadow(0 40px 30px rgba(0,0,0,.85)) brightness(1.2) contrast(1.08)" src="/weapons/{c["image"]}"></div>'
             + rows + f'<div class="swipe" style="top:1222px;font-size:26px;right:110px">{E(c["swipe"])}</div>')
-    return R.page(body, {**d, 'footer': ''})
+    return R.page(body, {**d, 'footer': '', 'cover_logo': 1})
 
 
 def main(data_path, out_dir=None):
@@ -34,12 +34,12 @@ def main(data_path, out_dir=None):
     from playwright.sync_api import sync_playwright
     from PIL import Image, ImageFilter
     with sync_playwright() as p:
-        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=2)
+        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=3)
         for nm, h in pages:
             open(os.path.join(tmp, nm + '.html'), 'w').write(h)
             pg.goto(f'http://127.0.0.1:{srv.server_address[1]}/_build/{nm}.html')
             pg.wait_for_selector('body[data-ready]'); pg.wait_for_timeout(300)
-            raw = os.path.join(tmp, nm + '@2x.png'); pg.screenshot(path=raw, type='png')
+            raw = os.path.join(tmp, nm + '@3x.png'); pg.screenshot(path=raw, type='png')
             im = Image.open(raw).convert('RGB').resize((1080, 1440), Image.LANCZOS)
             im = im.filter(ImageFilter.UnsharpMask(radius=0.8, percent=45, threshold=2))
             im.save(os.path.join(out_dir, nm + '.jpg'), 'JPEG', quality=95, subsampling=0, optimize=True)

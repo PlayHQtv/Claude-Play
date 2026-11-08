@@ -24,6 +24,17 @@ CSS = """
 """
 
 
+def hero(img, top, maxh, maxw=885, left=50):
+    """Hero image shown COMPLETE (no crop): fit the image's own aspect into maxw x maxh, centred."""
+    from PIL import Image
+    iw, ih = Image.open(os.path.join(R.HERE, '_build', 's1', img)).size
+    w, h = maxw, round(maxw * ih / iw)
+    if h > maxh:
+        h, w = maxh, round(maxh * iw / ih)
+    x = left + (maxw - w) // 2
+    return f'<div class="s1hero hud" style="top:{top}px;left:{x}px;width:{w}px;height:{h}px;background-size:100% 100%;background-image:url(/_build/s1/{img})"></div>', h
+
+
 def page(body, d):
     return S.page(body, d).replace('</style>', CSS + '</style>', 1)
 
@@ -42,7 +53,8 @@ def rules(rs):
 def slide(s, d):
     head = f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:240px" data-size="100" data-max="860"><span class="gr w">{E(s["title"])}</span></div>'
     if s.get('hero'):
-        body = head + f'<div class="s1hero hud" style="top:365px;height:330px;background-image:url(/_build/s1/{s["hero"]})"></div>' + f'<div class="stack" style="top:720px;gap:12px">{rules(s["rules"])}</div>'
+        hh, h = hero(s['hero'], 365, s.get('hero_max', 470))
+        body = head + hh + f'<div class="stack" style="top:{365 + h + 22}px;gap:10px">{rules(s["rules"])}</div>'
     else:
         inner = ''.join(card(c, len(s['cards']) >= 5) for c in s['cards']) + (rules(s['rules']) if s.get('rules') else '')
         body = head + f'<div class="stack" style="top:365px;gap:16px">{inner}</div>'
@@ -58,10 +70,10 @@ def cover(d):
             + f'<div class="fit" style="top:245px" data-size="190" data-max="860"><span class="gr gold">{E(c["big"])}</span></div>'
             + f'<div class="fit" style="top:450px" data-size="120" data-max="860"><span class="gr w">{E(c["small"])}</span></div>'
             + f'<div class="kicker" style="top:590px;left:62px;font-size:24px;letter-spacing:6px;color:#d9d9d9">{E(c["sub"])}</div>'
-            + f'<div class="s1hero hud" style="top:650px;height:420px;background-image:url(/_build/s1/{c["img"]})"></div>'
+            + hero(c['img'], 650, 420)[0]
             + f'<div class="cv2"><div class="ch2" style="top:1095px">{chips}</div></div>'
             + f'<div class="swipe" style="top:1235px;font-size:28px;right:110px">{E(c["swipe"])}</div>')
-    return page(body, {**d, 'footer': ''})
+    return page(body, {**d, 'footer': '', 'cover_logo': 1})
 
 
 def cta(d):
@@ -86,14 +98,14 @@ def main(data_path, out_dir):
     from playwright.sync_api import sync_playwright
     from PIL import Image, ImageFilter
     with sync_playwright() as p:
-        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=2)
+        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=3)
         for nm, h in pages:
             open(os.path.join(tmp, nm + '.html'), 'w').write(h)
             pg.goto(f'http://127.0.0.1:{srv.server_address[1]}/_build/{nm}.html')
             pg.wait_for_selector('body[data-ready]'); pg.wait_for_timeout(400)
             bot = pg.evaluate("Math.max(...[...document.querySelectorAll('.stack')].map(e=>e.getBoundingClientRect().bottom),0)")
             print(nm, 'stack bottom', round(bot))
-            raw = os.path.join(tmp, nm + '@2x.png'); pg.screenshot(path=raw, type='png')
+            raw = os.path.join(tmp, nm + '@3x.png'); pg.screenshot(path=raw, type='png')
             im = Image.open(raw).convert('RGB').resize((1080, 1440), Image.LANCZOS)
             im.filter(ImageFilter.UnsharpMask(radius=0.8, percent=45, threshold=2)).save(os.path.join(out_dir, nm + '.jpg'), 'JPEG', quality=95, subsampling=0, optimize=True)
         b.close()
