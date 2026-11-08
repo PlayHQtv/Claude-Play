@@ -2,7 +2,7 @@ name: upload-bundle
 # Uploads finished media (e.g. carousel slides with third-party frames) to Cloudinary without ever storing them readable on GitHub.
 # Push to a TEMPORARY branch "tmp-upload-*": bundle/key.enc (RSA-OAEP, fx/pubkey.pem) + bundle/data.enc (AES-256-CBC pbkdf2 of a tar
 # with the files + signed.json = list of Cloudinary sign-upload results, file name = basename(public_id) + ".jpg" or ".mp4" -> mp4 goes to the video endpoint).
-# Writes bundle/log.txt (public_id, version, bytes, size - no URLs, no account data). Delete the branch afterwards.
+# Prints the log (public_id, version, bytes, size - no URLs, no account data) and deletes its own branch afterwards.
 on:
   push:
     branches: ['tmp-upload-*']
@@ -32,5 +32,5 @@ jobs:
             curl -sS "https://$host/v1_1/$cloud/$rt/upload" "${args[@]}" | jq -c '{public_id,version,bytes,width,height,err:.error.message}' >> bundle/log.txt
           done
           cat bundle/log.txt
-          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add bundle/log.txt && git commit -m "upload log" && git push
+          # the temporary branch (encrypted bundle) is deleted right away -> nothing stays on GitHub
+          git push origin --delete "$GITHUB_REF_NAME"

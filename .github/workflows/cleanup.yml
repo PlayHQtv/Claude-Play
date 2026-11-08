@@ -1,0 +1,29 @@
+name: cleanup
+# Footprint cleanup (push cleanup/request.txt on brand-assets): deletes temporary branches, temporary
+# release assets (keeps only the encryption keys) and old workflow runs incl. their logs.
+on:
+  push:
+    branches: [brand-assets]
+    paths: [cleanup/request.txt]
+permissions:
+  contents: write
+  actions: write
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    env: {GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}"}
+    steps:
+      - name: Temporary branches
+        run: |
+          for b in $(gh api "repos/$R/branches?per_page=100" -q '.[].name' | grep -E '^(tmp-upload-|ccr-)' || true); do
+            gh api -X DELETE "repos/$R/git/refs/heads/$b" && echo "deleted branch"; done
+      - name: Release assets (keep keys)
+        run: |
+          for rid in $(gh api "repos/$R/releases?per_page=100" -q '.[]|select(.name=="grab-private")|.id'); do
+            for p in 1 2 3 4; do gh api "repos/$R/releases/$rid/assets?per_page=100&page=$p" -q '.[]|"\(.id) \(.name)"'; done |
+            while read id n; do case "$n" in *.pem|*key*) ;; *) gh api -X DELETE "repos/$R/releases/assets/$id" >/dev/null && echo "deleted asset";; esac; done
+          done
+      - name: Old workflow runs + logs
+        run: |
+          for p in 1 2 3; do gh api "repos/$R/actions/runs?per_page=100&page=$p" -q ".workflow_runs[]|select(.id != ${{ github.run_id }})|.id"; done |
+          while read id; do gh api -X DELETE "repos/$R/actions/runs/$id" >/dev/null 2>&1 && echo "deleted run"; done
