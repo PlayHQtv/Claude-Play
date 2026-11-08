@@ -91,6 +91,19 @@ FRAME = """<div class="bg"></div><div class="topo"></div>
 FITJS = """<script>document.fonts.ready.then(()=>{for(const e of document.querySelectorAll('.fit,.shrink')){let s=+e.dataset.size;e.style.fontSize=s+'px';while(e.scrollWidth>+e.dataset.max&&s>16){s-=2;e.style.fontSize=s+'px'}if(e.dataset.zone){const[t,h]=e.dataset.zone.split(',').map(Number);e.style.top=(t+(h-s)/2)+'px'}}document.body.dataset.ready=1})</script>"""
 
 
+def save_jpg(im, path, quality=95):
+    """JPEG q95, 4:4:4 chroma, then a lossless mozjpeg pass (same pixels, smaller file -> less re-compression on TikTok)."""
+    import io
+    buf = io.BytesIO(); im.save(buf, 'JPEG', quality=quality, subsampling=0, optimize=True)
+    data = buf.getvalue()
+    try:
+        import mozjpeg_lossless_optimization as mz
+        data = mz.optimize(data)
+    except ImportError:
+        pass
+    open(path, 'wb').write(data)
+
+
 GAME_LOGO = '/_build/s1/logo_mw4.png'  # official MW4 wordmark, private (_build is git-ignored)
 
 
@@ -202,7 +215,7 @@ def main(data_path, out_dir=None):
             from PIL import Image, ImageFilter
             im = Image.open(raw).convert('RGB').resize((1080, 1440), Image.LANCZOS)
             im = im.filter(ImageFilter.UnsharpMask(radius=0.8, percent=45, threshold=2))
-            im.save(os.path.join(out_dir, name + '.jpg'), 'JPEG', quality=95, subsampling=0, optimize=True)
+            save_jpg(im, os.path.join(out_dir, name + '.jpg'))
             print(os.path.join(out_dir, name + '.jpg'))
         b.close()
     srv.shutdown()

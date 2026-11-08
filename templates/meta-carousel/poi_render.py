@@ -64,7 +64,13 @@ def cover_slide(d):
                + '<div class="pc hud" style="top:790px"><div class="rg">SAFEST DROP</div><div class="ar">' + chip("Songdo Wharf", "Low") + chip("Mirae General Hospital", "Low") + '</div></div>'
                + '<div class="pc hud" style="top:960px"><div class="rg">MOST DANGEROUS</div><div class="ar">' + chip("Air Base Bunker", "Extreme") + chip("Nenshin Tech Complex", "Extreme") + '</div></div>')
         sw = 1170
-    body = (f'<div class="kicker" style="top:200px;left:60px;font-size:28px">{E(c["kicker"])}</div>'
+    pre = ''
+    if c.get('cutout'):  # free-standing operator BEHIND the title (rembg/ISNet cut-out, graded), fades out into the map
+        k = c['cutout']
+        pre = (f'<img src="/_build/s1/{k["img"]}" style="position:absolute;right:{k.get("right", 0)}px;top:{k["top"]}px;width:{k["w"]}px;'
+               '-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 98%);'
+               'filter:drop-shadow(-22px 12px 30px rgba(0,0,0,.9)) brightness(1.04)">')
+    body = (pre + f'<div class="kicker" style="top:200px;left:60px;font-size:28px">{E(c["kicker"])}</div>'
             + f'<div class="fit" style="top:245px" data-size="200" data-max="860"><span class="gr gold">{E(c["big"])}</span></div>'
             + f'<div class="fit" style="top:460px" data-size="130" data-max="860"><span class="gr w">{E(c["small"])}</span></div>'
             + f'<div class="kicker" style="top:610px;left:62px;font-size:24px;letter-spacing:6px;color:#d9d9d9">{E(c["sub"])}</div>'
@@ -115,7 +121,7 @@ def main(data_path, out_dir=None):
             raw = os.path.join(tmp, nm + '@3x.png'); pg.screenshot(path=raw, type='png')
             im = Image.open(raw).convert('RGB').resize((1080, 1440), Image.LANCZOS)
             im = im.filter(ImageFilter.UnsharpMask(radius=0.8, percent=45, threshold=2))
-            im.save(os.path.join(out_dir, nm + '.jpg'), 'JPEG', quality=95, subsampling=0, optimize=True)
+            R.save_jpg(im, os.path.join(out_dir, nm + '.jpg'))
         b.close()
     srv.shutdown()
 

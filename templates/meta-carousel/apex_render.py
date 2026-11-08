@@ -103,7 +103,7 @@ def main(data_path, out_dir=None):
             raw = os.path.join(tmp, nm + '@2x.png'); pg.screenshot(path=raw, type='png')
             im = Image.open(raw).convert('RGB').resize((1080, 1440), Image.LANCZOS)
             im = im.filter(ImageFilter.UnsharpMask(radius=0.8, percent=45, threshold=2))
-            im.save(os.path.join(out_dir, nm + '.jpg'), 'JPEG', quality=95, subsampling=0, optimize=True)
+            R.save_jpg(im, os.path.join(out_dir, nm + '.jpg'))
             print(os.path.join(out_dir, nm + '.jpg'))
         b.close()
     srv.shutdown()
