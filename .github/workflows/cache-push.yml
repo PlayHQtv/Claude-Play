@@ -1,0 +1,19 @@
+name: cache-push
+# Private asset cache: a push of bundle/cache.tar to a NEW branch "tmp-cache-*" (encrypted with fx/pubkey.pem: key.enc + data.enc)
+# is attached to the draft release "grab-private" as cache.tar (drafts are visible to collaborators only); the branch deletes itself.
+on:
+  push:
+    branches: ['tmp-cache-*']
+    paths: ['bundle/cache.tar']
+permissions:
+  contents: write
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.forced }}
+    env: {GH_TOKEN: "${{ github.token }}"}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          gh release upload grab-private bundle/cache.tar --clobber
+          git push origin --delete "$GITHUB_REF_NAME"

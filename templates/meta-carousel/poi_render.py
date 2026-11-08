@@ -51,9 +51,54 @@ def list_slide(ps, sub, title, d):
     return page(body, {**d, 'footer': ''}), 0
 
 
+# POI icon positions on the official tactical map, cropped to (640,0,1600,900) -> 960x900 (checked against the map legend 08.11.)
+POS3D = {'14th Political Prison': (200, 322), 'Chang-san Air Base': (138, 525), 'Deadtown': (185, 665), 'Imjin Farmland': (360, 745),
+         'Cheongun Village': (555, 405), 'Mirae General Hospital': (568, 500), 'Cheonwang Peak Array': (493, 635),
+         'Haneul Nuclear Reactor': (770, 403), 'NuriGO Mall': (696, 560), 'The Grid': (660, 640), 'Songdo Wharf': (815, 660),
+         'Wolves Stadium': (600, 690), 'Hajin River Heights': (645, 745)}
+
+
+def map3d(d, top=640, height=640):
+    """three.js: tilted map slab + one light beam per POI (colour + height = highest threat level of that POI)."""
+    order = list(COL); pts = []
+    for p in d['pois']:
+        lvl = max((l for _, l in p['areas']), key=order.index)
+        pts.append([*POS3D[p['name']], COL[lvl], order.index(lvl)])
+    return (f'<div id="c3" style="position:absolute;left:0;top:{top}px;width:1080px;height:{height}px"></div>'
+            '<script type="importmap">{"imports":{"three":"/vendor/three.module.min.js"}}</script><script type="module">'
+            "import * as THREE from 'three';"
+            f"const W=1080,H={height},el=document.getElementById('c3');"
+            """const r=new THREE.WebGLRenderer({antialias:true,alpha:true});r.setPixelRatio(devicePixelRatio);r.setSize(W,H);el.appendChild(r.domElement);
+r.toneMapping=THREE.ACESFilmicToneMapping;r.outputColorSpace=THREE.SRGBColorSpace;
+const s=new THREE.Scene();s.fog=new THREE.Fog(0x070707,13,24);
+const cam=new THREE.PerspectiveCamera(34,W/H,.1,100);cam.position.set(0,9.6,10.9);cam.lookAt(0,0.2,0.4);"""
+            f"const PTS={json.dumps(pts)};"
+            """new THREE.TextureLoader().load('/_build/s1/poi_map_crop.jpg',t=>{
+ t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=r.capabilities.getMaxAnisotropy();
+ const g=new THREE.Group();g.rotation.y=-0.32;s.add(g);
+ const base=new THREE.Mesh(new THREE.BoxGeometry(9.8,0.35,9.2),new THREE.MeshStandardMaterial({color:0x14110a,metalness:.8,roughness:.4}));base.position.y=-0.2;g.add(base);
+ const m=new THREE.Mesh(new THREE.PlaneGeometry(9.6,9),new THREE.MeshStandardMaterial({map:t,roughness:.85,metalness:.1}));m.rotation.x=-Math.PI/2;g.add(m);
+ const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(9.8,0.35,9.2)),new THREE.LineBasicMaterial({color:0xe9c062}));edge.position.y=-0.2;g.add(edge);
+ const B={side:THREE.DoubleSide,transparent:true,depthWrite:false,toneMapped:false};
+ for(const [u,v,col,lv] of PTS){
+  const x=u/100-4.8,z=v/100-4.5,h=0.7+lv*0.55,c=new THREE.Color(col);
+  const beam=new THREE.Mesh(new THREE.CylinderGeometry(0.07,0.11,h,24,1,true),new THREE.MeshBasicMaterial({...B,color:c,opacity:.85}));beam.position.set(x,h/2,z);g.add(beam);
+  const glow=new THREE.Mesh(new THREE.CylinderGeometry(0.2,0.3,h,24,1,true),new THREE.MeshBasicMaterial({...B,color:c,opacity:.22}));glow.position.copy(beam.position);g.add(glow);
+  const ring=new THREE.Mesh(new THREE.RingGeometry(0.22,0.34,48),new THREE.MeshBasicMaterial({...B,color:c,opacity:.9}));ring.rotation.x=-Math.PI/2;ring.position.set(x,0.02,z);g.add(ring);
+  const tip=new THREE.Mesh(new THREE.OctahedronGeometry(0.14),new THREE.MeshStandardMaterial({color:c,emissive:c,emissiveIntensity:1.0,toneMapped:false}));tip.position.set(x,h+0.12,z);g.add(tip);
+ }
+ s.add(new THREE.AmbientLight(0xffffff,1.1));const k=new THREE.DirectionalLight(0xfff1c8,2.2);k.position.set(-4,9,6);s.add(k);
+ const rim=new THREE.PointLight(0xe9c062,40,30);rim.position.set(6,3,-4);s.add(rim);
+ r.render(s,cam);document.body.dataset.ready3d=1;});
+</script>""")
+
+
 def cover_slide(d):
     c = d['cover']
-    if c.get('img'):  # v2: official tactical map, shown complete
+    if c.get('style') == '3d':
+        mid = map3d(d) + legend(1250)
+        sw = 1320
+    elif c.get('img'):  # v2: official tactical map, shown complete
         from PIL import Image
         iw, ih = Image.open(os.path.join(R.HERE, '_build', 's1', c['img'])).size
         h = round(885 * ih / iw)
@@ -113,11 +158,13 @@ def main(data_path, out_dir=None):
     from playwright.sync_api import sync_playwright
     from PIL import Image, ImageFilter
     with sync_playwright() as p:
-        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=3)
+        b = p.chromium.launch(args=['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader']); pg = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=3)
         for nm, h in pages:
             open(os.path.join(tmp, nm + '.html'), 'w').write(h)
             pg.goto(f'http://127.0.0.1:{srv.server_address[1]}/_build/{nm}.html')
-            pg.wait_for_selector('body[data-ready]'); pg.wait_for_timeout(300)
+            pg.wait_for_selector('body[data-ready]')
+            if 'id="c3"' in h: pg.wait_for_selector('body[data-ready3d]', timeout=60000)
+            pg.wait_for_timeout(300)
             raw = os.path.join(tmp, nm + '@3x.png'); pg.screenshot(path=raw, type='png')
             im = Image.open(raw).convert('RGB').resize((1080, 1440), Image.LANCZOS)
             im = im.filter(ImageFilter.UnsharpMask(radius=0.8, percent=45, threshold=2))

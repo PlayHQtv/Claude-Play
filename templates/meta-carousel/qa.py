@@ -32,7 +32,7 @@ def check(out_dir):
     from PIL import Image, ImageDraw
     from playwright.sync_api import sync_playwright
     slides = sorted(glob.glob(os.path.join(out_dir, '*.jpg')))
-    errs, warns, sheet = [], [], []
+    errs, warns, sheet, jobs = [], [], [], []
     srv = R.serve(R.HERE); port = srv.server_address[1]
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1440}); pg3 = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=3)
@@ -95,17 +95,24 @@ def check(out_dir):
                     var = (mu[-1] * cs / tot - mu) ** 2 / (cs * (tot - cs))
                 th = int(_np.nanargmax(var))  # Otsu threshold
                 c = ImageOps.expand(c.point(lambda v, th=th: 0 if v <= th else 255), 30, fill=255)
-                got = re.sub(r'[^A-Z0-9]', '', pytesseract.image_to_string(c, config='--psm 7' if t['lines'] <= 1 else '--psm 6').upper())
-                got = got.replace('O', '0').replace('I', '1').replace('S', '5'); w2 = want.replace('O', '0').replace('I', '1').replace('S', '5')
-                r = difflib.SequenceMatcher(None, w2, got).ratio()
-                if len(got) > len(w2):  # crop may include neighbours: best matching window
-                    r = max([r] + [difflib.SequenceMatcher(None, w2, got[i:i + len(w2)]).ratio() for i in range(len(got) - len(w2) + 1)])
-                if r < 0.8: warns.append(f'{nm}: OCR reads "{got[:30]}" for "{want[:30]}" ({r:.2f}) - check visually')
+                jobs.append((nm, want, c, '--psm 7' if t['lines'] <= 1 else '--psm 6'))
             ov = Image.open(f).convert('RGBA'); lay = Image.new('RGBA', ov.size); dr = ImageDraw.Draw(lay)
             for z in ZONES: dr.rectangle(z, fill=(255, 0, 60, 70), outline=(255, 0, 60, 255), width=3)
             sheet.append(Image.alpha_composite(ov, lay).convert('RGB'))
         b.close()
     srv.shutdown()
+    # OCR in parallel (Tesseract runs as separate processes)
+    from concurrent.futures import ThreadPoolExecutor
+    def run(j):
+        nm, want, c, cfg = j
+        return nm, want, re.sub(r'[^A-Z0-9]', '', pytesseract.image_to_string(c, config=cfg).upper())
+    with ThreadPoolExecutor(max_workers=max(2, (os.cpu_count() or 2) * 2)) as ex:
+        for nm, want, got in ex.map(run, jobs):
+            got = got.replace('O', '0').replace('I', '1').replace('S', '5'); w2 = want.replace('O', '0').replace('I', '1').replace('S', '5')
+            r = difflib.SequenceMatcher(None, w2, got).ratio()
+            if len(got) > len(w2):  # crop may include neighbours: best matching window
+                r = max([r] + [difflib.SequenceMatcher(None, w2, got[i:i + len(w2)]).ratio() for i in range(len(got) - len(w2) + 1)])
+            if r < 0.8: warns.append(f'{nm}: OCR reads "{got[:30]}" for "{want[:30]}" ({r:.2f}) - check visually')
     q = os.path.join(out_dir, '_qa'); os.makedirs(q, exist_ok=True)
     if sheet:
         S = Image.new('RGB', (360 * len(sheet), 480))
