@@ -98,7 +98,8 @@
         }
       ],
       "sources": "codmunity Versatile build code S06-3YNQ7-YB11 (verifier) = warzoneloadout Versatile (07.11. evening): XRK Herder 40, Demo Kilo90 Stock, FSS Tac90 Grip, 40 Round Mag, ZLR Veloci Gen.2 + Apex ISO Trace. Earlier Crackdown build replaced.",
-      "apex": "ISO TRACE"
+      "apex": "ISO TRACE",
+      "mask_pos": "130px 40px"
     },
     {
       "rank": 3,
