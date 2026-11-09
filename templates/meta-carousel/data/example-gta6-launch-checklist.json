@@ -2,18 +2,34 @@
  "hdr": "LAUNCH CHECKLIST",
  "source": "Source: Rockstar Newswire + Rockstar Support",
  "cover": {
-  "photo": "vc_sign.jpg",
-  "photo_top": 600,
-  "photo_h": 820,
+  "bg": "bg_sign.jpg",
   "kicker": "GTA 6 · BEFORE NOVEMBER 19",
   "big": "LAUNCH CHECKLIST",
   "script": "don't miss these",
-  "script_top": 515,
+  "script_top": 500,
+  "panels": [
+   {
+    "img": "keys.jpg",
+    "x": 44,
+    "y": 700,
+    "w": 540,
+    "r": -4,
+    "label": "LEONIDA KEYS"
+   },
+   {
+    "img": "club.jpg",
+    "x": 80,
+    "y": 985,
+    "w": 490,
+    "r": 3,
+    "label": "VICE CITY"
+   }
+  ],
   "cutout": {
    "img": "cut_suit.png",
-   "right": -150,
+   "right": -130,
    "top": 470,
-   "h": 1000
+   "h": 1010
   },
   "swipe": "SWIPE FOR ALL 5 ›"
  },
@@ -32,7 +48,8 @@
      "XBOX SERIES X|S",
      "Tuesday, Nov 10 at 12 a.m. GMT, worldwide."
     ]
-   ]
+   ],
+   "bg": "bg_keys.jpg"
   },
   {
    "kicker": "STEP 2-5 · DON'T GET CAUGHT OUT",
@@ -54,7 +71,8 @@
      "PS5 + XBOX ONLY",
      "Launch platforms: <em>PS5 and Xbox Series X|S</em>. Release: Nov 19."
     ]
-   ]
+   ],
+   "bg": "bg_club.jpg"
   }
  ],
  "cta": {
@@ -66,6 +84,8 @@
    "right": -120,
    "top": 640,
    "h": 760
-  }
- }
+  },
+  "bg": "bg_sign.jpg"
+ },
+ "bg": "bg_skyline.jpg"
 }
