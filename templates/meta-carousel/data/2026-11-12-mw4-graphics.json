@@ -2,41 +2,28 @@
  "game": "CALL OF DUTY · MW4",
  "badge": "MW4",
  "cover": {
-  "kicker": "OFFICIAL SCREENSHOTS · NO FILTER",
+  "bleed": "gfx_lithium.jpg",
+  "bleed_top": 610,
+  "kicker": "OFFICIAL SCREENSHOTS · 8 MAPS",
   "big": "MW4 GRAPHICS",
-  "small": "LOOK THIS REAL",
-  "sub": "6 MAPS · SNOW · NEON · WATER · FOG",
-  "img": "gfx_cover.jpg",
-  "chips": [
-   "LITHIUM",
-   "NYC",
-   "SENTRY",
-   "X01"
-  ],
-  "swipe": "SWIPE THROUGH ALL 6 ›"
+  "small": "IS THIS REAL?",
+  "stamp": "4 NEW SEASON 1 MAPS INSIDE",
+  "swipe": "SWIPE THROUGH ALL 8 ›",
+  "cutout": {
+   "img": "cut_redeye.png",
+   "top": 250,
+   "w": 640,
+   "right": -70,
+   "fade": 84
+  }
  },
  "slides": [
   {
-   "sec": "MULTIPLAYER · 6V6 · LAUNCH MAP",
-   "title": "LITHIUM",
-   "hero": "gfx_lithium.jpg",
-   "rules": [
-    [
-     "THE SCENE",
-     "A lithium refinery deep in rural Mexico, under the Sierra Mountains, turned into a warzone."
-    ],
-    [
-     "LOOK AT",
-     "The turquoise pools and the smoke rising out of the open pit."
-    ]
-   ],
-   "hero_w": 980,
-   "hero_max": 600
-  },
-  {
-   "sec": "GUNFIGHT · 2V2 · LAUNCH MAP",
+   "sec": "GUNFIGHT · 2V2",
    "title": "NYC",
-   "hero": "gfx_nyc.jpg",
+   "shot": "gfx_nyc.jpg",
+   "tag": "LAUNCH MAP",
+   "tag_cls": "old",
    "rules": [
     [
      "THE SCENE",
@@ -46,48 +33,14 @@
      "LOOK AT",
      "Neon billboards glowing through the fog on the wet street."
     ]
-   ],
-   "hero_w": 980,
-   "hero_max": 600
+   ]
   },
   {
-   "sec": "MULTIPLAYER · 6V6 · LAUNCH MAP",
-   "title": "SENTRY",
-   "hero": "gfx_sentry.jpg",
-   "rules": [
-    [
-     "THE SCENE",
-     "An assault on a Russian military base in whiteout conditions."
-    ],
-    [
-     "LOOK AT",
-     "Snow piling up on the armored vehicle, the roofs and the trucks."
-    ]
-   ],
-   "hero_w": 980,
-   "hero_max": 600
-  },
-  {
-   "sec": "MULTIPLAYER · 6V6 · LAUNCH MAP",
-   "title": "MUMBAI",
-   "hero": "gfx_mumbai.jpg",
-   "rules": [
-    [
-     "THE SCENE",
-     "A fugitive's hideout in a dense residential district around a Victorian market."
-    ],
-    [
-     "LOOK AT",
-     "The pink-stained street, blue tarps and the light in the alley."
-    ]
-   ],
-   "hero_w": 980,
-   "hero_max": 600
-  },
-  {
-   "sec": "MULTIPLAYER · 6V6 · LAUNCH MAP",
+   "sec": "MULTIPLAYER · 6V6",
    "title": "REACTOR U92",
-   "hero": "gfx_reactor.jpg",
+   "shot": "gfx_reactor.jpg",
+   "tag": "LAUNCH MAP",
+   "tag_cls": "old",
    "rules": [
     [
      "THE SCENE",
@@ -97,14 +50,99 @@
      "LOOK AT",
      "The blue glow of the pool lighting up the whole room."
     ]
-   ],
-   "hero_w": 980,
-   "hero_max": 600
+   ]
   },
   {
-   "sec": "DMZ · SEASON 1 · NEW LOCATION",
+   "sec": "MULTIPLAYER · 6V6",
+   "title": "MUMBAI",
+   "shot": "gfx_mumbai.jpg",
+   "tag": "LAUNCH MAP",
+   "tag_cls": "old",
+   "rules": [
+    [
+     "THE SCENE",
+     "A fugitive's hideout in a dense residential district around a Victorian market."
+    ],
+    [
+     "LOOK AT",
+     "The pink-stained street, blue tarps and the light in the alley."
+    ]
+   ]
+  },
+  {
+   "sec": "MULTIPLAYER · 6V6",
+   "title": "SENTRY",
+   "shot": "gfx_sentry.jpg",
+   "tag": "LAUNCH MAP",
+   "tag_cls": "old",
+   "rules": [
+    [
+     "THE SCENE",
+     "An assault on a Russian military base in whiteout conditions."
+    ],
+    [
+     "LOOK AT",
+     "Snow piling up on the armored vehicle, the roofs and the trucks."
+    ]
+   ]
+  },
+  {
+   "sec": "MULTIPLAYER · 6V6",
+   "title": "BACKSTAB",
+   "shot": "gfx_backstab.jpg",
+   "tag": "NEW · SEASON 1",
+   "tag_cls": "new",
+   "rules": [
+    [
+     "THE SCENE",
+     "A war-torn town in fallen snow, littered with abandoned tanks."
+    ],
+    [
+     "LOOK AT",
+     "The snow-covered tank and the drone hanging in the power lines."
+    ]
+   ]
+  },
+  {
+   "sec": "MULTIPLAYER · 6V6",
+   "title": "CANYON",
+   "shot": "gfx_canyon.jpg",
+   "tag": "NEW · SEASON 1",
+   "tag_cls": "new",
+   "rules": [
+    [
+     "THE SCENE",
+     "Sun-scorched terrain trapped between towering rock walls."
+    ],
+    [
+     "LOOK AT",
+     "The river, the burning wreck and the smoke over the cliffs."
+    ]
+   ]
+  },
+  {
+   "sec": "MULTIPLAYER · 6V6",
+   "title": "SHOOT HOUSE",
+   "shot": "gfx_shoothouse.jpg",
+   "tag": "REIMAGINED · S1",
+   "tag_cls": "new",
+   "rules": [
+    [
+     "THE SCENE",
+     "The classic map, now in North Korea during a light snowfall."
+    ],
+    [
+     "LOOK AT",
+     "The helicopter hanging off the tower and the wrecked cars."
+    ]
+   ]
+  },
+  {
+   "sec": "DMZ · NEW LOCATION",
    "title": "X01",
-   "hero": "gfx_x01.jpg",
+   "shot": "gfx_x01.jpg",
+   "tag": "NEW · SEASON 1",
+   "tag_cls": "new",
    "rules": [
     [
      "THE SCENE",
@@ -114,15 +152,40 @@
      "LOOK AT",
      "Thick fog and the light breaking through behind the squad."
     ]
+   ]
+  },
+  {
+   "sec": "OFFICIAL SPECS + SEASON 1 PATCH NOTES",
+   "title": "WHY IT LOOKS THIS REAL",
+   "settings": [
+    [
+     "RAY TRACING",
+     "PC",
+     "Real-time ray tracing in Campaign, Multiplayer AND DMZ, plus DLSS 4.5"
+    ],
+    [
+     "PERFORMANCE MODE",
+     "120HZ",
+     "Season 1 patch: now on every PS5 + Xbox Series X|S with a 120Hz screen, even without VRR"
+    ],
+    [
+     "SMOKE + FOG",
+     "RAY-MARCHED",
+     "New engine tech shown by Infinity Ward (Digital Foundry breakdown)"
+    ],
+    [
+     "4K RAY TRACING",
+     "RTX 5070 TI",
+     "Official PC spec for high-quality ray tracing at 4K upscaled (or AMD RX 9070 XT)"
+    ]
    ],
-   "hero_w": 980,
-   "hero_max": 600
+   "foot": "FULL CONTROLLER + GRAPHICS SETTINGS IN OUR SETTINGS POST"
   }
  ],
  "cta": {
   "white": "WHICH MAP",
   "gold": "LOOKS THE BEST?",
-  "sub": "LITHIUM · NYC · SENTRY · MUMBAI · REACTOR · X01",
+  "sub": "NYC · REACTOR · MUMBAI · SENTRY · BACKSTAB · CANYON · X01",
   "save_kicker": "WALLPAPER-READY SCREENSHOTS",
   "follow_sub": "MW4 · WARZONE · DMZ"
  }

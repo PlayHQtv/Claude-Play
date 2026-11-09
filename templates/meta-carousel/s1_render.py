@@ -25,7 +25,35 @@ CSS = """
 .st .v{flex:none;max-width:330px;text-align:right;font-family:Anton;font-size:46px;line-height:1.05;color:var(--y)}
 .cv2 .ch2{display:flex;gap:12px;position:absolute;left:50px;width:885px}
 .cv2 .ch2 span{flex:1;text-align:center;font-family:Anton;font-size:30px;padding:16px 4px;color:#f1f1f1}
+.bleed{position:absolute;left:0;width:1080px;background-size:100% 100%;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.bleed::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--y),rgba(255,212,0,0))}
+.bleed::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--y),rgba(255,212,0,0))}
+.mtag{position:absolute;right:50px;font-family:Anton;font-size:34px;letter-spacing:2px;padding:8px 18px 6px;line-height:1}
+.mtag.new{background:#3ddc84;color:#0b0b0b}.mtag.old{background:rgba(255,255,255,.1);color:#f1f1f1;border:2px solid rgba(255,255,255,.45)}
+.mtag.tech{background:var(--y);color:#111}
+.shotcap{position:absolute;left:50px;width:870px}
+.shotcap .ln{display:flex;gap:22px;align-items:baseline;margin-bottom:22px}
+.shotcap .ln b{flex:none;width:215px;font-family:Anton;font-size:40px;color:var(--y);letter-spacing:1px}
+.shotcap .ln p{flex:1;font-weight:600;font-size:35px;line-height:1.28;color:#e6e6e6}
 """
+
+
+def bleed(img, top):
+    """Screenshot full-bleed across the whole 1080 width, COMPLETE (no crop, own aspect ratio)."""
+    from PIL import Image
+    iw, ih = Image.open(os.path.join(R.HERE, '_build', 's1', img)).size
+    h = round(1080 * ih / iw)
+    return f'<div class="bleed" style="top:{top}px;height:{h}px;background-image:url(/_build/s1/{img})"></div>', h
+
+
+def shot(s, d):
+    """Graphics showcase slide: section line, big title + status tag (NEW S1 / LAUNCH MAP), full-bleed screenshot, 2 caption lines."""
+    tag = f'<div class="mtag {s.get("tag_cls", "old")}" style="top:252px">{E(s["tag"])}</div>' if s.get('tag') else ''
+    bb, h = bleed(s['shot'], 400)
+    cap = ''.join(f'<div class="ln"><b>{E(a)}</b><p>{E(b)}</p></div>' for a, b in s['rules'])
+    body = (f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:235px" data-size="120" data-max="700"><span class="gr w">{E(s["title"])}</span></div>'
+            + tag + bb + f'<div class="shotcap" style="top:{400 + h + 44}px">{cap}</div>')
+    return page(body, {**d, 'footer': ''})
 
 
 def hero(img, top, maxh, maxw=885, left=50):
@@ -60,6 +88,8 @@ def rules(rs):
 
 
 def slide(s, d):
+    if s.get('shot'):
+        return shot(s, d)
     head = f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:240px" data-size="100" data-max="860"><span class="gr w">{E(s["title"])}</span></div>'
     if s.get('hero'):
         hw = s.get('hero_w', 885); hh, h = hero(s['hero'], 365, s.get('hero_max', 470), maxw=hw, left=(1080 - hw) // 2 if hw > 885 else 50)
@@ -84,6 +114,8 @@ def cover_rows(c):
 
 def cover(d):
     c = d['cover']
+    if c.get('bleed'):
+        return cover_bleed(d)
     chips = ''.join(f'<span class="hud">{E(x)}</span>' for x in c.get('chips', []))
     body = (f'<div class="kicker" style="top:200px;left:60px;font-size:28px">{E(c["kicker"])}</div>'
             + f'<div class="fit" style="top:245px" data-size="190" data-max="860"><span class="gr gold">{E(c["big"])}</span></div>'
@@ -92,6 +124,19 @@ def cover(d):
             + (cover_rows(c) if c.get('rows') else hero(c['img'], 650, 420)[0]
                + f'<div class="cv2"><div class="ch2" style="top:1095px">{chips}</div></div>')
             + f'<div class="swipe" style="top:1235px;font-size:28px;right:110px">{E(c["swipe"])}</div>')
+    return page(body, {**d, 'footer': '', 'cover_logo': 1})
+
+
+def cover_bleed(d):
+    """Catchy cover: full-bleed screenshot, free-standing operator cut-out BEHIND the title, hook line."""
+    c = d['cover']
+    bb, h = bleed(c['bleed'], c.get('bleed_top', 610))
+    body = (bb + (R.cutout_html(c['cutout']) if c.get('cutout') else '')
+            + f'<div class="kicker" style="top:200px;left:60px;font-size:28px">{E(c["kicker"])}</div>'
+            + f'<div class="fit" style="top:245px" data-size="190" data-max="960"><span class="gr gold">{E(c["big"])}</span></div>'
+            + f'<div class="fit" style="top:445px" data-size="125" data-max="700"><span class="gr w">{E(c["small"])}</span></div>'
+            + (f'<div class="mtag tech" style="top:{c.get("bleed_top", 610) + h - 70}px;left:50px;right:auto">{E(c["stamp"])}</div>' if c.get('stamp') else '')
+            + f'<div class="swipe" style="top:{c.get("bleed_top", 610) + h + 30}px;font-size:28px;right:110px">{E(c["swipe"])}</div>')
     return page(body, {**d, 'footer': '', 'cover_logo': 1})
 
 
