@@ -1,0 +1,71 @@
+{
+ "hdr": "LAUNCH CHECKLIST",
+ "source": "Source: Rockstar Newswire + Rockstar Support",
+ "cover": {
+  "photo": "vc_sign.jpg",
+  "photo_top": 600,
+  "photo_h": 820,
+  "kicker": "GTA 6 · BEFORE NOVEMBER 19",
+  "big": "LAUNCH CHECKLIST",
+  "script": "don't miss these",
+  "script_top": 515,
+  "cutout": {
+   "img": "cut_suit.png",
+   "right": -150,
+   "top": 470,
+   "h": 1000
+  },
+  "swipe": "SWIPE FOR ALL 5 ›"
+ },
+ "slides": [
+  {
+   "kicker": "STEP 1 · NOVEMBER 10",
+   "title": "PRE-LOAD",
+   "tag": "OFFICIAL",
+   "shot": "vc_skyline.jpg",
+   "rules": [
+    [
+     "PS5",
+     "Tuesday, Nov 10 at midnight, your local time."
+    ],
+    [
+     "XBOX SERIES X|S",
+     "Tuesday, Nov 10 at 12 a.m. GMT, worldwide."
+    ]
+   ]
+  },
+  {
+   "kicker": "STEP 2-5 · DON'T GET CAUGHT OUT",
+   "title": "BEFORE LAUNCH",
+   "cards": [
+    [
+     "FREE UP 212 GB",
+     "The pre-load needs <em>up to 212 GB</em>, depending on your console."
+    ],
+    [
+     "NO DISC IN THE BOX",
+     "Physical copies only hold a <em>download code</em>. In stores from Nov 12."
+    ],
+    [
+     "PRE-ORDER BONUS",
+     "Digital pre-orders before <em>Nov 20</em> get the Vintage Vice City Pack + 1 month GTA+."
+    ],
+    [
+     "PS5 + XBOX ONLY",
+     "Launch platforms: <em>PS5 and Xbox Series X|S</em>. Release: Nov 19."
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHERE DO YOU",
+  "gold": "GO FIRST?",
+  "script": "see you in Leonida",
+  "cutout": {
+   "img": "cut_duo.png",
+   "right": -120,
+   "top": 640,
+   "h": 760
+  }
+ }
+}

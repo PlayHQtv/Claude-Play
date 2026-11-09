@@ -362,3 +362,6 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Metricool TikTok error 401 "did not authorize the scope" = reconnect TikTok in Metricool with publish permission.
 - Metricool checkout requires a tax ID field (private persons: Steuer-ID).
 - No external links in descriptions. Copyright: reposting is risky; safe sources are CC-BY, creators who allow clipping, own content. TikTok in-app game challenges must be joined in the app.
+## GTA 6 (from launch Nov 19, 2026)
+- Tips & tricks carousels with their own design: templates/meta-carousel/gta_render.py (sunset gradient, neon script, glass cards, official GTA VI logo on the cover, official character art as cut-outs, official screenshots uncropped). Example data: data/example-gta6-launch-checklist.json.
+- Sources and fact rules: docs/sources/gta6.md (Tier 1 official = fact, Tier 2 = needs 2 sources, Tier 3/leaks = never as fact). Verifier + duplicate check like MW4.
