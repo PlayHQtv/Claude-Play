@@ -57,6 +57,11 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 .prog i.on{background:linear-gradient(90deg,var(--o),var(--p))}
 .panel{position:absolute;background-size:100% 100%;outline:8px solid #fff;outline-offset:-1px;box-shadow:0 30px 60px rgba(0,0,0,.6)}
 .panel span{position:absolute;left:18px;top:-24px;font-family:IT;font-weight:800;font-size:22px;letter-spacing:5px;background:#fff;color:var(--ink);padding:9px 14px 7px}
+.fg{position:absolute;left:0;width:1080px;background-size:100% 100%}
+.fg.m{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 9%,#000 82%,transparent 100%)}
+.big{position:absolute;left:50%;transform:translateX(-50%);font-family:BS;font-weight:900;line-height:.82;white-space:nowrap;text-transform:uppercase;
+ background:linear-gradient(180deg,#ffd27a 8%,#ff8a4c 42%,#ff4f8b 70%,#d63ac7 100%);-webkit-background-clip:text;color:transparent;
+ filter:drop-shadow(-4px 0 0 rgba(255,0,90,.4)) drop-shadow(4px 0 0 rgba(0,220,255,.3)) drop-shadow(0 20px 50px rgba(0,0,0,.45))}
 .cut{position:absolute;filter:drop-shadow(0 40px 50px rgba(0,0,0,.65));-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 99%)}
 .neon{position:absolute;left:66px;font-family:Tail;white-space:nowrap;color:#fff;transform:rotate(-5deg);
  text-shadow:0 0 4px #fff,0 0 12px var(--p),0 0 28px var(--p),0 0 60px rgba(255,61,154,.8)}
@@ -92,6 +97,17 @@ def cover(d):
     cut = c.get('cutout')
     panels = ''.join(f'<div class="panel" style="left:{p["x"]}px;top:{p["y"]}px;width:{p["w"]}px;height:{round(p["w"] * 9 / 16)}px;transform:rotate({p.get("r", 0)}deg);background-image:url(/_build/gta/{p["img"]})">'
                      + (f'<span>{E(p["label"])}</span>' if p.get('label') else '') + '</div>' for p in c.get('panels', []))
+    hero = c.get('hero')
+    if hero:  # full-width uncropped shot; hero["fg"] = same frame with depth alpha -> sits IN FRONT of the title
+        ht = hero.get('top', 300); hh = 608
+        body = (f'<div class="shot" style="top:{ht}px;height:{hh}px;background-image:url(/_build/gta/{hero["img"]})"></div>'
+                + f'<div class="k" style="top:{hero.get("k_top", 300)}px">{E(c["kicker"])}</div>'
+                + f'<div class="big fit" style="top:{hero["title_top"]}px" data-size="{c.get("size", 250)}" data-max="1000">{c["big"]}</div>'
+                + f'<div class="fg m" style="top:{ht}px;height:{hh}px;background-image:url(/_build/gta/{hero["fg"]})"></div>'
+                + f'<div class="neon fit" style="top:{c.get("neon_top", 960)}px" data-size="104" data-max="700">{E(c["neon"])}</div>'
+                + ''.join(f'<div class="body" style="top:{t}px">{x}</div>' for t, x in c.get('lines', []))
+                + f'<div class="swipe" style="top:1292px">{c.get("swipe", "SWIPE <b>›</b>")}</div>')
+        return base(body, d, amb=c.get('amb'), cover=True)
     body = ((f'<div class="shot" style="top:0;height:608px;opacity:.6;background-image:url(/_build/gta/{c["bgshot"]})"></div>' if c.get('bgshot') else '')
             + f'<div class="sun" style="right:-90px;top:{c.get("sun_top", 420)}px;width:640px;height:640px"></div>'
             + panels
@@ -105,6 +121,8 @@ def cover(d):
 
 def tip(s, d, i, total):
     from PIL import Image
+    if s.get('char'):
+        return char(s, d, i, total)
     iw, ih = Image.open(os.path.join(R.HERE, '_build', 'gta', s['shot'])).size
     h = round(1080 * ih / iw)
     top = 230
@@ -112,13 +130,27 @@ def tip(s, d, i, total):
     facts = ''
     if s.get('facts'):
         facts = '<div class="facts" style="top:{0}px">'.format(y + 370) + ''.join(f'<div><small>{E(a)}</small><strong>{E(b)}</strong><p>{E(c)}</p></div>' for a, b, c in s['facts']) + '</div>'
+    ix = 'right:40px' if s.get('idx_right') else ''
     body = (f'<div class="shot" style="top:{top}px;height:{h}px;background-image:url(/_build/gta/{s["shot"]})"></div>'
-            + f'<div class="idx {"fill" if s.get("fill_idx", True) else ""}" style="top:{y - 40}px;font-size:250px">{i:02d}</div>'
+            + f'<div class="idx {"fill" if s.get("fill_idx", True) else ""}" style="top:{y - 40 + s.get("idx_dy", 0)}px;font-size:250px;{ix}{';left:auto' if ix else ''}">{i:02d}</div>'
+            + (f'<div class="fg" style="top:{top}px;height:{h}px;background-image:url(/_build/gta/{s["pop"]})"></div>' if s.get('pop') else '')
             + f'<div class="k" style="top:{y + 175}px">{E(s["kicker"])}</div>'
             + f'<div class="h fit" style="top:{y + 212}px" data-size="128" data-max="960">{s["title"]}</div>'
             + (f'<div class="body" style="top:{y + 345}px">{s["body"]}</div>' if s.get('body') else '')
             + facts)
     return base(body, d, amb=s['shot'].replace('.jpg', '_amb.jpg'), idx=i - 1, total=total)
+
+
+def char(s, d, i, total):
+    """Character slide: giant name BEHIND a BiRefNet cut-out, short text below."""
+    c = s['char']
+    body = (f'<div class="sun" style="left:{c.get("sun_x", 520)}px;top:{c.get("sun_top", 300)}px;width:560px;height:560px"></div>'
+            + f'<div class="big fit" style="top:{c.get("name_top", 290)}px" data-size="{c.get("name_size", 330)}" data-max="1010">{E(c["name"])}</div>'
+            + f'<img class="cut" src="/_build/gta/{c["img"]}" style="left:{c.get("left", -60)}px;top:{c.get("top", 420)}px;height:{c.get("h", 560)}px;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%,#000 62%,transparent 97%)">'
+            + f'<div class="k" style="top:{c.get("k_top", 1030)}px">{E(s["kicker"])}</div>'
+            + f'<div class="h fit" style="top:{c.get("k_top", 1030) + 37}px" data-size="104" data-max="960">{s["title"]}</div>'
+            + (f'<div class="body" style="top:{c.get("k_top", 1030) + 150}px">{s["body"]}</div>' if s.get('body') else ''))
+    return base(body, d, amb=s.get('amb'), idx=i - 1, total=total)
 
 
 def cta(d):

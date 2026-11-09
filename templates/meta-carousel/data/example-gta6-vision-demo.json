@@ -1,0 +1,24 @@
+{
+  "hdr": "LAUNCH WEEK",
+  "source": "Images: official GTA VI screenshots",
+  "cover": {
+    "amb": "g_sign_amb.jpg",
+    "hero": {"img": "g_sign.jpg", "fg": "demo_sign_fg.png", "top": 290, "title_top": 342, "k_top": 290},
+    "kicker": "NOV 19 · MIDNIGHT LOCAL TIME",
+    "big": "LAUNCH",
+    "size": 300,
+    "neon": "welcome to vice city",
+    "neon_top": 935,
+    "lines": [[1110, "Everything you need <b>before</b> you hit play."]]
+  },
+  "tips": [
+    {"shot": "demo_keys.jpg", "pop": "demo_plane_fg.png", "idx_right": true, "idx_dy": -150,
+     "kicker": "LEONIDA KEYS", "title": "GO <em>OFF-ROAD</em> BY AIR",
+     "body": "Seaplanes land on open water – the fastest way across the Keys."},
+    {"char": {"img": "demo_lucia_cut.png", "name": "LUCIA", "left": -70, "top": 455, "h": 560, "name_top": 270, "sun_x": 560, "sun_top": 250},
+     "amb": "demo_lucia_amb.jpg",
+     "kicker": "MEET THE LEADS", "title": "LUCIA <em>CAMINOS</em>",
+     "body": "One of the two playable protagonists, next to Jason."}
+  ],
+  "cta": {"amb": "g_sign_amb.jpg", "title": "SAVE <em>THIS</em>", "neon": "see you in leonida", "cutout": {"img": "cut_duo.png", "right": -120, "top": 700, "h": 720}}
+}
