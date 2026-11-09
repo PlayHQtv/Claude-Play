@@ -19,6 +19,10 @@ CSS = """
 .s1c.cm{padding:10px 18px 10px 12px}.s1c.cm .im{height:118px;width:236px}.s1c.cm .nm{font-size:42px}.s1c.cm p{font-size:26px;margin-top:3px}
 .s1ft{position:absolute;left:50px;width:885px;font-weight:700;font-size:22px;letter-spacing:4px;color:var(--y);text-align:center}
 .s1hero{position:absolute;left:50px;width:885px;height:400px;background-size:cover;background-position:center;border:2px solid rgba(255,212,0,.6);clip-path:polygon(0 0,100% 0,100% 90%,94% 100%,0 100%)}
+.st{display:flex;align-items:center;gap:20px;padding:18px 26px}
+.st .l{flex:1;min-width:0}.st .l b{display:block;font-family:Anton;font-size:40px;line-height:1.08;color:#f3f3f3}
+.st .l p{font-weight:600;font-size:25px;line-height:1.25;color:#cfcfcf;margin-top:4px}
+.st .v{flex:none;max-width:330px;text-align:right;font-family:Anton;font-size:46px;line-height:1.05;color:var(--y)}
 .cv2 .ch2{display:flex;gap:12px;position:absolute;left:50px;width:885px}
 .cv2 .ch2 span{flex:1;text-align:center;font-family:Anton;font-size:30px;padding:16px 4px;color:#f1f1f1}
 """
@@ -46,6 +50,11 @@ def card(c, cm=False):
             f'<p>{E(c["desc"])}</p></div></div>')
 
 
+def settings(rs):
+    return ''.join(f'<div class="pc hud st"><div class="l"><b>{E(r[0])}</b>' + (f'<p>{E(r[2])}</p>' if len(r) > 2 and r[2] else '')
+                   + f'</div><div class="v">{E(r[1])}</div></div>' for r in rs)
+
+
 def rules(rs):
     return ''.join(f'<div class="pc hud ru"><b>{E(a)}</b><p>{E(b)}</p></div>' for a, b in rs)
 
@@ -56,22 +65,32 @@ def slide(s, d):
         hh, h = hero(s['hero'], 365, s.get('hero_max', 470))
         body = head + hh + f'<div class="stack" style="top:{365 + h + 22}px;gap:10px">{rules(s["rules"])}</div>'
     else:
-        inner = ''.join(card(c, len(s['cards']) >= 5) for c in s['cards']) + (rules(s['rules']) if s.get('rules') else '')
+        inner = ''.join(card(c, len(s.get('cards', [])) >= 5) for c in s.get('cards', [])) + (rules(s['rules']) if s.get('rules') else '') + (settings(s['settings']) if s.get('settings') else '')
         body = head + f'<div class="stack" style="top:365px;gap:16px">{inner}</div>'
         if s.get('foot'):
             body += f'<div class="s1ft" style="top:1230px">{E(s["foot"])}</div>'
     return page(body, {**d, 'footer': ''})
 
 
+def cover_rows(c):
+    """Cover variant without photo: one weapon render (gold edge glow) + numbered HUD rows (label + teaser)."""
+    gun = (f'<div class="gunbox" style="top:620px;height:270px;width:900px"><div style="display:inline-block;transform:rotate(-4deg);filter:drop-shadow(0 40px 30px rgba(0,0,0,.85))">'
+           f'<img style="display:block;max-height:250px;max-width:820px;filter:drop-shadow(0 0 1px rgba(255,226,150,.95)) drop-shadow(0 0 3px rgba(255,196,64,.5)) brightness(1.2) contrast(1.08)" src="/weapons/{c["gun"]}"></div></div>'
+           '<div class="floor" style="top:880px"></div><div class="line" style="top:897px"></div>') if c.get('gun') else ''
+    rows = ''.join(f'<div class="row hud" style="top:{915 + i * 76}px;height:66px"><div class="n" style="font-size:44px">{i + 1:02d}</div>'
+                   f'<b style="font-size:30px">{E(a)}</b><small>{E(b)}</small></div>' for i, (a, b) in enumerate(c['rows']))
+    return gun + rows
+
+
 def cover(d):
     c = d['cover']
-    chips = ''.join(f'<span class="hud">{E(x)}</span>' for x in c['chips'])
+    chips = ''.join(f'<span class="hud">{E(x)}</span>' for x in c.get('chips', []))
     body = (f'<div class="kicker" style="top:200px;left:60px;font-size:28px">{E(c["kicker"])}</div>'
             + f'<div class="fit" style="top:245px" data-size="190" data-max="860"><span class="gr gold">{E(c["big"])}</span></div>'
             + f'<div class="fit" style="top:450px" data-size="120" data-max="860"><span class="gr w">{E(c["small"])}</span></div>'
             + f'<div class="kicker" style="top:590px;left:62px;font-size:24px;letter-spacing:6px;color:#d9d9d9">{E(c["sub"])}</div>'
-            + hero(c['img'], 650, 420)[0]
-            + f'<div class="cv2"><div class="ch2" style="top:1095px">{chips}</div></div>'
+            + (cover_rows(c) if c.get('rows') else hero(c['img'], 650, 420)[0]
+               + f'<div class="cv2"><div class="ch2" style="top:1095px">{chips}</div></div>')
             + f'<div class="swipe" style="top:1235px;font-size:28px;right:110px">{E(c["swipe"])}</div>')
     return page(body, {**d, 'footer': '', 'cover_logo': 1})
 

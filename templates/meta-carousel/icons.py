@@ -41,6 +41,8 @@ ICONS = {
  'laser': f'<path {S} d="M30 26 h66 a6 6 0 0 1 6 6 v24 a6 6 0 0 1 -6 6 h-66 z"/><path {S} d="M102 34 h12 v20 h-12 z"/>'
           f'<path {T} d="M40 36 h30 M40 44 h20 M40 52 h26"/><circle cx="84" cy="44" r="5" {T}/>'
           f'<path stroke="#ffd76a" stroke-width="2" d="M114 44 h36" opacity=".9"/>',
+ 'bolt': f'<path {S} d="M14 34 h96 a5 5 0 0 1 5 5 v12 a5 5 0 0 1 -5 5 h-96 z"/><path {S} d="M86 56 l16 18 a4 4 0 0 1 -1 5 l-4 3"/>'
+         f'<circle cx="98" cy="80" r="8" {S}/><path {S} d="M115 40 h30 v10 h-30 z"/><path {T} d="M24 45 h50 M30 38 v14 M40 38 v14"/>',
  'comb': f'<path {S} d="M18 40 h124 l-8 22 h-108 z"/><path {T} d="M30 50 h96 M18 40 l10 -12 h104 l10 12"/>',
 }
 

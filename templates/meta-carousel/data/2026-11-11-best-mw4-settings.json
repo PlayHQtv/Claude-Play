@@ -1,0 +1,179 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "SETTINGS",
+ "cover": {
+  "kicker": "MULTIPLAYER · CONTROLLER",
+  "big": "BEST MW4",
+  "small": "SETTINGS",
+  "sub": "CONTROLLER · MOVEMENT · GRAPHICS · AUDIO",
+  "gun": "mw4/w_Hyeon_Burst.png",
+  "rows": [
+   [
+    "CONTROLLER",
+    "AIM CURVE: DYNAMIC"
+   ],
+   [
+    "MOVEMENT",
+    "MANTLE ASSIST: OFF"
+   ],
+   [
+    "GRAPHICS",
+    "FOV: 105"
+   ],
+   [
+    "AUDIO",
+    "MIX: HEADPHONES"
+   ]
+  ],
+  "swipe": "SWIPE FOR ALL SETTINGS ›"
+ },
+ "slides": [
+  {
+   "sec": "SETTINGS 1/4",
+   "title": "CONTROLLER",
+   "foot": "STICK SENSITIVITY: GUIDES SAY 1.35–1.85 (NEW SCALE IN MW4)",
+   "settings": [
+    [
+     "TARGET AIM ASSIST",
+     "ON",
+     "The only aim assist option in MW4 MP"
+    ],
+    [
+     "AIM RESPONSE CURVE TYPE",
+     "DYNAMIC",
+     "Fine aim in the center, fast turns at the edge"
+    ],
+    [
+     "BUTTON LAYOUT",
+     "TACTICAL",
+     "Crouch/slide on the stick, thumb stays on aim"
+    ],
+    [
+     "RIGHT STICK MAX",
+     "99",
+     ""
+    ],
+    [
+     "STICK MIN (LEFT + RIGHT)",
+     "LOW",
+     "As low as your stick allows without drift"
+    ],
+    [
+     "TRIGGER EFFECT",
+     "OFF",
+     "PS5: trigger resistance hurts precise aim"
+    ]
+   ]
+  },
+  {
+   "sec": "SETTINGS 2/4",
+   "title": "MOVEMENT",
+   "foot": "MULTIPLAYER: TAC SPRINT ONLY WITH THE BLOOD RUSH PERK",
+   "settings": [
+    [
+     "AIM DOWN SIGHT BEHAVIOR",
+     "HOLD",
+     ""
+    ],
+    [
+     "MANTLE ASSIST",
+     "OFF",
+     ""
+    ],
+    [
+     "SPRINT/TACTICAL SPRINT BEHAVIOR",
+     "TOGGLE",
+     ""
+    ],
+    [
+     "AUTO MOVE FORWARD",
+     "OFF",
+     ""
+    ],
+    [
+     "AUTO DOOR PEEK",
+     "OFF",
+     ""
+    ]
+   ]
+  },
+  {
+   "sec": "SETTINGS 3/4",
+   "title": "GRAPHICS",
+   "foot": "CONSOLE: FIDELITYFX CAS ON · STRENGTH 50–80",
+   "settings": [
+    [
+     "FIELD OF VIEW",
+     "105",
+     "Guides say 100–110"
+    ],
+    [
+     "ADS FIELD OF VIEW",
+     "AFFECTED",
+     "Keeps more of your surroundings visible while aiming"
+    ],
+    [
+     "1ST PERSON CAMERA MOVEMENT",
+     "MINIMAL (25%)",
+     ""
+    ],
+    [
+     "WORLD + WEAPON MOTION BLUR",
+     "OFF",
+     ""
+    ],
+    [
+     "WORLD + WEAPON DEPTH OF FIELD",
+     "OFF",
+     ""
+    ],
+    [
+     "FILM GRAIN",
+     "0",
+     ""
+    ]
+   ]
+  },
+  {
+   "sec": "SETTINGS 4/4",
+   "title": "AUDIO",
+   "foot": "SOURCES: DEXERTO · DOT ESPORTS · GAMESPOT + MORE",
+   "settings": [
+    [
+     "AUDIO MIX",
+     "HEADPHONES",
+     "When you play with a headset"
+    ],
+    [
+     "EFFECTS VOLUME",
+     "100",
+     "Footsteps are in the effects channel"
+    ],
+    [
+     "GAMEPLAY MUSIC VOLUME",
+     "0",
+     "Or very low"
+    ],
+    [
+     "MONO AUDIO",
+     "OFF",
+     ""
+    ],
+    [
+     "REDUCE TINNITUS SOUND",
+     "ON",
+     "Dulls the ringing from flashes and stuns"
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHAT SENSITIVITY",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP IT IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 TIPS"
+ },
+ "source": "Dexerto MW4 controller/console/FOV/audio wikis, Dot Esports controller (23 Oct), GameSpot (16 Oct), ConquestCapped (26 Oct), IGN, esports.gg, callofduty.com launch + S1 patch notes (Blood Rush / Tac Sprint, 1st Person Camera Movement)",
+ "notes": "CSI term 'mw4 setting' (247K) 09.11. Only settings with 2+ agreeing sources; Film Grain 0 single-source (Dexerto, uncontradicted).",
+ "verified": "independent verifier 09.11.2026 PASS after fixes (ADS FOV text, sens range, slide-sprint row removed)"
+}
