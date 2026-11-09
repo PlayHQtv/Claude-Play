@@ -62,7 +62,7 @@ def rules(rs):
 def slide(s, d):
     head = f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:240px" data-size="100" data-max="860"><span class="gr w">{E(s["title"])}</span></div>'
     if s.get('hero'):
-        hh, h = hero(s['hero'], 365, s.get('hero_max', 470))
+        hw = s.get('hero_w', 885); hh, h = hero(s['hero'], 365, s.get('hero_max', 470), maxw=hw, left=(1080 - hw) // 2 if hw > 885 else 50)
         body = head + hh + f'<div class="stack" style="top:{365 + h + 22}px;gap:10px">{rules(s["rules"])}</div>'
     else:
         inner = ''.join(card(c, len(s.get('cards', [])) >= 5) for c in s.get('cards', [])) + (rules(s['rules']) if s.get('rules') else '') + (settings(s['settings']) if s.get('settings') else '')
@@ -100,7 +100,7 @@ def cta(d):
     body = (f'<div class="fit" style="top:230px" data-size="130" data-max="860"><span class="gr w">{E(c["white"])}</span></div>'
             + f'<div class="fit" style="top:375px" data-size="130" data-max="860"><span class="gr gold">{E(c["gold"])}</span></div>'
             + f'<div class="kicker" style="top:540px;left:60px;font-size:24px;letter-spacing:5px;color:#d9d9d9">{E(c["sub"])}</div>'
-            + '<div class="t hud save" style="position:absolute;left:150px;width:640px;top:680px;height:130px;justify-content:center"><div class="tx" style="text-align:center;padding:0"><small style="font-size:20px">YOUR SEASON 1 CHEAT SHEET</small><b style="font-size:60px">SAVE THIS</b></div></div>'
+            + f'<div class="t hud save" style="position:absolute;left:150px;width:640px;top:680px;height:130px;justify-content:center"><div class="tx" style="text-align:center;padding:0"><small style="font-size:20px">{E(c.get("save_kicker","YOUR SEASON 1 CHEAT SHEET"))}</small><b style="font-size:60px">SAVE THIS</b></div></div>'
             + '<img src="/assets/logo.png" style="position:absolute;left:60px;top:900px;width:120px">'
             + '<div style="position:absolute;left:205px;top:912px;font-family:Anton;font-size:62px;line-height:1;letter-spacing:3px">FOLLOW <span style="background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent">@PLAYHQTV</span></div>'
             + f'<div style="position:absolute;left:207px;top:985px;font-weight:700;color:#cfcfcf;letter-spacing:6px;font-size:22px">{E(c["follow_sub"])}</div>')

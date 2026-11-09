@@ -1,0 +1,129 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MW4",
+ "cover": {
+  "kicker": "OFFICIAL SCREENSHOTS · NO FILTER",
+  "big": "MW4 GRAPHICS",
+  "small": "LOOK THIS REAL",
+  "sub": "6 MAPS · SNOW · NEON · WATER · FOG",
+  "img": "gfx_cover.jpg",
+  "chips": [
+   "LITHIUM",
+   "NYC",
+   "SENTRY",
+   "X01"
+  ],
+  "swipe": "SWIPE THROUGH ALL 6 ›"
+ },
+ "slides": [
+  {
+   "sec": "MULTIPLAYER · 6V6 · LAUNCH MAP",
+   "title": "LITHIUM",
+   "hero": "gfx_lithium.jpg",
+   "rules": [
+    [
+     "THE SCENE",
+     "A lithium refinery deep in rural Mexico, under the Sierra Mountains, turned into a warzone."
+    ],
+    [
+     "LOOK AT",
+     "The turquoise pools and the smoke rising out of the open pit."
+    ]
+   ],
+   "hero_w": 980,
+   "hero_max": 600
+  },
+  {
+   "sec": "GUNFIGHT · 2V2 · LAUNCH MAP",
+   "title": "NYC",
+   "hero": "gfx_nyc.jpg",
+   "rules": [
+    [
+     "THE SCENE",
+     "A wintry night in the thick of downtown, with a big stage in the center."
+    ],
+    [
+     "LOOK AT",
+     "Neon billboards glowing through the fog on the wet street."
+    ]
+   ],
+   "hero_w": 980,
+   "hero_max": 600
+  },
+  {
+   "sec": "MULTIPLAYER · 6V6 · LAUNCH MAP",
+   "title": "SENTRY",
+   "hero": "gfx_sentry.jpg",
+   "rules": [
+    [
+     "THE SCENE",
+     "An assault on a Russian military base in whiteout conditions."
+    ],
+    [
+     "LOOK AT",
+     "Snow piling up on the armored vehicle, the roofs and the trucks."
+    ]
+   ],
+   "hero_w": 980,
+   "hero_max": 600
+  },
+  {
+   "sec": "MULTIPLAYER · 6V6 · LAUNCH MAP",
+   "title": "MUMBAI",
+   "hero": "gfx_mumbai.jpg",
+   "rules": [
+    [
+     "THE SCENE",
+     "A fugitive's hideout in a dense residential district around a Victorian market."
+    ],
+    [
+     "LOOK AT",
+     "The pink-stained street, blue tarps and the light in the alley."
+    ]
+   ],
+   "hero_w": 980,
+   "hero_max": 600
+  },
+  {
+   "sec": "MULTIPLAYER · 6V6 · LAUNCH MAP",
+   "title": "REACTOR U92",
+   "hero": "gfx_reactor.jpg",
+   "rules": [
+    [
+     "THE SCENE",
+     "A South Korean reactor complex in meltdown, with a boiling containment pool."
+    ],
+    [
+     "LOOK AT",
+     "The blue glow of the pool lighting up the whole room."
+    ]
+   ],
+   "hero_w": 980,
+   "hero_max": 600
+  },
+  {
+   "sec": "DMZ · SEASON 1 · NEW LOCATION",
+   "title": "X01",
+   "hero": "gfx_x01.jpg",
+   "rules": [
+    [
+     "THE SCENE",
+     "A former GRANIT Arms black site on the edge of Hajin, seized by enemy forces."
+    ],
+    [
+     "LOOK AT",
+     "Thick fog and the light breaking through behind the squad."
+    ]
+   ],
+   "hero_w": 980,
+   "hero_max": 600
+  }
+ ],
+ "cta": {
+  "white": "WHICH MAP",
+  "gold": "LOOKS THE BEST?",
+  "sub": "LITHIUM · NYC · SENTRY · MUMBAI · REACTOR · X01",
+  "save_kicker": "WALLPAPER-READY SCREENSHOTS",
+  "follow_sub": "MW4 · WARZONE · DMZ"
+ }
+}
