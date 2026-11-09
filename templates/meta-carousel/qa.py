@@ -2,7 +2,9 @@ import warnings; warnings.filterwarnings('ignore', category=DeprecationWarning)
 """Pre-publish QA for rendered carousels. Run right after a renderer (it re-opens the _build/<slide>.html files).
 Usage: python3 qa.py <out_dir>   -> prints a report, writes <out_dir>/_qa/sheet.jpg (TikTok UI zones drawn), exit 1 on errors.
 Checks: fonts + images loaded, text outside the safe margin or under TikTok UI, clipped/overflowing text,
-and an OCR read-back of every slide (Tesseract) against the text that was rendered."""
+an OCR read-back of every slide (Tesseract) against the text that was rendered,
+a legibility check (WCAG contrast of every text element against what is really behind it) and a spell check
+(English, game terms in qa_words.txt)."""
 import os, sys, glob, re, difflib
 import render as R
 from tiktok_overlay import ZONES
@@ -20,11 +22,50 @@ JS = r"""() => {
   const rg = document.createRange(); const tops = new Set(); let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
   for (const n of e.childNodes) if (n.nodeType === 3 && n.textContent.trim()) { rg.selectNodeContents(n); for (const q of rg.getClientRects()) { tops.add(Math.round(q.top)); x0=Math.min(x0,q.left); y0=Math.min(y0,q.top); x1=Math.max(x1,q.right); y1=Math.max(y1,q.bottom); } }
   if (x1 < 0) continue;
-  out.text.push({t: own, lines: tops.size, x0, y0, x1, y1, gr: !!e.closest('.gr'), hidden: getComputedStyle(e).visibility === 'hidden'});
+  out.text.push({t: own, lines: tops.size, x0, y0, x1, y1, gr: !!e.closest('.gr'), glow: !!e.closest('.neon'), hidden: getComputedStyle(e).visibility === 'hidden'});
   if (e.scrollWidth > e.clientWidth + 2 && getComputedStyle(e).overflow !== 'visible') out.issues.push('clipped text: ' + own.slice(0, 40));
  }
  return out;
 }"""
+
+
+def _lum(px):
+    import numpy as np
+    c = px / 255.0; c = np.where(c <= 0.03928, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+    return 0.2126 * c[..., 0] + 0.7152 * c[..., 1] + 0.0722 * c[..., 2]
+
+
+def legib(nm, texts, withtext, notext, warns):
+    """Text pixels = pixels that change when the glyphs are hidden. Contrast = WCAG ratio between the text pixels and
+    the background right behind them (same pixels in the text-less render). < 3:1 is hard to read on a phone."""
+    import numpy as np
+    A, B = np.asarray(withtext, np.float32), np.asarray(notext, np.float32)
+    for t in texts:
+        x0, y0, x1, y1 = max(0, int(t['x0'])), max(0, int(t['y0'])), min(1080, int(t['x1'])), min(1440, int(t['y1']))
+        if x1 - x0 < 10 or y1 - y0 < 8 or len(re.sub(r'\W', '', t['t'])) < 3 or t.get('glow'): continue
+        a, b = A[y0:y1, x0:x1], B[y0:y1, x0:x1]
+        m = np.abs(a - b).sum(-1) > 60
+        if m.sum() < 30: continue
+        lt, lb = np.median(_lum(a[m])), np.median(_lum(b[m]))
+        r = (max(lt, lb) + 0.05) / (min(lt, lb) + 0.05)
+        if r < 3: warns.append(f'{nm}: low contrast {r:.1f}:1 for "{t["t"][:40]}" - darken/lighten what is behind it')
+
+
+def spell(texts, warns, nm):
+    try:
+        from spellchecker import SpellChecker
+    except ImportError:
+        warns.append('spell check skipped (pip install pyspellchecker)'); return
+    sc = SpellChecker()
+    wl = os.path.join(R.HERE, 'qa_words.txt')
+    if os.path.exists(wl): sc.word_frequency.load_words([w.strip().lower() for w in open(wl) if w.strip() and not w.startswith('#')])
+    words = set()
+    for t in texts:
+        for w in re.findall(r"[A-Za-z][A-Za-z']+", t['t']):
+            w = w.strip("'").lower()
+            if len(w) >= 3 and not w.endswith("'s"): words.add(w)
+    bad = sorted(sc.unknown(words))
+    if bad: warns.append(f'{nm}: unknown words (typo?) {", ".join(bad[:12])} - fix or add to qa_words.txt')
 
 
 def check(out_dir):
@@ -47,6 +88,7 @@ def check(out_dir):
                 if u.startswith('/') and not os.path.exists(os.path.join(R.HERE, u.lstrip('/'))): errs.append(f'{nm}: missing image {u}')
             errs += [f'{nm}: font not loaded {x}' for x in d['fonts']] + [f'{nm}: image not loaded {x}' for x in d['imgs']]
             errs += [f'{nm}: {x}' for x in d['issues']]
+            spell(d['text'], warns, nm)
             for t in d['text']:
                 if t['x0'] < 40 or t['x1'] > 1040 or t['y1'] > 1420:
                     errs.append(f'{nm}: outside safe margin: "{t["t"][:40]}"')
@@ -63,6 +105,11 @@ def check(out_dir):
             pg3.goto(f'http://127.0.0.1:{port}/_build/{nm}.html'); pg3.wait_for_selector('body[data-ready]'); pg3.wait_for_timeout(300)
             shot = lambda: _I.open(io.BytesIO(pg3.screenshot())).convert('L')
             a = shot(); pg3.add_style_tag(content='.gr{-webkit-mask-image:none!important}'); pg3.wait_for_timeout(100); bimg = shot()
+            # legibility: same page with every glyph invisible -> what is really behind the text
+            pg3.add_style_tag(content='body *:not(.idx){color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important}.h em,.big,.fol em,.hdr b,.body .hl,.facts strong{background:none!important}')
+            pg3.wait_for_timeout(150); notext = _I.open(io.BytesIO(pg3.screenshot())).convert('RGB').resize((1080, 1440))
+            withtext = _I.open(f).convert('RGB')
+            legib(nm, d['text'], withtext, notext, warns)
             for grp in chars or []:
                 for ch, x, y, w, h in grp or []:
                     box = (int(3 * x) + 3, int(3 * (y + h * 0.15)), int(3 * (x + w)) - 3, int(3 * (y + h * 0.88)))
@@ -125,4 +172,6 @@ def check(out_dir):
 
 
 if __name__ == '__main__':
+    if sys.argv[1] == '--caption':  # spell check a TikTok caption / title / first comment: qa.py --caption "text"
+        w = []; spell([{'t': re.sub(r'[#@]\w+', '', ' '.join(sys.argv[2:]))}], w, 'caption'); print('\n'.join(w) or 'caption OK'); sys.exit(1 if w else 0)
     sys.exit(0 if check(sys.argv[1]) else 1)

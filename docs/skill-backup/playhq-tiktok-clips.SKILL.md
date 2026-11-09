@@ -375,3 +375,10 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - SAM (`V.sam(img, points, labels)` + `V.largest`) for vehicles/objects; Depth Anything V2 (`V.depth`) for "title behind subject" layers (gta3 cover `hero.fg`).
 - BiRefNet full (hair-level cut-outs) needs ~10 GB RAM: put asset names (already in the private draft release) into `grab/vision.txt` → workflow vision-hq uploads `m_<name>.png` masks. Clear vision.txt afterwards.
 - gta3 options: cover `hero {img, fg, top, title_top, k_top}`, tip `pop` + `idx_right`/`idx_dy`, tip `char {img, name, left, top, h}`.
+
+## Extra QA (09.11.2026, all run automatically in bin/prep.sh)
+- Legibility: WCAG contrast of every text element against what is really behind it; "low contrast" warnings must be fixed (darker tint/shadow or move the text) unless it is decorative.
+- Spell check of all slide text (English; game terms in templates/meta-carousel/qa_words.txt - add new names there, never ignore real typos).
+- Caption / title / first comment: `python3 qa.py --caption "<text>"` before every Metricool post.
+- Visual duplicate check `dupcheck.py <data.json>`: finds re-used screenshots (even re-graded/cropped) from earlier posts; never re-use the same cover hero image.
+- Not adopted (no real benefit): AI upscaling (sources are already >= 800-4K px), extra OCR engines (Tesseract read-back already in qa.py).
