@@ -1,0 +1,214 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MW4",
+ "cover": {
+  "kicker": "OFFICIAL CAMO GUIDE · SEASON 1",
+  "big": "MW4 CAMOS",
+  "small": "THE FULL GRIND",
+  "sub": "EVERY STEP FROM MILITARY TO MASTERY",
+  "gun": "../_build/s1/camo_orion.png",
+  "rows": [
+   [
+    "MILITARY + SPECIAL",
+    "level up + 3 challenges"
+   ],
+   [
+    "GOLD → DIVERGENCE",
+    "the completionist ladder"
+   ],
+   [
+    "9 MASTERY CAMOS",
+    "MP · DMZ · WARZONE"
+   ],
+   [
+    "PYROCLAST",
+    "weapon prestige camos"
+   ]
+  ],
+  "swipe": "SWIPE FOR EVERY CHALLENGE ›"
+ },
+ "slides": [
+  {
+   "sec": "STEP 1 + 2 · EVERY WEAPON",
+   "title": "THE BASICS",
+   "shot": "camo_military_grid.jpg",
+   "tag": "ONE GRIND · ALL MODES",
+   "tag_cls": "tech",
+   "rules": [
+    [
+     "MILITARY",
+     "8 per gun, unlocked just by leveling the weapon (Han 86: level 10 to 65)."
+    ],
+    [
+     "SPECIAL",
+     "3 challenges per gun. Finish one and you can use that camo on every weapon."
+    ]
+   ]
+  },
+  {
+   "sec": "STEP 3 · COMPLETIONIST CAMOS",
+   "title": "GOLD → DIVERGENCE",
+   "title_max": 960,
+   "guns": [
+    {
+     "img": "camo_gold.png",
+     "name": "Gold",
+     "chip": "PER GUN",
+     "desc": "All 8 Military + 3 Special, then 15 kills in one MP match (100 in DMZ)."
+    },
+    {
+     "img": "camo_platinum.png",
+     "name": "Platinum",
+     "chip": "PER CLASS",
+     "desc": "Gold on every gun in the class, then a class challenge (ARs: 50 headshots)."
+    },
+    {
+     "img": "camo_harmonic.png",
+     "name": "Harmonic Break",
+     "chip": "ALL 33 GUNS",
+     "desc": "Platinum on all 33 weapons, then a class challenge (ARs: 25 double kills)."
+    },
+    {
+     "img": "camo_divergence.png",
+     "name": "Divergence",
+     "chip": "AWARD",
+     "desc": "You get it for 33 Harmonic Break challenges. Opens Mastery."
+    }
+   ]
+  },
+  {
+   "sec": "MASTERY · AFTER DIVERGENCE",
+   "title": "MULTIPLAYER",
+   "tag": "MP MASTERY",
+   "guns": [
+    {
+     "img": "camo_mercurial.png",
+     "name": "Mercurial Drift",
+     "chip": "MASTERY 1",
+     "desc": "Get 10 kills in a match, 250 times."
+    },
+    {
+     "img": "camo_polyatomic.png",
+     "name": "Polyatomic Reforged",
+     "chip": "MASTERY 2",
+     "desc": "Get 3 kills without taking damage, 300 times."
+    },
+    {
+     "img": "camo_orion.png",
+     "name": "Orion Reforged",
+     "chip": "MASTERY 3",
+     "desc": "Get 5 kills without dying, 500 times."
+    }
+   ]
+  },
+  {
+   "sec": "MASTERY · AFTER DIVERGENCE",
+   "title": "DMZ",
+   "tag": "DMZ MASTERY",
+   "guns": [
+    {
+     "img": "camo_chiral.png",
+     "name": "Chiral",
+     "chip": "MASTERY 1",
+     "desc": "Get 2,500 kills on Tier 3+ enemies."
+    },
+    {
+     "img": "camo_rippletide.png",
+     "name": "Ripple Tide",
+     "chip": "MASTERY 2",
+     "desc": "Exfil with 2 Lieutenant dog tags in one deployment, 50 times."
+    },
+    {
+     "img": "camo_helio.png",
+     "name": "Helio",
+     "chip": "MASTERY 3",
+     "desc": "Get 25,000 kills with Legendary weapons on a max-level Operator."
+    }
+   ]
+  },
+  {
+   "sec": "MASTERY · AFTER DIVERGENCE",
+   "title": "WARZONE",
+   "tag": "NEW · SEASON 1",
+   "tag_cls": "new",
+   "guns": [
+    {
+     "img": "camo_parallax.png",
+     "name": "Parallax",
+     "chip": "MASTERY 1",
+     "desc": "Get 5 kills in a match, 300 times."
+    },
+    {
+     "img": "camo_damascus.png",
+     "name": "Damascus Reforged",
+     "chip": "MASTERY 2",
+     "desc": "Get 2 kills without plating, 200 times."
+    },
+    {
+     "img": "camo_empyros.png",
+     "name": "Empyros",
+     "chip": "MASTERY 3",
+     "desc": "Place top 5 with at least 6 kills, 75 times."
+    }
+   ],
+   "foot": "WARZONE MASTERY COUNTS WITH ANY WEAPON"
+  },
+  {
+   "sec": "WEAPON PRESTIGE CAMOS",
+   "title": "PYROCLAST",
+   "tag": "AFTER MAX LEVEL",
+   "guns": [
+    {
+     "img": "camo_pyroclast.png",
+     "name": "Pyroclast",
+     "chip": "PRESTIGE 1",
+     "desc": "Enter Weapon Prestige 1."
+    },
+    {
+     "img": "camo_terminus.png",
+     "name": "Pyroclast Terminus",
+     "chip": "PRESTIGE 1",
+     "desc": "Reach max level in Weapon Prestige 1."
+    },
+    {
+     "img": "camo_scatter.png",
+     "name": "Pyroclast Scatter",
+     "chip": "MASTER 150",
+     "desc": "Reach Weapon Prestige Master level 150."
+    },
+    {
+     "img": "camo_cascade.png",
+     "name": "Pyroclast Cascade",
+     "chip": "MASTER 250",
+     "desc": "Reach Weapon Prestige Master level 250."
+    }
+   ],
+   "foot": "PRESTIGING A WEAPON KEEPS ALL YOUR CAMOS"
+  },
+  {
+   "sec": "BEFORE YOU START",
+   "title": "3 THINGS TO KNOW",
+   "rules": [
+    [
+     "ONE GRIND",
+     "Multiplayer, DMZ and (since Season 1) Warzone share one camo grind. Finish a challenge in any mode."
+    ],
+    [
+     "DMZ = MORE KILLS",
+     "AI kills count in DMZ, so the targets are higher: Gold is 15 kills in MP but 100 in DMZ."
+    ],
+    [
+     "MASTERY = PER MODE",
+     "Each mode has its own 3 mastery camos. They only open after Divergence."
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHICH CAMO",
+  "gold": "ARE YOU GRINDING?",
+  "sub": "GOLD · ORION · HELIO · EMPYROS · PYROCLAST",
+  "save_kicker": "YOUR MW4 CAMO CHEAT SHEET",
+  "follow_sub": "MW4 · WARZONE · DMZ"
+ }
+}

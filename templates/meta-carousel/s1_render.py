@@ -35,7 +35,28 @@ CSS = """
 .shotcap .ln{display:flex;gap:22px;align-items:baseline;margin-bottom:22px}
 .shotcap .ln b{flex:none;width:215px;font-family:Anton;font-size:40px;color:var(--y);letter-spacing:1px}
 .shotcap .ln p{flex:1;font-weight:600;font-size:35px;line-height:1.28;color:#e6e6e6}
+.gr2{display:flex;align-items:center;gap:16px;padding:16px 22px 16px 8px}
+.gr2 .gw{flex:none;width:500px;height:200px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 24px 20px rgba(0,0,0,.85))}
+.gr2 .gw img{max-width:492px;max-height:192px;filter:drop-shadow(0 0 1px rgba(255,226,150,.95)) drop-shadow(0 0 3px rgba(255,196,64,.5))}
+.gr2 .tx{flex:1;min-width:0}
+.gr2 .hd{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.gr2 .nm{font-family:Anton;font-size:46px;line-height:1.04;color:#f3f3f3}
+.gr2 .cp{font-weight:700;font-size:18px;letter-spacing:2px;color:#111;background:var(--y);padding:3px 9px}
+.gr2 p{font-weight:600;font-size:29px;line-height:1.24;color:#dcdcdc;margin-top:8px}
+.gr2.c4{padding:10px 22px 10px 8px}.gr2.c4 .gw{width:440px;height:160px}.gr2.c4 .gw img{max-width:432px;max-height:154px}.gr2.c4 .nm{font-size:40px}.gr2.c4 p{font-size:26px}
 """
+
+
+def guns(s, d):
+    """Weapon-render rows (official camo renders, cut out, fine gold edge glow) + name, chip, requirement."""
+    tag = f'<div class="mtag {s.get("tag_cls", "tech")}" style="top:252px">{E(s["tag"])}</div>' if s.get('tag') else ''
+    c4 = ' c4' if len(s['guns']) >= 4 else ''
+    rows = ''.join(f'<div class="pc hud gr2{c4}"><div class="gw"><img src="/_build/s1/{g["img"]}"></div><div class="tx"><div class="hd"><span class="nm">{E(g["name"].upper())}</span>'
+                   + (f'<span class="cp">{E(g["chip"])}</span>' if g.get('chip') else '') + f'</div><p>{E(g["desc"])}</p></div></div>' for g in s['guns'])
+    body = (f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:235px" data-size="120" data-max="{s.get("title_max", 700)}"><span class="gr w">{E(s["title"])}</span></div>'
+            + tag + f'<div class="stack" style="top:385px;gap:18px">{rows}</div>'
+            + (f'<div class="s1ft" style="top:1250px">{E(s["foot"])}</div>' if s.get('foot') else ''))
+    return page(body, {**d, 'footer': ''})
 
 
 def bleed(img, top):
@@ -90,6 +111,8 @@ def rules(rs):
 def slide(s, d):
     if s.get('shot'):
         return shot(s, d)
+    if s.get('guns'):
+        return guns(s, d)
     head = f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:240px" data-size="100" data-max="860"><span class="gr w">{E(s["title"])}</span></div>'
     if s.get('hero'):
         hw = s.get('hero_w', 885); hh, h = hero(s['hero'], 365, s.get('hero_max', 470), maxw=hw, left=(1080 - hw) // 2 if hw > 885 else 50)
