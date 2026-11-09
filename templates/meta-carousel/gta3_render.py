@@ -50,8 +50,8 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 .facts small{display:block;font-family:IT;font-weight:800;font-size:22px;letter-spacing:5px;color:rgba(255,255,255,.65)}
 .facts strong{display:block;font-family:BS;font-weight:900;font-size:66px;line-height:1;margin-top:8px;color:#fff}
 .facts p{font-family:IT;font-weight:600;font-size:27px;line-height:1.3;color:rgba(255,240,248,.85);margin-top:8px}
-.src{position:absolute;left:62px;bottom:112px;font-family:IT;font-weight:600;font-size:20px;letter-spacing:2px;color:rgba(255,255,255,.55)}
-.src::before{content:"";display:inline-block;width:26px;height:2px;background:var(--p);vertical-align:middle;margin-right:12px}
+.src{position:absolute;left:62px;bottom:104px;font-family:IT;font-weight:600;font-size:14px;letter-spacing:1.5px;color:rgba(255,255,255,.42)}
+.src::before{content:"";display:inline-block;width:16px;height:2px;background:var(--p);vertical-align:middle;margin-right:12px}
 .prog{position:absolute;right:170px;bottom:118px;display:flex;gap:8px}
 .prog i{display:block;width:30px;height:5px;border-radius:3px;background:rgba(255,255,255,.25)}
 .prog i.on{background:linear-gradient(90deg,var(--o),var(--p))}
@@ -149,6 +149,8 @@ def main(data_path, out_dir):
             open(os.path.join(tmp, nm + '.html'), 'w').write(h)
             pg.goto(f'http://127.0.0.1:{srv.server_address[1]}/_build/{nm}.html')
             pg.wait_for_selector('body[data-ready]'); pg.wait_for_timeout(600)
+            gap = pg.evaluate("(()=>{const s=document.querySelector('.src');if(!s)return 999;const b=Math.max(0,...[...document.querySelectorAll('.body,.facts,.h,.idx')].map(e=>e.getBoundingClientRect().bottom));return s.getBoundingClientRect().top-b})()")
+            if gap < 40: print(f'WARN {nm}: source line only {round(gap)}px below the content')
             raw = os.path.join(tmp, nm + '@3x.png'); pg.screenshot(path=raw, type='png')
             im = Image.open(raw).convert('RGB').resize((1080, 1440), Image.LANCZOS)
             im = im.filter(ImageFilter.UnsharpMask(radius=0.6, percent=35, threshold=2))

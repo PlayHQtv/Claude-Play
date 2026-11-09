@@ -367,3 +367,4 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Sources and fact rules: docs/sources/gta6.md (Tier 1 official = fact, Tier 2 = needs 2 sources, Tier 3/leaks = never as fact). Verifier + duplicate check like MW4.
 - Focus (user 09.11.): until 17.11. MW4 main topic; from 18.11. GTA 6 main focus for both slots (MW4 only BIG news). GTA news radar every run (own initiative: updates, news, useful tips).
 - Launch timing: 18.11. 18:00 "gta 6 release time"; 19.11. 00:00 Berlin (EU unlock, midnight local everywhere) "GTA 6 IS OUT NOW" (replaces the 12:00 slot); 19.11. 18:00 (= 12:00 ET) first verified beginner tips. Build/verify/schedule by the 17.11. run.
+- SEO always (user 09.11.): one search term per post in caption line 1, TikTok title, cover, slide header strip and first-comment question; see docs/sources/gta6.md. Source line on GTA slides is small (14px) with >= 40px distance to other text.
