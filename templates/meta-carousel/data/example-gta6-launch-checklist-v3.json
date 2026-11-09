@@ -1,0 +1,93 @@
+{
+ "hdr": "LAUNCH CHECKLIST",
+ "source": "Source: Rockstar Newswire + Rockstar Support",
+ "cover": {
+  "amb": "g_sign_amb.jpg",
+  "kicker": "BEFORE NOVEMBER 19",
+  "big": "GTA 6 <em>LAUNCH</em><br>CHECKLIST",
+  "size": 176,
+  "neon": "don't miss these",
+  "neon_top": 690,
+  "panels": [
+   {
+    "img": "g_keys.jpg",
+    "x": 52,
+    "y": 835,
+    "w": 470,
+    "r": -4,
+    "label": "LEONIDA KEYS"
+   },
+   {
+    "img": "g_club.jpg",
+    "x": 110,
+    "y": 1062,
+    "w": 370,
+    "r": 3,
+    "label": "VICE CITY"
+   }
+  ],
+  "cutout": {
+   "img": "cut_suit.png",
+   "right": -150,
+   "top": 560,
+   "h": 960
+  },
+  "sun_top": 520,
+  "swipe": "SWIPE FOR ALL 5 <b>›</b>",
+  "bgshot": "g_sign.jpg"
+ },
+ "tips": [
+  {
+   "shot": "g_skyline.jpg",
+   "kicker": "STARTS NOVEMBER 10",
+   "title": "<em>PRE-LOAD</em> EARLY",
+   "facts": [
+    [
+     "PS5",
+     "NOV 10",
+     "Midnight, your local time"
+    ],
+    [
+     "XBOX SERIES X|S",
+     "NOV 10",
+     "12 a.m. GMT, worldwide"
+    ]
+   ]
+  },
+  {
+   "shot": "g_keys.jpg",
+   "kicker": "CHECK YOUR STORAGE",
+   "title": "FREE UP <em>212 GB</em>",
+   "body": "The pre-load needs <span class=\"hl\">up to 212 GB</span>, depending on your console. Clear space before Nov 10."
+  },
+  {
+   "shot": "g_motel.jpg",
+   "kicker": "PHYSICAL COPIES",
+   "title": "NO DISC <em>IN THE BOX</em>",
+   "body": "Boxed copies only contain a <span class=\"hl\">download code</span>. Retailers get them from <b>Nov 12</b>."
+  },
+  {
+   "shot": "g_club.jpg",
+   "kicker": "PRE-ORDER BONUS",
+   "title": "ORDER BY <em>NOV 20</em>",
+   "body": "Digital pre-orders before Nov 20 add the <span class=\"hl\">Vintage Vice City Pack</span>: '55 Vapid Stanier + garage, outfits, a weapon pattern and 1 month of GTA+."
+  },
+  {
+   "shot": "g_rooftop.jpg",
+   "kicker": "RELEASE · NOVEMBER 19",
+   "title": "<em>PS5</em> + XBOX ONLY",
+   "body": "GTA 6 launches on <b>PS5 and Xbox Series X|S</b>. A PC version has not been announced."
+  }
+ ],
+ "cta": {
+  "amb": "g_sign_amb.jpg",
+  "title": "WHERE DO YOU<br><em>GO FIRST?</em>",
+  "neon": "see you in Leonida",
+  "cutout": {
+   "img": "cut_duo.png",
+   "right": -120,
+   "top": 700,
+   "h": 720
+  }
+ }
+}

@@ -363,5 +363,5 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Metricool checkout requires a tax ID field (private persons: Steuer-ID).
 - No external links in descriptions. Copyright: reposting is risky; safe sources are CC-BY, creators who allow clipping, own content. TikTok in-app game challenges must be joined in the app.
 ## GTA 6 (from launch Nov 19, 2026)
-- Tips & tricks carousels with their own design: templates/meta-carousel/gta_render.py (sunset gradient, neon script, glass cards, official GTA VI logo on the cover, official character art as cut-outs, official screenshots uncropped). Example data: data/example-gta6-launch-checklist.json.
+- Tips & tricks carousels: templates/meta-carousel/gta3_render.py (v3 editorial: one tip per slide, official 4K screenshot full width uncropped on a blurred ambient copy, huge gradient index number, Big Shoulders Display + Inter Tight, GTA VI gradient #ffd27a > #ff8a4c > #ff4f8b > #d63ac7 on ONE word per title, neon script, box-art collage cover with official character art, grain, light leaks, progress dots). Example data: data/example-gta6-launch-checklist-v3.json. gta_render.py = older v2.
 - Sources and fact rules: docs/sources/gta6.md (Tier 1 official = fact, Tier 2 = needs 2 sources, Tier 3/leaks = never as fact). Verifier + duplicate check like MW4.

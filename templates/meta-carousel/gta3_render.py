@@ -1,0 +1,161 @@
+"""PlayHQ GTA VI carousel v3 – editorial / premium.
+One tip per slide: official 4K screenshot (uncropped, full width) on an ambient extension of itself, huge outlined
+index number, display title, short body, source line. Cover: box-art collage + official character art + neon title.
+Usage: python3 gta3_render.py data/<file>.json <out_dir>. Private images live in _build/gta/."""
+import json, os, sys
+import render as R
+
+E = R.E
+CSS = """
+@font-face{font-family:BS;src:url(/assets/fonts/BigShoulders-900.woff2);font-weight:900}
+@font-face{font-family:BS;src:url(/assets/fonts/BigShoulders-800.woff2);font-weight:800}
+@font-face{font-family:IT;src:url(/assets/fonts/InterTight-500.woff2);font-weight:500}
+@font-face{font-family:IT;src:url(/assets/fonts/InterTight-600.woff2);font-weight:600}
+@font-face{font-family:IT;src:url(/assets/fonts/InterTight-700.woff2);font-weight:700}
+@font-face{font-family:IT;src:url(/assets/fonts/InterTight-800.woff2);font-weight:800}
+@font-face{font-family:Tail;src:url(/assets/fonts/Yellowtail.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--p:#ff3d9a;--o:#ff9f43;--y:#ffd36b;--v:#7b3cff;--t:#2fe3d0;--ink:#0c0512}
+html,body{width:1080px;height:1440px;overflow:hidden}
+body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-font-smoothing:antialiased}
+.amb{position:absolute;inset:0;background-size:cover;background-position:center}
+.tint{position:absolute;inset:0;background:
+ radial-gradient(900px 520px at 100% 0%,rgba(255,61,154,.38),transparent 70%),
+ radial-gradient(800px 600px at 0% 100%,rgba(123,60,255,.35),transparent 70%),
+ linear-gradient(180deg,rgba(12,5,18,.25) 0%,rgba(12,5,18,.15) 40%,rgba(12,5,18,.88) 78%,rgba(12,5,18,.97) 100%)}
+.grain{position:absolute;inset:0;background:url(/assets/grain.png);mix-blend-mode:overlay;opacity:.13;pointer-events:none}
+.leak{position:absolute;width:900px;height:900px;border-radius:50%;filter:blur(90px);opacity:.35;mix-blend-mode:screen}
+.hdr{position:absolute;left:60px;top:126px;display:flex;align-items:center;gap:14px}
+.hdr i{display:block;width:44px;height:4px;background:linear-gradient(90deg,var(--o),var(--p))}
+.hdr span{font-family:IT;font-weight:800;font-size:24px;letter-spacing:6px;color:#fff}
+.hdr b{font-family:IT;font-weight:800;font-size:24px;letter-spacing:6px;background:linear-gradient(90deg,#ffb15c,#ff4f8b);-webkit-background-clip:text;color:transparent}
+.plogo{position:absolute;right:170px;top:104px;width:84px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+.glogo{position:absolute;left:56px;top:104px;height:150px;filter:drop-shadow(0 12px 30px rgba(0,0,0,.65))}
+.shot{position:absolute;left:0;width:1080px;background-size:100% 100%;
+ -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 9%,#000 82%,transparent 100%)}
+.shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,5,18,.0) 55%,rgba(12,5,18,.55) 100%)}
+.idx{position:absolute;left:44px;font-family:BS;font-weight:900;line-height:.8;letter-spacing:-6px;color:transparent;
+ -webkit-text-stroke:3px rgba(255,255,255,.92);text-shadow:0 0 40px rgba(255,61,154,.55)}
+.idx.fill{background:linear-gradient(180deg,#ffd27a 0%,#ff8a4c 35%,#ff4f8b 65%,#d63ac7 100%);-webkit-background-clip:text;-webkit-text-stroke:0;
+ filter:drop-shadow(-3px 0 0 rgba(255,0,90,.45)) drop-shadow(3px 0 0 rgba(0,220,255,.35)) drop-shadow(0 12px 34px rgba(255,61,154,.5))}
+.k{position:absolute;left:62px;font-family:IT;font-weight:800;font-size:24px;letter-spacing:7px;color:var(--t)}
+.h{position:absolute;left:58px;font-family:BS;font-weight:900;line-height:.9;letter-spacing:.5px;white-space:nowrap;color:#fff;text-transform:uppercase;
+ text-shadow:0 2px 0 rgba(0,0,0,.25),0 18px 40px rgba(0,0,0,.55)}
+.h em{font-style:normal;background:linear-gradient(180deg,#ffd27a 8%,#ff8a4c 42%,#ff4f8b 70%,#d63ac7 100%);-webkit-background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 22px rgba(255,79,139,.45))}
+.body{position:absolute;left:62px;width:880px;font-family:IT;font-weight:500;font-size:37px;line-height:1.32;color:rgba(255,240,248,.92)}
+.body b{font-weight:800;color:#fff}
+.body .hl{font-weight:800;background:linear-gradient(90deg,var(--y),var(--p));-webkit-background-clip:text;color:transparent}
+.facts{position:absolute;left:62px;width:880px;display:flex;gap:44px}
+.facts div{flex:1;border-top:3px solid;border-image:linear-gradient(90deg,var(--o),var(--p)) 1;padding-top:16px}
+.facts small{display:block;font-family:IT;font-weight:800;font-size:22px;letter-spacing:5px;color:rgba(255,255,255,.65)}
+.facts strong{display:block;font-family:BS;font-weight:900;font-size:66px;line-height:1;margin-top:8px;color:#fff}
+.facts p{font-family:IT;font-weight:600;font-size:27px;line-height:1.3;color:rgba(255,240,248,.85);margin-top:8px}
+.src{position:absolute;left:62px;bottom:112px;font-family:IT;font-weight:600;font-size:20px;letter-spacing:2px;color:rgba(255,255,255,.55)}
+.src::before{content:"";display:inline-block;width:26px;height:2px;background:var(--p);vertical-align:middle;margin-right:12px}
+.prog{position:absolute;right:170px;bottom:118px;display:flex;gap:8px}
+.prog i{display:block;width:30px;height:5px;border-radius:3px;background:rgba(255,255,255,.25)}
+.prog i.on{background:linear-gradient(90deg,var(--o),var(--p))}
+.panel{position:absolute;background-size:100% 100%;outline:8px solid #fff;outline-offset:-1px;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.panel span{position:absolute;left:18px;top:-24px;font-family:IT;font-weight:800;font-size:22px;letter-spacing:5px;background:#fff;color:var(--ink);padding:9px 14px 7px}
+.cut{position:absolute;filter:drop-shadow(0 40px 50px rgba(0,0,0,.65));-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 99%)}
+.neon{position:absolute;left:66px;font-family:Tail;white-space:nowrap;color:#fff;transform:rotate(-5deg);
+ text-shadow:0 0 4px #fff,0 0 12px var(--p),0 0 28px var(--p),0 0 60px rgba(255,61,154,.8)}
+.sun{position:absolute;border-radius:50%;background:linear-gradient(180deg,var(--y) 0%,var(--o) 42%,var(--p) 78%,var(--v) 100%);
+ -webkit-mask-image:linear-gradient(180deg,#000 0 48%,transparent 48%),repeating-linear-gradient(180deg,#000 0 22px,transparent 22px 34px);opacity:.9;
+ filter:drop-shadow(0 0 80px rgba(255,61,154,.6))}
+.swipe{position:absolute;left:62px;font-family:IT;font-weight:800;font-size:26px;letter-spacing:7px;color:#fff}
+.swipe b{color:var(--p)}
+.save{position:absolute;left:62px;padding:22px 30px 18px;background:linear-gradient(100deg,var(--y),var(--o) 35%,var(--p));color:var(--ink);transform:skewX(-8deg);box-shadow:0 20px 50px rgba(255,61,154,.45)}
+.save small{display:block;font-family:IT;font-weight:800;font-size:22px;letter-spacing:6px}
+.save strong{display:block;font-family:BS;font-weight:900;font-size:92px;line-height:.95}
+.fol{position:absolute;left:62px;font-family:BS;font-weight:900;font-size:70px;line-height:1;color:#fff}
+.fol em{font-style:normal;text-shadow:none;background:linear-gradient(90deg,#ffb15c,#ff4f8b);-webkit-background-clip:text;color:transparent}
+"""
+
+
+def base(body, d, amb=None, cover=False, idx=None, total=None):
+    prog = ''
+    if idx is not None and total:
+        prog = '<div class="prog">' + ''.join(f'<i class="{"on" if i == idx else ""}"></i>' for i in range(total)) + '</div>'
+    head = ('<img class="glogo" src="/_build/gta/logo_gta6.png">' if cover else
+            f'<div class="hdr"><i></i><span>GTA 6</span><b>{E(d.get("hdr", "TIPS & TRICKS"))}</b></div>')
+    return ('<!doctype html><html><head><meta charset="utf-8"><style>' + CSS + '</style></head><body>'
+            + (f'<div class="amb" style="background-image:url(/_build/gta/{amb})"></div>' if amb else '')
+            + '<div class="leak" style="right:-380px;top:-300px;background:#ff3d9a"></div><div class="leak" style="left:-420px;bottom:-380px;background:#7b3cff"></div>'
+            + '<div class="tint"></div>' + body + head + '<img class="plogo" src="/assets/logo.png">' + prog
+            + (f'<div class="src">{E(d["source"])}</div>' if d.get('source') and not cover else '')
+            + '<div class="grain"></div>' + R.FITJS + '</body></html>')
+
+
+def cover(d):
+    c = d['cover']
+    cut = c.get('cutout')
+    panels = ''.join(f'<div class="panel" style="left:{p["x"]}px;top:{p["y"]}px;width:{p["w"]}px;height:{round(p["w"] * 9 / 16)}px;transform:rotate({p.get("r", 0)}deg);background-image:url(/_build/gta/{p["img"]})">'
+                     + (f'<span>{E(p["label"])}</span>' if p.get('label') else '') + '</div>' for p in c.get('panels', []))
+    body = ((f'<div class="shot" style="top:0;height:608px;opacity:.6;background-image:url(/_build/gta/{c["bgshot"]})"></div>' if c.get('bgshot') else '')
+            + f'<div class="sun" style="right:-90px;top:{c.get("sun_top", 420)}px;width:640px;height:640px"></div>'
+            + panels
+            + (f'<img class="cut" src="/_build/gta/{cut["img"]}" style="right:{cut.get("right", -40)}px;top:{cut.get("top", 300)}px;height:{cut.get("h", 1100)}px">' if cut else '')
+            + f'<div class="k" style="top:300px">{E(c["kicker"])}</div>'
+            + f'<div class="h fit" style="top:340px" data-size="{c.get("size", 176)}" data-max="960">{c["big"]}</div>'
+            + f'<div class="neon fit" style="top:{c.get("neon_top", 515)}px" data-size="104" data-max="640">{E(c["neon"])}</div>'
+            + f'<div class="swipe" style="top:1292px">{c.get("swipe", "SWIPE <b>›</b>")}</div>')
+    return base(body, d, amb=c.get('amb'), cover=True)
+
+
+def tip(s, d, i, total):
+    from PIL import Image
+    iw, ih = Image.open(os.path.join(R.HERE, '_build', 'gta', s['shot'])).size
+    h = round(1080 * ih / iw)
+    top = 230
+    y = top + h - 120
+    facts = ''
+    if s.get('facts'):
+        facts = '<div class="facts" style="top:{0}px">'.format(y + 370) + ''.join(f'<div><small>{E(a)}</small><strong>{E(b)}</strong><p>{E(c)}</p></div>' for a, b, c in s['facts']) + '</div>'
+    body = (f'<div class="shot" style="top:{top}px;height:{h}px;background-image:url(/_build/gta/{s["shot"]})"></div>'
+            + f'<div class="idx {"fill" if s.get("fill_idx", True) else ""}" style="top:{y - 40}px;font-size:250px">{i:02d}</div>'
+            + f'<div class="k" style="top:{y + 175}px">{E(s["kicker"])}</div>'
+            + f'<div class="h fit" style="top:{y + 212}px" data-size="128" data-max="960">{s["title"]}</div>'
+            + (f'<div class="body" style="top:{y + 345}px">{s["body"]}</div>' if s.get('body') else '')
+            + facts)
+    return base(body, d, amb=s['shot'].replace('.jpg', '_amb.jpg'), idx=i - 1, total=total)
+
+
+def cta(d):
+    c = d['cta']
+    cut = c.get('cutout')
+    body = (f'<div class="sun" style="right:-160px;top:560px;width:640px;height:640px"></div>'
+            + (f'<img class="cut" src="/_build/gta/{cut["img"]}" style="right:{cut.get("right", -60)}px;top:{cut.get("top", 560)}px;height:{cut.get("h", 860)}px">' if cut else '')
+            + f'<div class="h fit" style="top:250px" data-size="150" data-max="960">{c["title"]}</div>'
+            + f'<div class="neon fit" style="top:560px" data-size="96" data-max="560">{E(c["neon"])}</div>'
+            + '<div class="save" style="top:780px"><small>YOUR GTA 6 CHEAT SHEET</small><strong>SAVE THIS</strong></div>'
+            + '<div class="fol" style="top:1040px">FOLLOW <em>@PLAYHQTV</em></div>')
+    return base(body, {**d, 'source': ''}, amb=c.get('amb'))
+
+
+def main(data_path, out_dir):
+    d = json.load(open(data_path))
+    os.makedirs(out_dir, exist_ok=True)
+    tmp = os.path.join(R.HERE, '_build'); os.makedirs(tmp, exist_ok=True)
+    n = len(d['tips'])
+    pages = [('01_cover', cover(d))] + [(f'{i + 2:02d}_slide', tip(s, d, i + 1, n)) for i, s in enumerate(d['tips'])]
+    pages.append((f'{len(pages) + 1:02d}_cta', cta(d)))
+    srv = R.serve(R.HERE)
+    from playwright.sync_api import sync_playwright
+    from PIL import Image, ImageFilter
+    with sync_playwright() as p:
+        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1440}, device_scale_factor=3)
+        for nm, h in pages:
+            open(os.path.join(tmp, nm + '.html'), 'w').write(h)
+            pg.goto(f'http://127.0.0.1:{srv.server_address[1]}/_build/{nm}.html')
+            pg.wait_for_selector('body[data-ready]'); pg.wait_for_timeout(600)
+            raw = os.path.join(tmp, nm + '@3x.png'); pg.screenshot(path=raw, type='png')
+            im = Image.open(raw).convert('RGB').resize((1080, 1440), Image.LANCZOS)
+            im = im.filter(ImageFilter.UnsharpMask(radius=0.6, percent=35, threshold=2))
+            R.save_jpg(im, os.path.join(out_dir, nm + '.jpg')); print(os.path.join(out_dir, nm + '.jpg'))
+        b.close()
+    srv.shutdown()
+
+
+if __name__ == '__main__':
+    main(*sys.argv[1:])
