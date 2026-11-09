@@ -1,0 +1,30 @@
+name: vision-hq
+# Full BiRefNet (swin-large, needs ~10 GB RAM) on the runner. grab/vision.txt lists asset names that are already
+# in the DRAFT release "grab-private"; the alpha masks are uploaded back there as m_<name>.png. Nothing is committed.
+on:
+  push:
+    branches: [brand-assets]
+    paths: [grab/vision.txt]
+permissions:
+  contents: write
+jobs:
+  mask:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.forced }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q onnxruntime pillow numpy
+      - run: bash bin/models.sh full
+      - run: |
+          mkdir -p in out
+          while read -r name; do [ -z "$name" ] && continue; gh release download grab-private -p "$name" -D in --clobber; done < grab/vision.txt
+          cd templates/meta-carousel && python3 - <<'P'
+          import os, vision as V
+          from PIL import Image
+          for n in os.listdir('../../in'):
+              im = Image.open('../../in/' + n).convert('RGB')
+              V.birefnet(im, full=True).save('../../out/m_' + os.path.splitext(n)[0] + '.png'); print('ok', n)
+          P
+          cd ../.. && gh release upload grab-private out/* --clobber
