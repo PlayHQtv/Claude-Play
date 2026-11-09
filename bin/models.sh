@@ -8,5 +8,6 @@ get $R/BiRefNet-general-bb_swin_v1_tiny-epoch_232.onnx BiRefNet-general-lite.onn
 get $R/vit_b-encoder-quant.onnx vit_b-encoder-quant.onnx
 get $R/vit_b-decoder-quant.onnx vit_b-decoder-quant.onnx
 get https://github.com/fabio-sim/Depth-Anything-ONNX/releases/download/v2.0.0/depth_anything_v2_vits.onnx depth_anything_v2_vits.onnx
+get https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx yunet.onnx
 [ "$1" = full ] && get $R/BiRefNet-general-epoch_244.onnx BiRefNet-general-epoch_244.onnx
 ls -la "$D"

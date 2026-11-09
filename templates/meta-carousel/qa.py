@@ -51,6 +51,22 @@ def legib(nm, texts, withtext, notext, warns):
         if r < 3: warns.append(f'{nm}: low contrast {r:.1f}:1 for "{t["t"][:40]}" - darken/lighten what is behind it')
 
 
+def faces(nm, texts, notext, warns):
+    """Faces in the artwork (YuNet, detected on the render WITHOUT text) must not be covered by text."""
+    mp = os.path.join(os.environ.get('PHQ_MODELS', '/tmp/models'), 'yunet.onnx')
+    if not os.path.exists(mp): warns.append('face check skipped (bin/models.sh)'); return
+    import cv2, numpy as np
+    im = cv2.cvtColor(np.asarray(notext), cv2.COLOR_RGB2BGR)
+    det = cv2.FaceDetectorYN.create(mp, '', (im.shape[1], im.shape[0]), 0.7)
+    _, fs = det.detect(im)
+    for fx, fy, fw, fh in ([] if fs is None else [x[:4] for x in fs]):
+        if fw < 40: continue  # tiny background people
+        for t in texts:
+            ix = min(t['x1'], fx + fw) - max(t['x0'], fx); iy = min(t['y1'], fy + fh) - max(t['y0'], fy)
+            if ix > 0 and iy > 0 and ix * iy > 0.12 * fw * fh:
+                warns.append(f'{nm}: text covers a face ({int(fx)},{int(fy)}): "{t["t"][:40]}" - move the text or the image'); break
+
+
 def spell(texts, warns, nm):
     try:
         from spellchecker import SpellChecker
@@ -110,6 +126,7 @@ def check(out_dir):
             pg3.wait_for_timeout(150); notext = _I.open(io.BytesIO(pg3.screenshot())).convert('RGB').resize((1080, 1440))
             withtext = _I.open(f).convert('RGB')
             legib(nm, d['text'], withtext, notext, warns)
+            faces(nm, d['text'], notext, warns)
             for grp in chars or []:
                 for ch, x, y, w, h in grp or []:
                     box = (int(3 * x) + 3, int(3 * (y + h * 0.15)), int(3 * (x + w)) - 3, int(3 * (y + h * 0.88)))

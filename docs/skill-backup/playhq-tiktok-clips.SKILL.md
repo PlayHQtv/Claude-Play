@@ -381,4 +381,5 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Spell check of all slide text (English; game terms in templates/meta-carousel/qa_words.txt - add new names there, never ignore real typos).
 - Caption / title / first comment: `python3 qa.py --caption "<text>"` before every Metricool post.
 - Visual duplicate check `dupcheck.py <data.json>`: finds re-used screenshots (even re-graded/cropped) from earlier posts; never re-use the same cover hero image.
-- Not adopted (no real benefit): AI upscaling (sources are already >= 800-4K px), extra OCR engines (Tesseract read-back already in qa.py).
+- Face check: YuNet face detector (opencv_zoo, via bin/models.sh) on the text-less render; text must never cover a face of the artwork.
+- Not adopted (no real benefit): AI upscaling (sources are already >= 800-4K px), extra OCR engines (Tesseract read-back already in qa.py), automatic palettes / LUT film looks (would change the approved v3 colours), 3D/animation libraries (static carousels).
