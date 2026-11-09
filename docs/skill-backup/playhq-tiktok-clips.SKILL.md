@@ -368,3 +368,9 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Focus (user 09.11.): until 17.11. MW4 main topic; from 18.11. GTA 6 main focus for both slots (MW4 only BIG news). GTA news radar every run (own initiative: updates, news, useful tips).
 - Launch timing: 18.11. 18:00 "gta 6 release time"; 19.11. 00:00 Berlin (EU unlock, midnight local everywhere) "GTA 6 IS OUT NOW" (replaces the 12:00 slot); 19.11. 18:00 (= 12:00 ET) first verified beginner tips. Build/verify/schedule by the 17.11. run.
 - SEO always (user 09.11.): one search term per post in caption line 1, TikTok title, cover, slide header strip and first-comment question; see docs/sources/gta6.md. Source line on GTA slides is small (14px) with >= 40px distance to other text.
+
+## Vision tools (CPU, no GPU)
+- `templates/meta-carousel/vision.py` + `bin/models.sh` (models from public GitHub releases into /tmp/models, never committed).
+- SAM (`V.sam(img, points, labels)` + `V.largest`) for vehicles/objects; Depth Anything V2 (`V.depth`) for "title behind subject" layers (gta3 cover `hero.fg`).
+- BiRefNet full (hair-level cut-outs) needs ~10 GB RAM: put asset names (already in the private draft release) into `grab/vision.txt` → workflow vision-hq uploads `m_<name>.png` masks. Clear vision.txt afterwards.
+- gta3 options: cover `hero {img, fg, top, title_top, k_top}`, tip `pop` + `idx_right`/`idx_dy`, tip `char {img, name, left, top, h}`.
