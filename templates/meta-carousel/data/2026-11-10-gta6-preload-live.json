@@ -1,0 +1,87 @@
+{
+ "hdr": "PRELOAD IS LIVE",
+ "source": "Source: Rockstar Newswire, Rockstar Support, Take-Two IR",
+ "cover": {
+  "amb": "g_sign_amb.jpg",
+  "kicker": "OFFICIAL · NOVEMBER 10",
+  "big": "GTA 6 <em>PRELOAD</em><br>IS LIVE",
+  "size": 176,
+  "neon": "everything new",
+  "neon_top": 690,
+  "panels": [
+   {
+    "img": "g_skyline.jpg",
+    "x": 52,
+    "y": 835,
+    "w": 470,
+    "r": -4,
+    "label": "VICE CITY"
+   },
+   {
+    "img": "g_club.jpg",
+    "x": 110,
+    "y": 1062,
+    "w": 370,
+    "r": 3,
+    "label": "THE FESTIVAL"
+   }
+  ],
+  "cutout": {
+   "img": "cut_jeep.png",
+   "right": -260,
+   "top": 600,
+   "h": 920
+  },
+  "sun_top": 520,
+  "swipe": "SWIPE FOR ALL 4 <b>›</b>",
+  "bgshot": "g_sign.jpg"
+ },
+ "tips": [
+  {
+   "shot": "g_keys.jpg",
+   "kicker": "STARTED NOVEMBER 10",
+   "title": "<em>PRELOAD</em> TIMES",
+   "facts": [
+    [
+     "PS5",
+     "NOV 10",
+     "Midnight, your local time"
+    ],
+    [
+     "XBOX SERIES X|S",
+     "NOV 10",
+     "12 a.m. GMT, worldwide"
+    ]
+   ]
+  },
+  {
+   "shot": "g_motel.jpg",
+   "kicker": "CHECK YOUR STORAGE",
+   "title": "FREE UP <em>212 GB</em>",
+   "body": "The preload needs <span class=\"hl\">up to 212 GB</span>, depending on your console. PS5: turn on auto-downloads and leave it on or in Rest Mode."
+  },
+  {
+   "shot": "g_rooftop.jpg",
+   "kicker": "TAKE-TWO · NOVEMBER 9",
+   "title": "NOV 19 <em>CONFIRMED</em>",
+   "body": "Take-Two's Nov 9 report lists GTA 6 for<br><b>Nov 19</b> on PS5 + Xbox Series X|S. Pre-orders<br>keep reaching <span class=\"hl\">\"unprecedented levels\"</span>."
+  },
+  {
+   "shot": "g_club.jpg",
+   "kicker": "NOVEMBER 21 · MIAMI",
+   "title": "GTA 6: <em>THE FESTIVAL</em>",
+   "body": "Launch party at Mana Wynwood: <b>Travis Scott,<br>Cardi B, Metro Boomin</b>, Justice + more.<br>DICE ticket lottery closes <span class=\"hl\">Nov 10, 4 p.m. ET</span>."
+  }
+ ],
+ "cta": {
+  "amb": "g_skyline_amb.jpg",
+  "title": "ALREADY<br><em>DOWNLOADING?</em>",
+  "neon": "nine days to go",
+  "cutout": {
+   "img": "cut_boat.png",
+   "right": -200,
+   "top": 700,
+   "h": 720
+  }
+ }
+}
