@@ -78,13 +78,34 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 """
 
 
+# Official Rockstar screenshot location of every graded image (verified 11.11. by keypoint match against the
+# official file names, e.g. Port_Gellhorn_01). Used for the v4 location label; set "loc" in the data to override.
+LOC = {'g_skyline': 'VICE CITY', 'g_keys': 'LEONIDA KEYS', 'g_motel': 'PORT GELLHORN', 'g_club': 'VICE CITY',
+       'g_rooftop': 'VICE CITY', 'g_sign': 'VICE CITY', 'g_grass': 'GRASSRIVERS', 'g_kalaga': 'MOUNT KALAGA'}
+
+V4CSS = '''
+.hdr{left:44px;top:112px;padding:14px 26px 14px 20px;border-radius:40px;background:rgba(14,6,24,.55);backdrop-filter:blur(18px);
+ border:1px solid rgba(255,255,255,.14);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.hdr b{background:linear-gradient(90deg,#ffd27a,#ff8a4c 55%,#ff6aa8);-webkit-background-clip:text}
+.card{position:absolute;left:30px;width:1020px;bottom:70px;border-radius:34px;background:linear-gradient(180deg,rgba(28,10,40,.62),rgba(12,5,22,.78));
+ backdrop-filter:blur(26px) saturate(1.3);border:1px solid rgba(255,255,255,.13);box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.12)}
+.card:before{content:'';position:absolute;left:34px;right:34px;top:-1px;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,#ffb15c 20%,#ff4f8b 60%,#b44cff 85%,transparent)}
+.loc{position:absolute;left:44px;padding:10px 18px 10px 14px;border-radius:30px;background:rgba(10,4,18,.62);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);
+ font-family:IT;font-weight:800;font-size:21px;letter-spacing:4px;color:#fff;display:flex;align-items:center;gap:10px}
+.loc i{width:10px;height:10px;border-radius:50%;background:#ff4f8b;box-shadow:0 0 0 5px rgba(255,79,139,.25)}
+.src{bottom:96px;left:72px}
+.prog{bottom:100px;right:72px}
+.idx{z-index:3}
+'''
+
+
 def base(body, d, amb=None, cover=False, idx=None, total=None):
     prog = ''
     if idx is not None and total:
         prog = '<div class="prog">' + ''.join(f'<i class="{"on" if i == idx else ""}"></i>' for i in range(total)) + '</div>'
     head = ('<img class="glogo" src="/_build/gta/logo_gta6.png">' if cover else
             f'<div class="hdr"><i></i><span>GTA 6</span><b>{E(d.get("hdr", "TIPS & TRICKS"))}</b></div>')
-    return ('<!doctype html><html><head><meta charset="utf-8"><style>' + CSS + '</style></head><body>'
+    return ('<!doctype html><html><head><meta charset="utf-8"><style>' + CSS + (V4CSS if d.get('style', 'v4') == 'v4' else '') + '</style></head><body>'
             + (f'<div class="amb" style="background-image:url(/_build/gta/{amb})"></div>' if amb else '')
             + '<div class="leak" style="right:-380px;top:-300px;background:#ff3d9a"></div><div class="leak" style="left:-420px;bottom:-380px;background:#7b3cff"></div>'
             + '<div class="tint"></div>' + body + head + '<img class="plogo" src="/assets/logo.png">' + prog
@@ -131,7 +152,11 @@ def tip(s, d, i, total):
     if s.get('facts'):
         facts = '<div class="facts" style="top:{0}px">'.format(y + 370) + ''.join(f'<div><small>{E(a)}</small><strong>{E(b)}</strong><p>{E(c)}</p></div>' for a, b, c in s['facts']) + '</div>'
     ix = 'right:40px' if s.get('idx_right') else ''
+    v4 = d.get('style', 'v4') == 'v4'  # v4 = standard since 11.11.2026 (user: "Neuer Standard"); "style": "v3" for the old look
+    loc = s.get('loc') or LOC.get(s['shot'].replace('.jpg', ''))
     body = (f'<div class="shot" style="top:{top}px;height:{h}px;background-image:url(/_build/gta/{s["shot"]})"></div>'
+            + (f'<div class="card" style="top:{y + 140}px"></div>' if v4 else '')
+            + (f'<div class="loc" style="top:{top + 34}px"><i></i>{E(loc)}</div>' if v4 and loc else '')
             + f'<div class="idx {"fill" if s.get("fill_idx", True) else ""}" style="top:{y - 40 + s.get("idx_dy", 0)}px;font-size:250px;{ix}{';left:auto' if ix else ''}">{i:02d}</div>'
             + (f'<div class="fg" style="top:{top}px;height:{h}px;background-image:url(/_build/gta/{s["pop"]})"></div>' if s.get('pop') else '')
             + f'<div class="k" style="top:{y + 175}px">{E(s["kicker"])}</div>'

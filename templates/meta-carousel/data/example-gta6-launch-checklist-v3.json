@@ -33,7 +33,7 @@
    "h": 960
   },
   "sun_top": 520,
-  "swipe": "SWIPE FOR ALL 5 <b>›</b>",
+  "swipe": "SWIPE FOR ALL 5 <b>\u203a</b>",
   "bgshot": "g_sign.jpg"
  },
  "tips": [
@@ -74,7 +74,7 @@
   },
   {
    "shot": "g_rooftop.jpg",
-   "kicker": "RELEASE · NOVEMBER 19",
+   "kicker": "RELEASE \u00b7 NOVEMBER 19",
    "title": "<em>PS5</em> + XBOX ONLY",
    "body": "GTA 6 launches on <b>PS5 and Xbox Series X|S</b>. A PC version has not been announced."
   }
@@ -89,5 +89,6 @@
    "top": 700,
    "h": 720
   }
- }
+ },
+ "style": "v3"
 }

@@ -370,7 +370,7 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - SEO always (user 09.11.): one search term per post in caption line 1, TikTok title, cover, slide header strip and first-comment question; see docs/sources/gta6.md. Source line on GTA slides is small (14px) with >= 40px distance to other text.
 
 ## Vision tools (CPU, no GPU)
-- RULE (user 09.11): the approved v3 layout stays the standard. The demo layouts (hero/pop/char) were rejected ("Das alte Layout sieht besser aus"). Use the tools ONLY when they clearly improve a v3 slide, e.g. a cleaner cut-out (BiRefNet hair, SAM vehicle) inside the normal v3 cover/CTA. Never change the layout for an effect.
+- RULE (user 09.11): the approved v3 layout (since 11.11. its v4 refinement) stays the standard. The demo layouts (hero/pop/char) were rejected ("Das alte Layout sieht besser aus"). Use the tools ONLY when they clearly improve a v3 slide, e.g. a cleaner cut-out (BiRefNet hair, SAM vehicle) inside the normal v3 cover/CTA. Never change the layout for an effect.
 - `templates/meta-carousel/vision.py` + `bin/models.sh` (models from public GitHub releases into /tmp/models, never committed).
 - SAM (`V.sam(img, points, labels)` + `V.largest`) for vehicles/objects; Depth Anything V2 (`V.depth`) for "title behind subject" layers (gta3 cover `hero.fg`).
 - BiRefNet full (hair-level cut-outs) needs ~10 GB RAM: put asset names (already in the private draft release) into `grab/vision.txt` → workflow vision-hq uploads `m_<name>.png` masks. Clear vision.txt afterwards.
@@ -390,3 +390,9 @@ Caption = max 3 lines, about 150 characters before the hashtags:
 2. ONE short teaser/CTA line that naturally carries a SECOND search keyword (e.g. "Modern Warfare 4 controller + audio setup 👉 Save it!")
 3. exactly 5 hashtags
 SEO stays strong without long text: search term in TikTok title, caption line 1, line 2 (second keyword), hashtags, cover + slide header (TikTok reads on-image text). No fact lists, no sources, no "comment below" in the caption (facts + source line are on the slides, the question is the first comment).
+
+## GTA DESIGN v4 = STANDARD (user 11.11.2026: "Neuer Standard")
+- gta3_render.py renders v4 by default (data/example-gta6-launch-checklist-v4.json): same v3 layout (full-width uncropped shot, big gradient number, title, text, GTA colours) plus
+  glass text card with gradient light edge, header as dark glass pill (fixes header contrast), location label on the shot ("● PORT GELLHORN"), number overlapping shot + card.
+- Location labels come from LOC in gta3_render.py (verified against the official Rockstar screenshot names). New images: add their official location to LOC, never guess.
+- "style": "v3" only renders the old look. Cover + CTA unchanged. Demo options hero/pop/char stay rejected.
