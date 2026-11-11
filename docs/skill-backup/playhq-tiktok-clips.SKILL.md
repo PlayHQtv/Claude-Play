@@ -396,3 +396,7 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
   glass text card with gradient light edge, header as dark glass pill (fixes header contrast), location label on the shot ("● PORT GELLHORN"), number overlapping shot + card.
 - Location labels come from LOC in gta3_render.py (verified against the official Rockstar screenshot names). New images: add their official location to LOC, never guess.
 - "style": "v3" only renders the old look. Cover + CTA unchanged. Demo options hero/pop/char stay rejected.
+
+## MW4 LOGO ON EVERY SLIDE (user 11.11.2026: "nur auf der ersten Folie das offizielle mw4 Logo ... auf den anderen Folien nicht")
+- render.frame() now shows the official MW4 logo (_build/s1/logo_mw4.png) in the header of EVERY MW4 slide (cover, inner slides, CTA) instead of the "CALL OF DUTY · MW4" text. Automatic for every MW4/Warzone/DMZ renderer; "cover_logo": 0 only for a non-MW4 game.
+- Always check the slide sheet: the logo must be visible top-left on every slide before upload.

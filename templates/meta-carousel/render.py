@@ -115,9 +115,11 @@ GAME_LOGO = '/_build/s1/logo_mw4.png'  # official MW4 wordmark, private (_build 
 
 
 def frame(d):
-    """Cover slides (d['cover_logo']) show the official game logo instead of the 'CALL OF DUTY · MW4' text."""
+    """EVERY MW4 slide (cover + inner slides, user 11.11.2026) shows the official game logo instead of the
+    'CALL OF DUTY · MW4' text. Set "cover_logo": 0 to switch it off for a non-MW4 game."""
     f = FRAME.format(game=E(d.get('game', 'CALL OF DUTY · MW4')), badge=E(d.get('badge', 'DMZ')))
-    if d.get('cover_logo') and os.path.exists(os.path.join(HERE, GAME_LOGO.lstrip('/'))):
+    mw4 = any(k in d.get('game', 'CALL OF DUTY · MW4').upper() for k in ('MW4', 'MODERN WARFARE', 'WARZONE', 'DMZ', 'CALL OF DUTY'))
+    if d.get('cover_logo', 1 if mw4 else 0) and os.path.exists(os.path.join(HERE, GAME_LOGO.lstrip('/'))):
         f = f.replace(f'<div class="cod">{E(d.get("game", "CALL OF DUTY · MW4"))}</div>', f'<img class="glogo" src="{d.get("logo", GAME_LOGO)}">', 1)
     return f
 
