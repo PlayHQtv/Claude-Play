@@ -1,0 +1,93 @@
+{
+ "hdr": "XBOX CLOUD GAMING",
+ "source": "Source: Xbox Wire (Nov 10, 2026) + @XBOX",
+ "cover": {
+  "amb": "g_kalaga_amb.jpg",
+  "kicker": "OFFICIAL · XBOX WIRE",
+  "big": "GTA 6 ON<br><em>XBOX ONE</em>",
+  "size": 176,
+  "neon": "day one via cloud",
+  "neon_top": 650,
+  "panels": [
+   {
+    "img": "g_kalaga.jpg",
+    "x": 52,
+    "y": 835,
+    "w": 470,
+    "r": -4,
+    "label": "NOV 19"
+   },
+   {
+    "img": "g_grass.jpg",
+    "x": 110,
+    "y": 1062,
+    "w": 370,
+    "r": 3,
+    "label": "LEONIDA"
+   }
+  ],
+  "cutout": {
+   "img": "cut_duo.png",
+   "right": -330,
+   "top": 640,
+   "h": 860
+  },
+  "sun_top": 520,
+  "swipe": "SWIPE FOR ALL 5 <b>›</b>",
+  "bgshot": "g_kalaga.jpg"
+ },
+ "tips": [
+  {
+   "shot": "g_skyline.jpg",
+   "kicker": "XBOX WIRE · NOVEMBER 10",
+   "title": "DAY ONE <em>IN THE CLOUD</em>",
+   "facts": [
+    [
+     "XBOX ONE",
+     "CLOUD",
+     "Stream via Xbox Cloud Gaming"
+    ],
+    [
+     "XBOX SERIES X|S",
+     "NATIVE",
+     "Pre-install is live now"
+    ]
+   ]
+  },
+  {
+   "shot": "g_rooftop.jpg",
+   "kicker": "NOVEMBER 19",
+   "title": "STREAMS FROM <em>1 AM ET</em>",
+   "body": "Cloud streaming starts <b>1 a.m. ET on Nov 19</b>.<br>That's <span class=\"hl\">6 a.m. UK · 7 a.m. Central Europe</span>."
+  },
+  {
+   "shot": "g_motel.jpg",
+   "kicker": "CLOUD QUALITY",
+   "title": "SERIES S <em>SETTINGS</em>",
+   "body": "Cloud streams use <b>Xbox Series S graphics settings</b>.<br>For the <span class=\"hl\">highest fidelity</span>, play it natively on Series X|S."
+  },
+  {
+   "shot": "g_keys.jpg",
+   "kicker": "READ THIS FIRST",
+   "title": "BUY IT <em>SEPARATELY</em>",
+   "body": "Xbox: GTA 6 <b>must be purchased separately</b>.<br>Starting Nov 11: <span class=\"hl\">cloud playtime</span> to stream supported games without Game Pass (supported markets)."
+  },
+  {
+   "shot": "g_club.jpg",
+   "kicker": "COMING LATER",
+   "title": "GTA 5 + <em>RDR2</em> TOO",
+   "body": "Xbox says <b>GTA V</b> and <b>Red Dead Redemption 2</b> are planned for Xbox Cloud Gaming <span class=\"hl\">\"in the coming months\"</span>."
+  }
+ ],
+ "cta": {
+  "amb": "g_skyline_amb.jpg",
+  "title": "XBOX OR<br><em>PS5?</em>",
+  "neon": "eight days to go",
+  "cutout": {
+   "img": "cut_suit.png",
+   "right": -200,
+   "top": 700,
+   "h": 720
+  }
+ }
+}
