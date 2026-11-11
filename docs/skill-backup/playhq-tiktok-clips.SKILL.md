@@ -387,6 +387,6 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 ## SHORT CAPTIONS (user 11.11.2026: "Das ist immer viel zu viel Text unter unserem Content")
 Caption = max 3 lines, about 150 characters before the hashtags:
 1. SEO line: search term + short hook + 1 emoji (e.g. "Best MW4 settings – controller, graphics & audio 🎮")
-2. ONE short teaser/CTA line (e.g. "Swipe for the full setup 👉 Save it for later!")
+2. ONE short teaser/CTA line that naturally carries a SECOND search keyword (e.g. "Modern Warfare 4 controller + audio setup 👉 Save it!")
 3. exactly 5 hashtags
-No fact lists, no sources, no "comment below" in the caption (facts + source line are on the slides, the question is the first comment).
+SEO stays strong without long text: search term in TikTok title, caption line 1, line 2 (second keyword), hashtags, cover + slide header (TikTok reads on-image text). No fact lists, no sources, no "comment below" in the caption (facts + source line are on the slides, the question is the first comment).
