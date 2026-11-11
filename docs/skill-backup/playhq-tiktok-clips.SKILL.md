@@ -383,3 +383,10 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Visual duplicate check `dupcheck.py <data.json>`: finds re-used screenshots (even re-graded/cropped) from earlier posts; never re-use the same cover hero image.
 - Face check: YuNet face detector (opencv_zoo, via bin/models.sh) on the text-less render; text must never cover a face of the artwork.
 - Not adopted (no real benefit): AI upscaling (sources are already >= 800-4K px), extra OCR engines (Tesseract read-back already in qa.py), automatic palettes / LUT film looks (would change the approved v3 colours), 3D/animation libraries (static carousels).
+
+## SHORT CAPTIONS (user 11.11.2026: "Das ist immer viel zu viel Text unter unserem Content")
+Caption = max 3 lines, about 150 characters before the hashtags:
+1. SEO line: search term + short hook + 1 emoji (e.g. "Best MW4 settings – controller, graphics & audio 🎮")
+2. ONE short teaser/CTA line (e.g. "Swipe for the full setup 👉 Save it for later!")
+3. exactly 5 hashtags
+No fact lists, no sources, no "comment below" in the caption (facts + source line are on the slides, the question is the first comment).
