@@ -81,7 +81,9 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 # Official Rockstar screenshot location of every graded image (verified 11.11. by keypoint match against the
 # official file names, e.g. Port_Gellhorn_01). Used for the v4 location label; set "loc" in the data to override.
 LOC = {'g_skyline': 'VICE CITY', 'g_keys': 'LEONIDA KEYS', 'g_motel': 'PORT GELLHORN', 'g_club': 'VICE CITY',
-       'g_rooftop': 'VICE CITY', 'g_sign': 'VICE CITY', 'g_grass': 'GRASSRIVERS', 'g_kalaga': 'MOUNT KALAGA'}
+       'g_rooftop': 'VICE CITY', 'g_sign': 'VICE CITY', 'g_grass': 'GRASSRIVERS', 'g_kalaga': 'MOUNT KALAGA',
+       'g_vc14': 'VICE CITY', 'g_vc15': 'VICE CITY', 'g_vc16': 'VICE CITY', 'g_vc17': 'VICE CITY', 'g_vc19': 'VICE CITY',
+       'g_vc20': 'VICE CITY', 'g_gr07': 'GRASSRIVERS', 'g_lk07': 'LEONIDA KEYS'}  # official Rockstar file names (Launch Gallery)
 
 V4CSS = '''
 .hdr{left:44px;top:112px;padding:14px 26px 14px 20px;border-radius:40px;background:rgba(14,6,24,.55);backdrop-filter:blur(18px);

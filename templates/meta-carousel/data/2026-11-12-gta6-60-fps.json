@@ -1,0 +1,94 @@
+{
+ "hdr": "60 FPS?",
+ "source": "Source: Rockstar Newswire (Nov 10, 2026)",
+ "notes": "News 10.11. official performance statement (Rockstar Newswire 'Pre-Load Grand Theft Auto VI Now'); 2nd sources IGN, GamesRadar+, VideoCardz, Wccftech. Dup check: preload post (10.11.) covered preload times/212 GB/Festival, Xbox One cloud post (11.11.) covered cloud + Series S settings -> not repeated here. Scheduled Sat 14.11. 12:00.",
+ "cover": {
+  "amb": "g_vc17_amb.jpg",
+  "kicker": "OFFICIAL · ROCKSTAR NEWSWIRE",
+  "big": "GTA 6 <em>60 FPS</em>?",
+  "size": 176,
+  "neon": "rockstar answered",
+  "neon_top": 690,
+  "panels": [
+   {
+    "img": "g_vc15.jpg",
+    "x": 52,
+    "y": 835,
+    "w": 470,
+    "r": -4,
+    "label": "VICE CITY"
+   },
+   {
+    "img": "g_lk07.jpg",
+    "x": 110,
+    "y": 1062,
+    "w": 370,
+    "r": 3,
+    "label": "LEONIDA KEYS"
+   }
+  ],
+  "cutout": {
+   "img": "cut_boss.png",
+   "right": -150,
+   "top": 560,
+   "h": 960
+  },
+  "sun_top": 520,
+  "swipe": "SWIPE FOR ALL 5 <b>›</b>",
+  "bgshot": "g_vc17.jpg"
+ },
+ "tips": [
+  {
+   "shot": "g_vc14.jpg",
+   "kicker": "ROCKSTAR · NOVEMBER 10",
+   "title": "TARGET: <em>30 FPS</em>",
+   "facts": [
+    [
+     "PS5",
+     "30 FPS",
+     "Official target"
+    ],
+    [
+     "XBOX SERIES X|S",
+     "30 FPS",
+     "Official target"
+    ]
+   ]
+  },
+  {
+   "shot": "g_vc16.jpg",
+   "kicker": "NOT ANNOUNCED",
+   "title": "NO <em>60 FPS</em> YET",
+   "body": "Rockstar's post names <b>one target: 30 FPS</b>.<br>A 60 FPS mode was <span class=\"hl\">not announced</span>."
+  },
+  {
+   "shot": "g_vc20.jpg",
+   "kicker": "ROCKSTAR'S FOCUS",
+   "title": "FULL <em>DENSITY</em>",
+   "body": "30 FPS while keeping the <b>density and visual fidelity</b><br>of <span class=\"hl\">all its environments + inhabitants</span>."
+  },
+  {
+   "shot": "g_vc19.jpg",
+   "kicker": "PS5 PRO ONLY",
+   "title": "PSSR + <em>RT SHADOWS</em>",
+   "body": "PS5 Pro gets <b>sharper clarity via PSSR</b> and<br><span class=\"hl\">ray-traced shadows</span>, only on PS5 Pro."
+  },
+  {
+   "shot": "g_gr07.jpg",
+   "kicker": "PS5 + DUALSENSE",
+   "title": "HAPTICS + <em>3D AUDIO</em>",
+   "body": "<b>High-fidelity haptics</b> (adjustable in accessibility),<br><span class=\"hl\">Tempest 3D Audio</span> + improved load times."
+  }
+ ],
+ "cta": {
+  "amb": "g_vc15_amb.jpg",
+  "title": "30 FPS<br><em>OK FOR YOU?</em>",
+  "neon": "see you in Leonida",
+  "cutout": {
+   "img": "cut_boat.png",
+   "right": -120,
+   "top": 700,
+   "h": 720
+  }
+ }
+}

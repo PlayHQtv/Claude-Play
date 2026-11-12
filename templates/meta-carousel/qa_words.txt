@@ -73,3 +73,14 @@ prestiging
 drillcharge
 ivanov
 schlager
+hitscan
+uavs
+uav
+killstreak
+astaroth
+callofduty
+shransit
+fps
+pssr
+dualsense
+haptics

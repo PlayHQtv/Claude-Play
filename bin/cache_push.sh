@@ -1,8 +1,9 @@
 #!/bin/bash
 # Saves the private image folders (never committed readable) as an encrypted cache in the draft release.
+# demo_* (rejected vision-demo layouts, user 09.11.) are left out to stay below the 100 MB GitHub file limit.
 set -e
 cd "$(dirname "$0")/.."; M=templates/meta-carousel; W=$(mktemp -d)
-tar -C $M -cf $W/data.tar _build/s1 $( [ -d $M/_build/w ] && echo _build/w ) $( [ -d $M/_build/gta ] && echo _build/gta )
+tar -C $M --exclude="_build/gta/demo_*" -cf $W/data.tar _build/s1 $( [ -d $M/_build/w ] && echo _build/w ) $( [ -d $M/_build/gta ] && echo _build/gta )
 openssl rand -hex 32 | tr -d '\n' > $W/k
 openssl enc -aes-256-cbc -pbkdf2 -salt -pass file:$W/k -in $W/data.tar -out $W/data.enc
 openssl pkeyutl -encrypt -pubin -inkey fx/pubkey.pem -pkeyopt rsa_padding_mode:oaep -in $W/k -out $W/key.enc

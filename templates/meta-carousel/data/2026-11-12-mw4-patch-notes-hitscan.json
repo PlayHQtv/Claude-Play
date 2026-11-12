@@ -1,0 +1,126 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "PATCH",
+ "notes": "News: official MW4 Season 1 patch notes Nov 10 + Nov 11 entries (callofduty.com, Infinity Ward) + Warzone S1 patch notes Nov 11 (Raven, same hitscan change). 2nd sources: HardcoreSND, JobilleHQ. Dup check: S1 launch post (06.11.) covered the Season 1 launch notes, not these updates; no other patch post. Scheduled Sat 14.11. 18:00.",
+ "cover": {
+  "kicker": "PATCH NOTES · NOV 10 + 11",
+  "big": "MW4 PATCH NOTES",
+  "small": "HITSCAN +288%",
+  "sub": "ALL MODES · DMZ · X01 · MULTIPLAYER",
+  "gun": "mw4/w_Axion.png",
+  "rows": [
+   [
+    "HITSCAN RANGE",
+    "+288% VS LAUNCH"
+   ],
+   [
+    "LONG RANGE",
+    "34 MS FASTER"
+   ],
+   [
+    "X01",
+    "UAVS + BOMBING RUN OFF"
+   ],
+   [
+    "DMZ",
+    "NEW SCAVENGER BONUS"
+   ]
+  ],
+  "swipe": "SWIPE FOR EVERY CHANGE ›"
+ },
+ "slides": [
+  {
+   "sec": "NOV 10 + 11 · ALL MODES",
+   "title": "HITSCAN BUFF",
+   "foot": "GLOBAL CHANGE: MULTIPLAYER, DMZ + WARZONE",
+   "settings": [
+    [
+     "HITSCAN INCREASE",
+     "3.91x",
+     "All ballistic weapons, at all ranges"
+    ],
+    [
+     "TRUE HITSCAN RANGE",
+     "~35 M",
+     "Average now: inside it, bullets hit instantly"
+    ],
+    [
+     "VS LAUNCH",
+     "+288%",
+     "True hitscan distance"
+    ],
+    [
+     "MID + LONG RANGE",
+     "34 MS",
+     "Faster: new bullet simulation, shots connect sooner"
+    ]
+   ]
+  },
+  {
+   "sec": "NOV 10 + 11 · DMZ",
+   "title": "DMZ CHANGES",
+   "foot": "X01 = THE NEW SEASON 1 EXCLUSION ZONE UNDER HAJIN",
+   "settings": [
+    [
+     "X01: UAV + ADVANCED UAV",
+     "DISABLED",
+     "Can't be deployed in X01 anymore"
+    ],
+    [
+     "X01: BOMBING RUN",
+     "DISABLED",
+     "Killstreak turned off in X01"
+    ],
+    [
+     "SCAVENGER BONUS",
+     "NEW",
+     "Cash for loot value + deploy time when you fail to exfil (not in Story Missions)"
+    ],
+    [
+     "BOUNTIES",
+     "FASTER",
+     "Solos + duos earn Bounties slightly faster"
+    ]
+   ]
+  },
+  {
+   "sec": "NOV 10 + 11 · MULTIPLAYER",
+   "title": "MP CHANGES",
+   "foot": "SOURCE: CALLOFDUTY.COM PATCH NOTES (NOV 10 + 11)",
+   "settings": [
+    [
+     "INFECTED + GROUND WAR",
+     "MORE XP",
+     "Bigger end-of-match XP bonus"
+    ],
+    [
+     "INSTANT ADS SENSITIVITY",
+     "FASTER",
+     "Switches back to hip sensitivity earlier"
+    ],
+    [
+     "ASTAROTH .57",
+     "FIXED",
+     "Did more damage than intended to killstreak vehicles"
+    ],
+    [
+     "PRESTIGE BUG",
+     "FIXED",
+     "Prestiging could remove ammo attachments from Blueprints"
+    ],
+    [
+     "GARAGE DOORS",
+     "FIXED",
+     "Closing doors now destroy Tripwires instead of leaving them active"
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "DO GUNFIGHTS",
+  "gold": "FEEL BETTER?",
+  "sub": "TELL US AFTER YOUR NEXT MATCH",
+  "save_kicker": "MW4 PATCH NOTES CHEAT SHEET",
+  "follow_sub": "DAILY MW4 + GTA 6 UPDATES"
+ }
+}
