@@ -1,0 +1,113 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MULTIPLAYER",
+ "notes": "Autopilot 13.11. for Sun 15.11. 18:00. CSI term 'sbmm mw4' (244K, +84%, docs/trends/2026-11-09.md: only verified official info). Sources: @CallofDuty Jul 23 + Aug 19 2026 posts (quoted by Vice, PCGamesN, Gaming Route), Mark Grigsby on X Sep 10 (Dexerto), Joe Cecot to IGN Oct 23 (IGN, Vice), no Open playlists at launch (CharlieIntel Oct 22, Insider Gaming, Vice), MW4 beta patch notes (Open Moshpit), Season 1 patch notes Nov 5-12 (no Open playlist added). Dup check: no matchmaking/SBMM post ever (all posts 01.10.-16.11. + data/*.json).",
+ "cover": {
+  "kicker": "OFFICIAL INFO ONLY · NOV 2026",
+  "big": "SBMM MW4",
+  "small": "THE TRUTH",
+  "sub": "WHAT ACTIVISION + INFINITY WARD SAID",
+  "gun": "mw4/w_Patriot_XMR.png",
+  "rows": [
+   [
+    "SBMM IN MW4",
+    "YES · NO OPEN OPTION"
+   ],
+   [
+    "OPEN PLAYLIST",
+    "NOT AT LAUNCH"
+   ],
+   [
+    "A TOP PRIORITY",
+    "CONNECTION"
+   ],
+   [
+    "OPEN RETURN",
+    "NOT ANNOUNCED"
+   ]
+  ],
+  "swipe": "SWIPE FOR THE FACTS ›"
+ },
+ "slides": [
+  {
+   "sec": "MW4 MULTIPLAYER · NOV 2026",
+   "title": "DOES MW4 HAVE SBMM?",
+   "foot": "SOURCES: @CALLOFDUTY, MW4 PATCH NOTES, CHARLIEINTEL",
+   "settings": [
+    [
+     "SKILL IN MATCHMAKING",
+     "YES",
+     "Every Call of Duty has considered skill"
+    ],
+    [
+     "OPEN PLAYLISTS",
+     "NONE",
+     "Not at launch, none added in Season 1 so far"
+    ],
+    [
+     "AT LAUNCH",
+     "STANDARD",
+     "The new system from the beta, in every playlist"
+    ],
+    [
+     "IN THE BETA",
+     "BOTH",
+     "Quick Play + an Open Moshpit playlist"
+    ]
+   ]
+  },
+  {
+   "sec": "@CALLOFDUTY · JULY + AUGUST 2026",
+   "title": "WHAT ACTIVISION SAID",
+   "foot": "SOURCE: OFFICIAL @CALLOFDUTY POSTS (JUL 23 + AUG 19)",
+   "rules": [
+    [
+     "NOT TIGHTER",
+     "\"Not a return to the tighter matchmaking of recent games.\""
+    ],
+    [
+     "CONNECTION",
+     "\"Connection remains a top priority.\""
+    ],
+    [
+     "NO ONE SWITCH",
+     "Location, time of day, playlist, party, platform, crossplay and player population all shape lobbies."
+    ],
+    [
+     "THE IDEA",
+     "Smarter team balancing, wide match variety, keeps matches full, better for mixed-level parties (Jul 23)."
+    ]
+   ]
+  },
+  {
+   "sec": "INFINITY WARD · SEP + OCT 2026",
+   "title": "WHAT THE DEVS SAID",
+   "foot": "SOURCES: MARK GRIGSBY ON X (SEP 10), JOE CECOT TO IGN (OCT 23)",
+   "rules": [
+    [
+     "GRIGSBY",
+     "\"All Matchmaking info we have at this time is what has been officially stated on the @CallofDuty account.\""
+    ],
+    [
+     "CECOT",
+     "\"I don't know if there's perfecting it.\""
+    ],
+    [
+     "THE GOAL",
+     "\"Our end goal is that every match is a good match.\""
+    ],
+    [
+     "OPEN COMEBACK?",
+     "Not announced: no date, no promise (as of Nov 13)."
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "OPEN OR",
+  "gold": "SBMM?",
+  "sub": "WHAT DO YOU WANT IN MW4?",
+  "save_kicker": "MW4 SBMM FACT CHECK",
+  "follow_sub": "DAILY MW4 + GTA 6 UPDATES"
+ }
+}

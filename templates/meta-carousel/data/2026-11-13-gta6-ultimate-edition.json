@@ -1,0 +1,86 @@
+{
+ "hdr": "EDITIONS",
+ "source": "Source: Rockstar Support + Rockstar Store, PlayStation Blog, Xbox Wire",
+ "notes": "Autopilot 13.11. for Sun 15.11. 12:00. Tier 1: Rockstar Support 'GTA VI Platforms, Editions, and Versions' (contents, Nov 20 bonus deadline, upgrade anytime, code-in-box), Rockstar Store ($79.99 Standard), Xbox Store listing on Xbox Wire ($99.99 Ultimate, Standard $79.99), PlayStation Blog + Xbox Wire Nov 10 (most pre-ordered record). Dup check: preload post 10.11. (preload times, 212 GB, Festival, 'unprecedented levels' quote), Xbox One cloud 11.11., 60 FPS 14.11. -> no editions/price/pre-order bonus/record post so far.",
+ "cover": {
+  "amb": "g_ucheetah1_amb.jpg",
+  "kicker": "OFFICIAL INFO",
+  "big": "GTA 6 <em>ULTIMATE</em><br>EDITION",
+  "size": 166,
+  "neon": "worth the upgrade?",
+  "neon_top": 690,
+  "panels": [
+   {
+    "img": "g_ustanier.jpg",
+    "x": 52,
+    "y": 835,
+    "w": 470,
+    "r": -4,
+    "label": "PRE-ORDER BONUS"
+   },
+   {
+    "img": "g_urevolvers.jpg",
+    "x": 110,
+    "y": 1062,
+    "w": 370,
+    "r": 3,
+    "label": "ULTIMATE"
+   }
+  ],
+  "sun_top": 520,
+  "swipe": "SWIPE FOR ALL 5 <b>›</b>",
+  "bgshot": "g_ucheetah1.jpg"
+ },
+ "tips": [
+  {
+   "shot": "g_uult02.jpg",
+   "kicker": "PLAYSTATION + XBOX · NOV 10",
+   "title": "PRE-ORDER <em>RECORD</em>",
+   "facts": [
+    [
+     "PS STORE",
+     "#1 EVER",
+     "Most pre-ordered game in its history"
+    ],
+    [
+     "MICROSOFT STORE",
+     "#1 EVER",
+     "Most pre-ordered title of all time"
+    ]
+   ],
+   "loc": "ULTIMATE EDITION"
+  },
+  {
+   "shot": "g_skyline.jpg",
+   "kicker": "US PRICE · DIGITAL OR CODE IN BOX",
+   "title": "STANDARD <em>$79.99</em>",
+   "body": "The <b>full game</b>. Boxed copies only hold a <span class=\"hl\">download code</span>, no disc."
+  },
+  {
+   "shot": "g_ucheetah2.jpg",
+   "kicker": "US PRICE · DIGITAL ONLY",
+   "title": "ULTIMATE <em>$99.99</em>",
+   "body": "Adds the <b>'95 Grotti Cheetah</b>, Hawk + Little Morgan revolvers, the <span class=\"hl\">Ganado Retro Build</span>, Jason's Safehouse Vehicles and more.",
+   "loc": "'95 GROTTI CHEETAH"
+  },
+  {
+   "shot": "g_ustanier.jpg",
+   "kicker": "BUY BEFORE NOVEMBER 20",
+   "title": "FREE <em>BONUS</em>",
+   "body": "<b>Vintage Vice City Pack</b>: '55 Vapid Stanier + garage, outfits, hairstyles, a weapon pattern. Digital also gets <span class=\"hl\">1 month of GTA+</span>.",
+   "loc": "'55 VAPID STANIER"
+  },
+  {
+   "shot": "g_urevolvers.jpg",
+   "kicker": "NO RUSH",
+   "title": "UPGRADE <em>ANYTIME</em>",
+   "body": "Standard owners can buy the <span class=\"hl\">Ultimate Edition Upgrade</span> later on PlayStation or Xbox stores.",
+   "loc": "HAWK + LITTLE MORGAN"
+  }
+ ],
+ "cta": {
+  "amb": "g_uvvc_amb.jpg",
+  "title": "STANDARD OR<br><em>ULTIMATE?</em>",
+  "neon": "tell us your pick"
+ }
+}
