@@ -94,6 +94,7 @@ striga
 ttk
 uav
 uavs
+usa
 vice
 warzone
 wynwood

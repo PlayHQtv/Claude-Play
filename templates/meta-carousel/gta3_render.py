@@ -83,7 +83,7 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 LOC = {'g_skyline': 'VICE CITY', 'g_keys': 'LEONIDA KEYS', 'g_motel': 'PORT GELLHORN', 'g_club': 'VICE CITY',
        'g_rooftop': 'VICE CITY', 'g_sign': 'VICE CITY', 'g_grass': 'GRASSRIVERS', 'g_kalaga': 'MOUNT KALAGA',
        'g_vc14': 'VICE CITY', 'g_vc15': 'VICE CITY', 'g_vc16': 'VICE CITY', 'g_vc17': 'VICE CITY', 'g_vc19': 'VICE CITY',
-       'g_vc20': 'VICE CITY', 'g_gr07': 'GRASSRIVERS', 'g_lk07': 'LEONIDA KEYS',
+       'g_vc20': 'VICE CITY', 'g_gr07': 'GRASSRIVERS', 'g_lk07': 'LEONIDA KEYS', 'g_vc22': 'VICE CITY', 'g_vc24': 'VICE CITY', 'g_vc26': 'VICE CITY', 'g_vc27': 'VICE CITY', 'g_gr08': 'GRASSRIVERS',
        'g_uult02': 'ULTIMATE EDITION', 'g_ucheetah1': "'95 GROTTI CHEETAH", 'g_ucheetah2': "'95 GROTTI CHEETAH", 'g_ustanier': "'55 VAPID STANIER",
        'g_urevolvers': 'HAWK + LITTLE MORGAN', 'g_usafehouse': "JASON'S SAFEHOUSE", 'g_uvvc': 'VINTAGE VICE CITY PACK', 'g_ulooks': 'VINTAGE VICE CITY PACK'}  # official Rockstar file names (Launch Gallery)
 
