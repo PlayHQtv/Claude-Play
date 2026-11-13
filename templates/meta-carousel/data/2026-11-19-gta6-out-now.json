@@ -1,7 +1,7 @@
 {
  "hdr": "OUT NOW",
  "source": "Source: Rockstar Support + Newswire, PlayStation Blog, Xbox Wire",
- "notes": "DRAFT 13.11. for Thu 19.11. 00:00 Berlin (EU unlock). Re-check on 18.11./19.11. (Newswire launch post, map really live, service status). Tier 1: Rockstar Support release times (midnight local, PS5 + Xbox Series X|S), Xbox Wire Nov 10 (Xbox One + Series via Xbox Cloud Gaming from 1 a.m. ET Nov 19), Newswire Nov 3 (free printable Leonida map + cover art poster on the official site on Nov 19), Rockstar Support 'Redeeming the One-Month GTA+ Membership' (PS Store GTA+ product page; Microsoft Store Offers & Credits within 180 days; digital purchases before Nov 20), PlayStation offer terms (claim by Mar 31, 2027), PlayStation Blog Nov 10 (DualSense haptics/adaptive triggers adjustable via accessibility settings), Newswire Sep 17 (GTA VI: The Album, 34 tracks, Atlantic Records, out Nov 19), Rockstar Support Service Status page. Dup check: release-time post 18.11. (unlock times, preload, map announcement) -> here: map is LIVE (download now), rest new; editions post 15.11. (GTA+ only mentioned as bonus, not how to claim).",
+ "notes": "DRAFT 13.11. for Thu 19.11. 00:00 Berlin (EU unlock). Re-check on 18.11./19.11. (Newswire launch post, map really live, service status). Tier 1: Rockstar Support release times (midnight local, PS5 + Xbox Series X|S), Xbox Wire Nov 10 (Xbox One + Series via Xbox Cloud Gaming from 1 a.m. ET Nov 19), Newswire Nov 3 (free printable Leonida map + cover art poster on the official site on Nov 19), Rockstar Support 'Redeeming the One-Month GTA+ Membership' (PS Store GTA+ product page; Microsoft Store Offers & Credits within 180 days; digital purchases before Nov 20), PlayStation offer terms (claim by Mar 31, 2027), PlayStation Blog Nov 10 (DualSense haptics/adaptive triggers adjustable via accessibility settings), Newswire Sep 17 (GTA VI: The Album, 34 tracks, Atlantic Records, out Nov 19), Rockstar Support Service Status page. Dup check: release-time post 18.11. (unlock times, preload, map announcement) -> here: map is LIVE (download now), rest new; editions post 15.11. (GTA+ only mentioned as bonus, not how to claim). | Verifier 13.11.: map wording 'adds today' (not 'download now'); 'OFFICIAL' -> 'VIA'; GTA+ auto-renew note; rolling launch wording.",
  "cover": {
   "amb": "g_jl15_amb.jpg",
   "kicker": "NOV 19 · PS5 + XBOX SERIES X|S",
@@ -11,10 +11,37 @@
   "neon_top": 640,
   "rstar": true,
   "rstar_left": 268,
-  "poster": {"img": "k_coverart.jpg", "right": 46, "top": 760, "h": 600, "r": 5},
+  "poster": {
+   "img": "k_coverart.jpg",
+   "right": 46,
+   "top": 760,
+   "h": 600,
+   "r": 5
+  },
   "times_title": "FIRST HOUR CHECKLIST",
   "times_top": 790,
-  "times": [["CLAIM FREE GTA+", "✓"], ["GET THE FREE MAP", "✓"], ["TUNE YOUR DUALSENSE", "✓"], ["PLAY THE ALBUM", "✓"], ["CHECK SERVER STATUS", "✓"]],
+  "times": [
+   [
+    "CLAIM FREE GTA+",
+    "✓"
+   ],
+   [
+    "GET THE FREE MAP",
+    "✓"
+   ],
+   [
+    "TUNE YOUR DUALSENSE",
+    "✓"
+   ],
+   [
+    "PLAY THE ALBUM",
+    "✓"
+   ],
+   [
+    "CHECK SERVER STATUS",
+    "✓"
+   ]
+  ],
   "times_note": "swipe for the how-to",
   "sun_top": 560,
   "swipe": "SWIPE FOR THE CHECKLIST <b>›</b>",
@@ -23,25 +50,37 @@
  "tips": [
   {
    "shot": "g_jl17.jpg",
-   "kicker": "OFFICIAL · ROCKSTAR SUPPORT",
+   "kicker": "VIA ROCKSTAR SUPPORT · ROLLING MIDNIGHT LAUNCH",
    "title": "IT'S <em>LIVE</em>",
    "facts": [
-    ["PS5", "LIVE", "Midnight local time"],
-    ["XBOX SERIES X|S", "LIVE", "Midnight local time"],
-    ["XBOX ONE", "CLOUD", "From 1 a.m. ET"]
+    [
+     "PS5",
+     "LIVE",
+     "Midnight local, rolling"
+    ],
+    [
+     "XBOX SERIES X|S",
+     "LIVE",
+     "Midnight local, rolling"
+    ],
+    [
+     "XBOX ONE",
+     "CLOUD",
+     "From 1 a.m. ET"
+    ]
    ]
   },
   {
    "shot": "g_lk02.jpg",
    "kicker": "DIGITAL BUYERS · BEFORE NOV 20",
    "title": "CLAIM <em>FREE GTA+</em>",
-   "body": "PS5: open the <b>GTA+ page</b> in PS Store (claim by <span class=\"hl\">Mar 31, 2027</span>). Xbox: <b>Offers & Credits</b> in the Microsoft Store, within <span class=\"hl\">180 days</span>."
+   "body": "PS5: <b>GTA+ page</b> in PS Store (claim by <span class=\"hl\">Mar 31, 2027</span>). Xbox: <b>Offers & Credits</b>, within <span class=\"hl\">180 days</span>. Auto-renews after a month, cancel anytime."
   },
   {
    "shot": "g_mk02.jpg",
-   "kicker": "ROCKSTAR · FROM TODAY",
+   "kicker": "ROCKSTAR · NOVEMBER 19",
    "title": "FREE <em>LEONIDA MAP</em>",
-   "body": "Download the <b>free printable map of Leonida</b> + cover art poster on the <span class=\"hl\">official GTA VI site</span>."
+   "body": "Rockstar adds a <b>free printable map of Leonida</b> + cover art poster to the <span class=\"hl\">official GTA VI site</span> today."
   },
   {
    "shot": "g_am01.jpg",
@@ -66,6 +105,11 @@
   "amb": "g_am02_amb.jpg",
   "title": "FIRST STOP<br><em>IN LEONIDA?</em>",
   "neon": "drop it below",
-  "cutout": {"img": "cut_boat.png", "right": -140, "top": 720, "h": 700}
+  "cutout": {
+   "img": "cut_boat.png",
+   "right": -200,
+   "top": 720,
+   "h": 700
+  }
  }
 }

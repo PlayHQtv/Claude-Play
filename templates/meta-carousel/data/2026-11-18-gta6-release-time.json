@@ -1,7 +1,7 @@
 {
  "hdr": "RELEASE TIME",
  "source": "Source: Rockstar Support + Newswire, PlayStation Blog",
- "notes": "DRAFT 13.11. for Wed 18.11. 18:00 (launch eve). Re-check on 18.11. against Newswire/Support. Tier 1: Rockstar Support 'regional pre-load and release times' (midnight local time Nov 19, all regions, PS5 + Xbox Series X|S), PlayStation Blog Nov 10 (rolling midnight launch from 12:00 AM NZDT), Rockstar Pre-Load FAQ (Rest Mode / Sleep mode + auto downloads), Newswire Nov 3 (up to 212 GB; free printable cover art poster + Leonida map on the official site on Nov 19). GMT values = midnight local converted (NZDT UTC+13, AEDT UTC+11, CET UTC+1, GMT, EST UTC-5, PST UTC-8). Dup check: preload post 10.11. (preload start times, 212 GB, festival) -> this one is about UNLOCK times + map; 212 GB only as a one-line reminder. | 13.11. v2 after user feedback: Jason+Lucia cut-out (official 'Lock and Load' key art, BiRefNet full), official Rockstar R* logo on cover, 3 regions per time slide.",
+ "notes": "DRAFT 13.11. for Wed 18.11. 18:00 (launch eve). Re-check on 18.11. against Newswire/Support. Tier 1: Rockstar Support 'regional pre-load and release times' (midnight local time Nov 19, all regions, PS5 + Xbox Series X|S), PlayStation Blog Nov 10 (rolling midnight launch from 12:00 AM NZDT), Rockstar Pre-Load FAQ (Rest Mode / Sleep mode + auto downloads), Newswire Nov 3 (up to 212 GB; free printable cover art poster + Leonida map on the official site on Nov 19). GMT values = midnight local converted (NZDT UTC+13, AEDT UTC+11, CET UTC+1, GMT, EST UTC-5, PST UTC-8). Dup check: preload post 10.11. (preload start times, 212 GB, festival) -> this one is about UNLOCK times + map; 212 GB only as a one-line reminder. | 13.11. v2 after user feedback: Jason+Lucia cut-out (official 'Lock and Load' key art, BiRefNet full), official Rockstar R* logo on cover, 3 regions per time slide. | Verifier 13.11.: US West disputed (US PS Store data: 05:00 UTC nationwide) -> replaced by Mexico City; APAC marked LIVE (post 17:00 GMT); 'OFFICIAL' -> 'VIA'; map slide removed (now only in OUT NOW post).",
  "cover": {
   "amb": "g_vc27_amb.jpg",
   "kicker": "PS5 + XBOX SERIES X|S · NOV 19",
@@ -26,11 +26,11 @@
   "times": [
    [
     "NEW ZEALAND",
-    "11:00"
+    "LIVE"
    ],
    [
     "TOKYO",
-    "15:00"
+    "LIVE"
    ],
    [
     "BERLIN",
@@ -45,16 +45,16 @@
     "05:00"
    ],
    [
-    "LOS ANGELES",
-    "08:00"
+    "MEXICO CITY",
+    "06:00"
    ]
   ],
-  "times_note": "= midnight local time everywhere"
+  "times_note": "Nov 18–19 · = midnight local time"
  },
  "tips": [
   {
    "shot": "g_vc27.jpg",
-   "kicker": "OFFICIAL · ROCKSTAR SUPPORT",
+   "kicker": "VIA ROCKSTAR SUPPORT",
    "title": "<em>MIDNIGHT</em> LOCAL TIME",
    "facts": [
     [
@@ -71,23 +71,23 @@
   },
   {
    "shot": "g_gr08.jpg",
-   "kicker": "ASIA-PACIFIC · NOV 18 IN GMT",
+   "kicker": "ASIA-PACIFIC · ALREADY LIVE",
    "title": "NEW ZEALAND <em>FIRST</em>",
    "facts": [
     [
      "NEW ZEALAND",
      "11:00 GMT",
-     "First in the world"
+     "Nov 18 · first in the world"
     ],
     [
      "SYDNEY",
      "13:00 GMT",
-     "Midnight local"
+     "Nov 18 · midnight local"
     ],
     [
      "TOKYO",
      "15:00 GMT",
-     "Midnight local"
+     "Nov 18 · midnight local"
     ]
    ]
   },
@@ -124,14 +124,14 @@
      "Midnight local"
     ],
     [
-     "US EAST",
+     "NEW YORK",
      "05:00 GMT",
      "00:00 ET"
     ],
     [
-     "US WEST",
-     "08:00 GMT",
-     "00:00 PT"
+     "MEXICO CITY",
+     "06:00 GMT",
+     "Midnight local"
     ]
    ]
   },
@@ -140,12 +140,6 @@
    "kicker": "DO THIS BEFORE MIDNIGHT",
    "title": "PRE-LOAD <em>DONE?</em>",
    "body": "Up to <b>212 GB</b>. PS5: auto-downloads on + <span class=\"hl\">Rest Mode</span>. Xbox: auto updates on + <span class=\"hl\">Sleep mode</span>."
-  },
-  {
-   "shot": "g_vc26.jpg",
-   "kicker": "ROCKSTAR · NOVEMBER 19",
-   "title": "FREE <em>LEONIDA MAP</em>",
-   "body": "On launch day Rockstar adds a <b>free printable map of Leonida</b> + cover art poster to the <span class=\"hl\">official GTA VI site</span>."
   }
  ],
  "cta": {
@@ -154,7 +148,7 @@
   "neon": "see you at midnight",
   "cutout": {
    "img": "cut_duo.png",
-   "right": -120,
+   "right": -200,
    "top": 700,
    "h": 720
   }
