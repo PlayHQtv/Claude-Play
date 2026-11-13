@@ -1,35 +1,55 @@
 {
  "hdr": "RELEASE TIME",
  "source": "Source: Rockstar Support + Newswire, PlayStation Blog",
- "notes": "DRAFT 13.11. for Wed 18.11. 18:00 (launch eve). Re-check on 18.11. against Newswire/Support. Tier 1: Rockstar Support 'regional pre-load and release times' (midnight local time Nov 19, all regions, PS5 + Xbox Series X|S), PlayStation Blog Nov 10 (rolling midnight launch from 12:00 AM NZDT), Rockstar Pre-Load FAQ (Rest Mode / Sleep mode + auto downloads), Newswire Nov 3 (up to 212 GB; free printable cover art poster + Leonida map on the official site on Nov 19). GMT values = midnight local converted (NZDT UTC+13, AEDT UTC+11, CET UTC+1, GMT, EST UTC-5, PST UTC-8). Dup check: preload post 10.11. (preload start times, 212 GB, festival) -> this one is about UNLOCK times + map; 212 GB only as a one-line reminder.",
+ "notes": "DRAFT 13.11. for Wed 18.11. 18:00 (launch eve). Re-check on 18.11. against Newswire/Support. Tier 1: Rockstar Support 'regional pre-load and release times' (midnight local time Nov 19, all regions, PS5 + Xbox Series X|S), PlayStation Blog Nov 10 (rolling midnight launch from 12:00 AM NZDT), Rockstar Pre-Load FAQ (Rest Mode / Sleep mode + auto downloads), Newswire Nov 3 (up to 212 GB; free printable cover art poster + Leonida map on the official site on Nov 19). GMT values = midnight local converted (NZDT UTC+13, AEDT UTC+11, CET UTC+1, GMT, EST UTC-5, PST UTC-8). Dup check: preload post 10.11. (preload start times, 212 GB, festival) -> this one is about UNLOCK times + map; 212 GB only as a one-line reminder. | 13.11. v2 after user feedback: Jason+Lucia cut-out (official 'Lock and Load' key art, BiRefNet full), official Rockstar R* logo on cover, 3 regions per time slide.",
  "cover": {
   "amb": "g_vc27_amb.jpg",
-  "kicker": "TONIGHT AT MIDNIGHT",
+  "kicker": "PS5 + XBOX SERIES X|S · NOV 19",
   "big": "GTA 6 <em>RELEASE</em><br>TIME",
   "size": 176,
-  "neon": "every region",
-  "neon_top": 690,
-  "panels": [
-   {
-    "img": "g_vc22.jpg",
-    "x": 52,
-    "y": 835,
-    "w": 470,
-    "r": -4,
-    "label": "NOV 19"
-   },
-   {
-    "img": "g_gr08.jpg",
-    "x": 110,
-    "y": 1062,
-    "w": 370,
-    "r": 3,
-    "label": "00:00"
-   }
-  ],
+  "neon": "tonight",
+  "neon_top": 655,
+  "panels": [],
   "sun_top": 520,
-  "swipe": "SWIPE FOR YOUR TIME <b>›</b>",
-  "bgshot": "g_vc27.jpg"
+  "swipe": "SWIPE FOR ALL TIMES <b>›</b>",
+  "bgshot": "g_vc27.jpg",
+  "rstar": true,
+  "cutout": {
+   "img": "cut_jl.png",
+   "right": -250,
+   "top": 700,
+   "h": 760
+  },
+  "rstar_left": 268,
+  "times_title": "WORLD UNLOCK · IN GMT",
+  "times_top": 790,
+  "times": [
+   [
+    "NEW ZEALAND",
+    "11:00"
+   ],
+   [
+    "TOKYO",
+    "15:00"
+   ],
+   [
+    "BERLIN",
+    "23:00"
+   ],
+   [
+    "LONDON",
+    "00:00"
+   ],
+   [
+    "NEW YORK",
+    "05:00"
+   ],
+   [
+    "LOS ANGELES",
+    "08:00"
+   ]
+  ],
+  "times_note": "= midnight local time everywhere"
  },
  "tips": [
   {
@@ -51,18 +71,23 @@
   },
   {
    "shot": "g_gr08.jpg",
-   "kicker": "THE WORLD UNLOCKS FIRST",
+   "kicker": "ASIA-PACIFIC · NOV 18 IN GMT",
    "title": "NEW ZEALAND <em>FIRST</em>",
    "facts": [
     [
      "NEW ZEALAND",
      "11:00 GMT",
-     "Nov 18 · first in the world"
+     "First in the world"
     ],
     [
-     "AUSTRALIA (SYDNEY)",
+     "SYDNEY",
      "13:00 GMT",
-     "Nov 18"
+     "Midnight local"
+    ],
+    [
+     "TOKYO",
+     "15:00 GMT",
+     "Midnight local"
     ]
    ]
   },
@@ -72,31 +97,41 @@
    "title": "EUROPE <em>AT MIDNIGHT</em>",
    "facts": [
     [
-     "CENTRAL EUROPE",
-     "00:00",
-     "= 23:00 GMT, Nov 18"
+     "EASTERN EU",
+     "22:00 GMT",
+     "Nov 18 · e.g. Athens"
+    ],
+    [
+     "CENTRAL EU",
+     "23:00 GMT",
+     "Nov 18 · e.g. Berlin"
     ],
     [
      "UK + IRELAND",
-     "00:00",
-     "= 00:00 GMT, Nov 19"
+     "00:00 GMT",
+     "Nov 19"
     ]
    ]
   },
   {
    "shot": "g_vc24.jpg",
-   "kicker": "UNITED STATES · MIDNIGHT LOCAL",
-   "title": "US <em>LAST</em>",
+   "kicker": "AMERICAS · NOV 19 IN GMT",
+   "title": "AMERICAS <em>LAST</em>",
    "facts": [
     [
+     "SÃO PAULO",
+     "03:00 GMT",
+     "Midnight local"
+    ],
+    [
      "US EAST",
-     "00:00 ET",
-     "= 05:00 GMT, Nov 19"
+     "05:00 GMT",
+     "00:00 ET"
     ],
     [
      "US WEST",
-     "00:00 PT",
-     "= 08:00 GMT, Nov 19"
+     "08:00 GMT",
+     "00:00 PT"
     ]
    ]
   },
@@ -116,6 +151,12 @@
  "cta": {
   "amb": "g_vc27_amb.jpg",
   "title": "WHERE ARE YOU<br><em>PLAYING FROM?</em>",
-  "neon": "see you at midnight"
+  "neon": "see you at midnight",
+  "cutout": {
+   "img": "cut_duo.png",
+   "right": -120,
+   "top": 700,
+   "h": 720
+  }
  }
 }

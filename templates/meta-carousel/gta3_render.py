@@ -50,6 +50,17 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 .facts small{display:block;font-family:IT;font-weight:800;font-size:22px;letter-spacing:5px;color:rgba(255,255,255,.65)}
 .facts strong{display:block;font-family:BS;font-weight:900;font-size:66px;line-height:1;margin-top:8px;color:#fff}
 .facts p{font-family:IT;font-weight:600;font-size:27px;line-height:1.3;color:rgba(255,240,248,.85);margin-top:8px}
+.facts.f3{gap:30px;width:940px}.facts.f3 small{font-size:18px;letter-spacing:3px}.facts.f3 strong{font-size:56px}.facts.f3 p{font-size:23px}
+.tcard{position:absolute;left:52px;width:360px;padding:22px 26px 14px;border-radius:28px;background:linear-gradient(180deg,rgba(28,10,40,.62),rgba(12,5,22,.8));
+ backdrop-filter:blur(22px) saturate(1.3);border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.12)}
+.tcard:before{content:'';position:absolute;left:26px;right:26px;top:-1px;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,#ffb15c 20%,#ff4f8b 60%,#b44cff 85%,transparent)}
+.tcard h4{font-family:IT;font-weight:800;font-size:18px;letter-spacing:4px;color:rgba(255,255,255,.7);margin:0 0 8px}
+.tcard div{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-top:1px solid rgba(255,255,255,.1)}
+.tcard div:first-of-type{border-top:0}
+.tcard span{font-family:IT;font-weight:800;font-size:21px;letter-spacing:2px;color:#fff}
+.tcard p{font-family:IT;font-weight:700;font-size:17px;letter-spacing:1px;color:rgba(255,220,240,.7);margin:6px 0 4px}
+.tcard b{font-family:BS;font-weight:900;font-size:40px;line-height:1;background:linear-gradient(90deg,#ffd27a,#ff8a4c 55%,#ff4f8b);-webkit-background-clip:text;color:transparent}
+.rstar{position:absolute;top:118px;height:92px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.6))}
 .src{position:absolute;left:62px;bottom:104px;font-family:IT;font-weight:600;font-size:14px;letter-spacing:1.5px;color:rgba(255,255,255,.42)}
 .src::before{content:"";display:inline-block;width:16px;height:2px;background:var(--p);vertical-align:middle;margin-right:12px}
 .prog{position:absolute;right:170px;bottom:118px;display:flex;gap:8px}
@@ -107,7 +118,7 @@ def base(body, d, amb=None, cover=False, idx=None, total=None):
     prog = ''
     if idx is not None and total:
         prog = '<div class="prog">' + ''.join(f'<i class="{"on" if i == idx else ""}"></i>' for i in range(total)) + '</div>'
-    head = ('<img class="glogo" src="/_build/gta/logo_gta6.png">' if cover else
+    head = ('<img class="glogo" src="/_build/gta/logo_gta6.png">' + (f'<img class="rstar" style="left:{d["cover"].get("rstar_left", 236)}px" src="/_build/gta/logo_rstar.svg">' if d.get('cover', {}).get('rstar') else '') if cover else
             f'<div class="hdr"><i></i><span>GTA 6</span><b>{E(d.get("hdr", "TIPS & TRICKS"))}</b></div>')
     return ('<!doctype html><html><head><meta charset="utf-8"><style>' + CSS + (V4CSS if d.get('style', 'v4') == 'v4' else '') + '</style></head><body>'
             + (f'<div class="amb" style="background-image:url(/_build/gta/{amb})"></div>' if amb else '')
@@ -140,6 +151,7 @@ def cover(d):
             + f'<div class="k" style="top:300px">{E(c["kicker"])}</div>'
             + f'<div class="h fit" style="top:340px" data-size="{c.get("size", 176)}" data-max="960">{c["big"]}</div>'
             + f'<div class="neon fit" style="top:{c.get("neon_top", 515)}px" data-size="104" data-max="640">{E(c["neon"])}</div>'
+            + (f'<div class="tcard" style="top:{c.get("times_top", 720)}px"><h4>{E(c.get("times_title", ""))}</h4>' + ''.join(f'<div><span>{E(a)}</span><b>{E(b)}</b></div>' for a, b in c['times']) + (f'<p>{E(c["times_note"])}</p>' if c.get('times_note') else '') + '</div>' if c.get('times') else '')
             + f'<div class="swipe" style="top:1292px">{c.get("swipe", "SWIPE <b>›</b>")}</div>')
     return base(body, d, amb=c.get('amb'), cover=True)
 
@@ -154,7 +166,7 @@ def tip(s, d, i, total):
     y = top + h - 120
     facts = ''
     if s.get('facts'):
-        facts = '<div class="facts" style="top:{0}px">'.format(y + 370) + ''.join(f'<div><small>{E(a)}</small><strong>{E(b)}</strong><p>{E(c)}</p></div>' for a, b, c in s['facts']) + '</div>'
+        facts = '<div class="facts{1}" style="top:{0}px">'.format(y + 370, ' f3' if len(s['facts']) == 3 else '') + ''.join(f'<div><small>{E(a)}</small><strong>{E(b)}</strong><p>{E(c)}</p></div>' for a, b, c in s['facts']) + '</div>'
     ix = 'right:40px' if s.get('idx_right') else ''
     v4 = d.get('style', 'v4') == 'v4'  # v4 = standard since 11.11.2026 (user: "Neuer Standard"); "style": "v3" for the old look
     loc = s.get('loc') or LOC.get(s['shot'].replace('.jpg', ''))
