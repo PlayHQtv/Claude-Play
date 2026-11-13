@@ -60,6 +60,8 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 .tcard span{font-family:IT;font-weight:800;font-size:21px;letter-spacing:2px;color:#fff}
 .tcard p{font-family:IT;font-weight:700;font-size:17px;letter-spacing:1px;color:rgba(255,220,240,.7);margin:6px 0 4px}
 .tcard b{font-family:BS;font-weight:900;font-size:40px;line-height:1;background:linear-gradient(90deg,#ffd27a,#ff8a4c 55%,#ff4f8b);-webkit-background-clip:text;color:transparent}
+.poster{position:absolute;border:10px solid #fff;border-radius:6px;box-shadow:0 40px 80px rgba(0,0,0,.7),0 0 0 1px rgba(0,0,0,.2)}
+.tcard .ck{color:#2fe3d0;font-family:IT;font-weight:900;font-size:24px;margin-right:12px}
 .rstar{position:absolute;top:118px;height:92px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.6))}
 .src{position:absolute;left:62px;bottom:104px;font-family:IT;font-weight:600;font-size:14px;letter-spacing:1.5px;color:rgba(255,255,255,.42)}
 .src::before{content:"";display:inline-block;width:16px;height:2px;background:var(--p);vertical-align:middle;margin-right:12px}
@@ -94,7 +96,7 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 LOC = {'g_skyline': 'VICE CITY', 'g_keys': 'LEONIDA KEYS', 'g_motel': 'PORT GELLHORN', 'g_club': 'VICE CITY',
        'g_rooftop': 'VICE CITY', 'g_sign': 'VICE CITY', 'g_grass': 'GRASSRIVERS', 'g_kalaga': 'MOUNT KALAGA',
        'g_vc14': 'VICE CITY', 'g_vc15': 'VICE CITY', 'g_vc16': 'VICE CITY', 'g_vc17': 'VICE CITY', 'g_vc19': 'VICE CITY',
-       'g_vc20': 'VICE CITY', 'g_gr07': 'GRASSRIVERS', 'g_lk07': 'LEONIDA KEYS', 'g_vc22': 'VICE CITY', 'g_vc24': 'VICE CITY', 'g_vc26': 'VICE CITY', 'g_vc27': 'VICE CITY', 'g_gr08': 'GRASSRIVERS',
+       'g_vc20': 'VICE CITY', 'g_gr07': 'GRASSRIVERS', 'g_lk07': 'LEONIDA KEYS', 'g_vc22': 'VICE CITY', 'g_vc24': 'VICE CITY', 'g_vc26': 'VICE CITY', 'g_vc27': 'VICE CITY', 'g_gr08': 'GRASSRIVERS', 'g_jl15': 'JASON & LUCIA', 'g_jl16': 'LEONIDA', 'g_jl17': 'JASON & LUCIA', 'g_mk02': 'MOUNT KALAGA', 'g_lk02': 'LEONIDA KEYS', 'g_am01': 'AMBROSIA', 'g_am02': 'AMBROSIA', 'g_vc08': 'VICE CITY',
        'g_uult02': 'ULTIMATE EDITION', 'g_ucheetah1': "'95 GROTTI CHEETAH", 'g_ucheetah2': "'95 GROTTI CHEETAH", 'g_ustanier': "'55 VAPID STANIER",
        'g_urevolvers': 'HAWK + LITTLE MORGAN', 'g_usafehouse': "JASON'S SAFEHOUSE", 'g_uvvc': 'VINTAGE VICE CITY PACK', 'g_ulooks': 'VINTAGE VICE CITY PACK'}  # official Rockstar file names (Launch Gallery)
 
@@ -147,11 +149,12 @@ def cover(d):
     body = ((f'<div class="shot" style="top:0;height:608px;opacity:.6;background-image:url(/_build/gta/{c["bgshot"]})"></div>' if c.get('bgshot') else '')
             + f'<div class="sun" style="right:-90px;top:{c.get("sun_top", 420)}px;width:640px;height:640px"></div>'
             + panels
+            + (f'<img class="poster" src="/_build/gta/{c["poster"]["img"]}" style="right:{c["poster"].get("right", 40)}px;top:{c["poster"].get("top", 600)}px;height:{c["poster"].get("h", 700)}px;transform:rotate({c["poster"].get("r", 4)}deg)">' if c.get('poster') else '')
             + (f'<img class="cut" src="/_build/gta/{cut["img"]}" style="right:{cut.get("right", -40)}px;top:{cut.get("top", 300)}px;height:{cut.get("h", 1100)}px">' if cut else '')
             + f'<div class="k" style="top:300px">{E(c["kicker"])}</div>'
             + f'<div class="h fit" style="top:340px" data-size="{c.get("size", 176)}" data-max="960">{c["big"]}</div>'
             + f'<div class="neon fit" style="top:{c.get("neon_top", 515)}px" data-size="104" data-max="640">{E(c["neon"])}</div>'
-            + (f'<div class="tcard" style="top:{c.get("times_top", 720)}px"><h4>{E(c.get("times_title", ""))}</h4>' + ''.join(f'<div><span>{E(a)}</span><b>{E(b)}</b></div>' for a, b in c['times']) + (f'<p>{E(c["times_note"])}</p>' if c.get('times_note') else '') + '</div>' if c.get('times') else '')
+            + (f'<div class="tcard" style="top:{c.get("times_top", 720)}px"><h4>{E(c.get("times_title", ""))}</h4>' + ''.join((f'<div style="justify-content:flex-start"><i class="ck">✓</i><span>{E(a)}</span></div>' if b == '✓' else f'<div><span>{E(a)}</span><b>{E(b)}</b></div>') for a, b in c['times']) + (f'<p>{E(c["times_note"])}</p>' if c.get('times_note') else '') + '</div>' if c.get('times') else '')
             + f'<div class="swipe" style="top:1292px">{c.get("swipe", "SWIPE <b>›</b>")}</div>')
     return base(body, d, amb=c.get('amb'), cover=True)
 
