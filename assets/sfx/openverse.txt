@@ -1,0 +1,11 @@
+# name | Openverse search | max seconds   (CC0 only, see .github/workflows/openverse-sfx.yml)
+whoosh | whoosh transition | 3
+swipe | swipe swish | 2
+impact | cinematic impact hit | 3
+riser | riser build up | 5
+click | mouse click | 1
+pop | pop bubble | 1
+camera_shutter | camera shutter | 2
+cash | cash register | 3
+gunshot | gunshot single | 3
+reload | gun reload | 3
