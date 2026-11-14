@@ -400,3 +400,8 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 ## MW4 LOGO ON EVERY SLIDE (user 11.11.2026: "nur auf der ersten Folie das offizielle mw4 Logo ... auf den anderen Folien nicht")
 - render.frame() now shows the official MW4 logo (_build/s1/logo_mw4.png) in the header of EVERY MW4 slide (cover, inner slides, CTA) instead of the "CALL OF DUTY · MW4" text. Automatic for every MW4/Warzone/DMZ renderer; "cover_logo": 0 only for a non-MW4 game.
 - Always check the slide sheet: the logo must be visible top-left on every slide before upload.
+
+## External tools (14.11.2026) – see docs/tools/EXTERNAL.md, install: bin/ext_tools.sh
+RealSFX (Clipwing real-sfx, connected to assets/sfx), Openverse CC0 sounds (workflow openverse-sfx), bin/sfx_place.py (exact-frame SFX),
+PhotoCraft CLI/MCP (headless, PSD/Smart Sharpen/Remove Background), Find Skills (vercel-labs), VoiceStudio (only on request, GPU).
+Only used when they clearly improve the content; carousels stay as they are.
