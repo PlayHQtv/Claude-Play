@@ -1,0 +1,29 @@
+name: ext-tools
+# Fetches external open-source tools that the session sandbox cannot download itself and stores them as
+# assets of the private DRAFT release "grab-private" (nothing is committed). Trigger: edit tools/ext.txt.
+#   photocraft  -> photocraft-cli (Linux, from the official storytold/photocraft .deb) + its --help output
+on:
+  push:
+    branches: [brand-assets]
+    paths: [tools/ext.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.forced }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p out
+          if grep -q '^photocraft' tools/ext.txt; then
+            gh release view -R storytold/photocraft --json tagName,assets -q '.tagName, (.assets[].name)' | tee out/photocraft_release.txt
+            deb=$(gh release view -R storytold/photocraft --json assets -q '.assets[].name' | grep -E 'amd64\.deb$|x86_64\.deb$' | head -1)
+            gh release download -R storytold/photocraft -p "$deb" -D /tmp && dpkg-deb -x /tmp/$deb /tmp/pc
+            cli=$(find /tmp/pc -name photocraft-cli -type f | head -1); cp "$cli" out/photocraft-cli
+            (ldd out/photocraft-cli; out/photocraft-cli --help; out/photocraft-cli mcp --help) > out/photocraft_help.txt 2>&1 || true
+          fi
+          ls -la out
+          gh release upload grab-private out/* --clobber
