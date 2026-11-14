@@ -7,16 +7,110 @@ description: "Setup, rules and workflow for the <OUR_TIKTOK_HANDLE> TikTok gamin
 
 Always answer the user in German. The user wants to do as little as possible himself: prepare, edit and schedule posts autonomously, then report briefly (daily). Goal: **maximum reach / clicks** ("Wir müssen vom Algorithmus gepusht werden", "Bedenke alles Gelernte"). Continuous improvement based on ALL data.
 
+## GROWTH RULES (user 14.11.2026: "1-3 + 6") – override the evergreen fill order and the posting pattern
+1. **Content mix:** max ONE weapon-build/loadout post per day ("best <weapon> build", "best <class>", "best Warzone loadout", build-code lists all count as build posts). The other slot of that day is a HOOK format: mistakes ("5 MW4 mistakes"), STOP / "don't use X", head-to-head ("Osprey vs M4" with verified stats), news / "everything new", GTA 6 tips. Never two build posts on one day, never the same format in two slots in a row. Every run also re-checks the already scheduled future posts against this rule and fixes violations by MOVING posts (updateScheduledPost, nothing deleted) and filling the freed slot with a hook-format carousel. (Mon 16.11. currently has 2 build posts → the 15.11. run moves "Best Hyeon Burst build MW4" to a free slot and puts a hook carousel at 16.11. 18:00.)
+2. **Cover hooks:** the search term stays on the cover (SEO), plus ONE short hook line with conflict / curiosity / proof in the kicker or sub line, e.g. "UPDATED AFTER THE PATCH", "S TIER RIGHT NOW", "THE BUILD MOST PLAYERS MISS". The hook must be true and delivered by the slides (no clickbait, no unbacked claims; the verifier checks the hook too).
+3. **Winner follow-up:** every run pulls the views of all posts from the last 48 h (Metricool getAnalyticsDataByMetrics TKPO07 + TKPO02; Metricool lags ~1 day). A post with ≥1,500 views in ~24 h (or clearly 2× our recent median) gets a "PART 2" / follow-up carousel on the same topic in the next free slot within 1–2 days (new content that passes the duplicate check; the evergreen post in that slot is moved, not deleted). The report names the 48 h check result.
+4. **GTA 6 tip series:** from launch, GTA 6 tips run as a numbered series "GTA 6 TIP #1, #2, …" (cover kicker + TikTok title "GTA 6 tip #n: …", one tip topic per carousel, the number continues across posts; store it as `series_no` in the data JSON, look up the highest number before choosing the next). The 19.11. 18:00 beginner tips post = #1. Launch-timing posts (18.11. 18:00 release time, 19.11. 00:00 out now) stay outside the numbering.
+
 ## CURRENT RULES NOVEMBER 2026 – these OVERRIDE older sections below
-- DUPLICATE CHECK before every topic (user 09.11.; CSI = TikTok Creator Search Insights terms from docs/trends/ are ideas only and must pass this check too, e.g. "ppsh mw4" is already covered): compare with all posted + scheduled posts (Metricool, last 60 days + future) and templates/meta-carousel/data/*.json. Same build / POI / event / news = never again. Only exception: real new info (patch/new season), then label it clearly as UPDATED with new slides.
-- **Carousels only** (user 07.11.). No clip videos/OpusClip. Max 2 posts/day 12:00 + 18:00 Berlin, 5 hashtags, autoAddMusic true, first comment = question. SEO: search term in caption line 1 + TikTok title + cover. **Captions ALWAYS short for every post type, carousels AND videos (see SHORT CAPTIONS, user 11.11.: "Generell sollte es so sein")** (terms from the user's search-trend screenshots). No views goal any more (08.11.). Daily scheduled task "MW4 News-Radar" 07:45 Berlin builds and schedules AUTONOMOUSLY (user 08.11.: never leave a slot empty, no asking when the rules are met).
-- **Quality:** independent verifier agent before every preview; hero images never cropped (`s1_render.hero()`); official MW4 logo on every cover (`cover_logo: 1`, `_build/s1/logo_mw4.png`); TikTok photo API max 1080p → slides 1080×1440, rendered at 3× and downsampled, `R.save_jpg` = q95 4:4:4 + lossless mozjpeg; no upscaling of sources; `grade.py` colour look only on photos/screenshots/cut-outs; cut-outs (`cutout.py`, ISNet) behind the title, fading out, never covering info; 3D (three.js, vendored) ONLY for map covers (`cover.style: "3d"`) – 3D podium/bars rejected as "billig"; grunge letter cuts fixed per weapon with `mask_pos`.
-- **Mandatory QA:** `python3 qa.py <out_dir>` after rendering (fonts/images, safe margins + TikTok UI zones, clipped text, per-element OCR, grunge cuts at 3×). ERROR blocks the upload.
-- **Upload:** sign-upload (playhq/tmp/<id>) → `signed.json` outside the repo → `bin/bundle.sh <dir>` (new self-deleting tmp-upload-* branch, log with versions/bytes) → Metricool with res.cloudinary URLs (unchanged slides keep their Metricool URLs) → byte check via chk* upload → delete all playhq/tmp/*.
-- **Private asset cache:** `bin/cache_pull.sh` at session start, `bin/cache_push.sh` after new private images (encrypted in the draft release). New third-party images via encrypted `grab/request.txt`. Reusable scripts always into the repo.
-- **GitHub security:** leak grep = 0 before every commit; Claude noreply commits; `cleanup` workflow removes temp branches, non-key release assets and old run logs; repo public, Wiki/Issues/Projects off, user 2FA + private e-mail.
-- **Weapon look (user 08.11.: "d zukünftig im Hauptbild"):** fine gold edge glow directly on the weapon outline (`gun_html` glow `edge`, default on build slides + cover weapon; dark shadow on a separate wrapper so the gold stays tight). Big halos/light sweeps/rim light rejected as "billig".
-- **Speed:** render ~12 s, QA ~25 s, upload ~45 s; parallelize; sketch new styles before polishing.
+
+### Format and schedule
+- **Carousels only.** User 07.11.: "Wir bleiben erstmal bei Karussell Content".
+  - No clip videos, no OpusClip (clips flopped: Final Exfil 46 views, 8.4 s average watch).
+  - The "3 Ways DMZ" video stays a draft in Metricool. The CS2 autopilot stays paused.
+- Max 2 posts/day at **12:00 + 18:00 Europe/Berlin**.
+- Each post: exactly 5 hashtags, `autoAddMusic: true`, firstCommentText = question.
+- **SEO** (user 08.11.):
+  - The search term goes in caption line 1, in the TikTok title and on the cover.
+  - Take the terms from the user's TikTok search-trend screenshots (e.g. "best smg mw4", "mw4 dmz map", "mw4 season 1 free rewards").
+- What works: news/"everything new" carousels went viral (S1 carousel 18.7K, 90 % For You). Build carousels get search traffic (Osprey 98 % search).
+- No views goal any more (user 08.11.: "nicht mehr verfolgen").
+- **Daily news radar** = scheduled task "MW4 News-Radar" at 07:45 Berlin.
+  - It only proposes posts (BIG news → "everything new" carousel at the next 12:00 slot).
+  - Build or schedule only after the user's OK.
+
+### Quality bar
+User: "keine Fehler und hochwertiger Qualitäts Content".
+- **Facts:** every carousel is checked by an independent verifier agent (it re-fetches the sources) before the preview.
+- **Hero images are never cropped** (user 08.11.): `s1_render.hero()` fits the image's own aspect ratio.
+- **Game logo on every cover** (user 08.11.):
+  - Official MW4 wordmark (`_build/s1/logo_mw4.png`, source callofduty.com CODMW4_LOGO_PRIMARY.webp) replaces the "CALL OF DUTY · MW4" text top-left, height 66 px.
+  - Covers pass `cover_logo: 1` (build_render, s1_render and poi_render already do).
+- **Resolution:**
+  - The TikTok photo API (used by Metricool) accepts **max 1080p** → slides stay 1080×1440. Never upload 4K photos: the publish can fail.
+  - Quality comes from rendering at **3× (device_scale_factor=3)** and downsampling with Lanczos + light unsharp.
+  - `R.save_jpg` writes q95 4:4:4 + a lossless mozjpeg pass (same pixels, ~3 % smaller).
+- **No upscaling of sources where avoidable.** Weapon renders in `weapons/mw4/` are the best available. Codmunity `*_green.webp` renders are camo variants – don't use them.
+- **Colour look:** `grade.py` (warm gold highlights, filmic S-curve, +12 % saturation). Apply it ONLY to photos/screenshots (POI shots, key art, cut-outs), never to UI, maps, logos or weapon renders.
+- **Cut-outs** (user 08.11.: "Die Freistellung sieht auch super aus"):
+  - `cutout.py` (ISNet, offline). Clean the alpha (map 110–200 → 0–1), grade it.
+  - Place the person BEHIND the title, bleeding off the right edge and fading out at the bottom (`cover.cutout{img,top,w,right}` in poi_render).
+  - Never cover information (map, POIs).
+- **3D (three.js)** – ONLY for map covers (user: podium and stat-bar 3D "sieht billig aus" → never again):
+  - `cover.style: "3d"` in poi_render = tilted official Hajin map + one light beam per POI (colour/height = highest threat level, positions `POS3D`).
+  - three.js is vendored in `templates/meta-carousel/vendor/`.
+  - Chromium needs `--use-gl=angle --use-angle=swiftshader --enable-unsafe-swiftshader`.
+- **Grunge titles:** the grunge mask can cut thin letters (NIGHTSHADE → "<CLIP_ID>"). Fix per weapon with `mask_pos` (e.g. "130px 40px").
+
+### Mandatory QA before every upload
+Run `python3 qa.py <out_dir>` right after rendering (it re-opens `_build/<slide>.html`). It checks:
+- fonts and images loaded;
+- text outside the safe margin or under the TikTok UI zones;
+- clipped text;
+- per-element OCR read-back (Tesseract, Otsu, psm 7/6);
+- grunge letter cuts at 3× (thin letters = ERROR, wide letters = warning).
+
+Any ERROR blocks the upload. Warnings get a visual check. QA caught a real cut "I" in the SMG post on 08.11.
+
+### Upload / publish pipeline
+1. Sign with Cloudinary `sign-upload` (`public_id playhq/tmp/<id>`, overwrite, colors false).
+2. Write `signed.json` OUTSIDE the repo, plus files named `<id>.jpg`.
+3. Run `bin/bundle.sh <dir>`:
+   - it encrypts and pushes a NEW branch `tmp-upload-<ts>` (forced pushes are skipped by the workflow, so always a new branch);
+   - the workflow uploads, prints the log (public_id, version, bytes) and **deletes its branch itself**;
+   - signatures expire after ~1 h.
+4. Metricool create/updateScheduledPost with `https://res.cloudinary.com/<cloud>/image/upload/v<ver>/playhq/tmp/<id>.jpg`. Unchanged slides can keep their `<metricool-cdn>` URLs.
+5. **Byte check:** upload-asset the new Metricool copy as `playhq/tmp/chk*` → bytes must equal the original. Then delete all `playhq/tmp/*` in Cloudinary.
+
+### Private asset cache (no re-grabs after an environment reset)
+- `bin/cache_push.sh` encrypts `_build/s1` (+ `_build/w`) into the draft release "grab-private" as `cache.tar`, via a self-deleting `tmp-cache-*` branch.
+- `bin/cache_pull.sh` restores it in ~3 s. Run cache_pull at session start and cache_push after adding new private images.
+- New third-party images come in via `grab/request.txt` with encrypted URLs (`tools/secure.py`). Clear the request file after use.
+- Never keep scripts only in a temp folder: everything reusable goes into the repo (leak-grep first).
+
+### GitHub security (user 08.11.: "Der digitale Footprint so klein wie möglich und sicher gegen Hacks")
+- Leak grep before EVERY commit must return 0: `git diff --cached | grep -ciE "<mail-domain>|<cloud>|<blogId>|<metricool-domain>|<opus-domain>|<api_key>"`.
+- Commits only as Claude noreply.
+- The `cleanup` workflow (push `cleanup/request.txt`) deletes temp branches, release assets except keys, and old workflow runs + logs.
+- The repo stays public: Actions are free, Wiki/Issues/Projects are disabled, and the user has 2FA plus a private e-mail.
+
+### Speed
+- Render ~12 s per carousel, QA ~25 s, upload ~45 s. Run independent steps in parallel.
+- Show a quick sketch of NEW styles before polishing them (the 3D podium/bars cost a lot of time and were rejected).
+
+## WEAPON LOOK (user 08.11.: "d zukünftig im Hauptbild")
+- Weapon renders get a fine gold glow directly along the outline. Both build slides and the cover weapon use it by default (`gun_html` glow `edge`).
+- The filter is `drop-shadow(0 0 1px rgba(255,226,150,.95)) drop-shadow(0 0 3px rgba(255,196,64,.5))` on the image. The dark drop-shadow goes on a separate wrapper, so the gold stays tight.
+- Rejected as "billig": big gold halos, light sweeps over the metal, rim light, 3D podiums and 3D stat bars.
+
+## GTA 6 (user 09.11.: "Bei Launch werden wir natürlich erstmal GTA6 in den Fokus nehmen da die ganze Welt darauf wartet" + "Am Launch day musst du aber definitiv etwas Posten und genau und passend timen")
+- Release: Thu 19.11.2026, midnight LOCAL time in all regions (Rockstar Support), PS5 + Xbox Series X|S, no PC. Europe/Berlin unlock 19.11. 00:00; New Zealand first (18.11. 12:00 Berlin), UK 01:00, US East 06:00 Berlin. Pre-load from 10.11., up to 212 GB.
+- Focus: until 17.11. MW4 main topic (BIG official GTA news may take a slot). From 18.11. GTA 6 is the main focus for both slots; MW4 only for BIG MW4 news.
+- Launch timing (exception to 12:00/18:00, only these dates): 18.11. 18:00 "gta 6 release time" carousel (unlock times, pre-load reminder); 19.11. 00:00 "GTA 6 IS OUT NOW" (official facts + first-hour checklist, no spoilers, replaces the 12:00 slot); 19.11. 18:00 (= 12:00 ET) first verified beginner tips. Build + verify + schedule by the 17.11. run, re-check 18.11.
+- News radar every run, also GTA 6: Rockstar Newswire, rockstargames.com/VI, Rockstar Support, @RockstarGames, Take-Two IR, PlayStation Blog/Xbox Wire, then IGN, GameSpot, GTABase, Eurogamer, VGC, Digital Foundry, PowerPyx. Look for relevant updates, news and useful tips on your own ("den Nerv treffen").
+- Fact rules: repo docs/sources/gta6.md. Tier 1 official = fact; Tier 2 needs 2 sources; leaks/rumors never as fact; no story spoilers on cover/slide 1-2; no glitches/exploits; prices/stats copied exactly or left out. Verifier + duplicate check as for MW4.
+- Design (approved 09.11.: "Das sieht soweit top aus und passend"): templates/meta-carousel/gta3_render.py, editorial v3. One tip per slide: official 4K screenshot full width and uncropped on a blurred ambient copy of itself, huge gradient index number (01, 02, …), Big Shoulders Display 900 titles + Inter Tight body, GTA VI gradient #ffd27a > #ff8a4c > #ff4f8b > #d63ac7 on ONE word per title, neon script (Yellowtail) sparingly, light leaks + grain, progress dots, source line. Cover: official GTA VI logo, tilted white-framed screenshot panels (box-art collage) + official character art (Rockstar Hero_FG cut-outs) + retro striped sun. CTA: SAVE THIS sticker + FOLLOW <OUR_TIKTOK_HANDLE>. Rejected by the user: numbered circles + glass boxes ("nicht ansprechend"). Example: data/example-gta6-launch-checklist-v3.json.
+- Assets: official Rockstar media only (rockstargames.com/VI pages via the encrypted grab; images under /VI/_next/static/media/), stored in _build/gta (encrypted cache includes _build/gta; grab release assets are paginated, read page=1..3).
+
+## AUTONOMY (user 08.11.)
+User quotes: "Es darf nicht vorkommen, dass du nichts postest" and "Du musst mich nicht immer fragen, wenn alles passt".
+- Never leave a slot empty. 12:00 + 18:00 must always be filled for today, tomorrow and the day after.
+- Fill order: BIG news first, then MEDIUM news, then rotating evergreen carousels (best <weapon>/<class> build mw4, DMZ tips/maps, S1 rewards/events, settings, Warzone loadouts). No topic repeats within 7 days.
+- Don't ask for permission when the rules are met. Build, verify, schedule, then report with the slide sheets so the user can veto.
+- Ask only when a rule is genuinely unclear or something can't be undone.
+- Unverifiable news is never posted; put a verified evergreen carousel in that slot instead.
+- The daily scheduled task "MW4 News-Radar" (07:45 Berlin) is this autopilot.
 
 ## PRE-PUBLISH GATE (user 29.10.: "So etwas darf nicht mehr passieren") – nothing goes to Metricool before ALL of these pass
 1. **Facts** verified against the live source (no memory/old slides) + independent verifier agent PASS.
@@ -89,11 +183,11 @@ Always answer the user in German. The user wants to do as little as possible him
 7. Description: hook + SEO + "Save this…" + CTA (send to your squad) + credit + hashtags. **First comment = polarizing either/or question** ("Team stealth or team full send?").
 8. New-style cover (below). Max 2 posts/day: **12:00 + 18:00 every day** (see POSTING TIMES; replaced 10:00 + 18:00 on 30.10.).
 9. **Weekday/weekend split (user rule 24.10.):** audience activity on Sat/Sun is ~40 % lower than Wed/Thu, and all our hits landed Mon/Tue. Put the STRONGEST clips (polarizing, "STOP/mistake/don't buy" hooks) on Mon–Wed; weekends get calmer save-worthy/search tips (traits, keys, how-to). Keep 2 posts on weekends.
-10. Comment question also as end overlay ("Money or XP? Comment") (the question goes ONLY into the first comment, never into the description – SHORT CAPTIONS 11.11.). Overlays max 3–5 words, never two at once, all at the top. Captions NOT uppercase.
+10. Comment question also as end overlay ("Money or XP? Comment") and "Comment below 👇" in the description. Overlays max 3–5 words, never two at once, all at the top. Captions NOT uppercase.
 11. **Verdict small + short (user rule 26.10.):** overlay box width = text length (no font-size control), so verdict is just "PLAYHQ 9/10" for 1.5 s; end question 2–3 words ("Buy or upgrade?") for ~2 s at the very end. Engagement farming runs mainly via description + first comment.
 12. **Scheduling autonomy (user 27.10.: "Plane selbstständig ein"):** prepare AND schedule posts on my own (no waiting for OK), then report clip, hook, cover, text and reasoning in the daily report. (Earlier rule 26.10. "show plan before uploading" is superseded; ask only for unusual decisions, e.g. new creator/game, or anything risky.)
 13. **Search gaps:** use TikTok Creator Search Insights (Gaming, content-gap filter; search "DMZ", "MW4", "Modern Warfare 4") – via user screenshots or Claude in Chrome if available. Put gap terms into hook overlay, title, first sentence and as the 5th hashtag, only if the clip truly covers the topic.
-14. **Caption SEO always (user rule 26.10., format REPLACED 11.11. by SHORT CAPTIONS):** description = TikTok search text, but short: line 1 main search phrase exactly as people search it + hook + 1 emoji, line 2 one short teaser with a second keyword, line 3 = 5 hashtags. No question, credit, fact list or extra sentences in the description. Same phrase in title, hook overlay #2 and spoken/captions where possible. No keyword spam.
+14. **Caption SEO always (user rule 26.10.):** description = TikTok search text. Structure: (1) main search phrase exactly as people search it at the very start ("MW4 DMZ gameplay: …", "best … in MW4 DMZ"); (2) 1–2 natural sentences with 2–4 related keywords from Search Insights/web (Modern Warfare 4 DMZ, Call of Duty, Hajin, beginner guide/tips, the specific item/mechanic); (3) comment question; (4) save/share CTA; (5) credit; (6) 5 hashtags. Same phrase in title, hook overlay #2 and spoken/captions where possible. No keyword spam, no unrelated trending terms.
 15. Hashtag scheme v2 (26.10., superseded by HASHTAGS v3): caption keywords (game name + what happens) matter more than many hashtags. A/B test #gaming (Mon 26.10.) vs #gamingontiktok (Tue 27.10.) was inconclusive.
 
 ## Always (user 28.10.): SEO on every post + video must stay mostly unobstructed (overlays short, small, top only, one at a time; captions not covering the action). First comment via Metricool firstCommentText IS published on TikTok (user confirmed 28.10.). First comment: no extra hashtags (on TikTok, hashtags in comments don't put the video on hashtag pages and look spammy); instead a natural question containing 1–2 search keywords (e.g. "Best MW4 DMZ key you found?").
@@ -160,7 +254,7 @@ Use this for every build/loadout/"top X" carousel. Own content → no credit.
 ### 0. Setup (once per session)
 - add_repo owner `PlayHQtv` repo `Claude-Play` access push → clone, `git checkout brand-assets` (work ONLY on this branch, never main). If git complains about tracking: `git config --add remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*' && git fetch && git branch -u origin/brand-assets`. The repo is PUBLIC (see REPO SECURITY). Rendered test videos are gitignored (`templates/meta-carousel/out/video/`).
 - Template: `templates/meta-carousel/` (README, render.py, apex_render.py, icons.py, cutout.py, tiktok_overlay.py, assets/, weapons/, data/, out/). Needs python playwright + chromium (preinstalled), PIL, onnxruntime.
-- Sandbox network: GitHub and GitHub release downloads work; res.cloudinary.com, api.cloudinary.com, scheduler-CDN, clip-tool-CDN, Actions artifact storage, fandom/wikia, PyPI and raw.githubusercontent via curl are BLOCKED. GitHub search/GraphQL/secrets/release-editing APIs are blocked too (repo-scoped REST works). GitHub Actions run logs can't be fetched (403) → workflows write logs into the repo; `gh run list -R PlayHQtv/Claude-Play` shows run status.
+- Sandbox network: GitHub and GitHub release downloads work; res.cloudinary.com, api.cloudinary.com, <metricool-cdn>, <opus-cdn>, Actions artifact storage, fandom/wikia, PyPI and raw.githubusercontent via curl are BLOCKED. GitHub search/GraphQL/secrets/release-editing APIs are blocked too (repo-scoped REST works). GitHub Actions run logs can't be fetched (403) → workflows write logs into the repo; `gh run list -R PlayHQtv/Claude-Play` shows run status.
 
 ### 1. Weapon images (sharpness matters – TikTok likes high-res)
 - The user sends screenshots (attachments) or links. For links: add a line `fetch/files/<name>.png <url or enc:…>` to `fetch/urls.txt`, commit + push to brand-assets → the GitHub Action "fetch-media" downloads it and commits it (~20 s) → `git pull`. Same route for any blocked URL (e.g. Cloudinary AI images, Cloudinary cover checks) – account URLs only encrypted (`tools/secure.py`). Single failed URLs are skipped ("FAILED" in the run), the rest still commit. Clear `fetch/urls.txt` and delete fetched files after use.
@@ -196,8 +290,8 @@ Use this for every build/loadout/"top X" carousel. Own content → no credit.
 ### 7. Publish (only after the user's OK; never overwrite a user-made post without an explicit OK)
 - Cloudinary upload-asset per slide from `https://raw.githubusercontent.com/PlayHQtv/Claude-Play/<full commit SHA>/templates/meta-carousel/out/<name>/NN_x.jpg` (use the SHA, not the branch name, to avoid a stale cache), public_id `playhq/carousel/<date-topic>/NN_x`. Byte sizes must match the local files.
 - Metricool create/updateScheduledPost at a POSTING TIMES slot (12:00 or 18:00): media = the secure_urls in slide order; tiktokData `{title:"[PLAYHQ META] …", autoAddMusic:true, photoCoverIndex:0, privacyOption:"PUBLIC_TO_EVERYONE"}`, autoPublish true.
-- Caption: "[PLAYHQ META] MW4 DMZ loadouts …" (search phrase first), then ONE short teaser line with a second keyword (SHORT CAPTIONS – no weapon list, codes or question in the description; the question is the first comment). **Hashtags: `#mw4 #mw4dmz #dmz #dmztips #dmzloadout`** (NOT #mw4builds/#codmeta/#mw4meta – too narrow). First comment: question with keywords ("Which MW4 DMZ build is your main: 1, 2, 3 or 4?").
-- Check: upload 2 of the returned scheduler-CDN URLs back to Cloudinary `playhq/tmp/…` → the etag must equal the originals (Metricool stores byte-identical copies), then delete the tmp assets.
+- Caption: "[PLAYHQ META] MW4 DMZ loadouts …" (search phrase first), weapons in slide order, build code + save CTA, question. **Hashtags: `#mw4 #mw4dmz #dmz #dmztips #dmzloadout`** (NOT #mw4builds/#codmeta/#mw4meta – too narrow). First comment: question with keywords ("Which MW4 DMZ build is your main: 1, 2, 3 or 4?").
+- Check: upload 2 of the returned <metricool-cdn> URLs back to Cloudinary `playhq/tmp/…` → the etag must equal the originals (Metricool stores byte-identical copies), then delete the tmp assets.
 
 ### LIST CAROUSEL variant: "EVERY APEX IN MW4" (30.10., uuid <LONG_ID>, Sat 31.10. 12:00)
 - Template: `apex_render.py` + `data/2026-10-30-mw4-every-apex.json` (items: n, weapon, apex, cls, level, effect, image). Slides: cover, 7 list slides × 4 HUD cards (image, `NN/28 WEAPON · CLASS`, gold apex name, `MAX LVL`, 1-line effect), CTA ("WHICH APEX IS THE BEST?" + SAVE THIS + follow). Reusable for any "every X" list. Hashtags `#mw4 #mw4dmz #dmz #dmztips #mw4apex`.
@@ -337,7 +431,7 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 1. OpusClip: list_clips → describe_clip (transcript: clean? creator clear? strongest line? `aspect` landscape → PLAYHQ VIDEO FRAME or FX) → duplicate_clip ("(Copy)" = used).
 2. edit_clip: delete_phrase for intros/outros (adjacent phrases in one delete), reorder if needed, remove_filler_words, remove_pauses, set_captions true, set_emoji false, style/highlight; then overlays (2-stage hook / mid open loop / verdict – for 16:9 clips none, the frame carries the text). If an edit says "dropped stale overlay sections", re-check overlays with dryRun and re-add.
 3. export_clip hd → poll until ready (wait ~35–45 s with a bash timeout loop). Make sure the export is newer than the last edit.
-4. Cover. 5. Run the checklist + PRE-PUBLISH GATE. 6. Metricool createScheduledPost at 12:00 or 18:00 (tiktok, Europe/Berlin, tiktokData.title required, PUBLIC_TO_EVERYONE, autoPublish true). To change: updateScheduledPost with full content (id changes, uuid stays). Media can be reused via its scheduler-CDN URL. To publish "now", set publicationDate ~2–3 min in the future. Publishing takes a few minutes (PUBLISHING → AWAITING_CONFIRMATION → PUBLISHED) – normal.
+4. Cover. 5. Run the checklist + PRE-PUBLISH GATE. 6. Metricool createScheduledPost at 12:00 or 18:00 (tiktok, Europe/Berlin, tiktokData.title required, PUBLIC_TO_EVERYONE, autoPublish true). To change: updateScheduledPost with full content (id changes, uuid stays). Media can be reused via its <metricool-cdn> URL. To publish "now", set publicationDate ~2–3 min in the future. Publishing takes a few minutes (PUBLISHING → AWAITING_CONFIRMATION → PUBLISHED) – normal.
 
 ## Analytics
 - Posts: TKPO02 time (**UTC** → +1 h winter from 25.10. / +2 h summer for Berlin), TKPO05 text, TKPO06 duration, TKPO07 views, TKPO08 likes, TKPO09 comments, TKPO10 shares. Values come in requested order. Metricool refreshes ~daily and lags (a post showed 291 while TikTok had 4,087).
@@ -362,46 +456,33 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Metricool TikTok error 401 "did not authorize the scope" = reconnect TikTok in Metricool with publish permission.
 - Metricool checkout requires a tax ID field (private persons: Steuer-ID).
 - No external links in descriptions. Copyright: reposting is risky; safe sources are CC-BY, creators who allow clipping, own content. TikTok in-app game challenges must be joined in the app.
-## GTA 6 (from launch Nov 19, 2026)
-- Tips & tricks carousels: templates/meta-carousel/gta3_render.py (v3 editorial: one tip per slide, official 4K screenshot full width uncropped on a blurred ambient copy, huge gradient index number, Big Shoulders Display + Inter Tight, GTA VI gradient #ffd27a > #ff8a4c > #ff4f8b > #d63ac7 on ONE word per title, neon script, box-art collage cover with official character art, grain, light leaks, progress dots). Example data: data/example-gta6-launch-checklist-v3.json. gta_render.py = older v2.
-- Sources and fact rules: docs/sources/gta6.md (Tier 1 official = fact, Tier 2 = needs 2 sources, Tier 3/leaks = never as fact). Verifier + duplicate check like MW4.
-- Focus (user 09.11.): until 17.11. MW4 main topic; from 18.11. GTA 6 main focus for both slots (MW4 only BIG news). GTA news radar every run (own initiative: updates, news, useful tips).
-- Launch timing: 18.11. 18:00 "gta 6 release time"; 19.11. 00:00 Berlin (EU unlock, midnight local everywhere) "GTA 6 IS OUT NOW" (replaces the 12:00 slot); 19.11. 18:00 (= 12:00 ET) first verified beginner tips. Build/verify/schedule by the 17.11. run.
-- SEO always (user 09.11.): one search term per post in caption line 1, TikTok title, cover, slide header strip and first-comment question; see docs/sources/gta6.md. Source line on GTA slides is small (14px) with >= 40px distance to other text.
 
-## Vision tools (CPU, no GPU)
-- RULE (user 09.11): the approved v3 layout (since 11.11. its v4 refinement) stays the standard. The demo layouts (hero/pop/char) were rejected ("Das alte Layout sieht besser aus"). Use the tools ONLY when they clearly improve a v3 slide, e.g. a cleaner cut-out (BiRefNet hair, SAM vehicle) inside the normal v3 cover/CTA. Never change the layout for an effect.
-- `templates/meta-carousel/vision.py` + `bin/models.sh` (models from public GitHub releases into /tmp/models, never committed).
-- SAM (`V.sam(img, points, labels)` + `V.largest`) for vehicles/objects; Depth Anything V2 (`V.depth`) for "title behind subject" layers (gta3 cover `hero.fg`).
-- BiRefNet full (hair-level cut-outs) needs ~10 GB RAM: put asset names (already in the private draft release) into `grab/vision.txt` → workflow vision-hq uploads `m_<name>.png` masks. Clear vision.txt afterwards.
-- gta3 options: cover `hero {img, fg, top, title_top, k_top}`, tip `pop` + `idx_right`/`idx_dy`, tip `char {img, name, left, top, h}`.
-
-## Extra QA (09.11.2026, all run automatically in bin/prep.sh)
-- Legibility: WCAG contrast of every text element against what is really behind it; "low contrast" warnings must be fixed (darker tint/shadow or move the text) unless it is decorative.
-- Spell check of all slide text (English; game terms in templates/meta-carousel/qa_words.txt - add new names there, never ignore real typos).
-- Caption / title / first comment: `python3 qa.py --caption "<text>"` before every Metricool post.
-- Visual duplicate check `dupcheck.py <data.json>`: finds re-used screenshots (even re-graded/cropped) from earlier posts; never re-use the same cover hero image.
-- Face check: YuNet face detector (opencv_zoo, via bin/models.sh) on the text-less render; text must never cover a face of the artwork.
-- Not adopted (no real benefit): AI upscaling (sources are already >= 800-4K px), extra OCR engines (Tesseract read-back already in qa.py), automatic palettes / LUT film looks (would change the approved v3 colours), 3D/animation libraries (static carousels).
-
-## SHORT CAPTIONS (user 11.11.2026: "Das ist immer viel zu viel Text unter unserem Content" + "Generell sollte es so sein") – applies to EVERY post (carousel, video, GTA, MW4) and overrides every older caption rule in this file
+## SHORT CAPTIONS (user 11.11.2026: "Das ist immer viel zu viel Text unter unserem Content" + "SEO ist ja trotzdem wichtig" + "Generell sollte es so sein") – applies to EVERY post (carousel, video, GTA, MW4) and OVERRIDES every older caption rule in this file
 Caption = max 3 lines, about 150 characters before the hashtags:
 1. SEO line: search term + short hook + 1 emoji (e.g. "Best MW4 settings – controller, graphics & audio 🎮")
 2. ONE short teaser/CTA line that naturally carries a SECOND search keyword (e.g. "Modern Warfare 4 controller + audio setup 👉 Save it!")
 3. exactly 5 hashtags
-SEO stays strong without long text: search term in TikTok title, caption line 1, line 2 (second keyword), hashtags, cover + slide header (TikTok reads on-image text). No fact lists, no sources, no "comment below" in the caption (facts + source line are on the slides, the question is the first comment).
+SEO stays strong without long text: search term in TikTok title, caption line 1, line 2 (second keyword), hashtags, cover + slide header (TikTok reads on-image text). No fact lists, build codes, sources or "comment below" in the caption (facts + source line are on the slides). firstCommentText = ONE short question (max ~70 characters). Spell check with `python3 templates/meta-carousel/qa.py --caption "<text>"`.
 
 ## GTA DESIGN v4 = STANDARD (user 11.11.2026: "Neuer Standard")
-- gta3_render.py renders v4 by default (data/example-gta6-launch-checklist-v4.json): same v3 layout (full-width uncropped shot, big gradient number, title, text, GTA colours) plus
-  glass text card with gradient light edge, header as dark glass pill (fixes header contrast), location label on the shot ("● PORT GELLHORN"), number overlapping shot + card.
+- gta3_render.py renders v4 by default (data/example-gta6-launch-checklist-v4.json): the approved v3 layout (full-width uncropped shot, big gradient number, title, text, GTA colours) plus glass text card with gradient light edge, header as dark glass pill, location label on the shot ("● PORT GELLHORN"), number overlapping shot + card. Cover + CTA unchanged.
 - Location labels come from LOC in gta3_render.py (verified against the official Rockstar screenshot names). New images: add their official location to LOC, never guess.
-- "style": "v3" only renders the old look. Cover + CTA unchanged. Demo options hero/pop/char stay rejected.
+- "style": "v3" only renders the old look. The demo layouts hero / pop / char ("title behind subject", pop-out, character slide) were REJECTED (user 09.11.: "Das alte Layout sieht besser aus").
 
-## MW4 LOGO ON EVERY SLIDE (user 11.11.2026: "nur auf der ersten Folie das offizielle mw4 Logo ... auf den anderen Folien nicht")
-- render.frame() now shows the official MW4 logo (_build/s1/logo_mw4.png) in the header of EVERY MW4 slide (cover, inner slides, CTA) instead of the "CALL OF DUTY · MW4" text. Automatic for every MW4/Warzone/DMZ renderer; "cover_logo": 0 only for a non-MW4 game.
-- Always check the slide sheet: the logo must be visible top-left on every slide before upload.
+## Vision tools (CPU) – only when they clearly help (user 09.11.: "Nutze sämtliche Tools nur wenn es Vorteile bringt")
+- `templates/meta-carousel/vision.py` + `bin/models.sh` (models from public GitHub releases into /tmp/models, never committed): SAM (`V.sam` + `V.largest`) for vehicles/objects, Depth Anything V2 (`V.depth`).
+- BiRefNet full (hair-level cut-outs) needs ~10 GB RAM: put asset names (already in the private draft release) into `grab/vision.txt` → workflow vision-hq uploads `m_<name>.png` masks. Clear vision.txt afterwards.
+- Use them only for cleaner official cut-outs inside the normal layout, never to change the layout.
 
-## External tools (14.11.2026) – see docs/tools/EXTERNAL.md, install: bin/ext_tools.sh
-RealSFX (Clipwing real-sfx, connected to assets/sfx), Openverse CC0 sounds (workflow openverse-sfx), bin/sfx_place.py (exact-frame SFX),
-PhotoCraft CLI/MCP (headless, PSD/Smart Sharpen/Remove Background), Find Skills (vercel-labs), VoiceStudio (only on request, GPU).
-Only used when they clearly improve the content; carousels stay as they are.
+## Extra QA (since 09.11.2026, all automatic in bin/prep.sh)
+- Legibility: WCAG contrast of every text element against what is really behind it; fix "low contrast" warnings.
+- Spell check of all slide text (game terms in templates/meta-carousel/qa_words.txt – add new names there, never ignore real typos).
+- Visual duplicate check `dupcheck.py <data.json>`: finds re-used screenshots (even re-graded/cropped); never re-use the same cover hero image.
+- Face check (YuNet): text must never cover a face of the artwork.
+- Not adopted (no real benefit): AI upscaling, extra OCR engines, automatic palettes / LUT looks, 3D/animation libraries for static carousels.
+
+## Scheduled tasks (as of 11.11.2026)
+- "MW4 + GTA 6 News-Radar" daily 07:45 Berlin (autopilot, fills 12:00 + 18:00 for 3 days).
+- "GTA 6 Launch-Check 17.11." and "GTA 6 Launch-Check 18.11. abends" (launch posts 18.11. 18:00, 19.11. 00:00 + 18:00).
+- "Caption-Test: kurz vs. lang" 25.11. 10:23 (report only, changes nothing).
+- Full current rule copy: docs/skill-backup/playhq-tiktok-clips.SKILL.md in the repo (anonymized).
