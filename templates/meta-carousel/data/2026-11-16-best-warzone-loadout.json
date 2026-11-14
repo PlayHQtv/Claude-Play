@@ -1,0 +1,192 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "WARZONE",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "SEASON 1 · UPDATED NOV 2026",
+    "big": "BEST WARZONE",
+    "small": "LOADOUT",
+    "sub": "4 ABSOLUTE META BUILDS + CODES",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "../_build/w/osprey.png",
+    "cutout": {
+      "img": "cut_soldier.png",
+      "top": 232,
+      "w": 520,
+      "right": -60,
+      "fade": 55
+    }
+  },
+  "cta": {
+    "white": "WHICH WARZONE",
+    "gold": "LOADOUT?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY WARZONE + MW4 META"
+  },
+  "weapons": [
+    {
+      "rank": 1,
+      "image": "../_build/w/osprey.png",
+      "short": "CRONEN OSPREY",
+      "title_white": "CRONEN",
+      "title_gold": "OSPREY",
+      "class": "ASSAULT RIFLE",
+      "class_note": "#1 Long range",
+      "tagline": "WARZONE ABSOLUTE META",
+      "brightness": 1.1,
+      "build_code": "A02-2TKF8-24ZCN-11",
+      "attachments": [
+        {
+          "type": "optic",
+          "label": "OPTIC",
+          "name": "LOCUS PX3 CANTED"
+        },
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "FSS IS300"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "IO-556 TAC 18\""
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS FIRELINE GRIP"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "60 ROUND MAG"
+        }
+      ],
+      "sources": "codmunity.gg Warzone Absolute Meta #1 Long Range, code A02-2TKF8-24ZCN-11 (codmunity.gg + weapon page, ranking updated 12.11.2026); same build + code in tourneytimenetwork 08.11. (codmunity + wzstats)"
+    },
+    {
+      "rank": 2,
+      "image": "mw4/w_Wz55_Striga.png",
+      "short": "WZ.55 STRIGA",
+      "title_white": "WZ.55",
+      "title_gold": "STRIGA",
+      "class": "SMG",
+      "class_note": "Close range",
+      "tagline": "WARZONE ABSOLUTE META",
+      "brightness": 1.1,
+      "build_code": "S04-AUXZ6-DU1Q1-1",
+      "attachments": [
+        {
+          "type": "optic",
+          "label": "OPTIC",
+          "name": "ZLR TYPE C"
+        },
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "FTAC SILENT RECON"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "GW SENDER 500"
+        },
+        {
+          "type": "drum",
+          "label": "MAGAZINE",
+          "name": "50 ROUND DRUM MAG"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "WIRE STOCK"
+        }
+      ],
+      "sources": "codmunity.gg/weapon/mw4/wz55-striga Warzone Close Range (page modified 12.11., stats 13.11.), code S04-AUXZ6-DU1Q1-1 = codmunity.gg Warzone Absolute Meta list"
+    },
+    {
+      "rank": 3,
+      "image": "mw4/w_VEL_46.png",
+      "short": "VEL 46",
+      "title_white": "VEL",
+      "title_gold": "46",
+      "class": "SMG",
+      "class_note": "Close range",
+      "tagline": "WARZONE ABSOLUTE META",
+      "brightness": 1.1,
+      "build_code": "S03-3K9Y5-L7T46-8711",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "TA TACPRO-56"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "RV-B V2 BARREL"
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS FIRELINE GRIP"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "EXP U-TURN STOCK"
+        },
+        {
+          "type": "ammo",
+          "label": "AMMUNITION",
+          "name": "4.6X30MM HIGH VELOCITY"
+        }
+      ],
+      "sources": "codmunity.gg/weapon/mw4/vel-46 Warzone Close Range, code S03-3K9Y5-L7T46-8711 (codmunity list 12.11.) + tourneytimenetwork 08.11. same build/code"
+    },
+    {
+      "rank": 4,
+      "image": "mw4/w_KG7_Vulcan.png",
+      "short": "KG-7 VULCAN",
+      "title_white": "KG-7",
+      "title_gold": "VULCAN",
+      "class": "SNIPER",
+      "class_note": "#1 Sniper",
+      "tagline": "WARZONE ABSOLUTE META",
+      "brightness": 1.1,
+      "build_code": "R04-3K9Y5-JTFYN-8S51",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "GAUGE-12 MONO"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "HAEBANG RMT762 29"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "TT G76-RP STOCK"
+        },
+        {
+          "type": "ammo",
+          "label": "AMMUNITION",
+          "name": "7.62X54MMR HIGH VELOCITY"
+        },
+        {
+          "type": "bolt",
+          "label": "BOLT",
+          "name": "KT76 LIGHT BOLT"
+        }
+      ],
+      "sources": "codmunity.gg/weapon/mw4/kg-7-vulcan Warzone Sniper, code R04-3K9Y5-JTFYN-8S51 (codmunity list 12.11.) + warzoneloadout.games same 5 attachments"
+    }
+  ],
+  "facts": "codmunity Warzone Absolute Meta (4 weapons), ranking last updated 12.11.2026: Cronen Osprey, WZ.55 Striga, VEL 46, KG-7 Vulcan.",
+  "source": "codmunity.gg Warzone meta (12.11.2026), cross-check tourneytimenetwork, warzoneloadout.games, codmetahub (fetched 14.11.2026)",
+  "dupcheck": "Warzone builds never posted. MP builds of Osprey (07.11.), Striga (09.11.), VEL/Striga in Best SMG (08.11.), KG-7 MP code (13.11.) are different builds/mode.",
+  "verifier": "PASS 14.11.2026 (independent re-fetch codmunity); duplicate check PASS (Osprey WZ build shares 4/5 with 07.11 MP creator pick, different mode/code)"
+}

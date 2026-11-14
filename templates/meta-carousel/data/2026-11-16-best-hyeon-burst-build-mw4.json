@@ -1,0 +1,148 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "S TIER AR · SEASON 1",
+    "big": "BEST HYEON",
+    "small": "BURST BUILD MW4",
+    "sub": "3 MW4 MULTIPLAYER LOADOUTS",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "mw4/w_Hyeon_Burst.png"
+  },
+  "cta": {
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META"
+  },
+  "weapons": [
+    {
+      "rank": 1,
+      "image": "mw4/w_Hyeon_Burst.png",
+      "short": "VERSATILE",
+      "title_white": "HYEON",
+      "title_gold": "BURST",
+      "class": "ASSAULT RIFLE",
+      "class_note": "Versatile build",
+      "tagline": "ABSOLUTE META BUILD",
+      "brightness": 1.1,
+      "build_code": "A09-43QCD-D4HTW-VI11",
+      "apex": "HYEON HYPERBURST",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "FSS IS40"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "MUGI HWANDO-Z3 521MM"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "HYN-MEIPEUL"
+        },
+        {
+          "type": "ammo",
+          "label": "AMMUNITION",
+          "name": "6.8X43MM OVERPRESSURED"
+        },
+        {
+          "type": "underbarrel",
+          "label": "UNDERBARREL",
+          "name": "FSS TAC90 GRIP"
+        }
+      ],
+      "sources": "codmunity.gg/weapon/mw4/hyeon-burst MP Versatile (Absolute Meta), code A09-43QCD-D4HTW-VI11 + Apex Hyeon Hyperburst (fetched 14.11.); same build in codmunity Kit FAQ + codmunity stats comparator (13.11.) + mygamepadtester 09.11."
+    },
+    {
+      "rank": 2,
+      "image": "mw4/w_Hyeon_Burst.png",
+      "short": "CLOSE RANGE",
+      "title_white": "HYEON",
+      "title_gold": "BURST",
+      "class": "ASSAULT RIFLE",
+      "class_note": "Close range build",
+      "tagline": "NULLIFIER BARREL + PEQ LASER",
+      "brightness": 1.1,
+      "build_code": "A09-3MC1S-6WK11",
+      "apex": "HYEON HYPERBURST",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "FSS IS40"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "MUGI NULLIFIER 482MM"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "SZ GEN.6 PEQ"
+        },
+        {
+          "type": "reargrip",
+          "label": "REAR GRIP",
+          "name": "HYN-MEIPEUL"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "40 ROUND MAG"
+        }
+      ],
+      "sources": "codmunity.gg/weapon/mw4/hyeon-burst 2nd MP build, code A09-3MC1S-6WK11 + Hyeon Hyperburst (fetched 14.11.) - playstyle label to be confirmed by verifier | verifier 14.11.: codmunity playstyle = Close Range (C tier, no meta claim)"
+    },
+    {
+      "rank": 3,
+      "image": "mw4/w_Hyeon_Burst.png",
+      "short": "DEXERTO PICK",
+      "title_white": "HYEON",
+      "title_gold": "BURST",
+      "class": "ASSAULT RIFLE",
+      "class_note": "S tier build",
+      "tagline": "SUPPRESSOR + LAZ-500 LASER",
+      "brightness": 1.1,
+      "build_code": "A09-68Y42-V6M11",
+      "apex": "HYEON HYPERBURST",
+      "attachments": [
+        {
+          "type": "muzzle",
+          "label": "MUZZLE",
+          "name": "XRK MIL-TAC SUPPRESSOR"
+        },
+        {
+          "type": "barrel",
+          "label": "BARREL",
+          "name": "MUGI SEUNGRI-OP 609MM"
+        },
+        {
+          "type": "laser",
+          "label": "LASER",
+          "name": "SA LAZ-500"
+        },
+        {
+          "type": "stock",
+          "label": "STOCK",
+          "name": "MUGI BAL-202 STOCK"
+        },
+        {
+          "type": "magazine",
+          "label": "MAGAZINE",
+          "name": "40 ROUND MAG"
+        }
+      ],
+      "sources": "dexerto.com/wikis/modern-warfare-4/assault-rifle-tier-list (updated 09.11.2026) S tier, code A09-68Y42-V6M11, 5 attachments + Hyeon Hyperburst Apex"
+    }
+  ],
+  "facts": "Hyeon Burst: Absolute Meta (codmunity MP, updated 13.11.), S tier Dexerto (09.11.) + IGN; Apex Hyeon Hyperburst unlocks at weapon level 68 (codmunity).",
+  "source": "codmunity.gg, dexerto.com, IGN (fetched 14.11.2026)",
+  "dupcheck": "Hyeon Burst MP build never posted; only a DMZ build (code A09-Y1K9N-L1IW1-1, different attachments) in the 29.10. DMZ top 4 carousel.",
+  "verifier": "PASS 14.11.2026 (independent re-fetch codmunity + dexerto); duplicate check PASS"
+}
