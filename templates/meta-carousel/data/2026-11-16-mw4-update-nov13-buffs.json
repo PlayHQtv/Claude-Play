@@ -172,7 +172,16 @@
   "gold": "HITS HARDEST?",
   "sub": "M4 · STRIGA · ODEN · PPSH-41",
   "save_kicker": "MW4 NOV 13 UPDATE CHEAT SHEET",
-  "follow_sub": "DAILY MW4 + GTA 6 UPDATES"
+  "follow_sub": "DAILY MW4 + GTA 6 UPDATES",
+  "cutout": {
+   "img": "cut_silh.png",
+   "right": 110,
+   "top": 1000,
+   "w": 300,
+   "fade": 70,
+   "bright": 1.7,
+   "rim": 1
+  }
  },
  "source": "callofduty.com MW4 Season 1 patch notes, November 13, 2026 entry (Infinity Ward); 2nd sources: timesaver.gg (14.11.), codskins.co.uk (14.11.), hdopti.com (14.11.)",
  "notes": "MEDIUM news (weapon balance pass). Dup check: 14.11. 18:00 post covered Nov 10+11 hitscan/ballistics + DMZ X01 changes, NOT the Nov 13 weapon tuning; no other post on this update. Hook = NEW Nov 13 update. Scheduled Mon 16.11. 18:00 (hook slot, Hyeon build moved to 17.11. 18:00 per growth rule 1).",

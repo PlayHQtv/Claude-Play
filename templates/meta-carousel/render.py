@@ -221,6 +221,14 @@ def cta_slide(d):
             + '<img src="/assets/logo.png" style="position:absolute;left:420px;top:1030px;width:120px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.7))">'
             + '<div style="position:absolute;left:0;right:0;top:1165px;text-align:center;font-family:Anton;font-size:66px;right:100px;line-height:1;letter-spacing:3px">FOLLOW <span style="background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent">@PLAYHQTV</span></div>'
             + f'<div class="swipe" style="top:1245px;color:#cfcfcf;letter-spacing:7px;font-size:24px;right:100px">{E(c.get("follow_sub", "FOR DAILY MW4 META"))}</div>')
+    if c.get('cutout'):  # MW4: cut-out only on the last slide (user 15.11.2026), drawn first = behind all text
+        body = cutout_html(c['cutout']) + body
+        # free the right side for the cut-out: FOLLOW block left-aligned (same look as the s1 CTA)
+        y = c.get('follow_top', 1045)
+        body = body.split('<img src="/assets/logo.png"')[0] + (
+            f'<img src="/assets/logo.png" style="position:absolute;left:60px;top:{y}px;width:110px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.7))">'
+            f'<div style="position:absolute;left:190px;top:{y + 14}px;font-family:Anton;font-size:58px;line-height:1;letter-spacing:3px">FOLLOW <span style="background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent">@PLAYHQTV</span></div>'
+            f'<div style="position:absolute;left:192px;top:{y + 84}px;font-weight:700;color:#cfcfcf;letter-spacing:6px;font-size:21px">{E(c.get("follow_sub", "FOR DAILY MW4 META"))}</div>')
     return page(body, {**d, 'footer': ''})
 
 

@@ -89,7 +89,16 @@
   "gold": "DO YOU USE MOST?",
   "sub": "MANTLE SLIDE · SUPINE SLIDE · HANG LEAN",
   "save_kicker": "MW4 MOVEMENT CHEAT SHEET",
-  "follow_sub": "DAILY MW4 + GTA 6 TIPS"
+  "follow_sub": "DAILY MW4 + GTA 6 TIPS",
+  "cutout": {
+   "img": "cut_redeye.png",
+   "right": 70,
+   "top": 1000,
+   "w": 520,
+   "fade": 62,
+   "bright": 1.25,
+   "rim": 1
+  }
  },
  "source": "callofduty.com blog 'Modern Warfare 4 Multiplayer: Movement, Gunplay, Modes & Maps' (21.08.2026) + Open Beta guide (Mobility Course tips) + callofduty.com/modernwarfare4/multiplayer; Xbox Wire 21.08. (mantle slide = press slide during a mantle); IGN MW4 tips (omnimovement removed, Supine Slide); tourneytimenetwork 09.11. (no omnimovement in MW4 + Warzone) | images: official MW4 screenshots from the callofduty.com MP deep-dive blog (21.08.2026)",
  "notes": "CSI term 'mw4 movement' 571K +121% (14.11.). Dup check: no movement post before; settings post 11.11. only had movement SETTINGS (mantle assist, tac sprint behavior) - this post has no settings rows and no Tac Sprint/Blood Rush. Hook format = tips/explainer. Scheduled Tue 17.11. 12:00.",
