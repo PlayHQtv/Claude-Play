@@ -1,10 +1,10 @@
 name: cache-push
-# Private asset cache: a push of bundle/cache.tar to a NEW branch "tmp-cache-*" (encrypted with fx/pubkey.pem: key.enc + data.enc)
-# is attached to the draft release "grab-private" as cache.tar (drafts are visible to collaborators only); the branch deletes itself.
+# Private asset cache: a push of bundle/cache/ (cache_key.enc + cache_partNN, encrypted with fx/pubkey.pem, each < 100 MB)
+# to a NEW branch "tmp-cache-*" replaces the cache assets of the draft release "grab-private"; the branch deletes itself.
 on:
   push:
     branches: ['tmp-cache-*']
-    paths: ['bundle/cache.tar']
+    paths: ['bundle/cache/**', 'bundle/cache.tar']
 permissions:
   contents: write
 jobs:
@@ -15,5 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          gh release upload grab-private bundle/cache.tar --clobber
+          if [ -d bundle/cache ]; then
+            for a in $(gh release view grab-private --json assets -q '.assets[].name' | grep -E '^cache_part[0-9]+$|^cache_key.enc$|^cache.tar$'); do gh release delete-asset grab-private "$a" -y; done
+            gh release upload grab-private bundle/cache/* --clobber
+          else
+            gh release upload grab-private bundle/cache.tar --clobber
+          fi
           git push origin --delete "$GITHUB_REF_NAME"

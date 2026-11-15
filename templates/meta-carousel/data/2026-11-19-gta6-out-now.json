@@ -3,7 +3,7 @@
  "source": "Source: Rockstar Support + Newswire, PlayStation Blog, Xbox Wire",
  "notes": "DRAFT 13.11. for Thu 19.11. 00:00 Berlin (EU unlock). Re-check on 18.11./19.11. (Newswire launch post, map really live, service status). Tier 1: Rockstar Support release times (midnight local, PS5 + Xbox Series X|S), Xbox Wire Nov 10 (Xbox One + Series via Xbox Cloud Gaming from 1 a.m. ET Nov 19), Newswire Nov 3 (free printable Leonida map + cover art poster on the official site on Nov 19), Rockstar Support 'Redeeming the One-Month GTA+ Membership' (PS Store GTA+ product page; Microsoft Store Offers & Credits within 180 days; digital purchases before Nov 20), PlayStation offer terms (claim by Mar 31, 2027), PlayStation Blog Nov 10 (DualSense haptics/adaptive triggers adjustable via accessibility settings), Newswire Sep 17 (GTA VI: The Album, 34 tracks, Atlantic Records, out Nov 19), Rockstar Support Service Status page. Dup check: release-time post 18.11. (unlock times, preload, map announcement) -> here: map is LIVE (download now), rest new; editions post 15.11. (GTA+ only mentioned as bonus, not how to claim). | Verifier 13.11.: map wording 'adds today' (not 'download now'); 'OFFICIAL' -> 'VIA'; GTA+ auto-renew note; rolling launch wording.",
  "cover": {
-  "amb": "g_jl15_amb.jpg",
+  "amb": "g_lk03_amb.jpg",
   "kicker": "NOV 19 · PS5 + XBOX SERIES X|S",
   "big": "GTA 6 <em>IS OUT</em><br>NOW",
   "size": 176,
@@ -11,13 +11,6 @@
   "neon_top": 640,
   "rstar": true,
   "rstar_left": 268,
-  "poster": {
-   "img": "k_coverart.jpg",
-   "right": 46,
-   "top": 760,
-   "h": 600,
-   "r": 5
-  },
   "times_title": "FIRST HOUR CHECKLIST",
   "times_top": 790,
   "times": [
@@ -45,7 +38,13 @@
   "times_note": "swipe for the how-to",
   "sun_top": 560,
   "swipe": "SWIPE FOR THE CHECKLIST <b>›</b>",
-  "bgshot": "g_jl15.jpg"
+  "bgshot": "g_lk03.jpg",
+  "cutout": {
+   "img": "cut_map.png",
+   "right": -170,
+   "top": 800,
+   "h": 520
+  }
  },
  "tips": [
   {

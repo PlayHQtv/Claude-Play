@@ -486,3 +486,14 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - "GTA 6 Launch-Check 17.11." and "GTA 6 Launch-Check 18.11. abends" (launch posts 18.11. 18:00, 19.11. 00:00 + 18:00).
 - "Caption-Test: kurz vs. lang" 25.11. 10:23 (report only, changes nothing).
 - Full current rule copy: docs/skill-backup/playhq-tiktok-clips.SKILL.md in the repo (anonymized).
+## GTA DESIGN v4.1 = STANDARD (user 15.11.2026: "Neues Design für die GTA Posts allgemein übernehmen. Achte trotzdem auf SEO")
+- gta3_render.py default. Example: data/2026-11-18-gta6-release-time.json + data/2026-11-19-gta6-out-now.json.
+- Cover: ORIGINAL GTA VI logo (+ Rockstar logo if "rstar") stays ("Behalte das Original Logo bei") + small glass tile "UNOFFICIAL FAN GUIDE" next to it (automatic).
+- Inner slides: facts as glass tiles with gradient edge, body 40px, card line; CTA ends with "Unofficial fan guide · not affiliated with Rockstar Games".
+- TikTok safe zones (tiktok_overlay.py ZONES) are respected by the template: no text right of x=940 below y=1100, no text below y=1320 on the left. QA must show 0 "under TikTok UI" warnings – check the overlay sheet (python3 tiktok_overlay.py /tmp/out_<tag>) before upload. "OCR reads ..." on gradient/neon text are known false positives (check visually).
+- Every cover needs a cut-out that was NOT a cover hero before (dupcheck). Clean character cut-outs: full BiRefNet via grab/vision.txt (workflow vision-hq), never the ISNet result for busy art.
+- SEO unchanged: search term on cover title + header pill + caption line 1 + TikTok title + first comment.
+- Risk rules: official media only, no leaks/rumours, no story spoilers, money guides only legit (no glitches/duplication), source line on every slide.
+
+## MW4: cut-outs against empty slides (user 15.11.2026: "Bei den MW4 Posts kannst du Freistellungen eventuell einfügen damit es nicht ganz so leer aussieht")
+- When an MW4 slide has a large empty area (e.g. CTA, text-only slides, settings lists), add an official operator/weapon cut-out (cutout.py / BiRefNet) – placed outside the TikTok safe zones, never covering text, not the same operator as in the last 3 posts. Layouts stay as approved.

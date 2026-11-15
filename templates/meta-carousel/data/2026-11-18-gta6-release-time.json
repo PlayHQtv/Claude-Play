@@ -16,9 +16,9 @@
   "rstar": true,
   "cutout": {
    "img": "cut_jl.png",
-   "right": -250,
-   "top": 700,
-   "h": 760
+   "right": -150,
+   "top": 760,
+   "h": 600
   },
   "rstar_left": 268,
   "times_title": "WORLD UNLOCK · IN GMT",
@@ -60,12 +60,12 @@
     [
      "PS5",
      "00:00",
-     "Nov 19, your local time"
+     "Nov 19 · local store time"
     ],
     [
      "XBOX SERIES X|S",
      "00:00",
-     "Nov 19, your local time"
+     "Nov 19 · local store time"
     ]
    ]
   },
@@ -115,18 +115,18 @@
   },
   {
    "shot": "g_vc24.jpg",
-   "kicker": "AMERICAS · NOV 19 IN GMT",
+   "kicker": "USA + CANADA · ONE STORE WINDOW",
    "title": "AMERICAS <em>LAST</em>",
    "facts": [
     [
-     "SÃO PAULO",
-     "03:00 GMT",
-     "Midnight local"
+     "NEW YORK",
+     "00:00 ET",
+     "Nov 19 · 05:00 GMT"
     ],
     [
-     "NEW YORK",
-     "05:00 GMT",
-     "00:00 ET"
+     "LOS ANGELES",
+     "21:00 PT",
+     "Nov 18 · same moment"
     ],
     [
      "MEXICO CITY",

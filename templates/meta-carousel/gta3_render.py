@@ -30,6 +30,10 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 .hdr span{font-family:IT;font-weight:800;font-size:24px;letter-spacing:6px;color:#fff}
 .hdr b{font-family:IT;font-weight:800;font-size:24px;letter-spacing:6px;background:linear-gradient(90deg,#ffb15c,#ff4f8b);-webkit-background-clip:text;color:transparent}
 .plogo{position:absolute;right:170px;top:104px;width:84px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+.tbrand{position:absolute;left:56px;top:112px;display:flex;align-items:center;gap:16px}
+.tbrand b{font-family:BS;font-weight:900;font-size:96px;line-height:.9;color:#fff;letter-spacing:1px;text-shadow:0 10px 30px rgba(0,0,0,.55)}
+.tbrand span{font-family:IT;font-weight:800;font-size:17px;letter-spacing:4px;line-height:1.35;color:#fff;opacity:.85;padding:8px 14px;border-radius:24px;
+ background:rgba(14,6,24,.55);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18)}
 .glogo{position:absolute;left:56px;top:104px;height:150px;filter:drop-shadow(0 12px 30px rgba(0,0,0,.65))}
 .shot{position:absolute;left:0;width:1080px;background-size:100% 100%;
  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 9%,#000 82%,transparent 100%)}
@@ -110,9 +114,20 @@ V4CSS = '''
 .loc{position:absolute;left:44px;padding:10px 18px 10px 14px;border-radius:30px;background:rgba(10,4,18,.62);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);
  font-family:IT;font-weight:800;font-size:21px;letter-spacing:4px;color:#fff;display:flex;align-items:center;gap:10px}
 .loc i{width:10px;height:10px;border-radius:50%;background:#ff4f8b;box-shadow:0 0 0 5px rgba(255,79,139,.25)}
-.src{bottom:96px;left:72px}
-.prog{bottom:100px;right:72px}
+.src{bottom:134px;left:72px}
+.prog{bottom:138px;right:160px}
+.card{bottom:104px}
 .idx{z-index:3}
+.facts{left:58px;width:870px;gap:16px;align-items:stretch}
+.facts div{border:1px solid rgba(255,255,255,.14);border-image:none;border-radius:22px;padding:22px 22px 24px;position:relative;overflow:hidden;
+ background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.035));box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 14px 34px rgba(0,0,0,.35)}
+.facts div:before{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#ffb15c,#ff4f8b 60%,#b44cff)}
+.facts div{padding:18px 22px 20px}.facts strong{font-size:70px;margin-top:6px;background:linear-gradient(180deg,#fff 30%,#ffd9c2);-webkit-background-clip:text;color:transparent}
+.facts p{font-size:26px;margin-top:6px}
+.facts.f3{gap:12px;width:870px}.facts.f3 div{padding:16px 16px 18px}.facts.f3 small{font-size:17px;letter-spacing:2.5px}.facts.f3 strong{font-size:52px}.facts.f3 p{font-size:21px}
+.body{font-size:40px;line-height:1.34;width:860px}
+.cardline{position:absolute;left:72px;right:72px;bottom:168px;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.22),rgba(255,255,255,.04))}
+.disc{position:absolute;left:62px;bottom:136px;font-family:IT;font-weight:700;font-size:15px;letter-spacing:3px;line-height:1.5;width:520px;color:rgba(255,255,255,.6)}
 '''
 
 
@@ -120,7 +135,10 @@ def base(body, d, amb=None, cover=False, idx=None, total=None):
     prog = ''
     if idx is not None and total:
         prog = '<div class="prog">' + ''.join(f'<i class="{"on" if i == idx else ""}"></i>' for i in range(total)) + '</div>'
-    head = ('<img class="glogo" src="/_build/gta/logo_gta6.png">' + (f'<img class="rstar" style="left:{d["cover"].get("rstar_left", 236)}px" src="/_build/gta/logo_rstar.svg">' if d.get('cover', {}).get('rstar') else '') if cover else
+    # Cover brand (user 15.11.2026): ORIGINAL GTA VI logo stays ("Behalte das Original Logo bei") + "UNOFFICIAL FAN GUIDE" glass tile next to it.
+    brand = ('<div class="tbrand"><b>GTA 6</b><span>UNOFFICIAL<br>FAN GUIDE</span></div>' if d.get('brand', 'logo') == 'text'
+             else '<img class="glogo" src="/_build/gta/logo_gta6.png">' + f'<div class="tbrand" style="left:{d.get("cover", {}).get("rstar_left", 236) + 112 if d.get("cover", {}).get("rstar") else 236}px;top:140px"><span>UNOFFICIAL<br>FAN GUIDE</span></div>')
+    head = (brand + (f'<img class="rstar" style="left:{d["cover"].get("rstar_left", 236)}px" src="/_build/gta/logo_rstar.svg">' if d.get('cover', {}).get('rstar') and d.get('brand', 'logo') != 'text' else '') if cover else
             f'<div class="hdr"><i></i><span>GTA 6</span><b>{E(d.get("hdr", "TIPS & TRICKS"))}</b></div>')
     return ('<!doctype html><html><head><meta charset="utf-8"><style>' + CSS + (V4CSS if d.get('style', 'v4') == 'v4' else '') + '</style></head><body>'
             + (f'<div class="amb" style="background-image:url(/_build/gta/{amb})"></div>' if amb else '')
@@ -144,7 +162,7 @@ def cover(d):
                 + f'<div class="fg m" style="top:{ht}px;height:{hh}px;background-image:url(/_build/gta/{hero["fg"]})"></div>'
                 + f'<div class="neon fit" style="top:{c.get("neon_top", 960)}px" data-size="104" data-max="700">{E(c["neon"])}</div>'
                 + ''.join(f'<div class="body" style="top:{t}px">{x}</div>' for t, x in c.get('lines', []))
-                + f'<div class="swipe" style="top:1292px">{c.get("swipe", "SWIPE <b>›</b>")}</div>')
+                + f'<div class="swipe" style="top:1250px">{c.get("swipe", "SWIPE <b>›</b>")}</div>')
         return base(body, d, amb=c.get('amb'), cover=True)
     body = ((f'<div class="shot" style="top:0;height:608px;opacity:.6;background-image:url(/_build/gta/{c["bgshot"]})"></div>' if c.get('bgshot') else '')
             + f'<div class="sun" style="right:-90px;top:{c.get("sun_top", 420)}px;width:640px;height:640px"></div>'
@@ -155,7 +173,7 @@ def cover(d):
             + f'<div class="h fit" style="top:340px" data-size="{c.get("size", 176)}" data-max="960">{c["big"]}</div>'
             + f'<div class="neon fit" style="top:{c.get("neon_top", 515)}px" data-size="104" data-max="640">{E(c["neon"])}</div>'
             + (f'<div class="tcard" style="top:{c.get("times_top", 720)}px"><h4>{E(c.get("times_title", ""))}</h4>' + ''.join((f'<div style="justify-content:flex-start"><i class="ck">✓</i><span>{E(a)}</span></div>' if b == '✓' else f'<div><span>{E(a)}</span><b>{E(b)}</b></div>') for a, b in c['times']) + (f'<p>{E(c["times_note"])}</p>' if c.get('times_note') else '') + '</div>' if c.get('times') else '')
-            + f'<div class="swipe" style="top:1292px">{c.get("swipe", "SWIPE <b>›</b>")}</div>')
+            + f'<div class="swipe" style="top:1250px">{c.get("swipe", "SWIPE <b>›</b>")}</div>')
     return base(body, d, amb=c.get('amb'), cover=True)
 
 
@@ -169,12 +187,12 @@ def tip(s, d, i, total):
     y = top + h - 120
     facts = ''
     if s.get('facts'):
-        facts = '<div class="facts{1}" style="top:{0}px">'.format(y + 370, ' f3' if len(s['facts']) == 3 else '') + ''.join(f'<div><small>{E(a)}</small><strong>{E(b)}</strong><p>{E(c)}</p></div>' for a, b, c in s['facts']) + '</div>'
+        facts = '<div class="facts{1}" style="top:{0}px">'.format(y + (385 if d.get('style', 'v4') == 'v4' else 370), ' f3' if len(s['facts']) == 3 else '') + ''.join(f'<div><small>{E(a)}</small><strong>{E(b)}</strong><p>{E(c)}</p></div>' for a, b, c in s['facts']) + '</div>'
     ix = 'right:40px' if s.get('idx_right') else ''
     v4 = d.get('style', 'v4') == 'v4'  # v4 = standard since 11.11.2026 (user: "Neuer Standard"); "style": "v3" for the old look
     loc = s.get('loc') or LOC.get(s['shot'].replace('.jpg', ''))
     body = (f'<div class="shot" style="top:{top}px;height:{h}px;background-image:url(/_build/gta/{s["shot"]})"></div>'
-            + (f'<div class="card" style="top:{y + 140}px"></div>' if v4 else '')
+            + (f'<div class="card" style="top:{y + 140}px"></div><div class="cardline"></div>' if v4 else '')
             + (f'<div class="loc" style="top:{top + 34}px"><i></i>{E(loc)}</div>' if v4 and loc else '')
             + f'<div class="idx {"fill" if s.get("fill_idx", True) else ""}" style="top:{y - 40 + s.get("idx_dy", 0)}px;font-size:250px;{ix}{';left:auto' if ix else ''}">{i:02d}</div>'
             + (f'<div class="fg" style="top:{top}px;height:{h}px;background-image:url(/_build/gta/{s["pop"]})"></div>' if s.get('pop') else '')
@@ -205,7 +223,8 @@ def cta(d):
             + f'<div class="h fit" style="top:250px" data-size="150" data-max="960">{c["title"]}</div>'
             + f'<div class="neon fit" style="top:560px" data-size="96" data-max="560">{E(c["neon"])}</div>'
             + '<div class="save" style="top:780px"><small>YOUR GTA 6 CHEAT SHEET</small><strong>SAVE THIS</strong></div>'
-            + '<div class="fol" style="top:1040px">FOLLOW <em>@PLAYHQTV</em></div>')
+            + '<div class="fol" style="top:1040px">FOLLOW <em>@PLAYHQTV</em></div>'
+            + '<div class="disc">UNOFFICIAL FAN GUIDE<br>NOT AFFILIATED WITH ROCKSTAR GAMES</div>')
     return base(body, {**d, 'source': ''}, amb=c.get('amb'))
 
 
