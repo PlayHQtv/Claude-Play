@@ -108,7 +108,8 @@ def cutout_html(k):
     """Free-standing operator cut-out BEHIND the title (put it first in the body), bleeding off the right edge, fading out at the bottom."""
     return (f'<img src="/_build/s1/{k["img"]}" style="position:absolute;right:{k.get("right", 0)}px;top:{k["top"]}px;width:{k["w"]}px;'
             f'-webkit-mask-image:linear-gradient(180deg,#000 {k.get("fade", 62)}%,transparent 98%);'
-            'filter:drop-shadow(-22px 12px 30px rgba(0,0,0,.9)) brightness(1.04)">')
+            'filter:' + ('drop-shadow(0 0 2px rgba(255,214,120,.95)) drop-shadow(0 0 14px rgba(255,190,60,.45)) ' if k.get('rim') else '')
+            + f'drop-shadow(-22px 12px 30px rgba(0,0,0,.9)) brightness({k.get("bright", 1.04)})">')
 
 
 GAME_LOGO = '/_build/s1/logo_mw4.png'  # official MW4 wordmark, private (_build is git-ignored)

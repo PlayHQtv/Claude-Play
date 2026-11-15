@@ -122,6 +122,9 @@ def slide(s, d):
         body = head + f'<div class="stack" style="top:365px;gap:16px">{inner}</div>'
         if s.get('foot'):
             body += f'<div class="s1ft" style="top:1230px">{E(s["foot"])}</div>'
+    # MW4 cut-out against empty slides (user 15.11.2026): drawn first = behind all text/cards
+    if s.get('cutout'):
+        body = R.cutout_html(s['cutout']) + body
     return page(body, {**d, 'footer': ''})
 
 
@@ -172,6 +175,8 @@ def cta(d):
             + '<img src="/assets/logo.png" style="position:absolute;left:60px;top:900px;width:120px">'
             + '<div style="position:absolute;left:205px;top:912px;font-family:Anton;font-size:62px;line-height:1;letter-spacing:3px">FOLLOW <span style="background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent">@PLAYHQTV</span></div>'
             + f'<div style="position:absolute;left:207px;top:985px;font-weight:700;color:#cfcfcf;letter-spacing:6px;font-size:22px">{E(c["follow_sub"])}</div>')
+    if c.get('cutout'):  # behind everything (user 15.11.2026: MW4 cut-outs against empty slides)
+        body = R.cutout_html(c['cutout']) + body
     return page(body, {**d, 'footer': ''})
 
 
