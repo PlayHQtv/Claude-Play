@@ -495,5 +495,7 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - SEO unchanged: search term on cover title + header pill + caption line 1 + TikTok title + first comment.
 - Risk rules: official media only, no leaks/rumours, no story spoilers, money guides only legit (no glitches/duplication), source line on every slide.
 
-## MW4: cut-outs against empty slides (user 15.11.2026: "Bei den MW4 Posts kannst du Freistellungen eventuell einfügen damit es nicht ganz so leer aussieht")
-- When an MW4 slide has a large empty area (e.g. CTA, text-only slides, settings lists), add an official operator/weapon cut-out (cutout.py / BiRefNet) – placed outside the TikTok safe zones, never covering text, not the same operator as in the last 3 posts. Layouts stay as approved.
+## MW4: cut-outs ONLY on the LAST slide (CTA) for now (user 15.11.2026: "Die Freistellung nur auf der letzten Folie verwenden bisweilen")
+- Approved example 15.11.: data/example-mw4-cutouts.json, CTA = `cta.cutout {img:"cut_redeye.png", right:70, top:1000, w:520, fade:62, bright:1.25, rim:1}` (gold rim light, bottom area, left of the TikTok buttons).
+- Cover and inner slides: NO cut-outs until the user says otherwise (cover keeps its normal bleed/hero layout).
+- Never cover text, keep it out of the right-hand TikTok buttons, not the same operator as in the last 3 posts. Layouts stay as approved.
