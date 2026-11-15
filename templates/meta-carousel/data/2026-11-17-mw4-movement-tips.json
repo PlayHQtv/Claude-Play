@@ -1,0 +1,97 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MOVEMENT",
+ "cover": {
+  "bleed": "mv_004.jpg",
+  "bleed_top": 610,
+  "kicker": "NO OMNIMOVEMENT? USE THESE",
+  "big": "MW4 MOVEMENT",
+  "small": "TIPS",
+  "stamp": "8 NEW MOVES EXPLAINED",
+  "swipe": "SWIPE FOR ALL 8 ›"
+ },
+ "slides": [
+  {
+   "sec": "MOVEMENT 1/4 · MANTLING",
+   "title": "MANTLE TECH",
+   "hero": "mv_011.jpg",
+   "rules": [
+    [
+     "MANTLE SLIDE",
+     "Press slide while you mantle: over a car hood or low cover straight into a slide, gun up."
+    ],
+    [
+     "MANTLE MOMENTUM",
+     "Your forward speed carries over the obstacle. No hard stop."
+    ],
+    [
+     "MANTLE STEERING",
+     "Steer left or right, aim down sights or abort mid-mantle."
+    ]
+   ]
+  },
+  {
+   "sec": "MOVEMENT 2/4 · SLIDES + PIPES",
+   "title": "SLIDE TECH",
+   "hero": "mv_010.jpg",
+   "rules": [
+    [
+     "SUPINE SLIDE",
+     "Double-tap crouch while sprinting: a longer, lower slide that ends on your back, gun forward."
+    ],
+    [
+     "PIPE CLIMB + SLIDE",
+     "Climb up or down pipes on buildings. Hold crouch as you slide into a vertical pipe for a fast drop."
+    ]
+   ]
+  },
+  {
+   "sec": "MOVEMENT 3/4 · LEDGES",
+   "title": "LEDGE TECH",
+   "hero": "mv_016.jpg",
+   "rules": [
+    [
+     "HANG SHIMMY",
+     "Move left or right while hanging from a ledge, then climb, drop or shoot."
+    ],
+    [
+     "HANG LEAN",
+     "Aim while hanging: lean and rotate a full 360 degrees."
+    ],
+    [
+     "CLIMBING JUMP",
+     "Jump in any direction from ledges, ladders and pipes."
+    ]
+   ]
+  },
+  {
+   "sec": "MOVEMENT 4/4 · PROVING GROUNDS",
+   "title": "MOBILITY COURSE",
+   "hero": "mv_012.jpg",
+   "rules": [
+    [
+     "CHAIN IT",
+     "Sprint, slide, mantle, climb and prone all chain together. Keep your momentum."
+    ],
+    [
+     "TUTORIAL FIRST",
+     "Every course starts with a tutorial that teaches the moves step by step."
+    ],
+    [
+     "CLEAN BEATS FAST",
+     "A smooth route beats a fast run full of missed moves. Fix one section at a time."
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHICH MOVE",
+  "gold": "DO YOU USE MOST?",
+  "sub": "MANTLE SLIDE · SUPINE SLIDE · HANG LEAN",
+  "save_kicker": "MW4 MOVEMENT CHEAT SHEET",
+  "follow_sub": "DAILY MW4 + GTA 6 TIPS"
+ },
+ "source": "callofduty.com blog 'Modern Warfare 4 Multiplayer: Movement, Gunplay, Modes & Maps' (21.08.2026) + Open Beta guide (Mobility Course tips) + callofduty.com/modernwarfare4/multiplayer; Xbox Wire 21.08. (mantle slide = press slide during a mantle); IGN MW4 tips (omnimovement removed, Supine Slide); tourneytimenetwork 09.11. (no omnimovement in MW4 + Warzone) | images: official MW4 screenshots from the callofduty.com MP deep-dive blog (21.08.2026)",
+ "notes": "CSI term 'mw4 movement' 571K +121% (14.11.). Dup check: no movement post before; settings post 11.11. only had movement SETTINGS (mantle assist, tac sprint behavior) - this post has no settings rows and no Tac Sprint/Blood Rush. Hook format = tips/explainer. Scheduled Tue 17.11. 12:00.",
+ "verified": "independent verifier 15.11.2026: facts PASS; fixes applied (8 moves count: pipe rows merged, Proving Grounds)"
+}

@@ -1,0 +1,180 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "PATCH",
+ "cover": {
+  "kicker": "NEW · MULTIPLAYER UPDATE",
+  "big": "MW4 BUFFS",
+  "small": "NOV 13 PATCH",
+  "sub": "AR + SMG RANGE UP · LESS FLINCH",
+  "gun": "mw4/w_Cronen_Squall.png",
+  "rows": [
+   [
+    "M4",
+    "MAX DAMAGE RANGE +26%"
+   ],
+   [
+    "FLINCH",
+    "ARS TAKE 25.4% LESS"
+   ],
+   [
+    "WZ.55 STRIGA",
+    "MID RANGE +34%"
+   ],
+   [
+    "SMOKE",
+    "NO AIM ASSIST THROUGH IT"
+   ]
+  ],
+  "swipe": "SWIPE FOR EVERY BUFF ›"
+ },
+ "slides": [
+  {
+   "sec": "NOV 13 · ASSAULT RIFLES",
+   "title": "AR BUFFS",
+   "foot": "ALSO: HAN 86 MAX RANGE +5% · AXION MID RANGE +4%",
+   "settings": [
+    [
+     "M4",
+     "+26%",
+     "Max damage range 27.94 → 35.31 m"
+    ],
+    [
+     "ODEN",
+     "+17%",
+     "Mid damage range 50.04 → 58.42 m"
+    ],
+    [
+     "CRONEN SQUALL",
+     "+16%",
+     "Mid damage range 37.34 → 43.18 m (max +6%)"
+    ],
+    [
+     "HYEON BURST",
+     "+7% / +6%",
+     "Max + mid range, neck + upper torso 1.1 → 1.13x"
+    ],
+    [
+     "PATRIOT XMR",
+     "MIN 22 → 24",
+     "Mid damage step removed, max range +6%"
+    ],
+    [
+     "KASTOV 762",
+     "+8% / +5%",
+     "Max + mid damage range"
+    ]
+   ]
+  },
+  {
+   "sec": "NOV 13 · SMGS",
+   "title": "SMG BUFFS",
+   "foot": "NO MAX DAMAGE CHANGE ON ANY AR OR SMG",
+   "settings": [
+    [
+     "WZ.55 STRIGA",
+     "+22% / +34%",
+     "Max + mid damage range"
+    ],
+    [
+     "PPSH-41",
+     "+24%",
+     "Max range 10.8 → 13.34 m, last drop-off removed"
+    ],
+    [
+     "ISO NIGHTSHADE",
+     "MIN 14 → 16",
+     "Max range +7%, mid +12%, last drop-off removed"
+    ],
+    [
+     "CSG-35",
+     "MIN 13 → 14",
+     "Last damage drop-off removed"
+    ],
+    [
+     "X-58 NYX",
+     "+11% / +8%",
+     "Max + mid damage range"
+    ]
+   ]
+  },
+  {
+   "sec": "NOV 13 · FLINCH + SMOKE",
+   "title": "LESS FLINCH",
+   "foot": "LAUNCHERS NOW RECEIVE FLINCH TOO",
+   "settings": [
+    [
+     "ASSAULT RIFLES",
+     "-25.4%",
+     "Flinch received (Hyeon Burst: -5.6%)"
+    ],
+    [
+     "LMGS",
+     "-19.3%",
+     "Flinch received"
+    ],
+    [
+     "PISTOLS",
+     "-17.8%",
+     "Flinch received"
+    ],
+    [
+     "SMGS",
+     "-15.6%",
+     "Flinch received"
+    ],
+    [
+     "ORIS 8.6",
+     "+9.6%",
+     "Flinch received goes UP"
+    ],
+    [
+     "SMOKE",
+     "AIM ASSIST OFF",
+     "When you shoot through Smoke Grenades + Smoke Wall"
+    ]
+   ]
+  },
+  {
+   "sec": "NOV 13 · MARKSMAN · SHOTGUNS · DMZ",
+   "title": "MORE CHANGES",
+   "foot": "SOURCE: CALLOFDUTY.COM MW4 PATCH NOTES (NOV 13)",
+   "settings": [
+    [
+     "MOSIN-NAGANT",
+     "REWORKED",
+     "Max damage 93 → 95, range 40.13 → 14.99 m"
+    ],
+    [
+     "MAR-9",
+     "+8%",
+     "Max damage range, flinch received -20.7%"
+    ],
+    [
+     "REZI 12",
+     "+13% / +12%",
+     "Mid damage ranges 1 + 2"
+    ],
+    [
+     "WAGER MATCH",
+     "MORE TROPHIES",
+     "Higher drop rates in all MP modes + DMZ"
+    ],
+    [
+     "DMZ TTK",
+     "IN TESTING",
+     "Infinity Ward is playtesting TTK changes"
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHICH BUFF",
+  "gold": "HITS HARDEST?",
+  "sub": "M4 · STRIGA · ODEN · PPSH-41",
+  "save_kicker": "MW4 NOV 13 UPDATE CHEAT SHEET",
+  "follow_sub": "DAILY MW4 + GTA 6 UPDATES"
+ },
+ "source": "callofduty.com MW4 Season 1 patch notes, November 13, 2026 entry (Infinity Ward); 2nd sources: timesaver.gg (14.11.), codskins.co.uk (14.11.), hdopti.com (14.11.)",
+ "notes": "MEDIUM news (weapon balance pass). Dup check: 14.11. 18:00 post covered Nov 10+11 hitscan/ballistics + DMZ X01 changes, NOT the Nov 13 weapon tuning; no other post on this update. Hook = NEW Nov 13 update. Scheduled Mon 16.11. 18:00 (hook slot, Hyeon build moved to 17.11. 18:00 per growth rule 1).",
+ "verified": "independent verifier 15.11.2026: numbers PASS; fixes applied (marksman label, SMG drop-off row, flinch sec, cover gun/headline)"
+}
