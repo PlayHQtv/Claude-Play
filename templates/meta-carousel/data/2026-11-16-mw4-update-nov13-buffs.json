@@ -63,7 +63,8 @@
      "+8% / +5%",
      "Max + mid damage range"
     ]
-   ]
+   ],
+   "bars": true
   },
   {
    "sec": "NOV 13 · SMGS",
@@ -95,7 +96,8 @@
      "+11% / +8%",
      "Max + mid damage range"
     ]
-   ]
+   ],
+   "bars": true
   },
   {
    "sec": "NOV 13 · FLINCH + SMOKE",
@@ -132,7 +134,8 @@
      "AIM ASSIST OFF",
      "When you shoot through Smoke Grenades + Smoke Wall"
     ]
-   ]
+   ],
+   "bars": "lower"
   },
   {
    "sec": "NOV 13 · MARKSMAN · SHOTGUNS · DMZ",

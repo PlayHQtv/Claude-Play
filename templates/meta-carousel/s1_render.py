@@ -1,6 +1,6 @@
 """PlayHQ season/news carousel (design v3 HUD, image cards like streak_render).
 Usage: python3 s1_render.py data/<file>.json [out_dir]. Images are read from _build/s1/ (private, never committed)."""
-import json, os, sys
+import json, os, re, sys
 import render as R
 import streak_render as S
 
@@ -99,8 +99,47 @@ def card(c, cm=False):
             f'<p>{E(c["desc"])}</p></div></div>')
 
 
-def settings(rs):
-    return ''.join(f'<div class="pc hud st"><div class="l"><b>{E(r[0])}</b>' + (f'<p>{E(r[2])}</p>' if len(r) > 2 and r[2] else '')
+def _pct(v):
+    m = re.match(r'\s*([+-]?\d+(?:\.\d+)?)%', v)
+    return float(m.group(1)) if m else None
+
+
+def statbar(v, top, lower_better=False):
+    """Flat before/after bar (user 16.11.2026): grey = old value (100 %), gold = change that helps the player,
+    red = change that hurts the player, dashed = the part that was removed. bars: true (higher is better) or "lower" (e.g. flinch)."""
+    p = _pct(v)
+    if p is None:
+        return ''
+    W = lambda x: f'{x / top * 100:.1f}%'
+    gold = 'linear-gradient(90deg,var(--g1),var(--g2))'
+    good = (p < 0) if lower_better else (p > 0)
+    col = gold if good else 'linear-gradient(90deg,#ff5a4a,#ff8a6a)'
+    if p >= 0:
+        seg = f'<i style="width:{W(100)};background:rgba(255,255,255,.28)"></i><i style="width:{W(p)};background:{col}"></i>'
+    else:
+        seg = (f'<i style="width:{W(100 + p)};background:rgba(255,255,255,.28)"></i>'
+               f'<i style="width:{W(-p)};background:repeating-linear-gradient(90deg,{"var(--g2)" if good else "#ff5a4a"} 0 6px,transparent 6px 11px)"></i>')
+    return f'<div class="sbar" style="display:flex;height:8px;margin-top:7px;width:460px;border-radius:4px;overflow:hidden;background:rgba(255,255,255,.06)">{seg}</div>'
+
+
+_WDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'weapons', 'mw4')
+
+
+def gun_icon(name):
+    """Small weapon render next to the name (user 16.11.2026: "fügst du die Waffen in klein jeweils mit ein").
+    Matched by normalised name against weapons/mw4/w_*.png; rows without a weapon (classes, modes) get none."""
+    key = re.sub(r'[^a-z0-9]', '', name.lower())
+    for f in sorted(os.listdir(_WDIR)) if os.path.isdir(_WDIR) else []:
+        if f.startswith('w_') and re.sub(r'[^a-z0-9]', '', f[2:-4].lower()) == key:
+            return (f'<img src="/weapons/mw4/{f}" style="height:40px;max-width:170px;object-fit:contain;margin-left:20px;vertical-align:middle;'
+                    'filter:drop-shadow(0 0 1px rgba(255,226,150,.95)) drop-shadow(0 0 3px rgba(255,196,64,.45)) brightness(1.2)">')
+    return ''
+
+
+def settings(rs, bars=False):
+    top = 100 + max([p for r in rs for p in [_pct(r[1])] if p and p > 0] or [0]) if bars else 0
+    return ''.join(f'<div class="pc hud st"><div class="l"><b style="display:flex;align-items:center">{E(r[0])}{gun_icon(r[0]) if bars else ""}</b>' + (f'<p>{E(r[2])}</p>' if len(r) > 2 and r[2] else '')
+                   + (statbar(r[1], top, bars == 'lower') if bars else '')
                    + f'</div><div class="v">{E(r[1])}</div></div>' for r in rs)
 
 
@@ -118,8 +157,8 @@ def slide(s, d):
         hw = s.get('hero_w', 885); hh, h = hero(s['hero'], 365, s.get('hero_max', 470), maxw=hw, left=(1080 - hw) // 2 if hw > 885 else 50)
         body = head + hh + f'<div class="stack" style="top:{365 + h + 22}px;gap:10px">{rules(s["rules"])}</div>'
     else:
-        inner = ''.join(card(c, len(s.get('cards', [])) >= 5) for c in s.get('cards', [])) + (rules(s['rules']) if s.get('rules') else '') + (settings(s['settings']) if s.get('settings') else '')
-        body = head + f'<div class="stack" style="top:365px;gap:16px">{inner}</div>'
+        inner = ''.join(card(c, len(s.get('cards', [])) >= 5) for c in s.get('cards', [])) + (rules(s['rules']) if s.get('rules') else '') + (settings(s['settings'], s.get('bars')) if s.get('settings') else '')
+        body = head + f'<div class="stack" style="top:365px;gap:{10 if s.get("bars") else 16}px">{inner}</div>'
         if s.get('foot'):
             body += f'<div class="s1ft" style="top:1230px">{E(s["foot"])}</div>'
     # MW4 cut-out against empty slides (user 15.11.2026): drawn first = behind all text/cards

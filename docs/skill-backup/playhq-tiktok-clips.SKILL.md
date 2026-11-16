@@ -499,3 +499,8 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - Approved example 15.11.: data/example-mw4-cutouts.json, CTA = `cta.cutout {img:"cut_redeye.png", right:70, top:1000, w:520, fade:62, bright:1.25, rim:1}` (gold rim light, bottom area, left of the TikTok buttons).
 - Cover and inner slides: NO cut-outs until the user says otherwise (cover keeps its normal bleed/hero layout).
 - Never cover text, keep it out of the right-hand TikTok buttons, not the same operator as in the last 3 posts. Layouts stay as approved.
+
+## CHANGE BARS for improvements (user 16.11.2026: "Übernehme das für die Zukunft bei Verbesserungen damit es schnell klar ersichtlich ist" + "fügst du die Waffen in klein jeweils mit ein")
+- Every patch / buff / nerf / update carousel with % values (s1_render.py "settings" rows): set `"bars": true` on the slide (higher = better, e.g. damage range) or `"bars": "lower"` (lower = better, e.g. flinch, recoil). Example: data/2026-11-16-mw4-update-nov13-buffs.json.
+- Flat bar under each row (no 3D): grey = old value, gold = change that helps the player, red = change that hurts, dashed = removed part. Same scale on one slide. Rows without a % (e.g. "MIN 22 → 24") get no bar; with two values ("+22% / +34%") the bar shows the first one.
+- With bars on, every row with a weapon gets its small official weapon render (gold edge glow) next to the name, auto-matched from weapons/mw4/w_*.png. Missing weapon render -> add it via the encrypted grab first (official image only); class/mode rows stay without an icon.
