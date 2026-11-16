@@ -1,0 +1,103 @@
+{
+ "hdr": "MAP",
+ "source": "Source: rockstargames.com/VI (Only in Leonida)",
+ "notes": "Autopilot 16.11. for Wed 18.11. 12:00 (pre-launch, NZ unlock hour). Tier 1: Rockstar 'Only in Leonida' page, six destinations with official headlines (Everything in Excess / Gateway to Paradise / Welcome to the Wetlands / Live Hard / Keeping Leonida Sweet / Wild, Wild Country) – quotes cross-checked via gta6-life.com, siikk.com, gamingroute.com, GamesRadar, Game Informer. No map size/claims, no spoilers. Dup check: no earlier map/region post (GTA posts 10./11./14./15.11., 18.11. release time, 19.11. out now with printable-map line; Oct 3 clip 'New GTA 6 City Location Revealed' = trailer clip, not a region guide).",
+ "cover": {
+  "amb": "g_mk03_amb.jpg",
+  "kicker": "OFFICIAL · ALL 6 REGIONS",
+  "big": "GTA 6 <em>MAP</em>",
+  "size": 190,
+  "neon": "before tonight",
+  "neon_top": 655,
+  "panels": [],
+  "sun_top": 520,
+  "swipe": "SWIPE FOR ALL 6 <b>›</b>",
+  "bgshot": "g_mk03.jpg",
+  "rstar": true,
+  "rstar_left": 268,
+  "cutout": {
+   "img": "cut_suit.png",
+   "right": -150,
+   "top": 720,
+   "h": 700
+  },
+  "times_title": "LEONIDA · OFFICIAL REGIONS",
+  "times_top": 790,
+  "times": [
+   [
+    "VICE CITY",
+    "01"
+   ],
+   [
+    "LEONIDA KEYS",
+    "02"
+   ],
+   [
+    "GRASSRIVERS",
+    "03"
+   ],
+   [
+    "PORT GELLHORN",
+    "04"
+   ],
+   [
+    "AMBROSIA",
+    "05"
+   ],
+   [
+    "MOUNT KALAGA",
+    "06"
+   ]
+  ],
+  "times_note": "named by Rockstar"
+ },
+ "tips": [
+  {
+   "shot": "g_vc06.jpg",
+   "kicker": "ROCKSTAR: EVERYTHING IN EXCESS",
+   "title": "<em>VICE CITY</em>",
+   "body": "“The glamour, hustle, and greed of America” in one city: <b>Ocean Beach</b>, <b>Little Cuba</b> + <span class=\"hl\">VC Port</span>."
+  },
+  {
+   "shot": "g_lk07.jpg",
+   "kicker": "ROCKSTAR: GATEWAY TO PARADISE",
+   "title": "LEONIDA <em>KEYS</em>",
+   "body": "Tropical islands where “the dress code is casual, the bars are loaded”, next to some of the most <span class=\"hl\">dangerous waters</span> in America."
+  },
+  {
+   "shot": "g_gr07.jpg",
+   "kicker": "ROCKSTAR: WELCOME TO THE WETLANDS",
+   "title": "<em>GRASS</em>RIVERS",
+   "body": "The <b>gators</b> are the famous attraction, but the mangroves hide “<span class=\"hl\">far deadlier predators</span>”."
+  },
+  {
+   "shot": "g_pg02.jpg",
+   "kicker": "ROCKSTAR: LIVE HARD",
+   "title": "PORT <em>GELLHORN</em>",
+   "body": "“Leonida's forgotten coast”: <b>cheap motels</b>, shut-down attractions and <span class=\"hl\">empty strip malls</span>."
+  },
+  {
+   "shot": "g_am03.jpg",
+   "kicker": "ROCKSTAR: KEEPING LEONIDA SWEET",
+   "title": "<em>AMBROSIA</em>",
+   "body": "The <b>Allied Crystal</b> sugar refinery provides the jobs, the <span class=\"hl\">local biker gang</span> almost everything else."
+  },
+  {
+   "shot": "g_kalaga.jpg",
+   "kicker": "ROCKSTAR: WILD, WILD COUNTRY",
+   "title": "MOUNT <em>KALAGA</em>",
+   "body": "National park on the state's <b>northern border</b>: <span class=\"hl\">hunting, fishing + off-road trails</span>."
+  }
+ ],
+ "cta": {
+  "amb": "g_pg02_amb.jpg",
+  "title": "WHICH REGION<br><em>IS YOUR VIBE?</em>",
+  "neon": "comment 1–6",
+  "cutout": {
+   "img": "cut_jeep.png",
+   "right": -260,
+   "top": 700,
+   "h": 760
+  }
+ }
+}
