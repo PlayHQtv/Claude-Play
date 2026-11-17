@@ -511,3 +511,9 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - Contrast check ignores the gradient box of background-clip:text (gold @PLAYHQTV / gold titles were false "low contrast").
 - Grunge-cut check runs on the clean render (the gold gradient's dark band made false "mask cuts letter" warnings).
 - Goal: 0 warnings. Any remaining warning is now a REAL problem -> fix it, never ignore it.
+
+## SEARCH FIRST (user 17.11.2026 after the view drop: "Warum brechen unsere Clickzahlen so stark ein" -> "Ja")
+- Data 02.–16.11.: build/search posts 1.2k–10.8k views with 84–97% from TikTok search; news/info carousels (patch notes, camos, rewards, SBMM, DMZ map, GTA 60 FPS) only 370–660 views (search 18–48%). Exception: one huge news (Season 1 launch 19.5k).
+- BOTH daily slots = search topics (CSI terms in docs/trends/, newest file first; weapon builds, settings, "best X", rankings). News carousels only for BIG official news (new season, launch, delay) – medium news goes into a search post as one slide or is skipped.
+- GTA from launch: only searched topics (fastest cars, legit money, map locations, settings PS5/Xbox, best weapons, editions/prices). No pure news carousels.
+- Every report names the search term + its CSI volume for each slot.
