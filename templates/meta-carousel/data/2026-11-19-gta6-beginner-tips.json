@@ -4,7 +4,7 @@
  "source": "Source: Rockstar North (Rob Nelson) via IGN, Edge, Eurogamer previews",
  "notes": "Autopilot 17.11. for Thu 19.11. 18:00 Berlin (= 12:00 ET), GTA 6 TIP #1. Built pre-launch from Rockstar statements in previews (no post-unlock guides exist yet) -> the 18.11. evening launch check may swap in post-unlock tips. Facts: (1) police description = outfit, vehicle, seen as a couple; change car/outfit or split up (Eurogamer 28.08. + IGN preview/Nelson interview; GameSpot: crimes shown as icons under the stars). (2) some parked cars locked until you get tools later in the story, you can always carjack a driver (Nelson to IGN 27.08.; Guardian via Vice 14.11.; GameSpot). (3) WAINK phone app scans a parked car: locked, alarm, tracker (Nelson to IGN 27.08.; Edge issue 430 via GTA Boom 30.10.). (4) cars + motorbikes have a fuel gauge, refuel at gas stations, EVs recharge (Edge via GTA Boom; GTABase previews roundup; GameSpot 23.10.). (5) 'All your weapons that you've purchased will always be available in the back of your personal vehicle' (Nelson to IGN 07.10.) + Scooter Bros app delivers your car (Edge via GTA Boom; GTABase; Vice). Carry-limit numbers deliberately NOT used (sources disagree). No spoilers, no glitches. Dup check vs all 56 posts since 10.10.: no GTA mechanics/tips post before; out-now 19.11. 00:00 = GTA+/map/DualSense/album/server (no overlap). | Verifier 17.11.: FAIL->fixed: \"Every vehicle\" -> \"Cars and motorbikes\" (GTABase); Scooter Bros fee removed (only Edge). Rest PASS.",
  "cover": {
-  "amb": "g_jl15_amb.jpg",
+  "amb": "g_usafehouse_amb.jpg",
   "kicker": "GTA 6 TIP #1 · DAY ONE",
   "big": "GTA 6 <em>BEGINNER</em><br>TIPS",
   "size": 168,
@@ -13,7 +13,7 @@
   "panels": [],
   "sun_top": 520,
   "swipe": "SWIPE FOR ALL 5 <b>›</b>",
-  "bgshot": "g_jl15.jpg",
+  "bgshot": "g_usafehouse.jpg",
   "rstar": true,
   "rstar_left": 268,
   "cutout": {
@@ -53,7 +53,8 @@
    "shot": "g_jl15.jpg",
    "kicker": "NEW WANTED SYSTEM",
    "title": "COPS KNOW <em>YOUR LOOK</em>",
-   "body": "Police track your <b>outfit</b>, your <b>car</b> and if you were seen <b>as a couple</b>. Swap cars, change clothes or <span class=\"hl\">split up</span> to lose them."
+   "body": "Police track your <b>outfit</b>, your <b>car</b> and if you were seen <b>as a couple</b>. Swap cars, change clothes or <span class=\"hl\">split up</span> to lose them.",
+   "idx_right": true
   },
   {
    "shot": "g_vc24.jpg",
