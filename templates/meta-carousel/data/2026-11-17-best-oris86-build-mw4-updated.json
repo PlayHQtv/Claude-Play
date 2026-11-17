@@ -1,0 +1,54 @@
+{
+  "game": "CALL OF DUTY · MW4",
+  "badge": "MULTIPLAYER",
+  "rank_label": "BUILD",
+  "cover": {
+    "kicker": "UPDATED · NOV 13 PATCH",
+    "big": "BEST ORIS 8.6",
+    "small": "BUILD MW4",
+    "sub": "AFTER THE +9.6% FLINCH NERF",
+    "swipe": "SWIPE FOR THE BUILDS ›",
+    "image": "mw4/w_Oris_86.png"
+  },
+  "cta": {
+    "white": "WHICH BUILD",
+    "gold": "DO YOU RUN?",
+    "sub": "DROP THE NUMBER IN THE COMMENTS",
+    "follow_sub": "FOR DAILY MW4 META",
+    "cutout": {"img": "cut_sniper.png", "right": 71, "top": 1010, "w": 420, "fade": 75, "bright": 1.25, "rim": 1}
+  },
+  "weapons": [
+    {"rank": 1, "image": "mw4/w_Oris_86.png", "short": "ANTI-FLINCH", "title_white": "ORIS 8.6", "title_gold": "",
+     "class": "Marksman Rifle", "class_note": "Versatile build", "tagline": "3 ATTACHMENTS CUT FLINCH", "brightness": 1.2,
+     "build_code": "M01-26EUU-DTKKN-11",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "EXP UNDERTOW GEN. 2"},
+       {"type": "optic", "label": "OPTIC", "name": "CRONEN R808"},
+       {"type": "stock", "label": "STOCK", "name": "SA DYNAMO-90 STOCK"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "BRUEN R7-TC GRIP"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS TAC90 GRIP"}],
+     "sources": "codmunity MP #1 Versatile (stats last updated 13/11/2026), code M01-26EUU-DTKKN-11, weapon level 66. Flinch received per codmunity attachment table: SA Dynamo-90 -10%, Bruen R7-TC -55%, FSS Tac90 -15%"},
+    {"rank": 2, "image": "mw4/w_Oris_86.png", "short": "QUICKSCOPE", "title_white": "ORIS 8.6", "title_gold": "",
+     "class": "Marksman Rifle", "class_note": "Close range build", "tagline": "FAST ADS FOR CLOSE QUICKSCOPES", "brightness": 1.2,
+     "build_code": "M01-26HGM-CYYT3-11",
+     "attachments": [
+       {"type": "barrel", "label": "BARREL", "name": "EXP SHADOW-70 14\""},
+       {"type": "laser", "label": "LASER", "name": "SCHLAGER VISIV-5"},
+       {"type": "optic", "label": "OPTIC", "name": "CRONEN R808"},
+       {"type": "stock", "label": "STOCK", "name": "NO STOCK"},
+       {"type": "underbarrel", "label": "UNDERBARREL", "name": "FSS TAC90 GRIP"}],
+     "sources": "codmunity MP #2 Close Range, code M01-26HGM-CYYT3-11, weapon level 55"},
+    {"rank": 3, "image": "mw4/w_Oris_86.png", "short": "APEX", "title_white": "ORIS 8.6", "title_gold": "",
+     "class": "Marksman Rifle", "class_note": "Apex build", "tagline": "RAZOR ADDS 3 THROWING KNIVES", "brightness": 1.2,
+     "build_code": "M01-26Q8X-K8WZY-11", "apex": "ORIS 8.6 RAZOR",
+     "attachments": [
+       {"type": "muzzle", "label": "MUZZLE", "name": "EXP UNDERTOW GEN. 2"},
+       {"type": "laser", "label": "LASER", "name": "FJX EVR7"},
+       {"type": "optic", "label": "OPTIC", "name": "CRONEN R808"},
+       {"type": "stock", "label": "STOCK", "name": "SA DYNAMO-90 STOCK"},
+       {"type": "reargrip", "label": "REAR GRIP", "name": "BRUEN R7-TC GRIP"}],
+     "sources": "codmunity MP #3 Apex Attachment, code M01-26Q8X-K8WZY-11, weapon level 70; Razor = 3 throwing knives (codmunity)"}
+  ],
+  "source": "codmunity.gg/weapon/mw4/oris-8-6 (MP builds, stats last updated 13/11/2026, fetched 17.11.2026); Nov 13 patch: Oris 8.6 flinch received +9.6% (official notes via gamerfuzion, hardcoresnd, codloadout)",
+  "notes": "UPDATED version of the 04.11. Oris post (user CSI 17.11.: oris build mw4 815K +44.9%). All 3 builds differ from 04.11. (new codes)."
+}
