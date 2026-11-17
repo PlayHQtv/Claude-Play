@@ -22,7 +22,8 @@ JS = r"""() => {
   const rg = document.createRange(); const tops = new Set(); let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
   for (const n of e.childNodes) if (n.nodeType === 3 && n.textContent.trim()) { rg.selectNodeContents(n); for (const q of rg.getClientRects()) { tops.add(Math.round(q.top)); x0=Math.min(x0,q.left); y0=Math.min(y0,q.top); x1=Math.max(x1,q.right); y1=Math.max(y1,q.bottom); } }
   if (x1 < 0) continue;
-  out.text.push({t: own, lines: tops.size, x0, y0, x1, y1, gr: !!e.closest('.gr'), glow: !!e.closest('.neon'), hidden: getComputedStyle(e).visibility === 'hidden'});
+  const fr = (() => { const r2 = document.createRange(); r2.selectNodeContents(e); return r2.getBoundingClientRect(); })();
+  out.text.push({t: own, full: e.innerText || own, fx0: fr.left, fy0: fr.top, fx1: fr.right, fy1: fr.bottom, lines: tops.size, x0, y0, x1, y1, gr: !!e.closest('.gr'), glow: !!e.closest('.neon'), hidden: getComputedStyle(e).visibility === 'hidden'});
   if (e.scrollWidth > e.clientWidth + 2 && getComputedStyle(e).overflow !== 'visible') out.issues.push('clipped text: ' + own.slice(0, 40));
  }
  return out;
@@ -120,13 +121,35 @@ def check(out_dir):
               return out; })""")
             pg3.goto(f'http://127.0.0.1:{port}/_build/{nm}.html'); pg3.wait_for_selector('body[data-ready]'); pg3.wait_for_timeout(300)
             shot = lambda: _I.open(io.BytesIO(pg3.screenshot())).convert('L')
-            a = shot(); pg3.add_style_tag(content='.gr{-webkit-mask-image:none!important}'); pg3.wait_for_timeout(100); bimg = shot()
+            rgb3 = _I.open(io.BytesIO(pg3.screenshot())).convert('RGB')  # 3x render WITH text (for the glyph-mask OCR)
+            a = rgb3.convert('L'); pg3.add_style_tag(content='.gr{-webkit-mask-image:none!important}'); pg3.wait_for_timeout(100); bimg = shot()
             # legibility: same page with every glyph invisible -> what is really behind the text
             pg3.add_style_tag(content='body *:not(.idx){color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important}.h em,.big,.fol em,.hdr b,.body .hl,.facts strong{background:none!important}')
-            pg3.wait_for_timeout(150); notext = _I.open(io.BytesIO(pg3.screenshot())).convert('RGB').resize((1080, 1440))
+            # gradient text (background-clip:text) keeps its gradient box when the glyphs go transparent -> drop it too
+            pg3.evaluate("() => document.querySelectorAll('body *').forEach(e => { const cs = getComputedStyle(e); if ((cs.webkitBackgroundClip || cs.backgroundClip) === 'text') e.style.setProperty('background', 'none', 'important'); })")
+            pg3.wait_for_timeout(150); notext3 = _I.open(io.BytesIO(pg3.screenshot())).convert('RGB'); notext = notext3.resize((1080, 1440))
             withtext = _I.open(f).convert('RGB')
             legib(nm, d['text'], withtext, notext, warns)
             faces(nm, d['text'], notext, warns)
+            # OCR read-back, element by element (crop of the rendered slide -> Tesseract single-line mode)
+            from PIL import ImageFilter, ImageOps
+            # Glyph mask = pixels that change when the text is made invisible (3x render with text vs. without text).
+            # That isolates the real rendered letters from photos, gradients and HUD textures, so Tesseract reads the
+            # glyphs themselves (gradient/gold/grunge titles were false 'OCR reads ...' warnings before, user 17.11.2026).
+            import numpy as _np
+            # Clean glyph render: same page, every photo/texture/gradient/shadow/glow removed, all text pure black on white.
+            # Fonts, sizes, line breaks, clipping and grunge masks stay exactly as rendered.
+            pg3.add_style_tag(content='html body *:not(.zzqa){color:#000!important;-webkit-text-fill-color:#000!important;text-shadow:none!important;'
+                              'background:none!important;box-shadow:none!important;filter:none!important;border-color:transparent!important;opacity:1!important}'
+                              'html body{background:#fff!important}html body img,html body video,html body svg{visibility:hidden!important}'
+                              'html body *::before,html body *::after{display:none!important}')
+            pg3.wait_for_timeout(150)
+            clean = _np.asarray(_I.open(io.BytesIO(pg3.screenshot())).convert('L'))
+            # grunge cut check on the clean render (black glyphs on white): with mask vs. without mask. The gold gradient's
+            # dark band made the old colour-based check report cuts that are not there (user 17.11.2026).
+            pg3.add_style_tag(content='html body .gr{-webkit-mask-image:none!important}'); pg3.wait_for_timeout(100)
+            clean_nomask = _I.open(io.BytesIO(pg3.screenshot())).convert('L')
+            a = _I.fromarray(255 - clean); bimg = clean_nomask.point(lambda v: 255 - v)
             for grp in chars or []:
                 for ch, x, y, w, h in grp or []:
                     box = (int(3 * x) + 3, int(3 * (y + h * 0.15)), int(3 * (x + w)) - 3, int(3 * (y + h * 0.88)))
@@ -142,23 +165,44 @@ def check(out_dir):
                         msg = f'{nm}: grunge mask cuts through letter "{ch}" ({best // 3}px gap) - shift mask_pos'
                         # thin letters (I, 1, J, L, T ...) can turn into another letter (I -> i): hard error; wide letters: check visually
                         (errs if w / gh < 0.4 else warns).append(msg)
-            # OCR read-back, element by element (crop of the rendered slide -> Tesseract single-line mode)
-            from PIL import ImageFilter, ImageOps
-            src = Image.open(f).convert('L')
+
+            gm = clean < 128
+            changed = _np.abs(_np.asarray(rgb3, _np.int16) - _np.asarray(notext3, _np.int16)).sum(-1) > 30
+            glyph = Image.fromarray(_np.where(gm, 0, 255).astype(_np.uint8))
             for t in d['text']:
+                # covered / invisible text: glyph pixels that do not change the real slide when the text is hidden
+                bx = (max(0, int(t['x0'])) * 3, max(0, int(t['y0'])) * 3, min(1080, int(t['x1'])) * 3, min(1440, int(t['y1'])) * 3)
+                g = gm[bx[1]:bx[3], bx[0]:bx[2]]
+                if g.sum() > 200 and not t.get('hidden'):
+                    cov = (g & changed[bx[1]:bx[3], bx[0]:bx[2]]).sum() / g.sum()
+                    if cov < 0.3: warns.append(f'{nm}: text hidden or covered ({cov:.0%} visible): "{t["t"][:40]}"')
                 want = re.sub(r'[^A-Z0-9]', '', t['t'].upper())
                 if len(want) < 3 or (t['gr'] and len(want) < 4): continue
-                box = (max(0, int(t['x0']) - 4), max(0, int(t['y0'])), min(1080, int(t['x1']) + 4), min(1440, int(t['y1'])))
-                c = src.crop(box); c = c.resize((c.width * 3, c.height * 3), Image.LANCZOS)
-                if t['gr']: c = c.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.MinFilter(9))
-                if c.resize((1, 1)).getpixel((0, 0)) < 128: c = c.point(lambda v: 255 - v)  # dark text on light for Tesseract
-                import numpy as _np
-                arr = _np.asarray(c); hist = _np.bincount(arr.ravel(), minlength=256).astype(float); tot = arr.size
-                cs, mu = _np.cumsum(hist), _np.cumsum(hist * _np.arange(256))
-                with _np.errstate(divide='ignore', invalid='ignore'):
-                    var = (mu[-1] * cs / tot - mu) ** 2 / (cs * (tot - cs))
-                th = int(_np.nanargmax(var))  # Otsu threshold
-                c = ImageOps.expand(c.point(lambda v, th=th: 0 if v <= th else 255), 30, fill=255)
+                full = (t.get('full') or t['t']).upper()
+                want = re.sub(r'[^A-Z0-9]', '', full)  # the crop also shows inline children (<b>, <span>)
+                if '%' in full: want += '|' + re.sub(r'[^A-Z0-9]', '', full.replace('%', '0'))  # Tesseract often reads % as O/0
+                if os.environ.get('QA_DEBUG'): t['_dbg'] = True
+                if t.get('glow'): continue  # neon script lettering: Tesseract cannot read script fonts; covered by the visibility check above
+                if (t.get('full') or '').strip() != t['t'].strip() and t.get('fx1', 0) > 0:  # inline children: OCR the whole element box
+                    lh = (t['y1'] - t['y0']) / max(1, t['lines'])
+                    t = dict(t, x0=min(t['x0'], t['fx0']), y0=min(t['y0'], t['fy0']), x1=max(t['x1'], t['fx1']), y1=max(t['y1'], t['fy1']))
+                    t['lines'] = max(t['lines'], round((t['y1'] - t['y0']) / max(1, lh)))
+                box = (max(0, int(t['x0']) - 4) * 3, max(0, int(t['y0'])) * 3, min(1080, int(t['x1']) + 4) * 3, min(1440, int(t['y1'])) * 3)
+                c = glyph.crop(box)
+                if t['gr']: c = c.filter(ImageFilter.MinFilter(7)).filter(ImageFilter.MaxFilter(7))  # close the grunge holes (clean render has no other texture)
+                if t['lines'] <= 1:  # line boxes overlap neighbours (kicker above, tagline below): keep only the tallest ink band
+                    ink = (_np.asarray(c) < 128).sum(1) > max(2, c.width // 200)
+                    best, cur, st = (0, 0, c.height), 0, 0
+                    for yy, on in enumerate(list(ink) + [False]):
+                        if on: cur += 1
+                        else:
+                            if cur > best[0]: best = (cur, yy - cur, yy)
+                            cur = 0
+                    if best[0] > 10: c = c.crop((0, max(0, best[1] - 6), c.width, min(c.height, best[2] + 6)))
+                h = c.height // max(1, t['lines'])
+                if h > 150: c = c.resize((max(1, c.width * 120 // h), max(1, c.height * 120 // h)), Image.LANCZOS)  # Tesseract likes ~100 px glyphs
+                c = ImageOps.expand(c, 40, fill=255)
+                if t.get('_dbg'): os.makedirs('/tmp/qa_dbg', exist_ok=True); c.save(f'/tmp/qa_dbg/{nm}_{want.split("|")[0][:14]}.png')
                 jobs.append((nm, want, c, '--psm 7' if t['lines'] <= 1 else '--psm 6'))
             ov = Image.open(f).convert('RGBA'); lay = Image.new('RGBA', ov.size); dr = ImageDraw.Draw(lay)
             for z in ZONES: dr.rectangle(z, fill=(255, 0, 60, 70), outline=(255, 0, 60, 255), width=3)
@@ -167,16 +211,35 @@ def check(out_dir):
     srv.shutdown()
     # OCR in parallel (Tesseract runs as separate processes)
     from concurrent.futures import ThreadPoolExecutor
+    from PIL import ImageFilter as _F, ImageOps as _O
+    def score(want, got):
+        got = got.replace('O', '0').replace('I', '1').replace('S', '5'); w2 = want.replace('O', '0').replace('I', '1').replace('S', '5')
+        r = difflib.SequenceMatcher(None, w2, got).ratio()
+        if len(got) > len(w2):  # crop may include neighbours: best matching window
+            r = max([r] + [difflib.SequenceMatcher(None, w2, got[i:i + len(w2)]).ratio() for i in range(len(got) - len(w2) + 1)])
+        return r
     def run(j):
+        # Tesseract struggles with very heavy condensed display fonts (Anton): try a few clean variants of the SAME glyph
+        # mask (as is, slightly thinned, thinned + ~80 px) and two page modes; the text passes if any reading matches.
         nm, want, c, cfg = j
-        return nm, want, re.sub(r'[^A-Z0-9]', '', pytesseract.image_to_string(c, config=cfg).upper())
+        def thin(k, h=None, sx=1.0):
+            v = c.filter(_F.MaxFilter(k)) if k else c
+            if h and v.height > h: v = v.resize((max(1, v.width * h // v.height), h))
+            if sx != 1.0: v = v.resize((int(v.width * sx), v.height))  # un-condense very narrow display fonts
+            return _O.expand(v, 30, fill=255)
+        variants = [(c, cfg)] + ([(c, '--psm 8'), (thin(5), '--psm 7'), (thin(5), '--psm 8'), (thin(7, 80), '--psm 7'),
+                                  (thin(0, sx=1.5), '--psm 7'), (thin(3, sx=1.6), '--psm 7'), (thin(0, sx=2.0), '--psm 7')]
+                                 if cfg == '--psm 7' else [(thin(3), cfg), (thin(0, sx=1.5), cfg)])
+        best = (-1, '')
+        for img, cf in variants:
+            got = re.sub(r'[^A-Z0-9]', '', pytesseract.image_to_string(img, config=cf).upper())
+            r = max(score(w, got) for w in want.split('|'))
+            if r > best[0]: best = (r, got)
+            if r >= 0.8: break
+        return nm, want, best
     with ThreadPoolExecutor(max_workers=max(2, (os.cpu_count() or 2) * 2)) as ex:
-        for nm, want, got in ex.map(run, jobs):
-            got = got.replace('O', '0').replace('I', '1').replace('S', '5'); w2 = want.replace('O', '0').replace('I', '1').replace('S', '5')
-            r = difflib.SequenceMatcher(None, w2, got).ratio()
-            if len(got) > len(w2):  # crop may include neighbours: best matching window
-                r = max([r] + [difflib.SequenceMatcher(None, w2, got[i:i + len(w2)]).ratio() for i in range(len(got) - len(w2) + 1)])
-            if r < 0.8: warns.append(f'{nm}: OCR reads "{got[:30]}" for "{want[:30]}" ({r:.2f}) - check visually')
+        for nm, want, (r, got) in ex.map(run, jobs):
+            if r < 0.8: warns.append(f'{nm}: OCR reads "{got[:30]}" for "{want.split("|")[0][:30]}" ({r:.2f}) - check visually')
     q = os.path.join(out_dir, '_qa'); os.makedirs(q, exist_ok=True)
     if sheet:
         S = Image.new('RGB', (360 * len(sheet), 480))

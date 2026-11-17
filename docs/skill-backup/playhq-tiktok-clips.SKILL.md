@@ -504,3 +504,10 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - Every patch / buff / nerf / update carousel with % values (s1_render.py "settings" rows): set `"bars": true` on the slide (higher = better, e.g. damage range) or `"bars": "lower"` (lower = better, e.g. flinch, recoil). Example: data/2026-11-16-mw4-update-nov13-buffs.json.
 - Flat bar under each row (no 3D): grey = old value, gold = change that helps the player, red = change that hurts, dashed = removed part. Same scale on one slide. Rows without a % (e.g. "MIN 22 → 24") get no bar; with two values ("+22% / +34%") the bar shows the first one.
 - With bars on, every row with a weapon gets its small official weapon render (gold edge glow) next to the name, auto-matched from weapons/mw4/w_*.png. Missing weapon render -> add it via the encrypted grab first (official image only); class/mode rows stay without an icon.
+
+## QA without false readings (user 17.11.2026: "Die Fehllesungen müssen behoben werden")
+- qa.py OCR now reads a CLEAN glyph render (same page, same fonts/line breaks/grunge masks, but all text pure black on white, no photos/gradients/glows/shadows) instead of the coloured slide. Several clean variants per line (thinned, un-condensed for Anton) – passes if any reading matches. Neon script lettering is not OCR'd.
+- New check "text hidden or covered": glyph pixels that do not change the real slide when the text is hidden (= something lies on top of the text or it has no contrast).
+- Contrast check ignores the gradient box of background-clip:text (gold @PLAYHQTV / gold titles were false "low contrast").
+- Grunge-cut check runs on the clean render (the gold gradient's dark band made false "mask cuts letter" warnings).
+- Goal: 0 warnings. Any remaining warning is now a REAL problem -> fix it, never ignore it.
