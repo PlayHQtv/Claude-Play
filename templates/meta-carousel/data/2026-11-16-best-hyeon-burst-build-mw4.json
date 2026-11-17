@@ -16,15 +16,14 @@
   "sub": "DROP THE NUMBER IN THE COMMENTS",
   "follow_sub": "FOR DAILY MW4 META",
   "cutout": {
-   "img": "cut_snowsniper.png",
-   "right": -640,
-   "top": 940,
-   "w": 1020,
-   "fade": 82,
-   "bright": 1.2,
+   "img": "cut_silh.png",
+   "right": 90,
+   "top": 985,
+   "w": 300,
+   "fade": 72,
+   "bright": 1.7,
    "rim": 1
-  },
-  "follow_top": 960
+  }
  },
  "weapons": [
   {
