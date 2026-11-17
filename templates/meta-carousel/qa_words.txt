@@ -167,3 +167,13 @@ eurogamer
 evs
 app
 gameplay
+bph
+cpv
+hanbit
+nato
+highmark
+parabellum
+stp
+bok
+doksa
+hul

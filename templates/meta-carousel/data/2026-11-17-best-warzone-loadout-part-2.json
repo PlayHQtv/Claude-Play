@@ -1,0 +1,195 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "WARZONE",
+ "rank_label": "BUILD",
+ "cover": {
+  "kicker": "PART 2 · META UPDATED NOV 13",
+  "big": "BEST WARZONE",
+  "small": "LOADOUT PART 2",
+  "sub": "4 MORE BUILDS + CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_M4.png"
+ },
+ "cta": {
+  "white": "WHICH WARZONE",
+  "gold": "BUILD NEXT?",
+  "sub": "DROP THE NUMBER IN THE COMMENTS",
+  "follow_sub": "FOR DAILY WARZONE + MW4 META",
+  "cutout": {
+   "img": "cut_snowsniper.png",
+   "right": -640,
+   "top": 940,
+   "w": 1020,
+   "fade": 82,
+   "bright": 1.2,
+   "rim": 1
+  }
+ },
+ "facts": "codmunity.gg/warzone ranking last updated 13.11.2026 (ranking dated 13.11.; Nov 13 tuning was MP-only, no Warzone notes that day): #1-4 Osprey/Striga/VEL 46/KG-7 (Part 1, 16.11.), then #5 M4, #6 ISO Nightshade, #8 Han 86 (Warzone Meta tier), X-58 Nyx top close-range Contender (#13). Top 3 Long Range: Osprey, Han 86, M4. Top 3 Close Range: Striga, VEL 46, ISO Nightshade.",
+ "source": "codmunity.gg Warzone meta (ranking dated 13.11.2026, + sister site warzoneloadout.games), wzstats.gg cross-check (fetched 17.11.2026)",
+ "dupcheck": "Winner follow-up (growth rule 3) to 16.11. 'Best Warzone loadout' (3,103 views). No overlap with Part 1 weapons. Han 86 MP build (02.11.) + ISO Nightshade MP build (10.11.) were Multiplayer builds/codes - Warzone builds/codes differ (same precedent as Osprey 16.11.). M4 + X-58 Nyx Warzone builds never posted.",
+ "weapons": [
+  {
+   "rank": 1,
+   "image": "mw4/w_Han_86.png",
+   "short": "HAN 86",
+   "title_white": "HAN",
+   "title_gold": "86",
+   "class": "ASSAULT RIFLE",
+   "class_note": "#2 Long range",
+   "tagline": "WARZONE META · LONG RANGE",
+   "brightness": 1.1,
+   "build_code": "A03-3KB4J-BPH2Q-FL11",
+   "attachments": [
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "CRONEN R808"
+    },
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "FSS IS300"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "HANBIT LIGHTNING-7 465MM"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "45 ROUND MAG"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "5.56 NATO HIGH VELOCITY"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/han-86 Warzone Long Range (Warzone Meta, Top 3 LR #2), updated 13.11.; sister site warzoneloadout.games same 5 attachments"
+  },
+  {
+   "rank": 2,
+   "image": "mw4/w_M4.png",
+   "short": "M4",
+   "title_white": "",
+   "title_gold": "M4",
+   "class": "ASSAULT RIFLE",
+   "class_note": "#3 Long range",
+   "tagline": "WARZONE META · LONG RANGE",
+   "brightness": 1.1,
+   "build_code": "A05-3KB4J-BPH2Q-EW11",
+   "attachments": [
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "CRONEN R808"
+    },
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "FSS IS300"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "16\" HIGHMARK BARREL"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "45 ROUND MAG"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "5.56 NATO HIGH VELOCITY"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/m4 Warzone Long Range (Warzone Meta, Top 3 LR #3), updated 13.11.; sister site warzoneloadout.games same 5 attachments"
+  },
+  {
+   "rank": 3,
+   "image": "mw4/w_ISO_Nightshade.png",
+   "short": "ISO NIGHTSHADE",
+   "title_white": "ISO",
+   "title_gold": "NIGHTSHADE",
+   "class": "SMG",
+   "class_note": "#3 Close range",
+   "tagline": "WARZONE META · CLOSE RANGE",
+   "brightness": 1.15,
+   "build_code": "S06-3K9Y5-K39PZ-B911",
+   "mask_pos": "300px 60px",
+   "attachments": [
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "ZLR MAG-Z 9"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "40 ROUND MAG"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "DEMO STP-1"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "EXP G2-44 STOCK"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "9MM PARABELLUM HIGH VELOCITY"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/iso-nightshade Warzone Close Range (Warzone Meta, Top 3 CR #3), updated 13.11.; sister site warzoneloadout.games same build (wzstats uses a different build)"
+  },
+  {
+   "rank": 4,
+   "image": "mw4/w_X58_Nyx.png",
+   "short": "X-58 NYX",
+   "title_white": "X-58",
+   "title_gold": "NYX",
+   "class": "SMG",
+   "class_note": "Close range",
+   "tagline": "WARZONE CONTENDER · CLOSE RANGE",
+   "brightness": 1.15,
+   "build_code": "S08-5CPV8-3911",
+   "attachments": [
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "DOKSA 4F 305MM"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "MIRE-50 TAC GRIP"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "60 ROUND MAG"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "BOK-980"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "MUGI HUL-73.M STOCK"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/x-58-nyx Warzone Close Range (Contenders), updated 13.11.; wzstats.gg same 5 attachments ('DOKSA 4F 304.8MM')"
+  }
+ ],
+ "verifier": "Verifier 17.11.: FAIL on cover hook 'AFTER NOV 13 PATCH' (Nov 13 tuning MP-only) -> fixed to 'META UPDATED NOV 13'; all 4 builds/codes PASS character by character; duplicate check PASS."
+}
