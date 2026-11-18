@@ -523,3 +523,9 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - Cover/CTA cut-outs ONLY from official ARTWORK (illustrated key art: e.g. cut_boss, cut_suit, cut_duo, cut_jeep, cut_boat, cut_map) as COMPLETE figures. Never from game screenshots/trailer frames.
 - qa.py makes it a hard ERROR (exit 1 = post must not go out): cut-out with opaque top edge (cropped) or strong blue/purple colour cast. cut_jl.png and cut_lucia.png are banned.
 - Before scheduling ALWAYS look at the cover at full size yourself (not only the sheet) and judge the cut-out like the user would.
+
+## NO UPDATED COPIES OF STRONG POSTS (user 18.11.2026: "Ja setze um")
+- 17.11. "Oris UPDATED" got 298 views / 29% search while our old Oris post (04.11., 8.2k views, 94% search) still ranks for "oris build mw4" – we compete with ourselves. Same with "Warzone loadout part 2" vs part 1 (3.2k).
+- Before any UPDATED / part-2 post: check the old post's views (getAnalyticsDataByMetrics TKPO07 + TKPO21). If the old post has >= 2,000 views or >= 70% search share -> NO update/part 2; pick a NEW search term instead.
+- UPDATED only for old posts that flopped (< 2,000 views) or when the old info is now wrong (then the new post must say what changed).
+- Max 2 posts per day (12:00 + 18:00); extra posts only for big events (launch, new season).
