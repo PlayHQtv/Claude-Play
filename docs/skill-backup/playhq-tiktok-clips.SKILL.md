@@ -517,3 +517,9 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - BOTH daily slots = search topics (CSI terms in docs/trends/, newest file first; weapon builds, settings, "best X", rankings). News carousels only for BIG official news (new season, launch, delay) – medium news goes into a search post as one slide or is skipped.
 - GTA from launch: only searched topics (fastest cars, legit money, map locations, settings PS5/Xbox, best weapons, editions/prices). No pure news carousels.
 - Every report names the search term + its CSI volume for each slot.
+
+## CUT-OUTS: NEVER CROPPED, NEVER PHOTO CROPS (user 18.11.2026: "Was ist dass denn für ein Scheiss freigestelltes Bild?" + "Dieser Fehler darf nie passieren")
+- Released 18.11. 18:00 with cut_jl.png (screenshot crop of Jason & Lucia: purple colour cast, head/hair and body cut flat) – must never happen again.
+- Cover/CTA cut-outs ONLY from official ARTWORK (illustrated key art: e.g. cut_boss, cut_suit, cut_duo, cut_jeep, cut_boat, cut_map) as COMPLETE figures. Never from game screenshots/trailer frames.
+- qa.py makes it a hard ERROR (exit 1 = post must not go out): cut-out with opaque top edge (cropped) or strong blue/purple colour cast. cut_jl.png and cut_lucia.png are banned.
+- Before scheduling ALWAYS look at the cover at full size yourself (not only the sheet) and judge the cut-out like the user would.

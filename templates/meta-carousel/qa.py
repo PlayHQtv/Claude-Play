@@ -211,6 +211,23 @@ def check(out_dir):
     srv.shutdown()
     # OCR in parallel (Tesseract runs as separate processes)
     from concurrent.futures import ThreadPoolExecutor
+    # Cut-outs must be complete figures (user 18.11.2026: badly cut Jason & Lucia photo on the release-time cover).
+    # A cut-out whose TOP edge is opaque was cropped from a frame (head/hair cut flat) -> real warning.
+    import glob as _g, numpy as _n
+    seen = set()
+    for hp in sorted(_g.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), '_build', '*.html'))):
+        for m in re.finditer(r'(_build/(?:gta|s1|w)/(cut_[\w-]+\.png))', open(hp, encoding='utf-8').read()):
+            fp = os.path.join(os.path.dirname(os.path.abspath(__file__)), m.group(1))
+            if fp in seen or not os.path.exists(fp): continue
+            seen.add(fp)
+            al = _n.asarray(Image.open(fp).convert('RGBA'))[:, :, 3] > 200
+            # user 18.11.2026: "Dieser Fehler darf nie passieren" -> hard ERROR (exit 1, post must not go out)
+            tint = _n.asarray(Image.open(fp).convert('RGB'), float)[al]
+            mono = tint.size and (tint[:, 2].mean() - tint[:, 1].mean()) > 45  # strong purple/blue colour cast = photo crop, not artwork
+            if al[0].mean() > 0.03:
+                errs.append(f'cut-out {m.group(2)} is CROPPED ({al[0].mean():.0%} of the top edge opaque) - head/figure cut off. Use a complete official artwork cut-out')
+            if mono:
+                errs.append(f'cut-out {m.group(2)} has a strong colour cast (screenshot/photo crop) - use a clean official artwork cut-out')
     from PIL import ImageFilter as _F, ImageOps as _O
     def score(want, got):
         got = got.replace('O', '0').replace('I', '1').replace('S', '5'); w2 = want.replace('O', '0').replace('I', '1').replace('S', '5')

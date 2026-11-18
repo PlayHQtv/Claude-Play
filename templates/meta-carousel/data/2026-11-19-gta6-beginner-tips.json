@@ -17,10 +17,10 @@
   "rstar": true,
   "rstar_left": 268,
   "cutout": {
-   "img": "cut_lucia.png",
-   "right": -60,
-   "top": 800,
-   "h": 560
+   "img": "cut_suit.png",
+   "right": -10,
+   "top": 690,
+   "h": 740
   },
   "times_title": "5 CHANGES FROM GTA 5",
   "times_top": 790,

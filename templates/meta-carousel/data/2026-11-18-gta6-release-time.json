@@ -15,10 +15,10 @@
   "bgshot": "g_vc27.jpg",
   "rstar": true,
   "cutout": {
-   "img": "cut_jl.png",
-   "right": -150,
-   "top": 760,
-   "h": 600
+   "img": "cut_boss.png",
+   "right": -20,
+   "top": 700,
+   "h": 720
   },
   "rstar_left": 268,
   "times_title": "WORLD UNLOCK · IN GMT",
