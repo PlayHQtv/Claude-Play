@@ -127,7 +127,7 @@ CSS2 = """
 .tb{position:absolute;left:58px;top:212px;width:136px;height:136px;display:flex;align-items:center;justify-content:center;font-family:PX;font-weight:700;font-size:118px;line-height:1;color:#fff;
  text-shadow:6px 6px 0 rgba(0,0,0,.45);box-shadow:inset 7px 7px 0 rgba(255,255,255,.35),inset -7px -7px 0 rgba(0,0,0,.35),0 0 0 6px #000,0 0 40px var(--a)}
 .rk{position:absolute;left:226px;top:220px;font-family:P2;font-size:21px;letter-spacing:1px;color:var(--a);text-shadow:3px 3px 0 #000}
-.rk b{display:inline-block;margin-left:12px;padding:6px 10px 5px;font-weight:400;font-size:15px;color:#111;background:var(--y);box-shadow:0 0 0 3px #000;vertical-align:3px}
+.rk b{display:inline-block;margin-left:12px;padding:6px 10px 5px;font-weight:400;font-size:15px;color:#111;background:var(--y);box-shadow:0 0 0 3px #000;vertical-align:3px;text-shadow:none}
 .nm{position:absolute;left:222px;top:258px;width:800px;font-family:PX;font-weight:700;font-size:100px;line-height:.95;color:#fff;text-shadow:7px 7px 0 #000}
 .st{position:absolute;left:44px;width:888px;background:linear-gradient(180deg,rgba(26,26,34,.94),rgba(14,14,20,.96));box-shadow:0 0 0 5px #000,inset 0 6px 0 var(--a),inset 0 0 0 3px rgba(255,255,255,.06);padding:34px 34px 30px}
 .sr{display:flex;align-items:center;margin-bottom:16px}
@@ -154,7 +154,7 @@ def base2(body, d, bg, accent, cover=False, idx=None, total=None, cls=''):
     head = ('<div class="brand"><b>MINECRAFT</b><span class="tile">UNOFFICIAL<br>FAN GUIDE</span></div>' if cover else
             f'<div class="hdr">MINECRAFT · <b>{E(d.get("hdr", "TIPS"))}</b></div>')
     return ('<!doctype html><html><head><meta charset="utf-8"><style>' + CSS + CSS2 + f':root{{--a:{accent}}}</style></head><body>'
-            + f'<div class="bg" style="background-image:url(/_build/mc/{bg});image-rendering:auto;top:{-50 if not cover else 0}px;bottom:{50 if not cover else 0}px"></div><div class="sh2 {cls}"></div><div class="vig"></div>'
+            + f'<div class="bg" style="background-image:url(/_build/mc/{bg});image-rendering:auto;top:{-28 if not cover else 0}px;bottom:{28 if not cover else 0}px"></div><div class="sh2 {cls}"></div><div class="vig"></div>'
             + body + head + '<img class="plogo" src="/assets/logo.png">' + prog
             + (f'<div class="src">{E(d["source"])}</div>' if d.get('source') and not cover else '')
             + R.FITJS + '</body></html>')

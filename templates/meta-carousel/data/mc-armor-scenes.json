@@ -95,7 +95,7 @@
  },
  "ar_leather": {
   "theme": "meadow",
-  "seed": 3,
+  "seed": 6,
   "shift": 0.07,
   "heroes": [
    {
