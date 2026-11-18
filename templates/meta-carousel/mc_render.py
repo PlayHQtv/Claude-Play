@@ -144,17 +144,28 @@ CSS2 = """
 .chips{position:absolute;left:58px;display:flex;gap:12px}
 .chips span{font-family:P2;font-size:16px;color:#fff;padding:12px 14px 10px;background:rgba(18,18,24,.9);box-shadow:0 0 0 4px #000,inset 0 -4px 0 var(--c)}
 """
+
+CSS3 = """
+.sh3{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,12,.9) 0%,rgba(8,8,12,.55) 22%,rgba(8,8,12,0) 32%,rgba(8,8,12,0) 64%,rgba(8,8,12,.8) 71%,rgba(8,8,12,.96) 100%)}
+.sh3.cv{background:linear-gradient(180deg,rgba(8,8,12,.9) 0%,rgba(8,8,12,.75) 30%,rgba(8,8,12,.1) 46%,rgba(8,8,12,0) 70%,rgba(8,8,12,.7) 84%,rgba(8,8,12,.92) 100%)}
+.sh3.ct{background:linear-gradient(90deg,rgba(8,8,12,.9) 0%,rgba(8,8,12,.7) 45%,rgba(8,8,12,0) 68%),linear-gradient(180deg,rgba(8,8,12,.5) 0%,rgba(8,8,12,0) 30%,rgba(8,8,12,0) 75%,rgba(8,8,12,.8) 100%)}
+.card{position:absolute;left:44px;width:888px;top:985px;background:rgba(14,14,20,.9);box-shadow:0 0 0 5px #000,inset 0 6px 0 var(--a);padding:30px 34px 28px}
+.card .sr{margin-bottom:14px}
+.card .vd{border:0;padding-top:6px;margin-top:4px;font-size:34px}
+.src{bottom:158px}.prog{bottom:162px}
+"""
+
 TIERC = {'S': '#ff4d3d', 'A': '#ff9f1c', 'B': '#ffd23f', 'C': '#5ad16b', 'D': '#3aa7ff', 'F': '#8a8a96'}
 
 
-def base2(body, d, bg, accent, cover=False, idx=None, total=None, cls=''):
+def base2(body, d, bg, accent, cover=False, idx=None, total=None, cls='', v3=False):
     prog = ''
     if idx is not None and total:
         prog = '<div class="prog">' + ''.join(f'<i class="{"on" if i == idx else ""}"></i>' for i in range(total)) + '</div>'
     head = ('<div class="brand"><b>MINECRAFT</b><span class="tile">UNOFFICIAL<br>FAN GUIDE</span></div>' if cover else
             f'<div class="hdr">MINECRAFT · <b>{E(d.get("hdr", "TIPS"))}</b></div>')
-    return ('<!doctype html><html><head><meta charset="utf-8"><style>' + CSS + CSS2 + f':root{{--a:{accent}}}</style></head><body>'
-            + f'<div class="bg" style="background-image:url(/_build/mc/{bg});image-rendering:auto;top:{-28 if not cover else 0}px;bottom:{28 if not cover else 0}px"></div><div class="sh2 {cls}"></div><div class="vig"></div>'
+    return ('<!doctype html><html><head><meta charset="utf-8"><style>' + CSS + CSS2 + (CSS3 if v3 else '') + f':root{{--a:{accent}}}</style></head><body>'
+            + f'<div class="bg" style="background-image:url(/_build/mc/{bg});image-rendering:auto;top:{-28 if not (cover or v3) else 0}px;bottom:{28 if not (cover or v3) else 0}px"></div><div class="{'sh3' if v3 else 'sh2'} {cls}"></div><div class="vig"></div>'
             + body + head + '<img class="plogo" src="/assets/logo.png">' + prog
             + (f'<div class="src">{E(d["source"])}</div>' if d.get('source') and not cover else '')
             + R.FITJS + '</body></html>')
@@ -169,6 +180,12 @@ def bar(v, mx, n=20):
 
 def rank_cover(d):
     c = d['cover']
+    if d.get('v3'):
+        body = (f'<div class="k" style="top:{c.get("kicker_top", 300)}px">{E(c["kicker"])}</div>'
+                + f'<div class="ttl fit" style="top:{c.get("title_top", 345)}px" data-size="{c.get("size", 120)}" data-max="968">{c["big"]}</div>'
+                + f'<div class="splash neon" style="left:66px;top:{c.get("splash_top", 690)}px;font-size:{c.get("splash_size", 34)}px">{E(c["splash"])}</div>'
+                + f'<div class="swipe" style="top:{c.get("swipe_top", 1235)}px">{c.get("swipe", "SWIPE FOR THE RANKING <b>›</b>")}</div>')
+        return base2(body, d, c['bg'], '#ffe14d', cover=True, cls='cv', v3=True)
     chips = ''.join(f'<span style="--c:{TIERC[t]}"><b style="color:{TIERC[t]};font-weight:400">{E(t)}</b> {E(n)}</span>' for t, n in c.get('chips', []))
     body = (f'<div class="k" style="top:{c.get("kicker_top", 300)}px">{E(c["kicker"])}</div>'
             + f'<div class="ttl fit" style="top:{c.get("title_top", 345)}px" data-size="{c.get("size", 120)}" data-max="968">{c["big"]}</div>'
@@ -180,6 +197,13 @@ def rank_cover(d):
 
 def rank_slide(s, d, i, total):
     a = s.get('accent', '#ffe14d')
+    if d.get('v3'):
+        rows = ''.join(f'<div class="sr"><label>{E(lb)}</label>{bar(v, mx)}<strong>{txt}</strong></div>' for lb, v, mx, txt in s['stats'][:2])
+        body = (f'<div class="tb" style="background:{TIERC[s["tier"]]}">{E(s["tier"])}</div>'
+                + f'<div class="rk">RANK #{s["rank"]} OF {d.get("of", 7)}{"<b>" + E(s["tag"]) + "</b>" if s.get("tag") else ""}</div>'
+                + f'<div class="nm fit" data-size="100" data-max="800">{E(s["name"])}</div>'
+                + f'<div class="card">{rows}<div class="vd">{s["verdict"]}</div></div>')
+        return base2(body, d, s['bg'], a, idx=i - 1, total=total, v3=True)
     rows = ''.join(f'<div class="sr"><label>{E(lb)}</label>{bar(v, mx)}<strong>{txt}</strong></div>' for lb, v, mx, txt in s['stats'])
     body = (f'<div class="tb" style="background:{TIERC[s["tier"]]}">{E(s["tier"])}</div>'
             + f'<div class="rk">RANK #{s["rank"]} OF {d.get("of", 7)}{"<b>" + E(s["tag"]) + "</b>" if s.get("tag") else ""}</div>'
@@ -190,6 +214,13 @@ def rank_slide(s, d, i, total):
 
 def rank_cta(d):
     c = d['cta']
+    if d.get('v3'):
+        body = (f'<div class="ttl" style="top:250px;font-size:{c.get("size", 100)}px;width:600px">{c["title"]}</div>'
+                + f'<div class="splash neon" style="left:66px;top:{c.get("splash_top", 640)}px;font-size:32px">{E(c["splash"])}</div>'
+                + '<div class="k" style="top:770px;color:#fff">YOUR ARMOR CHEAT SHEET</div><div class="btn" style="top:815px">SAVE THIS</div>'
+                + '<div class="fol" style="top:1030px;font-size:56px">FOLLOW <em>@PLAYHQTV</em></div>'
+                + f'<div class="disc" style="top:1130px;width:560px">{DISC.replace("<br>", " ")}</div>')
+        return base2(body, {**d, 'source': ''}, c['bg'], '#ffe14d', cls='ct', v3=True)
     body = (f'<div class="ttl" style="top:250px;font-size:{c.get("size", 112)}px;width:640px">{c["title"]}</div>'
             + f'<div class="splash neon" style="left:66px;top:{c.get("splash_top", 640)}px;font-size:34px">{E(c["splash"])}</div>'
             + '<div class="k" style="top:745px;color:#fff">YOUR ARMOR CHEAT SHEET</div><div class="btn" style="top:790px">SAVE THIS</div>'

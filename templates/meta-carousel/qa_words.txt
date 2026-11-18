@@ -204,3 +204,4 @@ netherite
 piglins
 chainmail
 knockback
+stat

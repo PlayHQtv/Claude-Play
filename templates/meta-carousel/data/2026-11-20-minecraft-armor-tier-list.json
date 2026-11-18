@@ -4,7 +4,7 @@
  "of": 7,
  "source": "Source: Minecraft Wiki \u00b7 Java Edition \u00b7 full-set values",
  "cover": {
-  "bg": "ar_cover.png",
+  "bg": "mz_cover.png",
   "kicker": "ALL 7 SETS RANKED \u00b7 2026",
   "big": "NEW MINECRAFT<br><em>ARMOR</em><br>TIER LIST",
   "size": 124,
@@ -33,7 +33,7 @@
    "rank": 7,
    "tier": "F",
    "name": "LEATHER",
-   "bg": "ar_leather.png",
+   "bg": "mz_leather.png",
    "accent": "#d89a5c",
    "stats": [
     [
@@ -62,7 +62,7 @@
    "tier": "D",
    "name": "COPPER",
    "tag": "NEWEST",
-   "bg": "ar_copper.png",
+   "bg": "mz_copper.png",
    "accent": "#f08a52",
    "stats": [
     [
@@ -90,7 +90,7 @@
    "rank": 5,
    "tier": "D",
    "name": "GOLD",
-   "bg": "ar_gold.png",
+   "bg": "mz_gold.png",
    "accent": "#ffd23f",
    "stats": [
     [
@@ -118,7 +118,7 @@
    "rank": 4,
    "tier": "C",
    "name": "CHAINMAIL",
-   "bg": "ar_chain.png",
+   "bg": "mz_chain.png",
    "accent": "#b9c3e0",
    "stats": [
     [
@@ -146,7 +146,7 @@
    "rank": 3,
    "tier": "B",
    "name": "IRON",
-   "bg": "ar_iron.png",
+   "bg": "mz_iron.png",
    "accent": "#e8e8ee",
    "stats": [
     [
@@ -174,7 +174,7 @@
    "rank": 2,
    "tier": "A",
    "name": "DIAMOND",
-   "bg": "ar_diamond.png",
+   "bg": "mz_diamond.png",
    "accent": "#3fe0d8",
    "stats": [
     [
@@ -202,7 +202,7 @@
    "rank": 1,
    "tier": "S",
    "name": "NETHERITE",
-   "bg": "ar_netherite.png",
+   "bg": "mz_netherite.png",
    "accent": "#ff6a3a",
    "stats": [
     [
@@ -224,11 +224,11 @@
      "12"
     ]
    ],
-   "verdict": "Most durable, most toughness and <span class=\"hl\">40% knockback resistance</span>. Still #1."
+   "verdict": "Ties diamond on armor, but <span class=\"hl\">12 toughness</span> (diamond:&nbsp;8) and 40% knockback resistance."
   }
  ],
  "cta": {
-  "bg": "ar_cta.png",
+  "bg": "mz_cta.png",
   "title": "WHICH <em>ARMOR</em> DO YOU WEAR?",
   "size": 104,
   "splash": "comment below!",
@@ -236,5 +236,6 @@
  },
  "caption": "new minecraft armor tier list \u2013 all 7 sets ranked \ud83d\udee1\ufe0f\nMinecraft armor stats: is copper worth it? Netherite vs diamond \ud83d\udc49 Save it!\n#minecraft #minecraftarmor #minecrafttips #netherite #minecraftsurvival",
  "first_comment": "Which armor are you wearing right now? \ud83d\udc47",
- "tiktok_title": "Minecraft armor tier list: all 7 sets ranked"
+ "tiktok_title": "Minecraft armor tier list: all 7 sets ranked",
+ "v3": true
 }
