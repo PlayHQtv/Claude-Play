@@ -1,0 +1,194 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"/vendor/three.module.min.js"}}</script>
+</head><body>
+<script type="module">
+// PlayHQ own voxel scenes for Minecraft carousels: procedural terrain + own blocky armor models (no Mojang assets).
+import * as THREE from 'three';
+const P = JSON.parse(decodeURIComponent(location.hash.slice(1) || '{}'));
+const W = P.w || 1080, H = P.h || 1440;
+let seed = P.seed || 7;
+const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+
+// ---------- value noise ----------
+const perm = []; for (let i = 0; i < 512; i++) perm.push(Math.floor(rnd() * 256));
+const hash = (x, y) => perm[(perm[(x & 255)] + (y & 255)) & 511] / 255;
+const lerp = (a, b, t) => a + (b - a) * t, sm = t => t * t * (3 - 2 * t);
+function vnoise(x, y) { const xi = Math.floor(x), yi = Math.floor(y), xf = sm(x - xi), yf = sm(y - yi);
+  return lerp(lerp(hash(xi, yi), hash(xi + 1, yi), xf), lerp(hash(xi, yi + 1), hash(xi + 1, yi + 1), xf), yf); }
+const fbm = (x, y) => vnoise(x, y) * .55 + vnoise(x * 2.1, y * 2.1) * .3 + vnoise(x * 4.3, y * 4.3) * .15;
+
+// ---------- pixel textures (own procedural 16x16) ----------
+function tex(base, vari = 18, spec = null) {
+  const c = document.createElement('canvas'); c.width = c.height = 16; const g = c.getContext('2d');
+  const b = new THREE.Color(base);
+  for (let y = 0; y < 16; y++) for (let x = 0; x < 16; x++) {
+    let col = b.clone(); const v = (rnd() - .5) * vari / 255; col.r += v; col.g += v; col.b += v;
+    if (spec) { const s = spec(x, y); if (s) col = new THREE.Color(s).offsetHSL(0, 0, (rnd() - .5) * .06); }
+    g.fillStyle = '#' + col.getHexString(); g.fillRect(x, y, 1, 1);
+  }
+  const t = new THREE.CanvasTexture(c); t.magFilter = THREE.NearestFilter; t.minFilter = THREE.NearestFilter; t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const M = (t, o = {}) => new THREE.MeshStandardMaterial({ map: t, roughness: .95, metalness: 0, ...o });
+const BLOCK = {};
+function blk(name, faces) { BLOCK[name] = faces; }
+const ore = (base, fleck) => tex(base, 20, (x, y) => (hash(x * 3 + 7, y * 5 + 3) > .8 && hash(x + 40, y + 9) > .35) ? fleck : null);
+blk('grass', [M(tex('#6b5a3a', 22, (x, y) => y < 3 + (hash(x, 99) * 2 | 0) ? '#5f9e3a' : null))].concat(Array(5).fill(0)));
+BLOCK.grass = [0, 1, 2, 3, 4, 5].map(i => i === 2 ? M(tex('#5f9e3a', 26)) : i === 3 ? M(tex('#6b5a3a', 22)) : BLOCK.grass[0]);
+blk('dirt', M(tex('#6b5a3a', 22)));
+blk('stone', M(tex('#7d7d80', 22)));
+blk('cobble', M(tex('#6f6f72', 40)));
+blk('bricks', M(tex('#77777b', 14, (x, y) => (y % 8 === 7 || (x + (y >> 3) * 8) % 16 === 0) ? '#56565a' : null)));
+blk('deep', M(tex('#3d3d44', 18)));
+blk('diaore', M(ore('#3d3d44', '#4ff0e6'), { emissive: '#1fa8a0', emissiveMap: ore('#000000', '#4ff0e6'), emissiveIntensity: 1.4 }));
+blk('sand', M(tex('#dbcf94', 14)));
+blk('sandst', M(tex('#cdbb7c', 12, (x, y) => y % 6 === 5 ? '#b5a266' : null)));
+blk('copper', M(tex('#c06a44', 22, (x, y) => hash(x * 2, y * 3) > .82 ? '#55b8a0' : null), { metalness: .5, roughness: .45 }));
+blk('patina', M(tex('#5bb39b', 20, (x, y) => hash(x * 5, y * 2) > .85 ? '#c06a44' : null), { metalness: .3, roughness: .6 }));
+blk('nrack', M(tex('#6e2a2a', 26)));
+blk('basalt', M(tex('#3a3a40', 16, (x) => x % 4 === 0 ? '#2c2c31' : null)));
+blk('lava', M(tex('#ff7a1a', 50, (x, y) => hash(x + 3, y * 2) > .75 ? '#ffd23a' : null), { emissive: '#ff5a10', emissiveMap: tex('#ff7a1a', 60), emissiveIntensity: 1.6 }));
+blk('snow', M(tex('#eef4fb', 10)));
+blk('ice', M(tex('#8fc3f2', 14), { roughness: .15, metalness: .1 }));
+blk('log', M(tex('#5a4128', 18, (x) => x % 3 === 0 ? '#45311d' : null)));
+blk('leaves', M(tex('#3f7f2b', 40, (x, y) => hash(x * 7, y * 7) > .8 ? '#2b5a1c' : null)));
+blk('obsid', M(tex('#1b1426', 18, (x, y) => hash(x * 9, y) > .85 ? '#3a2a55' : null), { roughness: .3 }));
+blk('gold', M(tex('#f2c94a', 20), { metalness: .8, roughness: .3 }));
+blk('lamp', M(tex('#ffd27a', 30), { emissive: '#ffb347', emissiveIntensity: 2.2 }));
+
+// ---------- scene ----------
+const TH = {
+  meadow: { sky: ['#5f9be6', '#ffd6a0'], fog: '#e6c8a4', near: 28, far: 95, sun: ['#ffe2b8', 3.2, [-30, 22, -10]], hemi: ['#bcd7ff', '#5a4a30', 1.0], top: 'grass', sub: 'dirt', deco: 'trees', hill: 7 },
+  desert: { sky: ['#e7a24f', '#ffe3a6'], fog: '#f0c98a', near: 26, far: 90, sun: ['#ffd29a', 3.4, [-35, 18, -15]], hemi: ['#ffe2b0', '#7a5a30', 1.0], top: 'sand', sub: 'sandst', deco: 'cactus', hill: 6 },
+  copper: { sky: ['#1d2a33', '#3d5560'], fog: '#2a3d44', near: 18, far: 70, sun: ['#ffc9a0', 1.6, [-20, 30, 10]], hemi: ['#6fb5a5', '#3a2418', .8], top: 'stone', sub: 'stone', deco: 'copper', hill: 9, cave: 1 },
+  fortress: { sky: ['#2b3f66', '#a9b8d6'], fog: '#8a9bbd', near: 24, far: 90, sun: ['#dfe8ff', 2.6, [30, 26, -12]], hemi: ['#b9c8ec', '#3a3a44', 1.1], top: 'cobble', sub: 'stone', deco: 'walls', hill: 5 },
+  cave: { sky: ['#05080d', '#0d1a22'], fog: '#071218', near: 16, far: 60, sun: ['#9fe9ff', 1.0, [-10, 30, 10]], hemi: ['#2a6b78', '#0a0a10', .7], top: 'deep', sub: 'deep', deco: 'diamond', hill: 10, cave: 1 },
+  nether: { sky: ['#2a0606', '#7a1c0c'], fog: '#5a140a', near: 18, far: 70, sun: ['#ffb070', 1.8, [-20, 26, 6]], hemi: ['#ff7a40', '#200404', .9], top: 'nrack', sub: 'nrack', deco: 'nether', hill: 8 },
+  frost: { sky: ['#13284a', '#7fa6d6'], fog: '#5f7ea8', near: 24, far: 90, sun: ['#cfe3ff', 2.4, [-25, 24, -12]], hemi: ['#a9c8ff', '#2a3448', 1.1], top: 'snow', sub: 'ice', deco: 'frost', hill: 7 },
+};
+const T = TH[P.theme || 'meadow'];
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(P.pr || 1); renderer.setSize(W, H);
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = P.exposure || 1.05;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+// sky gradient
+{ const c = document.createElement('canvas'); c.width = 4; c.height = 256; const g = c.getContext('2d');
+  const gr = g.createLinearGradient(0, 0, 0, 256); gr.addColorStop(0, T.sky[0]); gr.addColorStop(.75, T.sky[1]); gr.addColorStop(1, T.sky[1]);
+  g.fillStyle = gr; g.fillRect(0, 0, 4, 256); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; scene.background = t; }
+scene.fog = new THREE.Fog(T.fog, T.near, T.far);
+const hemi = new THREE.HemisphereLight(T.hemi[0], T.hemi[1], T.hemi[2]); scene.add(hemi);
+const sun = new THREE.DirectionalLight(T.sun[0], T.sun[1]); sun.position.set(...T.sun[2]); sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -30, right: 30, top: 30, bottom: -30, near: 1, far: 120 }); sun.shadow.bias = -0.0006; sun.shadow.normalBias = .03;
+scene.add(sun);
+// env for metal reflections
+{ const env = new THREE.Scene(); env.background = new THREE.Color(T.sky[1]);
+  const pm = new THREE.PMREMGenerator(renderer);
+  const top = new THREE.Mesh(new THREE.SphereGeometry(10, 16, 8), new THREE.MeshBasicMaterial({ color: T.hemi[0], side: THREE.BackSide })); env.add(top);
+  const l1 = new THREE.Mesh(new THREE.PlaneGeometry(6, 6), new THREE.MeshBasicMaterial({ color: '#ffffff' })); l1.position.set(-6, 6, 4); l1.lookAt(0, 0, 0); env.add(l1);
+  const l2 = new THREE.Mesh(new THREE.PlaneGeometry(4, 8), new THREE.MeshBasicMaterial({ color: T.sun[0] })); l2.position.set(7, 3, -3); l2.lookAt(0, 0, 0); env.add(l2);
+  scene.environment = pm.fromScene(env, .02).texture; scene.environmentIntensity = P.envI || .7; }
+
+// ---------- terrain ----------
+const cells = {}; const put = (x, y, z, b) => { (cells[b] = cells[b] || []).push([x, y, z]); };
+const R0 = P.plaza || 7, N = 46;
+const hmap = {};
+for (let x = -N; x <= N; x++) for (let z = -N; z <= N + 10; z++) {
+  const d = Math.hypot(x, z * 1.0);
+  if (z > 12) continue; // nothing near/behind the camera
+  let h = Math.floor(fbm(x * .07 + 3, z * .07 + 9) * T.hill * 1.6);
+  const far = Math.max(0, -z - 12); h += Math.floor(far * .45 * fbm(x * .05, z * .05 + 4)); // rising backdrop
+  if (d < R0) h = 0; else if (d < R0 + 4) h = Math.min(h, Math.floor((d - R0) * .8));
+  if (z > -2 && Math.abs(x) < 16) h = Math.min(h, Math.max(0, Math.floor((Math.abs(x) - 8) * .5)));
+  hmap[x + ',' + z] = h;
+  put(x, h, z, d < R0 - 1.5 && P.floor ? P.floor : T.top);
+  for (let y = h - 1; y >= h - 2; y--) put(x, y, z, T.sub);
+}
+const H0 = (x, z) => hmap[x + ',' + z] ?? 0;
+// decorations
+function tree(x, z) { const h = H0(x, z), t = 4 + (rnd() * 3 | 0); for (let y = 1; y <= t; y++) put(x, h + y, z, 'log');
+  for (let dx = -2; dx <= 2; dx++) for (let dz = -2; dz <= 2; dz++) for (let dy = t - 1; dy <= t + 1; dy++) { if (Math.abs(dx) + Math.abs(dz) + Math.max(0, dy - t) * 2 > 3 || (dx === 0 && dz === 0 && dy < t)) continue; if (rnd() < .9) put(x + dx, h + dy, z + dz, 'leaves'); } }
+const spots = []; for (let i = 0; i < 260; i++) { const x = Math.round((rnd() - .5) * 2 * N), z = Math.round(-rnd() * N + 18); if (Math.hypot(x, z) > R0 + 5 && Math.abs(x) > 3 && (z < -4 || Math.abs(x) > 14)) spots.push([x, z]); }
+if (T.deco === 'trees') spots.slice(0, 70).forEach(([x, z]) => tree(x, z));
+if (T.deco === 'cactus') spots.slice(0, 40).forEach(([x, z]) => { const h = H0(x, z); for (let y = 1; y <= 2 + (rnd() * 3 | 0); y++) put(x, h + y, z, 'leaves'); });
+if (T.deco === 'frost') spots.slice(0, 60).forEach(([x, z]) => { const h = H0(x, z); const t = 2 + (rnd() * 5 | 0); for (let y = 1; y <= t; y++) put(x, h + y, z, rnd() < .5 ? 'ice' : 'snow'); });
+if (T.deco === 'walls') { for (let x = -24; x <= 24; x++) for (let y = 1; y <= 9; y++) { const z = -18; if (y === 9 && x % 2) continue; put(x, H0(x, z) + y, z, 'bricks'); }
+  for (const tx of [-24, 24, -12, 12]) for (let y = 1; y <= 14; y++) for (let dx = -1; dx <= 1; dx++) for (let dz = -1; dz <= 1; dz++) if (Math.abs(dx) + Math.abs(dz) < 3 && (y < 14 || (dx + dz) % 2 === 0)) put(tx + dx, H0(tx, -18) + y, -18 + dz, 'bricks'); }
+if (T.deco === 'copper') spots.slice(0, 90).forEach(([x, z]) => { const h = H0(x, z); const t = 1 + (rnd() * 4 | 0); for (let y = 1; y <= t; y++) put(x, h + y, z, rnd() < .55 ? 'copper' : 'patina'); });
+if (T.deco === 'diamond') spots.slice(0, 120).forEach(([x, z]) => { const h = H0(x, z); const t = 1 + (rnd() * 6 | 0); for (let y = 1; y <= t; y++) put(x, h + y, z, rnd() < .18 ? 'diaore' : 'deep'); });
+if (T.deco === 'nether') { spots.slice(0, 80).forEach(([x, z]) => { const h = H0(x, z); const t = 2 + (rnd() * 9 | 0); for (let y = 1; y <= t; y++) put(x, h + y, z, 'basalt'); });
+  for (let x = -N; x <= N; x++) for (let z = -N; z < -R0 - 4; z++) if (fbm(x * .09, z * .09) < .33) put(x, H0(x, z) + 1, z, 'lava'); }
+if (T.cave) { // ceiling
+  for (let x = -N; x <= N; x++) for (let z = -N; z <= 20; z++) { const c = 17 + Math.floor(fbm(x * .1 + 50, z * .1) * 8); put(x, c, z, T.sub); if (rnd() < .06) for (let y = 1; y < 1 + rnd() * 4; y++) put(x, c - y, z, T.sub); } }
+// ring of lamps / pedestal
+for (let x = -2; x <= 2; x++) for (let z = -2; z <= 2; z++) if (P.ped && Math.abs(x) + Math.abs(z) < 4) put(x, 1, z, P.ped);
+const geo = new THREE.BoxGeometry(1, 1, 1);
+const dummy = new THREE.Object3D();
+for (const [b, list] of Object.entries(cells)) {
+  const seen = new Set(); const uniq = list.filter(p => { const k = p.join(','); if (seen.has(k)) return false; seen.add(k); return true; });
+  const im = new THREE.InstancedMesh(geo, BLOCK[b], uniq.length); im.castShadow = true; im.receiveShadow = true;
+  uniq.forEach((p, i) => { dummy.position.set(p[0], p[1], p[2]); dummy.updateMatrix(); im.setMatrixAt(i, dummy.matrix); });
+  scene.add(im);
+}
+// point lights for caves
+for (const L of (P.lights || [])) { const pl = new THREE.PointLight(L[0], L[1], L[2] || 30, 1.6); pl.position.set(L[3], L[4], L[5]); scene.add(pl); }
+
+// ---------- own armor models ----------
+const TIER = {
+  leather: { c: '#8b5a2e', h: '#b07a45', d: '#5e3a1c', m: 0, r: .85 },
+  gold: { c: '#f2c13a', h: '#fff08a', d: '#b8801c', m: .9, r: .25 },
+  copper: { c: '#c8703f', h: '#f0a070', d: '#8a4426', m: .75, r: .35, p: '#4fb39a' },
+  chain: { c: '#9a9aa2', h: '#d8d8e0', d: '#4a4a52', m: .85, r: .35, holes: 1 },
+  iron: { c: '#d2d2d6', h: '#ffffff', d: '#8a8a92', m: .9, r: .3 },
+  diamond: { c: '#3fd6cf', h: '#b8fff8', d: '#1c8a86', m: .55, r: .2, e: '#0c5e5a' },
+  netherite: { c: '#5e545a', h: '#a3949c', d: '#352d32', m: .85, r: .32, e: '#1a0e14' },
+};
+// own 16x16 pixel designs (left half, mirrored), extruded to 3D "item" voxels
+const SPR = {
+  helmet: ['........','........','........','.....kkk','...kkhhh','..khhccc','..khcccc','.khccccc','.khcdddd','.khcck..','.kccck..','.kkkkk..'],
+  chest: ['........','.kkkkk..','khhhhhk.','khcccchk','khccccch','kkkccccc','..kccccc','..kccccc','..kccccc','..kdddcc','..kccccc','..kddddd','..kkkkkk'],
+  legs: ['........','........','kkkkkkkk','khhhhhhh','kcddddcc','khcccccc','khcccccd','khccccck','khcccck.','khcccck.','khcccck.','khcccck.','kdddddk.','kkkkkkk.'],
+  boots: ['........','........','........','........','........','........','..kkkk..','..khck..','..khck..','..khck..','.khcck..','khccck..','kdddddk.','kkkkkk..'],
+};
+function item(kind, tier, s = .2, depth = 2) {
+  const t = TIER[tier]; const grp = new THREE.Group();
+  const rows = SPR[kind].map(r => r + r.split('').reverse().join(''));
+  const g = new THREE.BoxGeometry(s, s, s); const groups = {};
+  const nr = rows.length;
+  rows.forEach((r, y) => r.split('').forEach((ch, x) => { if (ch === '.') return;
+    let k = ch; if (t.p && k === 'c' && hash(x * 7 + 50, y * 3) > .8) k = 'p';
+    if (t.holes && k === 'c' && (x + y) % 2 === 0) k = 'd';
+    for (let z = 0; z < depth; z++) (groups[k] = groups[k] || []).push([x - 7.5, nr - y, z - (depth - 1) / 2]); }));
+  for (const [k, list] of Object.entries(groups)) {
+    const col = k === 'k' ? new THREE.Color(t.d).multiplyScalar(.45) : t[k] || t.c;
+    const mat = new THREE.MeshStandardMaterial({ color: col, metalness: t.m, roughness: t.r, emissive: t.e || '#000', emissiveIntensity: t.e ? .5 : 0 });
+    const im = new THREE.InstancedMesh(g, mat, list.length); im.castShadow = true; im.receiveShadow = true;
+    list.forEach((v, i) => { dummy.position.set(v[0] * s, v[1] * s, v[2] * s); dummy.updateMatrix(); im.setMatrixAt(i, dummy.matrix); });
+    grp.add(im); }
+  return grp;
+}
+function armorSet(tier, s = .2) { // 2x2 floating display
+  const grp = new THREE.Group(); const w = 16 * s, gap = s * 2;
+  [['helmet', -1, 1, .35], ['chest', 1, 1, -.35], ['legs', -1, 0, .3], ['boots', 1, 0, -.3]].forEach(([k, cx, cy, ry]) => {
+    const it = item(k, tier, s); it.position.set(cx * (w / 2 + gap / 2), cy * (w + gap) - w * .1, cx * -.4); it.rotation.y = ry; grp.add(it); });
+  return grp;
+}
+const heroes = P.heroes || (P.tier ? [{ tier: P.tier, x: 0, z: 0, ry: -.45 }] : []);
+for (const h of heroes) {
+  const s = h.kind ? item(h.kind, h.tier, h.s || .3) : armorSet(h.tier, h.s || .13); s.position.set(h.x || 0, (h.y ?? 3.2), h.z || 0); s.rotation.y = h.ry ?? 0; scene.add(s);
+  if (h.glow) { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d');
+    const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64); gr.addColorStop(0, h.glow); gr.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(c), blending: THREE.AdditiveBlending, depthWrite: false, opacity: h.glowA || .55 }));
+    sp.scale.set(h.glowS || 11, h.glowS || 11, 1); sp.position.set(h.x || 0, (h.y ?? 3) + 3.2, (h.z || 0) - 2.5); scene.add(sp);
+    const pl = new THREE.PointLight(h.glow, h.glowL || 10, 14, 1.8); pl.position.set(h.x || 0, (h.y ?? 3) + 3, (h.z || 0) + 7); scene.add(pl); }
+}
+const cam = new THREE.PerspectiveCamera(P.fov || 34, W / H, .1, 300);
+const cp = P.cam || [0, 6.2, 19], lk = P.look || [0, 5.1, 0];
+cam.position.set(...cp); cam.lookAt(...lk);
+if (P.shift) cam.setViewOffset(W, H, 0, H * P.shift, W, H);
+renderer.render(scene, cam);
+window.__png = renderer.domElement.toDataURL('image/png');
+document.body.dataset.ready = 1;
+</script></body></html>

@@ -1,0 +1,237 @@
+{
+ "_note": "Facts: minecraft.wiki (Armor, Durability, piece pages, Leather/Golden/Chainmail/Netherite Armor, Powder Snow) + minecraft.net Copper Age notes, checked 18.11.2026. Java values.",
+ "hdr": "ARMOR TIER LIST",
+ "of": 7,
+ "source": "Source: Minecraft Wiki \u00b7 Java Edition \u00b7 full-set values",
+ "cover": {
+  "bg": "ar_cover.png",
+  "kicker": "ALL 7 SETS RANKED \u00b7 2026",
+  "big": "NEW MINECRAFT<br><em>ARMOR</em><br>TIER LIST",
+  "size": 124,
+  "title_top": 340,
+  "splash": "the newest set is only #6!",
+  "splash_top": 725,
+  "chips": [
+   [
+    "S",
+    "NETHERITE"
+   ],
+   [
+    "A",
+    "DIAMOND"
+   ],
+   [
+    "D",
+    "COPPER"
+   ]
+  ],
+  "chips_top": 1120,
+  "swipe_top": 1215
+ },
+ "ranks": [
+  {
+   "rank": 7,
+   "tier": "F",
+   "name": "LEATHER",
+   "bg": "ar_leather.png",
+   "accent": "#d89a5c",
+   "stats": [
+    [
+     "ARMOR",
+     7,
+     20,
+     "7<small>/20</small>"
+    ],
+    [
+     "DURABILITY",
+     275,
+     2035,
+     "275"
+    ],
+    [
+     "TOUGHNESS",
+     0,
+     12,
+     "0"
+    ]
+   ],
+   "verdict": "Weakest set. But leather boots let you <span class=\"hl\">walk on powder snow</span> without sinking."
+  },
+  {
+   "rank": 6,
+   "tier": "D",
+   "name": "COPPER",
+   "tag": "NEWEST",
+   "bg": "ar_copper.png",
+   "accent": "#f08a52",
+   "stats": [
+    [
+     "ARMOR",
+     10,
+     20,
+     "10<small>/20</small>"
+    ],
+    [
+     "DURABILITY",
+     605,
+     2035,
+     "605"
+    ],
+    [
+     "TOUGHNESS",
+     0,
+     12,
+     "0"
+    ]
+   ],
+   "verdict": "New since the <b>Copper Age</b>. Lasts longer than gold, but has <span class=\"hl\">1 armor point less</span>."
+  },
+  {
+   "rank": 5,
+   "tier": "D",
+   "name": "GOLD",
+   "bg": "ar_gold.png",
+   "accent": "#ffd23f",
+   "stats": [
+    [
+     "ARMOR",
+     11,
+     20,
+     "11<small>/20</small>"
+    ],
+    [
+     "DURABILITY",
+     385,
+     2035,
+     "385"
+    ],
+    [
+     "TOUGHNESS",
+     0,
+     12,
+     "0"
+    ]
+   ],
+   "verdict": "Breaks fast. Its real job: wear gold in the Nether and <span class=\"hl\">piglins stay neutral</span>."
+  },
+  {
+   "rank": 4,
+   "tier": "C",
+   "name": "CHAINMAIL",
+   "bg": "ar_chain.png",
+   "accent": "#b9c3e0",
+   "stats": [
+    [
+     "ARMOR",
+     12,
+     20,
+     "12<small>/20</small>"
+    ],
+    [
+     "DURABILITY",
+     825,
+     2035,
+     "825"
+    ],
+    [
+     "TOUGHNESS",
+     0,
+     12,
+     "0"
+    ]
+   ],
+   "verdict": "You <span class=\"hl\">can't craft it</span>. Get it from armorer villagers, mob drops or loot chests."
+  },
+  {
+   "rank": 3,
+   "tier": "B",
+   "name": "IRON",
+   "bg": "ar_iron.png",
+   "accent": "#e8e8ee",
+   "stats": [
+    [
+     "ARMOR",
+     15,
+     20,
+     "15<small>/20</small>"
+    ],
+    [
+     "DURABILITY",
+     825,
+     2035,
+     "825"
+    ],
+    [
+     "TOUGHNESS",
+     0,
+     12,
+     "0"
+    ]
+   ],
+   "verdict": "Best value: <b>24 iron ingots</b> for <span class=\"hl\">15 armor points</span>. Your mid-game set."
+  },
+  {
+   "rank": 2,
+   "tier": "A",
+   "name": "DIAMOND",
+   "bg": "ar_diamond.png",
+   "accent": "#3fe0d8",
+   "stats": [
+    [
+     "ARMOR",
+     20,
+     20,
+     "20<small>/20</small>"
+    ],
+    [
+     "DURABILITY",
+     1815,
+     2035,
+     "1,815"
+    ],
+    [
+     "TOUGHNESS",
+     8,
+     12,
+     "8"
+    ]
+   ],
+   "verdict": "Full armor bar plus <span class=\"hl\">8 toughness</span>, so big hits hurt a lot less."
+  },
+  {
+   "rank": 1,
+   "tier": "S",
+   "name": "NETHERITE",
+   "bg": "ar_netherite.png",
+   "accent": "#ff6a3a",
+   "stats": [
+    [
+     "ARMOR",
+     20,
+     20,
+     "20<small>/20</small>"
+    ],
+    [
+     "DURABILITY",
+     2035,
+     2035,
+     "2,035"
+    ],
+    [
+     "TOUGHNESS",
+     12,
+     12,
+     "12"
+    ]
+   ],
+   "verdict": "Most durable, most toughness and <span class=\"hl\">40% knockback resistance</span>. Still #1."
+  }
+ ],
+ "cta": {
+  "bg": "ar_cta.png",
+  "title": "WHICH <em>ARMOR</em> DO YOU WEAR?",
+  "size": 104,
+  "splash": "comment below!",
+  "splash_top": 660
+ }
+}

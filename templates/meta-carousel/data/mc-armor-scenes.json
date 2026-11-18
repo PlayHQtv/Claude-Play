@@ -1,0 +1,237 @@
+{
+ "ar_cover": {
+  "theme": "fortress",
+  "seed": 21,
+  "exposure": 0.95,
+  "cam": [
+   0,
+   6.2,
+   20
+  ],
+  "look": [
+   0,
+   4.6,
+   0
+  ],
+  "shift": -0.12,
+  "heroes": [
+   {
+    "kind": "chest",
+    "tier": "leather",
+    "x": -3.906,
+    "z": -2.2,
+    "y": 3.0,
+    "s": 0.128,
+    "ry": 0.5
+   },
+   {
+    "kind": "chest",
+    "tier": "copper",
+    "x": -2.651,
+    "z": -1.0,
+    "y": 3.0,
+    "s": 0.128,
+    "ry": 0.38
+   },
+   {
+    "kind": "chest",
+    "tier": "gold",
+    "x": -1.349,
+    "z": -0.1,
+    "y": 3.0,
+    "s": 0.128,
+    "ry": 0.2
+   },
+   {
+    "kind": "chest",
+    "tier": "netherite",
+    "x": 0.0,
+    "z": 0.8,
+    "y": 2.85,
+    "s": 0.165,
+    "ry": 0,
+    "glow": "#ff7a3a",
+    "glowS": 7,
+    "glowA": 0.6
+   },
+   {
+    "kind": "chest",
+    "tier": "diamond",
+    "x": 1.349,
+    "z": -0.1,
+    "y": 3.0,
+    "s": 0.128,
+    "ry": -0.2
+   },
+   {
+    "kind": "chest",
+    "tier": "iron",
+    "x": 2.651,
+    "z": -1.0,
+    "y": 3.0,
+    "s": 0.128,
+    "ry": -0.38
+   },
+   {
+    "kind": "chest",
+    "tier": "chain",
+    "x": 3.906,
+    "z": -2.2,
+    "y": 3.0,
+    "s": 0.128,
+    "ry": -0.5
+   }
+  ],
+  "lights": [
+   [
+    "#ffffff",
+    25,
+    25,
+    0,
+    6,
+    9
+   ]
+  ]
+ },
+ "ar_leather": {
+  "theme": "meadow",
+  "seed": 3,
+  "shift": 0.07,
+  "heroes": [
+   {
+    "tier": "leather",
+    "glow": "#ffb070",
+    "glowA": 0.45
+   }
+  ]
+ },
+ "ar_gold": {
+  "theme": "desert",
+  "seed": 8,
+  "shift": 0.07,
+  "heroes": [
+   {
+    "tier": "gold",
+    "glow": "#ffd86a",
+    "glowA": 0.45
+   }
+  ]
+ },
+ "ar_copper": {
+  "theme": "copper",
+  "seed": 4,
+  "lights": [
+   [
+    "#ffb070",
+    40,
+    30,
+    -5,
+    8,
+    3
+   ],
+   [
+    "#5fd1b5",
+    30,
+    30,
+    6,
+    6,
+    -2
+   ]
+  ],
+  "shift": 0.07,
+  "heroes": [
+   {
+    "tier": "copper",
+    "glow": "#ff9a5a",
+    "glowA": 0.45
+   }
+  ]
+ },
+ "ar_chain": {
+  "theme": "fortress",
+  "seed": 9,
+  "exposure": 0.95,
+  "shift": 0.07,
+  "heroes": [
+   {
+    "tier": "chain",
+    "glow": "#cfd8ff",
+    "glowA": 0.45
+   }
+  ]
+ },
+ "ar_iron": {
+  "theme": "frost",
+  "seed": 12,
+  "shift": 0.07,
+  "heroes": [
+   {
+    "tier": "iron",
+    "glow": "#ffffff",
+    "glowA": 0.45
+   }
+  ],
+  "exposure": 0.82
+ },
+ "ar_diamond": {
+  "theme": "cave",
+  "seed": 5,
+  "lights": [
+   [
+    "#4ff0e6",
+    30,
+    30,
+    -6,
+    6,
+    -4
+   ]
+  ],
+  "shift": 0.07,
+  "heroes": [
+   {
+    "tier": "diamond",
+    "glow": "#3fe0d8",
+    "glowA": 0.45
+   }
+  ]
+ },
+ "ar_netherite": {
+  "theme": "nether",
+  "seed": 11,
+  "shift": 0.07,
+  "heroes": [
+   {
+    "tier": "netherite",
+    "glow": "#ff5a2a",
+    "glowA": 0.45
+   }
+  ],
+  "lights": [
+   [
+    "#e8f0ff",
+    35,
+    25,
+    0,
+    6,
+    9
+   ]
+  ]
+ },
+ "ar_cta": {
+  "theme": "nether",
+  "seed": 31,
+  "exposure": 0.9,
+  "heroes": [],
+  "shift": 0,
+  "lights": [
+   [
+    "#e8f0ff",
+    35,
+    25,
+    0,
+    6,
+    9
+   ]
+  ]
+ }
+}

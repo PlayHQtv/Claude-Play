@@ -200,3 +200,7 @@ xp
 xrk
 zcn
 zlr
+netherite
+piglins
+chainmail
+knockback
