@@ -1,0 +1,136 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "SETTINGS",
+ "cover": {
+  "kicker": "UPDATED FOR WARZONE SEASON 1",
+  "big": "WARZONE MW4",
+  "small": "SETTINGS",
+  "sub": "TAC SPRINT IS FREE NOW · SET IT UP RIGHT",
+  "gun": "mw4/w_Kastov_762.png",
+  "rows": [
+   [
+    "WARZONE",
+    "ARMOR PLATES: APPLY ALL"
+   ],
+   [
+    "MOVEMENT",
+    "SLIDE MAINTAINS SPRINT"
+   ],
+   [
+    "CONTROLLER",
+    "ADS TRANSITION: INSTANT"
+   ],
+   [
+    "AUDIO",
+    "DIALOGUE: 30"
+   ]
+  ],
+  "swipe": "SWIPE FOR ALL SETTINGS ›"
+ },
+ "slides": [
+  {
+   "sec": "SETTINGS 1/3",
+   "title": "WARZONE + SEASON 1",
+   "foot": "TAC SPRINT IS DEFAULT IN WARZONE · NO PERK NEEDED",
+   "settings": [
+    [
+     "ARMOR PLATE BEHAVIOR",
+     "APPLY ALL",
+     "One hold fills all your plates"
+    ],
+    [
+     "TACTICAL SPRINT ACTIVATION",
+     "SINGLE TAP SPRINT",
+     "One click instead of a double-tap"
+    ],
+    [
+     "SLIDE MAINTAINS SPRINT",
+     "ON",
+     "Season 1 removed the slide-to-sprint delay"
+    ],
+    [
+     "BUMPER PING",
+     "OFF",
+     "No accidental pings mid-fight"
+    ],
+    [
+     "3RD PERSON FIELD OF VIEW",
+     "90",
+     ""
+    ]
+   ]
+  },
+  {
+   "sec": "SETTINGS 2/3",
+   "title": "CONTROLLER",
+   "foot": "STICK SENSITIVITY: GUIDES SAY 1.50–1.60",
+   "settings": [
+    [
+     "ADS SENS TRANSITION TIMING",
+     "INSTANT",
+     "Nov 10 patch: snaps back to hip sens faster"
+    ],
+    [
+     "LEFT + RIGHT TRIGGER DEADZONE",
+     "0",
+     "Every press counts right away"
+    ],
+    [
+     "SLIDE/DIVE BEHAVIOR",
+     "TAP TO SLIDE",
+     "Faster slides after the Season 1 cooldown cut"
+    ],
+    [
+     "CONTROLLER VIBRATION",
+     "OFF",
+     "No shaking thumbs in a fight"
+    ]
+   ]
+  },
+  {
+   "sec": "SETTINGS 3/3",
+   "title": "GRAPHICS + AUDIO",
+   "foot": "SOURCES: DEXERTO · SETUP.GG · COD PATCH NOTES",
+   "settings": [
+    [
+     "120 HZ REFRESH RATE",
+     "ON",
+     "If your TV or monitor supports it"
+    ],
+    [
+     "ECO MODE PRESET",
+     "OFF",
+     ""
+    ],
+    [
+     "FIELD OF VIEW",
+     "100–105",
+     "Drop to 100 if far targets look too small"
+    ],
+    [
+     "DIALOGUE VOLUME",
+     "30",
+     "Callouts stay quiet, footsteps stay loud"
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHAT FOV",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP IT IN THE COMMENTS",
+  "follow_sub": "FOR DAILY WARZONE + MW4 TIPS",
+  "cutout": {
+   "img": "cut_soldier.png",
+   "right": 70,
+   "top": 1000,
+   "w": 520,
+   "fade": 62,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "source": "Dexerto Warzone wiki (controller/console/audio, 06.11.), Dexerto MW4 controller wiki, setup.gg controller + FOV guides, Call of Duty Warzone Season 1 patch notes (05.11. Tac Sprint default, slide cooldown -400 ms, slide-to-sprint delay removed; 10.11. Instant ADS transition timing)",
+ "notes": "CSI 'warzone mw4 settings' 918K (17.11.). Dup check vs 11.11. 'best mw4 settings' (MP): Warzone-only settings + Warzone values; overlap only FOV/effects/music.",
+ "verified": "independent verifier 18.11.2026: PASS after fixes (ADS caption, sens range 1.50-1.60, trigger effect + effects/music rows removed as Nov 11 repeats, slide title, source foot)"
+}

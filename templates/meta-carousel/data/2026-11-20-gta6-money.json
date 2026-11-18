@@ -1,0 +1,95 @@
+{
+ "hdr": "GTA 6 MONEY",
+ "series_no": 2,
+ "source": "Source: Rockstar North previews via IGN, GamesRadar+, GTABase, TweakTown",
+ "notes": "Autopilot 18.11. for Fri 20.11. 12:00 Berlin, GTA 6 TIP #2. CSI 'Gta6 money' 290K +1000% (17.11.). Built pre-launch from Rockstar North statements in previews; legit methods only, no glitches, no payout numbers (none official). Facts: (1) money matters more, some missions need cash to continue (IGN 69 details #51 + GamesRadar+ Nelson quote). (2) main ways: boosting/selling cars, holding up businesses, robbing stores, bank heists; solo or as a couple, together counts for relationship (IGN #52-53). (3) stolen goods sold to fences for jewelry and cars (IGN #56 + GTABase). (4) cash on hand lost if you die, deposit at ATM, bank money safe (GTABase + Nelson to TroisCouleurs via Vice/GTA6Everything). Dup check: no money post before; beginner tips 19.11. (WAINK, locked cars) not reused. | Verifier 18.11.: PASS; fixes applied (kicker NEW->BIGGER, source line widened: bank/cash facts via TGG hands-on reported by GTABase/TweakTown/Gfinity).",
+ "cover": {
+  "amb": "g_am02_amb.jpg",
+  "kicker": "GTA 6 TIP #2 · LEGIT WAYS",
+  "big": "GTA 6 <em>MONEY</em><br>GUIDE",
+  "size": 168,
+  "neon": "how cash works",
+  "neon_top": 655,
+  "panels": [],
+  "sun_top": 520,
+  "swipe": "SWIPE FOR ALL 5 <b>›</b>",
+  "bgshot": "g_am02.jpg",
+  "rstar": true,
+  "rstar_left": 268,
+  "cutout": {
+   "img": "cut_jason_cash.png",
+   "right": -80,
+   "top": 760,
+   "h": 640
+  },
+  "times_title": "HOW MONEY WORKS",
+  "times_top": 790,
+  "times": [
+   [
+    "STORY NEEDS CASH",
+    "01"
+   ],
+   [
+    "ROB STORES",
+    "02"
+   ],
+   [
+    "SELL CARS",
+    "03"
+   ],
+   [
+    "USE A FENCE",
+    "04"
+   ],
+   [
+    "BANK YOUR CASH",
+    "05"
+   ]
+  ],
+  "times_note": "via Rockstar North"
+ },
+ "tips": [
+  {
+   "shot": "g_vc26.jpg",
+   "kicker": "BIGGER IN GTA 6",
+   "title": "MONEY <em>MATTERS</em>",
+   "body": "Some story missions only continue once you've <b>made enough money</b>. Earning cash in <span class=\"hl\">free roam</span> is part of the game."
+  },
+  {
+   "shot": "g_jl17.jpg",
+   "kicker": "HOLD-UPS",
+   "title": "ROB <em>STORES + BANKS</em>",
+   "body": "Hold up <b>stores</b>, businesses and <b>banks</b>, solo or <b>as a couple</b>. Jobs together <span class=\"hl\">help the relationship</span>.",
+   "idx_right": true
+  },
+  {
+   "shot": "g_vc14.jpg",
+   "kicker": "CAR BOOSTING",
+   "title": "SELL <em>STOLEN CARS</em>",
+   "body": "Boosting and selling cars is one of the <b>main ways</b> to earn. Car fences <span class=\"hl\">buy stolen rides</span>."
+  },
+  {
+   "shot": "g_vc21.jpg",
+   "kicker": "LIKE RDR2",
+   "title": "FIND <em>A FENCE</em>",
+   "body": "Stolen goods don't pay out on their own: sell them to a <b>fence</b>. There are fences for <span class=\"hl\">jewelry and cars</span>."
+  },
+  {
+   "shot": "g_skyline.jpg",
+   "kicker": "DON'T LOSE IT",
+   "title": "BANK <em>YOUR CASH</em>",
+   "body": "Cash you carry can be <b>lost if you die</b>. Deposit it at an <b>ATM</b>: money in the bank is <span class=\"hl\">safe</span>."
+  }
+ ],
+ "cta": {
+  "amb": "g_vc18_amb.jpg",
+  "title": "HOW WILL YOU<br><em>GET RICH?</em>",
+  "neon": "comment 1–5",
+  "cutout": {
+   "img": "cut_suit.png",
+   "right": -120,
+   "top": 700,
+   "h": 760
+  }
+ }
+}

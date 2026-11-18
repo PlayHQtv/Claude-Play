@@ -164,7 +164,7 @@ def cover(d):
                 + ''.join(f'<div class="body" style="top:{t}px">{x}</div>' for t, x in c.get('lines', []))
                 + f'<div class="swipe" style="top:1250px">{c.get("swipe", "SWIPE <b>›</b>")}</div>')
         return base(body, d, amb=c.get('amb'), cover=True)
-    body = ((f'<div class="shot" style="top:0;height:608px;opacity:.6;background-image:url(/_build/gta/{c["bgshot"]})"></div>' if c.get('bgshot') else '')
+    body = ((f'<div class="shot" style="top:0;height:608px;opacity:{c.get('bg_opacity', .6)};background-image:url(/_build/gta/{c["bgshot"]})"></div>' if c.get('bgshot') else '')
             + f'<div class="sun" style="right:-90px;top:{c.get("sun_top", 420)}px;width:640px;height:640px"></div>'
             + panels
             + (f'<img class="poster" src="/_build/gta/{c["poster"]["img"]}" style="right:{c["poster"].get("right", 40)}px;top:{c["poster"].get("top", 600)}px;height:{c["poster"].get("h", 700)}px;transform:rotate({c["poster"].get("r", 4)}deg)">' if c.get('poster') else '')
