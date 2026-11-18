@@ -19,12 +19,17 @@ jobs:
       - run: bash bin/models.sh full
       - run: |
           mkdir -p in out
-          while read -r name; do [ -z "$name" ] && continue; gh release download grab-private -p "$name" -D in --clobber; done < grab/vision.txt
+          # line = "<asset name>" or "<asset name> x0 y0 x1 y1" (crop box in source pixels -> cleaner mask on busy scenes)
+          while read -r name rest; do [ -z "$name" ] && continue; gh release download grab-private -p "$name" -D in --clobber; done < grab/vision.txt
           cd templates/meta-carousel && python3 - <<'P'
           import os, vision as V
           from PIL import Image
-          for n in os.listdir('../../in'):
-              im = Image.open('../../in/' + n).convert('RGB')
-              V.birefnet(im, full=True).save('../../out/m_' + os.path.splitext(n)[0] + '.png'); print('ok', n)
+          for line in open('../../grab/vision.txt'):
+              p = line.split()
+              if not p: continue
+              n = p[0]; im = Image.open('../../in/' + n).convert('RGB'); tag = ''
+              if len(p) == 5:
+                  box = tuple(int(v) for v in p[1:]); im = im.crop(box); tag = '_c' + '_'.join(p[1:])
+              V.birefnet(im, full=True).save('../../out/m_' + os.path.splitext(n)[0] + tag + '.png'); print('ok', n, tag)
           P
           cd ../.. && gh release upload grab-private out/* --clobber
