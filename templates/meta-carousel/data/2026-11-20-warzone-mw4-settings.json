@@ -131,6 +131,6 @@
   }
  },
  "source": "Dexerto Warzone wiki (controller/console/audio, 06.11.), Dexerto MW4 controller wiki, setup.gg controller + FOV guides, Call of Duty Warzone Season 1 patch notes (05.11. Tac Sprint default, slide cooldown -400 ms, slide-to-sprint delay removed; 10.11. Instant ADS transition timing)",
- "notes": "CSI 'warzone mw4 settings' 918K (17.11.). Dup check vs 11.11. 'best mw4 settings' (MP): Warzone-only settings + Warzone values; overlap only FOV/effects/music.",
+ "notes": "CSI 'warzone mw4 settings' 918K (17.11.). Dup check vs 11.11. 'best mw4 settings' (MP): Warzone-only settings + Warzone values; overlap only FOV/effects/music. | Scheduled Fri 20.11. 18:00 Berlin (Metricool), byte check OK.",
  "verified": "independent verifier 18.11.2026: PASS after fixes (ADS caption, sens range 1.50-1.60, trigger effect + effects/music rows removed as Nov 11 repeats, slide title, source foot)"
 }
