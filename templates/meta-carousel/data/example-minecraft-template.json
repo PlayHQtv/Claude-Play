@@ -1,0 +1,73 @@
+{
+ "_note": "TEMPLATE EXAMPLE (user 18.11.2026) – facts must be re-verified before any real post; backgrounds = own pixel art (mc_art.py) or own gameplay screenshots",
+ "hdr": "BEGINNER TIPS",
+ "source": "Source: Minecraft Wiki · Java + Bedrock 1.21",
+ "cover": {
+  "bg": "scene_day1.png",
+  "kicker": "SURVIVAL · DAY ONE",
+  "big": "MINECRAFT<br><em>TIPS</em> FOR<br>BEGINNERS",
+  "size": 132,
+  "splash": "don't dig down!",
+  "splash_top": 770,
+  "list_title": "5 RULES",
+  "list_top": 850,
+  "list": [
+   "NEVER DIG DOWN",
+   "DIAMONDS AT Y -58",
+   "SLEEP IN A BED",
+   "WATER = NO FALL",
+   "TORCHES STOP MOBS"
+  ],
+  "swipe_top": 1258,
+  "swipe": "SWIPE FOR ALL 5 <b>›</b>",
+  "kicker_top": 0
+ },
+ "tips": [
+  {
+   "bg": "scene_day2.png",
+   "kicker": "MINING SAFETY",
+   "title": "NEVER DIG <em>STRAIGHT DOWN</em>",
+   "body": "You can drop into a <b>cave</b> or straight into <span class=\"hl\">lava</span>. Dig a staircase instead and keep a block under your feet."
+  },
+  {
+   "bg": "scene_cave1.png",
+   "kicker": "ORE LEVELS",
+   "title": "DIAMONDS LIVE <em>DEEP</em>",
+   "body": "Diamonds are most common <b>near the bottom of the world</b>. Bring an <span class=\"hl\">iron pickaxe</span> or better, or they drop nothing.",
+   "facts": [
+    [
+     "BEST LAYER",
+     "Y -58"
+    ],
+    [
+     "PICKAXE",
+     "IRON+"
+    ]
+   ]
+  },
+  {
+   "bg": "scene_day3.png",
+   "kicker": "SPAWN POINT",
+   "title": "SLEEP IN A <em>BED</em>",
+   "body": "Sleeping sets your <b>spawn point</b> and skips the night. Die far from home and you come back <span class=\"hl\">next to your bed</span>."
+  },
+  {
+   "bg": "scene_day1.png",
+   "kicker": "FALL DAMAGE",
+   "title": "WATER <em>SAVES YOU</em>",
+   "body": "Landing in <b>water</b> cancels fall damage. Pros place a <span class=\"hl\">water bucket</span> right before they hit the ground.",
+   "idx_right": true
+  },
+  {
+   "bg": "scene_cave1.png",
+   "kicker": "MOB SPAWNING",
+   "title": "LIGHT IT <em>UP</em>",
+   "body": "Hostile mobs only spawn in <b>total darkness</b>. Place <span class=\"hl\">torches</span> in caves and around your base to keep them away."
+  }
+ ],
+ "cta": {
+  "bg": "scene_day2.png",
+  "title": "WHICH TIP<br><em>HELPED</em> MOST?",
+  "splash": "comment 1-5!"
+ }
+}

@@ -529,3 +529,8 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - Before any UPDATED / part-2 post: check the old post's views (getAnalyticsDataByMetrics TKPO07 + TKPO21). If the old post has >= 2,000 views or >= 70% search share -> NO update/part 2; pick a NEW search term instead.
 - UPDATED only for old posts that flopped (< 2,000 views) or when the old info is now wrong (then the new post must say what changed).
 - Max 2 posts per day (12:00 + 18:00); extra posts only for big events (launch, new season).
+
+## MINECRAFT TEMPLATE (user 18.11.2026: "Ich werde dann auch Minecraft anfangen. Erstelle schonmal eine Vorlage nach den Regeln aber in dem Stil von Minecraft")
+- Renderer templates/meta-carousel/mc_render.py, example data/example-minecraft-template.json (cover with list GUI + splash text, tip slides with big pixel numbers + dark panel + item-slot facts, CTA with green SAVE THIS button + disclaimer). Fonts: Pixelify Sans + Press Start 2P (OFL, digits always in Press Start 2P for legibility).
+- Minecraft Usage Guidelines: NO Minecraft logo (the word MINECRAFT only as plain text), NO official marketing/packaging artwork, NO Mojang characters drawn by us. Backgrounds = own gameplay screenshots (user) or own pixel art (mc_art.py -> _build/mc/scene_*.png). Disclaimer on every CTA: "NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT."
+- All other rules apply (search first, short caption, QA 0/0, verifier, safe zones, 2 posts/day). Not part of the autopilot until the user starts Minecraft.
