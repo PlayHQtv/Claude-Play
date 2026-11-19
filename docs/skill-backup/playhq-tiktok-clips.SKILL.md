@@ -533,7 +533,7 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 ## RESCUE PLAN (user 19.11.2026: "Wir müssen den Account retten und die Aufrufe steigern")
 Analysis 19.11. (50 posts, Metricool): "Best <gun> build MW4" posts = 4k–11k views, 85–97 % search (PPSh 11.3k, Oris 9.4k, Kastov 5.8k, Cronen 5.5k, Han 4.5k, best SMG 4.1k). News/patch/movement/SBMM/camos/DMZ-map/GTA-news = 300–650 views. Avg watch time builds 14–19 s vs. new posts 4–9 s.
 - EVERY DAY at least 1 build/loadout post (user: "Das mit dem 1 build oder loadout Post passt mir so"): a gun/setup without its own post yet (MW4 MP, Warzone, new season guns), CSI build terms first. Cover = big gun + "BEST … BUILD", little text.
-- GTA: search topics only (money, cheats, weapons, cars/rhino, controller, how-to), no news unless huge. CSI list docs/trends/2026-11-19-gta6.md.
+- GTA PAUSED (user 19.11. 18:18: "Stelle derweil auf CoD um und den Cheat Post eben später"): CoD only (MW4 MP, Warzone, DMZ builds/loadouts/settings) until the user says otherwise. GTA cheats + money posts are Metricool drafts (dated 30.12., draft=true) - re-schedule only when the user asks. When GTA returns: search topics only, max 1/day, CSI list docs/trends/2026-11-19-gta6.md.
 - No niche topics (SBMM, camos, graphics, movement explainers).
 - Minecraft PAUSED (user 19.11.: "Minecraft kannst du derweil aus der Planung streichen"); armor post kept as Metricool draft.
 - Still: max 2 posts/day, no UPDATED copies of strong posts, QA 0/0, verifier, official/primary sources.
