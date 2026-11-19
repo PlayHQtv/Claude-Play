@@ -1,0 +1,94 @@
+{
+ "hdr": "CHEAT CODES",
+ "series_no": 3,
+ "source": "Source: GameSpot, PC Gamer, Eurogamer, Game Rant, PowerPyx (hands-on)",
+ "notes": "Autopilot 19.11. for Sat 21.11. 12:00 Berlin, GTA 6 TIP #3. CSI 'gta6 code' 280K +62.4% (17.11.). Cheats are an in-game feature (Cheats tab in Progress menu after the story), hands-on confirmed by GameSpot (fresh save test), PC Gamer, Eurogamer, Game Rant, PowerPyx 18.11. Only codes where every source agrees: $250,000, Infinite Ammo, Body Armor (Destructoid typo with 9 inputs ignored: GameSpot + Game Rant + PowerPyx + Insider Gaming show 10). Left out: Unlimited Focus + Cycle Weather (Dexerto/Destructoid differ), Attack Force (GameSpot differs). No spoilers (only 'finish the story'), no glitches. Dup check: no cheat post before; money guide 20.11. (legit ways) has no cheat; beginner tips 19.11. no cheat. | Verifier 19.11.: FAIL -> fixed (trophies until session ends, CTA comment 3/4/5, own unlock, silver+, hands-on); re-verify PASS pending.",
+ "cover": {
+  "amb": "g_vc08_amb.jpg",
+  "kicker": "GTA 6 TIP #3 · THE CATCH",
+  "big": "GTA 6 <em>CHEAT</em><br>CODES",
+  "size": 168,
+  "neon": "beat the story first",
+  "neon_top": 655,
+  "panels": [],
+  "sun_top": 520,
+  "swipe": "SWIPE FOR THE CODES <b>›</b>",
+  "bgshot": "g_vc08.jpg",
+  "cutout": {
+   "img": "cut_boat.png",
+   "right": -170,
+   "top": 780,
+   "h": 600
+  },
+  "times_title": "HOW CHEATS WORK",
+  "times_top": 790,
+  "times": [
+   [
+    "BEAT THE STORY",
+    "01"
+   ],
+   [
+    "OPEN YOUR PHONE",
+    "02"
+   ],
+   [
+    "$250K CASH",
+    "03"
+   ],
+   [
+    "INFINITE AMMO",
+    "04"
+   ],
+   [
+    "BODY ARMOR",
+    "05"
+   ]
+  ],
+  "times_note": "PS5 + Xbox Series X|S"
+ },
+ "tips": [
+  {
+   "shot": "g_vc22.jpg",
+   "kicker": "THE CATCH",
+   "title": "BEAT THE <em>STORY</em>",
+   "body": "Cheats only work <b>after the main story</b>. Then a <b>Cheats</b> tab shows up in the <span class=\"hl\">Progress menu</span>. Each of the 61 cheats has its own unlock."
+  },
+  {
+   "shot": "g_vc24.jpg",
+   "kicker": "HOW TO ENTER",
+   "title": "OPEN <em>YOUR PHONE</em>",
+   "body": "Press <b>D-pad Up</b> for the phone, hold <b>L1/LB</b>, press <b>R1/RB</b>, enter the code on the <span class=\"hl\">D-pad</span>. No saving while on, no trophies until the session ends.",
+   "idx_right": true
+  },
+  {
+   "shot": "g_vc04.jpg",
+   "kicker": "UNLOCK: FINISH THE STORY",
+   "title": "<em>$250,000</em> CASH",
+   "body": "<b>UP, RIGHT, DOWN, LEFT, UP, LEFT, DOWN, RIGHT</b><br>The only money cheat. <span class=\"hl\">No saving</span> while it's on."
+  },
+  {
+   "shot": "g_jl15.jpg",
+   "kicker": "UNLOCK: 25 SILVER+ RANGE MEDALS",
+   "title": "INFINITE <em>AMMO</em>",
+   "body": "<b>DOWN, UP, RIGHT, DOWN, LEFT, LEFT, UP, DOWN, DOWN, DOWN</b><br>Win the medals at <span class=\"hl\">shooting ranges</span>.",
+   "idx_right": true
+  },
+  {
+   "shot": "g_gr08.jpg",
+   "kicker": "UNLOCK: 100 WORKOUTS",
+   "title": "BODY <em>ARMOR</em>",
+   "body": "<b>DOWN, UP, LEFT, UP, UP, UP, UP, UP, DOWN, DOWN</b><br>Adds armor. <span class=\"hl\">Save first</span>, then cheat."
+  }
+ ],
+ "cta": {
+  "amb": "g_vc22_amb.jpg",
+  "title": "WHICH CHEAT<br><em>DO YOU USE?</em>",
+  "neon": "comment 3, 4 or 5",
+  "cutout": {
+   "img": "cut_duo.png",
+   "right": -150,
+   "top": 720,
+   "h": 720
+  }
+ }
+}
