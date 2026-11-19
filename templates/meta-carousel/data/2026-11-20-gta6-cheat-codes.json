@@ -5,7 +5,7 @@
  "notes": "Autopilot 19.11. for Sat 21.11. 12:00 Berlin, GTA 6 TIP #3. CSI 'gta6 code' 280K +62.4% (17.11.). Cheats are an in-game feature (Cheats tab in Progress menu after the story), hands-on confirmed by GameSpot (fresh save test), PC Gamer, Eurogamer, Game Rant, PowerPyx 18.11. Only codes where every source agrees: $250,000, Infinite Ammo, Body Armor (Destructoid typo with 9 inputs ignored: GameSpot + Game Rant + PowerPyx + Insider Gaming show 10). Left out: Unlimited Focus + Cycle Weather (Dexerto/Destructoid differ), Attack Force (GameSpot differs). No spoilers (only 'finish the story'), no glitches. Dup check: no cheat post before; money guide 20.11. (legit ways) has no cheat; beginner tips 19.11. no cheat. | Verifier 19.11.: FAIL -> fixed (trophies until session ends, CTA comment 3/4/5, own unlock, silver+, hands-on); re-verify PASS. Scheduled Sat 21.11. 12:00 Berlin (Metricool), byte check OK, tmp assets deleted.",
  "cover": {
   "amb": "g_vc08_amb.jpg",
-  "kicker": "GTA 6 TIP #3 · THE CATCH",
+  "kicker": "GTA 6 TIP #2 · THE CATCH",
   "big": "GTA 6 <em>CHEAT</em><br>CODES",
   "size": 168,
   "neon": "beat the story first",
@@ -16,9 +16,9 @@
   "bgshot": "g_vc08.jpg",
   "cutout": {
    "img": "cut_boat.png",
-   "right": -170,
-   "top": 780,
-   "h": 600
+   "right": -30,
+   "top": 850,
+   "h": 520
   },
   "times_title": "HOW CHEATS WORK",
   "times_top": 790,
@@ -85,10 +85,10 @@
   "title": "WHICH CHEAT<br><em>DO YOU USE?</em>",
   "neon": "comment 3, 4 or 5",
   "cutout": {
-   "img": "cut_duo.png",
-   "right": -150,
-   "top": 720,
-   "h": 720
+   "img": "cut_boss.png",
+   "right": 10,
+   "top": 760,
+   "h": 660
   }
  }
 }

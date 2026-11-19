@@ -223,7 +223,7 @@ def cta(d):
             + (f'<img class="cut" src="/_build/gta/{cut["img"]}" style="right:{cut.get("right", -60)}px;top:{cut.get("top", 560)}px;height:{cut.get("h", 860)}px">' if cut else '')
             + f'<div class="h fit" style="top:250px" data-size="150" data-max="960">{c["title"]}</div>'
             + f'<div class="neon fit" style="top:560px" data-size="96" data-max="560">{E(c["neon"])}</div>'
-            + '<div class="save" style="top:780px"><small>YOUR GTA 6 CHEAT SHEET</small><strong>SAVE THIS</strong></div>'
+            + f'<div class="save" style="top:780px"><small>{E(c.get("save_small", "YOUR GTA 6 CHEAT SHEET"))}</small><strong>SAVE THIS</strong></div>'
             + '<div class="fol" style="top:1040px">FOLLOW <em>@PLAYHQTV</em></div>'
             + '<div class="disc">UNOFFICIAL FAN GUIDE<br>NOT AFFILIATED WITH ROCKSTAR GAMES</div>')
     return base(body, {**d, 'source': ''}, amb=c.get('amb'))

@@ -530,6 +530,14 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - UPDATED only for old posts that flopped (< 2,000 views) or when the old info is now wrong (then the new post must say what changed).
 - Max 2 posts per day (12:00 + 18:00); extra posts only for big events (launch, new season).
 
+## RESCUE PLAN (user 19.11.2026: "Wir müssen den Account retten und die Aufrufe steigern")
+Analysis 19.11. (50 posts, Metricool): "Best <gun> build MW4" posts = 4k–11k views, 85–97 % search (PPSh 11.3k, Oris 9.4k, Kastov 5.8k, Cronen 5.5k, Han 4.5k, best SMG 4.1k). News/patch/movement/SBMM/camos/DMZ-map/GTA-news = 300–650 views. Avg watch time builds 14–19 s vs. new posts 4–9 s.
+- EVERY DAY at least 1 build/loadout post (user: "Das mit dem 1 build oder loadout Post passt mir so"): a gun/setup without its own post yet (MW4 MP, Warzone, new season guns), CSI build terms first. Cover = big gun + "BEST … BUILD", little text.
+- GTA: search topics only (money, cheats, weapons, cars/rhino, controller, how-to), no news unless huge. CSI list docs/trends/2026-11-19-gta6.md.
+- No niche topics (SBMM, camos, graphics, movement explainers).
+- Minecraft PAUSED (user 19.11.: "Minecraft kannst du derweil aus der Planung streichen"); armor post kept as Metricool draft.
+- Still: max 2 posts/day, no UPDATED copies of strong posts, QA 0/0, verifier, official/primary sources.
+
 ## NO ROCKSTAR LOGO (user 19.11.2026: "Mach beim nächsten GTA Post das Rockstar Logo raus!")
 - Never show the Rockstar Games R* logo on any slide. gta3_render.py ignores "rstar" (hard-disabled). Only the GTA VI logo + UNOFFICIAL FAN GUIDE tile stay. Text mentions ("via Rockstar North", "NOT AFFILIATED WITH ROCKSTAR GAMES") are fine.
 
@@ -539,5 +547,5 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 ## MINECRAFT TEMPLATE (user 18.11.2026: "Ich werde dann auch Minecraft anfangen. Erstelle schonmal eine Vorlage nach den Regeln aber in dem Stil von Minecraft")
 - Renderer templates/meta-carousel/mc_render.py, example data/example-minecraft-template.json (cover with list GUI + splash text, tip slides with big pixel numbers + dark panel + item-slot facts, CTA with green SAVE THIS button + disclaimer). Fonts: Pixelify Sans + Press Start 2P (OFL, digits always in Press Start 2P for legibility).
 - Minecraft Usage Guidelines: NO Minecraft logo (the word MINECRAFT only as plain text), NO official marketing/packaging artwork, NO Mojang characters drawn by us. Backgrounds = own gameplay screenshots (user) or own pixel art (mc_art.py -> _build/mc/scene_*.png). Disclaimer on every CTA: "NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT."
-- All other rules apply (search first, short caption, QA 0/0, verifier, safe zones, 2 posts/day). Minecraft started 20.11. 12:00 (armor tier list); autopilot may pick Minecraft search topics from docs/trends/ like MW4/GTA (max 2 posts/day total).
+- All other rules apply (search first, short caption, QA 0/0, verifier, safe zones, 2 posts/day). Minecraft PAUSED since 19.11. (see RESCUE PLAN) - do not schedule Minecraft until the user restarts it.
 - PREMIUM LOOK (user 18.11.: "Die Optik muss schon besser sein und hochwertiger"): the flat pixel-art backgrounds are retired. Use own 3D voxel scenes: `mc_scene.py data/<scenes>.json` renders three.js scenes (mc_scene.html, SwiftShader, ~25 s each) to _build/mc/<name>.png. Themes meadow/desert/copper/fortress/cave/nether/frost; heroes = own extruded 16x16 pixel armor items (helmet/chest/legs/boots, tiers leather/gold/copper/chain/iron/diamond/netherite) with glow; params cam/look/shift/lights/seed/exposure. Ranked layout in mc_render.py when data has "ranks": tier badge S–F + RANK #n OF 7 + name, segmented stat bars (value in Press Start 2P), dark glass panel at top 868, verdict line. Example: data/2026-11-20-minecraft-armor-tier-list.json + data/mc-armor-scenes.json. Check each scene at full size (holes in terrain show as light boxes → change seed).
