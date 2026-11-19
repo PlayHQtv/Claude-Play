@@ -217,3 +217,8 @@ pxjr
 veloci
 epc
 sakin
+exe
+drc
+unserialized
+trackline
+respawns
