@@ -105,11 +105,16 @@ def save_jpg(im, path, quality=95):
 
 
 def cutout_html(k):
-    """Free-standing operator cut-out BEHIND the title (put it first in the body), bleeding off the right edge, fading out at the bottom."""
-    return (f'<img src="/_build/s1/{k["img"]}" style="position:absolute;right:{k.get("right", 0)}px;top:{k["top"]}px;width:{k["w"]}px;'
-            f'-webkit-mask-image:linear-gradient(180deg,#000 {k.get("fade", 62)}%,transparent 98%);'
-            'filter:' + ('drop-shadow(0 0 2px rgba(255,214,120,.95)) drop-shadow(0 0 14px rgba(255,190,60,.45)) ' if k.get('rim') else '')
-            + f'drop-shadow(-22px 12px 30px rgba(0,0,0,.9)) brightness({k.get("bright", 1.04)})">')
+    """Free-standing operator cut-out BEHIND the title (put it first in the body), bleeding off the right edge, fading out at the bottom.
+    Layers: padded outer div = bottom fade mask, inner div = rim glow + shadow, img. The glow is drawn on the full figure
+    and faded together with it, and the 60px padding keeps the mask box from cutting the glow into a hard rectangle
+    (verifier 19.11.2026)."""
+    p = 60
+    return (f'<div style="position:absolute;right:{k.get("right", 0) - p}px;top:{k["top"] - p}px;width:{k["w"]}px;padding:{p}px;'
+            f'-webkit-mask-image:linear-gradient(180deg,#000 {k.get("fade", 62)}%,transparent 98%)">'
+            '<div style="filter:' + ('drop-shadow(0 0 2px rgba(255,214,120,.95)) drop-shadow(0 0 14px rgba(255,190,60,.45)) ' if k.get('rim') else '')
+            + f'drop-shadow(-22px 12px 30px rgba(0,0,0,.9)) brightness({k.get("bright", 1.04)})">'
+            f'<img src="/_build/s1/{k["img"]}" style="display:block;width:100%"></div></div>')
 
 
 GAME_LOGO = '/_build/s1/logo_mw4.png'  # official MW4 wordmark, private (_build is git-ignored)

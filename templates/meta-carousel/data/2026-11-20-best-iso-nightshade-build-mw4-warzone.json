@@ -1,0 +1,153 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "WARZONE + DMZ",
+ "rank_label": "BUILD",
+ "cover": {
+  "kicker": "NOV 13 BUFF · SEASON 1",
+  "big": "ISO NIGHTSHADE",
+  "small": "BEST BUILD MW4",
+  "sub": "2 WARZONE + 1 DMZ LOADOUT",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_ISO_Nightshade.png"
+ },
+ "cta": {
+  "white": "WHICH BUILD",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_sniper.png",
+   "right": -60,
+   "top": 990,
+   "w": 600,
+   "fade": 52,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "image": "mw4/w_ISO_Nightshade.png",
+   "short": "WZ CLOSE RANGE",
+   "title_white": "ISO",
+   "title_gold": "NIGHTSHADE",
+   "class": "SMG",
+   "class_note": "Warzone close range",
+   "tagline": "#1 META PICK FOR WARZONE",
+   "brightness": 1.2,
+   "build_code": "S06-3K9Y5-K39PZ-B911",
+   "attachments": [
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "ZLR MAG-Z 9\""
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "40 ROUND MAG"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "DEMO STP-1"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "EXP G2-44 STOCK"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMO",
+     "name": "9MM PARABELLUM HIGH VELOCITY"
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "image": "mw4/w_ISO_Nightshade.png",
+   "short": "WZ SNIPER SUPPORT",
+   "title_white": "ISO",
+   "title_gold": "NIGHTSHADE",
+   "class": "SMG",
+   "class_note": "Warzone sniper support",
+   "tagline": "EASIEST TO CONTROL",
+   "brightness": 1.2,
+   "build_code": "S06-3K9Y5-LJH5N-Z711",
+   "attachments": [
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "ZLR CARBON-900"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "FSS FIRELINE GRIP"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "50 ROUND DRUM MAG"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "BRUEN MOD3"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMO",
+     "name": "9MM PARABELLUM HIGH VELOCITY"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "image": "mw4/w_ISO_Nightshade.png",
+   "short": "DMZ APEX",
+   "title_white": "ISO",
+   "title_gold": "NIGHTSHADE",
+   "class": "SMG",
+   "class_note": "DMZ close range apex build",
+   "tagline": "ISO TRACE APEX, 50 ROUND DRUM",
+   "brightness": 1.2,
+   "build_code": "S06-3PXJR-DEH11",
+   "apex": "ISO TRACE",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "FSS CRACKDOWN"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "SCHLAGER VISIV-5"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "ZLR VELOCI GEN.2"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "50 ROUND DRUM MAG"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "FSS TAC90 GRIP"
+    }
+   ]
+  }
+ ],
+ "source": "codmunity.gg/weapon/mw4/iso-nightshade (stats last updated 13/11/2026, fetched 19.11.2026): WZ Close Range S06-3K9Y5-K39PZ-B911 (lvl 61, 585 ms 0-10 m, pro loadout of 20 pros), WZ Sniper Support S06-3K9Y5-LJH5N-Z711 (lvl 61, EaseScore 9.2), DMZ Close Range with Apex S06-3PXJR-DEH11 (lvl 64; codmunity lists it as the only DMZ build). Nov 13 official patch text: Max Damage Range 11.68 -> 12.45 m, Mid Damage Range 1 20.45 -> 22.99 m, Mid Damage 2 removed, Min Damage 14 -> 16.",
+ "notes": "UPDATED-type topic allowed: old ISO post 10.11. had 1,784 views (<2,000). All 3 codes are new (old post: S06-3YNQ7-YB11, S06-3YNQ9-UB11, S06-3Q1JR-FJU11). CSI 17.11.: iso nightshade mw4 2.36M. Fri 20.11. 18:00 (replaces GTA cheats, user 19.11.: CoD only for now).",
+ "caption": "Best ISO Nightshade build MW4 – Warzone + DMZ loadouts 🎯\nISO Nightshade Warzone loadout + build codes 👉 Save it!\n#mw4 #isonightshade #warzone #mw4loadout #warzoneloadout",
+ "first_comment": "Which ISO build are you running: 1, 2 or 3? 👇",
+ "tiktok_title": "Best ISO Nightshade build MW4 + Warzone"
+}
