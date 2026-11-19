@@ -1,0 +1,1 @@
+{"mz_test": {"theme": "meadow", "seed": 6, "heroes": [{"kind": "mascot", "tier": "diamond", "y": 0.6, "ry": -0.4, "glow": "#3fe0d8", "glowA": 0.3}], "look": [0, 3.6, 0], "cam": [0, 4.2, 15]}, "mz_test2": {"theme": "desert", "seed": 8, "heroes": [{"kind": "mascot", "tier": "gold", "y": 0.6, "ry": -0.4}], "look": [0, 3.6, 0], "cam": [0, 4.2, 15]}}

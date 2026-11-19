@@ -13,7 +13,7 @@
   "sun_top": 520,
   "swipe": "SWIPE FOR ALL TIMES <b>›</b>",
   "bgshot": "g_vc27.jpg",
-  "rstar": true,
+  "rstar": false,
   "cutout": {
    "img": "cut_boss.png",
    "right": -20,

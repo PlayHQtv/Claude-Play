@@ -530,6 +530,9 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 - UPDATED only for old posts that flopped (< 2,000 views) or when the old info is now wrong (then the new post must say what changed).
 - Max 2 posts per day (12:00 + 18:00); extra posts only for big events (launch, new season).
 
+## NO ROCKSTAR LOGO (user 19.11.2026: "Mach beim nächsten GTA Post das Rockstar Logo raus!")
+- Never show the Rockstar Games R* logo on any slide. gta3_render.py ignores "rstar" (hard-disabled). Only the GTA VI logo + UNOFFICIAL FAN GUIDE tile stay. Text mentions ("via Rockstar North", "NOT AFFILIATED WITH ROCKSTAR GAMES") are fine.
+
 ## OFFICIAL SOURCES ONLY (user 18.11.2026: "Suche immer nach offiziellen Quellen, Wikis etc")
 - Facts for every post come from official sources: publisher/developer sites and patch notes (minecraft.net, rockstargames.com, callofduty.com), the official game wikis (minecraft.wiki etc.). Use WebSearch with allowed_domains for them; fan sites/SEO blogs only as hints, never as the source. The verifier checks against official sources too.
 

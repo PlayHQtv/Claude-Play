@@ -137,8 +137,9 @@ def base(body, d, amb=None, cover=False, idx=None, total=None):
         prog = '<div class="prog">' + ''.join(f'<i class="{"on" if i == idx else ""}"></i>' for i in range(total)) + '</div>'
     # Cover brand (user 15.11.2026): ORIGINAL GTA VI logo stays ("Behalte das Original Logo bei") + "UNOFFICIAL FAN GUIDE" glass tile next to it.
     brand = ('<div class="tbrand"><b>GTA 6</b><span>UNOFFICIAL<br>FAN GUIDE</span></div>' if d.get('brand', 'logo') == 'text'
-             else '<img class="glogo" src="/_build/gta/logo_gta6.png">' + f'<div class="tbrand" style="left:{d.get("cover", {}).get("rstar_left", 236) + 112 if d.get("cover", {}).get("rstar") else 236}px;top:140px"><span>UNOFFICIAL<br>FAN GUIDE</span></div>')
-    head = (brand + (f'<img class="rstar" style="left:{d["cover"].get("rstar_left", 236)}px" src="/_build/gta/logo_rstar.svg">' if d.get('cover', {}).get('rstar') and d.get('brand', 'logo') != 'text' else '') if cover else
+             else '<img class="glogo" src="/_build/gta/logo_gta6.png">' + f'<div class="tbrand" style="left:236px;top:140px"><span>UNOFFICIAL<br>FAN GUIDE</span></div>')
+    # Rockstar logo is banned (user 19.11.2026): never render it, whatever the data says.
+    head = (brand if cover else
             f'<div class="hdr"><i></i><span>GTA 6</span><b>{E(d.get("hdr", "TIPS & TRICKS"))}</b></div>')
     return ('<!doctype html><html><head><meta charset="utf-8"><style>' + CSS + (V4CSS if d.get('style', 'v4') == 'v4' else '') + '</style></head><body>'
             + (f'<div class="amb" style="background-image:url(/_build/gta/{amb})"></div>' if amb else '')

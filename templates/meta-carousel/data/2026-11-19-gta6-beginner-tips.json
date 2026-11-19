@@ -14,7 +14,7 @@
   "sun_top": 520,
   "swipe": "SWIPE FOR ALL 5 <b>›</b>",
   "bgshot": "g_usafehouse.jpg",
-  "rstar": true,
+  "rstar": false,
   "rstar_left": 268,
   "cutout": {
    "img": "cut_suit.png",

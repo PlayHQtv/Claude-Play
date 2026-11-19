@@ -9,7 +9,7 @@
   "size": 176,
   "neon": "welcome to Leonida",
   "neon_top": 640,
-  "rstar": true,
+  "rstar": false,
   "rstar_left": 268,
   "times_title": "FIRST HOUR CHECKLIST",
   "times_top": 790,

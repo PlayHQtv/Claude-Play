@@ -13,7 +13,7 @@
   "sun_top": 520,
   "swipe": "SWIPE FOR ALL 6 <b>›</b>",
   "bgshot": "g_mk03.jpg",
-  "rstar": true,
+  "rstar": false,
   "rstar_left": 268,
   "cutout": {
    "img": "cut_suit.png",
