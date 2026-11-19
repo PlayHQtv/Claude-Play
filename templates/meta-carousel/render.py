@@ -83,7 +83,7 @@ FRAME = """<div class="bg"></div><div class="topo"></div>
 <div class="streak" style="left:-300px;top:560px"></div><div class="streak" style="left:200px;top:1260px;opacity:.6"></div>
 <div class="vign"></div>
 <div class="corner" style="left:28px;top:28px;border-width:3px 0 0 3px"></div><div class="corner" style="right:28px;top:28px;border-width:3px 3px 0 0"></div>
-<div class="corner" style="left:28px;bottom:28px;border-width:0 0 3px 3px"></div><div class="corner" style="right:28px;bottom:28px;border-width:0 3px 3px 0"></div>
+<div class="corner" style="left:28px;bottom:28px;border-width:0 0 3px 3px"></div><div class="corner br" style="right:28px;bottom:28px;border-width:0 3px 3px 0"></div>
 <div class="top"><div class="cod">{game}</div><div class="dmz">{badge}</div></div>
 <img class="logo" src="/assets/logo.png">"""
 
@@ -110,7 +110,8 @@ def cutout_html(k):
     and faded together with it, and the 60px padding keeps the mask box from cutting the glow into a hard rectangle
     (verifier 19.11.2026)."""
     p = 60
-    return (f'<div style="position:absolute;right:{k.get("right", 0) - p}px;top:{k["top"] - p}px;width:{k["w"]}px;padding:{p}px;'
+    hide = '<style>.corner.br{display:none}</style>' if k.get('hide_br') else ''  # figure covers the bottom-right corner
+    return hide + (f'<div style="position:absolute;right:{k.get("right", 0) - p}px;top:{k["top"] - p}px;width:{k["w"]}px;padding:{p}px;'
             f'-webkit-mask-image:linear-gradient(180deg,#000 {k.get("fade", 62)}%,transparent 98%)">'
             '<div style="filter:' + ('drop-shadow(0 0 2px rgba(255,214,120,.95)) drop-shadow(0 0 14px rgba(255,190,60,.45)) ' if k.get('rim') else '')
             + f'drop-shadow(-22px 12px 30px rgba(0,0,0,.9)) brightness({k.get("bright", 1.04)})">'

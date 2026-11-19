@@ -16,13 +16,14 @@
   "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
   "follow_sub": "FOR DAILY MW4 META",
   "cutout": {
-   "img": "cut_redeye.png",
-   "right": 71,
-   "top": 1010,
-   "w": 420,
+   "img": "cut_redeye_fb.png",
+   "right": -60,
+   "top": 1030,
+   "w": 540,
    "fade": 75,
    "bright": 1.25,
-   "rim": 1
+   "rim": 1,
+   "hide_br": 1
   }
  },
  "weapons": [
@@ -150,7 +151,7 @@
  ],
  "source": "codmunity.gg/weapon/mw4/m4 (MP builds, stats last updated 13/11/2026, fetched 19.11.2026); Nov 13 patch: M4 max damage range 27.94 m -> 35.31 m (official patch notes text quoted on codmunity)",
  "notes": "Build post for Fri 20.11. 12:00 (user 19.11.: 1 build/loadout post every day). CSI 17.11.: best m4 build mw4 239K, mw4 m4 159K +32.4%. No earlier M4 MP build post (Warzone loadout part 2 17.11. had a Warzone M4 build, different attachments).",
- "caption": "Best M4 build MW4 – 3 loadouts after the range buff 🎯\nModern Warfare 4 M4 class setup + build codes 👉 Save it!\n#mw4 #mw4loadout #m4 #modernwarfare4 #mw4multiplayer",
+ "caption": "Best M4 build MW4 – 3 loadouts + build codes 🎯\nModern Warfare 4 M4 class setup for Season 1 👉 Save it!\n#mw4 #mw4loadout #m4 #modernwarfare4 #mw4multiplayer",
  "first_comment": "Which M4 build are you running: 1, 2 or 3? 👇",
  "tiktok_title": "Best M4 build MW4: 3 loadouts + codes"
 }
