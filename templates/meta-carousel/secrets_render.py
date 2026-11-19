@@ -9,6 +9,14 @@ import build_render as B
 E = R.E
 
 CSS = """
+.cstep{position:absolute;left:60px;right:150px;display:flex;align-items:center;gap:28px}
+.cstep .sn{font-family:Anton;font-size:64px;width:70px;flex:none;text-align:center;line-height:1;background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent}
+.cstep b{font-weight:600;font-size:40px;line-height:1.12;color:#f1f1f1}
+.cstep b em{font-style:normal;color:var(--y);font-weight:700}
+.pill{position:absolute;left:60px;height:84px;display:flex;align-items:center;padding:0 30px;gap:18px}
+.pill small{font-weight:700;font-size:20px;letter-spacing:6px;color:#3a2a00}
+.pill b{font-family:Anton;font-size:46px;color:#140f00;letter-spacing:1px}
+
 .step{position:absolute;left:50px;right:145px;height:88px;display:flex;align-items:center;gap:22px;padding:0 24px}
 .step .sn{font-family:Anton;font-size:48px;width:56px;text-align:center;flex:none;background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent}
 .step b{font-weight:600;font-size:30px;line-height:1.12;letter-spacing:.5px;color:#f1f1f1}
@@ -90,6 +98,34 @@ def secret_slide(s, d):
     return page(body, {**d, 'footer': ''})
 
 
+def clean_slide(s, d):
+    """Simple layout (user 19.11.: 'zu unübersichtlich'): kicker, big name, reward pill, weapon or big stat, 3 short steps."""
+    steps = ''.join(f'<div class="cstep" style="top:{900 + i * 118}px"><div class="sn">{i + 1}</div><b>{em(t)}</b></div>'
+                    for i, t in enumerate(s['steps'][:3]))
+    if s.get('image'):
+        visual = (R.gun_html(s['image'], s.get('brightness', 1.2), 'edge', top=560, height=300, maxh=270)
+                  + '<div style="position:absolute;left:0;right:90px;top:850px;text-align:center;font-weight:700;font-size:15px;letter-spacing:5px;color:#8a8a8a">BASE WEAPON SHOWN</div>')
+    else:
+        visual = f'<div class="bigstat" style="top:585px"><strong>{E(s["stat"])}</strong><small>{E(s["stat_label"])}</small></div>'
+    body = (f'<div class="kicker" style="top:200px;left:60px;font-size:28px;letter-spacing:12px">{E(s["kicker"])}</div>'
+            + f'<div class="fit" style="top:245px" data-size="150" data-max="860"><span class="gr gold">{E(s["name"])}</span></div>'
+            + f'<div class="pill hud save" style="top:430px"><small>REWARD</small><b>{E(s["reward"])}</b></div>'
+            + visual + '<div class="line" style="top:878px"></div>' + steps)
+    return page(body, {**d, 'footer': ''})
+
+
+def clean_cover(d):
+    c = d['cover']
+    body = (f'<div class="kicker" style="top:200px;left:60px;font-size:28px;letter-spacing:12px">{E(c["kicker"])}</div>'
+            + f'<div class="fit" style="top:245px" data-size="220" data-max="860"><span class="gr gold">{E(c["big"])}</span></div>'
+            + f'<div class="fit" style="top:480px" data-size="140" data-max="860"><span class="gr w">{E(c["small"])}</span></div>'
+            + f'<div class="kicker" style="top:640px;left:62px;font-size:30px;letter-spacing:8px;color:#d9d9d9">{E(c["sub"])}</div>'
+            + '<div class="floor" style="top:1080px"></div><div class="line" style="top:1097px"></div>'
+            + R.gun_html(c['image'], 1.2, 'edge', top=720, height=380, maxh=340)
+            + f'<div class="swipe" style="top:1170px;font-size:28px;right:110px">{E(c["swipe"])}</div>')
+    return R.page(f'<style>{CSS}</style>' + body, {**d, 'footer': ''})
+
+
 def quick_slide(q, d):
     cards = ''.join(
         f'<div class="qc hud" style="top:{q.get("top", 562) + i * 248}px"><div class="qn">{i + 1:02d}</div><div class="qt"><span class="gr gold">{E(c["name"])}</span></div>'
@@ -147,9 +183,10 @@ def cta_slide(d):
 
 def main(data_path, out_dir=None):
     d = json.load(open(data_path))
-    pages = [('01_cover', cover_slide(d))]
+    clean = d.get('layout') == 'clean'
+    pages = [('01_cover', clean_cover(d) if clean else cover_slide(d))]
     for s in d['secrets']:
-        pages.append((f'{len(pages) + 1:02d}_secret', secret_slide(s, d)))
+        pages.append((f'{len(pages) + 1:02d}_secret', clean_slide(s, d) if clean else secret_slide(s, d)))
     if d.get('quick'):
         pages.append((f'{len(pages) + 1:02d}_quick', quick_slide(d['quick'], d)))
     if d.get('grind'):
