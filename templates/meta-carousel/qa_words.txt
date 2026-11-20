@@ -222,3 +222,17 @@ drc
 unserialized
 trackline
 respawns
+rij
+blk
+lockgrip
+matuzek
+rtac
+hipfire
+cas
+fidelityfx
+hud
+hitmarker
+sdr
+skycoach
+gamerblurb
+hdr
