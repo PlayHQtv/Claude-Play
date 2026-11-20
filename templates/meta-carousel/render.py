@@ -131,9 +131,27 @@ def frame(d):
     return f
 
 
+# GLASS STYLE = standard since 20.11.2026 (user: "So ist es gut"): darker smoked-glass cards, subtle aurora light,
+# topo pattern re-layered above the light. Opt out per post with "style": "hud".
+GLASS = """<style>
+.aurora{position:absolute;inset:0;z-index:0;pointer-events:none;
+ background:radial-gradient(circle at 82% 28%,rgba(255,170,30,.24),transparent 38%),
+ radial-gradient(circle at 12% 70%,rgba(40,100,220,.16),transparent 42%),
+ radial-gradient(circle at 70% 88%,rgba(230,100,30,.12),transparent 40%);filter:blur(30px);mix-blend-mode:screen;opacity:.85}
+.topo2{position:absolute;inset:0;z-index:0;background:url(/assets/topo.png);opacity:.75;mix-blend-mode:screen;pointer-events:none}
+.hud{background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.02)),rgba(6,6,8,.45) !important;
+ backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
+ border:1px solid rgba(255,255,255,.22) !important;border-radius:24px;clip-path:none !important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.06),0 24px 48px rgba(0,0,0,.5)}
+.hud::before{background:linear-gradient(180deg,rgba(255,255,255,.10),transparent 45%) !important;border-radius:24px}
+.hud::after{left:24px !important;top:-1px !important;width:60px !important;height:3px !important;border-radius:3px}
+.hud.save{background:linear-gradient(135deg,rgba(255,214,90,.85),rgba(200,140,20,.75)) !important}
+</style><div class="aurora"></div><div class="topo2"></div>"""
+
+
 def page(body, d):
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>'
-            + frame(d) + body
+            + frame(d) + (GLASS if d.get('style', 'glass') == 'glass' else '') + body
             + f'<div class="foot">{d.get("footer", "FOLLOW <b>@PLAYHQTV</b> FOR DAILY MW4 META")}</div>' + FITJS + '</body></html>')
 
 
