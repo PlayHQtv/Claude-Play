@@ -112,6 +112,11 @@ User quotes: "Es darf nicht vorkommen, dass du nichts postest" and "Du musst mic
 - Unverifiable news is never posted; put a verified evergreen carousel in that slot instead.
 - The daily scheduled task "MW4 News-Radar" (07:45 Berlin) is this autopilot.
 
+## PRE-POST RE-CHECK (user 20.11.2026: "Auf Fehler solltest du grundsätzlich immer vor dem Posten prüfen")
+- Before every slot (and whenever the renderer changes), re-check every scheduled, non-draft post: getScheduledPosts → for each post confirm the slides are the latest verified render (renderer fixes since the render? → re-render + independent verifier + replace media), caption/first comment/title, facts still current (new patch notes since verification?), slot/rule conflicts.
+- Renders made before a renderer bugfix are NOT trusted (e.g. cut-out box bug fixed 19.11.: M4 + settings CTA had to be re-rendered).
+- Cut-out with CSS box-sizing:border-box: rendered image width = w − 120 (padding 60). Figures bleed off right/bottom; hide the bottom-right corner bracket (hide_br) when the figure covers it.
+
 ## PRE-PUBLISH GATE (user 29.10.: "So etwas darf nicht mehr passieren") – nothing goes to Metricool before ALL of these pass
 1. **Facts** verified against the live source (no memory/old slides) + independent verifier agent PASS.
 2. **Display check in the real TikTok view:** photo posts are shown as **3:4** (TikTok crops 9:16 photos top and bottom – 29.10. carousel lost its header and the 3rd tile row). Carousels are rendered at **1080×1440** and checked with `tiktok_overlay.py` (search bar/tabs top, "2/6" counter top-right, avatar/like/comment/save column right from y≈1100, first-comment bubble bottom-left). Videos: hook/captions not under the right button column or the caption area.
