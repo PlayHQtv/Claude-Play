@@ -9,6 +9,14 @@ import build_render as B
 E = R.E
 
 CSS = """
+.stage{position:absolute;left:60px;right:150px;top:560px;height:420px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 55%,rgba(245,196,0,.16),rgba(0,0,0,0) 65%);border-top:2px solid rgba(245,196,0,.25);border-bottom:2px solid rgba(245,196,0,.25)}
+.stage .tl{position:absolute;left:18px;top:14px;font-weight:700;font-size:20px;letter-spacing:6px;color:var(--y)}
+.stage .nt{position:absolute;right:18px;bottom:12px;font-weight:700;font-size:15px;letter-spacing:5px;color:#8a8a8a}
+.sstep{position:absolute;left:60px;right:150px;display:flex;align-items:center;gap:26px}
+.sstep .sn{width:58px;height:58px;flex:none;display:grid;place-items:center;font-family:Anton;font-size:36px;color:#140f00;background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3))}
+.sstep b{font-weight:600;font-size:38px;line-height:1.12;color:#f1f1f1}
+.sstep b em{font-style:normal;color:var(--y);font-weight:700}
+
 .ic{width:96px;height:96px;flex:none;display:grid;place-items:center;border:2px solid rgba(245,196,0,.35);background:rgba(245,196,0,.06)}
 .rq{position:absolute;left:50px;right:145px;height:150px;display:flex;align-items:center;gap:26px;padding:0 26px}
 .rq b{display:block;font-family:Anton;font-size:40px;line-height:1.05;letter-spacing:1px;background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent}
@@ -174,6 +182,23 @@ def v2_grind(g, d):
     return page(body, {**d, 'footer': ''})
 
 
+def single_slide(s, d, idx, total):
+    """One reward per slide (user 20.11.): reward name huge, big visual stage, 2-3 short steps."""
+    if s.get('image'):
+        vis = (f'<img src="/weapons/{s["image"]}" style="max-width:780px;max-height:330px;filter:drop-shadow(0 30px 24px rgba(0,0,0,.85)) brightness({s.get("brightness", 1.2)})">'
+               '<div class="nt">BASE WEAPON SHOWN</div>')
+    else:
+        vis = icon(s['icon'], 260)
+    steps = ''.join(f'<div class="sstep" style="top:{1030 + i * 92}px"><div class="sn">{i + 1}</div><b>{em(t)}</b></div>'
+                    for i, t in enumerate(s['steps']))
+    body = (f'<div class="kicker" style="top:200px;left:60px;font-size:26px;letter-spacing:10px">SECRET {idx}/{total} · {E(s["type"])}</div>'
+            + f'<div class="fit" style="top:240px" data-size="128" data-max="860"><span class="gr gold">{E(s["name"])}</span></div>'
+            + f'<div class="fit" style="top:380px" data-size="66" data-max="860"><span class="gr w">{E(s["what"])}</span></div>'
+            + f'<div class="where" style="top:480px"><i></i>WHERE: <b>{E(s["where"])}</b></div>'
+            + f'<div class="stage"><div class="tl">{E(s["type"])}</div>{vis}</div>' + steps)
+    return page(body, {**d, 'footer': ''})
+
+
 def clean_slide(s, d):
     """Simple layout (user 19.11.: 'zu unübersichtlich'): kicker, big name, reward pill, weapon or big stat, 3 short steps."""
     steps = ''.join(f'<div class="cstep" style="top:{900 + i * 118}px"><div class="sn">{i + 1}</div><b>{em(t)}</b></div>'
@@ -260,6 +285,13 @@ def cta_slide(d):
 def main(data_path, out_dir=None):
     d = json.load(open(data_path))
     lay = d.get('layout')
+    if lay == 'single':
+        pages = [('01_cover', clean_cover(d))]
+        n = len(d['secrets'])
+        for i, s in enumerate(d['secrets'], 1):
+            pages.append((f'{len(pages) + 1:02d}_secret', single_slide(s, d, i, n)))
+        pages.append((f'{len(pages) + 1:02d}_cta', cta_slide(d)))
+        return render_pages(pages, data_path, out_dir)
     pages = [('01_cover', clean_cover(d) if lay == 'clean' else cover_slide(d))]
     for s in d['secrets']:
         f = {'clean': clean_slide, 'v2': v2_slide}.get(lay, secret_slide)
