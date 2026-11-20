@@ -9,6 +9,19 @@ import build_render as B
 E = R.E
 
 CSS = """
+.ic{width:96px;height:96px;flex:none;display:grid;place-items:center;border:2px solid rgba(245,196,0,.35);background:rgba(245,196,0,.06)}
+.rq{position:absolute;left:50px;right:145px;height:150px;display:flex;align-items:center;gap:26px;padding:0 26px}
+.rq b{display:block;font-family:Anton;font-size:40px;line-height:1.05;letter-spacing:1px;background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent}
+.rq span{display:block;font-weight:700;font-size:19px;letter-spacing:5px;color:#bdbdbd;margin-top:6px}
+.rq p{margin:8px 0 0;font-weight:600;font-size:27px;line-height:1.15;color:#f1f1f1}
+.rq p em{font-style:normal;color:var(--y);font-weight:700}
+.rg{position:absolute;left:50px;right:145px;height:112px;display:flex;align-items:center;gap:22px;padding:0 22px}
+.rg .ic{width:76px;height:76px}
+.rg b{display:block;font-weight:700;font-size:28px;letter-spacing:1px;line-height:1.05;color:var(--y)}
+.rg p{margin:6px 0 0;font-weight:600;font-size:24px;color:#e6e6e6}
+.rg .cnt{margin-left:auto;font-family:Anton;font-size:44px;text-align:right;line-height:1;background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent}
+.rg .cnt small{display:block;font-family:Raj;font-size:14px;font-weight:700;letter-spacing:3px;-webkit-text-fill-color:#bdbdbd}
+
 .cstep{position:absolute;left:60px;right:150px;display:flex;align-items:center;gap:28px}
 .cstep .sn{font-family:Anton;font-size:64px;width:70px;flex:none;text-align:center;line-height:1;background:linear-gradient(170deg,var(--g1),var(--g2) 45%,var(--g3));-webkit-background-clip:text;color:transparent}
 .cstep b{font-weight:600;font-size:40px;line-height:1.12;color:#f1f1f1}
@@ -59,6 +72,24 @@ CSS = """
 """
 
 
+ICONS = {  # own simple line icons per reward type (no game artwork)
+ 'card': '<rect x="6" y="18" width="52" height="28" rx="3"/><path d="M12 38h22M12 30h14"/><circle cx="48" cy="32" r="6"/>',
+ 'emblem': '<path d="M32 6l22 8v16c0 14-10 23-22 28C20 53 10 44 10 30V14z"/><path d="M24 31l6 6 11-12"/>',
+ 'sticker': '<path d="M10 10h44v30L40 54H10z"/><path d="M54 40H40v14"/>',
+ 'decal': '<path d="M32 6l26 26-26 26L6 32z"/><path d="M32 18l14 14-14 14-14-14z"/>',
+ 'contrail': '<path d="M8 50c14 0 18-12 26-20S50 14 58 14"/><path d="M8 40c10 0 14-8 20-14"/><circle cx="56" cy="14" r="3"/>',
+ 'charm': '<circle cx="20" cy="16" r="9"/><path d="M27 22l8 8"/><rect x="32" y="27" width="20" height="30" rx="4"/><path d="M38 50h8"/>',
+ 'parachute': '<path d="M6 30C6 14 18 6 32 6s26 8 26 24"/><path d="M6 30l26 24 26-24M19 30l13 24 13-24M32 30v24"/>',
+ 'screen': '<rect x="6" y="10" width="52" height="34" rx="3"/><path d="M24 54h16M32 44v10"/><path d="M14 36l10-12 8 8 6-6 12 10"/>',
+ 'camo': '<rect x="8" y="8" width="48" height="48" rx="6"/><path d="M8 26c10 4 16-6 26-2s12 10 22 6M8 42c8-4 14 4 24 0s14-8 24-4"/>',
+}
+
+
+def icon(k, size=72):
+    return (f'<svg width="{size}" height="{size}" viewBox="0 0 64 64" fill="none" stroke="#f5c400" stroke-width="3.2" '
+            f'stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 8px rgba(245,196,0,.35))">{ICONS[k]}</svg>')
+
+
 def page(body, d):
     return R.page(f'<style>{CSS}</style>' + body, d)
 
@@ -95,6 +126,51 @@ def secret_slide(s, d):
     tip = f'<div class="rt"><span>TIP</span>{E(s["tip"])}</div>' if s.get('tip') else ''
     body = (head(s['title_white'], s['title_gold'], s['kicker'], s['where']) + stat + visual + steps
             + f'<div class="rw hud save" style="top:{y_rw}px"><div><small>REWARD</small><b>{E(s["reward"])}</b></div>{tip}</div>')
+    return page(body, {**d, 'footer': ''})
+
+
+def v2_slide(s, d):
+    """Reward-first logic (user 20.11.): title, REWARD pill, where, picture, steps, tip."""
+    n = len(s['steps'])
+    top = 850 if n >= 4 else 900
+    steps = ''.join(f'<div class="step hud" style="top:{top + i * 98}px"><div class="sn">{i + 1}</div><b>{em(t)}</b></div>'
+                    for i, t in enumerate(s['steps']))
+    if s.get('image'):
+        visual = (R.gun_html(s['image'], s.get('brightness', 1.2), 'edge', top=640, height=175, maxh=158)
+                  + '<div style="position:absolute;left:0;right:90px;top:828px;text-align:center;font-weight:700;font-size:15px;letter-spacing:5px;color:#8a8a8a">BASE WEAPON SHOWN</div>')
+    else:
+        visual = f'<div class="bigstat" style="top:660px"><strong style="font-size:130px">{E(s["stat"])}</strong><small>{E(s["stat_label"])}</small></div>'
+    y_tip = top + n * 98 + 14
+    body = (f'<div class="kicker" style="top:200px;left:60px;font-size:26px;letter-spacing:10px">{E(s["kicker"])}</div>'
+            + f'<div class="fit" style="top:242px" data-size="118" data-max="860"><span class="gr w">{E(s["title_white"])}</span></div>'
+            + f'<div class="fit" style="top:368px" data-size="118" data-max="860"><span class="gr gold">{E(s["title_gold"])}</span></div>'
+            + f'<div class="pill hud save" style="top:500px"><small>REWARD</small><b>{E(s["reward"])}</b></div>'
+            + f'<div class="where" style="top:604px"><i></i>WHERE: <b>{E(s["where"])}</b></div>'
+            + visual + steps
+            + (f'<div class="tip" style="top:{y_tip}px"><b>TIP</b>{E(s["tip"])}</div>' if s.get('tip') else ''))
+    return page(body, {**d, 'footer': ''})
+
+
+def v2_quick(q, d):
+    rows = ''.join(
+        f'<div class="rq hud" style="top:{575 + i * 190}px"><div class="ic">{icon(c["icon"])}</div><div>'
+        f'<b>{E(c["reward"])}</b><span>{E(c["where"])}</span><p>{em(c["how"])}</p></div></div>' for i, c in enumerate(q['cards']))
+    body = (f'<div class="kicker" style="top:200px;left:60px;font-size:26px;letter-spacing:10px">{E(q["kicker"])}</div>'
+            + f'<div class="fit" style="top:242px" data-size="118" data-max="860"><span class="gr w">{E(q["title_white"])}</span></div>'
+            + f'<div class="fit" style="top:368px" data-size="118" data-max="860"><span class="gr gold">{E(q["title_gold"])}</span></div>'
+            + f'<div class="where" style="top:505px"><i></i>{E(q["sub"])}</div>' + rows)
+    return page(body, {**d, 'footer': ''})
+
+
+def v2_grind(g, d):
+    rows = ''.join(
+        f'<div class="rg hud" style="top:{555 + i * 122}px"><div class="ic">{icon(r["icon"], 56)}</div><div>'
+        f'<b>{E(r["reward"])}</b><p>{E(r["how"])}</p></div><div class="cnt">{E(r["x"])}<small>{E(r["unit"])}</small></div></div>'
+        for i, r in enumerate(g['rows']))
+    body = (f'<div class="kicker" style="top:200px;left:60px;font-size:26px;letter-spacing:10px">{E(g["kicker"])}</div>'
+            + f'<div class="fit" style="top:242px" data-size="118" data-max="860"><span class="gr w">{E(g["title_white"])}</span></div>'
+            + f'<div class="fit" style="top:368px" data-size="118" data-max="860"><span class="gr gold">{E(g["title_gold"])}</span></div>'
+            + f'<div class="where" style="top:505px"><i></i>{E(g["sub"])}</div>' + rows)
     return page(body, {**d, 'footer': ''})
 
 
@@ -152,7 +228,7 @@ def grind_slide(g, d):
 def reward_rows(items, top, gap=110):
     return ''.join(
         f'<div class="rrow hud" style="top:{top + i * gap}px"><div class="n">{i + 1}</div><div class="im">'
-        + (f'<img src="/weapons/{r["image"]}">' if r.get('image') else f'<i>{E(r.get("icon", "★"))}</i>')
+        + (f'<img src="/weapons/{r["image"]}">' if r.get('image') else (icon(r['svg'], 64) if r.get('svg') else f'<i>{E(r.get("icon", "★"))}</i>'))
         + f'</div><div><b>{E(r["name"])}</b><small>{E(r["type"])}</small></div></div>' for i, r in enumerate(items))
 
 
@@ -183,14 +259,15 @@ def cta_slide(d):
 
 def main(data_path, out_dir=None):
     d = json.load(open(data_path))
-    clean = d.get('layout') == 'clean'
-    pages = [('01_cover', clean_cover(d) if clean else cover_slide(d))]
+    lay = d.get('layout')
+    pages = [('01_cover', clean_cover(d) if lay == 'clean' else cover_slide(d))]
     for s in d['secrets']:
-        pages.append((f'{len(pages) + 1:02d}_secret', clean_slide(s, d) if clean else secret_slide(s, d)))
+        f = {'clean': clean_slide, 'v2': v2_slide}.get(lay, secret_slide)
+        pages.append((f'{len(pages) + 1:02d}_secret', f(s, d)))
     if d.get('quick'):
-        pages.append((f'{len(pages) + 1:02d}_quick', quick_slide(d['quick'], d)))
+        pages.append((f'{len(pages) + 1:02d}_quick', (v2_quick if lay == 'v2' else quick_slide)(d['quick'], d)))
     if d.get('grind'):
-        pages.append((f'{len(pages) + 1:02d}_grind', grind_slide(d['grind'], d)))
+        pages.append((f'{len(pages) + 1:02d}_grind', (v2_grind if lay == 'v2' else grind_slide)(d['grind'], d)))
     pages.append((f'{len(pages) + 1:02d}_cta', cta_slide(d)))
     B.render_pages(pages, data_path, out_dir) if hasattr(B, 'render_pages') else render_pages(pages, data_path, out_dir)
 
