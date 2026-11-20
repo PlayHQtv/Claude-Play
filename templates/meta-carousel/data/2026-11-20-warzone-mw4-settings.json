@@ -5,7 +5,7 @@
   "kicker": "UPDATED FOR WARZONE SEASON 1",
   "big": "WARZONE MW4",
   "small": "SETTINGS",
-  "sub": "TAC SPRINT IS FREE NOW · SET IT UP RIGHT",
+  "sub": "TAC SPRINT NEEDS NO PERK NOW · SET IT UP RIGHT",
   "gun": "mw4/w_Kastov_762.png",
   "rows": [
    [
@@ -36,22 +36,22 @@
     [
      "ARMOR PLATE BEHAVIOR",
      "APPLY ALL",
-     "One hold fills all your plates"
+     "One press fills all your plates"
     ],
     [
      "TACTICAL SPRINT ACTIVATION",
      "SINGLE TAP SPRINT",
-     "One click instead of a double-tap"
+     "Single press instead of double-tapping"
     ],
     [
      "SLIDE MAINTAINS SPRINT",
      "ON",
-     "Season 1 removed the slide-to-sprint delay"
+     "No more slide-to-sprint delay since Season 1"
     ],
     [
      "BUMPER PING",
      "OFF",
-     "No accidental pings mid-fight"
+     "No pings by accident in a fight"
     ],
     [
      "3RD PERSON FIELD OF VIEW",
@@ -78,7 +78,7 @@
     [
      "SLIDE/DIVE BEHAVIOR",
      "TAP TO SLIDE",
-     "Faster slides after the Season 1 cooldown cut"
+     "Tap to slide, hold to dive"
     ],
     [
      "CONTROLLER VIBRATION",
@@ -110,7 +110,7 @@
     [
      "DIALOGUE VOLUME",
      "30",
-     "Callouts stay quiet, footsteps stay loud"
+     "Quieter callouts, clearer game sounds"
     ]
    ]
   }
@@ -122,15 +122,17 @@
   "follow_sub": "FOR DAILY WARZONE + MW4 TIPS",
   "cutout": {
    "img": "cut_soldier.png",
-   "right": 70,
-   "top": 1000,
-   "w": 520,
+   "right": 40,
+   "top": 1050,
+   "w": 640,
    "fade": 62,
    "bright": 1.25,
-   "rim": 1
+   "rim": 1,
+   "hide_br": 1
   }
  },
- "source": "Dexerto Warzone wiki (controller/console/audio, 06.11.), Dexerto MW4 controller wiki, setup.gg controller + FOV guides, Call of Duty Warzone Season 1 patch notes (05.11. Tac Sprint default, slide cooldown -400 ms, slide-to-sprint delay removed; 10.11. Instant ADS transition timing)",
- "notes": "CSI 'warzone mw4 settings' 918K (17.11.). Dup check vs 11.11. 'best mw4 settings' (MP): Warzone-only settings + Warzone values; overlap only FOV/effects/music. | Scheduled Fri 20.11. 18:00 Berlin (Metricool), byte check OK.",
- "verified": "independent verifier 18.11.2026: PASS after fixes (ADS caption, sens range 1.50-1.60, trigger effect + effects/music rows removed as Nov 11 repeats, slide title, source foot)"
+ "source": "Dexerto Warzone wiki (controller/console/audio, 06.11.), Dexerto MW4 controller wiki, setup.gg controller + FOV guides, Call of Duty Warzone Season 1 patch notes (05.11. Tac Sprint default, slide cooldown -400 ms, slide-to-sprint delay removed; 10.11. Instant ADS transition timing); wording cross-checked with SCUF + GameSpot (Tap to slide/Hold to dive)",
+ "notes": "CSI 'warzone mw4 settings' 918K (17.11.). Dup check vs 11.11. 'best mw4 settings' (MP): Warzone-only settings + Warzone values; overlap only FOV/effects/music. | Scheduled Sat 21.11. 18:00 Berlin. Re-rendered 20.11. (cut-out fix, wording fixes from verifier).",
+ "verified": "independent verifier 20.11.2026: OK after re-render (cut-out fix, slide/dive line, wording, English caption line 2). independent verifier 18.11.2026: PASS after fixes (ADS caption, sens range 1.50-1.60, trigger effect + effects/music rows removed as Nov 11 repeats, slide title, source foot)",
+ "caption": "Warzone MW4 settings – best setup for Season 1 🎮\nBest Warzone settings for controller, movement + audio 👉 Save it!\n#warzone #mw4 #warzonesettings #modernwarfare4 #warzonetips"
 }
