@@ -1,0 +1,92 @@
+{
+ "hdr": "FIRST PERSON",
+ "series_no": 2,
+ "source": "Source: Dexerto, Kotaku, ShiftDelete (Reddit/YouTube method, 19.–20.11.)",
+ "notes": "Fri 20.11. 18:00 (user 20.11.: 'Tip 1 als heutiger Post um 18 Uhr'; replaces ISO which moves to Sun 22.11. 12:00). Glitch found 19.11. (Reddit MuteSpotted74, video oneboyler), reported by Dexerto 19.11., Kotaku live blog 19.11., ShiftDelete 20.11. Only official Rockstar screenshots + approved cut-outs (cover cut_suit (Lucia cut-out is cropped, duo was cropped at right edge), boss CTA; last 3 GTA CTAs jeep/boat/duo). No R* logo. Cover hero g_vc16 (eyes close-up) reused on purpose: theme 'through their eyes'; no unused screenshot fits. GTA tip numbering: #1 beginner tips (posted 19.11.), #2 = this post; cheats/money drafts must be renumbered before they are re-scheduled. Verifier 20.11.: NOT OK -> fixed (cover cut-out cropped, Xbox wording, cannabis shot) -> OK. Scheduled Fri 20.11. 18:00, byte check OK, tmp deleted.",
+ "cover": {
+  "amb": "g_vc16_amb.jpg",
+  "kicker": "GTA 6 TIP #2 · HIDDEN TRICK",
+  "big": "GTA 6 <em>FIRST</em><br>PERSON",
+  "size": 168,
+  "neon": "camera glitch",
+  "neon_top": 655,
+  "panels": [],
+  "sun_top": 520,
+  "swipe": "SWIPE FOR THE STEPS <b>›</b>",
+  "bgshot": "g_vc16.jpg",
+  "times_title": "HOW TO TURN IT ON",
+  "times_top": 790,
+  "times": [
+   [
+    "CAMERA BUTTON",
+    "01"
+   ],
+   [
+    "DRIVER'S SEAT",
+    "02"
+   ],
+   [
+    "PHONE OUT",
+    "03"
+   ],
+   [
+    "SPAM CAMERA",
+    "04"
+   ],
+   [
+    "RELOAD = BACK",
+    "05"
+   ]
+  ],
+  "times_note": "PS5 + Xbox Series X|S",
+  "cutout": {
+   "img": "cut_suit.png",
+   "right": 0,
+   "top": 800,
+   "h": 600
+  }
+ },
+ "tips": [
+  {
+   "shot": "g_vc27.jpg",
+   "kicker": "STEP 1 · SETTINGS",
+   "title": "SET THE <em>CAMERA</em> BUTTON",
+   "body": "Settings → <b>Controller</b>. On PS5 set the <b>Touchpad</b> from Map to <b>Camera</b>. On Xbox set the <span class=\"hl\">View button</span> to Camera."
+  },
+  {
+   "shot": "g_vc14.jpg",
+   "kicker": "STEP 2 · ANY CAR",
+   "title": "DRIVER'S <em>SEAT</em> + PHONE",
+   "idx_right": true,
+   "body": "Sit in the <b>driver's seat</b> and press <b>D-pad Up</b>. With the phone out, the view switches to <span class=\"hl\">first person</span>."
+  },
+  {
+   "shot": "g_vc17.jpg",
+   "kicker": "STEP 3 · TIMING",
+   "title": "CLOSE + <em>SPAM</em> CAMERA",
+   "body": "Close the phone with <b>Circle / B</b> and instantly tap <b>Touchpad / View</b> a few times. Timing is tight: <span class=\"hl\">just retry</span>."
+  },
+  {
+   "shot": "g_mk02.jpg",
+   "kicker": "THE CATCH",
+   "title": "NO WAY <em>BACK</em>",
+   "idx_right": true,
+   "body": "It stays first person, even on foot. Back to normal = <b>reload your save</b>. Not an official mode, Rockstar <span class=\"hl\">may patch it</span>."
+  }
+ ],
+ "cta": {
+  "amb": "g_vc27_amb.jpg",
+  "title": "PLAY IT IN<br><em>FIRST PERSON?</em>",
+  "neon": "yes or no?",
+  "cutout": {
+   "img": "cut_boss.png",
+   "right": 10,
+   "top": 760,
+   "h": 660
+  },
+  "save_small": "YOUR GTA 6 FIRST PERSON TRICK"
+ },
+ "caption": "GTA 6 first person mode – the hidden trick 🎮\nHow to play GTA 6 in first person on PS5 + Xbox 👉 Save it!\n#gta6 #gtavi #gta6tips #gta6firstperson #grandtheftauto6",
+ "first_comment": "Would you play GTA 6 in first person? 👇",
+ "tiktok_title": "GTA 6 first person mode: hidden trick"
+}
