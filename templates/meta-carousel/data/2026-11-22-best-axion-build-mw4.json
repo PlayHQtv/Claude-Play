@@ -16,13 +16,14 @@
   "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
   "follow_sub": "FOR DAILY MW4 META",
   "cutout": {
-   "img": "cut_snowsniper.png",
-   "right": -640,
-   "top": 1080,
+   "img": "cut_snowsniper_fb.png",
+   "right": -540,
+   "top": 1100,
    "w": 1020,
    "fade": 90,
    "bright": 1.2,
-   "rim": 1
+   "rim": 1,
+   "hide_br": 1
   }
  },
  "weapons": [
@@ -144,7 +145,7 @@
   }
  ],
  "source": "codmunity.gg/weapon/mw4/axion (MP builds + codes, stats last updated 13/11/2026, fetched 20.11.2026); callofduty.com launch blog 19.10.2026 (Axion: subsonic .300 BLK rounds hide enemy skulls on kills; unlock player level 52); MW4 Season 1 patch notes (Nov 5 + Nov 13 range/velocity buffs, no Axion change on Nov 19)",
- "notes": "Sun 22.11. 12:00 build post (rescue plan: 1 build/day). Dup check: no Axion post before (posted/scheduled builds: PPSh, Han 86, Kastov, Oris x2, Cronen Osprey, Striga, ISO x2, Hyeon Burst, best SMG, WZ loadout 1+2 (Han/M4/ISO/Osprey), MW4 code (3 codes), DMZ loadouts, M4, VEL 46). CSI: 'best loadout for mw4' 530K in caption line 2; Axion = S tier AR (Dexerto 09.11., cod-france 16.11.), 'Meta' on codmunity. | Scheduled Sun 22.11. 12:00 Berlin (Metricool), verifier PASS after fixes, QA 0/0, byte check OK.",
+ "notes": "Sun 22.11. 12:00 build post (rescue plan: 1 build/day). Dup check: no Axion post before (posted/scheduled builds: PPSh, Han 86, Kastov, Oris x2, Cronen Osprey, Striga, ISO x2, Hyeon Burst, best SMG, WZ loadout 1+2 (Han/M4/ISO/Osprey), MW4 code (3 codes), DMZ loadouts, M4, VEL 46). CSI: 'best loadout for mw4' 530K in caption line 2; Axion = S tier AR (Dexerto 09.11., cod-france 16.11.), 'Meta' on codmunity. | Scheduled Sun 22.11. 12:00 Berlin (Metricool), verifier PASS after fixes, QA 0/0, byte check OK. | 21.11. re-rendered in GLASS style (autopilot had rendered pre-glass), verifier OK, media replaced in Metricool, byte check OK.",
  "caption": "Best Axion build MW4 – 3 loadouts + build codes 🎯\nBest loadout for MW4: Axion class setup 👉 Save it!\n#mw4 #axion #mw4loadout #modernwarfare4 #mw4multiplayer",
  "first_comment": "Which Axion build are you running: 1, 2 or 3? 👇",
  "tiktok_title": "Best Axion build MW4: 3 loadouts + codes",

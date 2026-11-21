@@ -111,17 +111,18 @@
   "sub": "DROP IT IN THE COMMENTS",
   "follow_sub": "FOR DAILY MW4 TIPS",
   "cutout": {
-   "img": "cut_redeye.png",
-   "right": 70,
-   "top": 1000,
-   "w": 520,
+   "img": "cut_redeye_fb.png",
+   "right": -60,
+   "top": 1030,
+   "w": 540,
    "fade": 62,
    "bright": 1.25,
-   "rim": 1
+   "rim": 1,
+   "hide_br": 1
   }
  },
  "source": "GameSpot best MW4 settings 16.10. (FidelityFX CAS on, 50-80; blur off), Game8 best settings 18.10. (CAS on 50-80, film grain off), ConquestCapped 26.10. (Color Filter 2 full intensity; CAS 50-80 on PS5/Xbox), Expel settings page (Filter 2, target Both, world + interface intensity 100, crosshair white because other colors mix with the red hitmarker), 2UpSkill 22.08. (Filter 2, Both, 100/100), KeenGamer 21.10. (friendly blue, enemy red, filter target Both), Skycoach 20.10. (Interface > Readability > Color Customization, High Contrast Mode off, SDR Calibration, crosshair white), GamerBlurb 24.10. (Graphics > Display > SDR Calibration)",
- "notes": "Sun 22.11. 18:00 search post. CSI 17.11.: 'mw4 color settings' 346K +66% (NEW) + 'fidelity cas mw4' 282K +290.9% (NEW). Dup check vs 11.11. 'best mw4 settings' (controller/movement/FOV/blur/DOF/grain/audio - no color filter; its slide-3 footer already said 'FidelityFX CAS on 50-80' -> repeated here only as ONE row because 'fidelity cas mw4' is a CSI term (282K +290.9%)) and 21.11. 'Warzone MW4 settings' (Warzone/controller/120 Hz/eco/FOV/dialogue): blur/grain row removed after verifier. | Scheduled Sun 22.11. 18:00 Berlin (Metricool), verifier PASS after fixes, QA 0/0, byte check OK.",
+ "notes": "Sun 22.11. 18:00 search post. CSI 17.11.: 'mw4 color settings' 346K +66% (NEW) + 'fidelity cas mw4' 282K +290.9% (NEW). Dup check vs 11.11. 'best mw4 settings' (controller/movement/FOV/blur/DOF/grain/audio - no color filter; its slide-3 footer already said 'FidelityFX CAS on 50-80' -> repeated here only as ONE row because 'fidelity cas mw4' is a CSI term (282K +290.9%)) and 21.11. 'Warzone MW4 settings' (Warzone/controller/120 Hz/eco/FOV/dialogue): blur/grain row removed after verifier. | Scheduled Sun 22.11. 18:00 Berlin (Metricool), verifier PASS after fixes, QA 0/0, byte check OK. | 21.11. re-rendered in GLASS style (autopilot had rendered pre-glass), verifier OK, media replaced in Metricool, byte check OK.",
  "caption": "MW4 color settings – Filter 2 makes players pop 🎨\nFidelityFX CAS + crosshair setup for Modern Warfare 4 👉 Save it!\n#mw4 #mw4settings #colorsettings #modernwarfare4 #mw4tips",
  "first_comment": "Which color filter do you play on in MW4? 👇",
  "tiktok_title": "MW4 color settings: Filter 2 + FidelityFX CAS",
