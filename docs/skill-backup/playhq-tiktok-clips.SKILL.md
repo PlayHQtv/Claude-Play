@@ -116,6 +116,10 @@ User quotes: "Es darf nicht vorkommen, dass du nichts postest" and "Du musst mic
 - render.GLASS is injected by render.page for every post (opt out with "style": "hud"): smoked-glass rounded cards (backdrop blur, white hairline, dark tint), subtle aurora light (gold top-right, blue left, orange bottom; low alpha) and the topo pattern re-layered ABOVE the light (user: "im Hintergrund ist keine Struktur oder Muster mehr zu erkennen", "ein bisschen dunklere Farben").
 - Fri 20.11. M4 + ISO already re-rendered in glass.
 
+## GIT SYNC (incident 21.11.2026)
+- 20.11. local commits (incl. the glass style) were rejected by GitHub (branch diverged from the autopilot commits) and `git push -q 2>/dev/null` hid the error, so the autopilot rendered Sat–Mon posts WITHOUT glass. Rules: always `git fetch` + `git rebase github/brand-assets` before work, never silence push errors, and after every push `git status -sb` must show no "ahead".
+- `_build/s1/*_fb.png` cut-out copies are not in git: recreate them (alpha < 170 → 0 from the original) when a data file references one that is missing.
+
 ## PRE-POST RE-CHECK (user 20.11.2026: "Auf Fehler solltest du grundsätzlich immer vor dem Posten prüfen")
 - Before every slot (and whenever the renderer changes), re-check every scheduled, non-draft post: getScheduledPosts → for each post confirm the slides are the latest verified render (renderer fixes since the render? → re-render + independent verifier + replace media), caption/first comment/title, facts still current (new patch notes since verification?), slot/rule conflicts.
 - Renders made before a renderer bugfix are NOT trusted (e.g. cut-out box bug fixed 19.11.: M4 + settings CTA had to be re-rendered).
