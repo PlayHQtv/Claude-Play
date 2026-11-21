@@ -1,0 +1,157 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MULTIPLAYER",
+ "rank_label": "SNIPER RANK",
+ "cover": {
+  "kicker": "ALL 3 SNIPER RIFLES RANKED",
+  "big": "BEST SNIPER",
+  "small": "IN MW4",
+  "sub": "#1 IS ABSOLUTE META + BUILD CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_KG7_Vulcan.png"
+ },
+ "cta": {
+  "white": "WHICH SNIPER",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_sniper_fb.png",
+   "right": -70,
+   "top": 1050,
+   "w": 760,
+   "fade": 100,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "image": "mw4/w_KG7_Vulcan.png",
+   "short": "KG-7 VULCAN",
+   "title_white": "KG-7",
+   "title_gold": "VULCAN",
+   "class": "Sniper",
+   "class_note": "Weapon level 75",
+   "tagline": "ABSOLUTE META",
+   "brightness": 1.2,
+   "build_code": "R04-2G9Q4-VHSZY-11",
+   "apex": "KG-7 DRILLCHARGE",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "IVANOV QR600"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "TT BAEM 12\""
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "SCHLAGER 7X"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "BRUEN KG-7 MK. IV"
+    },
+    {
+     "type": "comb",
+     "label": "COMB",
+     "name": "TT TYPE 40 COMB"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/kg-7-vulcan MP #1 Sniper (Apex), code R04-2G9Q4-VHSZY-11 (= codmunity MW4 tier list sharing code), weapon level 75, last updated 11/11/2026; tier list: Absolute Meta (only sniper in Absolute Meta)"
+  },
+  {
+   "rank": 2,
+   "image": "mw4/w_Signal_50.png",
+   "short": "SIGNAL 50",
+   "title_white": "SIGNAL",
+   "title_gold": "50",
+   "class": "Sniper",
+   "class_note": "Weapon level 63",
+   "tagline": "A TIER SNIPER",
+   "brightness": 1.2,
+   "build_code": "R02-2G9Q7-TXNBD-11",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "FSS DES-TAC70"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "S50-SB GEN.2 22\""
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "SCHLAGER 7X"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "EXP T50-S HEAVY"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "GL ZERO DROP 6"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/signal-50 MP #1 Sniper, code R02-2G9Q7-TXNBD-11 (= tier list sharing code), weapon level 63; tier list: A Tier"
+  },
+  {
+   "rank": 3,
+   "image": "mw4/w_Astaroth_57.png",
+   "short": "ASTAROTH .57",
+   "title_white": "ASTAROTH",
+   "title_gold": ".57",
+   "class": "Sniper",
+   "class_note": "Weapon level 44",
+   "tagline": "LONG RANGE BUILD",
+   "brightness": 1.2,
+   "build_code": "R03-DBP8N-TUQQ1-1",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "FSS MOODKILLER"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "FTAC CROSSWIND 30\""
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "SCHLAGER 7X"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "CRONEN STRAND-BG STOCK"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "FJX S-TAC GRIP"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/astaroth-57 MP #1 Sniper, code R03-DBP8N-TUQQ1-1, weapon level 44, last updated 11/11/2026; codmunity MW4 tier list: C Tier (below KG-7 Absolute Meta + Signal 50 A Tier)"
+  }
+ ],
+ "source": "codmunity.gg MW4 tier list + weapon pages kg-7-vulcan / signal-50 / astaroth-57 (fetched 21.11.2026); MW4 sniper class = KG-7 Vulcan, Astaroth .57, Signal 50 (data/mw4-weapons-reference.md); official patch notes Nov 13/16/19: no sniper rifle damage changes",
+ "notes": "Mon 23.11. 12:00 search post (best X ranking, like 'best smg mw4' 707K which got 4.1k views). Dup check: no sniper ranking, no Signal 50 / Astaroth build before. KG-7 Vulcan appeared inside multi-gun posts: 11.11. 'MW4 code' (older MP build R04-2G9Q4-VHSNN-51 with KT76 Light Bolt, 1.3k views) and 16.11. Warzone loadout (WZ build R04-3K9Y5-JTFYN-8S51) -> different current MP build + new topic, accepted. Oris 8.6 = marksman (04.11./17.11.). | Scheduled Mon 23.11. 12:00 Berlin (Metricool), QA 0/0, byte check OK.",
+ "caption": "Best sniper MW4 – all 3 sniper rifles ranked + codes 🎯\nBest sniper build MW4: KG-7 Vulcan class setup 👉 Save it!\n#mw4 #mw4sniper #bestsniper #mw4loadout #modernwarfare4",
+ "first_comment": "Which MW4 sniper do you run: 1, 2 or 3? 👇",
+ "tiktok_title": "Best sniper MW4: all 3 ranked + build codes",
+ "verified": "independent verifier 21.11.2026: facts PASS (dup overlap KG-7 noted, accepted)"
+}
