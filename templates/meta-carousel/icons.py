@@ -44,6 +44,8 @@ ICONS = {
  'bolt': f'<path {S} d="M14 34 h96 a5 5 0 0 1 5 5 v12 a5 5 0 0 1 -5 5 h-96 z"/><path {S} d="M86 56 l16 18 a4 4 0 0 1 -1 5 l-4 3"/>'
          f'<circle cx="98" cy="80" r="8" {S}/><path {S} d="M115 40 h30 v10 h-30 z"/><path {T} d="M24 45 h50 M30 38 v14 M40 38 v14"/>',
  'comb': f'<path {S} d="M18 40 h124 l-8 22 h-108 z"/><path {T} d="M30 50 h96 M18 40 l10 -12 h104 l10 12"/>',
+ 'guard': f'<path {S} d="M8 42 h20 v6 h-20 z"/><path {S} d="M28 30 h104 a6 6 0 0 1 6 6 v18 a6 6 0 0 1 -6 6 h-104 z"/>'
+          f'<path {S} d="M138 40 h14 v10 h-14 z"/><path {T} d="M44 38 h14 M66 38 h14 M88 38 h14 M110 38 h14 M44 52 h14 M66 52 h14 M88 52 h14 M110 52 h14"/>',
 }
 
 if __name__ == '__main__':
