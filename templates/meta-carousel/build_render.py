@@ -28,7 +28,7 @@ def main(data_path, out_dir=None):
     tmp = os.path.join(R.HERE, '_build'); os.makedirs(tmp, exist_ok=True)
     pages = [('01_cover', cover_slide(d))]
     for w in d['weapons']:
-        pages.append((f'{len(pages) + 1:02d}_build_{w["rank"]}', R.weapon_slide(w, d)))
+        pages.append((f'{len(pages) + 1:02d}_build_{w["rank"]}', R.weapon_slide(w, {**d, 'badge': w.get('badge', d.get('badge', 'DMZ'))})))
     pages.append((f'{len(pages) + 1:02d}_cta', R.cta_slide(d)))
     srv = R.serve(R.HERE)
     from playwright.sync_api import sync_playwright

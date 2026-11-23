@@ -46,6 +46,12 @@ ICONS = {
  'comb': f'<path {S} d="M18 40 h124 l-8 22 h-108 z"/><path {T} d="M30 50 h96 M18 40 l10 -12 h104 l10 12"/>',
  'guard': f'<path {S} d="M8 42 h20 v6 h-20 z"/><path {S} d="M28 30 h104 a6 6 0 0 1 6 6 v18 a6 6 0 0 1 -6 6 h-104 z"/>'
           f'<path {S} d="M138 40 h14 v10 h-14 z"/><path {T} d="M44 38 h14 M66 38 h14 M88 38 h14 M110 38 h14 M44 52 h14 M66 52 h14 M88 52 h14 M110 52 h14"/>',
+ 'trigger': f'<path {S} d="M30 20 h100 v14 h-100 z"/><path {S} d="M46 34 c0 30 22 44 50 44 a28 28 0 0 0 28 -28 v-16"/>'
+            f'<path {S} d="M80 34 v6 c0 14 -6 22 -14 26"/><path {T} d="M40 27 h20 M100 27 h20 M70 24 v6 M76 24 v6"/>',
+ 'cylinder': f'<circle cx="80" cy="45" r="34" {S}/>'
+             + ''.join(f'<circle cx="{80+20*c:.1f}" cy="{45+20*s:.1f}" r="7" {T}/>'
+                       for c, s in ((1,0),(0.5,0.866),(-0.5,0.866),(-1,0),(-0.5,-0.866),(0.5,-0.866)))
+             + f'<circle cx="80" cy="45" r="4" {DOT}/>',
 }
 
 if __name__ == '__main__':

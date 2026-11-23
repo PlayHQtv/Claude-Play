@@ -1,0 +1,158 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MULTIPLAYER",
+ "rank_label": "PISTOL RANK",
+ "cover": {
+  "kicker": "YOUR SECONDARY, SORTED",
+  "big": "BEST PISTOL",
+  "small": "IN MW4",
+  "sub": "TOP 3 PISTOLS RANKED + BUILD CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_Krait_P68.png"
+ },
+ "cta": {
+  "white": "WHICH PISTOL",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_sniper_fb.png",
+   "right": -70,
+   "top": 1050,
+   "w": 760,
+   "fade": 100,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "image": "mw4/w_Krait_P68.png",
+   "short": "KRAIT P68",
+   "title_white": "KRAIT",
+   "title_gold": "P68",
+   "class": "Pistol",
+   "class_note": "Weapon level 38",
+   "tagline": "FASTEST TTK UP CLOSE",
+   "brightness": 1.2,
+   "build_code": "P03-2JD6P-8IXA9-F711",
+   "apex": "KRAIT P68 COMMANDO",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "EXPEDITE DRILL L4"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "SA OMNI 5.5\""
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "MAGTAC .45"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": ".45 AUTO FRANGIBLE"
+    },
+    {
+     "type": "trigger",
+     "label": "TRIGGER ACTION",
+     "name": "P68 TAPPER 9"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/krait-p68 MP #1 Versatile (Apex), code P03-2JD6P-8IXA9-F711, weapon level 38; codmunity 'Best Pistol in MW4 MP' #1 Krait P68 'Fastest TTK up close (0-10 m) in its class' (195 ms); warzoneloadout.games/mw4/pistol #1 (20.11.)"
+  },
+  {
+   "rank": 2,
+   "image": "mw4/w_SANG_9mm.png",
+   "short": "SANG 9MM",
+   "title_white": "SANG",
+   "title_gold": "9MM",
+   "class": "Pistol",
+   "class_note": "Weapon level 38",
+   "tagline": "EASIEST PISTOL TO USE",
+   "brightness": 1.2,
+   "build_code": "P04-AV4T9-XXJB1-1",
+   "apex": "SANG BREACH",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "EXPEDITE DRILL L4"
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "Z-DOT 9"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "SANG WOOD GRIP"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "17 ROUND MAG"
+    },
+    {
+     "type": "trigger",
+     "label": "TRIGGER ACTION",
+     "name": "SANG INSTA-F TRIGGER"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/sang-9mm MP #1 Versatile (Apex), code P04-AV4T9-XXJB1-1, weapon level 38; codmunity Best Pistol #2 'Easiest to use in its class'; warzoneloadout #2"
+  },
+  {
+   "rank": 3,
+   "image": "mw4/w_Mojave_357.png",
+   "short": "MOJAVE .357",
+   "title_white": "MOJAVE",
+   "title_gold": ".357",
+   "class": "Pistol",
+   "class_note": "Weapon level 23",
+   "tagline": "NO APEX NEEDED",
+   "brightness": 1.2,
+   "build_code": "P07-3K9Y5-MRU9P-ES11",
+   "attachments": [
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "BRYSON SNUB 2\""
+    },
+    {
+     "type": "cylinder",
+     "label": "CYLINDER",
+     "name": "MOJAVE SPEED CYLINDER"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "SA TYRANT GRIP"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": ".357 MAGNUM OVERPRESSURED"
+    },
+    {
+     "type": "trigger",
+     "label": "TRIGGER ACTION",
+     "name": "M357 LIGHT"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/mojave-357 MP #1 Versatile (no Apex), code P07-3K9Y5-MRU9P-ES11, weapon level 23; codmunity Best Pistol #3; warzoneloadout #3"
+  }
+ ],
+ "source": "codmunity.gg/mw4 'Best Pistol in Modern Warfare 4 Multiplayer' (1 Krait P68, 2 SANG 9mm, 3 Mojave .357; ranking updated 21.11.2026) + weapon pages krait-p68 / sang-9mm / mojave-357 (fetched 23.11.2026); warzoneloadout.games/mw4/pistol (updated 20.11.2026, same order); Apex names official (data/2026-10-30-apex-official-source.json)",
+ "notes": "Wed 25.11. 18:00 search post (best X ranking like 'best smg mw4' 4.1k / 'best sniper' 23.11. / 'best lmg' 24.11.). Line 2 keyword CSI 'Mw4 class' 294K. Dup check: no pistol ranking/build before (all data/*.json + Metricool 60 days). | Scheduled Wed 25.11. 18:00 Berlin (Metricool), QA 0/0, byte check OK.",
+ "caption": "Best pistol MW4 – top 3 pistols ranked + build codes 🎯\nBest secondary MW4: Krait P68 + SANG 9mm class setup 👉 Save it!\n#mw4 #mw4pistol #bestpistol #mw4loadout #modernwarfare4",
+ "first_comment": "Which MW4 pistol is your secondary: 1, 2 or 3? 👇",
+ "tiktok_title": "Best pistol MW4: top 3 ranked + build codes",
+ "verified": "independent verifier 23.11.2026: facts PASS (codmunity + warzoneloadout + official patch notes Nov 5/13/19), dup check OK"
+}

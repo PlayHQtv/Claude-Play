@@ -1,0 +1,161 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MULTIPLAYER",
+ "rank_label": "BUILD",
+ "cover": {
+  "kicker": "BUFFED 3 TIMES IN SEASON 1",
+  "big": "BEST PATRIOT",
+  "small": "XMR BUILD MW4",
+  "sub": "3 LOADOUTS + BUILD CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_Patriot_XMR.png"
+ },
+ "cta": {
+  "white": "WHICH BUILD",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_redeye_fb.png",
+   "right": -60,
+   "top": 1030,
+   "w": 540,
+   "fade": 75,
+   "bright": 1.25,
+   "rim": 1,
+   "hide_br": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "image": "mw4/w_Patriot_XMR.png",
+   "short": "VERSATILE",
+   "title_white": "PATRIOT",
+   "title_gold": "XMR",
+   "class": "Assault Rifle",
+   "class_note": "Versatile build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 72",
+   "brightness": 1.2,
+   "build_code": "B04-43QCD-CXHTK-HW11",
+   "apex": "PATRIOT XMR VOLT",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "EXP UNDERTOW GEN. 2"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "EXP TR-WRAP"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "7.62 NATO OVERPRESSURED"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "35 ROUND MAG"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "FSS TAC90 GRIP"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/patriot-xmr MP #1 Versatile (Apex), code B04-43QCD-CXHTK-HW11, weapon level 72; warzoneloadout.games/mw4/patriot-xmr Versatile = same attachments (Undertow Gen. 2, Tac90, 35 Round Mag, TR-Wrap, Volt)"
+  },
+  {
+   "rank": 2,
+   "image": "mw4/w_Patriot_XMR.png",
+   "short": "CLOSE RANGE",
+   "title_white": "PATRIOT",
+   "title_gold": "XMR",
+   "class": "Assault Rifle",
+   "class_note": "Close range build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 72",
+   "brightness": 1.2,
+   "build_code": "B04-43QCF-W4ZK7-F711",
+   "apex": "PATRIOT XMR VOLT",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "MEIKO 30CAL-SP"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "SZ GEN.6 PEQ"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "EXP TR-WRAP"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "7.62 NATO OVERPRESSURED"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "35 ROUND MAG"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/patriot-xmr MP #2 Close Range (Apex), code B04-43QCF-W4ZK7-F711, weapon level 72; warzoneloadout Close Range = Meiko 30CAL-SP, 35 Round Mag, TR-Wrap, SZ Gen.6 PEQ, Volt"
+  },
+  {
+   "rank": 3,
+   "image": "mw4/w_Patriot_XMR.png",
+   "short": "DMZ",
+   "title_white": "PATRIOT",
+   "title_gold": "XMR",
+   "class": "Assault Rifle",
+   "class_note": "DMZ long range build",
+   "tagline": "DMZ · WEAPON LEVEL 72",
+   "brightness": 1.2,
+   "build_code": "B04-Y1MVA-PVJ31-1",
+   "apex": "PATRIOT XMR VOLT",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "EXP UNDERTOW GEN. 2"
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "KV CORSAC HOLO"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "EXP TR-WRAP"
+    },
+    {
+     "type": "drum",
+     "label": "MAGAZINE",
+     "name": "50 ROUND DRUM MAG"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "FSS TAC90 GRIP"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/patriot-xmr DMZ #1 Long Range (Apex), code B04-Y1MVA-PVJ31-1, weapon level 72",
+   "badge": "DMZ"
+  }
+ ],
+ "source": "codmunity.gg/weapon/mw4/patriot-xmr (MP + DMZ builds, fetched 23.11.2026; codmunity MW4 meta ranking 21.11.: Patriot XMR A tier 'Meta', recently buffed); warzoneloadout.games/mw4/patriot-xmr; official MW4 Season 1 patch notes: Nov 5 max damage range 31.24 -> 33.53 m, Nov 13 max range 33.53 -> 35.56 m + min damage 22 -> 24 + velocity 620 -> 640 m/s, Nov 19 min damage 24 -> 25 (= 3 buffs in Season 1); Patriot XMR Volt = official Apex (data/2026-10-30-apex-official-source.json)",
+ "notes": "Wed 25.11. 12:00 build post (rescue mode: >=1 build/day). Search term 'best patriot xmr build mw4' + CSI 'Mw4 class' 294K / 'best loadout for mw4' 530K (docs/trends/2026-11-17.md) in line 2. Dup check: no Patriot XMR build/post before (Patriot render was only the small cover gun of the 22.11. color settings post). | Scheduled Wed 25.11. 12:00 Berlin (Metricool), QA 0/0, byte check OK.",
+ "caption": "Best Patriot XMR build MW4 – 3 loadouts + build codes 🎯\nMW4 class setup after 3 buffs: Patriot XMR Volt loadout 👉 Save it!\n#mw4 #patriotxmr #mw4loadout #modernwarfare4 #mw4multiplayer",
+ "first_comment": "Which Patriot XMR build are you running: 1, 2 or 3? 👇",
+ "tiktok_title": "Best Patriot XMR build MW4: 3 loadouts + codes",
+ "verified": "independent verifier 23.11.2026: facts PASS (codmunity + warzoneloadout + official patch notes Nov 5/13/19), dup check OK"
+}
