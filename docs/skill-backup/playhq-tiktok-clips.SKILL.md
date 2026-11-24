@@ -493,6 +493,8 @@ firstCommentText stays ONE short question. TikTok title = search term. Spell che
 - No links, no selling/advertising of paid hack software (aimbots, wallhacks) – TikTok removes those posts.
 - LIMIT (user 24.11.2026: "Außer es gefährdet unseren eigenen Account"): skip any glitch/cheat/tool topic that could put OUR TikTok account at risk (removal, strike, reach ban). Before such a post check the current TikTok Community Guidelines; in doubt = no post. Never show hack menus/aimbot/wallhack footage, never instructions to get or install hack software, never anything that looks like an ad for it. Safe framing: "Is X banned in MW4?", "Does X still work after the patch?", factual explainers with the official risk line.
 
+## LANGUAGE: English only (user 24.11.2026: "Keine spanischen posts") – no Spanish or other language posts, even for high-volume non-English search terms.
+
 ## SELF-IMPROVEMENT IN ALL AREAS (user 24.11.2026: "Erweitere auch deine Quellen selbstständig. Du musst immer besser werden in allen Bereichen")
 - SOURCES: docs/sources/mw4.md (+ gta6.md) is a living list. Every run adds useful new sources as candidates; the weekly task promotes (3 correct uses) or drops (1 clear error) them. Official first, leaks never.
 - TRENDS: when the user sends Creator Search Insights screenshots, save them as docs/trends/<date>.md with status per term (posted / new / never).
