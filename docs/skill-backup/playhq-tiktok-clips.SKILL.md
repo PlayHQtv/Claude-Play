@@ -491,6 +491,7 @@ firstCommentText stays ONE short question. TikTok title = search term. Spell che
 - Glitches, exploits, official cheat codes and third-party input tools (e.g. reWASD) are allowed topics when searched.
 - Facts verified like everything else (does it still work in the current patch?) + one neutral line on the official risk (Activision Security and Enforcement Policy / Ricochet, patched or not) so viewers decide themselves.
 - No links, no selling/advertising of paid hack software (aimbots, wallhacks) – TikTok removes those posts.
+- LIMIT (user 24.11.2026: "Außer es gefährdet unseren eigenen Account"): skip any glitch/cheat/tool topic that could put OUR TikTok account at risk (removal, strike, reach ban). Before such a post check the current TikTok Community Guidelines; in doubt = no post. Never show hack menus/aimbot/wallhack footage, never instructions to get or install hack software, never anything that looks like an ad for it. Safe framing: "Is X banned in MW4?", "Does X still work after the patch?", factual explainers with the official risk line.
 
 ## SELF-IMPROVEMENT IN ALL AREAS (user 24.11.2026: "Erweitere auch deine Quellen selbstständig. Du musst immer besser werden in allen Bereichen")
 - SOURCES: docs/sources/mw4.md (+ gta6.md) is a living list. Every run adds useful new sources as candidates; the weekly task promotes (3 correct uses) or drops (1 clear error) them. Official first, leaks never.
