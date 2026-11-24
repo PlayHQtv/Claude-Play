@@ -470,7 +470,24 @@ Full 16:9 frame uncropped in the middle, blurred version of the same frame as ba
 - Metricool checkout requires a tax ID field (private persons: Steuer-ID).
 - No external links in descriptions. Copyright: reposting is risky; safe sources are CC-BY, creators who allow clipping, own content. TikTok in-app game challenges must be joined in the app.
 
-## SHORT CAPTIONS (user 11.11.2026: "Das ist immer viel zu viel Text unter unserem Content" + "SEO ist ja trotzdem wichtig" + "Generell sollte es so sein") – applies to EVERY post (carousel, video, GTA, MW4) and OVERRIDES every older caption rule in this file
+## SEO CAPTIONS v2 = STANDARD (user 24.11.2026: "Gut, kannst du so machen") – REPLACES the SHORT CAPTIONS rule below for every post
+Reason (data 24.11.): reach comes from TikTok SEARCH (Oris 10.8k/96 % search, PPSh 12.1k/86 %, Osprey 6.3k/97 %, all with long keyword captions). Since the short captions (11.11.) search share and views fell (Axion 420/48 %, Sniper 361/36 %, Cronen Squall 235/20 %). Season-1 hype ending + GTA 6 launch also play a role.
+Caption = ~350–500 characters, natural English, no keyword spam. TikTok shows only line 1 in the feed, so it still looks short:
+1. Main search term exactly as people search it + 1 emoji ("Best Oden build MW4 🔥").
+2. 1–2 sentences with related keywords: weapon/topic name again, "Modern Warfare 4", mode (multiplayer / Warzone / DMZ), the #1 build code, 2–3 attachment or Apex names, patch context ("after the Nov 19 buff"). Rankings: 1️⃣ 2️⃣ 3️⃣ with one short reason each. Only facts that are on the verified slides.
+3. "Which <X> class do you run? Comment 1, 2 or 3 👇 Save this for your next match & send it to your squad!"
+4. Line break + exactly 5 hashtags.
+firstCommentText stays ONE short question. TikTok title = search term. Spell check with `python3 templates/meta-carousel/qa.py --caption "<text>"`.
+
+## REACH OPTIMIZATION – CONTINUOUS (user 24.11.2026: "Verbessere dich auch kontinuierlich selbstständig was die Reichweiten Optimierung angeht")
+- Weekly scheduled task "Reichweiten-Optimierung" (Sunday evening) + a quick check in every autopilot run.
+- Data: getAnalyticsDataByMetrics TKPO02/05/07/08/10/16/20/21 for the last 28 days. Compare views at the same post age where possible (search posts keep growing for weeks).
+- Log every finding + every rule change with date and numbers in docs/reach-log.md (anonymized, no IDs).
+- Allowed WITHOUT asking: topic choice (which weapons/terms), caption wording/length, hashtags, first-comment wording, TikTok title, posting time within 11:00–19:00, mix of formats. Change ONE variable per week (clean test), keep a change only if the numbers support it, otherwise roll back.
+- NOT without the user: design/layout, glass style, new games (GTA/Minecraft paused), more than 2 posts/day, security/GitHub rules, quality rules, deleting/privating posts.
+- Every change goes into this file + the autopilot prompt, and the user gets a short German report.
+
+## (SUPERSEDED 24.11. by SEO CAPTIONS v2) SHORT CAPTIONS (user 11.11.2026: "Das ist immer viel zu viel Text unter unserem Content" + "SEO ist ja trotzdem wichtig" + "Generell sollte es so sein") – applies to EVERY post (carousel, video, GTA, MW4) and OVERRIDES every older caption rule in this file
 Caption = max 3 lines, about 150 characters before the hashtags:
 1. SEO line: search term + short hook + 1 emoji (e.g. "Best MW4 settings – controller, graphics & audio 🎮")
 2. ONE short teaser/CTA line that naturally carries a SECOND search keyword (e.g. "Modern Warfare 4 controller + audio setup 👉 Save it!")
