@@ -514,7 +514,8 @@ SEO stays strong without long text: search term in TikTok title, caption line 1,
 ## Scheduled tasks (as of 11.11.2026)
 - "MW4 + GTA 6 News-Radar" daily 07:45 Berlin (autopilot, fills 12:00 + 18:00 for 3 days).
 - "GTA 6 Launch-Check 17.11." and "GTA 6 Launch-Check 18.11. abends" (launch posts 18.11. 18:00, 19.11. 00:00 + 18:00).
-- "Caption-Test: kurz vs. lang" 25.11. 10:23 (report only, changes nothing).
+- "Caption-Test: kurz vs. lang" DISABLED 24.11. (superseded by the data check of 24.11. and the weekly task below).
+- "Reichweiten-Optimierung" every Sunday 20:37 Berlin: weekly analysis, one rule change per week, log in docs/reach-log.md, updates the autopilot prompt.
 - Full current rule copy: docs/skill-backup/playhq-tiktok-clips.SKILL.md in the repo (anonymized).
 ## GTA DESIGN v4.1 = STANDARD (user 15.11.2026: "Neues Design für die GTA Posts allgemein übernehmen. Achte trotzdem auf SEO")
 - gta3_render.py default. Example: data/2026-11-18-gta6-release-time.json + data/2026-11-19-gta6-out-now.json.
