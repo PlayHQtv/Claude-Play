@@ -487,6 +487,12 @@ firstCommentText stays ONE short question. TikTok title = search term. Spell che
 - NOT without the user: design/layout, glass style, new games (GTA/Minecraft paused), more than 2 posts/day, security/GitHub rules, quality rules, deleting/privating posts.
 - Every change goes into this file + the autopilot prompt, and the user gets a short German report.
 
+## SELF-IMPROVEMENT IN ALL AREAS (user 24.11.2026: "Erweitere auch deine Quellen selbstständig. Du musst immer besser werden in allen Bereichen")
+- SOURCES: docs/sources/mw4.md (+ gta6.md) is a living list. Every run adds useful new sources as candidates; the weekly task promotes (3 correct uses) or drops (1 clear error) them. Official first, leaks never.
+- TRENDS: when the user sends Creator Search Insights screenshots, save them as docs/trends/<date>.md with status per term (posted / new / never).
+- QUALITY: the weekly task also reviews the week's verifier findings, QA errors, user complaints and incidents and turns every repeated mistake into a rule or an automatic check (qa.py / prep.sh) so it cannot happen again.
+- PROCESS: note faster or safer ways of working in this file. Same limits as REACH OPTIMIZATION (no design, new games, security or quality-rule loosening without the user).
+
 ## (SUPERSEDED 24.11. by SEO CAPTIONS v2) SHORT CAPTIONS (user 11.11.2026: "Das ist immer viel zu viel Text unter unserem Content" + "SEO ist ja trotzdem wichtig" + "Generell sollte es so sein") – applies to EVERY post (carousel, video, GTA, MW4) and OVERRIDES every older caption rule in this file
 Caption = max 3 lines, about 150 characters before the hashtags:
 1. SEO line: search term + short hook + 1 emoji (e.g. "Best MW4 settings – controller, graphics & audio 🎮")
