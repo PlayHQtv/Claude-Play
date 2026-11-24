@@ -21,7 +21,7 @@ jobs:
         run: |
           for rid in $(gh api "repos/$R/releases?per_page=100" -q '.[]|select(.name=="grab-private")|.id'); do
             for p in 1 2 3 4; do gh api "repos/$R/releases/$rid/assets?per_page=100&page=$p" -q '.[]|"\(.id) \(.name)"'; done |
-            while read id n; do case "$n" in *.pem|*key*) ;; *) gh api -X DELETE "repos/$R/releases/assets/$id" >/dev/null && echo "deleted asset";; esac; done
+            while read id n; do case "$n" in *.pem|*key*|cache_part*) ;; *) gh api -X DELETE "repos/$R/releases/assets/$id" >/dev/null && echo "deleted asset";; esac; done
           done
       - name: Old workflow runs + logs
         run: |
