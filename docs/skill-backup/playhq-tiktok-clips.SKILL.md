@@ -500,6 +500,12 @@ firstCommentText stays ONE short question. TikTok title = search term. Spell che
 - Alarm if: a post is below 50 % of the median of earlier posts at the same age, OR search share of the last 3 posts is below 50 % while earlier build posts had 80 %+, OR 2 posts in a row are the worst at their age, OR a post has ~0 views after 6 h (possible block/private/upload problem).
 - On alarm, the SAME run: find the likely cause (topic demand, caption, title, hashtags, slot, duplicate competing with our own older post, TikTok status of the post), fix it in the posts that are still scheduled and in the rules (only the changes allowed under REACH OPTIMIZATION), log it in docs/reach-log.md, and tell the user in the report at the top. Design or other limited things: propose to the user right away instead of waiting for Sunday.
 
+## OFFICIAL WALLPAPER BACKGROUND (example 24.11.2026, waiting for user approval – do NOT use in scheduled posts yet)
+- Source: the official "MW4 wallpapers" link of the Call of Duty account leads to the Activision Press downloads (MW4 Primary_KA_S1, Battle-Pass_KA_S1, MW4 Brand Guidelines). Use the UNBRANDED files only, never mirrored or recoloured.
+- render.wallpaper_html via "wallpaper": {img, bright, sat, top, bottom, edge} in the data JSON (example data/example-mw4-wallpaper.json, crop wp_bp_s1_city.jpg = Battle Pass key art left part WITHOUT the operator). Thin frame streak lines are removed automatically on wallpaper posts.
+- Rules: no person/face from the key art on the slides (crop it away), fade top + bottom so all text keeps contrast (QA 0/0), nothing that collides with the weapon render, no stray slivers at the edges.
+- MW4 brand palette (guidelines): Gold #FFD000, Gunmetal #2A2A2A, White; never mix gold and green in one composition.
+
 ## SELF-IMPROVEMENT IN ALL AREAS (user 24.11.2026: "Erweitere auch deine Quellen selbstständig. Du musst immer besser werden in allen Bereichen")
 - SOURCES: docs/sources/mw4.md (+ gta6.md) is a living list. Every run adds useful new sources as candidates; the weekly task promotes (3 correct uses) or drops (1 clear error) them. Official first, leaks never.
 - TRENDS: when the user sends Creator Search Insights screenshots, save them as docs/trends/<date>.md with status per term (posted / new / never).

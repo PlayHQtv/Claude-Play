@@ -1,7 +1,7 @@
 """PlayHQ META carousel generator (design v3 "digital HUD", approved 29.10.2026).
 Usage: python3 render.py data/<file>.json [out_dir]
 Slides: cover, one per weapon, cta. 1080x1440 (3:4) JPG. All components are free (OFL fonts, own textures/icons, ISNet cutouts)."""
-import json, os, sys, html, threading, functools, http.server, socketserver
+import json, os, re, sys, html, threading, functools, http.server, socketserver
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 E = html.escape
@@ -149,9 +149,27 @@ GLASS = """<style>
 </style><div class="aurora"></div><div class="topo2"></div>"""
 
 
+def wallpaper_html(w):
+    """Official key art as a dimmed background layer (user 24.11.2026: official wallpapers in the background).
+    Sits above the base gradient and under the glass layer; the topo pattern stays on top (topo2, screen blend).
+    Keys: img (in _build/s1, official Activision press key art, no faces behind text), bright, sat, pos (CSS background-position),
+    top/bottom (mask fade stops in %, the image fades to black towards the edges so text keeps its contrast)."""
+    if not w:
+        return ''
+    t, b = w.get('top', 18), w.get('bottom', 70)
+    return (f'<div style="position:absolute;inset:0;background:url(/_build/s1/{w["img"]}) {w.get("pos", "center")}/cover no-repeat;'
+            f'filter:brightness({w.get("bright", .55)}) saturate({w.get("sat", .9)}) contrast(1.05);'
+            f'-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,{w.get("edge", .25)}) 0%,#000 {t}%,#000 {b}%,rgba(0,0,0,.22) {b + 12}%,rgba(0,0,0,{w.get("edge", .25)}) 100%)"></div>'
+            '<div style="position:absolute;inset:0;background:radial-gradient(ellipse 760px 900px at 50% 48%,transparent 40%,rgba(0,0,0,.55) 100%)"></div>')
+
+
 def page(body, d):
+    f = frame(d)
+    if d.get('wallpaper'):
+        f = f.replace('<div class="topo"></div>', '<div class="topo"></div>' + wallpaper_html(d['wallpaper']), 1)
+        f = re.sub(r'<div class="streak"[^>]*></div>', '', f)  # the thin diagonal light lines read as stray lines over key art (verifier 24.11.)
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>'
-            + frame(d) + (GLASS if d.get('style', 'glass') == 'glass' else '') + body
+            + f + (GLASS if d.get('style', 'glass') == 'glass' else '') + body
             + f'<div class="foot">{d.get("footer", "FOLLOW <b>@PLAYHQTV</b> FOR DAILY MW4 META")}</div>' + FITJS + '</body></html>')
 
 
