@@ -495,6 +495,11 @@ firstCommentText stays ONE short question. TikTok title = search term. Spell che
 
 ## LANGUAGE: English only (user 24.11.2026: "Keine spanischen posts") – no Spanish or other language posts, even for high-volume non-English search terms.
 
+## EARLY WARNING – REACT AT ONCE (user 24.11.2026: "Die Optimierung sollte immer zeitnah sein wenn du merkst irgendwas stimmt nicht basierend auf unseren früheren Ergebnissen")
+- Every autopilot run appends one line per post of the last 14 days to docs/reach-snapshots.csv: date,post_date,slot,topic,age_days,views,search_share,foryou_share (topic words only, no IDs/URLs). This gives views at the SAME AGE for fair comparisons.
+- Alarm if: a post is below 50 % of the median of earlier posts at the same age, OR search share of the last 3 posts is below 50 % while earlier build posts had 80 %+, OR 2 posts in a row are the worst at their age, OR a post has ~0 views after 6 h (possible block/private/upload problem).
+- On alarm, the SAME run: find the likely cause (topic demand, caption, title, hashtags, slot, duplicate competing with our own older post, TikTok status of the post), fix it in the posts that are still scheduled and in the rules (only the changes allowed under REACH OPTIMIZATION), log it in docs/reach-log.md, and tell the user in the report at the top. Design or other limited things: propose to the user right away instead of waiting for Sunday.
+
 ## SELF-IMPROVEMENT IN ALL AREAS (user 24.11.2026: "Erweitere auch deine Quellen selbstständig. Du musst immer besser werden in allen Bereichen")
 - SOURCES: docs/sources/mw4.md (+ gta6.md) is a living list. Every run adds useful new sources as candidates; the weekly task promotes (3 correct uses) or drops (1 clear error) them. Official first, leaks never.
 - TRENDS: when the user sends Creator Search Insights screenshots, save them as docs/trends/<date>.md with status per term (posted / new / never).
