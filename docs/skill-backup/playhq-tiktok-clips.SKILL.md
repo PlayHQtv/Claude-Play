@@ -487,6 +487,11 @@ firstCommentText stays ONE short question. TikTok title = search term. Spell che
 - NOT without the user: design/layout, glass style, new games (GTA/Minecraft paused), more than 2 posts/day, security/GitHub rules, quality rules, deleting/privating posts.
 - Every change goes into this file + the autopilot prompt, and the user gets a short German report.
 
+## GLITCHES / CHEATS / TOOLS ALLOWED (user 24.11.2026: "Zuschauer sind mündig und können selbst entscheiden ob sie Cheats, glitches etc verwenden wollen") – overrides older "legit only / no glitches" rules
+- Glitches, exploits, official cheat codes and third-party input tools (e.g. reWASD) are allowed topics when searched.
+- Facts verified like everything else (does it still work in the current patch?) + one neutral line on the official risk (Activision Security and Enforcement Policy / Ricochet, patched or not) so viewers decide themselves.
+- No links, no selling/advertising of paid hack software (aimbots, wallhacks) – TikTok removes those posts.
+
 ## SELF-IMPROVEMENT IN ALL AREAS (user 24.11.2026: "Erweitere auch deine Quellen selbstständig. Du musst immer besser werden in allen Bereichen")
 - SOURCES: docs/sources/mw4.md (+ gta6.md) is a living list. Every run adds useful new sources as candidates; the weekly task promotes (3 correct uses) or drops (1 clear error) them. Official first, leaks never.
 - TRENDS: when the user sends Creator Search Insights screenshots, save them as docs/trends/<date>.md with status per term (posted / new / never).
