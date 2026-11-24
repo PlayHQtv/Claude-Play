@@ -1,0 +1,157 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MULTIPLAYER",
+ "rank_label": "BUILD",
+ "cover": {
+  "kicker": "STILL META AFTER THE NERF",
+  "big": "BEST MOSIN",
+  "small": "NAGANT BUILD",
+  "sub": "WARZONE + MP LOADOUTS + CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_MosinNagant.png"
+ },
+ "cta": {
+  "white": "WHICH BUILD",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_silh_fb.png",
+   "right": 71,
+   "top": 1010,
+   "w": 420,
+   "fade": 75,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "badge": "WARZONE",
+   "image": "mw4/w_MosinNagant.png",
+   "short": "WARZONE SNIPER",
+   "title_white": "MOSIN",
+   "title_gold": "NAGANT",
+   "class": "Marksman Rifle",
+   "class_note": "Warzone sniper build",
+   "tagline": "WARZONE · WEAPON LEVEL 34",
+   "brightness": 1.2,
+   "build_code": "M03-3KBEJ-HLEHI-CN11",
+   "attachments": [
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "SCHLAGER 7X"
+    },
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "FTAC SILENT RECON"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "MOSIN K025 BARREL"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "XRK CLUTCH-LS"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "7.62X54MMR HIGH VELOCITY"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/mosin-nagant Warzone #1 Sniper (Meta, pick rate 4.2%), code M03-3KBEJ-HLEHI-CN11, weapon level 34 (page updated 21.11.2026)"
+  },
+  {
+   "rank": 2,
+   "image": "mw4/w_MosinNagant.png",
+   "short": "MP VERSATILE",
+   "title_white": "MOSIN",
+   "title_gold": "NAGANT",
+   "class": "Marksman Rifle",
+   "class_note": "Versatile build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 60",
+   "brightness": 1.2,
+   "build_code": "M03-26ES6-3P15Q-11",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "330TC2 GRIDLOCK"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "MOSIN S762 BARREL"
+    },
+    {
+     "type": "bolt",
+     "label": "BOLT",
+     "name": "TV-LIGHT 7-BOLT"
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "CRONEN R808"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "LOCKWOOD EAGLE STOCK"
+    }
+   ],
+   "sources": "codmunity MW4 MP #1 Versatile (Meta), code M03-26ES6-3P15Q-11, weapon level 60"
+  },
+  {
+   "rank": 3,
+   "image": "mw4/w_MosinNagant.png",
+   "short": "MP CLOSE RANGE",
+   "title_white": "MOSIN",
+   "title_gold": "NAGANT",
+   "class": "Marksman Rifle",
+   "class_note": "Close range build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 57",
+   "brightness": 1.2,
+   "build_code": "M03-26HE5-1AH2N-11",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "330TC2 GRIDLOCK"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "SCHLAGER VISIV-5"
+    },
+    {
+     "type": "bolt",
+     "label": "BOLT",
+     "name": "TV-LIGHT 7-BOLT"
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "CRONEN R808"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "NO STOCK"
+    }
+   ],
+   "sources": "codmunity MW4 MP #2 Close Range (Contenders), code M03-26HE5-1AH2N-11, weapon level 57"
+  }
+ ],
+ "source": "codmunity.gg/weapon/mw4/mosin-nagant (Warzone + MP builds, tiers: Warzone Sniper Meta, MP Versatile Meta; updated 21.11.2026, fetched 24.11.2026); official MW4 Season 1 patch notes Nov 19 (Mosin-Nagant max damage 95 -> 91, Infinity Ward: 'one hit weapons that are over-performing (we're looking at you Mosin-Nagant)')",
+ "notes": "Thu 26.11. 12:00 build post (rescue mode >=1 build/day; Warzone posts perform best). Dup check: no Mosin-Nagant build/post before (only mentioned in S1/patch carousels; Metricool 60 days + all data/*.json). | Scheduled Thu 26.11. 12:00 Berlin (Metricool), QA 0/0, byte check OK.",
+ "caption": "Best Mosin-Nagant build MW4 – Warzone + MP loadouts 🎯\nMosin still meta after the Nov 19 nerf 👉 Save it!\n#mw4 #mosinnagant #warzoneloadout #mw4loadout #warzone",
+ "first_comment": "Mosin in Warzone or multiplayer – where do you run it? 👇",
+ "tiktok_title": "Best Mosin-Nagant build MW4: Warzone + MP codes",
+ "verified": "independent verifier 24.11.2026: facts PASS (codmunity + warzoneloadout + official patch notes Nov 13/19/23), dup check OK ; caption line 2 fixed per verifier (nerf was MP-only)"
+}
