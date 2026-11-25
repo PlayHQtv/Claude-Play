@@ -484,7 +484,7 @@ firstCommentText stays ONE short question. TikTok title = search term. Spell che
 - Weekly scheduled task "Reichweiten-Optimierung" (Sunday evening) + a quick check in every autopilot run.
 - Data: getAnalyticsDataByMetrics TKPO02/05/07/08/10/16/20/21 for the last 28 days. Compare views at the same post age where possible (search posts keep growing for weeks).
 - Log every finding + every rule change with date and numbers in docs/reach-log.md (anonymized, no IDs).
-- Allowed WITHOUT asking: topic choice (which weapons/terms), caption wording/length, hashtags, first-comment wording, TikTok title, posting time within 11:00–19:00, mix of formats. Change ONE variable per week (clean test), keep a change only if the numbers support it, otherwise roll back.
+- Allowed WITHOUT asking: topic choice (which weapons/terms), caption wording/length, hashtags, first-comment wording, TikTok title, posting time within 10:00–19:00, mix of formats. Change ONE variable per week (clean test), keep a change only if the numbers support it, otherwise roll back.
 - NOT without the user: design/layout, glass style, new games (GTA/Minecraft paused), more than 2 posts/day, security/GitHub rules, quality rules, deleting/privating posts.
 - Every change goes into this file + the autopilot prompt, and the user gets a short German report.
 
@@ -507,6 +507,10 @@ firstCommentText stays ONE short question. TikTok title = search term. Spell che
 - render.wallpaper_html via "wallpaper": {img, bright, sat, top, bottom, edge} in the data JSON (example data/example-mw4-wallpaper.json, crop wp_bp_s1_city.jpg = Battle Pass key art left part WITHOUT the operator). Thin frame streak lines are removed automatically on wallpaper posts.
 - Rules: no person/face from the key art on the slides (crop it away), fade top + bottom so all text keeps contrast (QA 0/0), nothing that collides with the weapon render, no stray slivers at the edges.
 - MW4 brand palette (guidelines): Gold #FFD000, Gunmetal #2A2A2A, White; never mix gold and green in one composition.
+
+## SLOT TEST 10:00 (user 25.11.2026: "Ja") – 26.11.–02.12.2026
+- Daily slots during the test: 10:00 + 18:00 (Berlin). From 03.12. the weekly/autopilot run evaluates (see docs/reach-log.md) and sets the midday slot to 10:00 or back to 12:00.
+- Allowed posting window for autonomous time changes is now 10:00–19:00.
 
 ## SELF-IMPROVEMENT IN ALL AREAS (user 24.11.2026: "Erweitere auch deine Quellen selbstständig. Du musst immer besser werden in allen Bereichen")
 - SOURCES: docs/sources/mw4.md (+ gta6.md) is a living list. Every run adds useful new sources as candidates; the weekly task promotes (3 correct uses) or drops (1 clear error) them. Official first, leaks never.
