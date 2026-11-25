@@ -153,9 +153,17 @@
   }
  ],
  "source": "codmunity.gg/weapon/mw4/patriot-xmr (MP + DMZ builds, fetched 23.11.2026; codmunity MW4 meta ranking 21.11.: Patriot XMR A tier 'Meta', recently buffed); warzoneloadout.games/mw4/patriot-xmr; official MW4 Season 1 patch notes: Nov 5 max damage range 31.24 -> 33.53 m, Nov 13 max range 33.53 -> 35.56 m + min damage 22 -> 24 + velocity 620 -> 640 m/s, Nov 19 min damage 24 -> 25 (= 3 buffs in Season 1); Patriot XMR Volt = official Apex (data/2026-10-30-apex-official-source.json)",
- "notes": "Wed 25.11. 12:00 build post (rescue mode: >=1 build/day). Search term 'best patriot xmr build mw4' + CSI 'Mw4 class' 294K / 'best loadout for mw4' 530K (docs/trends/2026-11-17.md) in line 2. Dup check: no Patriot XMR build/post before (Patriot render was only the small cover gun of the 22.11. color settings post). | Scheduled Wed 25.11. 12:00 Berlin (Metricool), QA 0/0, byte check OK. | 24.11. caption switched to SEO CAPTIONS v2 (long), Metricool updated.",
+ "notes": "Wed 25.11. 12:00 build post (rescue mode: >=1 build/day). Search term 'best patriot xmr build mw4' + CSI 'Mw4 class' 294K / 'best loadout for mw4' 530K (docs/trends/2026-11-17.md) in line 2. Dup check: no Patriot XMR build/post before (Patriot render was only the small cover gun of the 22.11. color settings post). | Scheduled Wed 25.11. 12:00 Berlin (Metricool), QA 0/0, byte check OK. | 24.11. caption switched to SEO CAPTIONS v2 (long), Metricool updated. | 25.11. re-rendered with official wallpaper background (user approved), QA 0/0, verifier PASS, media replaced in Metricool, byte check 5/5 OK.",
  "caption": "Best Patriot XMR build MW4 🔥 3 Patriot XMR loadouts for Modern Warfare 4 multiplayer + DMZ after 3 Season 1 buffs: the #1 versatile build (code B04-43QCD-CXHTK-HW11), a close range build with the Meiko 30CAL-SP and a DMZ long range build with the 50 round drum mag, all on the Patriot XMR Volt Apex. Which Patriot XMR class do you run? Comment 1, 2 or 3 👇 Save this for your next match & send it to your squad!\n#mw4 #patriotxmr #mw4loadout #modernwarfare4 #mw4multiplayer",
  "first_comment": "Which Patriot XMR build are you running: 1, 2 or 3? 👇",
  "tiktok_title": "Best Patriot XMR build MW4: 3 loadouts + codes",
- "verified": "independent verifier 23.11.2026: facts PASS (codmunity + warzoneloadout + official patch notes Nov 5/13/19), dup check OK"
+ "verified": "independent verifier 23.11.2026: facts PASS (codmunity + warzoneloadout + official patch notes Nov 5/13/19), dup check OK",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ }
 }

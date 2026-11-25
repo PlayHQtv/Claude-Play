@@ -150,9 +150,17 @@
   }
  ],
  "source": "codmunity.gg/mw4 'Best Pistol in Modern Warfare 4 Multiplayer' (1 Krait P68, 2 SANG 9mm, 3 Mojave .357; ranking updated 21.11.2026) + weapon pages krait-p68 / sang-9mm / mojave-357 (fetched 23.11.2026); warzoneloadout.games/mw4/pistol (updated 20.11.2026, same order); Apex names official (data/2026-10-30-apex-official-source.json)",
- "notes": "Wed 25.11. 18:00 search post (best X ranking like 'best smg mw4' 4.1k / 'best sniper' 23.11. / 'best lmg' 24.11.). Line 2 keyword CSI 'Mw4 class' 294K. Dup check: no pistol ranking/build before (all data/*.json + Metricool 60 days). | Scheduled Wed 25.11. 18:00 Berlin (Metricool), QA 0/0, byte check OK. | 24.11. caption switched to SEO CAPTIONS v2 (long), Metricool updated.",
+ "notes": "Wed 25.11. 18:00 search post (best X ranking like 'best smg mw4' 4.1k / 'best sniper' 23.11. / 'best lmg' 24.11.). Line 2 keyword CSI 'Mw4 class' 294K. Dup check: no pistol ranking/build before (all data/*.json + Metricool 60 days). | Scheduled Wed 25.11. 18:00 Berlin (Metricool), QA 0/0, byte check OK. | 24.11. caption switched to SEO CAPTIONS v2 (long), Metricool updated. | 25.11. re-rendered with official wallpaper background (user approved), QA 0/0, verifier PASS, media replaced in Metricool, byte check 5/5 OK.",
  "caption": "Best pistol MW4 🔥 The top 3 pistols in Modern Warfare 4 multiplayer ranked with build codes: 1️⃣ Krait P68, fastest TTK up close (code P03-2JD6P-8IXA9-F711, Krait P68 Commando Apex) 2️⃣ SANG 9mm, the easiest pistol to use (SANG Breach Apex) 3️⃣ Mojave .357, no Apex needed. Which secondary do you run? Comment 1, 2 or 3 👇 Save this for your next match & send it to your squad!\n#mw4 #mw4pistol #bestpistol #mw4loadout #modernwarfare4",
  "first_comment": "Which MW4 pistol is your secondary: 1, 2 or 3? 👇",
  "tiktok_title": "Best pistol MW4: top 3 ranked + build codes",
- "verified": "independent verifier 23.11.2026: facts PASS (codmunity + warzoneloadout + official patch notes Nov 5/13/19), dup check OK"
+ "verified": "independent verifier 23.11.2026: facts PASS (codmunity + warzoneloadout + official patch notes Nov 5/13/19), dup check OK",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ }
 }
