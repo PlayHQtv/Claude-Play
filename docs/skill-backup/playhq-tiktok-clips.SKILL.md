@@ -121,6 +121,7 @@ User quotes: "Es darf nicht vorkommen, dass du nichts postest" and "Du musst mic
 - `_build/s1/*_fb.png` cut-out copies are not in git: recreate them (alpha < 170 → 0 from the original) when a data file references one that is missing.
 
 ## PRE-POST RE-CHECK (user 20.11.2026: "Auf Fehler solltest du grundsätzlich immer vor dem Posten prüfen")
+- (25.11.2026) Read the newest patch notes for EVERY mode a post mentions (MP, Warzone, DMZ) – e.g. the Nov 23 DMZ-only nerf made a 'buffed 3 times' MP+DMZ caption misleading. Mode-specific buff/nerf claims must name the mode.
 - Before every slot (and whenever the renderer changes), re-check every scheduled, non-draft post: getScheduledPosts → for each post confirm the slides are the latest verified render (renderer fixes since the render? → re-render + independent verifier + replace media), caption/first comment/title, facts still current (new patch notes since verification?), slot/rule conflicts.
 - Renders made before a renderer bugfix are NOT trusted (e.g. cut-out box bug fixed 19.11.: M4 + settings CTA had to be re-rendered).
 - Cut-out with CSS box-sizing:border-box: rendered image width = w − 120 (padding 60). Figures bleed off right/bottom; hide the bottom-right corner bracket (hide_br) when the figure covers it.

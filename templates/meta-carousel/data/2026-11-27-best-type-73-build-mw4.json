@@ -1,0 +1,168 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MULTIPLAYER",
+ "rank_label": "BUILD",
+ "cover": {
+  "kicker": "APEX RANGE +35% · NOV 19 BUFF",
+  "big": "BEST TYPE 73",
+  "small": "BUILD MW4",
+  "sub": "3 LOADOUTS + BUILD CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_Type_73.png"
+ },
+ "cta": {
+  "white": "WHICH BUILD",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_snowsniper_fb.png",
+   "right": -540,
+   "top": 1100,
+   "w": 1020,
+   "fade": 90,
+   "bright": 1.2,
+   "rim": 1,
+   "hide_br": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "image": "mw4/w_Type_73.png",
+   "short": "VERSATILE",
+   "title_white": "TYPE",
+   "title_gold": "73",
+   "class": "LMG",
+   "class_note": "Versatile build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 64",
+   "brightness": 1.2,
+   "build_code": "L04-KSMFT-I99S1-1",
+   "apex": "TYPE 73 ASSAULT",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "GAUGE-12 MONO"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "SCHLAGER VISIV-5"
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "SZ SRE-7"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "ASSAULT-L9 WOOD GRIP"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "BRUEN RENEGADE GRIP"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/type-73 MP #1 Versatile (Apex), code L04-KSMFT-I99S1-1, weapon level 64, updated 21/11/2026"
+  },
+  {
+   "rank": 2,
+   "image": "mw4/w_Type_73.png",
+   "short": "CLOSE RANGE",
+   "title_white": "TYPE",
+   "title_gold": "73",
+   "class": "LMG",
+   "class_note": "Close range build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 64",
+   "brightness": 1.2,
+   "build_code": "L04-KSM3Z-RTE51-1",
+   "apex": "TYPE 73 ASSAULT",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "GAUGE-12 MONO"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "SCHLAGER VISIV-5"
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "SZ SRE-7"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "NO STOCK"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "BRUEN RENEGADE GRIP"
+    }
+   ],
+   "sources": "codmunity MP #2 Close Range (Apex), code L04-KSM3Z-RTE51-1, weapon level 64, updated 20/11/2026"
+  },
+  {
+   "rank": 3,
+   "image": "mw4/w_Type_73.png",
+   "short": "WARZONE",
+   "title_white": "TYPE",
+   "title_gold": "73",
+   "class": "LMG",
+   "class_note": "Warzone long range",
+   "tagline": "WARZONE · WEAPON LEVEL 45",
+   "brightness": 1.2,
+   "build_code": "L04-VJU46-5X391-1",
+   "attachments": [
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "SZ HELIOS HOLO"
+    },
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "GAUGE-12 MONO"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "HAEBANG ET-9D 772MM"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "ASSAULT-L5 GRIP"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "FTAC RZR0 STOCK"
+    }
+   ],
+   "sources": "codmunity Warzone #1 Long Range, code L04-VJU46-5X391-1, weapon level 45, updated 07/11/2026",
+   "badge": "WARZONE"
+  }
+ ],
+ "source": "codmunity.gg/weapon/mw4/type-73 (MP builds updated 20./21.11.2026, Warzone 07.11.2026, fetched 25.11.2026); official MW4 Season 1 patch notes Nov 19: Type 73 max damage 22->23, min 19->20, lower torso 1->1.1; Type 73 Assault Apex mid damage range 1 43.13 m -> 58.42 m (35%); Type 73 Assault = official Apex (30 explosive rounds). Nov 23 Type 73 nerf is DMZ only (no DMZ build used).",
+ "notes": "Fri 27.11. 12:00 build post. CSI 24.11.: 'type 73 mw4' 164K (NEW). Dup check: Type 73 appeared only as #2 inside the 24.11. 'best LMG' ranking (374 views < 2,000, other code L04-AXPGR-ABBD1-1 without Apex) and the 11.11. 'MW4 code' list (old code) -> dedicated Type 73 build with new Apex/Warzone codes allowed. | Scheduled Fri 27.11. 12:00 Berlin (Metricool), QA 0/0, byte check 5/5 OK, playhq/tmp cleaned.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "caption": "Best Type 73 build MW4 🔥 3 Type 73 loadouts for Modern Warfare 4 multiplayer + Warzone after the Nov 19 LMG buff: the #1 versatile build (code L04-KSMFT-I99S1-1) and a close range build with No Stock, both on the Type 73 Assault Apex, plus a Warzone long range build with the Haebang ET-9D 772mm barrel and Gauge-12 Mono. Which Type 73 class do you run? Comment 1, 2 or 3 👇 Save this for your next match & send it to your squad!\n#mw4 #type73 #mw4loadout #modernwarfare4 #warzone",
+ "first_comment": "Which Type 73 build are you running: 1, 2 or 3? 👇",
+ "tiktok_title": "Best Type 73 build MW4: 3 loadouts + codes",
+ "verified": "independent verifier 25.11.2026: PASS (codmunity MP #1/#2 + Warzone #1, official patch notes Nov 19/23)"
+}

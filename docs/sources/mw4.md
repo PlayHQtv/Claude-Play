@@ -27,8 +27,14 @@ Every run that finds a useful new source adds it under "Candidates" with date + 
 - Fandom/CoD wiki pages for MW4 – weapon unlock levels, names (cross-check)
 - TikTok Creator Search Insights (user screenshots in docs/trends/) – topic demand, not facts
 
+- 25.11.2026: GameSpot "Best settings for Modern Warfare 4" – full controller menu list (aim assist = Target Aim Assist only)
+- 25.11.2026: AllThingsHow MW4 controller settings – menu defaults + paths (Settings > Controller > Aiming, Test Stick Deadzone)
+- 25.11.2026: mw4.gg news – fast, accurate summaries of the official MW4/Warzone patch notes (cross-check only)
+- 25.11.2026: Game8 / Dot Esports weapon build pages – build cross-check (Type 73)
+
 ## Never
 - Leak/datamine accounts, reWASD/cheat sites, re-upload channels, AI-generated "news" sites, sources with watermarks we would show.
 
 ## Log
 - 24.11.2026: file created from the sources used 02.–24.11.
+- 25.11.2026: candidates added (GameSpot settings, AllThingsHow, mw4.gg, Game8/Dot Esports builds). Rejected as source: aim-assist 'plus' tool / boosting vendor sites.

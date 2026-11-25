@@ -1,0 +1,138 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "CONTROLLER",
+ "cover": {
+  "kicker": "NO BLACK OPS TYPE IN MW4",
+  "big": "MW4 AIM",
+  "small": "ASSIST",
+  "sub": "BEST SETTINGS + EVERY OFFICIAL CHANGE",
+  "gun": "mw4/w_M4.png",
+  "rows": [
+   [
+    "TARGET AIM ASSIST",
+    "ON"
+   ],
+   [
+    "AIM ASSIST TYPE",
+    "NONE IN MW4"
+   ],
+   [
+    "RESPONSE CURVE",
+    "DYNAMIC"
+   ],
+   [
+    "THROUGH SMOKE",
+    "DISABLED"
+   ]
+  ],
+  "swipe": "SWIPE FOR ALL SETTINGS ›"
+ },
+ "slides": [
+  {
+   "sec": "AIM ASSIST 1/3",
+   "title": "THE MENU",
+   "foot": "SETTINGS › CONTROLLER › AIMING",
+   "settings": [
+    [
+     "TARGET AIM ASSIST",
+     "ON",
+     "The aim assist switch – keep it on with a controller"
+    ],
+    [
+     "AIM ASSIST TYPE",
+     "NOT IN MW4",
+     "No Black Ops, Precision or Focusing to pick"
+    ],
+    [
+     "MOUSE + KEYBOARD",
+     "NO ASSIST",
+     "Controller only – also on PC with a pad"
+    ]
+   ]
+  },
+  {
+   "sec": "AIM ASSIST 2/3",
+   "title": "SETTINGS THAT HELP IT",
+   "foot": "CHANGE ONE SETTING AT A TIME, TEST IN THE FIRING RANGE",
+   "settings": [
+    [
+     "AIM RESPONSE CURVE",
+     "DYNAMIC",
+     "Standard while you learn"
+    ],
+    [
+     "ADS TRANSITION",
+     "INSTANT",
+     "Improved in the Nov 10 update"
+    ],
+    [
+     "RIGHT STICK MIN",
+     "LOW",
+     "Just above your stick drift"
+    ],
+    [
+     "LEFT STICK MIN",
+     "LOW",
+     "Use Test Stick Deadzone to find it"
+    ]
+   ]
+  },
+  {
+   "sec": "AIM ASSIST 3/3",
+   "title": "OFFICIAL CHANGES",
+   "foot": "SOURCES: CALLOFDUTY.COM PATCH NOTES · THE WARD ROOM",
+   "settings": [
+    [
+     "BETA WEEKEND 2",
+     "REDUCED",
+     "Global change, also for Warzone"
+    ],
+    [
+     "SMOKE · MULTIPLAYER",
+     "OFF",
+     "Smoke Grenade + Smoke Wall (Nov 13)"
+    ],
+    [
+     "SMOKE · WARZONE",
+     "OFF",
+     "Even through gaps in the smoke (Nov 12)"
+    ],
+    [
+     "FIGHTS AT 5–15 M",
+     "50/50",
+     "Infinity Ward's goal: pad vs mouse even"
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "PAD OR",
+  "gold": "MOUSE?",
+  "sub": "DROP IT IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 TIPS",
+  "cutout": {
+   "img": "cut_redeye_fb.png",
+   "right": -60,
+   "top": 1030,
+   "w": 540,
+   "fade": 75,
+   "bright": 1.25,
+   "rim": 1,
+   "hide_br": 1
+  }
+ },
+ "source": "Official: callofduty.com MW4 Season 1 patch notes Nov 13 (MP: aim assist disabled when shooting through smoke from Smoke Grenades and the Smoke Wall Field Upgrade incl. gaps); Nov 10 (improved Instant ADS Sensitivity Transition Timing); Warzone Season 1 patch notes Nov 12 (aim assist disabled through Smoke Grenades and Smoke Wall smoke, even through gaps); MW4 beta patch notes 28.08. (Weekend 2 aim assist reduced, global, applies to Warzone); The Ward Room Ep. 01 28.09. (balance focus 5-15 m, ~50/50 controller vs mouse; via PlayFront + timesaver + Dot Esports). Menu: GameSpot best MW4 settings 16.10. (Aim assist: Target aim assist On, no type option), AllThingsHow 17.10. (Settings > Controller, Aiming section, Test Stick Deadzone, Standard curve default), Gaming Route 27.10. + mygamepadtester 09.11. (no aim assist type selector; Dynamic curve, Instant ADS transition, stick min as low as possible without drift). Mouse/keyboard no aim assist, controller on PC yes: timesaver + mygamepadtester.",
+ "notes": "Fri 27.11. 18:00 search post. CSI 24.11.: 'mw4 aim assist' 278K rising (NEW). Dup check: 11.11. 'best mw4 settings' had one row 'Target aim assist' (667 views < 2,000) and 20.11. Warzone settings (no aim assist slide) -> new angle (aim assist only: no type picker, smoke changes, official tuning). Vendor/cheat sites (aim assist 'plus' tools) NOT used as sources. Smoke change was already one row in the 16.11. update post (479 views) - here only as context next to new points. | Scheduled Fri 27.11. 18:00 Berlin (Metricool), QA 0/0, byte check 5/5 OK, playhq/tmp cleaned.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "caption": "MW4 aim assist: best settings 🎮 There is no aim assist type in Modern Warfare 4 – no Black Ops, Precision or Focusing to pick. Keep Target Aim Assist on, run the Dynamic response curve with Instant ADS transition and set your stick deadzone just above drift. Since Nov 12/13 aim assist is off through Smoke Grenades and the Smoke Wall in multiplayer and Warzone. Pad or mouse? Comment below 👇 Save this for your next match & send it to your squad!\n#mw4 #mw4aimassist #aimassist #mw4settings #modernwarfare4",
+ "first_comment": "Pad or mouse – what do you play MW4 on? 👇",
+ "tiktok_title": "MW4 aim assist: best settings + no aim assist type",
+ "verified": "independent verifier 25.11.2026: 1 error (ADS transition improvement is Nov 10, not Nov 13) -> fixed + re-rendered, rest PASS; fixed line checked against the verifier's sources"
+}
