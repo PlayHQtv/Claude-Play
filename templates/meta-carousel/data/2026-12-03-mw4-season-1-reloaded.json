@@ -1,0 +1,103 @@
+{
+ "DRAFT": "DRAFT – not verified. Prepared 26.11.2026 by the Season 1 Reloaded watcher before the official blog. Every line marked TBD must be filled from the official callofduty.com Season 1 Reloaded blog + patch notes; confirmed lines (Ministry, Overflow, Counter Attack) re-checked against the blog. Do NOT schedule until verified.",
+ "game": "CALL OF DUTY · MW4",
+ "badge": "S1",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "cover": {
+  "kicker": "MW4 SEASON 1 RELOADED · LIVE NOW",
+  "big": "EVERYTHING NEW",
+  "small": "SEASON 1 RELOADED",
+  "sub": "MAPS · GUNS · MODES · BUFFS · DMZ · WARZONE",
+  "img": "ka_s1_primary.jpg",
+  "chips": [
+   "MINISTRY",
+   "OVERFLOW",
+   "COUNTER ATTACK",
+   "TBD NEW GUNS"
+  ],
+  "swipe": "SWIPE FOR ALL OF IT ›"
+ },
+ "slides": [
+  {
+   "sec": "MULTIPLAYER · NEW MAPS",
+   "title": "NEW MAPS",
+   "hero": "ka_s1_mask.jpg",
+   "hero_max": 380,
+   "rules": [
+    ["MINISTRY", "Fight in and around an embassy during a Global Peace Summit."],
+    ["OVERFLOW", "A factory surrounded by farmland."],
+    ["TBD MAP", "TBD – additional maps named in the Reloaded blog."]
+   ]
+  },
+  {
+   "sec": "NEW WEAPONS",
+   "title": "NEW GUNS",
+   "hero": "ka_s1_bp_op.jpg",
+   "hero_max": 420,
+   "rules": [
+    ["TBD GUN 1", "TBD – class, how to unlock, key stats / Apex from the blog."],
+    ["TBD GUN 2", "TBD – class, how to unlock, key stats / Apex from the blog."]
+   ]
+  },
+  {
+   "sec": "MULTIPLAYER MODES",
+   "title": "NEW MODES",
+   "hero": "ka_s1_bp_wide.jpg",
+   "hero_max": 380,
+   "rules": [
+    ["COUNTER ATTACK", "Plant bombs at the enemy Comm Station, defend yours."],
+    ["TBD MODE", "TBD – further modes from the Reloaded blog."]
+   ]
+  },
+  {
+   "sec": "SEASON 1 RELOADED WEAPON TUNING",
+   "title": "BIGGEST BUFFS + NERFS",
+   "rules": [
+    ["TBD BUFF", "TBD – exact old → new values from the official patch notes."],
+    ["TBD BUFF", "TBD"],
+    ["TBD NERF", "TBD"]
+   ]
+  },
+  {
+   "sec": "DMZ",
+   "title": "DMZ UPDATE",
+   "hero": "gfx_x01.jpg",
+   "rules": [
+    ["TBD", "TBD – new DMZ orders / threats / FOB changes from the blog."]
+   ]
+  },
+  {
+   "sec": "CALL OF DUTY: WARZONE",
+   "title": "WARZONE UPDATE",
+   "hero": "ka_s1_bp_45crop.jpg",
+   "rules": [
+    ["TBD", "TBD – new Warzone modes / map changes from the Warzone Reloaded blog."]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHAT ARE YOU",
+  "gold": "PLAYING FIRST?",
+  "sub": "MINISTRY OR OVERFLOW?",
+  "save_kicker": "YOUR RELOADED CHEAT SHEET",
+  "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS",
+  "cutout": {
+   "img": "cut_soldier_fb.png",
+   "right": -70,
+   "top": 1050,
+   "w": 760,
+   "fade": 100,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "source": "TBD – official callofduty.com MW4 + Warzone Season 1 Reloaded blogs + patch notes. Pre-filled: Activision Season 1 announcement blog (28.10.2026: Ministry, Overflow, additional maps, Counter Attack at mid-season).",
+ "verified": false
+}
