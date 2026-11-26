@@ -512,6 +512,13 @@ firstCommentText stays ONE short question. TikTok title = search term. Spell che
 - Daily slots during the test: 10:00 + 18:00 (Berlin). From 03.12. the weekly/autopilot run evaluates (see docs/reach-log.md) and sets the midday slot to 10:00 or back to 12:00.
 - Allowed posting window for autonomous time changes is now 10:00–19:00.
 
+## LAUNCH DAYS = NEVER MISS (user 26.11.2026: "Unser erster season 1 Post war ja extrem gut. So etwas dürfen wir dann keinesfalls verpassen")
+- Benchmark: "[PLAYHQ NEWS] MW4 Season 1: everything new" (06.11.2026, data/2026-11-06-mw4-season-1.json): 19.6K views, 87 % For You, 236 likes, 106 shares – our best post. Big official launches go to the For You feed, unlike normal news.
+- Every new Season, Season Reloaded and other big official launch (MW4 + Warzone) gets an "everything new" carousel in exactly that format on launch day: cover "EVERYTHING NEW" + framed official key art + 4 highlight chips + "SWIPE FOR ALL OF IT ›", one slide per area (maps, guns, modes, buffs/nerfs, DMZ, Warzone), CTA. Facts only from the official blog/patch notes, images only official media.
+- Time: first slot after the official launch, at the latest 3 h after launch. It has priority over every other post (move the other post).
+- About 7 days before an expected launch, create a dedicated watcher scheduled task (checks the official blog every 2 h, prepares the draft, builds + schedules the moment the blog is out, state file docs/launch-watch.md, disables itself after launch). Season 1 Reloaded: watcher "Season 1 Reloaded Wächter" active from 26.11.2026 (expected launch 03.12. 07:00 Berlin, slot 03.12. 10:00).
+- The daily autopilot must NOT schedule a normal post in a reserved launch slot (Season 1 Reloaded: 03.12. 10:00).
+
 ## SELF-IMPROVEMENT IN ALL AREAS (user 24.11.2026: "Erweitere auch deine Quellen selbstständig. Du musst immer besser werden in allen Bereichen")
 - SOURCES: docs/sources/mw4.md (+ gta6.md) is a living list. Every run adds useful new sources as candidates; the weekly task promotes (3 correct uses) or drops (1 clear error) them. Official first, leaks never.
 - TRENDS: when the user sends Creator Search Insights screenshots, save them as docs/trends/<date>.md with status per term (posted / new / never).
