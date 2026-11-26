@@ -146,6 +146,7 @@ GLASS = """<style>
 .hud::before{background:linear-gradient(180deg,rgba(255,255,255,.10),transparent 45%) !important;border-radius:24px}
 .hud::after{left:24px !important;top:-1px !important;width:60px !important;height:3px !important;border-radius:3px}
 .hud.save{background:linear-gradient(135deg,rgba(255,214,90,.85),rgba(200,140,20,.75)) !important}
+.hud.save::after{background:rgba(255,255,255,.75) !important}
 </style><div class="aurora"></div><div class="topo2"></div>"""
 
 
@@ -163,7 +164,15 @@ def wallpaper_html(w):
             '<div style="position:absolute;inset:0;background:radial-gradient(ellipse 760px 900px at 50% 48%,transparent 40%,rgba(0,0,0,.55) 100%)"></div>')
 
 
+GLASS_IMG_BUG = re.compile(r'class="[^"]*\\bhud\\b[^"]*"[^>]*style="[^"]*background-image:url')
+
+
 def page(body, d):
+    # Guard (26.11.2026): the glass .hud rule sets background with !important and wipes a background-image that sits on the
+    # same element (empty key-art frame on the Reloaded example). Images on .hud elements must use an inline
+    # "background:url(...) ... !important" or an inner element.
+    if d.get('style', 'glass') == 'glass' and GLASS_IMG_BUG.search(body):
+        raise ValueError('glass style would hide a background-image on a .hud element - use inline background:... !important or an inner div')
     f = frame(d)
     if d.get('wallpaper'):
         f = f.replace('<div class="topo"></div>', '<div class="topo"></div>' + wallpaper_html(d['wallpaper']), 1)

@@ -1,0 +1,91 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "S1",
+ "notes": "EXAMPLE 26.11.2026 for the Season 1 Reloaded launch post (new design: glass + official wallpaper, structure of the 06.11. Season 1 post). Only facts Activision has already confirmed; the real post is built from the official Reloaded blog by the watcher task. NOT scheduled.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "cover": {
+  "kicker": "SEASON 1 RELOADED · LIVE NOW",
+  "big": "RELOADED",
+  "small": "EVERYTHING NEW",
+  "sub": "MAPS · MODES · GUNS · WARZONE",
+  "img": "ka_s1_primary.jpg",
+  "chips": [
+   "MINISTRY",
+   "OVERFLOW",
+   "COUNTER ATTACK",
+   "+ MORE MAPS"
+  ],
+  "swipe": "SWIPE FOR ALL OF IT ›"
+ },
+ "slides": [
+  {
+   "sec": "MULTIPLAYER · MID-SEASON",
+   "title": "NEW MAPS + MODE",
+   "hero": "ka_s1_mask.jpg",
+   "hero_max": 380,
+   "rules": [
+    [
+     "MINISTRY",
+     "Fight in and around an embassy during a Global Peace Summit."
+    ],
+    [
+     "OVERFLOW",
+     "A factory surrounded by farmland."
+    ],
+    [
+     "+ CLASSIFIED MAPS",
+     "More maps Activision kept secret until the Reloaded reveal."
+    ],
+    [
+     "COUNTER ATTACK",
+     "Plant bombs at the enemy Comm Station, defend yours."
+    ]
+   ]
+  },
+  {
+   "sec": "STILL TO COME IN SEASON 1",
+   "title": "WHAT ELSE IS COMING",
+   "hero": "ka_s1_bp_op.jpg",
+   "hero_max": 420,
+   "rules": [
+    [
+     "JAK 12",
+     "Full-auto shotgun. Apex: JAK Barrage (sticky explosives)."
+    ],
+    [
+     "ZLR TALONHAWK",
+     "New melee combat axe."
+    ],
+    [
+     "VERDANSK + REBIRTH ISLAND",
+     "Both return to Warzone in Season 1."
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHAT ARE YOU",
+  "gold": "PLAYING FIRST?",
+  "sub": "MINISTRY OR OVERFLOW?",
+  "save_kicker": "YOUR RELOADED CHEAT SHEET",
+  "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS",
+  "cutout": {
+   "img": "cut_sniper_fb.png",
+   "right": -70,
+   "top": 1050,
+   "w": 760,
+   "fade": 100,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "source": "Activision Season 1 announcement (28.10.2026, mid-season maps Ministry + Overflow + classified maps, Counter Attack), our verified 06.11./08.11. posts (JAK 12, ZLR Talonhawk, Verdansk + Rebirth Island later in Season 1).",
+ "verified": false
+}

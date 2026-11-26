@@ -85,7 +85,7 @@ def hero(img, top, maxh, maxw=885, left=50):
     if h > maxh:
         h, w = maxh, round(maxh * iw / ih)
     x = left + (maxw - w) // 2
-    return f'<div class="s1hero hud" style="top:{top}px;left:{x}px;width:{w}px;height:{h}px;background-size:100% 100%;background-image:url(/_build/s1/{img})"></div>', h
+    return f'<div class="s1hero hud" style="top:{top}px;left:{x}px;width:{w}px;height:{h}px;background:url(/_build/s1/{img}) center/100% 100% no-repeat !important"></div>', h
 
 
 def page(body, d):
