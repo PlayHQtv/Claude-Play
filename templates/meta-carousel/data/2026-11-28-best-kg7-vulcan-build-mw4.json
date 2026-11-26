@@ -1,0 +1,169 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "WARZONE",
+ "rank_label": "BUILD",
+ "cover": {
+  "kicker": "#1 SNIPER · WARZONE + MP",
+  "big": "BEST KG-7",
+  "small": "VULCAN BUILD",
+  "sub": "WARZONE + MP + DMZ LOADOUTS + CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_KG7_Vulcan.png"
+ },
+ "cta": {
+  "white": "WHICH BUILD",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_sniper_fb.png",
+   "right": -70,
+   "top": 1050,
+   "w": 760,
+   "fade": 100,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "badge": "WARZONE",
+   "image": "mw4/w_KG7_Vulcan.png",
+   "short": "WARZONE SNIPER",
+   "title_white": "KG-7",
+   "title_gold": "VULCAN",
+   "class": "Sniper",
+   "class_note": "Warzone sniper build",
+   "tagline": "WARZONE · WEAPON LEVEL 71",
+   "brightness": 1.2,
+   "build_code": "R04-3K9Y5-JTFYN-8S51",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "GAUGE-12 MONO"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "HAEBANG RMT762 29\""
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "TT G76-RP STOCK"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "7.62X54MMR HIGH VELOCITY"
+    },
+    {
+     "type": "bolt",
+     "label": "BOLT",
+     "name": "KT76 LIGHT BOLT"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/kg-7-vulcan Warzone #1 Sniper (Absolute Meta, pick rate 5.5%), code R04-3K9Y5-JTFYN-8S51, weapon level 71 (updated 02/11/2026); GameSpot Warzone MW4 S1 loadouts (same 5 attachments); tourneytimenetwork 08.11. (same build + code, codmunity + wzstats)"
+  },
+  {
+   "rank": 2,
+   "badge": "MULTIPLAYER",
+   "image": "mw4/w_KG7_Vulcan.png",
+   "short": "QUICKSCOPE",
+   "title_white": "KG-7",
+   "title_gold": "VULCAN",
+   "class": "Sniper",
+   "class_note": "Close range build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 75",
+   "brightness": 1.2,
+   "build_code": "R04-2G9PV-17881-51",
+   "apex": "KG-7 DRILLCHARGE",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "IVANOV QR600"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "TT BAEM 12\""
+    },
+    {
+     "type": "bolt",
+     "label": "BOLT",
+     "name": "KT76 LIGHT BOLT"
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "SCHLAGER 7X"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "TT G76-RP STOCK"
+    }
+   ],
+   "sources": "codmunity MP #2 Close Range (Apex), code R04-2G9PV-17881-51, weapon level 75 (updated 07/11/2026); warzoneloadout.games/mw4/kg-7-vulcan Close Range (Ivanov QR600, TT Baem 12\", Schlager 7x, TT G76-RP Stock, KG-7 Drillcharge); LFCarry quickscope build (Ivanov QR600, TT Baem 12\", KT76 Light Bolt, Schlager 7x)"
+  },
+  {
+   "rank": 3,
+   "badge": "DMZ",
+   "image": "mw4/w_KG7_Vulcan.png",
+   "short": "DMZ SNIPER",
+   "title_white": "KG-7",
+   "title_gold": "VULCAN",
+   "class": "Sniper",
+   "class_note": "DMZ sniper build",
+   "tagline": "DMZ · WEAPON LEVEL 75",
+   "brightness": 1.2,
+   "build_code": "R04-2G9Q4-SD3QB-11",
+   "apex": "KG-7 DRILLCHARGE",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "GAUGE-12 MONO"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "HAEBANG RMT762 29\""
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "SCHLAGER 7X"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "BRUEN KG-7 MK. IV"
+    },
+    {
+     "type": "comb",
+     "label": "COMB",
+     "name": "TT TYPE 40 COMB"
+    }
+   ],
+   "sources": "codmunity DMZ #1 Sniper (Apex), code R04-2G9Q4-SD3QB-11, weapon level 75 (updated 10/11/2026); Nov 23 DMZ TTK update does not list the KG-7 Vulcan (only Signal 50 among snipers)"
+  }
+ ],
+ "source": "codmunity.gg/weapon/mw4/kg-7-vulcan (Warzone Absolute Meta 5.5% pick rate, MP 3.5%; builds Warzone 02/11, MP close 07/11, DMZ 10/11; fetched 26.11.2026) + codmunity.gg/mw4 'Best Sniper in MW4 MP' #1 KG-7 Vulcan (updated 24/11/2026); warzoneloadout.games Warzone global meta (KG-7 #1 sniper, 25.11.2026) + /mw4/kg-7-vulcan; GameSpot Warzone S1 loadouts; official Warzone S1 patch notes (KG-7 Vulcan unlocked at player level 4, Apex KG-7 Drillcharge); MW4 S1 patch notes Nov 13/19/23 (no KG-7 change)",
+ "notes": "Sat 28.11. 10:00 build post (rescue mode >=1 build/day; slot test 10:00). Search: 'Mw4 snipers' 213K (CSI 24.11.) + KG-7 = #1 sniper in MP + Warzone (high-search meta gun). Dup check: KG-7 had no own post; sniper ranking 23.11. (436 views, <2,000 = flopped) showed only the MP sniper build R04-2G9Q4-VHSZY-11 -> not reused here; MP close range + DMZ codes are new; the Warzone code R04-3K9Y5-JTFYN-8S51 was one slide of the multi-gun 16.11. Warzone loadout post (part of a 4-gun list, not a KG-7 post) -> first dedicated KG-7 post, allowed. Metricool 60 days + all data/*.json checked. | Scheduled Sat 28.11. 10:00 Berlin (Metricool), QA 0/0, verifier PASS, byte check 5/5 OK, playhq/tmp cleaned.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "caption": "Best KG-7 Vulcan build MW4 🔥 3 KG-7 Vulcan loadouts for Modern Warfare 4 and Warzone, the #1 sniper in multiplayer and Warzone right now: the Warzone sniper build with the Haebang RMT762 29\" barrel and KT76 Light Bolt (code R04-3K9Y5-JTFYN-8S51), a multiplayer quickscope build with the Ivanov QR600 and TT Baem 12\" and a DMZ sniper build, both on the KG-7 Drillcharge Apex. Which KG-7 Vulcan class do you run? Comment 1, 2 or 3 👇 Save this for your next match & send it to your squad!\n#mw4 #kg7vulcan #mw4sniper #warzoneloadout #warzone",
+ "first_comment": "Warzone, quickscope or DMZ: which KG-7 build is yours? 👇",
+ "tiktok_title": "Best KG-7 Vulcan build MW4: Warzone, MP + DMZ codes",
+ "verified": "independent verifier 26.11.2026: builds/codes/levels/#1 sniper claim/caption PASS (codmunity, GameSpot, wzstats, warzoneloadout; no KG-7 tuning in S1 notes up to Nov 23); fix: per-build badges -> rendered with build_render.py"
+}

@@ -1,0 +1,137 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MOVEMENT",
+ "cover": {
+  "kicker": "CONTROLLER · MP + WARZONE",
+  "big": "MW4 MOVEMENT",
+  "small": "SETTINGS",
+  "sub": "THE ASSISTS TO TURN OFF + BEST VALUES",
+  "gun": "mw4/w_VEL_46.png",
+  "rows": [
+   [
+    "MANTLE ASSIST",
+    "OFF"
+   ],
+   [
+    "SLIDE/DIVE",
+    "TAP TO SLIDE"
+   ],
+   [
+    "SLIDE MAINTAINS SPRINT",
+    "ON"
+   ],
+   [
+    "TAC SPRINT",
+    "SINGLE TAP SPRINT"
+   ]
+  ],
+  "swipe": "SWIPE FOR ALL SETTINGS ›"
+ },
+ "slides": [
+  {
+   "sec": "MOVEMENT 1/3",
+   "title": "INTELLIGENT MOVEMENT",
+   "foot": "TEST EVERY CHANGE IN THE MOBILITY COURSE",
+   "settings": [
+    [
+     "SPRINT ASSIST",
+     "OFF",
+     "You decide when to sprint"
+    ],
+    [
+     "MANTLE ASSIST",
+     "OFF",
+     "No climbing by accident in a gunfight"
+    ]
+   ]
+  },
+  {
+   "sec": "MOVEMENT 2/3",
+   "title": "MOVEMENT BEHAVIORS",
+   "foot": "MP: TAC SPRINT NEEDS BLOOD RUSH · WARZONE: NO PERK",
+   "settings": [
+    [
+     "SLIDE/DIVE BEHAVIOR",
+     "TAP TO SLIDE",
+     "Tap to slide, hold to dive"
+    ],
+    [
+     "SLIDE/DIVE ACTIVATION DELAY",
+     "SHORT",
+     "Less hold time before you slide"
+    ],
+    [
+     "AUTOMATIC AIRBORNE MANTLE",
+     "OFF",
+     "No auto ledge grabs mid-jump"
+    ],
+    [
+     "SLIDE MAINTAINS SPRINT",
+     "ON",
+     "Keep sprinting after a slide"
+    ]
+   ]
+  },
+  {
+   "sec": "MOVEMENT 3/3",
+   "title": "ADVANCED MOVEMENT",
+   "foot": "SOURCES: GAMESPOT · IGN + 6 GUIDES",
+   "settings": [
+    [
+     "SPRINT/TAC SPRINT BEHAVIOR",
+     "TOGGLE",
+     "No holding the stick down"
+    ],
+    [
+     "TACTICAL SPRINT ACTIVATION",
+     "SINGLE TAP SPRINT",
+     "You choose when to Tac Sprint"
+    ],
+    [
+     "GROUNDED MANTLE",
+     "OFF",
+     "You decide when to climb"
+    ],
+    [
+     "AUTO MOVE FORWARD",
+     "OFF",
+     ""
+    ],
+    [
+     "AUTO DOOR PEEK",
+     "OFF",
+     ""
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "SPRINT ASSIST",
+  "gold": "ON OR OFF?",
+  "sub": "DROP IT IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 TIPS",
+  "cutout": {
+   "img": "cut_silh_fb.png",
+   "right": 71,
+   "top": 1010,
+   "w": 420,
+   "fade": 75,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "source": "GameSpot 'Best Settings For Modern Warfare 4' 16.10.2026 (Intelligent movement: Sprint assist Off, Mantle assist Off; Movement behaviors: Tap to slide/Hold to dive, Automatic airborne mantle Off, Slide maintains sprint On; Advanced: Sprint/Tactical sprint behavior Toggle, Auto move forward Off, Auto door peek Off, Grounded mantle Off, Tactical sprint activation Single tap sprint); IGN Best Settings for MW4 (Mantle Assist Off, Tap to Slide, Slide/Dive Activation Delay Short, Automatic Airborne Mantle Off, Slide Maintains Sprint On, Toggle, Auto Move Forward Off, Auto Door Peek Off, Grounded Mantle Off); Dexerto MW4 controller wiki (recommends Sprint Assist On + Grounded Mantle On, otherwise agrees: Mantle Assist Off, Tap to Slide, Airborne Mantle Off, Slide Maintains Sprint On, Toggle, Auto Move Forward Off, Auto Door Peek Off, Single Tap Sprint); Dot Esports controller 23.10. (Sprint Assist Off, Mantle Assist Off, Tap to Slide); ConquestCapped 26.10. (Sprint assist Off: adds a delay and slows your aim after a sprint; Mantle assist Off; Slide maintains sprint On); Playhub 23.10. (Mantle assist off prevents unwanted climbing in gunfights; Slide/Dive Activation Delay Short = less hold time; Single Tap Sprint); Beebom 28.10. (Slide/Dive Activation Delay Short, Toggle, Auto Move Forward Off, Auto Door Peek Off); gameboost (Sprint Assist Off, Mantle Assist Off, Tap to Slide, Slide Maintains Sprint lets you keep sprinting after the slide, Toggle, Auto Move Forward Off, Auto Door Peek Off). Only settings with 3+ agreeing sources; disputed options (Corner Slice, Sprint Restore, Parachute, Combat Roll) left out. | Tac Sprint: MW4 S1 patch notes (Blood Rush perk in MP) via 11.11. settings post + gameboost + ConquestCapped; Warzone S1 patch notes 05.11. (Tac Sprint default, no perk needed). | Menu groups per GameSpot/IGN/allthings.how (Grounded Mantle = Movement Advanced Settings). Tactical Sprint Activation options (official MW4 launch notes 02.11.): double tap / single tap sprint / single tap run (default); 'Single tap sprint' per GameSpot, IGN, Dexerto, Playhub, Dot Esports (others pick run) - same value as our 20.11. Warzone settings post. Sprint Assist is split ~5:5 across guides -> CTA asks it as a debate.",
+ "notes": "Sat 28.11. 18:00 search post. CSI: 'movement settings mw4' 421K (24.11.), 724K +43% (17.11.) – recurring term, never posted. Dup check: 11.11. 'best mw4 settings' had a 5-row movement slide (667 views) and 20.11. Warzone settings had 3 movement rows (545 views) – both < 2,000 views -> allowed; this post is movement-only with the full menu structure (Intelligent Movement / Movement Behaviors / Advanced). 17.11. movement tips (398 views) had no settings rows. Metricool 60 days + all data/*.json checked. | Scheduled Sat 28.11. 18:00 Berlin (Metricool), QA 0/0, verifier PASS, byte check 5/5 OK, playhq/tmp cleaned.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "caption": "MW4 movement settings 🏃 The best Modern Warfare 4 movement settings for controller in multiplayer and Warzone: Mantle Assist off, Sprint Assist off, Tap to Slide with a short Slide/Dive Activation Delay, Slide Maintains Sprint on, Sprint/Tactical Sprint Behavior on Toggle and Tactical Sprint Activation on Single Tap Sprint. In multiplayer Tac Sprint needs the Blood Rush perk, in Warzone no perk. Sprint Assist on or off? Comment below 👇 Save this for your next match & send it to your squad!\n#mw4 #mw4settings #mw4movement #modernwarfare4 #warzone",
+ "first_comment": "Sprint Assist on or off – what do you run in MW4? 👇",
+ "tiktok_title": "MW4 movement settings: best controller setup",
+ "verified": "independent verifier 26.11.2026: FAIL -> fixed (Grounded Mantle moved to advanced, Single Tap Sprint full value, title, sources foot, Sprint Assist subline, source text); Blood Rush/Warzone line confirmed by official notes"
+}

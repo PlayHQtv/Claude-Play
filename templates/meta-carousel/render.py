@@ -289,7 +289,7 @@ def main(data_path, out_dir=None):
     tmp = os.path.join(HERE, '_build'); os.makedirs(tmp, exist_ok=True)
     pages = [('01_cover', cover_slide(d))]
     for i, w in enumerate(d['weapons']):
-        pages.append((f'{i + 2:02d}_{w["image"].split(".")[0]}', weapon_slide(w, d)))
+        pages.append((f'{i + 2:02d}_{os.path.basename(w["image"]).split(".")[0]}', weapon_slide(w, d)))
     pages.append((f'{len(pages) + 1:02d}_cta', cta_slide(d)))
     srv = serve(HERE)
     from playwright.sync_api import sync_playwright

@@ -18,3 +18,10 @@
 - Own data 01.–24.11.: no clear difference 12:00 vs 18:00 – topic decides (search share 85–97 % on top posts).
 - TEST 26.11.–02.12.: midday slot at 10:00 instead of 12:00, evening slot stays 18:00. Everything else unchanged (one variable).
 - Measure on 03.12.: views + For You share of the 10:00 posts at day 1 and day 3 vs the 12:00 posts of 17.–25.11. at the same age (docs/reach-snapshots.csv). Keep 10:00 only if clearly better (For You share / early views), otherwise back to 12:00.
+
+## 2026-11-26 – early warning run
+- ALARM (continues from 25.11.): (1) search share of the last 3 posts below 50 % (pistol ranking 11 % at ~14 h, Patriot XMR 31 % at age 1, Rezi 12 37 % at age 2) while early-Nov build posts sit at 86–97 %; (2) color settings 316 views at age 4 = 35 % of the age-4 median (892). Rezi 12 is the worst post at age 2 (264 vs median 415).
+- Likely cause: young posts (search share builds over days: Rezi 34 % -> 37 % in 1 day), niche topics with low search demand (color settings, Rezi, pistols), and the SEO v2 captions only live since 25.11. (too early to judge). No status problem: no post near 0 views (pistol 214 after ~14 h).
+- First signal for SEO v2: Patriot XMR (first v2 caption) 390 views at age 1 = best age-1 value of the last week (median 298). n = 1, keep watching.
+- Fix in this run: Sat 28.11. filled only with high-demand topics: KG-7 Vulcan build (#1 sniper in MP + Warzone, CSI 'Mw4 snipers' 213K) at 10:00 and 'movement settings mw4' (CSI 421K / 724K, never posted) at 18:00. Scheduled posts 26.–27.11. re-checked: captions v2, wallpaper renders, no patch notes after Nov 23 -> no change needed. Slot test 10:00 untouched.
+- Rule added (process): render.py slide names use the image basename (subfolder paths like mw4/w_X.png crashed the render); single-gun build posts must use build_render.py (per-build mode badges) – the verifier caught WARZONE badges on MP/DMZ slides from render.py.
