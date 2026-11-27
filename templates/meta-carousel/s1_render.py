@@ -44,6 +44,39 @@ CSS = """
 .gr2 .cp{font-weight:700;font-size:18px;letter-spacing:2px;color:#111;background:var(--y);padding:3px 9px}
 .gr2 p{font-weight:600;font-size:29px;line-height:1.24;color:#dcdcdc;margin-top:8px}
 .gr2.c4{padding:10px 22px 10px 8px}.gr2.c4 .gw{width:440px;height:160px}.gr2.c4 .gw img{max-width:432px;max-height:154px}.gr2.c4 .nm{font-size:40px}.gr2.c4 p{font-size:26px}
+
+.s1c .cp.gd{background:var(--y);color:#111}
+.sampl{position:absolute;font-weight:700;font-size:16px;letter-spacing:3px;color:#fff;background:rgba(0,0,0,.62);padding:4px 10px;border:1px solid rgba(255,255,255,.35)}
+.stage{position:absolute;left:50px;width:870px;height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden;
+ background:radial-gradient(ellipse 60% 55% at 50% 58%,rgba(255,196,64,.22),rgba(255,196,64,0) 70%),linear-gradient(180deg,rgba(255,255,255,.06),rgba(0,0,0,.35));
+ border:1px solid rgba(255,212,0,.45);clip-path:polygon(0 0,100% 0,100% 90%,94% 100%,0 100%)}
+.stage::after{content:"";position:absolute;left:8%;right:8%;bottom:58px;height:3px;background:linear-gradient(90deg,rgba(255,212,0,0),var(--y),rgba(255,212,0,0))}
+.stage img{max-width:780px;max-height:300px;transform:rotate(-3deg);filter:drop-shadow(0 0 1px rgba(255,226,150,.95)) drop-shadow(0 0 4px rgba(255,196,64,.55)) drop-shadow(0 34px 26px rgba(0,0,0,.85)) brightness(1.15)}
+.tnh{position:absolute;left:50px;display:flex;align-items:center;gap:16px}
+.tnh b{font-family:Anton;font-size:44px;letter-spacing:3px;line-height:1;padding:10px 22px 8px}
+.tnh.up b{background:linear-gradient(170deg,var(--g1),var(--g2) 55%,var(--g3));color:#111}
+.tnh.dn b{background:linear-gradient(170deg,#ff6a55,#d8281c);color:#fff}
+.tnh i{display:block;width:520px;height:3px}
+.tnh.up i{background:linear-gradient(90deg,var(--y),rgba(255,212,0,0))}.tnh.dn i{background:linear-gradient(90deg,#ff4b3e,rgba(255,75,62,0))}
+.tn{position:absolute;left:50px;width:850px;height:116px;display:flex;align-items:center;gap:18px;padding:0 20px 0 14px;
+ background:linear-gradient(90deg,rgba(10,10,12,.86),rgba(10,10,12,.62));border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 30px rgba(0,0,0,.45)}
+.tn::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px}
+.tn.up::before{background:linear-gradient(180deg,var(--g1),var(--g3))}.tn.dn::before{background:linear-gradient(180deg,#ff6a55,#c41f14)}
+.tn .gw{flex:none;width:210px;height:86px;display:flex;align-items:center;justify-content:center}
+.tn .gw img{max-width:206px;max-height:78px;filter:drop-shadow(0 0 1px rgba(255,226,150,.95)) drop-shadow(0 0 3px rgba(255,196,64,.5)) brightness(1.2)}
+.tn .tx{flex:1;min-width:0}
+.tn .nm{font-family:Anton;font-size:40px;line-height:1;color:#f3f3f3}
+.tn .sl{font-weight:600;font-size:23px;color:#cfcfcf;margin-top:6px;white-space:nowrap}
+.tn .sl em{font-style:normal;font-weight:800;color:#fff}
+.tn .bar{position:relative;height:12px;margin-top:9px;width:100%;background:rgba(255,255,255,.07);border-radius:5px}
+.tn .bar s{position:absolute;left:0;top:0;bottom:0;background:rgba(255,255,255,.34);border-radius:5px 0 0 5px}
+.tn .bar u{position:absolute;top:0;bottom:0;border-radius:0 5px 5px 0}
+.tn .bar u.cut{background:repeating-linear-gradient(90deg,#ff4b3e 0 7px,transparent 7px 12px) !important}
+.tn.up .bar u{background:linear-gradient(90deg,var(--g1),var(--g2))}.tn.dn .bar u{background:linear-gradient(90deg,#ff8a6a,#ff4b3e)}
+.tn .dl{flex:none;width:150px;text-align:center;font-family:Anton;font-size:46px;line-height:1;padding:10px 0 8px}
+.tn.up .dl{color:#111;background:linear-gradient(170deg,var(--g1),var(--g2) 55%,var(--g3))}
+.tn.dn .dl{color:#fff;background:linear-gradient(170deg,#ff6a55,#d8281c)}
+.tn .dl small{display:block;font-family:inherit;font-size:17px;letter-spacing:2px;margin-top:3px;font-weight:700}
 """
 
 
@@ -73,7 +106,7 @@ def shot(s, d):
     bb, h = bleed(s['shot'], 400)
     cap = ''.join(f'<div class="ln"><b>{E(a)}</b><p>{E(b)}</p></div>' for a, b in s['rules'])
     body = (f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:235px" data-size="120" data-max="700"><span class="gr w">{E(s["title"])}</span></div>'
-            + tag + bb + f'<div class="shotcap" style="top:{400 + h + 44}px">{cap}</div>')
+            + tag + bb + (sample(416, 66) if s.get('sample') else '') + f'<div class="shotcap" style="top:{400 + h + 44}px">{cap}</div>')
     return page(body, {**d, 'footer': ''})
 
 
@@ -95,7 +128,7 @@ def page(body, d):
 def card(c, cm=False):
     cls = 'im' + (' ct' if c.get('fit') == 'contain' else '') + (' dk' if c.get('dark') else '')
     return (f'<div class="pc hud s1c{" cm" if cm else ""}"><div class="{cls}" style="background-image:url(/_build/s1/{c["img"]})"></div>'
-            f'<div class="tx"><div class="hd"><span class="nm">{E(c["name"].upper())}</span><span class="cp{" ng" if c.get("neg") else ""}">{E(c["chip"])}</span></div>'
+            f'<div class="tx"><div class="hd"><span class="nm">{E(c["name"].upper())}</span><span class="cp{" ng" if c.get("neg") else (" gd" if c.get("gold") else "")}">{E(c["chip"])}</span></div>'
             f'<p>{E(c["desc"])}</p></div></div>')
 
 
@@ -147,11 +180,60 @@ def rules(rs):
     return ''.join(f'<div class="pc hud ru"><b>{E(a)}</b><p>{E(b)}</p></div>' for a, b in rs)
 
 
+def sample(top, left):
+    """Small 'SAMPLE IMAGE' badge for stand-in images in design examples (never in real posts)."""
+    return f'<div class="sampl" style="top:{top}px;left:{left}px">SAMPLE IMAGE</div>'
+
+
+def stage(s, d):
+    """Weapon spotlight: big official render on a glowing stage, status tag, 2-3 caption lines."""
+    tag = f'<div class="mtag {s.get("tag_cls", "tech")}" style="top:252px">{E(s["tag"])}</div>' if s.get('tag') else ''
+    cap = ''.join(f'<div class="ln"><b>{E(a)}</b><p>{E(b)}</p></div>' for a, b in s['rules'])
+    body = (f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:235px" data-size="120" data-max="{s.get("title_max", 700)}"><span class="gr w">{E(s["title"])}</span></div>'
+            + tag + f'<div class="stage" style="top:395px"><img src="/weapons/mw4/{s["stage"]}"></div>'
+            + (sample(410, 66) if s.get('sample') else '')
+            + f'<div class="shotcap" style="top:845px">{cap}</div>')
+    return page(body, {**d, 'footer': ''})
+
+
+def tuning(s, d):
+    """Patch winners/losers (user 27.11.2026: buffs/nerfs must stand out): gold ▲ BUFFED block, red ▼ NERFED block,
+    each row = weapon render, name, stat old → new, before/after bar (grey = old, colour = new), big delta chip."""
+    def wpath(name):
+        key = re.sub(r'[^a-z0-9]', '', name.lower())
+        for f in sorted(os.listdir(_WDIR)):
+            if f.startswith('w_') and re.sub(r'[^a-z0-9]', '', f[2:-4].lower()) == key:
+                return f
+        return None
+    y = 372; out = ''
+    for kind, label, rows in (('up', '▲ BUFFED', s.get('buffs', [])), ('dn', '▼ NERFED', s.get('nerfs', []))):
+        if not rows:
+            continue
+        out += f'<div class="tnh {kind}" style="top:{y}px"><b>{label}</b><i></i></div>'; y += 74
+        for r in rows:
+            old, new = float(r['old']), float(r['new']); top = max(old, new)
+            w = wpath(r['name'])
+            img = f'<img src="/weapons/mw4/{w}">' if w else ''
+            out += (f'<div class="tn {kind}" style="top:{y}px"><div class="gw">{img}</div><div class="tx"><div class="nm">{E(r["name"].upper())}</div>'
+                    f'<div class="sl">{E(r["stat"])} <em>{E(r["from_to"])}</em></div>'
+                    f'<div class="bar"><s style="width:{min(old, new) / top * 100:.1f}%"></s><u class="{"cut" if new < old else ""}" style="left:{min(old, new) / top * 100:.1f}%;width:{abs(new - old) / top * 100:.1f}%"></u></div></div>'
+                    f'<div class="dl">{E(r["delta"])}<small>{E(r.get("unit", ""))}</small></div></div>')
+            y += 128
+        y += 14
+    body = (f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:240px" data-size="100" data-max="860"><span class="gr gold">{E(s["title"])}</span></div>'
+            + out + (f'<div class="s1ft" style="top:{y + 4}px">{E(s["foot"])}</div>' if s.get('foot') else ''))
+    return page(body, {**d, 'footer': ''})
+
+
 def slide(s, d):
     if s.get('shot'):
         return shot(s, d)
     if s.get('guns'):
         return guns(s, d)
+    if s.get('stage'):
+        return stage(s, d)
+    if s.get('buffs') or s.get('nerfs'):
+        return tuning(s, d)
     head = f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:240px" data-size="100" data-max="860"><span class="gr w">{E(s["title"])}</span></div>'
     if s.get('hero'):
         hw = s.get('hero_w', 885); hh, h = hero(s['hero'], 365, s.get('hero_max', 470), maxw=hw, left=(1080 - hw) // 2 if hw > 885 else 50)

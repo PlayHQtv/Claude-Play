@@ -1,0 +1,211 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "RELOADED",
+ "notes": "DESIGN EXAMPLE ONLY (user 27.11.2026: example of the Season 1 Reloaded killer post, no overview slide, buffs/nerfs slide upgraded). Stand-in images are marked SAMPLE IMAGE; tuning values are the official 13 Nov patch values as placeholders. Never post this file.",
+ "topic_keys": [
+  "design example reloaded"
+ ],
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "cover": {
+  "kicker": "MW4 SEASON 1 RELOADED · LIVE NOW",
+  "big": "EVERYTHING",
+  "small": "NEW",
+  "sub": "MAPS · MODES · GUNS · BUFFS · REWARDS",
+  "img": "ka_s1_primary.jpg",
+  "chips": [
+   "MINISTRY",
+   "OVERFLOW",
+   "JAK 12",
+   "BUFFS"
+  ],
+  "swipe": "SWIPE FOR ALL OF IT ›"
+ },
+ "slides": [
+  {
+   "sec": "NEW MAP · 6V6",
+   "title": "MINISTRY",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "gfx_nyc.jpg",
+   "sample": 1,
+   "rules": [
+    [
+     "SETTING",
+     "An embassy during the Global Peace Summit."
+    ],
+    [
+     "FIGHT",
+     "In and around the damaged embassy building."
+    ]
+   ]
+  },
+  {
+   "sec": "NEW MAP · 6V6",
+   "title": "OVERFLOW",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "gfx_lithium.jpg",
+   "sample": 1,
+   "rules": [
+    [
+     "SETTING",
+     "A factory and the farmland around it."
+    ],
+    [
+     "LOOK UP",
+     "Rocket launcher convoys fire in the distance."
+    ]
+   ]
+  },
+  {
+   "sec": "NEW MODE · 6V6",
+   "title": "COUNTER ATTACK",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "gfx_shoothouse.jpg",
+   "sample": 1,
+   "rules": [
+    [
+     "GOAL",
+     "Bomb the enemy Comm Station."
+    ],
+    [
+     "DEFEND",
+     "Protect your own Comm Station."
+    ]
+   ]
+  },
+  {
+   "sec": "NEW MODE",
+   "title": "TDM TWIST",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "gfx_canyon.jpg",
+   "sample": 1,
+   "rules": [
+    [
+     "WHAT",
+     "Team Deathmatch with a new twist."
+    ],
+    [
+     "RULES",
+     "Full rules drop with Reloaded."
+    ]
+   ]
+  },
+  {
+   "sec": "NEW WEAPON · SHOTGUN",
+   "title": "JAK 12",
+   "tag": "LATER IN SEASON",
+   "tag_cls": "old",
+   "stage": "w_Rezi_12.png",
+   "sample": 1,
+   "rules": [
+    [
+     "CLASS",
+     "Full-auto shotgun."
+    ],
+    [
+     "UNLOCK",
+     "Season 1 event reward."
+    ]
+   ]
+  },
+  {
+   "sec": "WEAPON TUNING",
+   "title": "META SHAKE-UP",
+   "foot": "SOURCE: OFFICIAL MW4 PATCH NOTES",
+   "buffs": [
+    {
+     "name": "M4",
+     "stat": "Max damage range",
+     "from_to": "27.9 → 35.3 m",
+     "old": 27.94,
+     "new": 35.31,
+     "delta": "+26%",
+     "unit": "RANGE"
+    },
+    {
+     "name": "PPSh-41",
+     "stat": "Max damage range",
+     "from_to": "10.8 → 13.3 m",
+     "old": 10.8,
+     "new": 13.34,
+     "delta": "+24%",
+     "unit": "RANGE"
+    },
+    {
+     "name": "Oden",
+     "stat": "Mid damage range",
+     "from_to": "50.0 → 58.4 m",
+     "old": 50.04,
+     "new": 58.42,
+     "delta": "+17%",
+     "unit": "RANGE"
+    }
+   ],
+   "nerfs": [
+    {
+     "name": "Mosin-Nagant",
+     "stat": "Max damage range",
+     "from_to": "40.1 → 15.0 m",
+     "old": 40.13,
+     "new": 14.99,
+     "delta": "-63%",
+     "unit": "RANGE"
+    },
+    {
+     "name": "Oris 8.6",
+     "stat": "Flinch received",
+     "from_to": "goes up",
+     "old": 100,
+     "new": 109.6,
+     "delta": "+9.6%",
+     "unit": "FLINCH"
+    }
+   ]
+  },
+  {
+   "sec": "BATTLE PASS BONUS",
+   "title": "8 NEW SKINS",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "ka_s1_bp_op.jpg",
+   "sample": 1,
+   "rules": [
+    [
+     "WHO",
+     "Premium Battle Pass owners with all 100 tiers done."
+    ],
+    [
+     "WHAT",
+     "8 extra Operator Skins to unlock."
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHAT ARE YOU",
+  "gold": "PLAYING FIRST?",
+  "sub": "COMMENT YOUR PICK",
+  "save_kicker": "YOUR SEASON 1 RELOADED CHEAT SHEET",
+  "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS",
+  "cutout": {
+   "img": "cut_redeye_fb.png",
+   "right": -60,
+   "top": 1030,
+   "w": 540,
+   "fade": 75,
+   "bright": 1.25,
+   "rim": 1,
+   "hide_br": 1
+  }
+ }
+}
