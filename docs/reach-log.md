@@ -25,3 +25,8 @@
 - First signal for SEO v2: Patriot XMR (first v2 caption) 390 views at age 1 = best age-1 value of the last week (median 298). n = 1, keep watching.
 - Fix in this run: Sat 28.11. filled only with high-demand topics: KG-7 Vulcan build (#1 sniper in MP + Warzone, CSI 'Mw4 snipers' 213K) at 10:00 and 'movement settings mw4' (CSI 421K / 724K, never posted) at 18:00. Scheduled posts 26.–27.11. re-checked: captions v2, wallpaper renders, no patch notes after Nov 23 -> no change needed. Slot test 10:00 untouched.
 - Rule added (process): render.py slide names use the image basename (subfolder paths like mw4/w_X.png crashed the render); single-gun build posts must use build_render.py (per-build mode badges) – the verifier caught WARZONE badges on MP/DMZ slides from render.py.
+
+## 2026-11-27 – autopilot run: posts parked, no new posts scheduled
+- Found: the 4 CoD posts for 27.–28.11. (Type 73 build, MW4 aim assist, KG-7 Vulcan build, movement settings) were changed on 26.11. ~11:00 to Metricool DRAFTS dated 28./29.12. (same "parking" pattern as the paused GTA posts). No note in the repo or reach log explains it → treated as a deliberate pause; the autopilot did NOT re-schedule or fill slots and asked the user.
+- Numbers (no alarm): SEO v2 posts Oden 561 (age 1, 68 % search), Mosin 495 (age 1), Patriot 460 (age 2) vs pre-v2 Rezi 320 / LMG 443 at similar age. No post near 0 views, statuses all PUBLISHED.
+- Rule: any run that parks/pauses posts must log the reason in docs/reach-log.md so the next run knows whether to fill the slots.
