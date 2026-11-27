@@ -58,10 +58,9 @@ CSS = """
 .tnh.dn b{background:linear-gradient(170deg,#ff6a55,#d8281c);color:#fff}
 .tnh i{display:block;width:520px;height:3px}
 .tnh.up i{background:linear-gradient(90deg,var(--y),rgba(255,212,0,0))}.tnh.dn i{background:linear-gradient(90deg,#ff4b3e,rgba(255,75,62,0))}
-.tn{position:absolute;left:50px;width:850px;height:116px;display:flex;align-items:center;gap:18px;padding:0 20px 0 14px;
- background:linear-gradient(90deg,rgba(10,10,12,.86),rgba(10,10,12,.62));border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 30px rgba(0,0,0,.45)}
-.tn::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px}
-.tn.up::before{background:linear-gradient(180deg,var(--g1),var(--g3))}.tn.dn::before{background:linear-gradient(180deg,#ff6a55,#c41f14)}
+.tn{left:50px;width:850px;height:116px;display:flex;align-items:center;gap:18px;padding:0 20px 0 18px}
+.tn::after{content:"";position:absolute;left:0;top:0;bottom:0;width:7px}
+.tn.up::after{background:linear-gradient(180deg,var(--g1),var(--g3))}.tn.dn::after{background:linear-gradient(180deg,#ff6a55,#c41f14)}
 .tn .gw{flex:none;width:210px;height:86px;display:flex;align-items:center;justify-content:center}
 .tn .gw img{max-width:206px;max-height:78px;filter:drop-shadow(0 0 1px rgba(255,226,150,.95)) drop-shadow(0 0 3px rgba(255,196,64,.5)) brightness(1.2)}
 .tn .tx{flex:1;min-width:0}
@@ -106,7 +105,7 @@ def shot(s, d):
     bb, h = bleed(s['shot'], 400)
     cap = ''.join(f'<div class="ln"><b>{E(a)}</b><p>{E(b)}</p></div>' for a, b in s['rules'])
     body = (f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:235px" data-size="120" data-max="700"><span class="gr w">{E(s["title"])}</span></div>'
-            + tag + bb + (sample(416, 66) if s.get('sample') else '') + f'<div class="shotcap" style="top:{400 + h + 44}px">{cap}</div>')
+            + tag + bb + (sample(416, 66) if s.get('sample') else '') + f'<div class="stack" style="top:{400 + h + 26}px;gap:10px">{rules(s["rules"])}</div>')
     return page(body, {**d, 'footer': ''})
 
 
@@ -192,7 +191,7 @@ def stage(s, d):
     body = (f'<div class="sec">{E(s["sec"])}</div><div class="fit" style="top:235px" data-size="120" data-max="{s.get("title_max", 700)}"><span class="gr w">{E(s["title"])}</span></div>'
             + tag + f'<div class="stage" style="top:395px"><img src="/weapons/mw4/{s["stage"]}"></div>'
             + (sample(410, 66) if s.get('sample') else '')
-            + f'<div class="shotcap" style="top:845px">{cap}</div>')
+            + f'<div class="stack" style="top:825px;gap:10px">{rules(s["rules"])}</div>')
     return page(body, {**d, 'footer': ''})
 
 
@@ -214,7 +213,7 @@ def tuning(s, d):
             old, new = float(r['old']), float(r['new']); top = max(old, new)
             w = wpath(r['name'])
             img = f'<img src="/weapons/mw4/{w}">' if w else ''
-            out += (f'<div class="tn {kind}" style="top:{y}px"><div class="gw">{img}</div><div class="tx"><div class="nm">{E(r["name"].upper())}</div>'
+            out += (f'<div class="pc hud tn {kind}" style="position:absolute;top:{y}px"><div class="gw">{img}</div><div class="tx"><div class="nm">{E(r["name"].upper())}</div>'
                     f'<div class="sl">{E(r["stat"])} <em>{E(r["from_to"])}</em></div>'
                     f'<div class="bar"><s style="width:{min(old, new) / top * 100:.1f}%"></s><u class="{"cut" if new < old else ""}" style="left:{min(old, new) / top * 100:.1f}%;width:{abs(new - old) / top * 100:.1f}%"></u></div></div>'
                     f'<div class="dl">{E(r["delta"])}<small>{E(r.get("unit", ""))}</small></div></div>')
