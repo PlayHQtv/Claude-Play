@@ -1,7 +1,12 @@
 {
- "DRAFT": "DRAFT – not verified. Prepared 26.11.2026 by the Season 1 Reloaded watcher before the official blog. Every line marked TBD must be filled from the official callofduty.com Season 1 Reloaded blog + patch notes; confirmed lines (Ministry, Overflow, Counter Attack) re-checked against the blog. Do NOT schedule until verified.",
+ "DRAFT": "DRAFT – not verified. Prepared 26.11.2026 by the Season 1 Reloaded watcher before the official blog. Every line marked TBD must be filled from the official callofduty.com Season 1 Reloaded blog + patch notes; confirmed lines (Ministry, Overflow, Counter Attack) re-checked against the blog. Do NOT schedule until verified. DESIGN (user 27.11.): new standard = fade-out glass boxes (render.FADE_RIGHT: every glass/line box runs out softly to the right edge); keep style glass + fade_right true, never switch it off.",
  "game": "CALL OF DUTY · MW4",
  "badge": "S1",
+ "topic_keys": [
+  "season 1 reloaded"
+ ],
+ "style": "glass",
+ "fade_right": true,
  "wallpaper": {
   "img": "wp_bp_s1_city.jpg",
   "bright": 0.6,
@@ -31,9 +36,18 @@
    "hero": "ka_s1_mask.jpg",
    "hero_max": 380,
    "rules": [
-    ["MINISTRY", "Fight in and around an embassy during a Global Peace Summit."],
-    ["OVERFLOW", "A factory surrounded by farmland."],
-    ["TBD MAP", "TBD – additional maps named in the Reloaded blog."]
+    [
+     "MINISTRY",
+     "Fight in and around an embassy during a Global Peace Summit."
+    ],
+    [
+     "OVERFLOW",
+     "A factory surrounded by farmland."
+    ],
+    [
+     "TBD MAP",
+     "TBD – additional maps named in the Reloaded blog."
+    ]
    ]
   },
   {
@@ -42,8 +56,14 @@
    "hero": "ka_s1_bp_op.jpg",
    "hero_max": 420,
    "rules": [
-    ["TBD GUN 1", "TBD – class, how to unlock, key stats / Apex from the blog."],
-    ["TBD GUN 2", "TBD – class, how to unlock, key stats / Apex from the blog."]
+    [
+     "TBD GUN 1",
+     "TBD – class, how to unlock, key stats / Apex from the blog."
+    ],
+    [
+     "TBD GUN 2",
+     "TBD – class, how to unlock, key stats / Apex from the blog."
+    ]
    ]
   },
   {
@@ -52,17 +72,32 @@
    "hero": "ka_s1_bp_wide.jpg",
    "hero_max": 380,
    "rules": [
-    ["COUNTER ATTACK", "Plant bombs at the enemy Comm Station, defend yours."],
-    ["TBD MODE", "TBD – further modes from the Reloaded blog."]
+    [
+     "COUNTER ATTACK",
+     "Plant bombs at the enemy Comm Station, defend yours."
+    ],
+    [
+     "TBD MODE",
+     "TBD – further modes from the Reloaded blog."
+    ]
    ]
   },
   {
    "sec": "SEASON 1 RELOADED WEAPON TUNING",
    "title": "BIGGEST BUFFS + NERFS",
    "rules": [
-    ["TBD BUFF", "TBD – exact old → new values from the official patch notes."],
-    ["TBD BUFF", "TBD"],
-    ["TBD NERF", "TBD"]
+    [
+     "TBD BUFF",
+     "TBD – exact old → new values from the official patch notes."
+    ],
+    [
+     "TBD BUFF",
+     "TBD"
+    ],
+    [
+     "TBD NERF",
+     "TBD"
+    ]
    ]
   },
   {
@@ -70,7 +105,10 @@
    "title": "DMZ UPDATE",
    "hero": "gfx_x01.jpg",
    "rules": [
-    ["TBD", "TBD – new DMZ orders / threats / FOB changes from the blog."]
+    [
+     "TBD",
+     "TBD – new DMZ orders / threats / FOB changes from the blog."
+    ]
    ]
   },
   {
@@ -78,7 +116,10 @@
    "title": "WARZONE UPDATE",
    "hero": "ka_s1_bp_45crop.jpg",
    "rules": [
-    ["TBD", "TBD – new Warzone modes / map changes from the Warzone Reloaded blog."]
+    [
+     "TBD",
+     "TBD – new Warzone modes / map changes from the Warzone Reloaded blog."
+    ]
    ]
   }
  ],
