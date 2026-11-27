@@ -1,0 +1,135 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "PERKS",
+ "topic_keys": [
+  "best perks",
+  "perk tier list",
+  "perks mw4"
+ ],
+ "notes": "SCHEDULED Fri 27.11. 13:00 (verifier PASS, QA 0/0, byte check OK). Fri 27.11. midday (10:00 slot was missed, user 27.11.: midday post today). Perk slots, unlock levels and effects: CODMunity perk tier list (updated 23.11.2026) + U4N MW4 perk guide, identical on all 18 perks. Tier picks: consensus CODMunity / Game Rant / Mobalytics (Ghost, Ninja, Cold-Blooded top). Combos: U4N recommended builds.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "cover": {
+  "kicker": "MW4 MULTIPLAYER · PICK 3",
+  "big": "BEST PERKS",
+  "small": "MW4",
+  "sub": "PERK 1 · PERK 2 · PERK 3 · BEST COMBOS",
+  "img": "ka_s1_bp_wide.jpg",
+  "chips": [
+   "GHOST",
+   "NINJA",
+   "COLD-BLOODED",
+   "QUICK FIX"
+  ],
+  "swipe": "SWIPE FOR ALL SLOTS ›"
+ },
+ "slides": [
+  {
+   "sec": "PERK 1",
+   "title": "BEST PERK 1",
+   "hero": "ka_s1_mask.jpg",
+   "hero_max": 360,
+   "rules": [
+    [
+     "GHOST",
+     "LV 24 · Hidden from callouts, UAVs, Portable Radars + Heartbeat Sensors."
+    ],
+    [
+     "QUICK FIX",
+     "LV 4 · Kills + objective play instantly start health regen."
+    ],
+    [
+     "HIGH ALERT",
+     "LV 8 · Your vision pulses when an enemy outside your view spots you."
+    ]
+   ]
+  },
+  {
+   "sec": "PERK 2",
+   "title": "BEST PERK 2",
+   "hero": "gfx_mumbai.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "NINJA",
+     "LV 30 · Quieter footsteps with a much smaller range."
+    ],
+    [
+     "BLOOD RUSH",
+     "LV 4 · Unlocks Tactical Sprint. Kills refill your stamina."
+    ],
+    [
+     "FAST HANDS",
+     "LV 20 · Faster reloads, equipment use and weapon swaps."
+    ]
+   ]
+  },
+  {
+   "sec": "PERK 3",
+   "title": "BEST PERK 3",
+   "hero": "gfx_sentry.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "COLD-BLOODED",
+     "LV 36 · Hidden from AI targeting, Thermal Optics, Recon Drones, Spotter Scopes + Snapshot Grenades."
+    ],
+    [
+     "BATTLE HARDENED",
+     "LV 12 · Enemy tacticals hit you less."
+    ],
+    [
+     "TRACKER",
+     "LV 32 · See enemy footprints + death markers. Your kill markers stay hidden."
+    ]
+   ]
+  },
+  {
+   "sec": "PICK 3 · COPY THESE",
+   "title": "BEST COMBOS",
+   "rules": [
+    [
+     "STEALTH FLANKER",
+     "Ghost + Ninja + Tracker"
+    ],
+    [
+     "AGGRESSIVE SLAYER",
+     "Quick Fix + Fast Hands + Battle Hardened"
+    ],
+    [
+     "OBJECTIVE PLAYER",
+     "Quick Fix + Bomb Squad (LV 16) + Scavenger (LV 28)"
+    ],
+    [
+     "KILLSTREAKS",
+     "Kill Chain (LV 48) + Hardline (LV 4) + Scavenger (LV 28)"
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHICH PERKS",
+  "gold": "DO YOU RUN?",
+  "sub": "COMMENT YOUR PICK 3",
+  "save_kicker": "YOUR MW4 PERK CHEAT SHEET",
+  "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS",
+  "cutout": {
+   "img": "cut_snowsniper_fb.png",
+   "right": -540,
+   "top": 1100,
+   "w": 1020,
+   "fade": 90,
+   "bright": 1.2,
+   "rim": 1,
+   "hide_br": 1
+  }
+ },
+ "caption": "Best perks MW4 🔥 The best Modern Warfare 4 perks for every slot in multiplayer: Perk 1 Ghost, Quick Fix or High Alert, Perk 2 Ninja, Blood Rush or Fast Hands, Perk 3 Cold-Blooded, Battle Hardened or Tracker, with unlock levels and the best Pick 3 combos for stealth, slaying, objectives and killstreaks. Which perks do you run? Comment your Pick 3 👇 Save this for your next match & send it to your squad!\n#mw4 #mw4perks #bestperks #modernwarfare4 #mw4multiplayer",
+ "verified": true
+}

@@ -164,6 +164,22 @@ def wallpaper_html(w):
             '<div style="position:absolute;inset:0;background:radial-gradient(ellipse 760px 900px at 50% 48%,transparent 40%,rgba(0,0,0,.55) 100%)"></div>')
 
 
+# FADE_RIGHT = STANDARD (user 26./27.11.2026: "Die Glaskasten können auch auslaufen zum rechten Ende hin" + "Alle sollen so auslaufen" + "auch die Linien Kasten"): every glass box runs out
+# to the right canvas edge and fade softly instead of ending in a hard border. Text keeps its place (padding-right).
+FADE_RIGHT = """<style>
+.hud:not(.save):not(.s1hero){background:none !important;border-color:transparent !important;box-shadow:none !important;
+ backdrop-filter:none !important;-webkit-backdrop-filter:none !important;isolation:isolate;overflow:visible}
+.hud:not(.save):not(.s1hero)::before{content:"";position:absolute;top:0;bottom:0;left:0;right:0;z-index:-1;pointer-events:none;
+ background:linear-gradient(180deg,rgba(255,255,255,.10),transparent 45%),linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.02)),rgba(6,6,8,.45) !important;
+ border:1px solid rgba(255,255,255,.22);border-right:none;border-radius:24px 0 0 24px !important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(255,255,255,.06);
+ backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
+ -webkit-mask-image:linear-gradient(90deg,#000 0,#000 45%,transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 45%,transparent 100%)}
+.hud.ru::before,.hud.st::before,.hud.row::before,.hud.hdr::before,.grid>.t.hud:nth-child(2n):not(.save)::before{right:-240px;
+ -webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 330px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 330px),transparent 100%)}
+</style>"""
+
+
 GLASS_IMG_BUG = re.compile(r'class="[^"]*\\bhud\\b[^"]*"[^>]*style="[^"]*background-image:url')
 
 
@@ -178,7 +194,7 @@ def page(body, d):
         f = f.replace('<div class="topo"></div>', '<div class="topo"></div>' + wallpaper_html(d['wallpaper']), 1)
         f = re.sub(r'<div class="streak"[^>]*></div>', '', f)  # the thin diagonal light lines read as stray lines over key art (verifier 24.11.)
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>'
-            + f + (GLASS if d.get('style', 'glass') == 'glass' else '') + body
+            + f + (GLASS if d.get('style', 'glass') == 'glass' else '') + (FADE_RIGHT if d.get('fade_right', True) and d.get('style', 'glass') == 'glass' else '') + body
             + f'<div class="foot">{d.get("footer", "FOLLOW <b>@PLAYHQTV</b> FOR DAILY MW4 META")}</div>' + FITJS + '</body></html>')
 
 

@@ -1,0 +1,133 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "WEAPON XP",
+ "topic_keys": [
+  "level up weapons fast",
+  "weapon xp",
+  "weapon leveling",
+  "double weapon xp"
+ ],
+ "notes": "SCHEDULED Fri 27.11. 18:00 (verifier PASS, QA 0/0, byte check OK). Fri 27.11. 18:00 (user 27.11.: midday + evening post today, 10:00 slots again from 28.11.). Sources Tier 1: callofduty.com 'Ready for Launch: MW4 Progression and Prestige' (19.10.2026: weapon XP in MP + DMZ, one attachment per weapon level, HAN 86 max 72, Sang 9mm max 38, Double Weapon XP tokens recommended); MW4 Season 1 patch notes 19.11.2026 (increased Weapon XP in all Wager Match modes + Ground War: Combat Outpost). Shared attachments + Bonus Level Up: BoostingFactory + Overgear + Leprestore (citing Activision). Match-only token timer: Overgear + ShowGamer + LFCarry (Push Square cites IW). Campaign 2 Double Weapon XP tokens: Timesaver + AstroBoost (citing Activision campaign post). Objective modes: EZG + IGGM + LFCarry.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "cover": {
+  "kicker": "MW4 · WEAPON XP GUIDE",
+  "big": "LEVEL UP",
+  "small": "GUNS FAST",
+  "sub": "TOKENS · SHARED PARTS · BEST MODES",
+  "img": "gfx_cover_c.jpg",
+  "chips": [
+   "2XP TOKENS",
+   "BONUS LEVELS",
+   "BEST MODES",
+   "DMZ"
+  ],
+  "swipe": "SWIPE FOR ALL TIPS ›"
+ },
+ "slides": [
+  {
+   "sec": "THE BASICS",
+   "title": "HOW GUN XP WORKS",
+   "hero": "gfx_shoothouse.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "GUN IN HAND",
+     "Only the gun you use earns Weapon XP: Multiplayer, DMZ + Warzone."
+    ],
+    [
+     "1 LEVEL = 1 PART",
+     "Every weapon level unlocks a new attachment in Gunsmith."
+    ],
+    [
+     "MAX LEVEL",
+     "Differs per gun: the HAN 86 caps at 72, the Sang 9mm at 38."
+    ]
+   ]
+  },
+  {
+   "sec": "TIP 1",
+   "title": "SHARED PARTS",
+   "hero": "gfx_backstab.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "UNLOCK ONCE",
+     "Standard attachments unlock once and work on every compatible gun."
+    ],
+    [
+     "BONUS LEVELS",
+     "Already own a level's attachment? You get a free Bonus Level Up."
+    ],
+    [
+     "SMART ORDER",
+     "Level guns that share parts back to back to stack free levels."
+    ]
+   ]
+  },
+  {
+   "sec": "TIP 2",
+   "title": "2XP TOKENS",
+   "hero": "gfx_canyon.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "RIGHT TOKEN",
+     "Use Double Weapon XP tokens. Normal 2XP only boosts your player level."
+    ],
+    [
+     "NO WASTE",
+     "Token timers only run during matches, never in menus or lobbies."
+    ],
+    [
+     "FREE TOKENS",
+     "The campaign gives you 2 Double Weapon XP tokens."
+    ]
+   ]
+  },
+  {
+   "sec": "TIP 3",
+   "title": "BEST MODES",
+   "rules": [
+    [
+     "OBJECTIVES",
+     "Hardpoint, Domination, Kill Confirmed: more score = more gun XP."
+    ],
+    [
+     "BOOSTED XP",
+     "Since 19 Nov: more Weapon XP in Wager Match + Ground War: Combat Outpost."
+    ],
+    [
+     "DMZ",
+     "Weapon XP counts in DMZ too. Keep your target gun in your hands."
+    ]
+   ],
+   "hero": "gfx_reactor.jpg",
+   "hero_max": 300
+  }
+ ],
+ "cta": {
+  "white": "WHICH GUN",
+  "gold": "ARE YOU GRINDING?",
+  "sub": "COMMENT YOUR NEXT GUN",
+  "save_kicker": "YOUR MW4 WEAPON XP CHEAT SHEET",
+  "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS",
+  "cutout": {
+   "img": "cut_sniper_fb.png",
+   "right": -70,
+   "top": 1050,
+   "w": 760,
+   "fade": 100,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "caption": "How to level up weapons fast in MW4 🔥 Every Modern Warfare 4 weapon XP trick in one place: shared attachments that give you free Bonus Level Ups, Double Weapon XP tokens that only tick down in matches, the 2 free tokens from the campaign, and the best modes for gun XP in multiplayer and DMZ, including the 19 Nov Weapon XP boost. Which gun are you grinding right now? Comment below 👇 Save this for your next session & send it to your squad!\n#mw4 #mw4weaponxp #levelupfast #modernwarfare4 #mw4tips",
+ "verified": true
+}

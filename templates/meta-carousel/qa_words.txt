@@ -288,3 +288,7 @@ melee
 talonhawk
 verdansk
 comm
+regen
+tacticals
+killstreaks
+hardpoint
