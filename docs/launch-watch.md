@@ -15,3 +15,11 @@
 - 2026-11-27 10:15 Berlin: re-check (callofduty.com MW4 + WZ patch notes, blog/web search, IW on X, Tier-2 pointers): **no official Season 1 Reloaded blog yet** (MW4 S1 patch notes latest 23.11., WZ 19.11.; newest official signal still IW 26.11. "see you next week for Season 1 Reloaded"). Tier 2 still only cites the in-game countdown (02.12. 22:00 PT = 03.12. 07:00 Berlin). Draft unchanged; nothing scheduled.
 - 2026-11-27 12:14 Berlin: re-check (callofduty.com blog index, MW4 + WZ S1 patch notes, official/web search, Tier-2 pointers): **no official Season 1 Reloaded blog yet** (MW4 S1 patch notes latest 23.11., WZ 19.11.; newest official signal still IW 26.11. "see you next week for Season 1 Reloaded"). Tier 2 still only cites the in-game countdown (02.12. 22:00 PT = 03.12. 07:00 Berlin). Draft unchanged; nothing scheduled.
 - 2026-11-27 12:20 Berlin: user: "Beachte das neue Design mit den auslaufenden Kästchen" → the Reloaded post MUST use the fade-out glass boxes (render.FADE_RIGHT, standard since 202da20). Draft now pins style glass + fade_right true + topic_keys [season 1 reloaded]; test render checked: all rule/stat rows fade out to the right edge. Keep it at build time.
+
+## 2026-11-27 12:35 – confirmed so far (Tier 1: callofduty.com Season 1 announcement blog, 28.10.2026)
+- Mid-season maps: Ministry (embassy, Global Peace Summit), Overflow (factory + farmland, rocket launcher convoy), more [CLASSIFIED] maps – intel "during the Season 1 Reloaded comms".
+- Mid-season modes: Counter Attack (bomb the enemy Comm Station, protect your own) + a new Team Deathmatch twist mode; more via events.
+- Later in Season 1: JAK 12 full-auto shotgun + ZLR Talonhawk melee axe (event rewards, start date open).
+- Battle Pass bonus rewards: 8 extra Operator Skins for owners who finished all 100 tiers ("Stay tuned ... Season 1 Reloaded Blog").
+- Pointer only (Tier 3 boosting site, never cite): third-party guide also lists Specialist, JAK Barrage / Hyeon Auto / M16 Burst / TT Iron Guard Kit / ChainSAW Grip attachments and Warzone Extreme Resurgence + Rockets and Snipers – verify each in the official Reloaded blog / Warzone blog before use.
+- Launch time still unofficial: countdown estimate 03.12. 07:00 Berlin (matches our estimate).
