@@ -304,7 +304,7 @@ def main(data_path, out_dir):
     d = json.load(open(data_path))
     os.makedirs(out_dir, exist_ok=True)
     tmp = os.path.join(R.HERE, '_build'); os.makedirs(tmp, exist_ok=True)
-    pages = [('01_cover', cover(d))] + [(f'{i + 2:02d}_slide', slide(s, d)) for i, s in enumerate(d['slides'])]
+    pages = [('01_cover', cover(d))] + [(f'{i + 2:02d}_slide', slide(s, d)) for i, s in enumerate([x for x in d['slides'] if not x.get('skip')])]  # 'skip' = TODO slot in drafts
     pages.append((f'{len(pages) + 1:02d}_cta', cta(d)))
     srv = R.serve(R.HERE)
     from playwright.sync_api import sync_playwright

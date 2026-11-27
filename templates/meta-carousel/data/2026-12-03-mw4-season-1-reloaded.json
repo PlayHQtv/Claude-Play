@@ -1,7 +1,7 @@
 {
- "DRAFT": "DRAFT – not verified. Prepared 26.11.2026 by the Season 1 Reloaded watcher before the official blog. Every line marked TBD must be filled from the official callofduty.com Season 1 Reloaded blog + patch notes; confirmed lines (Ministry, Overflow, Counter Attack) re-checked against the blog. Do NOT schedule until verified. DESIGN (user 27.11.): new standard = fade-out glass boxes (render.FADE_RIGHT: every glass/line box runs out softly to the right edge); keep style glass + fade_right true, never switch it off.",
+ "DRAFT": "DRAFT – not verified. Rebuilt 27.11.2026 14:15 Berlin in the structure of the approved design template example-mw4-s1-reloaded-v2.json (s1_render; cover → one slide per map → one per mode → one per weapon → attachments → META SHAKE-UP tuning → Warzone → DMZ → events → BP skins → CTA; NO overview slide). Only officially confirmed items (callofduty.com Season 1 blog 28.10.2026) are filled; everything else is a TODO slot. Every image with \"sample\": 1 is a STAND-IN and must be replaced by an official Activision/CoD image (see img_todo) and the sample flag removed before posting. The tuning values are PLACEHOLDERS from the 13.11. patch (NOT Reloaded) and must be replaced by the official Reloaded patch notes. Do NOT schedule until verified. Design: style glass + fade_right true (FADE_RIGHT standard), official wallpaper.",
  "game": "CALL OF DUTY · MW4",
- "badge": "S1",
+ "badge": "RELOADED",
  "topic_keys": [
   "season 1 reloaded"
  ],
@@ -17,128 +17,248 @@
  },
  "cover": {
   "kicker": "MW4 SEASON 1 RELOADED · LIVE NOW",
-  "big": "EVERYTHING NEW",
-  "small": "SEASON 1 RELOADED",
-  "sub": "MAPS · GUNS · MODES · BUFFS · DMZ · WARZONE",
+  "big": "EVERYTHING",
+  "small": "NEW",
+  "sub": "MAPS · MODES · GUNS · BUFFS · REWARDS",
   "img": "ka_s1_primary.jpg",
   "chips": [
    "MINISTRY",
    "OVERFLOW",
-   "COUNTER ATTACK",
-   "TBD NEW GUNS"
+   "JAK 12",
+   "BUFFS"
   ],
-  "swipe": "SWIPE FOR ALL OF IT ›"
+  "swipe": "SWIPE FOR ALL OF IT ›",
+  "img_todo": "new official Season 1 Reloaded key art (blog header / press site) – ka_s1_primary is the Season 1 key art",
+  "chips_todo": "final 4 chips = biggest confirmed items from the Reloaded blog"
  },
  "slides": [
   {
-   "sec": "MULTIPLAYER · NEW MAPS",
-   "title": "NEW MAPS",
-   "hero": "ka_s1_mask.jpg",
-   "hero_max": 380,
+   "sec": "NEW MAP · 6V6",
+   "title": "MINISTRY",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "gfx_nyc.jpg",
+   "sample": 1,
    "rules": [
     [
-     "MINISTRY",
-     "Fight in and around an embassy during a Global Peace Summit."
+     "SETTING",
+     "An embassy during the Global Peace Summit."
     ],
     [
-     "OVERFLOW",
-     "A factory surrounded by farmland."
-    ],
-    [
-     "TBD MAP",
-     "TBD – additional maps named in the Reloaded blog."
+     "FIGHT",
+     "In and around the damaged embassy building."
     ]
-   ]
+   ],
+   "img_todo": "official Ministry map image (Reloaded blog / press site)"
   },
   {
-   "sec": "NEW WEAPONS",
-   "title": "NEW GUNS",
-   "hero": "ka_s1_bp_op.jpg",
-   "hero_max": 420,
+   "sec": "NEW MAP · 6V6",
+   "title": "OVERFLOW",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "gfx_lithium.jpg",
+   "sample": 1,
    "rules": [
     [
-     "TBD GUN 1",
-     "TBD – class, how to unlock, key stats / Apex from the blog."
+     "SETTING",
+     "A factory and the farmland around it."
     ],
     [
-     "TBD GUN 2",
-     "TBD – class, how to unlock, key stats / Apex from the blog."
+     "LOOK UP",
+     "Rocket launcher convoys fire in the distance."
     ]
-   ]
+   ],
+   "img_todo": "official Overflow map image (Reloaded blog / press site)"
   },
   {
-   "sec": "MULTIPLAYER MODES",
-   "title": "NEW MODES",
-   "hero": "ka_s1_bp_wide.jpg",
-   "hero_max": 380,
+   "TODO": "one 'shot' slide per further [CLASSIFIED] Reloaded map – names only from the official Reloaded blog",
+   "skip": 1
+  },
+  {
+   "sec": "NEW MODE · 6V6",
+   "title": "COUNTER ATTACK",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "gfx_shoothouse.jpg",
+   "sample": 1,
    "rules": [
     [
-     "COUNTER ATTACK",
-     "Plant bombs at the enemy Comm Station, defend yours."
+     "GOAL",
+     "Bomb the enemy Comm Station."
     ],
     [
-     "TBD MODE",
-     "TBD – further modes from the Reloaded blog."
+     "DEFEND",
+     "Protect your own Comm Station."
     ]
-   ]
+   ],
+   "img_todo": "official Counter Attack mode image"
   },
   {
-   "sec": "SEASON 1 RELOADED WEAPON TUNING",
-   "title": "BIGGEST BUFFS + NERFS",
+   "sec": "NEW MODE",
+   "title": "TDM TWIST",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "gfx_canyon.jpg",
+   "sample": 1,
    "rules": [
     [
-     "TBD BUFF",
-     "TBD – exact old → new values from the official patch notes."
+     "WHAT",
+     "A new twist on Team Deathmatch."
     ],
     [
-     "TBD BUFF",
-     "TBD"
+     "RULES",
+     "Official name + rules TBD (Reloaded blog)."
+    ]
+   ],
+   "img_todo": "official image for the TDM-twist mode; title = official mode name"
+  },
+  {
+   "sec": "NEW WEAPON · SHOTGUN",
+   "title": "JAK 12",
+   "tag": "LATER IN SEASON",
+   "tag_cls": "old",
+   "stage": "w_Rezi_12.png",
+   "sample": 1,
+   "rules": [
+    [
+     "CLASS",
+     "Full-auto shotgun."
     ],
     [
-     "TBD NERF",
-     "TBD"
+     "UNLOCK",
+     "Event reward later in Season 1."
     ]
-   ]
+   ],
+   "img_todo": "official JAK 12 render → weapons/mw4/w_JAK_12.png (cut-out)",
+   "tag_todo": "LIVE NOW only if the Reloaded blog says it launches 03.12."
   },
   {
-   "sec": "DMZ",
-   "title": "DMZ UPDATE",
-   "hero": "gfx_x01.jpg",
+   "sec": "NEW WEAPON · MELEE",
+   "title": "ZLR TALONHAWK",
+   "tag": "LATER IN SEASON",
+   "tag_cls": "old",
+   "stage": "w_Warlord.png",
+   "sample": 1,
    "rules": [
     [
-     "TBD",
-     "TBD – new DMZ orders / threats / FOB changes from the blog."
+     "CLASS",
+     "Melee axe."
+    ],
+    [
+     "UNLOCK",
+     "Event reward later in Season 1."
     ]
-   ]
+   ],
+   "img_todo": "official ZLR Talonhawk render → weapons/mw4/w_ZLR_Talonhawk.png (cut-out)"
   },
   {
-   "sec": "CALL OF DUTY: WARZONE",
-   "title": "WARZONE UPDATE",
-   "hero": "ka_s1_bp_45crop.jpg",
+   "TODO": "new attachments / conversions slide – only names from the official Reloaded blog (third-party list JAK Barrage, Hyeon Auto, M16 Burst, TT Iron Guard Kit, ChainSAW Grip is NOT verified)",
+   "skip": 1
+  },
+  {
+   "sec": "WEAPON TUNING",
+   "title": "META SHAKE-UP",
+   "foot": "SOURCE: OFFICIAL MW4 PATCH NOTES",
+   "buffs": [
+    {
+     "name": "M4",
+     "stat": "Max damage range",
+     "from_to": "27.9 → 35.3 m",
+     "old": 27.94,
+     "new": 35.31,
+     "delta": "+26%",
+     "unit": "RANGE"
+    },
+    {
+     "name": "PPSh-41",
+     "stat": "Max damage range",
+     "from_to": "10.8 → 13.3 m",
+     "old": 10.8,
+     "new": 13.34,
+     "delta": "+24%",
+     "unit": "RANGE"
+    },
+    {
+     "name": "Oden",
+     "stat": "Mid damage range",
+     "from_to": "50.0 → 58.4 m",
+     "old": 50.04,
+     "new": 58.42,
+     "delta": "+17%",
+     "unit": "RANGE"
+    }
+   ],
+   "nerfs": [
+    {
+     "name": "Mosin-Nagant",
+     "stat": "Max damage range",
+     "from_to": "40.1 → 15.0 m",
+     "old": 40.13,
+     "new": 14.99,
+     "delta": "-63%",
+     "unit": "RANGE"
+    },
+    {
+     "name": "Oris 8.6",
+     "stat": "Flinch received",
+     "from_to": "goes up",
+     "old": 100,
+     "new": 109.6,
+     "delta": "+9.6%",
+     "unit": "FLINCH"
+    }
+   ],
+   "placeholder": "VALUES ARE 13.11. PATCH PLACEHOLDERS – replace with the 3 biggest buffs of the most-played guns + 2 key nerfs from the official Reloaded patch notes"
+  },
+  {
+   "TODO": "Warzone slide – official Reloaded Warzone blog (Extreme Resurgence / Rockets and Snipers only if Tier 1 confirms)",
+   "skip": 1
+  },
+  {
+   "TODO": "DMZ slide – official Reloaded blog (orders, events, FOB)",
+   "skip": 1
+  },
+  {
+   "TODO": "events + rewards slide with exact dates – official Reloaded blog",
+   "skip": 1
+  },
+  {
+   "sec": "BATTLE PASS BONUS",
+   "title": "8 NEW SKINS",
+   "tag": "LIVE NOW",
+   "tag_cls": "tech",
+   "shot": "ka_s1_bp_op.jpg",
+   "sample": 1,
    "rules": [
     [
-     "TBD",
-     "TBD – new Warzone modes / map changes from the Warzone Reloaded blog."
+     "WHO",
+     "Premium Battle Pass owners with all 100 tiers done."
+    ],
+    [
+     "WHAT",
+     "8 extra Operator Skins to unlock."
     ]
-   ]
+   ],
+   "img_todo": "official Battle Pass bonus Operator skins art (Reloaded blog / press site)"
   }
  ],
  "cta": {
   "white": "WHAT ARE YOU",
   "gold": "PLAYING FIRST?",
-  "sub": "MINISTRY OR OVERFLOW?",
-  "save_kicker": "YOUR RELOADED CHEAT SHEET",
+  "sub": "COMMENT YOUR PICK",
+  "save_kicker": "YOUR SEASON 1 RELOADED CHEAT SHEET",
   "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS",
   "cutout": {
-   "img": "cut_soldier_fb.png",
-   "right": -70,
-   "top": 1050,
-   "w": 760,
-   "fade": 100,
+   "img": "cut_redeye_fb.png",
+   "right": -60,
+   "top": 1030,
+   "w": 540,
+   "fade": 75,
    "bright": 1.25,
-   "rim": 1
+   "rim": 1,
+   "hide_br": 1
   }
  },
- "source": "TBD – official callofduty.com MW4 + Warzone Season 1 Reloaded blogs + patch notes. Pre-filled: Activision Season 1 announcement blog (28.10.2026: Ministry, Overflow, additional maps, Counter Attack at mid-season).",
+ "source": "Tier 1: callofduty.com Season 1 announcement blog (28.10.2026); Reloaded blog + patch notes NOT out yet (checked 27.11.2026 14:15 Berlin)",
  "verified": false
 }
