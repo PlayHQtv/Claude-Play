@@ -1,0 +1,177 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "ALL MODES",
+ "rank_label": "BUILD",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "topic_keys": [
+  "50 gs",
+  ".50 gs",
+  "50 gs build",
+  "gs magna"
+ ],
+ "cover": {
+  "kicker": "FULL-AUTO HAND CANNON",
+  "big": "BEST .50 GS",
+  "small": "BUILD MW4",
+  "sub": "MP + WARZONE + DMZ LOADOUTS + CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_50_GS.png"
+ },
+ "cta": {
+  "white": "WHICH BUILD",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_snowsniper_fb.png",
+   "right": -540,
+   "top": 1100,
+   "w": 1020,
+   "fade": 90,
+   "bright": 1.2,
+   "rim": 1,
+   "hide_br": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "badge": "MULTIPLAYER",
+   "image": "mw4/w_50_GS.png",
+   "short": "MULTIPLAYER",
+   "title_white": ".50 GS",
+   "title_gold": "",
+   "class": "Pistol",
+   "class_note": "Close range Apex build",
+   "tagline": "MULTIPLAYER · MAX LEVEL + APEX",
+   "brightness": 1.2,
+   "build_code": "P02-32TKA-XXLQU-4D11",
+   "apex": "GS MAGNA",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "FTAC HVY-S50"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "XT-100"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "TT IRON GUARD KIT"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMO",
+     "name": ".50 PISTOL OVERPRESSURED"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "25 ROUND DRUM MAG"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/50-gs (fetched 28.11.2026) MP #2 Close Range (Apex), code P02-32TKA-XXLQU-4D11, level 50; TT Iron Guard Kit = event reward"
+  },
+  {
+   "rank": 2,
+   "badge": "WARZONE",
+   "image": "mw4/w_50_GS.png",
+   "short": "WARZONE",
+   "title_white": ".50 GS",
+   "title_gold": "",
+   "class": "Pistol",
+   "class_note": "Warzone close range",
+   "tagline": "WARZONE · MAX LEVEL + APEX",
+   "brightness": 1.2,
+   "build_code": "P02-VMGBY-353W1-1",
+   "apex": "GS MAGNA",
+   "attachments": [
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "KV CORSAC HOLO"
+    },
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "BRUEN RETORT .50"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "25 ROUND DRUM MAG"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "TT IRON GUARD KIT"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "CORVUS AVES-3"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/50-gs (fetched 28.11.2026) Warzone #1 Close Range (Apex), code P02-VMGBY-353W1-1, level 50"
+  },
+  {
+   "rank": 3,
+   "badge": "DMZ",
+   "image": "mw4/w_50_GS.png",
+   "short": "DMZ",
+   "title_white": ".50 GS",
+   "title_gold": "",
+   "class": "Pistol",
+   "class_note": "DMZ close range",
+   "tagline": "DMZ · MAX LEVEL + APEX",
+   "brightness": 1.2,
+   "build_code": "P02-2LKA5-2MR5W-11",
+   "apex": "GS MAGNA",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "FTAC HVY-S50"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "XT-100"
+    },
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "Z-DOT 9"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "TT IRON GUARD KIT"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "25 ROUND DRUM MAG"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/50-gs (fetched 28.11.2026) DMZ #1 Close Range (Apex), code P02-2LKA5-2MR5W-11, level 50"
+  }
+ ],
+ "source": "codmunity.gg/weapon/mw4/50-gs (MP builds 11/11, Warzone 13/11, DMZ 11/11, fetched 28.11.2026): GS Magna Apex 'reduces recoil to grant fully-automatic fire', unlocks at weapon level 50; warzoneloadout.games/mw4/50-gs (same muzzle/laser/rear grip in MP); weapon name/Apex list = data/mw4-weapons-reference.md",
+ "notes": "Wed 02.12. 18:00 build post (user 28.11.: 'Plane danach die restlichen Posts bis Donnerstag'). .50 GS = the only MW4 gun with no build so far (not in the pistol ranking 2026-11-2x: Krait, Sang, Mojave). Niche pistol (codmunity 'Contenders', warzoneloadout D tier) -> no meta claim; chosen to keep the daily build rule since every other gun already has a build. | Verifier 28.11.: FAIL -> fixed: weapon level shown as 'MAX LEVEL + APEX' (official launch blog: 37 levels, codmunity now: GS Magna at 50), badge ALL MODES, event-grip note in caption, 'DRUM MAG' kept together, 'Three .50 GS' in caption. Right-edge card bleed = FADE_RIGHT standard (user 26./27.11.), not a bug. DMZ label confirmed: codmunity heading 'Best .50 GS Close Range Loadout (MW4 DMZ)' with code P02-2LKA5-2MR5W-11. | Scheduled Wed 02.12. 18:00 Berlin (Metricool, 28.11.), QA 0/0, verifier PASS after fixes (re-check 28.11.), byte check OK, playhq/tmp cleaned.",
+ "caption": "Best .50 GS build MW4 🔥 Three .50 GS loadouts for Modern Warfare 4 multiplayer, Warzone and DMZ, all on the GS Magna Apex that turns the hand cannon fully automatic: a multiplayer build (code P02-32TKA-XXLQU-4D11) with the FTAC HVY-S50 and 25 Round Drum Mag, a Warzone build with the KV Corsac Holo and a DMZ build with the Z-Dot 9. The TT Iron Guard Kit grip is an event reward, swap it if it's locked. Which .50 GS class do you run? Comment 1, 2 or 3 👇 Save this & send it to your squad!\n#mw4 #50gs #mw4loadout #modernwarfare4 #mw4pistol",
+ "first_comment": "Which .50 GS build are you running: 1, 2 or 3? 👇",
+ "tiktok_title": "Best .50 GS build MW4: 3 loadouts + codes",
+ "verified": "independent verifier 28.11.2026: PASS after fixes"
+}

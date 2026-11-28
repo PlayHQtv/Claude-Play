@@ -1,0 +1,189 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "PRESTIGE",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "topic_keys": [
+  "classic prestige",
+  "regular prestige",
+  "mw4 prestige explained",
+  "permanent unlock token",
+  "prestige legend"
+ ],
+ "cover": {
+  "kicker": "CLASSIC VS REGULAR",
+  "big": "MW4 PRESTIGE",
+  "small": "EXPLAINED",
+  "sub": "WHAT RESETS · WHAT YOU KEEP · REWARDS",
+  "gun": "mw4/w_M4.png",
+  "rows": [
+   [
+    "LEVEL 55",
+    "then pick your path"
+   ],
+   [
+    "CLASSIC",
+    "+20% XP + unlock token"
+   ],
+   [
+    "REGULAR",
+    "keep all unlocks"
+   ],
+   [
+    "PRESTIGE MASTER",
+    "up to level 1,000"
+   ]
+  ],
+  "swipe": "SWIPE FOR ALL OF IT ›"
+ },
+ "slides": [
+  {
+   "sec": "STEP 1",
+   "title": "HIT LEVEL 55",
+   "shot": "gfx_mumbai.jpg",
+   "tag": "HOW IT WORKS",
+   "tag_cls": "tech",
+   "rules": [
+    [
+     "UNLOCK",
+     "Finish Level 55, then the last tile lets you enter Prestige."
+    ],
+    [
+     "EACH TIME",
+     "You pick Classic or Regular again at every new Prestige."
+    ]
+   ]
+  },
+  {
+   "sec": "PATH 1",
+   "title": "CLASSIC PRESTIGE",
+   "shot": "gfx_canyon.jpg",
+   "tag": "OLD SCHOOL",
+   "tag_cls": "tech",
+   "rules": [
+    [
+     "RESETS",
+     "Your level unlocks and Create‑a‑Class progress."
+    ],
+    [
+     "YOU GET",
+     "+20% XP, 1 Permanent Unlock Token, bonus rewards."
+    ]
+   ]
+  },
+  {
+   "sec": "PATH 2",
+   "title": "REGULAR PRESTIGE",
+   "shot": "gfx_sentry.jpg",
+   "tag": "KEEP ALL",
+   "tag_cls": "tech",
+   "rules": [
+    [
+     "RESETS",
+     "Only your level: back to Level 1."
+    ],
+    [
+     "YOU KEEP",
+     "All your unlocked content. No token, no Classic bonus rewards."
+    ]
+   ]
+  },
+  {
+   "sec": "CLASSIC ONLY",
+   "title": "UNLOCK TOKEN",
+   "shot": "gfx_backstab.jpg",
+   "tag": "KEEP 1 ITEM",
+   "tag_cls": "tech",
+   "rules": [
+    [
+     "WHAT",
+     "The item you pick stays unlocked at every level and Prestige."
+    ],
+    [
+     "HOW",
+     "Career › Progression › Multiplayer Level Unlocks › Spend Token."
+    ]
+   ]
+  },
+  {
+   "sec": "10 PRESTIGES",
+   "title": "REWARDS",
+   "shot": "gfx_lithium.jpg",
+   "tag": "55 LEVELS EACH",
+   "tag_cls": "tech",
+   "rules": [
+    [
+     "EACH PRESTIGE",
+     "A new reward every 10 levels."
+    ],
+    [
+     "PRESTIGE 1",
+     "Instant Sandstorm Operator skin."
+    ]
+   ]
+  },
+  {
+   "sec": "AFTER PRESTIGE 10",
+   "title": "PRESTIGE MASTER",
+   "shot": "gfx_nyc.jpg",
+   "tag": "UP TO 1,000",
+   "tag_cls": "tech",
+   "rules": [
+    [
+     "INSTANT",
+     "Paragon skin for Park and an orange Level Color."
+    ],
+    [
+     "REWARDS",
+     "Every 5–10 levels up to 99, then every 25 levels."
+    ]
+   ]
+  },
+  {
+   "sec": "LEVEL 1,000",
+   "title": "PRESTIGE LEGEND",
+   "shot": "gfx_shoothouse.jpg",
+   "tag": "FINAL GOAL",
+   "tag_cls": "tech",
+   "rules": [
+    [
+     "SKIN",
+     "Ju Kwon Operator skin."
+    ],
+    [
+     "CAMO",
+     "Prestige Master weapon camo and 6 more rewards."
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "CLASSIC OR",
+  "gold": "REGULAR?",
+  "sub": "COMMENT YOUR PICK",
+  "save_kicker": "YOUR MW4 PRESTIGE CHEAT SHEET",
+  "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS",
+  "cutout": {
+   "img": "cut_soldier_fb.png",
+   "right": 40,
+   "top": 1050,
+   "w": 640,
+   "fade": 62,
+   "bright": 1.25,
+   "rim": 1,
+   "hide_br": 1
+  }
+ },
+ "source": "Tier 1: callofduty.com 'Ready for Launch: Modern Warfare 4 Progression and Prestige' (19.10.2026): 10 Prestige levels + 1,000 Prestige Master levels, Classic + Regular paths, Prestige Master rewards every 5-10 levels to 99 then every 25 to 1,000 (Prestige Legend), Paragon skin for Park + Orange Level Color instant; Activision Support 'Prestige in Modern Warfare 4' (10.11.2026): enter Prestige via the final tile after Level 55, Career menu, Permanent Unlock Tokens not with Regular Prestige, spend via Career > Progression > Multiplayer Level Unlocks > Spend Permanent Unlock Token, 55 levels per Prestige with a reward every 10 levels, Prestige Legend = 8 rewards incl. Ju Kwon Operator Skin + Prestige Master Weapon Camo; official @CallofDuty post 19.10.2026 (Classic: resets Level Unlocks + Create-a-Class progress for 20% XP boost, Permanent Unlock Token, bonus cosmetic rewards; Regular: restart at Level 1 keeping unlocked content). Tier 2: IGN, conquestcapped (Prestige 1 instant Sandstorm skin), esports.gg, overgear (Prime variants on Classic).",
+ "notes": "Wed 02.12. 10:00 search post (user 28.11.: 'Plane danach die restlichen Posts bis Donnerstag'). Player Prestige never had its own post (only one line in the 08.11. Warzone x MW4 news, weapon prestige camos in the 12.11. camo post -> weapon prestige deliberately left out). Images: official MW4 map screenshots without logos as backgrounds only (no claim that they show rewards). Topic check: the camo post only covers WEAPON prestige camos (Pyroclast, Weapon Prestige Master) -> keys kept to the player-prestige terms. Cover = HUD-rows cover with the official M4 render (Prestige 8 reward = M4 '141' blueprint); every photo was already used as a cover before (dupcheck). Official blog: the Classic/Regular choice comes again at every new Prestige level. | Verifier 28.11.: FAIL (CTA cut-out chest cut) -> fixed: cut-out now bleeds off the bottom edge (MAR-9 settings), Create-a-Class kept on one line, '6 more rewards' kept together, 'bonus rewards' instead of 'Prime rewards' (P2/P4 Classic names have no 'Prime'), row label EACH PRESTIGE. | Scheduled Wed 02.12. 10:00 Berlin (Metricool, 28.11.), QA 0/0, verifier PASS after fixes (re-check 28.11.), byte check OK, playhq/tmp cleaned.",
+ "caption": "MW4 prestige explained 🔥 How Prestige works in Modern Warfare 4: hit Level 55, then pick Classic Prestige (resets unlocks + Create-a-Class for +20% XP, a Permanent Unlock Token and bonus rewards) or Regular Prestige (back to Level 1, keep everything). After all 10 Prestige levels comes Prestige Master up to Level 1,000 with the Paragon and Ju Kwon skins. Classic or Regular? Comment below 👇 Save this & send it to your squad!\n#mw4 #mw4prestige #modernwarfare4 #callofduty #mw4tips",
+ "first_comment": "Classic or Regular Prestige: which one did you pick? 👇",
+ "tiktok_title": "MW4 prestige explained: Classic vs Regular",
+ "verified": "independent verifier 28.11.2026: PASS after fixes"
+}

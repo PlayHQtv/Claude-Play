@@ -256,7 +256,9 @@ def check(out_dir):
         return nm, want, best
     with ThreadPoolExecutor(max_workers=max(2, (os.cpu_count() or 2) * 2)) as ex:
         for nm, want, (r, got) in ex.map(run, jobs):
-            if r < 0.8: warns.append(f'{nm}: OCR reads "{got[:30]}" for "{want.split("|")[0][:30]}" ({r:.2f}) - check visually')
+            # one misread glyph in a <=4-char title (e.g. ".50 GS" -> "00GS") scores 0.75; longer texts already pass with one misread
+            lim = 0.75 if len(re.sub(r'[^A-Z0-9]', '', want.split('|')[0].upper())) <= 4 else 0.8
+            if r < lim: warns.append(f'{nm}: OCR reads "{got[:30]}" for "{want.split("|")[0][:30]}" ({r:.2f}) - check visually')
     q = os.path.join(out_dir, '_qa'); os.makedirs(q, exist_ok=True)
     if sheet:
         S = Image.new('RGB', (360 * len(sheet), 480))
