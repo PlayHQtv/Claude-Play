@@ -161,7 +161,7 @@
   }
  ],
  "source": "codmunity.gg/weapon/mw4/mar-9 (MW4 tier list B, MP builds 10/11 + 13/11, Warzone 17/11, fetched 28.11.2026); warzoneloadout.games/mw4/mar-9; official MW4 S1 patch notes Nov 13 MP: max damage range 19.81 -> 21.34 m, mid range 1 28.7 -> 30.23 m, flinch received -20.7 %; MAR-9 Auto (Mar-9E1) max damage range 25.15 -> 27.94 m + flinch -20.7 %; no DMZ/Warzone tuning; Apex name 'MAR-9 Auto' as in the Gunsmith/codmunity (official balance table calls it Mar-9E1)",
- "notes": "Sun 29.11. 18:00 build post (GTA cheat codes = user-approved 10:00 post that day). MAR-9 never had a build on any slide (only listed in the Nov 13 buffs news post + Apex catalogue). Codmunity MW4 tier B (best of the remaining unposted guns), not top meta -> no meta claim.",
+ "notes": "Sun 29.11. 18:00 build post (GTA cheat codes = user-approved 10:00 post that day). MAR-9 never had a build on any slide (only listed in the Nov 13 buffs news post + Apex catalogue). Codmunity MW4 tier B (best of the remaining unposted guns), not top meta -> no meta claim. | Scheduled Sun 29.11. 18:00 Berlin (Metricool, 28.11.), QA 0/0, verifier PASS, byte check OK, playhq/tmp cleaned.",
  "wallpaper": {
   "img": "wp_bp_s1_city.jpg",
   "bright": 0.6,
@@ -169,5 +169,9 @@
   "top": 30,
   "bottom": 55,
   "edge": 0.03
- }
+ },
+ "caption": "Best MAR-9 build MW4 🔥 3 MAR-9 loadouts for Modern Warfare 4 multiplayer + Warzone after the Nov 13 multiplayer buff (more damage range, 20.7% less flinch): a close range build with the Bruen Ironhide 76 barrel (code M02-3M5Z7-FMQ11), a versatile build with the Bruen Reaper-X and a Warzone long range build with the Locus PX3 Canted, all on the MAR-9 Auto Apex. Which MAR-9 class do you run? Comment 1, 2 or 3 👇 Save this for your next match & send it to your squad!\n#mw4 #mar9 #mw4loadout #modernwarfare4 #warzoneloadout",
+ "first_comment": "Which MAR-9 build are you running: 1, 2 or 3? 👇",
+ "tiktok_title": "Best MAR-9 build MW4: 3 loadouts + codes",
+ "verified": "independent verifier 28.11.2026: PASS (codmunity re-fetched, Apex name MAR-9 Auto confirmed, Nov 13 MP buff confirmed, no later change)"
 }

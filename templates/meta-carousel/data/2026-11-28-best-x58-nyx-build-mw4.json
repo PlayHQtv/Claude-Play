@@ -159,7 +159,7 @@
   }
  ],
  "source": "codmunity.gg/weapon/mw4/x-58-nyx (MP builds 06-07/11, Warzone 10/11, fetched 28.11.2026); warzoneloadout.games/mw4/x-58-nyx; Dexerto Warzone build; official MW4 S1 patch notes: MP Nov 13 max damage range 10.8 -> 11.94 m + mid range 1 19.94 -> 21.59 m, MP Nov 19 max damage range 11.94 -> 12.45 m; DMZ Nov 23 damage nerf (not in this post); no Warzone tuning (WZ notes to Nov 19)",
- "notes": "Sat 28.11. 10:00 build post (rescue mode >=1 build/day; slot test 10:00). Replaces the parked KG-7 slot. Dup/overlap: Warzone loadout part 2 (17.11., 721 views) had the Nyx Warzone close-range build as 1 of 4 guns -> that build is NOT reused here (overlap_ok). Not top meta (codmunity C tier, pick 2.5-2.6 %) - no meta/S-tier claim on slides.",
+ "notes": "Sat 28.11. 10:00 build post (rescue mode >=1 build/day; slot test 10:00). Replaces the parked KG-7 slot. Dup/overlap: Warzone loadout part 2 (17.11., 721 views) had the Nyx Warzone close-range build as 1 of 4 guns -> that build is NOT reused here (overlap_ok). Not top meta (codmunity C tier, pick 2.5-2.6 %) - no meta/S-tier claim on slides. | Scheduled Sat 28.11. 10:00 Berlin (Metricool, 28.11.), QA 0/0, verifier PASS, byte check OK, playhq/tmp cleaned.",
  "wallpaper": {
   "img": "wp_bp_s1_city.jpg",
   "bright": 0.6,

@@ -9,7 +9,7 @@
   "kill block callouts",
   "field upgrades recharge"
  ],
- "notes": "Sat 28.11. 18:00 search post (CSI 24.11. 'Mw4 tips and tricks' 286K, +1000 %, never posted). Excluded overlap topics: perks, weapon XP, movement, aim assist, settings, killstreaks, hitscan (12.11. patch post). Sources Tier 1: callofduty.com MW4 multiplayer page (no bloom, 23.10.2026), MW4 Open Beta blog 21.08.2026 (smoke disrupted by gunfire/explosives, Trip Wire network, Field Upgrades recharge, Trophy System 3 projectiles, Kill Block 2-round rotation/equipment delay/Overtime Flag), official guide 'MW4 Beta Maps & Modes' 27.08.2026 (Lithium garage door button + slide under), MW4 S1 patch notes Nov 16 (Drill Charge impact damage at range -75 %). Tier 2: GameSpot MW4 multiplayer tips 16.10.2026 (no bloom, Kill Block wall grid), games.gg Kill Block guide 26.10. Images: only official screenshots WITHOUT baked-in logos (mv_* and gfx_x01 carry MW4/DMZ logos -> not used). Cover gfx_shoothouse.jpg was never a cover before (only an inner slide of the 12.11. graphics post); dupcheck flags any earlier use.",
+ "notes": "Sat 28.11. 18:00 search post (CSI 24.11. 'Mw4 tips and tricks' 286K, +1000 %, never posted). Excluded overlap topics: perks, weapon XP, movement, aim assist, settings, killstreaks, hitscan (12.11. patch post). Sources Tier 1: callofduty.com MW4 multiplayer page (no bloom, 23.10.2026), MW4 Open Beta blog 21.08.2026 (smoke disrupted by gunfire/explosives, Trip Wire network, Field Upgrades recharge, Trophy System 3 projectiles, Kill Block 2-round rotation/equipment delay/Overtime Flag), official guide 'MW4 Beta Maps & Modes' 27.08.2026 (Lithium garage door button + slide under), MW4 S1 patch notes Nov 16 (Drill Charge impact damage at range -75 %). Tier 2: GameSpot MW4 multiplayer tips 16.10.2026 (no bloom, Kill Block wall grid), games.gg Kill Block guide 26.10. Images: only official screenshots WITHOUT baked-in logos (mv_* and gfx_x01 carry MW4/DMZ logos -> not used). Cover gfx_shoothouse.jpg was never a cover before (only an inner slide of the 12.11. graphics post); dupcheck flags any earlier use. | Scheduled Sat 28.11. 18:00 Berlin (Metricool, 28.11.), QA 0/0, verifier PASS, byte check OK, playhq/tmp cleaned.",
  "wallpaper": {
   "img": "wp_bp_s1_city.jpg",
   "bright": 0.6,
@@ -152,5 +152,8 @@
    "rim": 1
   }
  },
- "verified": "independent verifier 28.11.2026: core claims PASS; fixes applied (hipfire wording 'weapon points', Drill Charge labelled Lethal, Trophy 'airborne', Lithium 'partly close', Kill Block 2-round rotation + Overtime Flag scoped to Gunfight, Kill Block slide without a non-Kill-Block image)"
+ "verified": "independent verifier 28.11.2026: core claims PASS; fixes applied (hipfire wording 'weapon points', Drill Charge labelled Lethal, Trophy 'airborne', Lithium 'partly close', Kill Block 2-round rotation + Overtime Flag scoped to Gunfight, Kill Block slide without a non-Kill-Block image)",
+ "caption": "MW4 tips and tricks 🔥 6 Modern Warfare 4 tricks most players miss in multiplayer: hipfire with no bloom, shooting holes in Smoke Grenade cover, chaining Trip Wires into one trap, recharging Field Upgrades like the Trophy System, the Lithium garage door slide and Kill Block callouts in Gunfight. Which trick did you not know? Comment 1–6 👇 Save this for your next match & send it to your squad!\n#mw4 #mw4tips #mw4tipsandtricks #modernwarfare4 #mw4multiplayer",
+ "first_comment": "Which MW4 trick was new to you: 1–6? 👇",
+ "tiktok_title": "MW4 tips and tricks: 6 tricks most players miss"
 }

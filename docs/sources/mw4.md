@@ -34,6 +34,8 @@ Every run that finds a useful new source adds it under "Candidates" with date + 
 - 26.11.2026: wzstats.gg KG-7 page – Warzone build + stats (same build as codmunity/GameSpot) – cross-check source for Warzone builds
 - 26.11.2026: allthings.how + Playhub + Beebom MW4 movement menus – exact movement menu groups/names (Intelligent Movement, Movement Behaviors, Movement Advanced Settings)
 - 26.11.2026: timesaver.gg MW4 patch-notes tracker – quick 'what changed today' summary of official notes (cross-check only)
+- 28.11.2026: Mobalytics MW4 tier list + mw4intel tier list + metaradar (cross-check of tier/meta status for Nyx, MAR-9, CSG-35, Warlord; all agreed with codmunity C/B tiers).
+- 28.11.2026: official callofduty.com Create-a-Class launch blog (19.10.2026) = Tier 1 reference for equipment/Field Upgrade facts (Trip Wire network, Trophy System 3 projectiles, recharge).
 
 ## Never
 - Leak/datamine accounts, reWASD/cheat sites, re-upload channels, AI-generated "news" sites, sources with watermarks we would show.
@@ -42,3 +44,4 @@ Every run that finds a useful new source adds it under "Candidates" with date + 
 - 24.11.2026: file created from the sources used 02.–24.11.
 - 25.11.2026: candidates added (GameSpot settings, AllThingsHow, mw4.gg, Game8/Dot Esports builds). Rejected as source: aim-assist 'plus' tool / boosting vendor sites.
 - 26.11.2026: candidates added (wzstats KG-7, allthings.how/Playhub/Beebom movement menus, timesaver patch tracker). Note: Dexerto movement settings disagree with the majority (Sprint Assist On, Grounded Mantle On).
+- 28.11.2026: candidates added (Mobalytics/mw4intel/metaradar tier lists; CaC launch blog as Tier 1 equipment reference).

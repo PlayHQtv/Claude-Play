@@ -30,3 +30,10 @@
 - Found: the 4 CoD posts for 27.–28.11. (Type 73 build, MW4 aim assist, KG-7 Vulcan build, movement settings) were changed on 26.11. ~11:00 to Metricool DRAFTS dated 28./29.12. (same "parking" pattern as the paused GTA posts). No note in the repo or reach log explains it → treated as a deliberate pause; the autopilot did NOT re-schedule or fill slots and asked the user.
 - Numbers (no alarm): SEO v2 posts Oden 561 (age 1, 68 % search), Mosin 495 (age 1), Patriot 460 (age 2) vs pre-v2 Rezi 320 / LMG 443 at similar age. No post near 0 views, statuses all PUBLISHED.
 - Rule: any run that parks/pauses posts must log the reason in docs/reach-log.md so the next run knows whether to fill the slots.
+
+## 2026-11-28 – autopilot run (no alarm)
+- Found: only the user-approved GTA cheat codes post (29.11. 10:00) was scheduled -> 5 empty CoD slots (28.11. 10:00 + 18:00, 29.11. 18:00, 30.11. 10:00 + 18:00). The 4 parked drafts (Type 73, aim assist, KG-7, movement settings) stay parked (overlap rule).
+- Numbers (Metricool, age ~1 day): perks 686 (best age-1 value of the week, 42 % search), weapon XP 303 at ~0.6 days (25 % search, 67 % of the age-1 median ~450 -> no alarm). Build posts keep the highest search share (Oden 73 %, Mosin 61 %, Cronen Squall 65 %); explainer posts get more For You (weapon XP 75 %, perks 57 %).
+- Topic choice: all high-search meta guns are already posted -> remaining unposted guns ranked by meta data (codmunity pick rate/tier): CSG-35 (#12, free S1 SMG), X-58 Nyx, MAR-9 (B tier). Warlord skipped (weakest, stale codmunity page). Non-build slots: CSI 'Mw4 tips and tricks' 286K (+1000 %) and 'rewasd mw4' 30.1K (+1000 %).
+- Process rule (new): hero/cover images must not carry baked-in logos -> mv_* screenshots and gfx_x01 (MW4/DMZ logo in the corner) are excluded; clean official screenshots: gfx_backstab/canyon/lithium/mumbai/nyc/reactor/sentry/shoothouse.
+- Process note: qa.py re-opens _build/*.html, so a QA re-run after another prep.sh render checks the wrong slides -> always re-run the full prep.sh for that post.

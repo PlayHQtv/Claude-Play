@@ -1,0 +1,119 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "FACT CHECK",
+ "topic_keys": [
+  "rewasd",
+  "input mapping",
+  "cronus zen",
+  "xim"
+ ],
+ "notes": "Mon 30.11. 18:00 search post (CSI 24.11. 'rewasd mw4' 30.1K, +1000 %, NEW; glitches/tools allowed by user 24.11. with neutral official-risk framing; no links, no how-to, no ad). Sources: Activision Security and Enforcement Policy (support.activision.com/mwPolicy: unauthorized software incl. input mapping software, unsupported peripherals incl. unapproved input modification devices, detection may close the application); @CODUpdates 16.01.2024 (M+K aim-assist tools close the game, repeat use -> account action; PC Gamer 2024); @CallofDuty on X 25.09.2026 (~5,000 accounts banned for input-modifying devices, Cronus Zen / XIM Matrix, judged by what they do); no MW4-specific reWASD statement found (28.11.2026). | Scheduled Mon 30.11. 18:00 Berlin (Metricool, 28.11.), QA 0/0, verifier PASS, byte check OK, playhq/tmp cleaned.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "cover": {
+  "kicker": "WHAT ACTIVISION'S RULES SAY",
+  "big": "IS REWASD",
+  "small": "BANNED IN MW4?",
+  "sub": "POLICY · BANS · RISK",
+  "img": "gfx_canyon.jpg",
+  "chips": [
+   "POLICY",
+   "BANS 2026",
+   "RICOCHET",
+   "MW4"
+  ],
+  "swipe": "SWIPE FOR THE FACTS ›"
+ },
+ "slides": [
+  {
+   "sec": "FACT 1",
+   "title": "THE POLICY",
+   "rules": [
+    [
+     "SOFTWARE",
+     "Activision's Security and Enforcement Policy bans input mapping software."
+    ],
+    [
+     "DEVICES",
+     "Unapproved input modification devices are banned too."
+    ]
+   ],
+   "hero": "gfx_reactor.jpg",
+   "hero_max": 300
+  },
+  {
+   "sec": "FACT 2",
+   "title": "WHAT CAN HAPPEN",
+   "rules": [
+    [
+     "GAME CLOSES",
+     "Per the policy, detection may close the game automatically."
+    ],
+    [
+     "2024 PRECEDENT",
+     "CoD said M+K aim assist tools close the game. Repeat use risks your account."
+    ]
+   ],
+   "hero": "gfx_sentry.jpg",
+   "hero_max": 300
+  },
+  {
+   "sec": "FACT 3",
+   "title": "BANS IN 2026",
+   "rules": [
+    [
+     "SEP 2026",
+     "Call of Duty said about 5,000 accounts were banned for using input-modifying devices to cheat."
+    ],
+    [
+     "BY BEHAVIOR",
+     "Devices are judged by what they do in a match, not by their name."
+    ]
+   ],
+   "hero": "gfx_backstab.jpg",
+   "hero_max": 300
+  },
+  {
+   "sec": "FACT 4",
+   "title": "MW4 RIGHT NOW",
+   "rules": [
+    [
+     "NO NEW STATEMENT",
+     "No reWASD-specific statement for MW4 yet (Nov 28)."
+    ],
+    [
+     "SAME RULES",
+     "The policy above covers MW4. Your call, your account risk."
+    ]
+   ],
+   "hero": "gfx_nyc.jpg",
+   "hero_max": 300
+  }
+ ],
+ "cta": {
+  "white": "WOULD YOU",
+  "gold": "RISK IT?",
+  "sub": "YES OR NO IN THE COMMENTS",
+  "save_kicker": "MW4 ANTI-CHEAT FACTS",
+  "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS",
+  "cutout": {
+   "img": "cut_sniper_fb.png",
+   "right": -70,
+   "top": 1050,
+   "w": 760,
+   "fade": 100,
+   "bright": 1.25,
+   "rim": 1
+  }
+ },
+ "verified": "independent verifier 28.11.2026: PASS (Activision mwPolicy wording, @CODUpdates 16.01.2024, @CallofDuty 25.09.2026 5,000 bans, no MW4 reWASD statement; TikTok CG risk low: no how-to/links/promotion); 5,000-ban wording aligned to the source",
+ "caption": "Is reWASD banned in MW4? 🎮 What Activision's Security and Enforcement Policy says about input mapping software like reWASD in Modern Warfare 4: input mapping tools and unapproved input modification devices are banned, detection can close the game, and in September 2026 Call of Duty said about 5,000 accounts had been banned for cheating with input-modifying devices. No reWASD-specific MW4 statement yet. Would you risk it? Comment yes or no 👇 Save this for later!\n#mw4 #rewasd #modernwarfare4 #mw4pc #mw4multiplayer",
+ "first_comment": "Is reWASD worth the ban risk in MW4? 👇",
+ "tiktok_title": "Is reWASD banned in MW4?"
+}

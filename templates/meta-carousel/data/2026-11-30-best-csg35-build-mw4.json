@@ -1,0 +1,175 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MULTIPLAYER",
+ "rank_label": "BUILD",
+ "topic_keys": [
+  "csg-35",
+  "csg35",
+  "csg 35 build",
+  "csg crossfire"
+ ],
+ "cover": {
+  "kicker": "FREE SEASON 1 SMG · BUFFED IN MP",
+  "big": "BEST CSG-35",
+  "small": "BUILD MW4",
+  "sub": "MP + WARZONE LOADOUTS + CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_CSG35.png"
+ },
+ "cta": {
+  "white": "WHICH BUILD",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_snowsniper_fb.png",
+   "right": -540,
+   "top": 1100,
+   "w": 1020,
+   "fade": 90,
+   "bright": 1.2,
+   "rim": 1,
+   "hide_br": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "badge": "MULTIPLAYER",
+   "image": "mw4/w_CSG35.png",
+   "short": "CLOSE RANGE",
+   "title_white": "CSG-35",
+   "title_gold": "",
+   "class": "SMG",
+   "class_note": "Close range Apex build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 42",
+   "brightness": 1.35,
+   "build_code": "S01-3K9Y5-K6HJZ-P111",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "EXP FORAGE-HVY"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "XRK SLIGHT STOCK"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "MATUZEK FIRE-PRO"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "9MM PARABELLUM OVERPRESSURED"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "40 ROUND MAG"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/csg-35 MP #1 Close Range (Apex CSG Crossfire, lvl 42), code S01-3K9Y5-K6HJZ-P111 (fetched 28.11.2026); warzoneloadout Close Range same names",
+   "apex": "CSG CROSSFIRE"
+  },
+  {
+   "rank": 2,
+   "badge": "MULTIPLAYER",
+   "image": "mw4/w_CSG35.png",
+   "short": "VERSATILE",
+   "title_white": "CSG-35",
+   "title_gold": "",
+   "class": "SMG",
+   "class_note": "Versatile build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 41",
+   "brightness": 1.35,
+   "build_code": "S01-3K9Y5-NZF8J-NL11",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "EXP FORAGE-TAC"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "RASH-90 HEAVY STOCK"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "9MM PARABELLUM OVERPRESSURED"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "40 ROUND MAG"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "CQC STOP"
+    }
+   ],
+   "sources": "codmunity MP #2 Versatile (no Apex), code S01-3K9Y5-NZF8J-NL11, weapon level 41"
+  },
+  {
+   "rank": 3,
+   "badge": "WARZONE",
+   "image": "mw4/w_CSG35.png",
+   "short": "WARZONE",
+   "title_white": "CSG-35",
+   "title_gold": "",
+   "class": "SMG",
+   "class_note": "Warzone close range build",
+   "tagline": "WARZONE · WEAPON LEVEL 39",
+   "brightness": 1.35,
+   "build_code": "S01-32TJW-V12UW-B511",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "RTR-8 PRO"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "40 ROUND MAG"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "MATUZEK FIRE-PRO"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "XRK SLIGHT STOCK"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "9MM PARABELLUM HIGH VELOCITY"
+    }
+   ],
+   "sources": "codmunity Warzone #1 Close Range (Contenders), code S01-32TJW-V12UW-B511, weapon level 39"
+  }
+ ],
+ "source": "codmunity.gg/weapon/mw4/csg-35 (MW4 pick rank #12, 3.1 %; Warzone 'Contenders'; fetched 28.11.2026); warzoneloadout.games/mw4/csg-35; Dot Esports MP/WZ guides; official MW4 S1 patch notes: MP Nov 13 mid damage range 1 19.18 -> 19.81 m, mid damage 2 tier removed, min damage 13 -> 14; MP Nov 19 max damage range 10.41 -> 11.18 m, mid range 1 19.81 -> 22.61 m; DMZ Nov 23 nerf (not in this post); no Warzone tuning; CSG-35 = free Season 1 Battle Pass SMG (Season 1 blog)",
+ "notes": "Mon 30.11. 10:00 build post (slot test 10:00). CSG-35 never had a build on any slide (only listed in S1 news / free rewards / buffs posts). Render: Call of Duty Wiki 'CSG-35 Gunsmith MW4.png' via fetch-media, ISNet cut-out weapons/mw4/w_CSG35.png. Not top meta (codmunity C tier) -> no meta claim. | Scheduled Mon 30.11. 10:00 Berlin (Metricool, 28.11.), QA 0/0, verifier PASS, byte check OK, playhq/tmp cleaned.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "caption": "Best CSG-35 build MW4 🔥 3 CSG-35 loadouts for Modern Warfare 4 multiplayer + Warzone, the free Season 1 SMG buffed twice in multiplayer (Nov 13 + Nov 19): a close range build with the CSG Crossfire Apex (code S01-3K9Y5-K6HJZ-P111), a versatile build with the EXP Forage-Tac and CQC Stop and a Warzone close range build with the RTR-8 Pro. Which CSG-35 class do you run? Comment 1, 2 or 3 👇 Save this for your next match & send it to your squad!\n#mw4 #csg35 #mw4loadout #modernwarfare4 #warzoneloadout",
+ "first_comment": "Which CSG-35 build are you running: 1, 2 or 3? 👇",
+ "tiktok_title": "Best CSG-35 build MW4: 3 loadouts + codes",
+ "verified": "independent verifier 28.11.2026: PASS (codmunity re-fetched, spellings XRK Slight Stock / RTR-8 Pro confirmed, free BP tier 36, Nov 13 + 19 MP buffs); fix: butt-pad alpha in w_CSG35.png made opaque, re-rendered"
+}
