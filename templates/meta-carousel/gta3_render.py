@@ -55,6 +55,16 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 .facts strong{display:block;font-family:BS;font-weight:900;font-size:66px;line-height:1;margin-top:8px;color:#fff}
 .facts p{font-family:IT;font-weight:600;font-size:27px;line-height:1.3;color:rgba(255,240,248,.85);margin-top:8px}
 .facts.f3{gap:30px;width:940px}.facts.f3 small{font-size:18px;letter-spacing:3px}.facts.f3 strong{font-size:56px}.facts.f3 p{font-size:23px}
+.crow{position:absolute;left:52px;width:878px;height:96px;display:flex;align-items:center;gap:16px;padding:0 18px 0 24px;border-radius:22px;
+ background:linear-gradient(180deg,rgba(28,10,40,.66),rgba(12,5,22,.82));border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.crow:before{content:'';position:absolute;left:0;top:18px;bottom:18px;width:4px;border-radius:3px;background:linear-gradient(180deg,#ffb15c,#ff4f8b)}
+.crow .cn{flex:1;min-width:0}
+.crow .cn b{display:block;font-family:IT;font-weight:800;font-size:31px;line-height:1.05;color:#fff;white-space:nowrap}
+.crow .cn small{display:block;font-family:IT;font-weight:600;font-size:20px;line-height:1.2;color:rgba(255,226,240,.72);margin-top:5px;white-space:nowrap}
+.crow b.code{flex:none;margin:0;gap:5px}
+.crow b.code i.ak{width:36px;height:36px;border-radius:9px}
+.crow b.code svg{width:23px;height:23px}
+.ctag{position:absolute;left:62px;font-family:IT;font-weight:800;font-size:21px;letter-spacing:4px;color:rgba(255,255,255,.75)}
 b.code{display:flex;gap:8px;align-items:center;margin:6px 0 12px}
 b.code i.ak{display:inline-flex;width:52px;height:52px;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(160deg,rgba(255,177,92,.22),rgba(255,79,139,.16));border:1.5px solid rgba(255,177,92,.65);box-shadow:0 0 14px rgba(255,79,139,.25)}
 .tcard{position:absolute;left:52px;width:360px;padding:22px 26px 14px;border-radius:28px;background:linear-gradient(180deg,rgba(28,10,40,.62),rgba(12,5,22,.8));
@@ -195,6 +205,8 @@ def tip(s, d, i, total):
     from PIL import Image
     if s.get('char'):
         return char(s, d, i, total)
+    if s.get('codes'):
+        return codes(s, d, i, total)
     iw, ih = Image.open(os.path.join(R.HERE, '_build', 'gta', s['shot'])).size
     h = round(1080 * ih / iw)
     top = 230
@@ -215,6 +227,16 @@ def tip(s, d, i, total):
             + (f'<div class="body" style="top:{y + 345}px">{s["body"]}</div>' if s.get('body') else '')
             + facts)
     return base(body, d, amb=s['shot'].replace('.jpg', '_amb.jpg'), idx=i - 1, total=total)
+
+
+def codes(s, d, i, total):
+    """Cheat table slide (user 28.11.2026: "mit mehr cheats"): up to 7 rows = name + unlock + equal arrow tiles."""
+    rows = ''.join(f'<div class="crow" style="top:{430 + k * 106}px"><div class="cn"><b>{E(n)}</b><small>{E(u)}</small></div>'
+                   f'<b class="code">{c}</b></div>' for k, (n, c, u) in enumerate(s['codes']))
+    body = (f'<div class="k" style="top:236px">{E(s["kicker"])}</div>'
+            + f'<div class="h fit" style="top:272px" data-size="118" data-max="960">{s["title"]}</div>'
+            + rows)
+    return base(body, d, amb=s.get('amb'), idx=i - 1, total=total)
 
 
 def char(s, d, i, total):

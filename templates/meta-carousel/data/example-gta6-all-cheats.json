@@ -1,0 +1,456 @@
+{
+ "hdr": "ALL CHEATS",
+ "series_no": 4,
+ "source": "Source: GameSpot (tested), Tracker.gg",
+ "notes": "EXAMPLE 28.11.2026 (user: \"Ja und mit mehr cheats\"). All 61 codes identical in GameSpot (tested on a save, updated 27.11.), Tracker.gg (26.11.) and Game-Checklists (24.11.), checked by script; Attack Force: GameSpot misses one input (8), the 9-input code is printed by Tracker, Game-Checklists, Gamex, Vice, GameLeap, GTADB. Unlocks: majority wording; Cycle Weather + Attack Force = finish the story (GameSpot, Tracker, gamex).",
+ "cover": {
+  "amb": "g_pg02_amb.jpg",
+  "kicker": "GTA 6 TIP #4 · EVERY CODE",
+  "big": "ALL 61 <em>CHEAT</em><br>CODES",
+  "size": 168,
+  "neon": "+ how to unlock",
+  "neon_top": 655,
+  "panels": [],
+  "sun_top": 520,
+  "swipe": "SWIPE FOR ALL 61 <b>›</b>",
+  "bgshot": "g_pg02.jpg",
+  "cutout": {
+   "img": "cut_boat.png",
+   "right": -30,
+   "top": 850,
+   "h": 520
+  },
+  "times_title": "ALL 5 TYPES",
+  "times_top": 790,
+  "times": [
+   [
+    "PLAYER",
+    "10"
+   ],
+   [
+    "COMBAT",
+    "11"
+   ],
+   [
+    "VEHICLE SPAWNS",
+    "21"
+   ],
+   [
+    "TIME + WEATHER",
+    "3"
+   ],
+   [
+    "SCREEN FILTERS",
+    "16"
+   ]
+  ],
+  "times_note": "PS5 + Xbox Series X|S · D-pad only"
+ },
+ "cta": {
+  "amb": "g_vc22_amb.jpg",
+  "title": "WHICH CHEAT<br><em>DO YOU USE?</em>",
+  "neon": "comment your favorite",
+  "cutout": {
+   "img": "cut_boss.png",
+   "right": 10,
+   "top": 760,
+   "h": 660
+  }
+ },
+ "topic_keys": [
+  "gta 6 all cheat codes",
+  "gta 6 cheats list",
+  "all 61 cheats gta 6"
+ ],
+ "tips": [
+  {
+   "shot": "g_vc24.jpg",
+   "kicker": "HOW TO ENTER · UNLOCK AFTER THE STORY",
+   "title": "OPEN <em>YOUR PHONE</em>",
+   "body": "Press <b>D-pad Up</b>, hold <b>L1/LB</b>, press <b>R1/RB</b>, then enter the code on the <span class=\"hl\">D-pad</span>. Saving and trophies are off for that session.",
+   "idx_right": true
+  },
+  {
+   "codes": [
+    [
+     "$250,000",
+     "↑ → ↓ ← ↑ ← ↓ →",
+     "Finish the story"
+    ],
+    [
+     "Drunk",
+     "↑ ← → ↑ ↑ ← → ↑ ← →",
+     "Spend $2,500 on alcohol"
+    ],
+    [
+     "Raise Heat Level",
+     "← ↓ → ↓ ↑ ↓ ↑",
+     "Lose a 3-star wanted level 25x"
+    ],
+    [
+     "Raise Wanted Level",
+     "← ↓ → ↓ ↑ → ↑",
+     "Lose a 3-star wanted level 50x"
+    ],
+    [
+     "Unlimited Focus",
+     "↓ ↑ ↑ ↓ ↑ ↓ ↑ ↓ ↑ →",
+     "Finish the story"
+    ]
+   ],
+   "kicker": "PLAYER · 10 CHEATS · PART 1/2",
+   "title": "PLAYER <em>CHEATS</em>",
+   "amb": "g_vc04_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "No Fall Damage",
+     "↓ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↓",
+     "Survive a 40 ft fall 20x"
+    ],
+    [
+     "Parachute",
+     "→ ↑ ← ↑ → ↑ ← ↑ →",
+     "50 skydives or BASE jumps (300 ft+)"
+    ],
+    [
+     "Body Armor",
+     "↓ ↑ ← ↑ ↑ ↑ ↑ ↑ ↓ ↓",
+     "Complete 100 workouts"
+    ],
+    [
+     "Repair Vehicle",
+     "→ ↓ ↓ → ↓ → → ↓",
+     "Win 10 races"
+    ],
+    [
+     "Unlimited Nitrous",
+     "→ ↓ ↓ → ↓ → → ←",
+     "Land 50 stunt jumps"
+    ]
+   ],
+   "kicker": "PLAYER · 10 CHEATS · PART 2/2",
+   "title": "PLAYER <em>CHEATS</em>",
+   "amb": "g_vc04_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "Max Ammo",
+     "↓ ↑ → ↓ ← ← ↑ ↑ ↓ ←",
+     "25 bronze+ range medals"
+    ],
+    [
+     "Infinite Ammo",
+     "↓ ↑ → ↓ ← ← ↑ ↓ ↓ ↓",
+     "25 silver+ range medals"
+    ],
+    [
+     "No Reload",
+     "↓ ↑ → ↓ ← ← ↑ ↓ ↓ ↑",
+     "25 gold range medals"
+    ],
+    [
+     "All Explosive Weapons",
+     "→ ↑ ← ↑ → ↑ ← ↑ ←",
+     "Throw 100 grenades"
+    ],
+    [
+     "Incendiary Ammo",
+     "↓ ↑ → ↓ ← ↓ ↑ → ↓ ↓",
+     "Burn 100 enemies"
+    ],
+    [
+     "Exploding Bottles",
+     "↓ ↑ ← ← → ↓ ↓ ↑ ←",
+     "Throw 100 molotovs"
+    ]
+   ],
+   "kicker": "COMBAT · 11 CHEATS · PART 1/2",
+   "title": "COMBAT <em>CHEATS</em>",
+   "amb": "g_jl15_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "Explosive Shotgun",
+     "↓ ↑ → ↓ ← ↓ ↑ → ↓ ←",
+     "Hit 100 enemies with explosives"
+    ],
+    [
+     "Hauners H-AT",
+     "→ ↑ ← ↑ → ↑ ← ↑ ↑",
+     "Blow up 100 vehicles"
+    ],
+    [
+     "Attack Force",
+     "↓ ↑ ← ← → ↓ ↓ ↑ ↓",
+     "Finish the story"
+    ],
+    [
+     "Exploding Balls",
+     "↓ ↑ ← ← → ↓ ↓ ↑ →",
+     "Hit 20 enemies with explosives"
+    ],
+    [
+     "Vehicle Force",
+     "↓ ↑ ← ← → ↓ ← ↑ ↓",
+     "Kill 25 enemies with a vehicle"
+    ]
+   ],
+   "kicker": "COMBAT · 11 CHEATS · PART 2/2",
+   "title": "COMBAT <em>CHEATS</em>",
+   "amb": "g_jl15_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "Interstate Ambulance",
+     "← ↑ → ↓ ← → → →",
+     "Discover it (Progress menu)"
+    ],
+    [
+     "Airboat 09",
+     "← ↑ → ↓ ← ↓ ↑ →",
+     "5 survival challenges"
+    ],
+    [
+     "Bravado Banshee",
+     "← ↑ → ↓ ← → ↑ ←",
+     "All combat challenges"
+    ],
+    [
+     "Nagasaki Carbon RS",
+     "← ↑ → ↓ ← ← ↑ ↑",
+     "All exploration challenges"
+    ],
+    [
+     "Maibatsu Boomazoom",
+     "← ↑ → ↓ ← ← ↑ ←",
+     "5 shopping challenges"
+    ],
+    [
+     "Tuff BMX",
+     "← ↑ → ↓ ← ← ↑ →",
+     "5 fitness challenges"
+    ],
+    [
+     "'65 Vapid Dominator",
+     "← ↑ → ↓ ← → ← →",
+     "All fitness challenges"
+    ]
+   ],
+   "kicker": "SPAWN A VEHICLE · 21 CHEATS · PART 1/3",
+   "title": "VEHICLE <em>CHEATS</em>",
+   "amb": "g_vc08_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "Progen Emerus",
+     "← ↑ → ↓ ← → ↑ →",
+     "All vehicle challenges"
+    ],
+    [
+     "Inflatable Flamingo",
+     "← ↑ → ↓ ← ↓ ↑ ↓",
+     "Destroy 50 cocaine flamingos"
+    ],
+    [
+     "Hauners P-996 Lazer",
+     "← ↑ → ↓ ← ↑ ↑ ↓",
+     "Complete ALL challenges"
+    ],
+    [
+     "Vapid Stanier G2 Taxi",
+     "← ↑ → ↓ ← → → ←",
+     "5 sports challenges"
+    ],
+    [
+     "MTL Pumper",
+     "← ↑ → ↓ ← → → ↑",
+     "Discover it (Progress menu)"
+    ],
+    [
+     "HVY Bulldozer",
+     "← ↑ → ↓ ← → → ↓",
+     "Discover it (Progress menu)"
+    ],
+    [
+     "Lapwing Mallard",
+     "← ↑ → ↓ ← ↑ ↑ ↑",
+     "5 vehicle challenges"
+    ]
+   ],
+   "kicker": "SPAWN A VEHICLE · 21 CHEATS · PART 2/3",
+   "title": "VEHICLE <em>CHEATS</em>",
+   "amb": "g_vc08_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "Brimstone Golfer",
+     "← ↑ → ↓ ← → ↑ ↓",
+     "All sports challenges"
+    ],
+    [
+     "Nagasaki Sea Sparrow",
+     "← ↑ → ↓ ← ↑ ↑ →",
+     "5 exploration challenges"
+    ],
+    [
+     "Maibatsu Sanchez",
+     "← ↑ → ↓ ← ← → ↑",
+     "5 criminal challenges"
+    ],
+    [
+     "Hauners Rhino Tank",
+     "← ↑ → ↓ ← → ← ↑",
+     "All survival challenges"
+    ],
+    [
+     "Speeder 700 GT",
+     "← ↑ → ↓ ← ↓ ↑ ↑",
+     "5 combat challenges"
+    ],
+    [
+     "Truffade Thrax",
+     "← ↑ → ↓ ← → ↑ ↑",
+     "All shopping challenges"
+    ],
+    [
+     "Western Zombie Bobber",
+     "← ↑ → ↓ ← ← ↑ ↓",
+     "All criminal challenges"
+    ]
+   ],
+   "kicker": "SPAWN A VEHICLE · 21 CHEATS · PART 3/3",
+   "title": "VEHICLE <em>CHEATS</em>",
+   "amb": "g_vc08_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "Move Time Forward",
+     "↓ → ↑ ↓ → ↑ ↑",
+     "Find 10 watches"
+    ],
+    [
+     "Pause Time of Day",
+     "↓ → ↑ ↓ → ↑ ←",
+     "Find 20 watches"
+    ],
+    [
+     "Cycle Weather",
+     "↓ → ↑ ↓ → ↑ →",
+     "Finish the story"
+    ]
+   ],
+   "kicker": "TIME + WEATHER · 3 CHEATS",
+   "title": "TIME + <em>WEATHER</em>",
+   "amb": "g_am02_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "Golden Hour",
+     "↓ ↓ ↑ → → ↑ ← ← ↑ ↑",
+     "Hold hands for 4 hours"
+    ],
+    [
+     "Powdered Sugar",
+     "↓ ↓ ↑ → → ↑ ← ← ↑ →",
+     "Scan all space debris (WAiNK)"
+    ],
+    [
+     "Pinhole",
+     "↓ ↓ ↑ → → ↑ ← ← ↑ ↓",
+     "25 gang operations with partner"
+    ],
+    [
+     "Neon Jungle",
+     "↓ ↓ ↑ → → ↑ ← ← ↑ ←",
+     "Find all 16 Girlypop vehicles"
+    ],
+    [
+     "Yesteryear",
+     "↓ ↓ ↑ → → ↑ ← ← → ↑",
+     "Discover the Ridgeway"
+    ],
+    [
+     "Cataclysm",
+     "↓ ↓ ↑ → → ↑ ← ← → →",
+     "Discover Martha's Vamos"
+    ]
+   ],
+   "kicker": "SCREEN FILTER · 16 CHEATS · PART 1/3",
+   "title": "SCREEN <em>CHEATS</em>",
+   "amb": "g_vc22_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "Videotape",
+     "↓ ↓ ↑ → → ↑ ← ← → ↓",
+     "50 activities with partner"
+    ],
+    [
+     "Dark Mirror",
+     "↓ ↓ ↑ → → ↑ ← ← → ←",
+     "Make $500,000 selling cars"
+    ],
+    [
+     "Migraine",
+     "↓ ↓ ↑ → → ↑ ← ← ↓ ↑",
+     "Survive 6 min at 6 stars"
+    ],
+    [
+     "Dollhouse",
+     "↓ ↓ ↑ → → ↑ ← ← ↓ →",
+     "8 hours with your partner"
+    ],
+    [
+     "Bubblegum",
+     "↓ ↓ ↑ → → ↑ ← ← ↓ ↓",
+     "All 24 Flamingos cards"
+    ]
+   ],
+   "kicker": "SCREEN FILTER · 16 CHEATS · PART 2/3",
+   "title": "SCREEN <em>CHEATS</em>",
+   "amb": "g_vc22_amb.jpg"
+  },
+  {
+   "codes": [
+    [
+     "Fast Forward",
+     "↓ ↓ ↑ → → ↑ ← ← ↓ ←",
+     "50 meditations"
+    ],
+    [
+     "Fisheye",
+     "↓ ↓ ↑ → → ↑ ← ← ← ↑",
+     "Catch 100 fish"
+    ],
+    [
+     "Faded Glory",
+     "↓ ↓ ↑ → → ↑ ← ← ← →",
+     "Rob 50 stores with partner"
+    ],
+    [
+     "Pixel Art",
+     "↓ ↓ ↑ → → ↑ ← ← ← ↓",
+     "Make $250,000 selling collectibles"
+    ],
+    [
+     "Hellscape",
+     "↓ ↓ ↑ → → ↑ ← ← ← ←",
+     "Steal 100 cop vehicles"
+    ]
+   ],
+   "kicker": "SCREEN FILTER · 16 CHEATS · PART 3/3",
+   "title": "SCREEN <em>CHEATS</em>",
+   "amb": "g_vc22_amb.jpg"
+  }
+ ]
+}
