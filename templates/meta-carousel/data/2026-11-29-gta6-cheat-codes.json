@@ -1,0 +1,112 @@
+{
+ "hdr": "CHEAT CODES",
+ "series_no": 4,
+ "source": "Source: Tracker.gg, GTA6Database, Vice, Pure Xbox",
+ "notes": "EXAMPLE 28.11.2026 (user: \"1,2 mache mir Beispiele\"). CSI gta6 code 528,841 +47.7% (28.11.). Post-launch sources: tracker.gg (26.11.), gta6database (21.11., 13 publishers), game-checklists (24.11.), Vice (19.11.), RPS (18.11.), Pure Xbox (19.11.), gamex (20.11.) all list identical D-pad codes for $250,000, Infinite Ammo, No Reload, Body Armor, Unlimited Focus. $250,000 unlock: \"finish the story\" (tracker, gta6database, game-checklists, RPS, gamex, gameboost, metaforge); Polygon/RadioTimes/Pure Xbox say \"make $250,000 from fenced goods\" -> slide only says the cheat list opens after the story. Patch 23.11. left cheats unchanged (gtamap). Challenges count before the story ends (RPS).",
+ "cover": {
+  "amb": "g_pg02_amb.jpg",
+  "kicker": "GTA 6 TIP #4 · ALL 61 EXPLAINED",
+  "big": "GTA 6 <em>CHEAT</em><br>CODES",
+  "size": 168,
+  "neon": "the best 5 codes",
+  "neon_top": 655,
+  "panels": [],
+  "sun_top": 520,
+  "swipe": "SWIPE FOR THE CODES <b>›</b>",
+  "bgshot": "g_pg02.jpg",
+  "cutout": {
+   "img": "cut_boat.png",
+   "right": -30,
+   "top": 850,
+   "h": 520
+  },
+  "times_title": "BEST CHEATS",
+  "times_top": 790,
+  "times": [
+   [
+    "$250,000 CASH",
+    "01"
+   ],
+   [
+    "INFINITE AMMO",
+    "02"
+   ],
+   [
+    "NO RELOAD",
+    "03"
+   ],
+   [
+    "BODY ARMOR",
+    "04"
+   ],
+   [
+    "UNLIMITED FOCUS",
+    "05"
+   ]
+  ],
+  "times_note": "PS5 + Xbox Series X|S · D-pad only"
+ },
+ "tips": [
+  {
+   "shot": "g_vc22.jpg",
+   "kicker": "HOW CHEATS WORK",
+   "title": "BEAT THE <em>STORY</em>",
+   "body": "All <b>61 cheats</b> open after the main story in <span class=\"hl\">Progress › Cheats</span>. Each one has its own challenge, and they <b>count before</b> the ending."
+  },
+  {
+   "shot": "g_vc24.jpg",
+   "kicker": "HOW TO ENTER",
+   "title": "OPEN <em>YOUR PHONE</em>",
+   "body": "Press <b>D-pad Up</b>, hold <b>L1/LB</b>, press <b>R1/RB</b>, then enter the code on the <span class=\"hl\">D-pad</span>. Saving and trophies are off for that session.",
+   "idx_right": true
+  },
+  {
+   "shot": "g_vc04.jpg",
+   "kicker": "UNLOCK: FINISH THE STORY",
+   "title": "<em>$250,000</em> CASH",
+   "body": "<b class=\"code\">↑  →  ↓  ←  ↑  ←  ↓  →</b><br>The only money cheat. <span class=\"hl\">Save first</span>, then cheat."
+  },
+  {
+   "shot": "g_jl15.jpg",
+   "kicker": "UNLOCK: 25 SILVER+ RANGE MEDALS",
+   "title": "INFINITE <em>AMMO</em>",
+   "body": "<b class=\"code\">↓  ↑  →  ↓  ←  ←  ↑  ↓  ↓  ↓</b><br>Win the medals at <span class=\"hl\">shooting ranges</span>.",
+   "idx_right": true
+  },
+  {
+   "shot": "g_vc19.jpg",
+   "kicker": "UNLOCK: 25 GOLD RANGE MEDALS",
+   "title": "NO <em>RELOAD</em>",
+   "body": "<b class=\"code\">↓  ↑  →  ↓  ←  ←  ↑  ↓  ↓  ↑</b><br>Same start as Infinite Ammo: <span class=\"hl\">watch the last 3</span>."
+  },
+  {
+   "shot": "g_gr08.jpg",
+   "kicker": "UNLOCK: 100 WORKOUTS",
+   "title": "BODY <em>ARMOR</em>",
+   "body": "<b class=\"code\">↓  ↑  ←  ↑  ↑  ↑  ↑  ↑  ↓  ↓</b><br>Adds body armor to your <span class=\"hl\">loadout</span>.",
+   "idx_right": true
+  },
+  {
+   "shot": "g_vc26.jpg",
+   "kicker": "UNLOCK: FINISH THE STORY",
+   "title": "UNLIMITED <em>FOCUS</em>",
+   "body": "<b class=\"code\">↓  ↑  ↑  ↓  ↑  ↓  ↑  ↓  ↑  →</b><br>Your <span class=\"hl\">Focus</span> meter never runs out."
+  }
+ ],
+ "cta": {
+  "amb": "g_vc22_amb.jpg",
+  "title": "WHICH CHEAT<br><em>DO YOU USE?</em>",
+  "neon": "comment your favorite",
+  "cutout": {
+   "img": "cut_boss.png",
+   "right": 10,
+   "top": 760,
+   "h": 660
+  }
+ },
+ "topic_keys": [
+  "gta 6 cheat codes",
+  "gta6 code",
+  "gta 6 cheats"
+ ]
+}

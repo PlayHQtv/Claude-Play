@@ -1,0 +1,109 @@
+{
+ "hdr": "MONEY GUIDE",
+ "series_no": 5,
+ "source": "Source: Eurogamer, IGN, MetaForge, GTA Boss, PC Gamer",
+ "notes": "EXAMPLE 28.11.2026 (user: \"1,2 mache mir Beispiele\"). CSI Gta6 money 948,905 +92.1% (28.11.). Replaces the pre-launch draft. Facts (post-launch, 2+ sources each): Ch1 carried cash lost at the Ch1 point of no return, Family Savings kept (MetaForge, GTA Boss, EZG); Moses buys untracked cars from Ch2, ~$1,000+ per car, condition bonus (MetaForge, GTA Boss, PC Gamer $1k-$20k, RPS); jewelry stores Ch3 $10,000-$25,000 via Yasmani (MetaForge, EZG); Randy Wish List supercars $30,000+ (GTA Boss, MetaForge, GameBoost); bank vaults end of Ch4 up to $205,000 (GTA Boss, MetaForge, GameBoost, gta6heists, Eurogamer = best way); Family Savings $5,000 goal pays interest (IGN, gta6heists $2,000). Legit methods only, no glitches. Chapter-level spoilers only, no story details.",
+ "cover": {
+  "amb": "g_am02_amb.jpg",
+  "kicker": "GTA 6 TIP #5 · CHAPTER BY CHAPTER",
+  "big": "GTA 6 <em>MONEY</em><br>GUIDE",
+  "size": 168,
+  "neon": "fastest legit ways",
+  "neon_top": 655,
+  "panels": [],
+  "sun_top": 520,
+  "swipe": "SWIPE FOR ALL 6 <b>›</b>",
+  "bgshot": "g_am02.jpg",
+  "rstar": false,
+  "rstar_left": 268,
+  "cutout": {
+   "img": "cut_map.png",
+   "right": -190,
+   "top": 900,
+   "h": 520
+  },
+  "times_title": "BEST PAYOUTS",
+  "times_top": 790,
+  "times": [
+   [
+    "SELL CARS · CH2",
+    "$1K+"
+   ],
+   [
+    "JEWELRY · CH3",
+    "$25K"
+   ],
+   [
+    "SUPERCARS",
+    "$30K+"
+   ],
+   [
+    "BANK VAULTS",
+    "$205K"
+   ],
+   [
+    "SAVINGS GOAL",
+    "BONUS"
+   ]
+  ],
+  "times_note": "story mode · legit ways only"
+ },
+ "tips": [
+  {
+   "shot": "g_motel.jpg",
+   "kicker": "CHAPTER 1",
+   "title": "DON'T <em>GRIND</em> YET",
+   "body": "Cash you carry is <b>lost when Chapter 1 ends</b>. Only money in <span class=\"hl\">Family Savings</span> stays, so push the story."
+  },
+  {
+   "shot": "g_vc14.jpg",
+   "kicker": "CHAPTER 2 · $1,000+ PER CAR",
+   "title": "SELL CARS <em>TO MOSES</em>",
+   "body": "Moses buys <b>untracked</b> stolen cars. Bring them back <b>undamaged</b> for a <span class=\"hl\">condition bonus</span>.",
+   "idx_right": true
+  },
+  {
+   "shot": "g_vc21.jpg",
+   "kicker": "CHAPTER 3 · $10K–$25K",
+   "title": "ROB <em>JEWELRY STORES</em>",
+   "body": "Yasmani pays well for stolen jewelry. Each store is worth <b>$10,000 to $25,000</b>."
+  },
+  {
+   "shot": "g_vc06.jpg",
+   "kicker": "CHAPTER 3 · $30,000+",
+   "title": "RANDY'S <em>WISH LIST</em>",
+   "body": "Randy pays <b>$30,000+</b> for the supercars on his Wish List. <span class=\"hl\">Damage lowers</span> the price.",
+   "idx_right": true
+  },
+  {
+   "shot": "g_vc17.jpg",
+   "kicker": "END OF CHAPTER 4 · UP TO $205K",
+   "title": "HIT THE <em>BANK VAULTS</em>",
+   "body": "Large bank vaults pay <b>up to $205,000</b> each. The best money in Leonida, but you get an <span class=\"hl\">instant 4 stars</span>."
+  },
+  {
+   "shot": "g_skyline.jpg",
+   "kicker": "FREE MONEY",
+   "title": "USE <em>FAMILY SAVINGS</em>",
+   "body": "Hit the <b>$5,000</b> savings goal and BuckMe pays <b>interest</b>. Saved money is <span class=\"hl\">safe</span>.",
+   "idx_right": true
+  }
+ ],
+ "cta": {
+  "amb": "g_vc18_amb.jpg",
+  "title": "HOW DO YOU<br><em>GET RICH?</em>",
+  "neon": "comment 1–6",
+  "cutout": {
+   "img": "cut_jeep.png",
+   "right": 0,
+   "top": 820,
+   "h": 560
+  },
+  "save_small": "YOUR GTA 6 MONEY GUIDE"
+ },
+ "topic_keys": [
+  "gta 6 money",
+  "gta6 money",
+  "gta 6 make money fast"
+ ]
+}

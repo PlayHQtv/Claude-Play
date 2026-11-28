@@ -55,6 +55,7 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 .facts strong{display:block;font-family:BS;font-weight:900;font-size:66px;line-height:1;margin-top:8px;color:#fff}
 .facts p{font-family:IT;font-weight:600;font-size:27px;line-height:1.3;color:rgba(255,240,248,.85);margin-top:8px}
 .facts.f3{gap:30px;width:940px}.facts.f3 small{font-size:18px;letter-spacing:3px}.facts.f3 strong{font-size:56px}.facts.f3 p{font-size:23px}
+b.code{display:inline-block;font-family:IT;font-weight:900;font-size:46px;line-height:1.1;letter-spacing:1px;white-space:nowrap;margin:2px 0 8px;background:linear-gradient(90deg,#ffd27a,#ff8a4c 45%,#ff4f8b);-webkit-background-clip:text;color:transparent}
 .tcard{position:absolute;left:52px;width:360px;padding:22px 26px 14px;border-radius:28px;background:linear-gradient(180deg,rgba(28,10,40,.62),rgba(12,5,22,.8));
  backdrop-filter:blur(22px) saturate(1.3);border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.12)}
 .tcard:before{content:'';position:absolute;left:26px;right:26px;top:-1px;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,#ffb15c 20%,#ff4f8b 60%,#b44cff 85%,transparent)}
