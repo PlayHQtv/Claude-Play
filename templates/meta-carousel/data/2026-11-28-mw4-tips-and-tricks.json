@@ -41,7 +41,7 @@
    "rules": [
     [
      "NO BLOOM",
-     "MW4 has no hipfire bloom: bullets go where your crosshair points."
+     "MW4 has no hipfire bloom: shots go where your weapon points."
     ],
     [
      "UP CLOSE",
@@ -93,11 +93,11 @@
     ],
     [
      "TROPHY SYSTEM",
-     "Destroys up to 3 incoming projectiles."
+     "Destroys up to 3 airborne projectiles."
     ],
     [
      "DRILL CHARGE",
-     "Since Nov 16: 75 % less impact damage at range. Use it close."
+     "Lethal. Since Nov 16: 75% less impact damage at range. Use it close."
     ]
    ]
   },
@@ -109,7 +109,7 @@
    "rules": [
     [
      "HALF CLOSE",
-     "Press the button next to a garage door to close it halfway."
+     "Press the button next to a garage door to partly close it."
     ],
     [
      "SLIDE UNDER",
@@ -119,9 +119,7 @@
   },
   {
    "sec": "TIP 6",
-   "title": "KILL BLOCK",
-   "hero": "gfx_mumbai.jpg",
-   "hero_max": 300,
+   "title": "KILL BLOCK GUNFIGHT",
    "rules": [
     [
      "CALLOUTS",
@@ -129,11 +127,11 @@
     ],
     [
      "EVERY 2 ROUNDS",
-     "Layout and shared loadout change every 2 rounds."
+     "In Gunfight, layout + shared loadout change every 2 rounds."
     ],
     [
      "OVERTIME",
-     "Time runs out? Grab the Overtime Flag."
+     "Gunfight round timed out? Grab the Overtime Flag."
     ]
    ]
   }
@@ -153,5 +151,6 @@
    "bright": 1.25,
    "rim": 1
   }
- }
+ },
+ "verified": "independent verifier 28.11.2026: core claims PASS; fixes applied (hipfire wording 'weapon points', Drill Charge labelled Lethal, Trophy 'airborne', Lithium 'partly close', Kill Block 2-round rotation + Overtime Flag scoped to Gunfight, Kill Block slide without a non-Kill-Block image)"
 }

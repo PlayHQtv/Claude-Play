@@ -1,0 +1,173 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MULTIPLAYER",
+ "rank_label": "BUILD",
+ "topic_keys": [
+  "mar-9",
+  "mar9",
+  "mar-9 auto",
+  "mar 9 build"
+ ],
+ "cover": {
+  "kicker": "BUFFED NOV 13 IN MULTIPLAYER",
+  "big": "BEST MAR-9",
+  "small": "BUILD MW4",
+  "sub": "MP + WARZONE LOADOUTS + CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_MAR9.png"
+ },
+ "cta": {
+  "white": "WHICH BUILD",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_soldier_fb.png",
+   "right": 40,
+   "top": 1050,
+   "w": 640,
+   "fade": 62,
+   "bright": 1.25,
+   "rim": 1,
+   "hide_br": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "badge": "MULTIPLAYER",
+   "image": "mw4/w_MAR9.png",
+   "short": "CLOSE RANGE",
+   "title_white": "MAR-9",
+   "title_gold": "",
+   "class": "Marksman Rifle",
+   "class_note": "Close range Apex build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 73",
+   "brightness": 1.2,
+   "build_code": "M02-3M5Z7-FMQ11",
+   "apex": "MAR-9 AUTO",
+   "attachments": [
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "MEIKO 30CAL-SP"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "BRUEN IRONHIDE 76"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "SZ GEN.6 PEQ"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "SCHLAGER PLM-S9"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "30 ROUND MAG"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/mar-9 MP #1 Close Range (Apex MAR-9 Auto), code M02-3M5Z7-FMQ11, weapon level 73 (fetched 28.11.2026); warzoneloadout.games Close Range matches"
+  },
+  {
+   "rank": 2,
+   "badge": "MULTIPLAYER",
+   "image": "mw4/w_MAR9.png",
+   "short": "VERSATILE",
+   "title_white": "MAR-9",
+   "title_gold": "",
+   "class": "Marksman Rifle",
+   "class_note": "Versatile Apex build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 73",
+   "brightness": 1.2,
+   "build_code": "M02-3M5Z9-XNB11",
+   "apex": "MAR-9 AUTO",
+   "attachments": [
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "BRUEN REAPER-X"
+    },
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "SZ GEN.6 PEQ"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "SCHLAGER PLM-S9"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "30 ROUND MAG"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "FSS TAC90 GRIP"
+    }
+   ],
+   "sources": "codmunity MP #2 Versatile (Apex MAR-9 Auto), code M02-3M5Z9-XNB11, weapon level 73"
+  },
+  {
+   "rank": 3,
+   "badge": "WARZONE",
+   "image": "mw4/w_MAR9.png",
+   "short": "WARZONE",
+   "title_white": "MAR-9",
+   "title_gold": "",
+   "class": "Marksman Rifle",
+   "class_note": "Warzone long range build",
+   "tagline": "WARZONE · WEAPON LEVEL 73",
+   "brightness": 1.2,
+   "build_code": "M02-2R4N6-PWBNF-11",
+   "apex": "MAR-9 AUTO",
+   "attachments": [
+    {
+     "type": "optic",
+     "label": "OPTIC",
+     "name": "LOCUS PX3 CANTED"
+    },
+    {
+     "type": "muzzle",
+     "label": "MUZZLE",
+     "name": "EXP UNDERTOW GEN. 2"
+    },
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "LM CLASS 6 HBL"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "30 ROUND MAG"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "HANBIT WRAP 76"
+    }
+   ],
+   "sources": "codmunity Warzone #1 Long Range (Apex MAR-9 Auto), code M02-2R4N6-PWBNF-11, weapon level 73"
+  }
+ ],
+ "source": "codmunity.gg/weapon/mw4/mar-9 (MW4 tier list B, MP builds 10/11 + 13/11, Warzone 17/11, fetched 28.11.2026); warzoneloadout.games/mw4/mar-9; official MW4 S1 patch notes Nov 13 MP: max damage range 19.81 -> 21.34 m, mid range 1 28.7 -> 30.23 m, flinch received -20.7 %; MAR-9 Auto (Mar-9E1) max damage range 25.15 -> 27.94 m + flinch -20.7 %; no DMZ/Warzone tuning; Apex name 'MAR-9 Auto' as in the Gunsmith/codmunity (official balance table calls it Mar-9E1)",
+ "notes": "Sun 29.11. 18:00 build post (GTA cheat codes = user-approved 10:00 post that day). MAR-9 never had a build on any slide (only listed in the Nov 13 buffs news post + Apex catalogue). Codmunity MW4 tier B (best of the remaining unposted guns), not top meta -> no meta claim.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ }
+}
