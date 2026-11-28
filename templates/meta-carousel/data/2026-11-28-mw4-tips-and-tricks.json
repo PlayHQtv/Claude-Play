@@ -1,0 +1,157 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "TIPS + TRICKS",
+ "topic_keys": [
+  "tips and tricks",
+  "hipfire bloom",
+  "trip wire network",
+  "garage door",
+  "kill block callouts",
+  "field upgrades recharge"
+ ],
+ "notes": "Sat 28.11. 18:00 search post (CSI 24.11. 'Mw4 tips and tricks' 286K, +1000 %, never posted). Excluded overlap topics: perks, weapon XP, movement, aim assist, settings, killstreaks, hitscan (12.11. patch post). Sources Tier 1: callofduty.com MW4 multiplayer page (no bloom, 23.10.2026), MW4 Open Beta blog 21.08.2026 (smoke disrupted by gunfire/explosives, Trip Wire network, Field Upgrades recharge, Trophy System 3 projectiles, Kill Block 2-round rotation/equipment delay/Overtime Flag), official guide 'MW4 Beta Maps & Modes' 27.08.2026 (Lithium garage door button + slide under), MW4 S1 patch notes Nov 16 (Drill Charge impact damage at range -75 %). Tier 2: GameSpot MW4 multiplayer tips 16.10.2026 (no bloom, Kill Block wall grid), games.gg Kill Block guide 26.10. Images: only official screenshots WITHOUT baked-in logos (mv_* and gfx_x01 carry MW4/DMZ logos -> not used). Cover gfx_shoothouse.jpg was never a cover before (only an inner slide of the 12.11. graphics post); dupcheck flags any earlier use.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "cover": {
+  "kicker": "MW4 · 6 TRICKS MOST PLAYERS MISS",
+  "big": "MW4 TIPS",
+  "small": "AND TRICKS",
+  "sub": "HIPFIRE · SMOKE · TRAPS · MAPS",
+  "img": "gfx_shoothouse.jpg",
+  "chips": [
+   "NO BLOOM",
+   "SMOKE HOLES",
+   "TRAPS",
+   "KILL BLOCK"
+  ],
+  "swipe": "SWIPE FOR ALL 6 ›"
+ },
+ "slides": [
+  {
+   "sec": "TIP 1",
+   "title": "HIPFIRE WORKS",
+   "hero": "gfx_nyc.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "NO BLOOM",
+     "MW4 has no hipfire bloom: bullets go where your crosshair points."
+    ],
+    [
+     "UP CLOSE",
+     "In close fights you can skip aiming down sights."
+    ]
+   ]
+  },
+  {
+   "sec": "TIP 2",
+   "title": "SHOOT THE SMOKE",
+   "hero": "gfx_sentry.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "CUT HOLES",
+     "Gunfire and explosions break up Smoke Grenade + Smoke Wall cover."
+    ],
+    [
+     "NEW LANES",
+     "The gaps open short sightlines through the smoke."
+    ]
+   ]
+  },
+  {
+   "sec": "TIP 3",
+   "title": "TRIP WIRE TRAPS",
+   "hero": "gfx_backstab.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "CHAIN THEM",
+     "Several Trip Wires link into one network of explosives."
+    ],
+    [
+     "PLACE AHEAD",
+     "Set them where enemies will walk, not where they stand."
+    ]
+   ]
+  },
+  {
+   "sec": "TIP 4",
+   "title": "SPAM YOUR UTILITY",
+   "hero": "gfx_reactor.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "RECHARGE",
+     "Every Field Upgrade recharges: use it more than once per match."
+    ],
+    [
+     "TROPHY SYSTEM",
+     "Destroys up to 3 incoming projectiles."
+    ],
+    [
+     "DRILL CHARGE",
+     "Since Nov 16: 75 % less impact damage at range. Use it close."
+    ]
+   ]
+  },
+  {
+   "sec": "TIP 5",
+   "title": "LITHIUM DOORS",
+   "hero": "gfx_lithium.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "HALF CLOSE",
+     "Press the button next to a garage door to close it halfway."
+    ],
+    [
+     "SLIDE UNDER",
+     "Slide under it to surprise players on the other side."
+    ]
+   ]
+  },
+  {
+   "sec": "TIP 6",
+   "title": "KILL BLOCK",
+   "hero": "gfx_mumbai.jpg",
+   "hero_max": 300,
+   "rules": [
+    [
+     "CALLOUTS",
+     "Use the letter + number grid on the outer walls."
+    ],
+    [
+     "EVERY 2 ROUNDS",
+     "Layout and shared loadout change every 2 rounds."
+    ],
+    [
+     "OVERTIME",
+     "Time runs out? Grab the Overtime Flag."
+    ]
+   ]
+  }
+ ],
+ "cta": {
+  "white": "WHICH TRICK",
+  "gold": "DID YOU MISS?",
+  "sub": "COMMENT 1–6",
+  "save_kicker": "YOUR MW4 TIPS CHEAT SHEET",
+  "follow_sub": "FOR DAILY MW4 LOADOUTS + TIPS",
+  "cutout": {
+   "img": "cut_silh_fb.png",
+   "right": 71,
+   "top": 1010,
+   "w": 420,
+   "fade": 75,
+   "bright": 1.25,
+   "rim": 1
+  }
+ }
+}

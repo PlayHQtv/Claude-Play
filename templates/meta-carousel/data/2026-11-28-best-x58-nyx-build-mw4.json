@@ -1,0 +1,178 @@
+{
+ "game": "CALL OF DUTY · MW4",
+ "badge": "MULTIPLAYER",
+ "rank_label": "BUILD",
+ "topic_keys": [
+  "x-58 nyx",
+  "x58 nyx",
+  "nyx build",
+  "x-58 void"
+ ],
+ "cover": {
+  "kicker": "BUFFED NOV 13 + NOV 19",
+  "big": "BEST X-58",
+  "small": "NYX BUILD MW4",
+  "sub": "MP + WARZONE LOADOUTS + CODES",
+  "swipe": "SWIPE FOR THE BUILDS ›",
+  "image": "mw4/w_X58_Nyx.png"
+ },
+ "cta": {
+  "white": "WHICH BUILD",
+  "gold": "DO YOU RUN?",
+  "sub": "DROP 1, 2 OR 3 IN THE COMMENTS",
+  "follow_sub": "FOR DAILY MW4 META",
+  "cutout": {
+   "img": "cut_redeye_fb.png",
+   "right": -60,
+   "top": 1030,
+   "w": 540,
+   "fade": 75,
+   "bright": 1.25,
+   "rim": 1,
+   "hide_br": 1
+  }
+ },
+ "weapons": [
+  {
+   "rank": 1,
+   "badge": "MULTIPLAYER",
+   "image": "mw4/w_X58_Nyx.png",
+   "short": "VERSATILE",
+   "title_white": "X-58",
+   "title_gold": "NYX",
+   "class": "SMG",
+   "class_note": "Versatile build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 40",
+   "brightness": 1.2,
+   "build_code": "S08-3K9Y5-MXR5C-1L11",
+   "attachments": [
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "MUGI HYU-90 228MM"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "NO STOCK"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "MUGI-X WRAP"
+    },
+    {
+     "type": "ammo",
+     "label": "AMMUNITION",
+     "name": "5.8X21MM OVERPRESSURED"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "FSS TAC90 GRIP"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/x-58-nyx MP #1 Versatile, code S08-3K9Y5-MXR5C-1L11, weapon level 40 (fetched 28.11.2026)"
+  },
+  {
+   "rank": 2,
+   "badge": "MULTIPLAYER",
+   "image": "mw4/w_X58_Nyx.png",
+   "short": "CLOSE RANGE",
+   "title_white": "X-58",
+   "title_gold": "NYX",
+   "class": "SMG",
+   "class_note": "Close range Apex build",
+   "tagline": "MULTIPLAYER · WEAPON LEVEL 53",
+   "brightness": 1.2,
+   "build_code": "S08-3Q4AC-M7S11",
+   "attachments": [
+    {
+     "type": "laser",
+     "label": "LASER",
+     "name": "SCHLAGER VISIV-5"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "NO STOCK"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "MUGI-X WRAP"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "60 ROUND MAG"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "FSS TAC90 GRIP"
+    }
+   ],
+   "sources": "codmunity MP #2 Close Range (Apex X-58 Void), code S08-3Q4AC-M7S11, weapon level 53",
+   "apex": "X-58 VOID"
+  },
+  {
+   "rank": 3,
+   "badge": "WARZONE",
+   "image": "mw4/w_X58_Nyx.png",
+   "short": "SNIPER SUPPORT",
+   "title_white": "X-58",
+   "title_gold": "NYX",
+   "class": "SMG",
+   "class_note": "Warzone sniper support build",
+   "tagline": "WARZONE · WEAPON LEVEL 44",
+   "brightness": 1.2,
+   "build_code": "S08-2N5BH-QQ11",
+   "attachments": [
+    {
+     "type": "barrel",
+     "label": "BARREL",
+     "name": "LX3-V 409MM"
+    },
+    {
+     "type": "underbarrel",
+     "label": "UNDERBARREL",
+     "name": "FSS FIRELINE GRIP"
+    },
+    {
+     "type": "magazine",
+     "label": "MAGAZINE",
+     "name": "60 ROUND MAG"
+    },
+    {
+     "type": "reargrip",
+     "label": "REAR GRIP",
+     "name": "MUGI 050-T GRIP"
+    },
+    {
+     "type": "stock",
+     "label": "STOCK",
+     "name": "MUGI HUL-73.M STOCK"
+    }
+   ],
+   "sources": "codmunity.gg/weapon/mw4/x-58-nyx Warzone #1 Sniper Support (Contenders), code S08-2N5BH-QQ11, weapon level 44"
+  }
+ ],
+ "source": "codmunity.gg/weapon/mw4/x-58-nyx (MP builds 06-07/11, Warzone 10/11, fetched 28.11.2026); warzoneloadout.games/mw4/x-58-nyx; Dexerto Warzone build; official MW4 S1 patch notes: MP Nov 13 max damage range 10.8 -> 11.94 m + mid range 1 19.94 -> 21.59 m, MP Nov 19 max damage range 11.94 -> 12.45 m; DMZ Nov 23 damage nerf (not in this post); no Warzone tuning (WZ notes to Nov 19)",
+ "notes": "Sat 28.11. 10:00 build post (rescue mode >=1 build/day; slot test 10:00). Replaces the parked KG-7 slot. Dup/overlap: Warzone loadout part 2 (17.11., 721 views) had the Nyx Warzone close-range build as 1 of 4 guns -> that build is NOT reused here (overlap_ok). Not top meta (codmunity C tier, pick 2.5-2.6 %) - no meta/S-tier claim on slides.",
+ "wallpaper": {
+  "img": "wp_bp_s1_city.jpg",
+  "bright": 0.6,
+  "sat": 0.9,
+  "top": 30,
+  "bottom": 55,
+  "edge": 0.03
+ },
+ "overlap_ok": {
+  "2026-11-17-best-warzone-loadout-part-2": "that 4-gun list showed only the Warzone close range Nyx build S08-5CPV8-3911; this post uses 3 different builds (MP versatile, MP close range Apex, Warzone sniper support) - no build repeated"
+ },
+ "caption": "Best X-58 Nyx build MW4 🔥 3 X-58 Nyx loadouts for Modern Warfare 4 multiplayer + Warzone after the Nov 13 + Nov 19 multiplayer buffs: the #1 multiplayer build, a versatile setup (code S08-3K9Y5-MXR5C-1L11) with the Mugi HYU-90 228mm barrel, a close range build with the X-58 Void Apex and 60 Round Mag, and a Warzone sniper support build with the LX3-V 409mm barrel. Which X-58 Nyx class do you run? Comment 1, 2 or 3 👇 Save this for your next match & send it to your squad!\n#mw4 #x58nyx #mw4loadout #modernwarfare4 #warzoneloadout",
+ "first_comment": "Which X-58 Nyx build are you running: 1, 2 or 3? 👇",
+ "tiktok_title": "Best X-58 Nyx build MW4: 3 loadouts + codes",
+ "verified": "independent verifier 28.11.2026: PASS (codmunity re-fetched: 3 builds/codes/levels/attachments/Apex exact; kicker Nov 13 + Nov 19 MP buffs confirmed in official notes, no tuning after Nov 23; caption OK; visuals + overlap OK)"
+}
