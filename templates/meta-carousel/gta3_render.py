@@ -2,7 +2,7 @@
 One tip per slide: official 4K screenshot (uncropped, full width) on an ambient extension of itself, huge outlined
 index number, display title, short body, source line. Cover: box-art collage + official character art + neon title.
 Usage: python3 gta3_render.py data/<file>.json <out_dir>. Private images live in _build/gta/."""
-import json, os, sys
+import json, os, re, sys
 import render as R
 
 E = R.E
@@ -55,7 +55,8 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 .facts strong{display:block;font-family:BS;font-weight:900;font-size:66px;line-height:1;margin-top:8px;color:#fff}
 .facts p{font-family:IT;font-weight:600;font-size:27px;line-height:1.3;color:rgba(255,240,248,.85);margin-top:8px}
 .facts.f3{gap:30px;width:940px}.facts.f3 small{font-size:18px;letter-spacing:3px}.facts.f3 strong{font-size:56px}.facts.f3 p{font-size:23px}
-b.code{display:inline-block;font-family:IT;font-weight:900;font-size:46px;line-height:1.1;letter-spacing:1px;white-space:nowrap;margin:2px 0 8px;background:linear-gradient(90deg,#ffd27a,#ff8a4c 45%,#ff4f8b);-webkit-background-clip:text;color:transparent}
+b.code{display:flex;gap:8px;align-items:center;margin:6px 0 12px}
+b.code i.ak{display:inline-flex;width:52px;height:52px;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(160deg,rgba(255,177,92,.22),rgba(255,79,139,.16));border:1.5px solid rgba(255,177,92,.65);box-shadow:0 0 14px rgba(255,79,139,.25)}
 .tcard{position:absolute;left:52px;width:360px;padding:22px 26px 14px;border-radius:28px;background:linear-gradient(180deg,rgba(28,10,40,.62),rgba(12,5,22,.8));
  backdrop-filter:blur(22px) saturate(1.3);border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.12)}
 .tcard:before{content:'';position:absolute;left:26px;right:26px;top:-1px;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,#ffb15c 20%,#ff4f8b 60%,#b44cff 85%,transparent)}
@@ -132,7 +133,18 @@ V4CSS = '''
 '''
 
 
+_ARROW_DEG = {'\u2191': 0, '\u2192': 90, '\u2193': 180, '\u2190': 270}
+
+
+def arrow_codes(html):
+    """Cheat codes as equal arrow tiles (verifier 28.11.: font arrows had different sizes): <b class="code">↑ → ↓ ←</b>."""
+    def tile(ch):
+        return (f'<i class="ak"><svg width="34" height="34" viewBox="0 0 40 40" style="transform:rotate({_ARROW_DEG[ch]}deg)">'
+                '<path d="M20 3 L36 21 H26 V37 H14 V21 H4 Z" fill="#ffc06a"/></svg></i>')
+    return re.sub(r'<b class="code">(.*?)</b>', lambda m: '<b class="code">' + ''.join(tile(c) for c in m.group(1) if c in _ARROW_DEG) + '</b>', html)
+
 def base(body, d, amb=None, cover=False, idx=None, total=None):
+    body = arrow_codes(body)
     prog = ''
     if idx is not None and total:
         prog = '<div class="prog">' + ''.join(f'<i class="{"on" if i == idx else ""}"></i>' for i in range(total)) + '</div>'
