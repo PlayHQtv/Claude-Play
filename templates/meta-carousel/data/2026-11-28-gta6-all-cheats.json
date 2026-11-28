@@ -2,7 +2,7 @@
  "hdr": "ALL CHEATS",
  "series_no": 4,
  "source": "Source: GameSpot (tested), Tracker.gg",
- "notes": "EXAMPLE 28.11.2026 (user: \"Ja und mit mehr cheats\"). All 61 codes identical in GameSpot (tested on a save, updated 27.11.), Tracker.gg (26.11.) and Game-Checklists (24.11.), checked by script; Attack Force: GameSpot misses one input (8), the 9-input code is printed by Tracker, Game-Checklists, Gamex, Vice, GameLeap, GTADB. Unlocks: majority wording; Cycle Weather + Attack Force = finish the story (GameSpot, Tracker, gamex).",
+ "notes": "SCHEDULED Sat 28.11. 18:00 Berlin (user 28.11.: \"Dieser Post muss um 18 Uhr raus\" + \"Das passt so\"; verifier PASS, QA 0/0, byte check OK). EXAMPLE 28.11.2026 (user: \"Ja und mit mehr cheats\"). All 61 codes identical in GameSpot (tested on a save, updated 27.11.), Tracker.gg (26.11.) and Game-Checklists (24.11.), checked by script; Attack Force: GameSpot misses one input (8), the 9-input code is printed by Tracker, Game-Checklists, Gamex, Vice, GameLeap, GTADB. Unlocks: majority wording; Cycle Weather + Attack Force = finish the story (GameSpot, Tracker, gamex).",
  "cover": {
   "amb": "g_pg02_amb.jpg",
   "kicker": "GTA 6 TIP #4 · EVERY CODE",
@@ -68,7 +68,7 @@
    "kicker": "HOW TO ENTER · UNLOCK AFTER THE STORY",
    "title": "OPEN <em>YOUR PHONE</em>",
    "body": "Press <b>D-pad Up</b>, hold <b>L1/LB</b>, press <b>R1/RB</b>, then enter the code on the <span class=\"hl\">D-pad</span>. Saving and trophies are off for that session.",
-   "idx_right": true
+   "no_idx": true
   },
   {
    "codes": [
@@ -100,7 +100,8 @@
    ],
    "kicker": "PLAYER · 10 CHEATS · PART 1/2",
    "title": "PLAYER <em>CHEATS</em>",
-   "amb": "g_vc04_amb.jpg"
+   "amb": "g_vc04_amb.jpg",
+   "shot": "g_vc04.jpg"
   },
   {
    "codes": [
@@ -132,7 +133,8 @@
    ],
    "kicker": "PLAYER · 10 CHEATS · PART 2/2",
    "title": "PLAYER <em>CHEATS</em>",
-   "amb": "g_vc04_amb.jpg"
+   "amb": "g_mk02_amb.jpg",
+   "shot": "g_mk02.jpg"
   },
   {
    "codes": [
@@ -169,7 +171,8 @@
    ],
    "kicker": "COMBAT · 11 CHEATS · PART 1/2",
    "title": "COMBAT <em>CHEATS</em>",
-   "amb": "g_jl15_amb.jpg"
+   "amb": "g_gr08_amb.jpg",
+   "shot": "g_gr08.jpg"
   },
   {
    "codes": [
@@ -201,7 +204,8 @@
    ],
    "kicker": "COMBAT · 11 CHEATS · PART 2/2",
    "title": "COMBAT <em>CHEATS</em>",
-   "amb": "g_jl15_amb.jpg"
+   "amb": "g_vc26_amb.jpg",
+   "shot": "g_vc26.jpg"
   },
   {
    "codes": [
@@ -243,7 +247,8 @@
    ],
    "kicker": "SPAWN A VEHICLE · 21 CHEATS · PART 1/3",
    "title": "VEHICLE <em>CHEATS</em>",
-   "amb": "g_vc08_amb.jpg"
+   "amb": "g_vc15_amb.jpg",
+   "shot": "g_vc15.jpg"
   },
   {
    "codes": [
@@ -285,7 +290,8 @@
    ],
    "kicker": "SPAWN A VEHICLE · 21 CHEATS · PART 2/3",
    "title": "VEHICLE <em>CHEATS</em>",
-   "amb": "g_vc08_amb.jpg"
+   "amb": "g_vc22_amb.jpg",
+   "shot": "g_vc22.jpg"
   },
   {
    "codes": [
@@ -327,7 +333,8 @@
    ],
    "kicker": "SPAWN A VEHICLE · 21 CHEATS · PART 3/3",
    "title": "VEHICLE <em>CHEATS</em>",
-   "amb": "g_vc08_amb.jpg"
+   "amb": "g_vc17_amb.jpg",
+   "shot": "g_vc17.jpg"
   },
   {
    "codes": [
@@ -349,7 +356,8 @@
    ],
    "kicker": "TIME + WEATHER · 3 CHEATS",
    "title": "TIME + <em>WEATHER</em>",
-   "amb": "g_am02_amb.jpg"
+   "amb": "g_am02_amb.jpg",
+   "shot": "g_am02.jpg"
   },
   {
    "codes": [
@@ -386,7 +394,8 @@
    ],
    "kicker": "SCREEN FILTER · 16 CHEATS · PART 1/3",
    "title": "SCREEN <em>CHEATS</em>",
-   "amb": "g_vc22_amb.jpg"
+   "amb": "g_vc08_amb.jpg",
+   "shot": "g_vc08.jpg"
   },
   {
    "codes": [
@@ -398,7 +407,7 @@
     [
      "Dark Mirror",
      "↓ ↓ ↑ → → ↑ ← ← → ←",
-     "Make $500,000 selling cars"
+     "Make $500,000 selling vehicles"
     ],
     [
      "Migraine",
@@ -413,12 +422,13 @@
     [
      "Bubblegum",
      "↓ ↓ ↑ → → ↑ ← ← ↓ ↓",
-     "All 24 Flamingos cards"
+     "All 24 Vice City Flamingos cards"
     ]
    ],
    "kicker": "SCREEN FILTER · 16 CHEATS · PART 2/3",
    "title": "SCREEN <em>CHEATS</em>",
-   "amb": "g_vc22_amb.jpg"
+   "amb": "g_motel_amb.jpg",
+   "shot": "g_motel.jpg"
   },
   {
    "codes": [
@@ -450,7 +460,10 @@
    ],
    "kicker": "SCREEN FILTER · 16 CHEATS · PART 3/3",
    "title": "SCREEN <em>CHEATS</em>",
-   "amb": "g_vc22_amb.jpg"
+   "amb": "g_lk02_amb.jpg",
+   "shot": "g_lk02.jpg"
   }
- ]
+ ],
+ "caption": "All GTA 6 cheat codes 🔥 Every one of the 61 Grand Theft Auto 6 cheats for PS5 and Xbox Series X|S with the exact D-pad code and how to unlock it: player cheats like $250,000 and Body Armor, combat cheats like Infinite Ammo, 21 vehicle spawns like the Rhino Tank and P-996 Lazer, weather and 16 screen filters. Which cheat do you use first? Comment below 👇 Save this for after the story & send it to your squad!\n#gta6 #gta6cheats #gtavi #gta6tips #grandtheftauto6",
+ "verified": true
 }

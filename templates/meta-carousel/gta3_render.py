@@ -55,6 +55,13 @@ body{position:relative;background:var(--ink);color:#fff;font-family:IT;-webkit-f
 .facts strong{display:block;font-family:BS;font-weight:900;font-size:66px;line-height:1;margin-top:8px;color:#fff}
 .facts p{font-family:IT;font-weight:600;font-size:27px;line-height:1.3;color:rgba(255,240,248,.85);margin-top:8px}
 .facts.f3{gap:30px;width:940px}.facts.f3 small{font-size:18px;letter-spacing:3px}.facts.f3 strong{font-size:56px}.facts.f3 p{font-size:23px}
+.cshot{position:absolute;left:0;top:0;width:1080px;height:700px;background-size:cover;background-position:center 40%;
+ -webkit-mask-image:linear-gradient(180deg,#000 0,#000 52%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 52%,transparent 100%)}
+.cshade{position:absolute;left:0;top:0;width:1080px;height:700px;background:linear-gradient(180deg,rgba(14,4,24,.72) 0,rgba(14,4,24,.45) 18%,rgba(14,4,24,.12) 32%,rgba(14,4,24,.55) 48%,rgba(14,4,24,.9) 66%,rgba(14,4,24,.6) 88%,rgba(14,4,24,0) 100%)}
+.crow{backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%)}
+.sunline{position:absolute;right:-150px;width:560px;height:560px;border-radius:50%;opacity:.55;
+ background:linear-gradient(180deg,#ffd27a 0,#ff8a4c 40%,#ff4f8b 70%,#b44cff 100%);
+ -webkit-mask-image:repeating-linear-gradient(180deg,#000 0 26px,transparent 26px 36px);mask-image:repeating-linear-gradient(180deg,#000 0 26px,transparent 26px 36px);filter:blur(.3px)}
 .crow{position:absolute;left:52px;width:878px;height:96px;display:flex;align-items:center;gap:16px;padding:0 18px 0 24px;border-radius:22px;
  background:linear-gradient(180deg,rgba(28,10,40,.66),rgba(12,5,22,.82));border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 30px rgba(0,0,0,.35)}
 .crow:before{content:'';position:absolute;left:0;top:18px;bottom:18px;width:4px;border-radius:3px;background:linear-gradient(180deg,#ffb15c,#ff4f8b)}
@@ -220,7 +227,7 @@ def tip(s, d, i, total):
     body = (f'<div class="shot" style="top:{top}px;height:{h}px;background-image:url(/_build/gta/{s["shot"]})"></div>'
             + (f'<div class="card" style="top:{y + 140}px"></div><div class="cardline"></div>' if v4 else '')
             + (f'<div class="loc" style="top:{top + 34}px"><i></i>{E(loc)}</div>' if v4 and loc else '')
-            + f'<div class="idx {"fill" if s.get("fill_idx", True) else ""}" style="top:{y - 40 + s.get("idx_dy", 0)}px;font-size:250px;{ix}{';left:auto' if ix else ''}">{i:02d}</div>'
+            + ('' if s.get('no_idx') else f'<div class="idx {"fill" if s.get("fill_idx", True) else ""}" style="top:{y - 40 + s.get("idx_dy", 0)}px;font-size:250px;{ix}{';left:auto' if ix else ''}">{i:02d}</div>')
             + (f'<div class="fg" style="top:{top}px;height:{h}px;background-image:url(/_build/gta/{s["pop"]})"></div>' if s.get('pop') else '')
             + f'<div class="k" style="top:{y + 175}px">{E(s["kicker"])}</div>'
             + f'<div class="h fit" style="top:{y + 212}px" data-size="128" data-max="960">{s["title"]}</div>'
@@ -231,10 +238,21 @@ def tip(s, d, i, total):
 
 def codes(s, d, i, total):
     """Cheat table slide (user 28.11.2026: "mit mehr cheats"): up to 7 rows = name + unlock + equal arrow tiles."""
-    rows = ''.join(f'<div class="crow" style="top:{430 + k * 106}px"><div class="cn"><b>{E(n)}</b><small>{E(u)}</small></div>'
+    shot = s.get('shot')
+    y0, step = (540, 100) if shot else (430, 106)
+    tall = shot and len(s['codes']) <= 3  # few rows: let the screenshot fill the slide
+    if tall:
+        y0 = 860
+    rows = ''.join(f'<div class="crow" style="top:{y0 + k * step}px;height:{step - 10}px"><div class="cn"><b>{E(n)}</b><small>{E(u)}</small></div>'
                    f'<b class="code">{c}</b></div>' for k, (n, c, u) in enumerate(s['codes']))
-    body = (f'<div class="k" style="top:236px">{E(s["kicker"])}</div>'
-            + f'<div class="h fit" style="top:272px" data-size="118" data-max="960">{s["title"]}</div>'
+    loc = s.get('loc') or (LOC.get(shot.replace('.jpg', '')) if shot else None)
+    deco = f'<div class="sunline" style="top:{y0 + 260}px"></div>'
+    head_y = (688 if tall else 368) if shot else 236
+    body = ((f'<div class="cshot" style="background-image:url(/_build/gta/{shot}){";height:1020px" if tall else ""}"></div><div class="cshade" style="{"height:1020px;background:linear-gradient(180deg,rgba(14,4,24,.72) 0,rgba(14,4,24,.2) 14%,rgba(14,4,24,0) 40%,rgba(14,4,24,.55) 62%,rgba(14,4,24,.9) 80%,rgba(14,4,24,0) 100%)" if tall else ""}"></div>' if shot else '')
+            + deco
+            + (f'<div class="loc" style="top:236px"><i></i>{E(loc)}</div>' if shot and loc else '')
+            + f'<div class="k" style="top:{head_y}px">{E(s["kicker"])}</div>'
+            + f'<div class="h fit" style="top:{head_y + 36}px" data-size="118" data-max="960">{s["title"]}</div>'
             + rows)
     return base(body, d, amb=s.get('amb'), idx=i - 1, total=total)
 
